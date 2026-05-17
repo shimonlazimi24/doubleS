@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isPrepAmirantCoursePublicPreviewPath } from "@/lib/prep/amirant-public-preview";
 import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { isPrepPublicPath } from "@/lib/prep/constants";
 import {
@@ -58,6 +59,11 @@ export async function middleware(req: NextRequest) {
       return res;
     }
     if (isPrepSessionRequiredPath(path)) {
+      if (isPrepAmirantCoursePublicPreviewPath(path)) {
+        const res = NextResponse.next();
+        setNoStore(res);
+        return res;
+      }
       return handlePrepAuthenticatedRequest(req);
     }
     const res = NextResponse.next();
