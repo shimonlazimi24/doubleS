@@ -20,6 +20,7 @@
     "security:preflight": "node scripts/security-preflight.mjs",
     "typecheck": "tsc --noEmit",
     "verify:amirant-rls": "node scripts/verify-amirant-rls.mjs",
+    "prep:login-link": "node scripts/generate-prep-login-link.mjs",
     "coverage:amirant-content": "node scripts/amirant-content-coverage.mjs",
     "seed:amirant": "node -e \"console.log('Run against your DB: psql \\\"$DATABASE_URL\\\" -f supabase/seeds/amirant-demo.sql'); console.log('Docs: supabase/seeds/README-amirant-demo.md')\""
   },

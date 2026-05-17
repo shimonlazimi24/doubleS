@@ -64,6 +64,32 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 2. פתחו `/prep/login`
 3. «התחברות עם Google» → בחירת חשבון → חזרה ל־`/prep/amirant/course/dashboard` (או `returnTo`).
 
+## בדיקת פלואו בלי מייל (פיתוח)
+
+כש-Supabase חוסם שליחת מיילים (`over_email_send_rate_limit`), אפשר עדיין לבדוק התחברות:
+
+1. **service_role** מ-Supabase → API → Legacy → `service_role` (סודי — רק ב-`.env.local`)
+2. מהשורש של הפרויקט:
+
+```bash
+npm run prep:login-link -- your@email.com
+# פרודקשן:
+npm run prep:login-link -- your@email.com https://double-s.vercel.app
+```
+
+3. העתיקו את הקישור שמודפס → פתחו **באותו דפדפן** (Chrome וכו')
+4. אמור לעבור: `/prep/auth/complete` → `/prep/amirant/continue` → onboarding / מחירון / קורס
+
+**אלטרנטיבה מהירה:** דוא״ל עם `+` (Gmail): `name+test1@gmail.com` — מגבלה לפעמים לפי כתובת.
+
+**בלי התחברות בכלל (רק UI מסלול):** ב-`.env.local` לפיתוח מקומי:
+
+```env
+PREP_AUTH_BYPASS=1
+```
+
+`npm run dev` — דילוג על session בנתיבים מוגנים (לא ב-Vercel production).
+
 ## מגבלת מיילים (Rate limit)
 
 בפרויקט חדש / חינמי, Supabase שולח מעט מיילי Magic Link לשעה. אחרי בדיקות חוזרות תופיע:
