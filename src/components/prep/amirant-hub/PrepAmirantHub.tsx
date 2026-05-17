@@ -12,7 +12,15 @@ import { cn } from "@/lib/design-system/cn";
 import { AMIRANT_GENERAL_INFO_BLOCKS } from "@/lib/prep/amirant-general-info-blocks";
 import { AMIRANT_HUB_INTRO_BLOCKS } from "@/lib/prep/amirant-hub-intro-blocks";
 import { AMIRANT_COURSE_SYLLABUS_META } from "@/lib/prep/amirant-course-syllabus";
+import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { PREP_BASE } from "@/lib/prep/constants";
+
+const CONTINUE_STEPS = [
+  { n: 1, title: "מידע, מבוא ומבחן לדוגמה", note: "חינם — אתם כאן" },
+  { n: 2, title: "הרשמה / התחברות", note: "שמירת התקדמות" },
+  { n: 3, title: "רכישת גישה מלאה", note: "כל המודולים והכלים" },
+  { n: 4, title: "מסלול הלמידה", note: "קורס אמירנט מלא" },
+] as const;
 
 const AmirantPracticeFlow = dynamic(
   () =>
@@ -48,8 +56,7 @@ function PrepAmirantHubInner() {
     [router, searchParams],
   );
 
-  const courseHref = `${PREP_BASE}/amirant/course`;
-  const loginHref = `${PREP_BASE}/login?next=${encodeURIComponent(courseHref)}`;
+  const continueHref = AMIRANT_CONTINUE_PATH;
 
   return (
     <div className="bg-paper">
@@ -65,7 +72,7 @@ function PrepAmirantHubInner() {
             אמירנט — הכנה למבחן המיון
           </Heading>
           <Text as="p" variant="bodyLg" className="mt-ds-4 max-w-readable leading-relaxed text-muted">
-            {AMIRANT_COURSE_SYLLABUS_META.shortNoteHe} לפני שמתחילים את המסלול המלא: מידע על המבחן, מבוא לקורס, ומבחן קצר לדוגמה.
+            {AMIRANT_COURSE_SYLLABUS_META.shortNoteHe} שלבים 1–3 בדף זה בחינם. להמשך למסלול המלא נדרשים התחברות, השלמת שאלון קצר ורכישת גישה.
           </Text>
 
           <div
@@ -124,7 +131,7 @@ function PrepAmirantHubInner() {
                 מבחן לדוגמה — 10 שאלות
               </Heading>
               <Text as="p" variant="body" className="mb-ds-8 max-w-readable text-muted">
-                תרגול קצר ללא התחברות: השלמת משפטים, ניסוח מחדש והבנת הנקרא. בסיום תקבלו משוב מיידי — אותו מנוע שמשמש בקורס המלא.
+                תרגול קצר ללא התחברות: השלמת משפטים, ניסוח מחדש והבנת הנקרא. בסיום תקבלו משוב מיידי. להמשך לקורס המלא — הרשמה ורכישה (למטה).
               </Text>
               <AmirantPracticeFlow embedded shortQuizOnly />
             </div>
@@ -133,16 +140,40 @@ function PrepAmirantHubInner() {
       </Section>
 
       <Section tone="paper" padding="loose" className="border-t border-line/80">
-        <Container max="measureWide" className="flex flex-col items-start gap-ds-4 sm:flex-row sm:flex-wrap sm:items-center">
-          <ButtonLink href={courseHref} variant="primary" className="px-ds-5 py-ds-3">
-            התחילו את הקורס המלא
-          </ButtonLink>
-          <Link href={loginHref} className="text-sm font-semibold text-primary hover:underline">
-            התחברות לשמירת התקדמות
-          </Link>
-          <Link href={PREP_BASE} className="text-sm text-muted hover:text-primary">
-            ← חזרה לעמוד הבית
-          </Link>
+        <Container max="measureWide" className="space-y-ds-8">
+          <div>
+            <Heading level={2} className="text-lg md:text-xl">
+              המשך לקורס המלא
+            </Heading>
+            <ol className="mt-ds-5 grid gap-3 sm:grid-cols-2">
+              {CONTINUE_STEPS.map((step) => (
+                <li
+                  key={step.n}
+                  className="flex gap-3 rounded-surface border border-line/70 bg-surface-low/60 p-4"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-paper">
+                    {step.n}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-ink">{step.title}</p>
+                    <p className="mt-0.5 text-sm text-muted">{step.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="flex flex-col items-start gap-ds-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <ButtonLink href={continueHref} variant="primary" className="px-ds-5 py-ds-3">
+              המשך — הרשמה וגישה מלאה
+            </ButtonLink>
+            <Text as="p" variant="bodySm" className="max-w-md text-muted">
+              ננווט אתכם לפי המצב: התחברות → שאלון התאמה קצר → מחירון ותשלום → הקורס.
+            </Text>
+            <Link href={PREP_BASE} className="text-sm text-muted hover:text-primary">
+              ← חזרה לעמוד הבית
+            </Link>
+          </div>
         </Container>
       </Section>
     </div>

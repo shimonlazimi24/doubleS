@@ -9,10 +9,16 @@ import { Text } from "@/components/ui";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
 
+function safeNextPath(raw: string | null): string | null {
+  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return null;
+  return raw;
+}
+
 export function PrepPricingPage() {
   const searchParams = useSearchParams();
   const lockedModule = searchParams.get("module");
   const checkoutState = searchParams.get("checkout");
+  const afterPayPath = safeNextPath(searchParams.get("next"));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,6 +47,11 @@ export function PrepPricingPage() {
           התשלום בוטל. אפשר לנסות שוב בכל עת.
         </p>
       ) : null}
+      {afterPayPath ? (
+        <p className="rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm text-ink">
+          אחרי רכישה מוצלחת תועברו למסלול הלמידה. מודול המבוא זמין לעיון גם לפני רכישה.
+        </p>
+      ) : null}
       {lockedModule ? (
         <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
           המודול «{lockedModule}» זמין בגישה מלאה. מודול המבוא נשאר פתוח לעיון.
@@ -62,7 +73,7 @@ export function PrepPricingPage() {
             {busy ? "פותח תשלום…" : "רכישה מאובטחת"}
           </Button>
           <Link
-            href={`${PREP_BASE}/login?returnTo=${encodeURIComponent(`${PREP_BASE}/pricing`)}`}
+            href={`${PREP_BASE}/login?next=${encodeURIComponent(`${PREP_BASE}/pricing${afterPayPath ? `?next=${encodeURIComponent(afterPayPath)}` : ""}`)}`}
             className="inline-flex min-h-11 items-center rounded-control border border-line px-4 text-sm font-medium text-primary"
           >
             התחברות לפני רכישה
