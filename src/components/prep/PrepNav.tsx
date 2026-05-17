@@ -7,27 +7,32 @@ import { Container } from "@/components/ui";
 /** אזור לחיצה נוח במובייל (≈44px) — מפחית טעויות לחיצה בין פריטים צפופים */
 const navTap = "inline-flex min-h-[2.75rem] items-center";
 
+/**
+ * שורת הניווט ב־LTR: לוגו prePare משמאל, קישורים בעברית מימין (עם dir=rtl על התפריט).
+ */
 export function PrepNav() {
   return (
     <header className="sticky top-0 z-[100] border-b border-line/80 bg-paper shadow-nav">
-      <Container className="flex flex-wrap items-center justify-between gap-ds-3 py-ds-2">
-        <Link href={PREP_BASE} className={`${navTap} transition opacity-95 hover:opacity-100`}>
-          <PrepBrandLogo size="nav" priority />
+      <Container
+        dir="ltr"
+        className="flex min-h-[3.75rem] flex-wrap items-center justify-between gap-x-6 gap-y-2 py-2"
+      >
+        <Link
+          href={PREP_BASE}
+          className={`${navTap} shrink-0 transition hover:opacity-90`}
+          aria-label="prePare — דף הבית"
+        >
+          <PrepBrandLogo size="nav" priority align="start" />
         </Link>
-        <nav aria-label="ניווט ראשי" className="flex flex-wrap items-center gap-x-6 gap-y-3 md:gap-x-8">
-          <Link
-            href={PREP_BASE}
-            className={`${navTap} text-sm text-muted transition hover:text-primary`}
-          >
+
+        <nav
+          dir="rtl"
+          aria-label="ניווט ראשי"
+          className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-x-5 gap-y-2 md:gap-x-7"
+        >
+          <Link href={PREP_BASE} className={`${navTap} text-sm text-muted transition hover:text-primary`}>
             בית
           </Link>
-          <Link
-            href={`${PREP_BASE}/courses`}
-            className={`${navTap} text-sm text-muted transition hover:text-primary`}
-          >
-            קורסים
-          </Link>
-
           <PrepCoursesDropdown />
 
           <Link

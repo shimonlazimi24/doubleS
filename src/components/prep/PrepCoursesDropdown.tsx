@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { PREP_LEARNING_NAV } from "@/lib/prep/constants";
+import { PREP_COURSES } from "@/lib/prep/brand";
+import { PREP_BASE } from "@/lib/prep/constants";
+
+const CATALOG_ITEM = { href: `${PREP_BASE}/courses`, label: "כל ההכנות" } as const;
 
 const navTap = "inline-flex min-h-[2.75rem] items-center";
 
@@ -40,17 +43,49 @@ export function PrepCoursesDropdown() {
           className="min-w-[13rem] rounded-surface border border-line/90 bg-paper py-2 shadow-card"
           role="list"
         >
-          {PREP_LEARNING_NAV.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                onClick={close}
-                className="block min-h-[2.75rem] px-4 py-2.5 text-sm leading-snug text-ink transition hover:bg-surface-low hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link
+              href={CATALOG_ITEM.href}
+              onClick={close}
+              className="block min-h-[2.75rem] border-b border-line/60 px-4 py-2.5 text-sm font-semibold leading-snug text-ink transition hover:bg-surface-low hover:text-primary"
+            >
+              {CATALOG_ITEM.label}
+            </Link>
+          </li>
+          {PREP_COURSES.map((course) => {
+            const comingSoon = course.status === "coming_soon";
+            const rowClass =
+              "flex min-h-[2.75rem] items-center justify-between gap-3 px-4 py-2.5 text-sm leading-snug transition";
+
+            if (comingSoon) {
+              return (
+                <li key={course.id}>
+                  <Link
+                    href={course.href}
+                    onClick={close}
+                    className={`${rowClass} text-muted hover:bg-surface-low hover:text-ink`}
+                  >
+                    <span>{course.shortTitle}</span>
+                    <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                      בקרוב
+                    </span>
+                  </Link>
+                </li>
+              );
+            }
+
+            return (
+              <li key={course.id}>
+                <Link
+                  href={course.href}
+                  onClick={close}
+                  className={`${rowClass} text-ink hover:bg-surface-low hover:text-primary`}
+                >
+                  <span>{course.shortTitle}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </details>

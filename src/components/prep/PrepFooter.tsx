@@ -14,8 +14,8 @@ export function PrepFooter() {
   return (
     <footer className="border-t border-line bg-paper">
       <Container className="flex flex-col gap-ds-8 py-ds-10 md:flex-row md:items-start md:justify-between">
-        <div className="max-w-sm">
-          <PrepBrandLogo size="footer" />
+        <div dir="ltr" className="max-w-sm self-start">
+          <PrepBrandLogo size="footer" align="start" />
           <p className="mt-3 text-sm leading-body text-muted">{PREP_BRAND_NAV_HE}</p>
         </div>
         <nav aria-label="תחתית האתר" className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted">

@@ -34,7 +34,9 @@ export function PrepHomeHero() {
       </div>
 
       <Container className={cn("relative z-[12]", heroPadding)}>
-        <PrepBrandLogo size="hero" priority className="mb-ds-4" />
+        <div dir="ltr" className="mb-ds-6 self-start">
+          <PrepBrandLogo size="hero" priority align="start" />
+        </div>
         <Text as="p" variant="eyebrow" className="mb-ds-4 max-w-readable">
           {PREP_BRAND_NAV_HE}
         </Text>
