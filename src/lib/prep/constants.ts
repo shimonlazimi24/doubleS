@@ -45,6 +45,7 @@ export const PREP_PUBLIC_PATHS = new Set<string>([
   `${PREP_BASE}/privacy`,
   `${PREP_BASE}/login`,
   `${PREP_BASE}/auth/callback`,
+  `${PREP_BASE}/auth/complete`,
   `${PREP_BASE}/onboarding`,
 ]);
 

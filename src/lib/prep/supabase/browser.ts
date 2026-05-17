@@ -11,5 +11,12 @@ import { getPrepSupabasePublishableEnv } from "@/lib/prep/supabase/env";
 export function createPrepSupabaseBrowserClient() {
   const env = getPrepSupabasePublishableEnv();
   if (!env) return null;
-  return createBrowserClient(env.url, env.anonKey);
+  return createBrowserClient(env.url, env.anonKey, {
+    auth: {
+      flowType: "pkce",
+      detectSessionInUrl: true,
+      persistSession: true,
+      autoRefreshToken: true,
+    },
+  });
 }

@@ -33,6 +33,7 @@ export function PrepLoginForm() {
     [searchParams],
   );
   const errorKey = searchParams.get("error");
+  const errorDetail = searchParams.get("detail");
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
@@ -41,7 +42,7 @@ export function PrepLoginForm() {
   const callbackUrl = useMemo(() => {
     if (typeof window === "undefined") return "";
     const next = encodeURIComponent(returnTo);
-    return `${window.location.origin}${PREP_BASE}/auth/callback?next=${next}`;
+    return `${window.location.origin}${PREP_BASE}/auth/complete?next=${next}`;
   }, [returnTo]);
 
   const showGoogle = isGoogleOAuthEnabledInApp();
@@ -99,6 +100,9 @@ export function PrepLoginForm() {
       {errorKey ? (
         <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900" role="alert">
           {ERROR_MESSAGES[errorKey] ?? "שגיאת התחברות."}
+          {errorDetail && process.env.NODE_ENV === "development" ? (
+            <span className="mt-2 block font-mono text-xs opacity-80">{errorDetail}</span>
+          ) : null}
         </p>
       ) : null}
 

@@ -6,8 +6,9 @@
 2. **URL Configuration** (אותו תפריט):
    - **Site URL**: `http://localhost:3000` (פיתוח) או כתובת הפרודקשן.
    - **Redirect URLs** — הוסיפו (לכל סביבה):
-     - `http://localhost:3000/prep/auth/callback`
-     - `https://YOUR-DOMAIN/prep/auth/callback`
+     - `http://localhost:3000/prep/auth/complete`
+     - `https://YOUR-DOMAIN/prep/auth/complete`
+     - (אופציונלי, קישורים ישנים) `…/prep/auth/callback`
 3. ב־`.env`:
    ```env
    NEXT_PUBLIC_APP_URL=http://localhost:3000
@@ -41,6 +42,8 @@
 ב-**Authentication → URL Configuration**, ודאו ש-**Redirect URLs** כולל:
 
 ```
+http://localhost:3000/prep/auth/complete
+https://YOUR-DOMAIN/prep/auth/complete
 http://localhost:3000/prep/auth/callback
 https://YOUR-DOMAIN/prep/auth/callback
 ```
@@ -69,4 +72,4 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 | `redirect_uri_mismatch` (מ-Google) | הוסיפו `https://xxx.supabase.co/auth/v1/callback` ב-Google Console |
 | חזרה ל-login עם `error=auth` | בדקו Redirect URLs ב-Supabase; בדקו ש-`NEXT_PUBLIC_APP_URL` נכון |
 | Magic link לא מגיע | בדקו Email provider; ספאם; ב-Supabase אפשר SMTP מותאם |
-| חוזרים לאתר אבל לא מחוברים | ודאו Redirect URLs; פתחו את הקישור **באותו דפדפן** שבו שלחתם את המייל; בקשו קישור חדש |
+| חוזרים לאתר אבל לא מחוברים | Redirect URLs חייבים לכלול `/prep/auth/complete`; מפתח **anon** מטאב Legacy (`eyJ…`), לא `sb_publishable_`; קישור חדש באותו דפדפן |
