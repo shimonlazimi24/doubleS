@@ -7,7 +7,7 @@ import { Container, Heading, PageLayout, Section, Text } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "התחברות",
-  description: "התחברות ל-prePare — שמירת התקדמות וקורס אמירנט.",
+  description: "התחברות ל-prePare עם Google או קישור במייל — שמירת התקדמות וקורס אמירנט.",
 };
 
 export default function PrepLoginPage() {
@@ -25,7 +25,7 @@ export default function PrepLoginPage() {
             התחברות
           </Heading>
           <Text as="p" variant="body" className="mt-3 text-muted">
-            התחברו כדי לשמור התקדמות בין מכשירים, לראות דשבורד אישי ולגשת לתוכן בתשלום אחרי רכישה.
+            התחברו עם Google או בקישור במייל — כדי לשמור התקדמות, לסיים את שאלון ההתאמה ולגשת לקורס המלא אחרי רכישה.
           </Text>
         </Container>
       </PageLayout>

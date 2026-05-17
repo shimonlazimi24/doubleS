@@ -54,8 +54,11 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
   },
 ] as const;
 
+/** Google sign-in UI — off only with NEXT_PUBLIC_PREP_OAUTH_GOOGLE=0 when Supabase is set. */
 export function isGoogleOAuthEnabledInApp(): boolean {
   if (typeof process === "undefined") return false;
-  const v = process.env.NEXT_PUBLIC_PREP_OAUTH_GOOGLE;
-  return v === "1" || v === "true";
+  const v = process.env.NEXT_PUBLIC_PREP_OAUTH_GOOGLE?.trim().toLowerCase();
+  if (v === "0" || v === "false") return false;
+  if (v === "1" || v === "true") return true;
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL?.trim());
 }
