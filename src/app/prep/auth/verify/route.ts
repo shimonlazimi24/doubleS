@@ -1,8 +1,13 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
-import type { EmailOtpType } from "@supabase/supabase-js";
+import {
+  verifyPrepAuthToken,
+  verifyPrepAuthWithAdminLink,
+} from "@/lib/prep/auth-verify-server";
 import { getPrepSupabasePublishableEnv } from "@/lib/prep/supabase/env";
 import { PREP_BASE } from "@/lib/prep/constants";
+
+export const dynamic = "force-dynamic";
 
 type CookieToSet = { name: string; value: string; options?: CookieOptions };
 
@@ -11,10 +16,6 @@ function safeNextPath(next: string | null): string {
   return next;
 }
 
-/**
- * Server-side OTP / magic-link verification (dev script + direct links).
- * Sets session cookies on redirect — no PKCE verifier required.
- */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const tokenHash = searchParams.get("token_hash")?.trim();
@@ -23,7 +24,7 @@ export async function GET(request: NextRequest) {
   const typeParam = searchParams.get("type")?.trim() || "email";
   const next = safeNextPath(searchParams.get("next"));
   const origin = request.nextUrl.origin;
-  const secret = tokenHash || token;
+  const secret = token || tokenHash;
 
   const loginError = (detail: string) => {
     const q = new URLSearchParams({
@@ -43,7 +44,8 @@ export async function GET(request: NextRequest) {
     return loginError("missing_config");
   }
 
-  let response = NextResponse.redirect(`${origin}${next}`);
+  const redirectTarget = `${origin}${next}`;
+  let response = NextResponse.redirect(redirectTarget);
 
   const supabase = createServerClient(env.url, env.anonKey, {
     cookies: {
@@ -52,44 +54,51 @@ export async function GET(request: NextRequest) {
       },
       setAll(cookiesToSet: CookieToSet[]) {
         cookiesToSet.forEach(({ name, value, options }) => {
-          response.cookies.set(name, value, options);
+          response.cookies.set(name, value, {
+            ...options,
+            path: options?.path ?? "/",
+            sameSite: options?.sameSite ?? "lax",
+            secure: options?.secure ?? process.env.NODE_ENV === "production",
+          });
         });
       },
     },
   });
 
-  const typesToTry: EmailOtpType[] = [
-    typeParam as EmailOtpType,
-    "email",
-    "magiclink",
-    "signup",
-  ];
+  const verifyInput = {
+    url: env.url,
+    anonKey: env.anonKey,
+    email,
+    secret,
+    typeParam,
+  };
 
-  let lastMessage = "verify_failed";
-  const seen = new Set<string>();
+  let result = await verifyPrepAuthToken(supabase, verifyInput);
 
-  for (const otpType of typesToTry) {
-    if (seen.has(otpType)) continue;
-    seen.add(otpType);
-
-    const attempts = email
-      ? [
-          supabase.auth.verifyOtp({ email, token: secret, type: otpType }),
-          supabase.auth.verifyOtp({ email, token_hash: secret, type: otpType }),
-        ]
-      : [
-          supabase.auth.verifyOtp({ token_hash: secret, type: otpType }),
-        ];
-
-    for (const attempt of attempts) {
-      const { error } = await attempt;
-      if (!error) {
-        return response;
-      }
-      lastMessage = error.message;
+  if (!result.ok) {
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+    if (serviceKey && email) {
+      result = await verifyPrepAuthWithAdminLink(supabase, {
+        ...verifyInput,
+        serviceRoleKey: serviceKey,
+        redirectTo: `${origin}${PREP_BASE}/auth/complete?next=${encodeURIComponent(next)}`,
+      });
     }
   }
 
-  console.error("[prep/auth/verify]", lastMessage);
-  return loginError(lastMessage);
+  if (!result.ok) {
+    console.error("[prep/auth/verify]", result.message);
+    return loginError(result.message);
+  }
+
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+  if (userError || !user) {
+    console.error("[prep/auth/verify] no session after verify", userError?.message);
+    return loginError(userError?.message ?? "no_session");
+  }
+
+  return response;
 }

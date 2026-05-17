@@ -36,6 +36,7 @@ export const PREP_PUBLIC_PATHS = new Set<string>([
   `${PREP_BASE}/toefl`,
   `${PREP_BASE}/amirant`,
   `${PREP_BASE}/amirant/continue`,
+  `${PREP_BASE}/amirant/course`,
   `${PREP_BASE}/amirant/info`,
   `${PREP_BASE}/courses`,
   `${PREP_BASE}/pricing`,

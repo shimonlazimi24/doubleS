@@ -1,12 +1,7 @@
 /**
- * Dev-only: generate login URLs without sending email (bypasses OTP rate limit).
+ * Dev: login URL without email (bypasses OTP rate limit).
  *
- *   npm run prep:login-link -- you@example.com
  *   npm run prep:login-link -- you@example.com https://double-s.vercel.app
- *
- * Requires in .env.local:
- *   NEXT_PUBLIC_SUPABASE_URL
- *   SUPABASE_SERVICE_ROLE_KEY  (Settings → API → service_role — never commit)
  */
 import { createClient } from "@supabase/supabase-js";
 import { loadProjectEnv } from "./load-project-env.mjs";
@@ -28,11 +23,11 @@ if (!email || !email.includes("@")) {
 }
 
 if (!url || !serviceKey) {
-  console.error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in .env.local");
+  console.error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in .env");
   process.exit(1);
 }
 
-const nextPath = "/prep/amirant/continue";
+const nextPath = "/prep/amirant/course";
 const redirectTo = `${siteBase}/prep/auth/complete?next=${encodeURIComponent(nextPath)}`;
 
 const admin = createClient(url, serviceKey, {
@@ -50,25 +45,35 @@ if (error) {
   process.exit(1);
 }
 
-const hashed = data.properties?.hashed_token;
 const actionLink = data.properties?.action_link;
+if (actionLink) {
+  const action = new URL(actionLink);
+  const rawToken = action.searchParams.get("token");
+  const linkType = action.searchParams.get("type") || "email";
+  if (rawToken) {
+    const verify = new URL(`${siteBase}/prep/auth/verify`);
+    verify.searchParams.set("token", rawToken);
+    verify.searchParams.set("email", email);
+    verify.searchParams.set("type", linkType);
+    verify.searchParams.set("next", nextPath);
+    console.log("\n=== פתחו את הקישור הזה (התחברות → דף קורס) ===\n");
+    console.log(verify.toString());
+  }
+}
 
+const hashed = data.properties?.hashed_token;
 if (hashed) {
   const verify = new URL(`${siteBase}/prep/auth/verify`);
   verify.searchParams.set("token_hash", hashed);
   verify.searchParams.set("email", email);
   verify.searchParams.set("type", "email");
   verify.searchParams.set("next", nextPath);
-  console.log("\n=== פתחו את הקישור הזה (הכי אמין לבדיקה) ===\n");
+  console.log("\n=== גיבוי (token_hash) ===\n");
   console.log(verify.toString());
 }
 
-if (actionLink) {
-  console.log("\n=== חלופי: קישור Supabase (אחרי אימות → hash ב-URL) ===\n");
-  console.log(actionLink);
-}
-
-console.log("\nSupabase → Redirect URLs חייב לכלול:");
+console.log("\nSupabase → Redirect URLs:");
 console.log(`  ${siteBase}/prep/auth/verify`);
 console.log(`  ${siteBase}/prep/auth/complete`);
+console.log("\nVercel (שרת): הוסיפו SUPABASE_SERVICE_ROLE_KEY ל-fallback אם verify נכשל.");
 console.log("");
