@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-04-25T11:01:38.031Z",
+  "importedRealSentenceCompletionQuestions": 85,
+  "importedByFile": [
+    {
+      "fileName": "SAMPLE_sc_quiz_1_easy.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_2_easy.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_3_intermediate.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_4_intermediate.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_5_hard.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_6_hard.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_7_mixed.md",
+      "parsedQuestions": 10,
+      "parsedAnswers": 10,
+      "importedQuestions": 10
+    },
+    {
+      "fileName": "sc_quiz_8_mixed.md",
+      "parsedQuestions": 15,
+      "parsedAnswers": 15,
+      "importedQuestions": 15
+    }
+  ],
+  "mergeStats": {
+    "replacedById": 75,
+    "addedNewRealQuestions": 10,
+    "markedGeneratedDemoOnly": 103,
+    "untouched": 297
+  },
+  "sentenceCompletionCoverageByDifficulty": {
+    "1": 15,
+    "2": 24,
+    "3": 41,
+    "4": 48,
+    "5": 34,
+    "6": 23
+  },
+  "totalCoverageByDifficulty": {
+    "1": 75,
+    "2": 74,
+    "3": 105,
+    "4": 84,
+    "5": 74,
+    "6": 73
+  }
+}

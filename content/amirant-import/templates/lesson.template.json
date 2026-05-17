@@ -1,0 +1,24 @@
+{
+  "courseSlug": "amirant-preparation",
+  "moduleSlug": "introduction",
+  "lessonId": "intro-exam-look",
+  "lessonTitle": "",
+  "lessonKind": "text",
+  "estimatedMinutes": 20,
+  "contentBlocks": [
+    { "type": "intro", "title": "", "body": "" },
+    { "type": "explanation", "title": "", "body": "" },
+    { "type": "examples", "title": "", "items": [""] },
+    { "type": "summary", "title": "", "bullets": [""] }
+  ],
+  "transcriptOrAudioNotes": {
+    "transcriptText": "",
+    "audioNotes": [""]
+  },
+  "aiRetrievalText": "",
+  "source": {
+    "sourceDocName": "",
+    "owner": "",
+    "version": "v1.0"
+  }
+}

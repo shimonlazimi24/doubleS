@@ -1,0 +1,29 @@
+{
+  "courseSlug": "amirant-preparation",
+  "questionId": "",
+  "topic": "vocabulary",
+  "subtopic": "",
+  "difficultyLevel": 3,
+  "questionType": "single_choice",
+  "questionText": "",
+  "options": [
+    { "id": "a", "label": "" },
+    { "id": "b", "label": "" },
+    { "id": "c", "label": "" },
+    { "id": "d", "label": "" }
+  ],
+  "correctOptionId": "a",
+  "explanation": "",
+  "distractorExplanations": {
+    "b": "",
+    "c": "",
+    "d": ""
+  },
+  "estimatedTimeSec": 50,
+  "tags": [""],
+  "source": {
+    "originLessonId": "",
+    "reviewedBy": "",
+    "reviewStatus": "draft"
+  }
+}

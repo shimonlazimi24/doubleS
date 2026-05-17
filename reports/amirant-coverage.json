@@ -1,0 +1,376 @@
+{
+  "rows": [
+    {
+      "syllabusSectionId": "intro-exam-look",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-scores-tracks",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-how-prep",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-maalau-register",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-institution-register",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-retake-rules",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-exam-day-rules",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-using-course",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-timeline-prep",
+      "mappedModule": "introduction",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "intro-time-pressure",
+      "mappedModule": "introduction",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-glossary",
+      "mappedModule": "vocabulary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-easy",
+      "mappedModule": "vocabulary",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-mid",
+      "mappedModule": "vocabulary",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-hard",
+      "mappedModule": "vocabulary",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-flashcards",
+      "mappedModule": "vocabulary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "vocab-self-tests",
+      "mappedModule": "vocabulary",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-guide",
+      "mappedModule": "sentence-completion",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-video",
+      "mappedModule": "sentence-completion",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-pack-easy",
+      "mappedModule": "sentence-completion",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-pack-mid",
+      "mappedModule": "sentence-completion",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-pack-hard",
+      "mappedModule": "sentence-completion",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sc-pack-adaptive",
+      "mappedModule": "sentence-completion",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-guide",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-video",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-pack-easy",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-pack-mid",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-pack-hard",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rs-pack-adaptive",
+      "mappedModule": "sentence-rephrasing",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-guide",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-video",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-pack-easy",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-pack-mid",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-pack-hard",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "rc-pack-adaptive",
+      "mappedModule": "reading-comprehension",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-listening",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-listen-gap",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-word-formation",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-grammar-context",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "question_bank_batch",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-writing",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "pilot-scoring-note",
+      "mappedModule": "new-exam-format-2026",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-howto",
+      "mappedModule": "full-simulations",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-five-six",
+      "mappedModule": "full-simulations",
+      "artifactType": "simulation_section",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-ai",
+      "mappedModule": "full-simulations",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-calc",
+      "mappedModule": "full-simulations",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-tips",
+      "mappedModule": "tips-strategies",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-before",
+      "mappedModule": "tips-strategies",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-during",
+      "mappedModule": "tips-strategies",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-techniques",
+      "mappedModule": "tips-strategies",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-after",
+      "mappedModule": "course-summary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-summary-course",
+      "mappedModule": "course-summary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-quiz-final",
+      "mappedModule": "course-summary",
+      "artifactType": "practice_set",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-feedback",
+      "mappedModule": "course-summary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    },
+    {
+      "syllabusSectionId": "sim-upsell",
+      "mappedModule": "course-summary",
+      "artifactType": "lesson",
+      "status": "implemented"
+    }
+  ],
+  "questionsByTopic": {
+    "sentence_completion": 100,
+    "rephrasing": 90,
+    "vocabulary": 120,
+    "reading_comprehension": 90
+  },
+  "questionsBySubtopic": {
+    "sentence_completion-unit-1-3-entry-diagnostic-test": 6,
+    "rephrasing-unit-1-3-entry-diagnostic-test": 4,
+    "vocabulary-unit-1-3-entry-diagnostic-test": 5,
+    "sentence_completion-sc-quiz-2-easy": 10,
+    "sentence_completion-sc-quiz-3-intermediate": 10,
+    "sentence_completion-sc-quiz-4-intermediate": 10,
+    "sentence_completion-sc-quiz-5-hard": 10,
+    "sentence_completion-sc-quiz-6-hard": 10,
+    "rephrasing-restatement-quiz-1-easy": 10,
+    "rephrasing-restatement-quiz-2-easy": 10,
+    "rephrasing-restatement-quiz-3-intermediate": 10,
+    "rephrasing-restatement-quiz-4-intermediate": 10,
+    "rephrasing-restatement-quiz-5-hard": 10,
+    "rephrasing-restatement-quiz-6-hard": 10,
+    "rephrasing-sample-restatement-quiz-intermediate": 10,
+    "reading_comprehension-reading-comp-quiz-1-easy": 6,
+    "reading_comprehension-reading-comp-quiz-2-easy": 5,
+    "reading_comprehension-reading-comp-quiz-3-intermediate": 5,
+    "reading_comprehension-reading-comp-quiz-4-intermediate": 5,
+    "reading_comprehension-reading-comp-quiz-5-hard": 5,
+    "reading_comprehension-reading-comp-quiz-6-hard": 5,
+    "reading_comprehension-reading-comp-quiz-7-mixed": 10,
+    "reading_comprehension-reading-comp-quiz-8-mixed": 5,
+    "vocabulary-reading-comp-quiz-8-mixed": 5,
+    "reading_comprehension-simulation-1-baseline": 5,
+    "rephrasing-simulation-1-baseline": 6,
+    "vocabulary-generated-bulk": 110,
+    "sentence_completion-generated-bulk": 44,
+    "rephrasing-generated-bulk": 10,
+    "reading_comprehension-generated-bulk": 39
+  },
+  "questionsByDifficulty": {
+    "1": 60,
+    "2": 60,
+    "3": 90,
+    "4": 70,
+    "5": 60,
+    "6": 60
+  },
+  "minimumRequired": {
+    "totalQuestions": 400,
+    "minPerTopic": 80,
+    "minPerDifficulty": 50
+  },
+  "gapCount": {
+    "totalQuestions": 0
+  }
+}

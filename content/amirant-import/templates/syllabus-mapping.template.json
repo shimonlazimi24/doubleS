@@ -1,0 +1,101 @@
+{
+  "courseSlug": "amirant-preparation",
+  "mappingVersion": "v1",
+  "parts": [
+    {
+      "partId": "intro",
+      "partTitle": "מבוא",
+      "items": [
+        { "syllabusBulletId": "intro-exam-look", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-scores-tracks", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-how-prep", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-maalau-register", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-institution-register", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-retake-rules", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-exam-day-rules", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-using-course", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-timeline-prep", "artifactType": "lesson", "moduleSlug": "introduction" },
+        { "syllabusBulletId": "intro-time-pressure", "artifactType": "practice_set", "moduleSlug": "introduction" }
+      ]
+    },
+    {
+      "partId": "vocab",
+      "partTitle": "מילון מושגים ואוצר מילים",
+      "items": [
+        { "syllabusBulletId": "vocab-glossary", "artifactType": "lesson", "moduleSlug": "vocabulary" },
+        { "syllabusBulletId": "vocab-easy", "artifactType": "question_bank_batch", "moduleSlug": "vocabulary" },
+        { "syllabusBulletId": "vocab-mid", "artifactType": "question_bank_batch", "moduleSlug": "vocabulary" },
+        { "syllabusBulletId": "vocab-hard", "artifactType": "question_bank_batch", "moduleSlug": "vocabulary" },
+        { "syllabusBulletId": "vocab-flashcards", "artifactType": "lesson", "moduleSlug": "vocabulary" },
+        { "syllabusBulletId": "vocab-self-tests", "artifactType": "practice_set", "moduleSlug": "vocabulary" }
+      ]
+    },
+    {
+      "partId": "sentence-completion",
+      "partTitle": "השלמת מילים במשפט",
+      "items": [
+        { "syllabusBulletId": "sc-guide", "artifactType": "lesson", "moduleSlug": "sentence-completion" },
+        { "syllabusBulletId": "sc-video", "artifactType": "lesson", "moduleSlug": "sentence-completion" },
+        { "syllabusBulletId": "sc-pack-easy", "artifactType": "question_bank_batch", "moduleSlug": "sentence-completion" },
+        { "syllabusBulletId": "sc-pack-mid", "artifactType": "question_bank_batch", "moduleSlug": "sentence-completion" },
+        { "syllabusBulletId": "sc-pack-hard", "artifactType": "question_bank_batch", "moduleSlug": "sentence-completion" },
+        { "syllabusBulletId": "sc-pack-adaptive", "artifactType": "practice_set", "moduleSlug": "sentence-completion" }
+      ]
+    },
+    {
+      "partId": "restatement",
+      "partTitle": "ניסוח משפטים מחדש",
+      "items": [
+        { "syllabusBulletId": "rs-guide", "artifactType": "lesson", "moduleSlug": "sentence-rephrasing" },
+        { "syllabusBulletId": "rs-video", "artifactType": "lesson", "moduleSlug": "sentence-rephrasing" },
+        { "syllabusBulletId": "rs-pack-easy", "artifactType": "question_bank_batch", "moduleSlug": "sentence-rephrasing" },
+        { "syllabusBulletId": "rs-pack-mid", "artifactType": "question_bank_batch", "moduleSlug": "sentence-rephrasing" },
+        { "syllabusBulletId": "rs-pack-hard", "artifactType": "question_bank_batch", "moduleSlug": "sentence-rephrasing" },
+        { "syllabusBulletId": "rs-pack-adaptive", "artifactType": "practice_set", "moduleSlug": "sentence-rephrasing" }
+      ]
+    },
+    {
+      "partId": "reading",
+      "partTitle": "קטעי קריאה",
+      "items": [
+        { "syllabusBulletId": "rc-guide", "artifactType": "lesson", "moduleSlug": "reading-comprehension" },
+        { "syllabusBulletId": "rc-video", "artifactType": "lesson", "moduleSlug": "reading-comprehension" },
+        { "syllabusBulletId": "rc-pack-easy", "artifactType": "question_bank_batch", "moduleSlug": "reading-comprehension" },
+        { "syllabusBulletId": "rc-pack-mid", "artifactType": "question_bank_batch", "moduleSlug": "reading-comprehension" },
+        { "syllabusBulletId": "rc-pack-hard", "artifactType": "question_bank_batch", "moduleSlug": "reading-comprehension" },
+        { "syllabusBulletId": "rc-pack-adaptive", "artifactType": "practice_set", "moduleSlug": "reading-comprehension" }
+      ]
+    },
+    {
+      "partId": "pilot-2026",
+      "partTitle": "פיילוט ורפורמות",
+      "items": [
+        { "syllabusBulletId": "pilot-listening", "artifactType": "lesson", "moduleSlug": "new-exam-format-2026" },
+        { "syllabusBulletId": "pilot-listen-gap", "artifactType": "question_bank_batch", "moduleSlug": "new-exam-format-2026" },
+        { "syllabusBulletId": "pilot-word-formation", "artifactType": "question_bank_batch", "moduleSlug": "new-exam-format-2026" },
+        { "syllabusBulletId": "pilot-grammar-context", "artifactType": "question_bank_batch", "moduleSlug": "new-exam-format-2026" },
+        { "syllabusBulletId": "pilot-writing", "artifactType": "lesson", "moduleSlug": "new-exam-format-2026" },
+        { "syllabusBulletId": "pilot-scoring-note", "artifactType": "lesson", "moduleSlug": "new-exam-format-2026" }
+      ]
+    },
+    {
+      "partId": "full-sims",
+      "partTitle": "סימולציות מלאות וסיום",
+      "items": [
+        { "syllabusBulletId": "sim-howto", "artifactType": "lesson", "moduleSlug": "full-simulations" },
+        { "syllabusBulletId": "sim-five-six", "artifactType": "simulation_section", "moduleSlug": "full-simulations" },
+        { "syllabusBulletId": "sim-ai", "artifactType": "lesson", "moduleSlug": "full-simulations" },
+        { "syllabusBulletId": "sim-calc", "artifactType": "lesson", "moduleSlug": "full-simulations" },
+        { "syllabusBulletId": "sim-tips", "artifactType": "lesson", "moduleSlug": "tips-strategies" },
+        { "syllabusBulletId": "sim-before", "artifactType": "lesson", "moduleSlug": "tips-strategies" },
+        { "syllabusBulletId": "sim-during", "artifactType": "lesson", "moduleSlug": "tips-strategies" },
+        { "syllabusBulletId": "sim-techniques", "artifactType": "lesson", "moduleSlug": "tips-strategies" },
+        { "syllabusBulletId": "sim-after", "artifactType": "lesson", "moduleSlug": "course-summary" },
+        { "syllabusBulletId": "sim-summary-course", "artifactType": "lesson", "moduleSlug": "course-summary" },
+        { "syllabusBulletId": "sim-quiz-final", "artifactType": "practice_set", "moduleSlug": "course-summary" },
+        { "syllabusBulletId": "sim-feedback", "artifactType": "lesson", "moduleSlug": "course-summary" },
+        { "syllabusBulletId": "sim-upsell", "artifactType": "lesson", "moduleSlug": "course-summary" }
+      ]
+    }
+  ]
+}

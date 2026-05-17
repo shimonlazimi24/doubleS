@@ -1,0 +1,53 @@
+{
+  "name": "education",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "rimraf .next && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test:amirant": "vitest run --config vitest.config.mts",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:install": "playwright install chromium",
+    "ingest:amirant-wave1": "node scripts/amirant-wave1-ingest-and-report.mjs",
+    "ingest:amirant-full": "node scripts/ingest-amirant-full-course.mjs",
+    "qa:amirant-content": "node scripts/qa-amirant-content.mjs",
+    "embeddings:amirant-sync": "node scripts/sync-amirant-content-embeddings.mjs",
+    "rag:amirant-health": "node scripts/check-amirant-rag-health.mjs",
+    "ai:health": "node scripts/check-amirant-ai-health.mjs",
+    "security:preflight": "node scripts/security-preflight.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify:amirant-rls": "node scripts/verify-amirant-rls.mjs",
+    "coverage:amirant-content": "node scripts/amirant-content-coverage.mjs",
+    "seed:amirant": "node -e \"console.log('Run against your DB: psql \\\"$DATABASE_URL\\\" -f supabase/seeds/amirant-demo.sql'); console.log('Docs: supabase/seeds/README-amirant-demo.md')\""
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@sentry/nextjs": "^10.50.0",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.103.0",
+    "next": "14.2.35",
+    "openai": "^6.34.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8.4.47",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
+  }
+}

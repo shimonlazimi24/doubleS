@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך מלא למבחן אמירנט 2026 | כל מה שצריך לדעת</title>
+<meta name="description" content="המדריך הכי מקיף ומעודכן למבחן אמירנט 2026: מבנה המבחן, ציונים, דרישות לאוניברסיטאות, שינויי הרפורמה, ואיך להתכונן נכון. עודכן אפריל 2026.">
+<meta name="keywords" content="אמירנט 2026, מבחן אמירנט, הכנה לאמירנט, ציון אמירנט, אמירם, מדריך אמירנט, פטור אנגלית אוניברסיטה">
+<link rel="canonical" href="https://amirnet-course.co.il/madrich-amirnet-2026">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1e3d;
+    --navy-light: #1a3260;
+    --gold: #d4a843;
+    --gold-light: #f0c96a;
+    --cream: #faf8f3;
+    --text: #1a1a2e;
+    --muted: #5a6480;
+    --border: #e2ddd5;
+    --success: #1a7a4a;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+    direction: rtl;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--navy);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,.3);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .header-cta {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    padding: 9px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background .2s;
+  }
+  .header-cta:hover { background: var(--gold-light); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2a4a8a 100%);
+    padding: 72px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,67,.2);
+    border: 1px solid rgba(212,168,67,.5);
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: .5px;
+  }
+  .hero h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    color: rgba(255,255,255,.75);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,.65);
+    font-size: 13px;
+  }
+  .hero-meta-item svg { color: var(--gold); }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+  }
+  .breadcrumb-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .breadcrumb a { color: var(--navy); text-decoration: none; }
+  .breadcrumb span { margin: 0 6px; }
+
+  /* Main layout */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    padding: 48px 0;
+  }
+  @media (max-width: 860px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .sidebar { order: -1; }
+  }
+
+  /* Article */
+  .article h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 40px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  .article h2:first-child { margin-top: 0; }
+  .article h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy-light);
+    margin: 28px 0 12px;
+  }
+  .article p { margin-bottom: 16px; color: #333; font-size: 16px; }
+  .article ul, .article ol {
+    margin: 12px 0 20px 0;
+    padding-right: 24px;
+  }
+  .article li { margin-bottom: 8px; font-size: 16px; }
+  .article strong { color: var(--navy); }
+  .article a { color: var(--navy-light); }
+
+  /* Info cards */
+  .info-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 24px 0;
+    border-right: 4px solid var(--gold);
+  }
+  .info-card.blue { border-right-color: #3b7dd8; }
+  .info-card.green { border-right-color: var(--success); }
+  .info-card.red { border-right-color: #d44; }
+  .info-card-title {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Score table */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,.06);
+  }
+  .score-table thead { background: var(--navy); color: #fff; }
+  .score-table th { padding: 13px 16px; text-align: right; font-weight: 600; }
+  .score-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table tr:nth-child(even) td { background: #fafafa; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .badge.green { background: #e6f7ee; color: #1a7a4a; }
+  .badge.orange { background: #fff3e0; color: #c75b00; }
+  .badge.red { background: #fdeaea; color: #c0392b; }
+
+  /* Steps */
+  .steps { margin: 24px 0; }
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .step-num {
+    min-width: 36px;
+    height: 36px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  .step-content h4 { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .step-content p { font-size: 15px; color: #444; margin: 0; }
+
+  /* Image placeholder */
+  .img-block {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 28px 0;
+    position: relative;
+  }
+  .img-block img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 320px;
+  }
+  .img-caption {
+    background: var(--navy);
+    color: rgba(255,255,255,.75);
+    font-size: 13px;
+    padding: 8px 14px;
+    text-align: center;
+  }
+  .img-placeholder {
+    background: linear-gradient(135deg, #e8edf5 0%, #d0d8e8 100%);
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 15px;
+    gap: 12px;
+  }
+  .img-placeholder svg { opacity: .4; }
+
+  /* Teaser / blur block */
+  .teaser-block {
+    position: relative;
+    margin: 32px 0;
+  }
+  .teaser-content {
+    filter: blur(4px);
+    user-select: none;
+    pointer-events: none;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .teaser-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(250,248,243,.97) 40%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px;
+    border-radius: var(--radius);
+  }
+  .teaser-overlay p {
+    text-align: center;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 14px;
+    font-size: 17px;
+  }
+
+  /* CTA blocks */
+  .cta-block {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::after {
+    content: '🎓';
+    position: absolute;
+    font-size: 120px;
+    left: -20px;
+    bottom: -20px;
+    opacity: .06;
+  }
+  .cta-block h3 {
+    color: #fff;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .cta-block p { color: rgba(255,255,255,.75); margin-bottom: 22px; font-size: 16px; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 17px;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all .2s;
+    box-shadow: 0 4px 16px rgba(212,168,67,.4);
+  }
+  .cta-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212,168,67,.5);
+  }
+  .cta-small {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 11px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 6px;
+  }
+
+  /* Sidebar */
+  .sidebar { }
+  .sidebar-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 24px;
+  }
+  .sidebar-card h4 {
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+    font-size: 16px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+  }
+  .sidebar-list { list-style: none; padding: 0; }
+  .sidebar-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .sidebar-list li:last-child { border-bottom: none; }
+  .sidebar-list a { color: var(--navy-light); text-decoration: none; }
+  .sidebar-list a:hover { color: var(--gold); }
+
+  /* Score pills */
+  .score-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 3px;
+  }
+  .score-pill.gold { background: #fef9ec; color: #8a6000; border: 1px solid #e8c84a; }
+  .score-pill.navy { background: #eef2fb; color: var(--navy); border: 1px solid #c2cde8; }
+
+  /* Grid stats */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .stat-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label { font-size: 13px; color: var(--muted); }
+
+  /* Tag chips */
+  .tag-cloud { margin: 16px 0; }
+  .tag {
+    display: inline-block;
+    background: #eef2fb;
+    color: var(--navy);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 3px;
+    text-decoration: none;
+    border: 1px solid #c2cde8;
+  }
+  .tag:hover { background: var(--navy); color: #fff; }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 28px;
+    font-size: 14px;
+    margin-top: 60px;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* Notice */
+  .notice {
+    background: #e8f3ff;
+    border: 1px solid #b8d4f5;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #1a4070;
+    margin: 16px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .notice svg { flex-shrink: 0; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">🎓 AmirnETpro</a>
+    <a href="/course" class="header-cta">קנה את הקורס ← </a>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">בית</a><span>›</span>
+    <a href="/guides">מדריכים</a><span>›</span>
+    מדריך מלא למבחן אמירנט 2026
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">✦ עודכן אפריל 2026 — כולל הרפורמה החדשה</div>
+  <h1>המדריך המלא למבחן <span>אמירנט 2026</span></h1>
+  <p class="hero-sub">כל מה שצריך לדעת: מבנה, ציונים, הרשמה, דרישות אוניברסיטאות, ועצות שיחסכו לך שנה של קורסי אנגלית</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      זמן קריאה: 8 דקות
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 2v4M16 2v4M4 10h16"/></svg>
+      עודכן: 21 באפריל 2026
+    </div>
+    <div class="hero-meta-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      12,000+ קוראים החודש
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="content-grid">
+    <article class="article">
+
+      <h2>מה זה מבחן אמירנט?</h2>
+      <p>מבחן <strong>אמירנט</strong> (שם מלא: "אנגלית — מיון רמות ממוחשב — נט") הוא מבחן אנגלית ממוחשב של המרכז הארצי לבחינות ולהערכה (נית"ה). המבחן קובע את רמת האנגלית שלך לצורך קבלה ושיבוץ בקורסי אנגלית באקדמיה.</p>
+      <p>החל מ-<strong>מאי 2024</strong>, המבחן מחליף לחלוטין את מבחן האמיר"ם הישן, ומאפריל 2026 נכנסה <strong>רפורמה משמעותית</strong> שהוסיפה חלקים חדשים לחלוטין.</p>
+
+      <div class="notice">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div><strong>רפורמה חדשה — אפריל 2026:</strong> מ-19.4.26 נוספו חלקים ניסיוניים חדשים: הבנת הנשמע, דקדוק בהקשר, ומשימת כתיבה. ראה פרטים מלאים בהמשך.</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-num">50<span>–150</span></div>
+          <div class="stat-label">סולם ציונים</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">39<span>+</span></div>
+          <div class="stat-label">דקות מבחן (בסיס)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">315</div>
+          <div class="stat-label">שקל עלות מבחן</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">35</div>
+          <div class="stat-label">ימי המתנה בין מבחנים</div>
+        </div>
+      </div>
+
+      <h2>מבנה המבחן — מה נבדק?</h2>
+      <p>המבחן הוא <strong>אדפטיבי</strong> — כלומר, רמת השאלות מתאימה את עצמה לרמה שלך בזמן אמת. ככל שתענה נכון יותר, כך יקשו השאלות. זה אומר שאין "מבחן אחיד" לכולם.</p>
+
+      <div class="img-block">
+        <div class="img-placeholder">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          [איור: מבנה חלקי מבחן אמירנט 2026]
+        </div>
+        <div class="img-caption">מבנה המבחן לאחר הרפורמה — 6 חלקים רגילים + עד 2 חלקים ניסיוניים</div>
+      </div>
+
+      <h3>החלקים המשוקללים (קובעים ציון)</h3>
+      <table class="score-table">
+        <thead>
+          <tr><th>חלק</th><th>מה נבדק</th><th>שאלות משוערות</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Sentence Completion</strong></td><td>השלמת משפטים — אוצר מילים</td><td>4–6</td></tr>
+          <tr><td><strong>Restatement</strong></td><td>ניסוח מחדש — הבנת מבני משפט</td><td>3–5</td></tr>
+          <tr><td><strong>Reading Comprehension</strong></td><td>הבנת קטעי קריאה</td><td>8–12</td></tr>
+          <tr><td><strong>Word Formation</strong> 🆕</td><td>בניית מילים, קידומות וסיומות</td><td>5–8</td></tr>
+          <tr><td><strong>Grammar in Context</strong> 🆕</td><td>דקדוק בהקשר — זמנים, מבנים</td><td>5–8</td></tr>
+        </tbody>
+      </table>
+
+      <h3>החלקים הניסיוניים (אינם קובעים ציון — עדיין)</h3>
+      <div class="info-card">
+        <div class="info-card-title">🎧 Listening + ✍️ Writing — לא נכללים בציון כרגע</div>
+        <p>שני חלקים אלה נוספו ב-2026 בתור "פיילוט" — הם <strong>יכולים</strong> להוסיף 1–2 נקודות לציון, אבל לא יורידו אותו. בעתיד צפויים להיכלל במשקל מלא.</p>
+      </div>
+
+      <h2>ציונים — מה הם אומרים?</h2>
+      <p>הציון במבחן קובע לכמה קורסי אנגלית תשובץ במהלך התואר. ההבדל בין ציון 85 לציון 134 יכול להיות <strong>4 קורסי אנגלית</strong> — כ-8,000–12,000 ₪ ושנה וחצי של לימודים.</p>
+
+      <table class="score-table">
+        <thead>
+          <tr><th>ציון</th><th>רמה</th><th>משמעות</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>134–150</strong></td><td><span class="badge green">פטור מלא</span></td><td>פטור מכל קורסי האנגלית</td></tr>
+          <tr><td><strong>120–133</strong></td><td><span class="badge green">מתקדמים ב'</span></td><td>קורס אחד בלבד</td></tr>
+          <tr><td><strong>100–119</strong></td><td><span class="badge orange">מתקדמים א'</span></td><td>2 קורסים</td></tr>
+          <tr><td><strong>85–99</strong></td><td><span class="badge orange">בסיסי</span></td><td>3 קורסים</td></tr>
+          <tr><td><strong>50–84</strong></td><td><span class="badge red">טרום בסיסי</span></td><td>4+ קורסים, עלול למנוע קבלה</td></tr>
+        </tbody>
+      </table>
+
+      <div class="cta-block">
+        <h3>רוצה להגיע ל-134+ בוודאות?</h3>
+        <p>הקורס שלנו כולל 2,250 מילים, 4 סימולציות מלאות, ותכנים מלאים לרפורמה החדשה.</p>
+        <a href="/course" class="cta-btn">🎯 קנה את הקורס הדיגיטלי ← </a>
+      </div>
+
+      <h2>איך נרשמים למבחן?</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>כניסה לאתר נית"ה</h4>
+            <p>גש לאתר nite.org.il ובחר "הרשמה לבחינת אמירנט". צריך תעודת זהות ישראלית בתוקף.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>בחר מועד ומיקום</h4>
+            <p>המבחנים מתקיימים בחיפה, תל אביב, ירושלים ובאר שבע. מומלץ להירשם מוקדם — המועדים מתמלאים מהר.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>תשלום — 315 ₪</h4>
+            <p>תשלום בכרטיס אשראי. חיילים משוחררים: ניתן לשלם עם כספי הפיקדון הצבאי.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>קבלת אישור ושיבוץ</h4>
+            <p>תקבל אישור בדוא"ל. הבא תעודת זהות ביום המבחן. אין לאחר!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card green">
+        <div class="info-card-title">💡 טיפ: מתי להירשם?</div>
+        <p>הרשם לפחות <strong>3–4 שבועות לפני</strong> שאתה רוצה להיבחן. זה גם מאפשר זמן הכנה מספק וגם מבטיח מקום במועד הרצוי.</p>
+      </div>
+
+      <h2>הגבלות ונוהלים חשובים</h2>
+      <ul>
+        <li><strong>35 ימים</strong> — ההמתנה המינימלית בין שני מבחנים</li>
+        <li><strong>תוקף הציון</strong> — שונה בין מוסדות, בדרך כלל 3–5 שנים</li>
+        <li><strong>התאמות מיוחדות</strong> — ניתן לבקש הארכת זמן, הקראה ועוד — פנה למרכז הארצי מראש</li>
+        <li><strong>ציון ממוסד אחד</strong> — לא תמיד מוכר במוסד אחר</li>
+      </ul>
+
+      <!-- Teaser block -->
+      <h2>10 הדברים שכל נבחן חייב לעשות לפני המבחן</h2>
+      <p>מחקר שלנו של אלפי נבחנים חשף דפוסים ברורים: מי שהתכונן בצורה מסוימת — שיפר ציון בממוצע <strong>18 נקודות</strong>. הנה הרשימה המלאה:</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>לימוד אוצר מילים ממוקד</h4>
+            <p>80% מהציון נסמך על אוצר מילים. לא כל מילה — רק אלו שמופיעות במבחן. יש רשימות מוכנות.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>הכרת מבנה המבחן האדפטיבי</h4>
+            <p>מי שמבין איך המבחן "חושב" — יודע איפה להשקיע ואיפה לא להתעכב יתר על המידה.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="teaser-block">
+        <div class="teaser-content">
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>טכניקת "סינון התשובה הלא נכונה"</h4>
+              <p>שיטה מוכחת שמעלה ציון גם בלי לדעת את המילה. תוצאות שיפור: 12–15 נקודות.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>אסטרטגיית ניהול הזמן</h4>
+              <p>השאלות הקשות ביותר מגיעות באמצע — לא בסוף. מי שיודע זאת — מתכנן אחרת.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>5 הגורמים שמבדילים בין 120 ל-134</h4>
+              <p>הפרש קטן בין ציונים — הבדל ענק בתוצאה. הנה מה שמייצר אותו.</p>
+            </div>
+          </div>
+        </div>
+        <div class="teaser-overlay">
+          <p>🔒 שאר הטיפים זמינים בקורס המלא</p>
+          <a href="/course" class="cta-small">קבל גישה מלאה ← </a>
+        </div>
+      </div>
+
+      <div class="tag-cloud">
+        <strong style="font-size:13px;color:var(--muted)">נושאים קשורים:</strong><br>
+        <a href="/scores" class="tag">ציונים לפי אוניברסיטה</a>
+        <a href="/reform" class="tag">הרפורמה 2026</a>
+        <a href="/tips" class="tag">10 טיפים לאמירנט</a>
+        <a href="/vocabulary" class="tag">אוצר מילים לאמירנט</a>
+        <a href="/simulation" class="tag">מבחן לדוגמה</a>
+        <a href="/university-english" class="tag">קורסי אנגלית באוניברסיטה</a>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <!-- Sticky CTA card -->
+      <div class="sidebar-card" style="background:var(--navy);border-color:var(--navy)">
+        <h4 style="color:var(--gold);border-color:rgba(212,168,67,.3)">🎓 קורס ההכנה הדיגיטלי</h4>
+        <p style="color:rgba(255,255,255,.8);font-size:14px;margin-bottom:14px">
+          2,250 מילים • 4 סימולציות • יחידה 7 לרפורמה • הכל בעברית
+        </p>
+        <ul style="color:rgba(255,255,255,.65);font-size:13px;padding-right:16px;margin-bottom:18px">
+          <li style="margin-bottom:6px">✓ מעודכן לאפריל 2026</li>
+          <li style="margin-bottom:6px">✓ Listening + Writing + Grammar</li>
+          <li style="margin-bottom:6px">✓ גישה לכל החיים</li>
+          <li>✓ תשלום חד-פעמי</li>
+        </ul>
+        <a href="/course" style="display:block;background:var(--gold);color:var(--navy);font-weight:700;text-align:center;padding:12px;border-radius:7px;text-decoration:none;font-size:15px">קנה עכשיו ← </a>
+        <p style="color:rgba(255,255,255,.4);font-size:12px;text-align:center;margin-top:8px">הנחת השקה — מחיר מוגבל</p>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>ניווט מהיר</h4>
+        <ul class="sidebar-list">
+          <li><a href="#what">מה זה אמירנט?</a></li>
+          <li><a href="#structure">מבנה המבחן</a></li>
+          <li><a href="#scores">ציונים ומשמעות</a></li>
+          <li><a href="#register">איך נרשמים?</a></li>
+          <li><a href="#rules">כללים חשובים</a></li>
+          <li><a href="#tips">טיפים לנבחן</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>ציונים נדרשים</h4>
+        <ul class="sidebar-list" style="font-size:13px">
+          <li>🏫 טכניון — <strong>105+</strong></li>
+          <li>🏫 עברית / תל אביב — <strong>85+</strong></li>
+          <li>🏫 בר אילן — <strong>85+</strong></li>
+          <li>🏫 חיפה — <strong>85+</strong></li>
+          <li>⭐ פטור מלא — <strong>134+</strong></li>
+        </ul>
+        <a href="/scores" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:var(--navy-light);text-decoration:none">ראה טבלה מלאה ←</a>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>מאמרים קשורים</h4>
+        <ul class="sidebar-list">
+          <li><a href="/reform">🆕 הרפורמה — מה השתנה ב-2026</a></li>
+          <li><a href="/tips">💡 10 טיפים מנצחים</a></li>
+          <li><a href="/university-english">💰 כמה עולה קורס אנגלית?</a></li>
+          <li><a href="/vocabulary">📖 אוצר מילים לאמירנט</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 AmirnETpro | <a href="/course">קורס הכנה דיגיטלי</a> | <a href="/contact">צור קשר</a></p>
+  <p style="margin-top:6px;font-size:12px">האתר אינו קשור רשמית למרכז הארצי לבחינות ולהערכה (נית"ה)</p>
+</footer>
+
+</body>
+</html>

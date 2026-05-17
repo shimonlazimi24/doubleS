@@ -1,0 +1,17 @@
+{
+  "courseSlug": "amirant-preparation",
+  "simulationId": "sim-01",
+  "sectionId": "",
+  "sectionType": "sentence_completion",
+  "scoringMode": "scored",
+  "questionCount": 4,
+  "timeLimitSec": 480,
+  "adaptiveRules": {
+    "adaptiveWithinSection": false,
+    "adaptiveBetweenSections": true,
+    "enterLevelSource": "previous_section_performance",
+    "levelUpRule": ">=75_percent_correct_then_plus_1",
+    "levelDownRule": "<=25_percent_correct_then_minus_1",
+    "bounds": { "min": 1, "max": 6 }
+  }
+}

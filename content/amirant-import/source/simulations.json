@@ -1,0 +1,116 @@
+[
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-1",
+    "sectionType": "sentence_completion",
+    "scoringMode": "scored",
+    "questionCount": 4,
+    "timeLimitSec": 240,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  },
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-2",
+    "sectionType": "sentence_completion",
+    "scoringMode": "scored",
+    "questionCount": 4,
+    "timeLimitSec": 240,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  },
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-3",
+    "sectionType": "reading_comprehension",
+    "scoringMode": "scored",
+    "questionCount": 5,
+    "timeLimitSec": 900,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  },
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-4",
+    "sectionType": "rephrasing",
+    "scoringMode": "scored",
+    "questionCount": 3,
+    "timeLimitSec": 360,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  },
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-5",
+    "sectionType": "rephrasing",
+    "scoringMode": "scored",
+    "questionCount": 3,
+    "timeLimitSec": 360,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  },
+  {
+    "simulationId": "sim-1-baseline",
+    "sectionId": "sim-1-baseline-section-6",
+    "sectionType": "sentence_completion",
+    "scoringMode": "scored",
+    "questionCount": 4,
+    "timeLimitSec": 240,
+    "adaptiveRules": {
+      "adaptiveWithinSection": false,
+      "adaptiveBetweenSections": true,
+      "enterLevelSource": "previous_section_performance",
+      "levelUpRule": ">=75_percent_correct_then_plus_1",
+      "levelDownRule": "<=25_percent_correct_then_minus_1",
+      "bounds": {
+        "min": 1,
+        "max": 6
+      }
+    }
+  }
+]

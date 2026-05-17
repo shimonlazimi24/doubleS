@@ -1,0 +1,578 @@
+[
+  {
+    "partId": "ingested-course-artifacts",
+    "partTitle": "Ingested Course Artifacts",
+    "items": [
+      {
+        "syllabusBulletId": "vocabulary-sample-vocabulary-package-100-words",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-1-easy-part-a-verbs",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-1-easy-part-b-nouns",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-1-easy-part-c-adjectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-1-easy-part-d-adverbs-connectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-2-intermediate-part-a-verbs",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-2-intermediate-part-b-nouns",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-2-intermediate-part-c-adjectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-2-intermediate-part-d-adverbs-connectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-3-advanced-part-a-verbs",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-3-advanced-part-b-nouns",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-3-advanced-part-c-adjectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-3-advanced-part-d-adverbs-connectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-4-expert-part-a-verbs",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-4-expert-part-b-nouns",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-4-expert-part-c-adjectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-4-expert-part-d-adverbs-connectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-5-mastery-level",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-advanced-connectives",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "vocabulary-vocabulary-phrasal-verbs",
+        "artifactType": "lesson",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-4-2-solving-methods-master-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-4-3-common-traps-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-sample-video-script-5-solving-methods",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-5-2-solving-methods-master-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-5-3-sentence-structures-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-5-4-common-traps-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-6-2-solving-methods-master-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-6-3-paragraph-structure-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-6-6-common-traps-guide",
+        "artifactType": "lesson",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sample-sc-quiz-1-easy-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sample-sc-quiz-1-easy-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-2-easy-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-2-easy-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-3-intermediate-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-3-intermediate-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-4-intermediate-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-4-intermediate-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-5-hard-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-5-hard-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-6-hard-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-6-hard-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-7-mixed-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-7-mixed-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-8-mixed-sentence_completion",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-completion-ps-sc-quiz-8-mixed-sentence_completion-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-sample-restatement-quiz-intermediate-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-sample-restatement-quiz-intermediate-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-1-easy-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-1-easy-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-2-easy-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-2-easy-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-3-intermediate-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-3-intermediate-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-4-intermediate-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-4-intermediate-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-5-hard-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-5-hard-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-6-hard-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-6-hard-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-7-mixed-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-7-mixed-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-8-mixed-rephrasing",
+        "artifactType": "practice_set",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "sentence-rephrasing-ps-restatement-quiz-8-mixed-rephrasing-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-1-easy-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-1-easy-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-2-easy-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-2-easy-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-3-intermediate-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-3-intermediate-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-4-intermediate-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-4-intermediate-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-5-hard-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-5-hard-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-6-hard-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-6-hard-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-7-mixed-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-7-mixed-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-8-mixed-reading_comprehension",
+        "artifactType": "practice_set",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "reading-comprehension-ps-reading-comp-quiz-8-mixed-reading_comprehension-qb",
+        "artifactType": "question_bank_batch",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-1",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-2",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-3",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-4",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-5",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "sim-1-baseline-sim-1-baseline-section-6",
+        "artifactType": "simulation_section",
+        "moduleSlug": "full-simulations"
+      },
+      {
+        "syllabusBulletId": "ai-sample-vocabulary-package-100-words",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-1-easy-part-a-verbs",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-1-easy-part-b-nouns",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-1-easy-part-c-adjectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-1-easy-part-d-adverbs-connectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-2-intermediate-part-a-verbs",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-2-intermediate-part-b-nouns",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-2-intermediate-part-c-adjectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-2-intermediate-part-d-adverbs-connectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-3-advanced-part-a-verbs",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-3-advanced-part-b-nouns",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-3-advanced-part-c-adjectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-3-advanced-part-d-adverbs-connectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-4-expert-part-a-verbs",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-4-expert-part-b-nouns",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-4-expert-part-c-adjectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-4-expert-part-d-adverbs-connectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-5-mastery-level",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-advanced-connectives",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-vocabulary-phrasal-verbs",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "vocabulary"
+      },
+      {
+        "syllabusBulletId": "ai-4-2-solving-methods-master-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "ai-4-3-common-traps-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "ai-sample-video-script-5-solving-methods",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-completion"
+      },
+      {
+        "syllabusBulletId": "ai-5-2-solving-methods-master-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "ai-5-3-sentence-structures-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "ai-5-4-common-traps-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "sentence-rephrasing"
+      },
+      {
+        "syllabusBulletId": "ai-6-2-solving-methods-master-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "ai-6-3-paragraph-structure-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "reading-comprehension"
+      },
+      {
+        "syllabusBulletId": "ai-6-6-common-traps-guide",
+        "artifactType": "ai_retrieval",
+        "moduleSlug": "reading-comprehension"
+      }
+    ]
+  }
+]

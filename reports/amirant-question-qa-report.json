@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-05-17T09:32:10.696Z",
+  "totalQuestions": 267,
+  "counts": {
+    "pass": 267,
+    "needs_review": 0,
+    "critical_issue": 0,
+    "flagged": 0
+  },
+  "summaryByTopic": {
+    "sentence_completion": {
+      "total": 105,
+      "pass": 105,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "rephrasing": {
+      "total": 106,
+      "pass": 106,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "reading_comprehension": {
+      "total": 56,
+      "pass": 56,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    }
+  },
+  "summaryByDifficulty": {
+    "1": {
+      "total": 39,
+      "pass": 39,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "2": {
+      "total": 36,
+      "pass": 36,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "3": {
+      "total": 62,
+      "pass": 62,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "4": {
+      "total": 56,
+      "pass": 56,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "5": {
+      "total": 39,
+      "pass": 39,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    },
+    "6": {
+      "total": 35,
+      "pass": 35,
+      "needs_review": 0,
+      "critical_issue": 0,
+      "avgScore": 100
+    }
+  },
+  "issueTypeCounts": {},
+  "flaggedQuestions": [],
+  "priorityFirst50": []
+}

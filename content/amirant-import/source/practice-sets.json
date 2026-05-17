@@ -1,0 +1,377 @@
+[
+  {
+    "practiceSetId": "ps-sample-sc-quiz-1-easy-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice SAMPLE_sc_quiz_1_easy (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-2-easy-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_2_easy (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-3-intermediate-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_3_intermediate (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-4-intermediate-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_4_intermediate (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-5-hard-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_5_hard (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-6-hard-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_6_hard (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-7-mixed-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_7_mixed (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-sc-quiz-8-mixed-sentence_completion",
+    "moduleSlug": "sentence-completion",
+    "title": "Practice sc_quiz_8_mixed (sentence_completion)",
+    "topic": "sentence_completion",
+    "subtopics": [
+      "sentence_completion-contrast-linkers"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 15,
+    "timeLimitSec": 975
+  },
+  {
+    "practiceSetId": "ps-sample-restatement-quiz-intermediate-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice SAMPLE_restatement_quiz_intermediate (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-1-easy-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_1_easy (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-2-easy-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_2_easy (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-3-intermediate-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_3_intermediate (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-4-intermediate-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_4_intermediate (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-5-hard-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_5_hard (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-6-hard-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_6_hard (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-7-mixed-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_7_mixed (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 15,
+    "timeLimitSec": 975
+  },
+  {
+    "practiceSetId": "ps-restatement-quiz-8-mixed-rephrasing",
+    "moduleSlug": "sentence-rephrasing",
+    "title": "Practice restatement_quiz_8_mixed (rephrasing)",
+    "topic": "rephrasing",
+    "subtopics": [
+      "rephrasing-inversion-conditionals"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 15,
+    "timeLimitSec": 975
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-1-easy-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_1_easy (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 6,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-2-easy-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_2_easy (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 2
+    },
+    "numberOfQuestions": 5,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-3-intermediate-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_3_intermediate (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 5,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-4-intermediate-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_4_intermediate (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 3,
+      "max": 4
+    },
+    "numberOfQuestions": 5,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-5-hard-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_5_hard (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 5,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-6-hard-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_6_hard (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 5,
+      "max": 6
+    },
+    "numberOfQuestions": 5,
+    "timeLimitSec": 600
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-7-mixed-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_7_mixed (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  },
+  {
+    "practiceSetId": "ps-reading-comp-quiz-8-mixed-reading_comprehension",
+    "moduleSlug": "reading-comprehension",
+    "title": "Practice reading_comp_quiz_8_mixed (reading_comprehension)",
+    "topic": "reading_comprehension",
+    "subtopics": [
+      "reading_comprehension-main-idea"
+    ],
+    "difficultyRange": {
+      "min": 1,
+      "max": 6
+    },
+    "numberOfQuestions": 10,
+    "timeLimitSec": 650
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-04-25T11:06:08.627Z",
+  "filesScanned": 62,
+  "fileTypeCounts": {
+    "lesson": 32,
+    "quiz": 26,
+    "simulation": 4
+  },
+  "lessons": 29,
+  "aiRetrievalDocs": 29,
+  "practiceSets": 25,
+  "simulationSections": 6,
+  "questionsImported": 267,
+  "coverageByTopic": {
+    "sentence_completion": 116,
+    "rephrasing": 100,
+    "reading_comprehension": 51
+  },
+  "coverageByDifficulty": {
+    "1": 39,
+    "2": 36,
+    "3": 62,
+    "4": 56,
+    "5": 39,
+    "6": 35
+  }
+}

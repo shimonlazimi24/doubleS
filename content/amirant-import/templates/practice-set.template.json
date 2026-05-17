@@ -1,0 +1,12 @@
+{
+  "courseSlug": "amirant-preparation",
+  "practiceSetId": "",
+  "moduleSlug": "vocabulary",
+  "topic": "vocabulary",
+  "subtopics": [""],
+  "difficultyRange": { "min": 1, "max": 3 },
+  "numberOfQuestions": 12,
+  "timeLimitSec": 720,
+  "selectionRule": "random_without_repeat_within_session",
+  "notes": ""
+}
