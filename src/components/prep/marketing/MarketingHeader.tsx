@@ -18,7 +18,7 @@ export function MarketingHeader() {
           className={`${navTap} shrink-0 transition hover:opacity-90`}
           aria-label="prePare — דף הבית"
         >
-          <BrandWordmark size="sm" />
+          <BrandWordmark size="sm" priority />
         </Link>
 
         <nav
