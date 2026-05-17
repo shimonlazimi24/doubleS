@@ -51,22 +51,24 @@ if (error) {
 }
 
 const hashed = data.properties?.hashed_token;
-const otpType = data.properties?.verification_type || "magiclink";
 const actionLink = data.properties?.action_link;
 
 if (hashed) {
-  const direct = new URL(`${siteBase}/prep/auth/complete`);
-  direct.searchParams.set("token_hash", hashed);
-  direct.searchParams.set("type", otpType === "signup" ? "signup" : "magiclink");
-  direct.searchParams.set("next", nextPath);
-  console.log("\n=== קישור ישיר לאתר (מומלץ לבדיקה — בלי PKCE) ===\n");
-  console.log(direct.toString());
+  const verify = new URL(`${siteBase}/prep/auth/verify`);
+  verify.searchParams.set("token_hash", hashed);
+  verify.searchParams.set("email", email);
+  verify.searchParams.set("type", "email");
+  verify.searchParams.set("next", nextPath);
+  console.log("\n=== פתחו את הקישור הזה (הכי אמין לבדיקה) ===\n");
+  console.log(verify.toString());
 }
 
 if (actionLink) {
-  console.log("\n=== קישור דרך Supabase (אחרי לחיצה אמור להגיע עם #access_token) ===\n");
+  console.log("\n=== חלופי: קישור Supabase (אחרי אימות → hash ב-URL) ===\n");
   console.log(actionLink);
 }
 
-console.log("\nודאו ב-Supabase → Redirect URLs:", `${siteBase}/prep/auth/complete`);
+console.log("\nSupabase → Redirect URLs חייב לכלול:");
+console.log(`  ${siteBase}/prep/auth/verify`);
+console.log(`  ${siteBase}/prep/auth/complete`);
 console.log("");

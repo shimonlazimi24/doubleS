@@ -6,6 +6,8 @@
 2. **URL Configuration** (אותו תפריט):
    - **Site URL**: `http://localhost:3000` (פיתוח) או כתובת הפרודקשן.
    - **Redirect URLs** — הוסיפו (לכל סביבה):
+     - `http://localhost:3000/prep/auth/verify`
+     - `https://YOUR-DOMAIN/prep/auth/verify`
      - `http://localhost:3000/prep/auth/complete`
      - `https://YOUR-DOMAIN/prep/auth/complete`
      - (אופציונלי, קישורים ישנים) `…/prep/auth/callback`
@@ -77,8 +79,8 @@ npm run prep:login-link -- your@email.com
 npm run prep:login-link -- your@email.com https://double-s.vercel.app
 ```
 
-3. העתיקו את הקישור שמודפס → פתחו **באותו דפדפן** (Chrome וכו')
-4. אמור לעבור: `/prep/auth/complete` → `/prep/amirant/continue` → onboarding / מחירון / קורס
+3. העתיקו את הקישור ל-**`/prep/auth/verify`** (לא את קישור המייל הרגיל) → פתחו ב-Chrome
+4. אמור לעבור ישר ל-`/prep/amirant/continue` → onboarding / מחירון / קורס
 
 **אלטרנטיבה מהירה:** דוא״ל עם `+` (Gmail): `name+test1@gmail.com` — מגבלה לפעמים לפי כתובת.
 
