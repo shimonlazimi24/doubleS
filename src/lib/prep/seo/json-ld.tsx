@@ -1,4 +1,4 @@
-import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE } from "@/lib/prep/brand";
+import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE, PREP_LOGO_PATH } from "@/lib/prep/brand";
 
 export type JsonLdPrimitive = string | number | boolean | null;
 export type JsonLdValue = JsonLdPrimitive | JsonLdObject | JsonLdValue[];
@@ -19,6 +19,7 @@ export function organizationJsonLd(baseUrl: string): JsonLdObject {
     "@type": "Organization",
     name: PREP_BRAND_LATIN,
     url: `${baseUrl}/prep`,
+    logo: `${baseUrl}${PREP_LOGO_PATH}`,
     description: `${PREP_BRAND_LATIN}: ${PREP_BRAND_NAV_HE}`,
   };
 }

@@ -3,8 +3,9 @@ import type { ReactNode } from "react";
 import { ButtonLink, Container, Heading, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { heroPadding } from "@/lib/design-system/spacing";
-import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
+import { PREP_BRAND_NAV_HE, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { STITCH_HOME_HERO } from "@/lib/prep/stitch-home-assets";
 
 const HERO_PILLS = ["אמירנט — פעיל", "TOEFL — בקרוב", "משוב ממוקד"] as const;
@@ -33,8 +34,9 @@ export function PrepHomeHero() {
       </div>
 
       <Container className={cn("relative z-[12]", heroPadding)}>
+        <PrepBrandLogo size="hero" priority className="mb-ds-4" />
         <Text as="p" variant="eyebrow" className="mb-ds-4 max-w-readable">
-          {PREP_BRAND_LATIN} · {PREP_BRAND_NAV_HE}
+          {PREP_BRAND_NAV_HE}
         </Text>
 
         <Heading level={1} preset="hero" className="max-w-4xl">

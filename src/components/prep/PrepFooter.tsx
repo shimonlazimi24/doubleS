@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE } from "@/lib/prep/brand";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { Container } from "@/components/ui";
 
 const footerLinks = [
@@ -14,8 +15,8 @@ export function PrepFooter() {
     <footer className="border-t border-line bg-paper">
       <Container className="flex flex-col gap-ds-8 py-ds-10 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
-          <p className="font-display text-base font-medium text-ink">{PREP_BRAND_LATIN}</p>
-          <p className="mt-2 text-sm leading-body text-muted">{PREP_BRAND_NAV_HE}</p>
+          <PrepBrandLogo size="footer" />
+          <p className="mt-3 text-sm leading-body text-muted">{PREP_BRAND_NAV_HE}</p>
         </div>
         <nav aria-label="תחתית האתר" className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted">
           {footerLinks.map((item) => (

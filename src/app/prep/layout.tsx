@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PrepFooter } from "@/components/prep/PrepFooter";
 import { PrepNav } from "@/components/prep/PrepNav";
-import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE } from "@/lib/prep/brand";
+import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE, PREP_LOGO_PATH } from "@/lib/prep/brand";
 import { JsonLdScript, organizationJsonLd } from "@/lib/prep/seo/json-ld";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
@@ -14,7 +14,13 @@ export const metadata: Metadata = {
     template: `%s | ${PREP_BRAND_LATIN}`,
   },
   description: `${PREP_BRAND_LATIN}: ${PREP_BRAND_NAV_HE} — אמירנט פעיל, TOEFL בקרוב.`,
-  openGraph: { locale: "he_IL", type: "website", url: `${siteUrl}/prep` },
+  openGraph: {
+    locale: "he_IL",
+    type: "website",
+    url: `${siteUrl}/prep`,
+    images: [{ url: PREP_LOGO_PATH, alt: PREP_BRAND_LATIN }],
+  },
+  icons: { icon: PREP_LOGO_PATH, apple: PREP_LOGO_PATH },
   alternates: { canonical: `${siteUrl}/prep` },
 };
 

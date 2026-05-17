@@ -2,6 +2,10 @@
 
 export const PREP_BRAND_LATIN = "prePare";
 export const PREP_BRAND_NAV_HE = "הכנה למבחני אנגלית";
+/** Wordmark in `public/prep/logo.png` */
+export const PREP_LOGO_PATH = "/prep/logo.png";
+export const PREP_LOGO_WIDTH = 1024;
+export const PREP_LOGO_HEIGHT = 576;
 export const PREP_BRAND_TAGLINE_HE =
   "מבחנים וקורסים ללימוד אנגלית — ממוקד, מדיד, בלי רעש";
 
