@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { MarketingFooter } from "@/components/prep/marketing/MarketingFooter";
 import { MarketingHeader } from "@/components/prep/marketing/MarketingHeader";
-import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE, PREP_LOGO_PATH } from "@/lib/prep/brand";
+import {
+  PREP_BRAND_LATIN,
+  PREP_BRAND_SUBTITLE_HE,
+  PREP_BRAND_WORDMARK,
+  PREP_LOGO_PATH,
+} from "@/lib/prep/brand";
 import { JsonLdScript, organizationJsonLd } from "@/lib/prep/seo/json-ld";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
@@ -10,10 +15,10 @@ const siteUrl = getPublicSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${PREP_BRAND_LATIN} — ${PREP_BRAND_NAV_HE}`,
-    template: `%s | ${PREP_BRAND_LATIN}`,
+    default: `${PREP_BRAND_WORDMARK} — ${PREP_BRAND_SUBTITLE_HE}`,
+    template: `%s | ${PREP_BRAND_WORDMARK}`,
   },
-  description: `${PREP_BRAND_NAV_HE} — קורסים דיגיטליים, תרגול חכם והכנה ממוקדת לאמירנט. TOEFL בקרוב.`,
+  description: `${PREP_BRAND_SUBTITLE_HE} — קורסים דיגיטליים, תרגול חכם והכנה ממוקדת לאמירנט. TOEFL בקרוב.`,
   openGraph: {
     locale: "he_IL",
     type: "website",

@@ -1,6 +1,9 @@
 export { AIValueSection } from "./AIValueSection";
 export { BrandWordmark } from "./BrandWordmark";
 export { CoursePreviewCard } from "./CoursePreviewCard";
+export { ProductDashboardPreview } from "./ProductDashboardPreview";
+export { TrustIndicators } from "./TrustIndicators";
+export { MarketingNav } from "./MarketingNav";
 export { CTASection } from "./CTASection";
 export { ExamStructureCards } from "./ExamStructureCards";
 export { FeatureCard } from "./FeatureCard";

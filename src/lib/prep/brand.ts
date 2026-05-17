@@ -1,8 +1,15 @@
 /** prePare — brand tokens (single source of truth). */
 
+/** Typography wordmark (header, marketing) */
+export const PREP_BRAND_WORDMARK = "PREPARE";
+export const PREP_BRAND_WORDMARK_EN = "Academic Prep";
+export const PREP_BRAND_SUBTITLE_HE = "הכנה ללימודים אקדמיים";
+
+/** Legal / metadata */
 export const PREP_BRAND_LATIN = "prePare";
+/** @deprecated Prefer PREP_BRAND_SUBTITLE_HE in marketing surfaces */
 export const PREP_BRAND_NAV_HE = "הכנה למבחני אנגלית";
-/** Wordmark in `public/prep/logo.png` */
+/** Wordmark in `public/prep/logo.png` (favicon / OG only) */
 export const PREP_LOGO_PATH = "/prep/logo.png";
 export const PREP_LOGO_WIDTH = 1024;
 export const PREP_LOGO_HEIGHT = 576;

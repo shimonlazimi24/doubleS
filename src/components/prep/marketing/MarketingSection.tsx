@@ -29,9 +29,9 @@ export function MarketingSection({
 }: Props) {
   const onNavy = tone === "navy";
   return (
-    <section id={id} className={cn("py-16 md:py-20", tones[tone], className)}>
+    <section id={id} className={cn("py-section md:py-section-lg", tones[tone], className)}>
       <Container max="shell">
-        <header className="mb-10 max-w-2xl md:mb-12">
+        <header className="mb-8 max-w-2xl md:mb-9">
           {eyebrow ? (
             <p
               className={cn(

@@ -1,56 +1,60 @@
 import { ButtonLink, Container } from "@/components/ui";
-import { CoursePreviewCard } from "@/components/prep/marketing/CoursePreviewCard";
-import { TrustChips } from "@/components/prep/marketing/TrustChips";
+import { ProductDashboardPreview } from "@/components/prep/marketing/ProductDashboardPreview";
+import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
 import { MARKETING_HERO } from "@/lib/prep/marketing/content";
 import { cn } from "@/lib/design-system/cn";
 
 export function HeroSection() {
   const hero = MARKETING_HERO;
   return (
-    <section className="relative overflow-hidden bg-canvas">
+    <section className="relative overflow-hidden border-b border-line/50 bg-paper">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(14,165,233,0.14),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_80%_-20%,rgba(14,165,233,0.12),transparent_50%)]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -start-24 top-1/4 h-72 w-72 rounded-full bg-primary/[0.04] blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -end-16 bottom-0 h-64 w-64 rounded-full bg-accent/[0.08] blur-3xl"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_100%,rgba(15,35,71,0.05),transparent_55%)]"
         aria-hidden
       />
 
-      <Container className={cn("relative py-16 md:py-24 lg:py-28")}>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-          <div className="max-w-xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-              הכנה אקדמית לבוגרים
+      <Container className={cn("relative py-12 md:py-16 lg:py-[4.5rem]")}>
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
+          <div className="max-w-xl lg:max-w-lg">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Academic English Prep
             </p>
-            <h1 className="text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-4xl lg:text-[2.75rem]">
+            <h1 className="text-[2rem] font-semibold leading-[1.1] tracking-tight text-ink md:text-[2.5rem] lg:text-[2.75rem]">
               {hero.headline}
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">{hero.subheadline}</p>
+            <p className="mt-4 max-w-[34rem] text-base leading-relaxed text-muted md:text-[1.0625rem]">
+              {hero.subheadline}
+            </p>
 
-            <TrustChips items={hero.chips} className="mt-8" />
+            <TrustIndicators items={hero.trust} className="mt-7" />
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <ButtonLink href={hero.ctaPrimary.href} variant="primary" className="px-5 py-3 text-base">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <ButtonLink
+                href={hero.ctaPrimary.href}
+                variant="primary"
+                className="min-h-11 px-6 text-sm font-semibold shadow-cta"
+              >
                 {hero.ctaPrimary.label}
               </ButtonLink>
-              <ButtonLink href={hero.ctaSecondary.href} variant="secondary" className="px-5 py-3 text-base">
+              <ButtonLink
+                href={hero.ctaSecondary.href}
+                variant="secondary"
+                className="min-h-11 border-line/80 px-6 text-sm font-medium"
+              >
                 {hero.ctaSecondary.label}
               </ButtonLink>
             </div>
+
+            <p className="mt-6 text-xs leading-relaxed text-muted-2">
+              מיועד לבוגרים לפני תואר · מבוא חינמי · גישה מלאה אחרי הרשמה
+            </p>
           </div>
 
-          <div className="relative lg:justify-self-end">
-            <div
-              className="pointer-events-none absolute -inset-4 rounded-3xl border border-line/40 bg-paper/40"
-              aria-hidden
-            />
-            <CoursePreviewCard />
-          </div>
+          <ProductDashboardPreview />
         </div>
       </Container>
     </section>

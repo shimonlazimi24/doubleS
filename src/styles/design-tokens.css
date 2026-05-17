@@ -35,9 +35,9 @@
   --space-16: 8rem; /* 128 */
 
   /* Section vertical rhythm */
-  --space-section-y: var(--space-10);
-  --space-section-y-lg: var(--space-12);
-  --space-hero-pad-y: var(--space-8);
+  --space-section-y: var(--space-8);
+  --space-section-y-lg: var(--space-10);
+  --space-hero-pad-y: var(--space-6);
 
   /* —— Radius —— */
   --radius-sm: 0.5rem;
@@ -48,7 +48,8 @@
   /* —— Elevation (subtle only) —— */
   --shadow-card: 0 1px 2px rgba(18, 21, 26, 0.06), 0 8px 24px rgba(18, 21, 26, 0.04);
   --shadow-nav: 0 1px 0 rgba(18, 21, 26, 0.06), 0 12px 40px rgba(18, 21, 26, 0.06);
-  --shadow-lift: 0 12px 32px rgba(18, 21, 26, 0.08);
+  --shadow-lift: 0 20px 50px -12px rgba(15, 35, 71, 0.12), 0 8px 16px rgba(15, 35, 71, 0.06);
+  --shadow-preview: 0 32px 64px -16px rgba(15, 35, 71, 0.18), 0 0 0 1px rgba(15, 35, 71, 0.06);
   --shadow-cta: 0 16px 40px -12px rgba(30, 58, 95, 0.22);
 
   /* —— Layout measure —— */

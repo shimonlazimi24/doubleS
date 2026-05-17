@@ -8,7 +8,8 @@ import { PREP_BASE } from "@/lib/prep/constants";
 
 const CATALOG_ITEM = { href: `${PREP_BASE}/courses`, label: "כל ההכנות" } as const;
 
-const navTap = "inline-flex min-h-[2.75rem] items-center";
+const navTap =
+  "relative inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink";
 
 /**
  * <details> נשאר „פתוח” אחרי Next.js client navigation — לכן נסגור בלחיצה וב־route change.
@@ -29,7 +30,7 @@ export function PrepCoursesDropdown() {
   return (
     <details ref={detailsRef} className="group relative">
       <summary
-        className={`${navTap} cursor-pointer list-none touch-manipulation text-sm text-muted marker:content-none transition hover:text-primary [&::-webkit-details-marker]:hidden`}
+        className={`${navTap} cursor-pointer list-none touch-manipulation marker:content-none [&::-webkit-details-marker]:hidden`}
       >
         <span className="inline-flex items-center gap-1">
           קורסים

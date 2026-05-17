@@ -1,29 +1,29 @@
 import type { Metadata } from "next";
-import { Assistant, Source_Serif_4 } from "next/font/google";
+import { Heebo, Inter } from "next/font/google";
 import "./globals.css";
 
-const sans = Assistant({
-  subsets: ["latin", "latin-ext", "hebrew"],
+const heebo = Heebo({
+  subsets: ["hebrew", "latin"],
   variable: "--font-sans",
   weight: ["400", "500", "600", "700"],
 });
 
-const display = Source_Serif_4({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-display",
-  weight: ["400", "600", "700"],
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-brand",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "prePare — הכנה למבחני אנגלית",
-  description: "prePare — הכנה ממוקדת למבחני אנגלית: אמירנט (פעיל) ו-TOEFL (בקרוב).",
+  title: "PREPARE — הכנה ללימודים אקדמיים",
+  description: "PREPARE — הכנה ממוקדת למבחני אנגלית אקדמיים: אמירנט (פעיל) ו-TOEFL (בקרוב).",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <body
-        className={`${sans.variable} ${display.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}
+        className={`${heebo.variable} ${inter.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}
       >
         {children}
       </body>

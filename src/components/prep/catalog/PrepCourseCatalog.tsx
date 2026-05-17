@@ -25,7 +25,7 @@ export function PrepCourseCatalog({ showBreadcrumbs = false, breadcrumbTrail = [
   const courses = filterPrepCourses(filter);
 
   return (
-    <section id={id} className="border-t border-line/60 bg-paper py-16 md:py-20">
+    <section id={id} className="border-t border-line/60 bg-paper py-section md:py-section-lg">
       <Container>
         {showBreadcrumbs && <PrepBreadcrumbs items={breadcrumbTrail} />}
 

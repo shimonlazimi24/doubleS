@@ -60,11 +60,13 @@ const config: Config = {
         card: "var(--shadow-card)",
         nav: "var(--shadow-nav)",
         lift: "var(--shadow-lift)",
+        preview: "var(--shadow-preview)",
         cta: "var(--shadow-cta)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "Georgia", "serif"],
+        brand: ["var(--font-brand)", "var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "chat-dot": {

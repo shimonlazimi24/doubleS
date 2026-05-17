@@ -3,11 +3,16 @@ import { PREP_BASE } from "@/lib/prep/constants";
 export const MARKETING_HERO = {
   headline: "הכנה ממוקדת למבחני אנגלית אקדמיים",
   subheadline:
-    "קורסים דיגיטליים ברורים, תרגול חכם וליווי AI שיעזרו לכם להגיע מוכנים ללימודים.",
-  ctaPrimary: { label: "התחילו באמירנט", href: `${PREP_BASE}/amirant` },
+    "קורסים דיגיטליים ברורים, תרגול חכם וליווי AI — מסלול מדיד שמכין אתכם ללימודים אקדמיים בביטחון.",
+  ctaPrimary: { label: "התחילו עכשיו", href: `${PREP_BASE}/amirant` },
   ctaSecondary: { label: "לצפייה במסלול", href: `${PREP_BASE}/courses` },
-  chips: ["אמירנט — פעיל", "TOEFL — בקרוב", "מסלול ממוקד", "תרגול חכם"] as const,
-};
+  trust: [
+    { value: "אמירנט", label: "מסלול פעיל" },
+    { value: "TOEFL", label: "בקרוב" },
+    { value: "מעקב", label: "התקדמות לפי מודול" },
+    { value: "AI", label: "תרגול ממוקד" },
+  ],
+} as const;
 
 export const WHY_IT_MATTERS = {
   title: "למה זה חשוב לפני התואר",
@@ -86,6 +91,6 @@ export const AI_VALUE = {
 export const MARKETING_CTA = {
   title: "מוכנים להתחיל?",
   subtitle: "צפו במסלול אמירנט, נסו מבחן לדוגמה, והמשיכו להרשמה ולגישה מלאה.",
-  primary: { label: "התחילו באמירנט", href: `${PREP_BASE}/amirant` },
+  primary: { label: "התחילו עכשיו", href: `${PREP_BASE}/amirant` },
   secondary: { label: "מחירון", href: `${PREP_BASE}/pricing` },
 } as const;
