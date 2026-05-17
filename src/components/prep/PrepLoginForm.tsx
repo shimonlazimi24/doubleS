@@ -13,9 +13,10 @@ import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui";
 
 const ERROR_MESSAGES: Record<string, string> = {
-  missing_code: "קישור ההתחברות לא תקין. נסו שוב.",
+  missing_code: "קישור ההתחברות לא תקין או שפג תוקף. בקשו קישור חדש.",
   missing_config: "המערכת לא מוגדרת (Supabase). פנו לתמיכה.",
-  auth: "ההתחברות נכשלה. נסו שוב.",
+  auth:
+    "ההתחברות נכשלה. פתחו את הקישור באותו דפדפן שבו ביקשתם אותו, או בקשו קישור חדש (תוקף ~5 דק׳).",
 };
 
 function safeReturnPath(raw: string | null): string {

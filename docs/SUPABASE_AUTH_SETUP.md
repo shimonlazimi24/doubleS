@@ -69,3 +69,4 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 | `redirect_uri_mismatch` (מ-Google) | הוסיפו `https://xxx.supabase.co/auth/v1/callback` ב-Google Console |
 | חזרה ל-login עם `error=auth` | בדקו Redirect URLs ב-Supabase; בדקו ש-`NEXT_PUBLIC_APP_URL` נכון |
 | Magic link לא מגיע | בדקו Email provider; ספאם; ב-Supabase אפשר SMTP מותאם |
+| חוזרים לאתר אבל לא מחוברים | ודאו Redirect URLs; פתחו את הקישור **באותו דפדפן** שבו שלחתם את המייל; בקשו קישור חדש |
