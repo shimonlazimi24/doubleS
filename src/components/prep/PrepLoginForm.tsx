@@ -65,7 +65,7 @@ export function PrepLoginForm() {
     });
     if (error) {
       setBusy(false);
-      setMessage(mapSupabaseAuthError(error.message));
+      setMessage(mapSupabaseAuthError(error));
     }
   }
 
@@ -89,7 +89,7 @@ export function PrepLoginForm() {
     });
     setBusy(false);
     if (error) {
-      setMessage(mapSupabaseAuthError(error.message));
+      setMessage(mapSupabaseAuthError(error));
       return;
     }
     setSent(true);

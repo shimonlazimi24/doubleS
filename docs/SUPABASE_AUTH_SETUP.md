@@ -64,6 +64,21 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 2. פתחו `/prep/login`
 3. «התחברות עם Google» → בחירת חשבון → חזרה ל־`/prep/amirant/course/dashboard` (או `returnTo`).
 
+## מגבלת מיילים (Rate limit)
+
+בפרויקט חדש / חינמי, Supabase שולח מעט מיילי Magic Link לשעה. אחרי בדיקות חוזרות תופיע:
+
+`over_email_send_rate_limit`
+
+**זה לא באג באתר** — השרת של Supabase מסרב לשלוח עוד מיילים.
+
+**מה לעשות:**
+
+1. **המתינו ~60 דקות** (או בדקו Authentication → Rate Limits בלוח)
+2. **התחברות עם Google** (לא תלויה במייל)
+3. **SMTP מותאם:** Project Settings → Authentication → [SMTP](https://supabase.com/docs/guides/auth/auth-smtp) (Resend / SendGrid וכו') — מעלה מכסה ומשפר מסירה
+4. בפיתוח: אל תלחצו «שליחת קישור» עשרות פעמים ברצף
+
 ## פתרון בעיות
 
 | תסמין | פתרון |
@@ -72,4 +87,5 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 | `redirect_uri_mismatch` (מ-Google) | הוסיפו `https://xxx.supabase.co/auth/v1/callback` ב-Google Console |
 | חזרה ל-login עם `error=auth` | בדקו Redirect URLs ב-Supabase; בדקו ש-`NEXT_PUBLIC_APP_URL` נכון |
 | Magic link לא מגיע | בדקו Email provider; ספאם; ב-Supabase אפשר SMTP מותאם |
+| `over_email_send_rate_limit` / «יותר מדי מיילים» | מגבלת Supabase (במיוחד בתוכנית חינמית: מעט מיילים לשעה). **גם ניסיונות שלא הגיעו למייל נספרים.** המתינו ~60 דק׳, השתמשו ב-Google, או הגדירו SMTP מותאם + Rate Limits |
 | חוזרים לאתר אבל לא מחוברים | Redirect URLs חייבים לכלול `/prep/auth/complete`; מפתח **anon** מטאב Legacy (`eyJ…`), לא `sb_publishable_`; קישור חדש באותו דפדפן |
