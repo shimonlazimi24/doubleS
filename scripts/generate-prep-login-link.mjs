@@ -1,5 +1,5 @@
 /**
- * Dev-only: generate a magic-link URL without sending email (bypasses OTP rate limit).
+ * Dev-only: generate login URLs without sending email (bypasses OTP rate limit).
  *
  *   npm run prep:login-link -- you@example.com
  *   npm run prep:login-link -- you@example.com https://double-s.vercel.app
@@ -32,7 +32,8 @@ if (!url || !serviceKey) {
   process.exit(1);
 }
 
-const redirectTo = `${siteBase}/prep/auth/complete?next=${encodeURIComponent("/prep/amirant/continue")}`;
+const nextPath = "/prep/amirant/continue";
+const redirectTo = `${siteBase}/prep/auth/complete?next=${encodeURIComponent(nextPath)}`;
 
 const admin = createClient(url, serviceKey, {
   auth: { autoRefreshToken: false, persistSession: false },
@@ -49,13 +50,23 @@ if (error) {
   process.exit(1);
 }
 
-const link = data.properties?.action_link;
-if (!link) {
-  console.error("No action_link in response");
-  process.exit(1);
+const hashed = data.properties?.hashed_token;
+const otpType = data.properties?.verification_type || "magiclink";
+const actionLink = data.properties?.action_link;
+
+if (hashed) {
+  const direct = new URL(`${siteBase}/prep/auth/complete`);
+  direct.searchParams.set("token_hash", hashed);
+  direct.searchParams.set("type", otpType === "signup" ? "signup" : "magiclink");
+  direct.searchParams.set("next", nextPath);
+  console.log("\n=== קישור ישיר לאתר (מומלץ לבדיקה — בלי PKCE) ===\n");
+  console.log(direct.toString());
 }
 
-console.log("\nOpen this link in the same browser you use for testing:\n");
-console.log(link);
-console.log("\nRedirect after login:", redirectTo);
+if (actionLink) {
+  console.log("\n=== קישור דרך Supabase (אחרי לחיצה אמור להגיע עם #access_token) ===\n");
+  console.log(actionLink);
+}
+
+console.log("\nודאו ב-Supabase → Redirect URLs:", `${siteBase}/prep/auth/complete`);
 console.log("");

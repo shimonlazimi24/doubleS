@@ -17,6 +17,8 @@ const ERROR_MESSAGES: Record<string, string> = {
   missing_config: "המערכת לא מוגדרת (Supabase). פנו לתמיכה.",
   auth:
     "ההתחברות נכשלה. פתחו את הקישור באותו דפדפן שבו ביקשתם אותו, או בקשו קישור חדש (תוקף ~5 דק׳).",
+  pkce_mismatch:
+    "הקישור נפתח בדפדפן אחר מזה שבו ביקשתם את המייל. בקשו קישור חדש ופתחו באותו חלון, או לבדיקה: npm run prep:login-link",
 };
 
 function safeReturnPath(raw: string | null): string {
@@ -99,8 +101,10 @@ export function PrepLoginForm() {
     <div className="mx-auto max-w-md space-y-6">
       {errorKey ? (
         <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900" role="alert">
-          {ERROR_MESSAGES[errorKey] ?? "שגיאת התחברות."}
-          {errorDetail && process.env.NODE_ENV === "development" ? (
+          {errorDetail?.includes("pkce_mismatch")
+            ? ERROR_MESSAGES.pkce_mismatch
+            : (ERROR_MESSAGES[errorKey] ?? "שגיאת התחברות.")}
+          {errorDetail ? (
             <span className="mt-2 block font-mono text-xs opacity-80">{errorDetail}</span>
           ) : null}
         </p>

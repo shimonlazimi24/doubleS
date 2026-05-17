@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import type { EmailOtpType } from "@supabase/supabase-js";
+import type { AuthError, EmailOtpType } from "@supabase/supabase-js";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -13,19 +13,23 @@ function safeNext(raw: string | null): string {
   return raw;
 }
 
-function mapAuthError(message: string): string {
-  const m = message.toLowerCase();
-  if (m.includes("flow state") || m.includes("code verifier") || m.includes("pkce")) {
-    return "קישור לא תואם לדפדפן. בקשו קישור חדש ופתחו אותו באותו חלון שבו שלחתם את המייל.";
-  }
-  if (m.includes("expired") || m.includes("invalid")) {
-    return "הקישור פג תוקף או כבר נוצל. בקשו קישור חדש.";
-  }
-  return "ההתחברות נכשלה. נסו שוב או בקשו קישור חדש.";
+function isPkceMismatch(err: AuthError | Error): boolean {
+  const m = err.message.toLowerCase();
+  return m.includes("flow state") || m.includes("code verifier") || m.includes("pkce");
+}
+
+function readHashSession(): { access_token: string; refresh_token: string } | null {
+  if (typeof window === "undefined" || !window.location.hash.includes("access_token=")) return null;
+  const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const access_token = hash.get("access_token");
+  const refresh_token = hash.get("refresh_token");
+  if (!access_token || !refresh_token) return null;
+  return { access_token, refresh_token };
 }
 
 /**
- * Finishes magic-link / OAuth in the browser (PKCE code verifier lives in cookies here).
+ * Finishes magic-link / OAuth in the browser.
+ * Order: URL hash (implicit) → token_hash → PKCE code (needs same browser as OTP request).
  */
 export function PrepAuthCompleteClient() {
   const router = useRouter();
@@ -41,7 +45,7 @@ export function PrepAuthCompleteClient() {
         const q = new URLSearchParams({
           error: "auth",
           returnTo: next,
-          detail: detail.slice(0, 120),
+          detail: detail.slice(0, 160),
         });
         router.replace(`${PREP_BASE}/login?${q.toString()}`);
       };
@@ -58,29 +62,47 @@ export function PrepAuthCompleteClient() {
       const type = searchParams.get("type");
 
       try {
-        if (code) {
-          const { error } = await client.auth.exchangeCodeForSession(code);
+        const hashTokens = readHashSession();
+        if (hashTokens) {
+          const { error } = await client.auth.setSession(hashTokens);
           if (error) throw error;
         } else if (tokenHash && type) {
-          const { error } = await client.auth.verifyOtp({
-            token_hash: tokenHash,
-            type: type as EmailOtpType,
-          });
-          if (error) throw error;
-        } else if (typeof window !== "undefined" && window.location.hash.includes("access_token=")) {
-          const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
-          const access_token = hash.get("access_token");
-          const refresh_token = hash.get("refresh_token");
-          if (!access_token || !refresh_token) throw new Error("missing_hash_tokens");
-          const { error } = await client.auth.setSession({ access_token, refresh_token });
-          if (error) throw error;
+          const otpTypes: EmailOtpType[] = [type as EmailOtpType, "email", "magiclink"];
+          let lastError: AuthError | null = null;
+          for (const otpType of otpTypes) {
+            const { error } = await client.auth.verifyOtp({
+              token_hash: tokenHash,
+              type: otpType,
+            });
+            if (!error) {
+              lastError = null;
+              break;
+            }
+            lastError = error;
+          }
+          if (lastError) throw lastError;
+        } else if (code) {
+          const { error } = await client.auth.exchangeCodeForSession(code);
+          if (error) {
+            const hashRetry = readHashSession();
+            if (hashRetry) {
+              const { error: hashErr } = await client.auth.setSession(hashRetry);
+              if (hashErr) throw hashErr;
+            } else if (isPkceMismatch(error)) {
+              throw new Error(
+                "pkce_mismatch: פתחו את הקישור באותו דפדפן שבו לחצתם «שליחת קישור», או השתמשו ב-npm run prep:login-link",
+              );
+            } else {
+              throw error;
+            }
+          }
         } else {
           const {
             data: { session },
             error,
           } = await client.auth.getSession();
           if (error) throw error;
-          if (!session) throw new Error("missing_code");
+          if (!session) throw new Error("missing_auth_params");
         }
 
         const {
@@ -93,7 +115,13 @@ export function PrepAuthCompleteClient() {
         if (!cancelled) router.replace(next);
       } catch (err) {
         const detail = err instanceof Error ? err.message : "unknown";
-        if (!cancelled) setMessage(mapAuthError(detail));
+        if (!cancelled) {
+          setMessage(
+            detail.includes("pkce_mismatch")
+              ? "יש לפתוח את הקישור באותו דפדפן שבו ביקשתם אותו, או ליצור קישור בדיקה עם npm run prep:login-link"
+              : "ההתחברות נכשלה…",
+          );
+        }
         loginWithError(detail);
       }
     }
