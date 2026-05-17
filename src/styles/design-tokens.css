@@ -3,25 +3,24 @@
  * Tailwind maps these in tailwind.config.ts; components use tokens via utilities.
  */
 :root {
-  /* —— Palette: calm, editorial (not “AI startup”) —— */
-  --color-ink: #12151a;
-  --color-muted: #4b5563;
-  --color-muted-2: #6b7280;
-  --color-canvas: #f4f5f7;
-  --color-surface-low: #eceef1;
-  --color-surface-high: #e1e4e8;
-  --color-line: #dfe3e8;
+  /* —— Palette: academic prep (navy + sky) —— */
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-muted-2: #94a3b8;
+  --color-canvas: #f8fafc;
+  --color-surface-low: #f1f5f9;
+  --color-surface-high: #e2e8f0;
+  --color-line: #e2e8f0;
   --color-paper: #ffffff;
 
-  --color-primary: #1e3a5f;
-  --color-primary-hover: #162d4a;
-  --color-primary-muted: rgba(30, 58, 95, 0.08);
-  --color-primary-container: #2a4d7a;
+  --color-primary: #0f2347;
+  --color-primary-hover: #0b1a35;
+  --color-primary-muted: rgba(15, 35, 71, 0.06);
+  --color-primary-container: #1a3358;
 
-  /* Accent: restrained (highlights, success-adjacent) */
-  --color-accent: #1b6b63;
-  --color-accent-muted: rgba(27, 107, 99, 0.1);
-  --color-sage: #15803d;
+  --color-accent: #0ea5e9;
+  --color-accent-muted: rgba(14, 165, 233, 0.12);
+  --color-sage: #0d9488;
 
   /* —— 8px spacing scale (rem @ 16px root) —— */
   --space-1: 0.5rem; /* 8 */
