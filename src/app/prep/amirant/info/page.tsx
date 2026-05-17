@@ -20,7 +20,7 @@ export default function AmirantInfoPage() {
       <PageLayout pad="lg">
         <Container max="measureWide">
           <Link
-            href={`${PREP_BASE}/amirant`}
+            href={`${PREP_BASE}/amirant?tab=info`}
             className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
           >
             ← חזרה לאמירנט

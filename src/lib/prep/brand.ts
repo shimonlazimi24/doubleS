@@ -33,7 +33,7 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
     examSlug: "amirant",
     title: "אמירנט: ערכת הכנה אונליין",
     shortTitle: "אמירנט",
-    href: "/prep/amirant/course",
+    href: "/prep/amirant",
     status: "live",
     imageKey: "amirant",
     priceFromIls: null,

@@ -5,15 +5,14 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // Keep one user-facing Amirant entry point.
-      { source: "/prep/amirant", destination: "/prep/amirant/course", permanent: false },
-      { source: "/prep/study-usa", destination: "/prep/amirant/course", permanent: true },
-      { source: "/prep/study-usa/:path*", destination: "/prep/amirant/course", permanent: true },
-      // Legacy/demo/materials/info paths are intentionally non-canonical.
-      { source: "/prep/amirant/demo", destination: "/prep/amirant/course", permanent: false },
-      { source: "/prep/amirant/demo/:path*", destination: "/prep/amirant/course", permanent: false },
-      { source: "/prep/amirant/info", destination: "/prep/amirant/course", permanent: false },
-      { source: "/prep/amirant/info/:path*", destination: "/prep/amirant/course", permanent: false },
+      // Legacy slug → hub (info / demo / sample tabs).
+      { source: "/prep/amirant/info", destination: "/prep/amirant?tab=info", permanent: false },
+      { source: "/prep/amirant/info/:path*", destination: "/prep/amirant?tab=info", permanent: false },
+      { source: "/prep/amirant/demo", destination: "/prep/amirant?tab=sample", permanent: false },
+      { source: "/prep/amirant/demo/:path*", destination: "/prep/amirant?tab=sample", permanent: false },
+      { source: "/prep/study-usa", destination: "/prep/amirant", permanent: true },
+      { source: "/prep/study-usa/:path*", destination: "/prep/amirant", permanent: true },
+      // Legacy learn/practice/materials → full course app.
       { source: "/prep/amirant/practice", destination: "/prep/amirant/course", permanent: false },
       { source: "/prep/amirant/practice/:path*", destination: "/prep/amirant/course", permanent: false },
       { source: "/prep/amirant/learn", destination: "/prep/amirant/course", permanent: false },

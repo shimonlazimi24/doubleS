@@ -27,7 +27,7 @@ export default function PrepMarketingPage({ params }: Props) {
   if (!isPrepMarketingSlug(params.slug)) notFound();
   const slug: PrepMarketingSlug = params.slug;
   if (slug === "amirant") {
-    redirect(`${PREP_BASE}/amirant/course`);
+    redirect(`${PREP_BASE}/amirant`);
   }
   if (slug === "login") {
     redirect(`${PREP_BASE}/login`);

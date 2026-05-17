@@ -54,7 +54,7 @@ export function PrepHomeHero() {
         </div>
 
         <div className="mt-ds-8 flex flex-wrap items-center gap-ds-3">
-          <ButtonLink href={`${PREP_BASE}/amirant/course`} variant="primary" className="px-ds-4 py-ds-3 text-base">
+          <ButtonLink href={`${PREP_BASE}/amirant`} variant="primary" className="px-ds-4 py-ds-3 text-base">
             התחילו באמירנט
           </ButtonLink>
           <ButtonLink href={`${PREP_BASE}#limudim`} variant="secondary" className="px-ds-4 py-ds-3 text-base">
