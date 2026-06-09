@@ -291,16 +291,18 @@ export async function runStructuredAi<T>(params: RunStructuredAiParams<T>): Prom
 }
 
 /**
- * Streams an OpenAI chat completion with json_object mode.
- * Calls `onToken` for each text delta and resolves with the full accumulated JSON string.
- * Falls back to non-streaming if streaming is unavailable.
+ * Streams an OpenAI chat completion using structured outputs (zodResponseFormat).
+ * Calls `onToken` for each visible answer character as it arrives.
+ * Returns the fully-parsed output via `.finalChatCompletion().message.parsed`.
  */
-export async function streamOpenAiJsonResponse(params: {
+export async function streamOpenAiJsonResponse<T>(params: {
   systemPrompt: string;
   userPrompt: string;
   operation: string;
+  schema: z.ZodType<T>;
+  schemaName: string;
   onToken: (delta: string) => void;
-}): Promise<string> {
+}): Promise<T> {
   const key = getOpenAiApiKey();
   if (!key) throw new Error("OPENAI_API_KEY is missing");
   assertWithinTokenBudget(params.systemPrompt, params.userPrompt);
@@ -311,6 +313,8 @@ export async function streamOpenAiJsonResponse(params: {
     promptChars: params.systemPrompt.length + params.userPrompt.length,
   });
   const started = Date.now();
+
+  // Use zodResponseFormat so the model is schema-constrained even while streaming
   const stream = openai.chat.completions.stream({
     model: OPENAI_CHAT_MODEL,
     messages: [
@@ -319,21 +323,23 @@ export async function streamOpenAiJsonResponse(params: {
     ],
     temperature: 0.2,
     max_tokens: Math.min(getMaxOutputTokens(), 800),
-    response_format: { type: "json_object" },
+    response_format: zodResponseFormat(params.schema, params.schemaName),
   });
 
   let accumulated = "";
-  // Track whether we're inside the "answer" string value for incremental display
   let answerStartIdx = -1;
   let inAnswer = false;
+  let answerDone = false;
 
   for await (const chunk of stream) {
     const delta = chunk.choices[0]?.delta?.content ?? "";
     if (!delta) continue;
     accumulated += delta;
 
-    // Find the start of the answer value once (after `"answer":"`)
-    if (!inAnswer && answerStartIdx === -1) {
+    if (answerDone) continue;
+
+    // Locate the start of the "answer" JSON value once
+    if (answerStartIdx === -1) {
       const marker = '"answer":"';
       const idx = accumulated.indexOf(marker);
       if (idx !== -1) {
@@ -343,27 +349,31 @@ export async function streamOpenAiJsonResponse(params: {
     }
 
     if (inAnswer) {
-      // Emit only characters that are part of the answer value (stop at unescaped closing quote)
       const tail = accumulated.slice(answerStartIdx);
-      // Find where the answer value ends (unescaped `"`)
+      // Find the first unescaped closing quote that ends the answer value
       let end = -1;
       for (let i = 0; i < tail.length; i++) {
         if (tail[i] === '"' && (i === 0 || tail[i - 1] !== '\\')) { end = i; break; }
       }
-      const visiblePart = end === -1 ? tail : tail.slice(0, end);
-      // Only emit the new portion added by this delta
-      const prevVisible = accumulated.slice(answerStartIdx, accumulated.length - delta.length > answerStartIdx ? accumulated.length - delta.length : answerStartIdx);
-      const newChars = visiblePart.slice(prevVisible.length);
-      if (newChars) params.onToken(newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"'));
-      if (end !== -1) inAnswer = false; // answer value ended
+      const visibleLen = end === -1 ? tail.length : end;
+      // Determine how many characters were already emitted before this delta
+      const prevAccLen = accumulated.length - delta.length;
+      const prevEmitted = Math.max(0, prevAccLen - answerStartIdx);
+      const newChars = tail.slice(prevEmitted, visibleLen);
+      if (newChars) {
+        params.onToken(newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\"));
+      }
+      if (end !== -1) { inAnswer = false; answerDone = true; }
     }
   }
 
-  const finalCompletion = await stream.finalChatCompletion();
+  const final = await stream.finalChatCompletion();
   const durationMs = Date.now() - started;
   logAiResponse({ operation: params.operation, provider: "openai", model: OPENAI_CHAT_MODEL, durationMs, outputChars: accumulated.length });
-  void finalCompletion; // usage logged separately if needed
-  return accumulated;
+
+  const parsed = final.choices[0]?.message?.parsed;
+  if (parsed == null) throw new Error("Empty structured streaming output");
+  return parsed;
 }
 
 /**

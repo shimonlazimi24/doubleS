@@ -320,18 +320,16 @@ export async function runAmirantChatbot(
 
   try {
     if (onToken) {
-      // Streaming path: json_object mode + token callback; parse result manually
-      const jsonText = await streamOpenAiJsonResponse({
+      // Streaming path: structured outputs (zodResponseFormat) + token callback
+      const result = await streamOpenAiJsonResponse({
         systemPrompt,
         userPrompt: fullUserPrompt,
         operation: "lesson_chat",
+        schema: amirantChatbotAiResponseSchema,
+        schemaName: "amirant_chatbot",
         onToken,
       });
-      let raw: unknown;
-      try { raw = JSON.parse(jsonText); } catch { raw = {}; }
-      const result = amirantChatbotAiResponseSchema.safeParse(raw);
-      if (!result.success) throw new Error("Stream JSON parse failed: " + result.error.message);
-      parsed = { ...result.data, intent: outIntent };
+      parsed = { ...result, intent: outIntent };
     } else {
       // Non-streaming structured output path (default)
       const ai = await runStructuredAi({
