@@ -12,14 +12,14 @@ import { AMIRNET_CONTENT_MODULES } from "./amirnet-content-sync";
 const DEMO_MANIFEST: CourseManifest = {
   id: AMIRANT_PREPARATION_COURSE_ID,
   slug: AMIRANT_PREPARATION_SLUG,
-  title: "Amirant Preparation",
+  title: "הכנה לאמירנט",
   description:
-    "Structured preparation for Amirant: lessons (JSON blocks), practice, adaptive quizzes, full simulations, analytics, and AI-assisted review.",
+    "הכנה מלאה לאמירנט: שיעורים, תרגול, בוחנים אדפטיביים, סימולציות מלאות, ניתוח AI.",
   modules: [
     {
       id: "mod-intro",
       slug: "introduction",
-      title: "Introduction",
+      title: "מבוא לקורס",
       sortOrder: 0,
       /** יחידה 1 — מבוא: קבצי `01_welcome_and_intro/` + אבחון; לוגיסטיקה בקובץ נפרד. */
       lessons: [
@@ -66,7 +66,7 @@ const DEMO_MANIFEST: CourseManifest = {
     {
       id: "mod-logistics",
       slug: "logistics-bureaucracy",
-      title: "Logistics",
+      title: "לוגיסטיקה והרשמה",
       sortOrder: 9,
       lessons: [
         {

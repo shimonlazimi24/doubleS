@@ -104,7 +104,7 @@ export const AMIRNET_SYNC_LESSON_REGISTRY: Record<string, LessonContent> = Objec
 const VOCAB: ManifestModule = {
   id: "mod-vocab",
   slug: "vocabulary",
-  title: "Vocabulary",
+  title: "מילון מושגים",
   sortOrder: 1,
   lessons: [
     { id: "lesson.vocab.01", title: "אוצר מילים · קל — פעלים", kind: "mixed", estimatedMinutes: 35, practiceSetId: "pr-vocab-1", quizId: "quiz-vocab" },
@@ -147,7 +147,7 @@ const VOCAB: ManifestModule = {
 const SENT: ManifestModule = {
   id: "mod-sc",
   slug: "sentence-completion",
-  title: "Sentence Completion",
+  title: "השלמת משפטים",
   sortOrder: 2,
   lessons: [
     {
@@ -192,7 +192,7 @@ const SENT: ManifestModule = {
 const REPH: ManifestModule = {
   id: "mod-rephrase",
   slug: "sentence-rephrasing",
-  title: "Sentence Rephrasing",
+  title: "ניסוח מחדש",
   sortOrder: 3,
   lessons: [
     { id: "lesson.rephrase.01", title: "ניסוח מחדש — שיטות (5.2)", kind: "mixed", estimatedMinutes: 35, practiceSetId: "pr-rephrase", quizId: "quiz-rephrase" },
@@ -215,7 +215,7 @@ const REPH: ManifestModule = {
 const READ: ManifestModule = {
   id: "mod-reading",
   slug: "reading-comprehension",
-  title: "Reading Comprehension (Unseen)",
+  title: "קטעי קריאה",
   sortOrder: 4,
   lessons: [
     { id: "lesson.reading.01", title: "קריאה — שיטות (6.2)", kind: "mixed", estimatedMinutes: 40, practiceSetId: "pr-reading", quizId: "quiz-reading" },
@@ -238,7 +238,7 @@ const READ: ManifestModule = {
 const REF: ManifestModule = {
   id: "mod-reform",
   slug: "new-exam-format-2026",
-  title: "New Exam Format (2026)",
+  title: "רפורמה 2026",
   sortOrder: 5,
   lessons: [
     { id: "lesson.reform.01", title: "רפורמה — סקירה (7.1)", kind: "mixed", estimatedMinutes: 30, practiceSetId: "pr-reform", quizId: "quiz-reform" },
@@ -263,7 +263,7 @@ const REF: ManifestModule = {
 const SIM: ManifestModule = {
   id: "mod-sims",
   slug: "full-simulations",
-  title: "Full Simulations",
+  title: "סימולציות מלאות",
   sortOrder: 6,
   lessons: [
     { id: "lesson.sim.01", title: "איך להריץ סימולציה (8.1)", kind: "text", estimatedMinutes: 20 },
@@ -281,7 +281,7 @@ const SIM: ManifestModule = {
 const TIP: ManifestModule = {
   id: "mod-tips",
   slug: "tips-strategies",
-  title: "Tips & Strategies",
+  title: "טיפים ואסטרטגיות",
   sortOrder: 7,
   lessons: [
     { id: "lesson.tips.01", title: "טיפים מנצחים (יחידה 9)", kind: "mixed", estimatedMinutes: 25, practiceSetId: "pr-tips", quizId: "quiz-tips" },
@@ -293,7 +293,7 @@ const TIP: ManifestModule = {
 const SUM: ManifestModule = {
   id: "mod-summary",
   slug: "course-summary",
-  title: "Course Summary",
+  title: "סיכום הקורס",
   sortOrder: 8,
   lessons: [
     { id: "lesson.summary.01", title: "סיכום הקורס ומשוב (יחידה 10)", kind: "text", estimatedMinutes: 20, quizId: "quiz-final" },

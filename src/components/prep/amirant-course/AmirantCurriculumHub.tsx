@@ -78,6 +78,19 @@ function LessonRow({
   );
 }
 
+const MODULE_META: Record<string, { icon: string; badge?: string }> = {
+  "mod-intro":    { icon: "🗺️" },
+  "mod-vocab":    { icon: "📚", badge: "כרטיסיות · קושי עולה" },
+  "mod-sc":       { icon: "✏️", badge: "AI אדפטיבי · 3 רמות" },
+  "mod-rephrase": { icon: "🔄", badge: "AI אדפטיבי · 3 רמות" },
+  "mod-reading":  { icon: "📖", badge: "AI אדפטיבי · 3 רמות" },
+  "mod-reform":   { icon: "🎧", badge: "2026: שמיעה · כתיבה" },
+  "mod-sims":     { icon: "🎯", badge: "4 סימולציות · ניתוח AI" },
+  "mod-tips":     { icon: "💡" },
+  "mod-summary":  { icon: "🏁", badge: "בוחן סיכום · AI" },
+  "mod-logistics":{ icon: "📋" },
+};
+
 function ModuleSection({
   mod,
   moduleIndex,
@@ -96,6 +109,8 @@ function ModuleSection({
   const total = mod.lessons.length;
   const allDone = completedInModule === total && total > 0;
   const hasCurrentLesson = mod.lessons.some((l) => l.id === currentLessonId);
+  const hasAdaptiveQuiz = mod.quizzes.some((q) => q.adaptive);
+  const meta = MODULE_META[mod.id] ?? { icon: "📌" };
 
   return (
     <div className={`rounded-2xl border ${allDone ? "border-emerald-200 bg-emerald-50/30" : hasCurrentLesson ? "border-[#d4a843]/40 bg-[#fffdf5]" : "border-[#d6deec] bg-white"}`}>
@@ -105,11 +120,19 @@ function ModuleSection({
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center gap-4 px-5 py-4 text-right"
       >
-        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold ${allDone ? "bg-emerald-500 text-white" : "bg-[#0f1e3d] text-white"}`}>
-          {allDone ? "✓" : moduleIndex + 1}
+        <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-lg ${allDone ? "bg-emerald-500 text-white" : "bg-[#0f1e3d] text-white"}`}>
+          {allDone ? "✓" : meta.icon}
         </div>
         <div className="min-w-0 flex-1 text-right">
-          <p className="truncate font-semibold text-[#0f1e3d]">{mod.title}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="truncate font-semibold text-[#0f1e3d]">{mod.title}</p>
+            {hasAdaptiveQuiz && (
+              <span className="shrink-0 rounded-full bg-[#e8f0fe] px-2 py-0.5 text-[10px] font-semibold text-[#1a56db]">🤖 AI</span>
+            )}
+            {meta.badge && (
+              <span className="shrink-0 rounded-full bg-[#f1f5f9] px-2 py-0.5 text-[10px] text-[#5a6480]">{meta.badge}</span>
+            )}
+          </div>
           <p className="mt-0.5 text-xs text-[#5a6480]">
             {completedInModule}/{total} שיעורים
             {mod.quizzes.length > 0 ? ` · ${mod.quizzes.length} בוחן` : ""}
@@ -239,6 +262,26 @@ export function AmirantCurriculumHub() {
               🎉 סיימת את כל השיעורים!
             </div>
           )}
+        </div>
+      </div>
+
+      {/* ── X-Factor strip ── */}
+      <div className="border-b border-[#edf0f7] bg-[#f8faff] px-4 py-4">
+        <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-3 sm:justify-between">
+          {[
+            { icon: "🤖", label: "AI אדפטיבי", sub: "הבוחן מסתגל לרמתך" },
+            { icon: "📈", label: "קושי עולה", sub: "6 רמות מדורגות" },
+            { icon: "🎯", label: "נקודות חולשה", sub: "חידוד אוטומטי" },
+            { icon: "💬", label: "עוזר AI חי", sub: "רמז/פתרון בכל שאלה" },
+          ].map((x) => (
+            <div key={x.label} className="flex items-center gap-2.5 rounded-xl border border-[#d6deec] bg-white px-3 py-2.5 shadow-sm">
+              <span className="text-xl">{x.icon}</span>
+              <div>
+                <p className="text-xs font-bold text-[#0f1e3d]">{x.label}</p>
+                <p className="text-[10px] text-[#94a3b8]">{x.sub}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
