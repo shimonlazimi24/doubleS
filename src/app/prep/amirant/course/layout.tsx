@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
+  // Show chat to any logged-in user (course is free during beta; gate to paid later)
   let showCourseChat = getPrepShowCourseAssistant();
   if (!showCourseChat) {
     const client = createPrepSupabaseServerClient();
@@ -26,7 +27,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
       const {
         data: { user },
       } = await client.auth.getUser();
-      showCourseChat = await hasAmirantFullAccess(client, user?.id ?? null);
+      showCourseChat = !!user;
     }
   }
   return (

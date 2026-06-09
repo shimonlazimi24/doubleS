@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PREP_BASE } from "@/lib/prep/constants";
 
 type Props = {
-  expiresAt: string | null;
+  expiresAt: string | null | undefined;
 };
 
 function daysUntil(iso: string): number {

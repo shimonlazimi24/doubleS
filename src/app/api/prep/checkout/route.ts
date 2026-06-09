@@ -70,16 +70,16 @@ export async function POST(req: Request) {
 
   // ── Dev / PREP_HAS_FULL_ACCESS mode: grant immediately ───────────────────
   if (process.env.NODE_ENV !== "production" || process.env.NEXT_PUBLIC_PREP_HAS_FULL_ACCESS === "1") {
-    const expiresAt = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+    const endsAt = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
     await client.from("course_entitlements").upsert(
       {
         user_id: user.id,
-        course_id: "amirant-preparation",
-        plan_id: planId,
-        expires_at: expiresAt,
-        granted_at: new Date().toISOString(),
+        course_slug: "amirant-preparation",
+        access_type: "paid",
+        starts_at: new Date().toISOString(),
+        ends_at: endsAt,
       },
-      { onConflict: "user_id,course_id" },
+      { onConflict: "user_id,course_slug" },
     );
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
     return NextResponse.json({ url: `${baseUrl}/prep/amirant/course?checkout=success&plan=${planId}` });

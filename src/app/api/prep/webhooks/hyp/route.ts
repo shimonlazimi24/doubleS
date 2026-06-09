@@ -54,33 +54,33 @@ export async function POST(req: Request) {
   }
 
   const isExtension = planId.startsWith("ext_");
-  let expiresAt: string;
+  let endsAt: string;
 
   if (isExtension) {
     const { data: existing } = await client
       .from("course_entitlements")
-      .select("expires_at")
+      .select("ends_at")
       .eq("user_id", userId)
-      .eq("course_id", "amirant-preparation")
+      .eq("course_slug", "amirant-preparation")
       .single();
 
-    const base = existing?.expires_at
-      ? Math.max(new Date(existing.expires_at as string).getTime(), Date.now())
+    const base = existing?.ends_at
+      ? Math.max(new Date(existing.ends_at as string).getTime(), Date.now())
       : Date.now();
-    expiresAt = new Date(base + days * 24 * 60 * 60 * 1000).toISOString();
+    endsAt = new Date(base + days * 24 * 60 * 60 * 1000).toISOString();
   } else {
-    expiresAt = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
+    endsAt = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toISOString();
   }
 
   await client.from("course_entitlements").upsert(
     {
       user_id: userId,
-      course_id: "amirant-preparation",
-      plan_id: planId,
-      expires_at: expiresAt,
-      granted_at: new Date().toISOString(),
+      course_slug: "amirant-preparation",
+      access_type: "paid",
+      starts_at: new Date().toISOString(),
+      ends_at: endsAt,
     },
-    { onConflict: "user_id,course_id" },
+    { onConflict: "user_id,course_slug" },
   );
 
   return NextResponse.json({ ok: true });

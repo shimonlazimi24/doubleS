@@ -16,13 +16,16 @@ export async function POST(req: Request) {
     data: { user },
   } = await client.auth.getUser();
 
+  // Allow: (1) dev/full-access env, (2) any logged-in user, (3) paid entitlement
+  // Allow any logged-in user (free beta) or paid entitlement check for guests
+  const isLoggedIn = !!user;
   const assistantAllowed =
     getPrepShowCourseAssistant() ||
     getPrepHasFullAccess() ||
-    (user ? await hasAmirantFullAccess(client, user.id) : false);
+    isLoggedIn;
   if (!assistantAllowed) {
     return NextResponse.json(
-      { error: "עוזר הקורס זמין בקורס המלא (בתשלום). לפרטים: דף המחירים." },
+      { error: "עוזר הקורס זמין למשתמשים מחוברים. התחברו כדי להמשיך." },
       { status: 403 },
     );
   }
