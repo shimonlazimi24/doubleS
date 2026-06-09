@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
@@ -26,123 +25,18 @@ const MODULE_META: Record<string, { icon: string; color: string; badge?: string 
   "mod-logistics": { icon: "📋", color: "#64748b" },
 };
 
-/** Drawer — list of lessons inside a module */
-function LessonDrawer({
-  mod,
-  completedIds,
-  currentLessonId,
-  onClose,
-}: {
-  mod: ManifestModule;
-  completedIds: Set<string>;
-  currentLessonId: string | null;
-  onClose: () => void;
-}) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" dir="rtl">
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
 
-      {/* Panel */}
-      <div className="relative z-10 w-full max-w-lg rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl" style={{ maxHeight: "80dvh" }}>
-        {/* Handle */}
-        <div className="flex justify-center pt-3 sm:hidden">
-          <div className="h-1 w-10 rounded-full bg-[#d6deec]" />
-        </div>
-
-        {/* Header */}
-        <div className="flex items-center gap-3 border-b border-[#edf0f7] px-5 py-4">
-          <span className="text-2xl">{MODULE_META[mod.id]?.icon ?? "📌"}</span>
-          <div className="flex-1">
-            <p className="font-bold text-[#0f1e3d]">{mod.title}</p>
-            <p className="text-xs text-[#94a3b8]">{mod.lessons.length} שיעורים</p>
-          </div>
-          <button type="button" onClick={onClose} className="rounded-full p-1.5 text-[#94a3b8] hover:bg-[#f1f5f9] hover:text-[#0f1e3d]">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
-          </button>
-        </div>
-
-        {/* Lesson list */}
-        <div className="overflow-y-auto px-3 pb-6 pt-2" style={{ maxHeight: "calc(80dvh - 80px)" }}>
-          {mod.lessons.map((lesson, li) => {
-            const isComplete = completedIds.has(lesson.id);
-            const isCurrent = lesson.id === currentLessonId;
-            return (
-              <Link
-                key={lesson.id}
-                href={lessonHref(lesson)}
-                className={`group flex items-center gap-3.5 rounded-xl px-4 py-3 transition-all ${
-                  isCurrent ? "border border-[#d4a843]/40 bg-[#fffbee]" : "hover:bg-[#f8faff]"
-                }`}
-              >
-                <div className="shrink-0">
-                  {isComplete ? (
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-white">
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                        <path d="M2 6l3 3 5-5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                  ) : isCurrent ? (
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#d4a843] bg-[#d4a843]/10">
-                      <div className="h-2 w-2 rounded-full bg-[#d4a843]" />
-                    </div>
-                  ) : (
-                    <div className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-[#d6deec] bg-white text-[10px] font-bold text-[#94a3b8]">
-                      {li + 1}
-                    </div>
-                  )}
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className={`truncate text-sm font-medium ${isComplete ? "text-[#5a6480]" : "text-[#0f1e3d]"}`}>
-                    {lesson.title}
-                  </p>
-                  <p className="mt-0.5 text-xs text-[#94a3b8]">
-                    {lesson.kind === "video" ? "🎬" : "📖"} {lesson.estimatedMinutes ?? 20} דק׳
-                    {lesson.quizId ? " · בוחן" : ""}
-                  </p>
-                </div>
-                <span className={`shrink-0 text-sm font-semibold ${isCurrent ? "text-[#d4a843]" : "text-[#c8d4e8] group-hover:text-[#0f1e3d]"}`}>
-                  {isCurrent ? "המשך ←" : "←"}
-                </span>
-              </Link>
-            );
-          })}
-
-          {/* Quizzes */}
-          {mod.quizzes.length > 0 && (
-            <div className="mt-2 border-t border-[#edf0f7] pt-2">
-              {mod.quizzes.map((quiz) => (
-                <Link
-                  key={quiz.id}
-                  href={`${BASE}/quiz/${quiz.id}`}
-                  className="flex items-center gap-3 rounded-xl px-4 py-2.5 hover:bg-[#f8faff]"
-                >
-                  <span className="text-base">📝</span>
-                  <span className="flex-1 text-sm font-medium text-[#0f1e3d]">{quiz.title}</span>
-                  <span className="text-xs text-[#94a3b8]">{quiz.questionCount} שאלות</span>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** Single module card in the grid */
+/** Single module card — direct link to next lesson, no drawer */
 function ModuleCard({
   mod,
-  moduleIndex,
   completedIds,
   currentLessonId,
 }: {
   mod: ManifestModule;
-  moduleIndex: number;
+  moduleIndex?: number;
   completedIds: Set<string>;
   currentLessonId: string | null;
 }) {
-  const [open, setOpen] = useState(false);
   const completedInModule = mod.lessons.filter((l) => completedIds.has(l.id)).length;
   const total = mod.lessons.length;
   const pct = total > 0 ? Math.round((completedInModule / total) * 100) : 0;
@@ -151,96 +45,78 @@ function ModuleCard({
   const hasAdaptiveQuiz = mod.quizzes.some((q) => q.adaptive);
   const meta = MODULE_META[mod.id] ?? { icon: "📌", color: "#1a3260" };
 
-  // Find first incomplete lesson for quick-start CTA
+  // Where to go: current lesson > next incomplete > first lesson
+  const currentLesson = mod.lessons.find((l) => l.id === currentLessonId);
   const nextLesson = mod.lessons.find((l) => !completedIds.has(l.id));
+  const targetLesson = currentLesson ?? nextLesson ?? mod.lessons[0];
+  const href = targetLesson ? lessonHref(targetLesson) : BASE;
+
+  const ctaLabel = allDone
+    ? "חזרה על החומר"
+    : completedInModule === 0
+    ? "התחל"
+    : "המשך";
 
   const borderClass = allDone
-    ? "border-emerald-200"
+    ? "border-emerald-200 hover:border-emerald-300"
     : hasCurrentLesson
-    ? "border-[#d4a843]/50 ring-1 ring-[#d4a843]/20"
-    : "border-[#e2e8f0]";
+    ? "border-[#d4a843]/50 ring-1 ring-[#d4a843]/20 hover:shadow-md"
+    : "border-[#e2e8f0] hover:border-[#c7d2e8] hover:shadow-sm";
 
   return (
-    <>
-      <div
-        className={`group relative flex cursor-pointer flex-col rounded-2xl border bg-white transition-all hover:shadow-md ${borderClass}`}
-        onClick={() => setOpen(true)}
-      >
-        {/* Current indicator */}
-        {hasCurrentLesson && !allDone && (
-          <div className="absolute -top-2 right-4 rounded-full bg-[#d4a843] px-2.5 py-0.5 text-[10px] font-bold text-[#0f1e3d]">
-            ▶ ממשיך כאן
+    <Link
+      href={href}
+      dir="rtl"
+      className={`group relative flex flex-col rounded-2xl border bg-white transition-all ${borderClass}`}
+    >
+      {hasCurrentLesson && !allDone && (
+        <div className="absolute -top-2.5 right-4 rounded-full bg-[#d4a843] px-2.5 py-0.5 text-[10px] font-bold text-[#0f1e3d] shadow-sm">
+          ▶ ממשיך כאן
+        </div>
+      )}
+
+      <div className="flex flex-1 flex-col p-5">
+        {/* Icon + badges */}
+        <div className="flex items-start justify-between gap-2">
+          <div
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl"
+            style={{ background: `${meta.color}12` }}
+          >
+            {allDone ? "✅" : meta.icon}
           </div>
-        )}
-
-        <div className="p-5">
-          {/* Icon row */}
-          <div className="flex items-start justify-between gap-2">
-            <div
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-2xl"
-              style={{ background: `${meta.color}15` }}
-            >
-              {allDone ? "✅" : meta.icon}
-            </div>
-            <div className="flex flex-col items-end gap-1">
-              {hasAdaptiveQuiz && (
-                <span className="rounded-full bg-[#e8f0fe] px-2 py-0.5 text-[9px] font-bold text-[#1a56db]">🤖 AI</span>
-              )}
-              {meta.badge && (
-                <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-[9px] text-[#5a6480]">{meta.badge}</span>
-              )}
-            </div>
-          </div>
-
-          {/* Title */}
-          <p className="mt-3 font-bold text-[#0f1e3d] leading-snug">{mod.title}</p>
-
-          {/* Stats */}
-          <p className="mt-1 text-xs text-[#94a3b8]">
-            {total} שיעורים
-            {mod.quizzes.length > 0 ? ` · ${mod.quizzes.length} בוחן` : ""}
-          </p>
-
-          {/* Progress bar */}
-          <div className="mt-4">
-            <div className="mb-1.5 flex items-center justify-between text-[10px]">
-              <span className={allDone ? "font-semibold text-emerald-600" : "text-[#94a3b8]"}>
-                {allDone ? "✓ הושלם" : `${completedInModule}/${total}`}
-              </span>
-              <span className="font-semibold text-[#5a6480]">{pct}%</span>
-            </div>
-            <div className="h-1.5 overflow-hidden rounded-full bg-[#edf0f7]">
-              <div
-                className={`h-1.5 rounded-full transition-all ${allDone ? "bg-emerald-500" : "bg-[#0f1e3d]"}`}
-                style={{ width: `${pct}%` }}
-              />
-            </div>
+          <div className="flex flex-wrap justify-end gap-1">
+            {hasAdaptiveQuiz && (
+              <span className="rounded-full bg-[#e8f0fe] px-2 py-0.5 text-[9px] font-bold text-[#1a56db]">AI</span>
+            )}
+            {meta.badge && (
+              <span className="rounded-full bg-[#f1f5f9] px-2 py-0.5 text-[9px] text-[#5a6480]">{meta.badge}</span>
+            )}
           </div>
         </div>
 
-        {/* Footer CTA */}
-        <div className={`mt-auto border-t px-5 py-3 ${allDone ? "border-emerald-100 bg-emerald-50/40" : "border-[#f1f5f9] bg-[#f8faff]"}`}>
-          {allDone ? (
-            <p className="text-xs font-semibold text-emerald-600">לחץ לחזרה ←</p>
-          ) : nextLesson ? (
-            <p className="text-xs font-semibold text-[#0f1e3d] group-hover:text-[#1a56db]">
-              {completedInModule === 0 ? "התחל מודול ←" : "המשך ←"}
-            </p>
-          ) : (
-            <p className="text-xs text-[#94a3b8]">צפה בשיעורים ←</p>
-          )}
+        {/* Title + count */}
+        <p className="mt-3 font-bold leading-snug text-[#0f1e3d]">{mod.title}</p>
+        <p className="mt-0.5 text-xs text-[#94a3b8]">{total} שיעורים</p>
+
+        {/* Progress */}
+        <div className="mt-auto pt-4">
+          <div className="h-1 overflow-hidden rounded-full bg-[#edf0f7]">
+            <div
+              className={`h-1 rounded-full transition-all ${allDone ? "bg-emerald-500" : "bg-[#0f1e3d]"}`}
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+          <div className="mt-1.5 flex items-center justify-between text-[10px]">
+            <span className={allDone ? "font-medium text-emerald-600" : "text-[#94a3b8]"}>
+              {allDone ? "✓ הושלם" : `${completedInModule}/${total}`}
+            </span>
+            <span className="font-semibold text-[#5a6480] group-hover:text-[#0f1e3d] transition-colors">
+              {ctaLabel} →
+            </span>
+          </div>
         </div>
       </div>
-
-      {open && (
-        <LessonDrawer
-          mod={mod}
-          completedIds={completedIds}
-          currentLessonId={currentLessonId}
-          onClose={() => setOpen(false)}
-        />
-      )}
-    </>
+    </Link>
   );
 }
 
