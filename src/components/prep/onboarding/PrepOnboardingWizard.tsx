@@ -2,8 +2,6 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/design-system/cn";
 import {
   DAILY_STUDY_LABELS,
@@ -47,6 +45,87 @@ const initialState: WizardState = {
   heardAboutOther: "",
 };
 
+/* ── Sub-components ───────────────────────────────────────────── */
+
+function StepDots({ current, total }: { current: number; total: number }) {
+  return (
+    <div className="flex items-center justify-center gap-2">
+      {Array.from({ length: total }).map((_, i) => (
+        <span
+          key={i}
+          className={cn(
+            "inline-block rounded-full transition-all duration-300",
+            i + 1 < current
+              ? "h-2 w-2 bg-[#d4a843]"
+              : i + 1 === current
+                ? "h-2.5 w-5 bg-[#0f1e3d]"
+                : "h-2 w-2 bg-[#d6deec]",
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
+function StepHeading({ title, subtitle }: { title: string; subtitle?: string }) {
+  return (
+    <div className="mb-6 space-y-1.5 text-center">
+      <h2 className="font-display text-xl font-bold text-[#0f1e3d] md:text-2xl">{title}</h2>
+      {subtitle && <p className="text-sm text-[#5a6480]">{subtitle}</p>}
+    </div>
+  );
+}
+
+function RadioCard({
+  label,
+  selected,
+  onClick,
+}: {
+  label: string;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        "w-full rounded-xl border px-4 py-3.5 text-right text-sm font-medium transition-all duration-150",
+        selected
+          ? "border-[#0f1e3d] bg-[#0f1e3d] text-white shadow-sm"
+          : "border-[#d6deec] bg-white text-[#0f1e3d] hover:border-[#0f1e3d]/40 hover:bg-[#f8faff]",
+      )}
+    >
+      {label}
+    </button>
+  );
+}
+
+function CheckChip({
+  label,
+  selected,
+  onClick,
+}: {
+  label: string;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        "rounded-full border px-4 py-2 text-sm font-medium transition-all duration-150",
+        selected
+          ? "border-[#0f1e3d] bg-[#0f1e3d] text-white"
+          : "border-[#d6deec] bg-white text-[#0f1e3d] hover:border-[#0f1e3d]/40 hover:bg-[#f8faff]",
+      )}
+    >
+      {label}
+    </button>
+  );
+}
+
 function AutocompleteInput({
   id,
   label,
@@ -65,39 +144,39 @@ function AutocompleteInput({
   const [open, setOpen] = useState(false);
   const filtered = useMemo(() => {
     const q = value.trim().toLowerCase();
-    if (!q) return options.slice(0, 12);
-    return options.filter((o) => o.toLowerCase().includes(q)).slice(0, 12);
+    if (!q) return options.slice(0, 10);
+    return options.filter((o) => o.toLowerCase().includes(q)).slice(0, 10);
   }, [value, options]);
 
   return (
     <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-medium text-ink">
+      <label htmlFor={id} className="text-sm font-semibold text-[#0f1e3d]">
         {label}
       </label>
       <div className="relative">
-        <Input
+        <input
           id={id}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           onFocus={() => setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 150)}
           placeholder={placeholder}
-          className="text-right"
           dir="rtl"
           autoComplete="off"
+          className="w-full rounded-xl border border-[#d6deec] bg-white px-4 py-3 text-right text-sm text-[#0f1e3d] outline-none transition placeholder:text-[#94a3b8] focus:border-[#0f1e3d] focus:ring-2 focus:ring-[#0f1e3d]/10"
         />
         {open && filtered.length > 0 && (
-          <ul className="absolute z-20 mt-1 max-h-48 w-full overflow-auto rounded-lg border border-line bg-paper shadow-lg">
+          <ul className="absolute z-20 mt-1.5 max-h-52 w-full overflow-auto rounded-xl border border-[#d6deec] bg-white shadow-[0_8px_24px_rgba(15,30,61,0.12)]">
             {filtered.map((opt) => (
               <li key={opt}>
                 <button
                   type="button"
-                  className="w-full px-3 py-2 text-right text-sm hover:bg-surface-low"
                   onMouseDown={(e) => {
                     e.preventDefault();
                     onChange(opt);
                     setOpen(false);
                   }}
+                  className="w-full px-4 py-2.5 text-right text-sm text-[#0f1e3d] transition hover:bg-[#f8faff]"
                 >
                   {opt}
                 </button>
@@ -109,6 +188,26 @@ function AutocompleteInput({
     </div>
   );
 }
+
+function OtherInput({
+  value,
+  onChange,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+}) {
+  return (
+    <input
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder="פרטו..."
+      dir="rtl"
+      className="mt-2 w-full rounded-xl border border-[#d6deec] bg-white px-4 py-3 text-right text-sm text-[#0f1e3d] outline-none transition placeholder:text-[#94a3b8] focus:border-[#0f1e3d] focus:ring-2 focus:ring-[#0f1e3d]/10"
+    />
+  );
+}
+
+/* ── Main Wizard ──────────────────────────────────────────────── */
 
 export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
   const router = useRouter();
@@ -124,12 +223,9 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
 
   const canNext = useMemo(() => {
     switch (step) {
-      case 1:
-        return state.sortingExamDateUnknown || state.sortingExamDate.length > 0;
-      case 2:
-        return state.institutionName.trim().length > 0;
-      case 3:
-        return state.fieldOfStudy.trim().length > 0;
+      case 1: return state.sortingExamDateUnknown || state.sortingExamDate.length > 0;
+      case 2: return state.institutionName.trim().length > 0;
+      case 3: return state.fieldOfStudy.trim().length > 0;
       case 4:
         if (!state.firstTimeExam) return false;
         if (state.firstTimeExam === "other") return state.firstTimeExamOther.trim().length > 0;
@@ -142,8 +238,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
         if (state.heardAbout.length === 0) return false;
         if (state.heardAbout.includes("other") && !state.heardAboutOther.trim()) return false;
         return true;
-      default:
-        return true;
+      default: return true;
     }
   }, [step, state]);
 
@@ -178,17 +273,14 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
       setStep(7);
       setSubmitting(false);
     } catch {
-      setError("שגיאת רשת");
+      setError("שגיאת רשת. נסו שוב.");
       setSubmitting(false);
     }
   };
 
   const onNext = () => {
     if (!canNext) return;
-    if (step === 6) {
-      void submit();
-      return;
-    }
+    if (step === 6) { void submit(); return; }
     setStep((s) => s + 1);
   };
 
@@ -199,198 +291,257 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
   const toggleHeard = (key: (typeof HEARD_ABOUT_OPTIONS)[number]) => {
     setState((s) => {
       const has = s.heardAbout.includes(key);
-      return {
-        ...s,
-        heardAbout: has ? s.heardAbout.filter((h) => h !== key) : [...s.heardAbout, key],
-      };
+      return { ...s, heardAbout: has ? s.heardAbout.filter((h) => h !== key) : [...s.heardAbout, key] };
     });
+    setError(null);
   };
 
   return (
-    <div className="mx-auto w-full max-w-lg rounded-2xl border border-line bg-paper p-6 shadow-card md:p-8">
+    <div dir="rtl" className="mx-auto w-full max-w-lg">
+
+      {/* Card */}
+      <div className="overflow-hidden rounded-2xl border border-[#d6deec] bg-white shadow-[0_8px_40px_rgba(15,30,61,0.10)]">
+
+        {/* Header */}
+        <div className="border-b border-[#edf0f7] bg-gradient-to-r from-[#0f1e3d] to-[#1a3260] px-6 py-5">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#f1d286]">
+            שאלון הכרות
+          </p>
+          {step <= TOTAL_STEPS && (
+            <div className="mt-3">
+              <StepDots current={step} total={TOTAL_STEPS} />
+              <p className="mt-2 text-center text-xs text-white/50">
+                שלב {step} מתוך {TOTAL_STEPS}
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Body */}
+        <div className="px-6 py-8 md:px-8">
+
+          {/* Step 1 — Exam date */}
+          {step === 1 && (
+            <div className="space-y-5">
+              <StepHeading title="מתי מבחן המיון שלך?" subtitle="נעזור לך לתכנן את הקצב הנכון" />
+              <div className="space-y-2">
+                <label htmlFor="exam-date" className="text-sm font-semibold text-[#0f1e3d]">
+                  תאריך
+                </label>
+                <input
+                  id="exam-date"
+                  type="date"
+                  disabled={state.sortingExamDateUnknown}
+                  value={state.sortingExamDate}
+                  onChange={(e) =>
+                    patch({ sortingExamDate: e.target.value, sortingExamDateUnknown: false })
+                  }
+                  dir="ltr"
+                  className={cn(
+                    "w-full rounded-xl border px-4 py-3 text-left text-sm outline-none transition focus:ring-2 focus:ring-[#0f1e3d]/10",
+                    state.sortingExamDateUnknown
+                      ? "border-[#d6deec] bg-[#f8faff] text-[#94a3b8]"
+                      : "border-[#d6deec] bg-white text-[#0f1e3d] focus:border-[#0f1e3d]",
+                  )}
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  patch({
+                    sortingExamDateUnknown: !state.sortingExamDateUnknown,
+                    sortingExamDate: !state.sortingExamDateUnknown ? "" : state.sortingExamDate,
+                  })
+                }
+                className={cn(
+                  "flex w-full items-center gap-3 rounded-xl border px-4 py-3.5 text-sm font-medium transition",
+                  state.sortingExamDateUnknown
+                    ? "border-[#0f1e3d] bg-[#0f1e3d] text-white"
+                    : "border-[#d6deec] bg-white text-[#5a6480] hover:border-[#0f1e3d]/30 hover:bg-[#f8faff]",
+                )}
+              >
+                <span className={cn(
+                  "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs transition",
+                  state.sortingExamDateUnknown
+                    ? "border-white bg-white text-[#0f1e3d]"
+                    : "border-[#d6deec]",
+                )}>
+                  {state.sortingExamDateUnknown ? "✓" : ""}
+                </span>
+                לא ידוע עדיין
+              </button>
+            </div>
+          )}
+
+          {/* Step 2 — Institution */}
+          {step === 2 && (
+            <div className="space-y-5">
+              <StepHeading title="באיזה מוסד לימודים?" subtitle="כדי להתאים את החומר לדרישות שלך" />
+              <AutocompleteInput
+                id="institution"
+                label="שם המוסד"
+                value={state.institutionName}
+                onChange={(v) => patch({ institutionName: v })}
+                options={INSTITUTIONS}
+                placeholder="הקלידו שם מוסד..."
+              />
+            </div>
+          )}
+
+          {/* Step 3 — Field of study */}
+          {step === 3 && (
+            <div className="space-y-5">
+              <StepHeading title="מה תחום הלימודים?" subtitle="נשתמש בזה להמלצות מותאמות" />
+              <AutocompleteInput
+                id="field"
+                label="תחום לימודים"
+                value={state.fieldOfStudy}
+                onChange={(v) => patch({ fieldOfStudy: v })}
+                options={FIELDS}
+                placeholder="למשל: הנדסת תוכנה..."
+              />
+            </div>
+          )}
+
+          {/* Step 4 — First time */}
+          {step === 4 && (
+            <div className="space-y-4">
+              <StepHeading title="האם זו הפעם הראשונה?" />
+              <div className="flex flex-col gap-2.5">
+                {FIRST_TIME_OPTIONS.map((opt) => (
+                  <RadioCard
+                    key={opt}
+                    label={FIRST_TIME_LABELS[opt]}
+                    selected={state.firstTimeExam === opt}
+                    onClick={() => patch({ firstTimeExam: opt })}
+                  />
+                ))}
+              </div>
+              {state.firstTimeExam === "other" && (
+                <OtherInput
+                  value={state.firstTimeExamOther}
+                  onChange={(v) => patch({ firstTimeExamOther: v })}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Step 5 — Daily study time */}
+          {step === 5 && (
+            <div className="space-y-4">
+              <StepHeading title="כמה זמן ביום ללמידה?" subtitle="נתכנן איתך קצב ריאלי" />
+              <div className="flex flex-wrap gap-2.5">
+                {DAILY_STUDY_OPTIONS.map((opt) => (
+                  <CheckChip
+                    key={opt}
+                    label={DAILY_STUDY_LABELS[opt]}
+                    selected={state.dailyStudyTime === opt}
+                    onClick={() => patch({ dailyStudyTime: opt })}
+                  />
+                ))}
+              </div>
+              {state.dailyStudyTime === "other" && (
+                <OtherInput
+                  value={state.dailyStudyTimeOther}
+                  onChange={(v) => patch({ dailyStudyTimeOther: v })}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Step 6 — Heard about */}
+          {step === 6 && (
+            <div className="space-y-4">
+              <StepHeading title="איך שמעת עלינו?" subtitle="ניתן לבחור יותר מאפשרות אחת" />
+              <div className="flex flex-wrap gap-2.5">
+                {HEARD_ABOUT_OPTIONS.map((opt) => (
+                  <CheckChip
+                    key={opt}
+                    label={HEARD_ABOUT_LABELS[opt]}
+                    selected={state.heardAbout.includes(opt)}
+                    onClick={() => toggleHeard(opt)}
+                  />
+                ))}
+              </div>
+              {state.heardAbout.includes("other") && (
+                <OtherInput
+                  value={state.heardAboutOther}
+                  onChange={(v) => patch({ heardAboutOther: v })}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Step 7 — Done */}
+          {step === 7 && (
+            <div className="space-y-6 py-4 text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-3xl">
+                ✓
+              </div>
+              <div className="space-y-2">
+                <h2 className="font-display text-2xl font-bold text-[#0f1e3d]">מוכן להתחיל!</h2>
+                <p className="text-sm text-[#5a6480]">הפרופיל שלך נשמר. המסלול מחכה לך.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => router.push(nextPath)}
+                className="inline-flex w-full items-center justify-center rounded-xl bg-[#0f1e3d] px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#16306a]"
+              >
+                התחלת הקורס ←
+              </button>
+            </div>
+          )}
+
+          {/* Error */}
+          {error && (
+            <p className="mt-4 rounded-lg bg-red-50 px-4 py-2.5 text-center text-sm text-red-700">
+              {error}
+            </p>
+          )}
+
+          {/* Navigation */}
+          {step <= TOTAL_STEPS && (
+            <div className="mt-8 flex items-center gap-3">
+              {step > 1 ? (
+                <button
+                  type="button"
+                  onClick={onBack}
+                  className="rounded-xl border border-[#d6deec] bg-white px-5 py-3 text-sm font-medium text-[#5a6480] transition hover:border-[#0f1e3d]/30 hover:text-[#0f1e3d]"
+                >
+                  ← הקודם
+                </button>
+              ) : (
+                <span />
+              )}
+              <button
+                type="button"
+                onClick={onNext}
+                disabled={!canNext || submitting}
+                className={cn(
+                  "ms-auto rounded-xl px-6 py-3 text-sm font-bold transition",
+                  canNext && !submitting
+                    ? "bg-[#0f1e3d] text-white shadow-sm hover:bg-[#16306a]"
+                    : "cursor-not-allowed bg-[#d6deec] text-[#94a3b8]",
+                )}
+              >
+                {step === 6 ? (submitting ? "שומר..." : "סיום ✓") : "המשך ←"}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Skip */}
       {step <= TOTAL_STEPS && (
-        <p className="mb-6 text-center text-sm text-muted">
-          שלב {step} מתוך {TOTAL_STEPS}
+        <p className="mt-4 text-center text-xs text-[#94a3b8]">
+          <button
+            type="button"
+            onClick={() => router.push(nextPath)}
+            className="underline-offset-2 hover:underline"
+          >
+            דלג על השאלון
+          </button>
         </p>
-      )}
-
-      {step === 1 && (
-        <div className="space-y-4">
-          <h2 className="text-center text-xl font-bold">מתי מבחן המיון שלך?</h2>
-          <div className="space-y-2">
-            <label htmlFor="exam-date" className="text-sm font-medium">
-              תאריך
-            </label>
-            <Input
-              id="exam-date"
-              type="date"
-              disabled={state.sortingExamDateUnknown}
-              value={state.sortingExamDate}
-              onChange={(e) => patch({ sortingExamDate: e.target.value, sortingExamDateUnknown: false })}
-              dir="ltr"
-            />
-          </div>
-          <label className="flex cursor-pointer items-center gap-2">
-            <input
-              type="checkbox"
-              checked={state.sortingExamDateUnknown}
-              onChange={(e) =>
-                patch({
-                  sortingExamDateUnknown: e.target.checked,
-                  sortingExamDate: e.target.checked ? "" : state.sortingExamDate,
-                })
-              }
-              className="size-4 rounded border-line"
-            />
-            <span>לא ידוע</span>
-          </label>
-        </div>
-      )}
-
-      {step === 2 && (
-        <div>
-          <h2 className="mb-4 text-center text-xl font-bold">באיזה מוסד לימודים את/ה לומד/ת?</h2>
-          <AutocompleteInput
-            id="institution"
-            label="שם המוסד"
-            value={state.institutionName}
-            onChange={(v) => patch({ institutionName: v })}
-            options={INSTITUTIONS}
-            placeholder="הקלידו או בחרו מהרשימה"
-          />
-        </div>
-      )}
-
-      {step === 3 && (
-        <div>
-          <h2 className="mb-4 text-center text-xl font-bold">מה תחום הלימודים שלך?</h2>
-          <AutocompleteInput
-            id="field"
-            label="תחום לימודים"
-            value={state.fieldOfStudy}
-            onChange={(v) => patch({ fieldOfStudy: v })}
-            options={FIELDS}
-            placeholder="למשל: הנדסת תוכנה"
-          />
-        </div>
-      )}
-
-      {step === 4 && (
-        <div className="space-y-4">
-          <h2 className="text-center text-xl font-bold">האם זו הפעם הראשונה שאת/ה נבחנ/ת במבחן?</h2>
-          <div className="flex flex-col gap-2">
-            {FIRST_TIME_OPTIONS.map((opt) => (
-              <button
-                key={opt}
-                type="button"
-                onClick={() => patch({ firstTimeExam: opt })}
-                className={cn(
-                  "rounded-lg border px-4 py-3 text-right transition",
-                  state.firstTimeExam === opt ? "border-primary bg-primary-muted" : "border-line hover:bg-surface-low",
-                )}
-              >
-                {FIRST_TIME_LABELS[opt]}
-              </button>
-            ))}
-          </div>
-          {state.firstTimeExam === "other" && (
-            <Input
-              value={state.firstTimeExamOther}
-              onChange={(e) => patch({ firstTimeExamOther: e.target.value })}
-              placeholder="פרטו..."
-              className="text-right"
-              dir="rtl"
-            />
-          )}
-        </div>
-      )}
-
-      {step === 5 && (
-        <div className="space-y-4">
-          <h2 className="text-center text-xl font-bold">כמה זמן ביום את/ה מתכננ/ת ללמוד?</h2>
-          <div className="flex flex-col gap-2">
-            {DAILY_STUDY_OPTIONS.map((opt) => (
-              <button
-                key={opt}
-                type="button"
-                onClick={() => patch({ dailyStudyTime: opt })}
-                className={cn(
-                  "rounded-lg border px-4 py-3 text-right transition",
-                  state.dailyStudyTime === opt ? "border-primary bg-primary-muted" : "border-line hover:bg-surface-low",
-                )}
-              >
-                {DAILY_STUDY_LABELS[opt]}
-              </button>
-            ))}
-          </div>
-          {state.dailyStudyTime === "other" && (
-            <Input
-              value={state.dailyStudyTimeOther}
-              onChange={(e) => patch({ dailyStudyTimeOther: e.target.value })}
-              placeholder="פרטו..."
-              className="text-right"
-              dir="rtl"
-            />
-          )}
-        </div>
-      )}
-
-      {step === 6 && (
-        <div className="space-y-4">
-          <h2 className="text-center text-xl font-bold">איך שמעת עלינו?</h2>
-          <p className="text-center text-sm text-muted">ניתן לבחור יותר מאפשרות אחת</p>
-          <div className="flex flex-col gap-2">
-            {HEARD_ABOUT_OPTIONS.map((opt) => (
-              <button
-                key={opt}
-                type="button"
-                onClick={() => toggleHeard(opt)}
-                className={cn(
-                  "rounded-lg border px-4 py-3 text-right transition",
-                  state.heardAbout.includes(opt) ? "border-primary bg-primary-muted" : "border-line hover:bg-surface-low",
-                )}
-              >
-                {HEARD_ABOUT_LABELS[opt]}
-              </button>
-            ))}
-          </div>
-          {state.heardAbout.includes("other") && (
-            <Input
-              value={state.heardAboutOther}
-              onChange={(e) => patch({ heardAboutOther: e.target.value })}
-              placeholder="פרטו..."
-              className="text-right"
-              dir="rtl"
-            />
-          )}
-        </div>
-      )}
-
-      {step === 7 && (
-        <div className="space-y-6 text-center">
-          <h2 className="text-2xl font-bold">מעולה! סיימנו</h2>
-          <p className="text-muted">עכשיו אפשר להתחיל את מסלול ההכנה שלך.</p>
-          <Button variant="primary" className="w-full px-6 py-3 text-base" onClick={() => router.push(nextPath)} disabled={submitting}>
-            התחלת הקורס
-          </Button>
-        </div>
-      )}
-
-      {error && <p className="mt-4 text-center text-sm text-red-600">{error}</p>}
-
-      {step <= TOTAL_STEPS && (
-        <div className="mt-8 flex gap-3">
-          {step > 1 ? (
-            <Button type="button" variant="secondary" onClick={onBack}>
-              → חזרה
-            </Button>
-          ) : (
-            <span />
-          )}
-          <Button type="button" variant="primary" className="ms-auto" onClick={onNext} disabled={!canNext || submitting}>
-            {step === 6 ? (submitting ? "שומר..." : "סיום") : "המשך ←"}
-          </Button>
-        </div>
       )}
     </div>
   );
