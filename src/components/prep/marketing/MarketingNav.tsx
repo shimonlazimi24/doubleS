@@ -9,7 +9,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 
 const LINKS = [
   { href: PREP_BASE, label: "בית", exact: true },
-  { href: `${PREP_BASE}/pricing`, label: "מחירון" },
+  { href: `${PREP_BASE}/amirant`, label: "אמירנט" },
   { href: `${PREP_BASE}/about`, label: "אודות" },
 ] as const;
 
@@ -63,11 +63,11 @@ export function MarketingNav() {
         התחברות
       </Link>
       <ButtonLink
-        href={`${PREP_BASE}/amirant`}
+        href={`${PREP_BASE}/amirant/course`}
         variant="primary"
         className="min-h-10 px-5 text-sm shadow-cta"
       >
-        התחילו עכשיו
+        כניסה לקורס
       </ButtonLink>
     </nav>
   );

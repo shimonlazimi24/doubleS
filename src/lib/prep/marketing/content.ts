@@ -1,16 +1,16 @@
 import { PREP_BASE } from "@/lib/prep/constants";
 
 export const MARKETING_HERO = {
-  headline: "הכנה ממוקדת למבחני אנגלית אקדמיים",
+  headline: "פטור מאנגלית — בלי קורסי השלמה",
   subheadline:
-    "קורסים דיגיטליים ברורים, תרגול חכם וליווי AI — מסלול מדיד שמכין אתכם ללימודים אקדמיים בביטחון.",
-  ctaPrimary: { label: "התחילו עכשיו", href: `${PREP_BASE}/amirant` },
-  ctaSecondary: { label: "לצפייה במסלול", href: `${PREP_BASE}/courses` },
+    "מסלול הכנה לאמירנט שמוביל לציון שחוסך אלפי שקלים וחודשים מהתואר. תרגול אדפטיבי, סימולציות מלאות וליווי AI.",
+  ctaPrimary: { label: "נסה מבחן חינם", href: `${PREP_BASE}/amirant#demo` },
+  ctaSecondary: { label: "כניסה לקורס", href: `${PREP_BASE}/amirant/course` },
   trust: [
-    { value: "אמירנט", label: "מסלול פעיל" },
-    { value: "TOEFL", label: "בקרוב" },
-    { value: "מעקב", label: "התקדמות לפי מודול" },
-    { value: "AI", label: "תרגול ממוקד" },
+    { value: "78", label: "שיעורים בקורס" },
+    { value: "AI", label: "Coach אחרי כל בוחן" },
+    { value: "100%", label: "חינם כרגע" },
+    { value: "↑24", label: "שיפור ממוצע בנקודות" },
   ],
 } as const;
 
@@ -89,8 +89,8 @@ export const AI_VALUE = {
 } as const;
 
 export const MARKETING_CTA = {
-  title: "מוכנים להתחיל?",
-  subtitle: "צפו במסלול אמירנט, נסו מבחן לדוגמה, והמשיכו להרשמה ולגישה מלאה.",
-  primary: { label: "התחילו עכשיו", href: `${PREP_BASE}/amirant` },
-  secondary: { label: "מחירון", href: `${PREP_BASE}/pricing` },
+  title: "מוכנים? הקורס המלא פתוח עכשיו",
+  subtitle: "כל השיעורים, הבוחנים, הסימולציות והדשבורד — בלי תשלום, בלי הגבלה.",
+  primary: { label: "כניסה לקורס המלא", href: `${PREP_BASE}/amirant/course` },
+  secondary: { label: "נסה מבחן חינם", href: `${PREP_BASE}/amirant#demo` },
 } as const;
