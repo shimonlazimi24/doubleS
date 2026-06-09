@@ -329,7 +329,9 @@ export async function runAmirantChatbot(
     } else {
       parsed = { ...ai.output, intent: outIntent };
     }
-  } catch {
+  } catch (e) {
+    const errMsg = e instanceof Error ? e.message : String(e);
+    console.error("[chatbot-router] runStructuredAi failed:", errMsg);
     parsed = {
       intent: outIntent,
       answer: "המודל לא הצליח להשיב כרגע. נסו/י שוב או נסחו קצר יותר.",
