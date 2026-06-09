@@ -53,40 +53,17 @@ export function PrepCoursesDropdown() {
               {CATALOG_ITEM.label}
             </Link>
           </li>
-          {PREP_COURSES.map((course) => {
-            const comingSoon = course.status === "coming_soon";
-            const rowClass =
-              "flex min-h-[2.75rem] items-center justify-between gap-3 px-4 py-2.5 text-sm leading-snug transition";
-
-            if (comingSoon) {
-              return (
-                <li key={course.id}>
-                  <Link
-                    href={course.href}
-                    onClick={close}
-                    className={`${rowClass} text-muted hover:bg-surface-low hover:text-ink`}
-                  >
-                    <span>{course.shortTitle}</span>
-                    <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
-                      בקרוב
-                    </span>
-                  </Link>
-                </li>
-              );
-            }
-
-            return (
-              <li key={course.id}>
-                <Link
-                  href={course.href}
-                  onClick={close}
-                  className={`${rowClass} text-ink hover:bg-surface-low hover:text-primary`}
-                >
-                  <span>{course.shortTitle}</span>
-                </Link>
-              </li>
-            );
-          })}
+          {PREP_COURSES.filter((c) => c.status === "live").map((course) => (
+            <li key={course.id}>
+              <Link
+                href={course.href}
+                onClick={close}
+                className="flex min-h-[2.75rem] items-center justify-between gap-3 px-4 py-2.5 text-sm leading-snug text-ink transition hover:bg-surface-low hover:text-primary"
+              >
+                <span>{course.shortTitle}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </details>

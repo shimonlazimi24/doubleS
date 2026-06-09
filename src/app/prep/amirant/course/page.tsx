@@ -1,5 +1,6 @@
 import { AMIRANT_PREPARATION_MANIFEST, getManifestQuiz } from "@/lib/amirant-course";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { Container } from "@/components/ui";
 import { AmirantCourseOverallProgress } from "@/components/prep/amirant-course/AmirantCourseOverallProgress";
 import { AmirantCourseLandingPage } from "@/components/prep/amirant-course/AmirantCourseLandingPage";
@@ -31,6 +32,7 @@ export default function AmirantCourseHomePage() {
           demoQuizHref={demoQuizHref}
           firstSimulationHref={firstSimulationHref}
           dashboardHref={`${BASE}/dashboard`}
+          isFree={getPrepHasFullAccess()}
         />
       </div>
     </Container>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui";
 
@@ -14,6 +15,33 @@ function safeNextPath(raw: string | null): string | null {
   return raw;
 }
 
+function FreeBanner({ afterPayPath }: { afterPayPath: string | null }) {
+  return (
+    <div className="space-y-6">
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">גישה פתוחה</p>
+        <h2 className="mt-2 text-xl font-semibold text-ink">הקורס פתוח חינם כרגע</h2>
+        <Text as="p" variant="body" className="mt-2 text-muted">
+          כל המודולים, מבחנים אדפטיביים, סימולציות ועוזר AI — זמינים לגמרי ללא תשלום.
+        </Text>
+        <ul className="mt-4 list-inside list-disc space-y-1 text-sm text-muted">
+          <li>מודול מבוא + אבחון</li>
+          <li>שלוש מיומנויות ליבה + סימולציות</li>
+          <li>דשבורד אישי ומעקב התקדמות</li>
+        </ul>
+        <div className="mt-6">
+          <Link
+            href={afterPayPath ?? COURSE}
+            className="inline-flex min-h-11 items-center justify-center rounded-control bg-[#0f1e3d] px-6 text-sm font-bold text-white shadow-cta transition hover:bg-[#16306a]"
+          >
+            התחל ללמוד עכשיו ←
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function PrepPricingPage() {
   const searchParams = useSearchParams();
   const lockedModule = searchParams.get("module");
@@ -21,6 +49,10 @@ export function PrepPricingPage() {
   const afterPayPath = safeNextPath(searchParams.get("next"));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  if (getPrepHasFullAccess()) {
+    return <FreeBanner afterPayPath={afterPayPath} />;
+  }
 
   async function startCheckout() {
     setError(null);

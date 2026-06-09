@@ -7,6 +7,7 @@ type LandingProps = {
   demoQuizHref: string;
   firstSimulationHref: string | null;
   dashboardHref: string;
+  isFree?: boolean;
 };
 
 const DIFFERENTIATORS = [
@@ -80,6 +81,7 @@ export function AmirantCourseLandingPage({
   demoQuizHref,
   firstSimulationHref,
   dashboardHref,
+  isFree = false,
 }: LandingProps) {
   return (
     <div dir="rtl" className="-mx-4 bg-[#fbf8f1] px-4 py-2 pb-24 md:px-6 md:pb-28">
@@ -344,9 +346,13 @@ export function AmirantCourseLandingPage({
 
         <section className="rounded-[22px] border border-[#1b3366] bg-gradient-to-br from-[#0f1e3d] via-[#142a54] to-[#0f1e3d] p-6 text-white shadow-lift md:p-9">
           <SectionTitle
-            kicker="המסלול המלא"
-            title="מה מקבלים בגישה מלאה"
-            subtitle="שיעורים, בוחנים אדפטיביים, סימולציות מלאות, דשבורד אישי ומשוב AI — הכל במקום אחד."
+            kicker={isFree ? "גישה פתוחה" : "המסלול המלא"}
+            title={isFree ? "הכל פתוח — בלי תשלום" : "מה מקבלים בגישה מלאה"}
+            subtitle={
+              isFree
+                ? "שיעורים, בוחנים אדפטיביים, סימולציות מלאות ומשוב AI — זמינים עכשיו לחלוטין חינם."
+                : "שיעורים, בוחנים אדפטיביים, סימולציות מלאות, דשבורד אישי ומשוב AI — הכל במקום אחד."
+            }
             light
           />
           <div className="mt-5 grid gap-2 text-sm text-white/85 md:grid-cols-2">
@@ -356,12 +362,21 @@ export function AmirantCourseLandingPage({
             <p>• מעקב שיפור והמלצות המשך</p>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/prep/pricing"
-              className="inline-flex items-center justify-center rounded-control bg-[#d4a843] px-6 py-3 text-sm font-bold text-[#0f1e3d] shadow-cta transition hover:bg-[#e7bb59]"
-            >
-              מעבר למסלול המלא
-            </Link>
+            {isFree ? (
+              <Link
+                href={dashboardHref}
+                className="inline-flex items-center justify-center rounded-control bg-[#d4a843] px-6 py-3 text-sm font-bold text-[#0f1e3d] shadow-cta transition hover:bg-[#e7bb59]"
+              >
+                כניסה לקורס המלא ←
+              </Link>
+            ) : (
+              <Link
+                href="/prep/pricing"
+                className="inline-flex items-center justify-center rounded-control bg-[#d4a843] px-6 py-3 text-sm font-bold text-[#0f1e3d] shadow-cta transition hover:bg-[#e7bb59]"
+              >
+                מעבר למסלול המלא
+              </Link>
+            )}
             <Link
               href={dashboardHref}
               className="inline-flex items-center justify-center rounded-control border border-white/35 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
@@ -375,10 +390,10 @@ export function AmirantCourseLandingPage({
       <div className="pointer-events-none fixed inset-x-0 bottom-3 z-40 px-4">
         <div className="mx-auto flex max-w-[1100px] justify-center md:justify-start">
           <Link
-            href={demoQuizHref}
+            href={isFree ? dashboardHref : demoQuizHref}
             className="pointer-events-auto inline-flex w-full items-center justify-center rounded-control bg-[#0f1e3d] px-6 py-3 text-sm font-bold text-white shadow-lift transition hover:bg-[#16306a] md:w-auto"
           >
-            נסה מבחן חינם
+            {isFree ? "כניסה לקורס המלא ←" : "נסה מבחן חינם"}
           </Link>
         </div>
       </div>
