@@ -33,13 +33,20 @@ export function AmirantCourseFloatingChat() {
     return m?.[1] ?? null;
   }, [pathname]);
 
+  // Only show chat in contextual pages: lesson, quiz, simulation, review, weak-quiz
+  const isContextualPage = useMemo(() => {
+    return /\/prep\/amirant\/course\/(lesson|quiz|simulation|review|weak-quiz)/.test(pathname);
+  }, [pathname]);
+
   const activeLessonId = urlLesson ?? lastLesson;
 
   const contextHint = useMemo(() => {
     if (urlLesson) return "מיקוד: שיעור בדף זה (הקשר מדויק).";
-    if (lastLesson) return "מיקוד: אחרון שיעור — לעומק יותר פתחו את השיעור.";
-    return "מיקוד: כלל הקורס. לתשובות ממוקדות, היכנסו לשיעור.";
+    if (lastLesson) return "מיקוד: שיעור אחרון שנפתח.";
+    return "מיקוד: כלל הקורס.";
   }, [urlLesson, lastLesson]);
+
+  if (!isContextualPage) return null;
 
   return (
     <>
