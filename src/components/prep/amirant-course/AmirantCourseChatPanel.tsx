@@ -3,7 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
-import { AMIRANT_COURSE_COACH_EVENT, type AmirantCourseCoachEventDetail } from "@/lib/prep/amirant-lesson-coach-events";
+import {
+  AMIRANT_COURSE_COACH_EVENT,
+  AMIRANT_COURSE_QUESTION_CONTEXT_EVENT,
+  type AmirantCourseCoachEventDetail,
+  type AmirantQuestionContextDetail,
+} from "@/lib/prep/amirant-lesson-coach-events";
 
 type Msg = { role: "user" | "assistant"; text: string; id: string };
 
@@ -42,6 +47,7 @@ export function AmirantCourseChatPanel({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hintSession, setHintSession] = useState<HintSession | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<AmirantQuestionContextDetail | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = useCallback(() => {
@@ -131,6 +137,15 @@ export function AmirantCourseChatPanel({
     return () => window.removeEventListener(AMIRANT_COURSE_COACH_EVENT, h);
   }, [sendWithText]);
 
+  useEffect(() => {
+    const h = (e: Event) => {
+      const d = (e as CustomEvent<AmirantQuestionContextDetail>).detail;
+      if (d) setCurrentQuestion(d);
+    };
+    window.addEventListener(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, h);
+    return () => window.removeEventListener(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, h);
+  }, []);
+
   const inner = (
     <>
       <Text as="h2" variant="headlineSm" className={cn(compact && "text-base")}>
@@ -172,12 +187,26 @@ export function AmirantCourseChatPanel({
 
       {error ? <p className="text-sm text-red-600 dark:text-red-400">{error}</p> : null}
 
+      {currentQuestion && (
+        <div className="rounded-lg border border-line/40 bg-surface-low/60 px-3 py-2 text-xs text-muted">
+          <span className="font-semibold text-ink/70">שאלה נוכחית: </span>
+          {currentQuestion.questionText.slice(0, 80)}{currentQuestion.questionText.length > 80 ? "…" : ""}
+        </div>
+      )}
+
       <div className="flex flex-wrap items-center gap-1.5">
         <button
           type="button"
           className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
           disabled={loading}
-          onClick={() => void sendWithPayload({ userMessage: "תן לי רמז לשאלה (בקצרה)", clientAction: "hint" })}
+          onClick={() => void sendWithPayload({
+            userMessage: currentQuestion
+              ? `תן לי רמז לשאלה הזאת (בקצרה): "${currentQuestion.questionText.slice(0, 120)}"`
+              : "תן לי רמז לשאלה (בקצרה)",
+            clientAction: "hint",
+            topic: currentQuestion?.topic,
+            stagedHintContext: { questionType: currentQuestion?.questionType },
+          })}
         >
           תן לי רמז
         </button>
@@ -189,9 +218,10 @@ export function AmirantCourseChatPanel({
             void sendWithPayload({
               userMessage: "רמז נוסף",
               clientAction: "next_hint",
+              topic: currentQuestion?.topic,
               stagedHintContext: hintSession
-                ? { stage: hintSession.stage, questionType: hintSession.questionType }
-                : { stage: 2 },
+                ? { stage: hintSession.stage, questionType: hintSession.questionType ?? currentQuestion?.questionType }
+                : { stage: 2, questionType: currentQuestion?.questionType },
             })
           }
         >
@@ -201,7 +231,13 @@ export function AmirantCourseChatPanel({
           type="button"
           className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
           disabled={loading}
-          onClick={() => void sendWithPayload({ userMessage: "גלה את התשובה (עם נימוקים מהחומר).", clientAction: "reveal" })}
+          onClick={() => void sendWithPayload({
+            userMessage: currentQuestion
+              ? `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`
+              : "גלה את התשובה (עם נימוקים מהחומר).",
+            clientAction: "reveal",
+            topic: currentQuestion?.topic,
+          })}
         >
           גלה תשובה
         </button>

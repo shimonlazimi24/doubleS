@@ -37,6 +37,7 @@ import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/Amir
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
+import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -176,6 +177,15 @@ export function AmirantAdaptiveQuizClient({
 
   const currentId = questionIds[currentIndex];
   const currentQ = currentId ? getBankQuestion(currentId) : undefined;
+
+  useEffect(() => {
+    if (!currentQ) return;
+    dispatchAmirantQuestionContext({
+      questionText: amirantExamQuestionPromptForDisplay(currentQ.prompt),
+      topic: currentQ.topicSlug,
+      questionType: currentQ.topicSlug,
+    });
+  }, [currentQ]);
 
   const levelAtIndex = useMemo(() => {
     const effectiveStart: DifficultyLevel =
