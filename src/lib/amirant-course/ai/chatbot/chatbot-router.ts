@@ -360,7 +360,11 @@ export async function runAmirantChatbot(
       nextHintAvailable: nextHint,
       usedStudentData: parsed.usedStudentData,
       safeFallback: parsed.safeFallback,
-      references: parsed.references,
+      references: parsed.references.map((r) => ({
+        chunkId: r.chunkId,
+        lessonId: r.lessonId ?? undefined,
+        topic: r.topic ?? undefined,
+      })),
     },
     chunks,
   );

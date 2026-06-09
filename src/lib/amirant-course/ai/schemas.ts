@@ -6,6 +6,13 @@ export const aiRefSchema = z.object({
   topic: z.string().optional(),
 });
 
+// Strict variant for OpenAI structured output — no .optional(), only .nullable()
+export const aiRefSchemaStrict = z.object({
+  chunkId: z.string().min(1),
+  lessonId: z.string().nullable().default(null),
+  topic: z.string().nullable().default(null),
+});
+
 export const lessonChatRequestSchema = z.object({
   /** אופציונלי — בלי `lessonId` מחפשים הקשר לרוחב כל קורס ההכנה (RAG). */
   lessonId: z.string().min(1).optional(),
@@ -59,7 +66,7 @@ export const quizReviewResponseSchema = z.object({
   actionItems: z.array(z.string()).default([]),
   references: z.array(aiRefSchema).default([]),
   safeFallback: z.boolean().default(false),
-});
+}); // all fields required or have defaults — OK for structured output
 
 export const recommendationsRequestSchema = z.object({
   weakTopics: z.array(z.string()).default([]),

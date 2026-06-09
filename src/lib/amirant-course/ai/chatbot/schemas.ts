@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { lessonChatRequestSchema, lessonChatResponseSchema, aiRefSchema, amirantChatIntentValues } from "../schemas";
+import { lessonChatRequestSchema, lessonChatResponseSchema, aiRefSchemaStrict, amirantChatIntentValues } from "../schemas";
 
 export { amirantChatIntentValues };
 export const QUESTION_TYPE_VALUES = [
@@ -42,6 +42,7 @@ export const amirantChatbotResponseSchema = lessonChatResponseSchema;
 
 export type AmirantChatbotResponse = z.infer<typeof amirantChatbotResponseSchema>;
 
+// OpenAI structured output requires all fields required or .nullable() — no bare .optional()
 export const amirantChatbotAiResponseSchema = z.object({
   intent: z.enum(amirantChatIntentValues),
   answer: z.string().min(1),
@@ -55,13 +56,13 @@ export const amirantChatbotAiResponseSchema = z.object({
       "general_lesson",
       "unknown",
     ])
-    .optional()
-    .nullable(),
-  hintStage: z.number().int().min(1).max(4).nullable().optional(),
-  nextHintAvailable: z.boolean().optional().default(false),
-  recommendedAction: z.string().nullable().optional(),
-  usedStudentData: z.boolean().optional().default(false),
+    .nullable()
+    .default("unknown"),
+  hintStage: z.number().int().min(1).max(4).nullable().default(null),
+  nextHintAvailable: z.boolean().default(false),
+  recommendedAction: z.string().nullable().default(null),
+  usedStudentData: z.boolean().default(false),
   safeFallback: z.boolean().default(false),
-  references: z.array(aiRefSchema).default([]),
+  references: z.array(aiRefSchemaStrict).default([]),
 });
 export type AmirantChatbotAiResponse = z.infer<typeof amirantChatbotAiResponseSchema>;
