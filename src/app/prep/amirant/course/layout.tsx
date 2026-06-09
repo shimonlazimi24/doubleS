@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  AMIRANT_PREPARATION_MANIFEST,
-  getAmirantContentQualityMode,
-} from "@/lib/amirant-course";
+import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getPrepShowCourseAssistant } from "@/lib/prep/prep-full-access";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
-import { Container, Text } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { AmirantCourseFloatingChat } from "@/components/prep/amirant-course/AmirantCourseFloatingChat";
 import { AmirantCourseProgressProvider } from "@/components/prep/amirant-course/AmirantCourseProgressProvider";
 import { AmirantPersistenceProvider } from "@/components/prep/amirant-course/AmirantPersistenceProvider";
@@ -22,7 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default async function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
-  const qualityMode = getAmirantContentQualityMode();
   let showCourseChat = getPrepShowCourseAssistant();
   if (!showCourseChat) {
     const client = createPrepSupabaseServerClient();
@@ -38,34 +34,25 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
       <AmirantCourseAccessProvider>
       <AmirantCourseProgressProvider>
         <div className="bg-canvas min-h-screen">
-          <div className="border-b border-line/70 bg-paper/90 backdrop-blur">
-            <Container className="flex flex-wrap items-center justify-between gap-3 py-3" max="measureWide">
-              <Link href={BASE} className="text-sm font-semibold text-primary">
-                Amirant Preparation
+          <div className="border-b border-line/70 bg-paper/90 backdrop-blur" dir="rtl">
+            <Container className="flex items-center justify-between gap-4 py-3" max="measureWide">
+              <Link href={BASE} className="flex items-center gap-2 text-sm font-bold text-[#0f1e3d]">
+                <span className="text-base">◈</span>
+                הכנה לאמירנט
               </Link>
-              <nav className="flex flex-wrap gap-3 text-xs font-medium text-muted">
-                <Link href={BASE} className="hover:text-primary">
-                  תוכנית
+              <nav className="flex items-center gap-1">
+                <Link
+                  href={BASE}
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-[#5a6480] transition hover:bg-[#f0f4ff] hover:text-[#0f1e3d]"
+                >
+                  תוכנית הקורס
                 </Link>
-                <Link href={`${BASE}/paid`} className="hover:text-primary">
-                  הקורס בתשלום
-                </Link>
-                <Link href={`${BASE}/dashboard`} className="hover:text-primary">
+                <Link
+                  href={`${BASE}/dashboard`}
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-[#5a6480] transition hover:bg-[#f0f4ff] hover:text-[#0f1e3d]"
+                >
                   לוח תלמיד
                 </Link>
-                <Link href={`${BASE}/analytics`} className="hover:text-primary">
-                  אנליטיקה
-                </Link>
-                <Link href={`${BASE}/review`} className="hover:text-primary">
-                  סקירת בוחנים
-                </Link>
-                <Text as="span" variant="caption" className="text-muted">
-                  {qualityMode === "demo_generated_present"
-                    ? "תוכן דמו-גנרטיבי (לא production)"
-                    : qualityMode === "demo_fallback"
-                      ? "תוכן דמו (fallback)"
-                      : "תוכן production"}
-                </Text>
               </nav>
             </Container>
           </div>
