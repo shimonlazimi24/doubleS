@@ -42,12 +42,14 @@ export default async function PrepOnboardingPage({ searchParams }: Props) {
   }
 
   return (
-    <div className="container max-w-3xl py-12 md:py-16">
-      <h1 className="mb-2 text-center text-2xl font-bold md:text-3xl">בואו נכיר — כמה שאלות קצרות</h1>
-      <p className="mb-8 text-center text-muted-foreground">
-        כדי להתאים את ההכנה שלך למבחן האנגלית
-      </p>
-      <PrepOnboardingWizard nextPath={nextPath} />
+    <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-12">
+      <div className="w-full max-w-xl">
+        <h1 className="mb-2 text-center text-2xl font-bold md:text-3xl">בואו נכיר — כמה שאלות קצרות</h1>
+        <p className="mb-8 text-center text-muted-foreground">
+          כדי להתאים את ההכנה שלך למבחן האנגלית
+        </p>
+        <PrepOnboardingWizard nextPath={nextPath} />
+      </div>
     </div>
   );
 }
