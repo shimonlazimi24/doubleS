@@ -53,10 +53,10 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
           מעקב התקדמות, המלצות ונושאים לחיזוק — הכל במקום אחד.
         </p>
         <Link
-          href={COURSE}
+          href={data.recommendedNextAction.href ?? COURSE}
           className="mt-5 inline-flex items-center justify-center rounded-control bg-[#d4a843] px-5 py-2.5 text-sm font-bold text-[#0f1e3d] transition hover:bg-[#e7bb59]"
         >
-          המשך ללמוד ←
+          {data.recommendedNextAction.ctaLabel ?? "המשך ללמוד"} ←
         </Link>
       </div>
 

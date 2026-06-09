@@ -200,6 +200,17 @@ export function computeNextBestAction(ctx: NextBestActionContext): NextBestActio
     };
   }
 
+  // New users with no attempts → start from lesson 1, not a weak quiz
+  if (ctx.quizAttemptCount === 0 && ctx.firstIncompleteLesson) {
+    return {
+      kind: "continue_lesson",
+      title: `להתחיל: ${ctx.firstIncompleteLesson.title}`,
+      description: "ברוכים הבאים לקורס! התחל מהשיעור הראשון.",
+      href: ctx.firstIncompleteLesson.href,
+      ctaLabel: "התחל ללמוד",
+    };
+  }
+
   const earlyJourney = ctx.quizAttemptCount <= 1 || ctx.sessionQuizCount <= 1;
   if (earlyJourney || hasMeaningfulWeakness(ctx.weakTopics)) {
     const top = ctx.weakTopics[0];
