@@ -300,10 +300,10 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
     <div dir="rtl" className="mx-auto w-full max-w-lg">
 
       {/* Card */}
-      <div className="overflow-hidden rounded-2xl border border-[#d6deec] bg-white shadow-[0_8px_40px_rgba(15,30,61,0.10)]">
+      <div className="rounded-2xl border border-[#d6deec] bg-white shadow-[0_8px_40px_rgba(15,30,61,0.10)]">
 
         {/* Header */}
-        <div className="border-b border-[#edf0f7] bg-gradient-to-r from-[#0f1e3d] to-[#1a3260] px-6 py-5">
+        <div className="rounded-t-2xl border-b border-[#edf0f7] bg-gradient-to-r from-[#0f1e3d] to-[#1a3260] px-6 py-5">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#f1d286]">
             שאלון הכרות
           </p>
