@@ -17,12 +17,32 @@ export function stripTakeawayBlocksFromBody(body: string | undefined): string | 
   return t.replace(/\n{3,}/g, "\n\n").trim();
 }
 
-/** Strips common markdown separator noise (pipes-only lines, horizontal rules) from trailing/leading. */
+/** Strips common markdown separator noise (horizontal rules, pipes-only lines) from edges only. */
 export function stripEdgeSeparatorNoise(body: string): string {
-  return body
-    .replace(/\r\n/g, "\n")
-    .replace(/^\s*[\|:\s-]{3,}\s*$(?:\n|$)/gim, "")
-    .replace(/(?:^|\n)\s*\|[-\s|]+\|\s*$(?:\n)/g, "\n")
+  const normalized = body.replace(/\r\n/g, "\n");
+  const lines = normalized.split("\n");
+
+  // Strip leading/trailing lines that are pure horizontal-rule / separator noise.
+  // Never strip lines that could be part of a GFM table (those contain | with content).
+  const isSeparatorLine = (l: string) => {
+    const t = l.trim();
+    if (!t) return false;
+    // Pure HR: ---, ***, ___
+    if (/^[-*_]{3,}$/.test(t)) return true;
+    // Pure-pipes-only line: | --- | --- |  (no real content between pipes)
+    // Only match if every cell is empty or dashes/spaces — not a real table separator between data rows
+    if (/^\|[\s|:-]+\|$/.test(t) && !/\w/.test(t)) return true;
+    return false;
+  };
+
+  let start = 0;
+  let end = lines.length - 1;
+  while (start <= end && isSeparatorLine(lines[start]!)) start++;
+  while (end >= start && isSeparatorLine(lines[end]!)) end--;
+
+  return lines
+    .slice(start, end + 1)
+    .join("\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }

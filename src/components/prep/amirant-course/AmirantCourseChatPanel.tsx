@@ -48,6 +48,9 @@ export function AmirantCourseChatPanel({
   const [error, setError] = useState<string | null>(null);
   const [hintSession, setHintSession] = useState<HintSession | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState<AmirantQuestionContextDetail | null>(null);
+  // Ref so sendWithPayload (memoized on loading/activeLessonId) can always read the latest value
+  const currentQuestionRef = useRef<AmirantQuestionContextDetail | null>(null);
+  useEffect(() => { currentQuestionRef.current = currentQuestion; }, [currentQuestion]);
   const listRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = useCallback(() => {
@@ -67,38 +70,81 @@ export function AmirantCourseChatPanel({
       setMessages((m) => [...m, userMsg]);
       setInput("");
       setLoading(true);
+
+      const assistantId = `a-${Date.now()}`;
+      // Placeholder message that we'll update with streamed tokens
+      setMessages((m) => [...m, { id: assistantId, role: "assistant", text: "" }]);
+
       try {
         const body: Record<string, unknown> = { ...payload, userMessage: t };
         if (activeLessonId) body.lessonId = activeLessonId;
+        const cq = currentQuestionRef.current;
+        if (cq?.questionText && !body.activeQuestionText) body.activeQuestionText = cq.questionText.slice(0, 800);
+        if (cq?.topic && !body.topic) body.topic = cq.topic;
+
         const res = await fetch("/api/prep/amirant-course/ai/lesson-chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
         });
-        const data = (await res.json()) as {
-          answer?: string;
-          safeFallback?: boolean;
-          error?: string;
-          intent?: string;
-          nextHintAvailable?: boolean;
-          hintStage?: number | null;
-          questionType?: string | null;
-          recommendedAction?: string | null;
-        };
-        if (!res.ok) {
+
+        if (!res.ok || !res.body) {
+          const data = await res.json() as { error?: string };
+          setMessages((m) => m.filter((msg) => msg.id !== assistantId));
           setError(typeof data.error === "string" ? data.error : "הבקשה נכשלה.");
           return;
         }
-        const answer = data.answer ?? "";
-        const suffix = data.safeFallback ? "\n\n(מצב זהיר — מידע מוגבל/חסר.)" : "";
-        const rec = data.recommendedAction?.trim() ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
-        setMessages((m) => [...m, { id: `a-${Date.now()}`, role: "assistant", text: answer + suffix + rec }]);
-        if (data.nextHintAvailable && (data.hintStage ?? 0) < 3) {
-          setHintSession({ stage: (data.hintStage ?? 1) + 1, questionType: data.questionType ?? undefined });
-        } else if (data.hintStage === 4) {
-          setHintSession(null);
+
+        // Read SSE stream
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+
+        const processLine = (line: string) => {
+          if (!line.startsWith("data: ")) return;
+          try {
+            const event = JSON.parse(line.slice(6)) as { t: string; v?: string; d?: Record<string, unknown>; e?: string };
+            if (event.t === "tok" && event.v) {
+              // Append streamed token to assistant message
+              setMessages((m) =>
+                m.map((msg) => msg.id === assistantId ? { ...msg, text: msg.text + event.v! } : msg),
+              );
+            } else if (event.t === "done" && event.d) {
+              const data = event.d;
+              const suffix = data.safeFallback ? "\n\n(מצב זהיר — מידע מוגבל/חסר.)" : "";
+              const rec = typeof data.recommendedAction === "string" && data.recommendedAction.trim()
+                ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
+              // Replace with final answer from done event (handles escaping edge cases)
+              const finalAnswer = (typeof data.answer === "string" ? data.answer : "") + suffix + rec;
+              setMessages((m) =>
+                m.map((msg) => msg.id === assistantId ? { ...msg, text: finalAnswer } : msg),
+              );
+              if (data.nextHintAvailable && (Number(data.hintStage) || 0) < 3) {
+                setHintSession({ stage: (Number(data.hintStage) || 1) + 1, questionType: typeof data.questionType === "string" ? data.questionType : undefined });
+              } else if (data.hintStage === 4) {
+                setHintSession(null);
+              }
+            } else if (event.t === "err") {
+              setMessages((m) => m.filter((msg) => msg.id !== assistantId));
+              setError(event.e ?? "שגיאה.");
+            }
+          } catch {
+            // ignore malformed SSE line
+          }
+        };
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() ?? "";
+          for (const line of lines) {
+            if (line.trim()) processLine(line);
+          }
         }
       } catch {
+        setMessages((m) => m.filter((msg) => msg.id !== assistantId));
         setError("שגיאת רשת.");
       } finally {
         setLoading(false);

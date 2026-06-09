@@ -18,6 +18,8 @@ export const lessonChatRequestSchema = z.object({
   lessonId: z.string().min(1).optional(),
   topic: z.string().optional(),
   userMessage: z.string().min(1).max(1500),
+  /** Plain-text content of the step/question currently visible on screen — injected by the client. */
+  activeQuestionText: z.string().max(800).optional(),
 });
 
 export const amirantChatIntentValues = [

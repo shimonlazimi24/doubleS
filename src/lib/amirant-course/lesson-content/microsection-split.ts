@@ -41,6 +41,13 @@ function chunkStringToMax(s: string, maxChars: number): string[] {
  * Splits body into many short text blocks: paragraphs first, then chunks at `maxChars` (word-spaced when possible).
  * Produces as many small cards as needed (no text dropped).
  */
+function isMarkdownTable(block: string): boolean {
+  const lines = block.trim().split("\n").filter(Boolean);
+  if (lines.length < 2) return false;
+  const tableLines = lines.filter((l) => l.trim().startsWith("|"));
+  return tableLines.length >= 2;
+}
+
 export function splitBodyIntoMicroParts(
   body: string,
   maxChars = DEFAULT_MICRO_CARD_CHARS,
@@ -51,7 +58,8 @@ export function splitBodyIntoMicroParts(
   }
   const blocks = raw.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
   const source = blocks.length ? blocks : [raw];
-  const flat = source.flatMap((b) => chunkStringToMax(b, maxChars));
+  // Keep markdown tables atomic — chunkStringToMax would break them mid-row
+  const flat = source.flatMap((b) => isMarkdownTable(b) ? [b] : chunkStringToMax(b, maxChars));
   if (flat.length === 0) {
     return [raw];
   }
@@ -167,7 +175,7 @@ export function splitBodyIntoSemanticMicroParts(
       continue;
     }
 
-    const sub = chunkStringToMax(rest, maxChars);
+    const sub = isMarkdownTable(rest) ? [rest] : chunkStringToMax(rest, maxChars);
     sub.forEach((chunk, j) => {
       const pieceBody = j === 0 ? `${first}\n${chunk}` : chunk;
       const lab =

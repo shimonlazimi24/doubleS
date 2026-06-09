@@ -1,15 +1,17 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { runStructuredAi } from "../create-ai-client";
+import { runStructuredAi, streamOpenAiJsonResponse } from "../create-ai-client";
 import { amirantRagSystemPrompt, lessonChatPrompt } from "../prompts";
 import {
   type RetrievedChunk,
   type AiUserStatsSnapshot,
   type AiQuizSnapshot,
+  buildVectorQueryText,
   formatChunkContextLine,
   loadAiQuizSnapshot,
   loadAiUserStatsSnapshot,
   retrieveCourseChunks,
 } from "../retrieval";
+import { runEmbedding } from "../openai-client";
 import { normalizeChunkReferences } from "../reference-utils";
 import { validateAiGroundedNumericClaims } from "../safety";
 import { logAiSafetyValidationFailure } from "../ai-usage";
@@ -73,6 +75,8 @@ export async function runAmirantChatbot(
   userId: string | null,
   raw: unknown,
   logCtx?: AiRequestLogContext,
+  /** Optional streaming callback — receives answer tokens as they arrive (OpenAI streaming path only). */
+  onToken?: (delta: string) => void,
 ): Promise<AmirantChatbotResponse> {
   const request = amirantChatbotRequestSchema.parse(raw) as AmirantChatbotRequest;
   const { intent, explicitReveal } = classifyChatIntent(request);
@@ -83,10 +87,26 @@ export async function runAmirantChatbot(
     questionTypeFromClient !== "unknown" ? questionTypeFromClient : questionTypeInferred;
 
   const { stage, isNext } = resolveStagedStage(request, intent);
-  const userStats: AiUserStatsSnapshot = userId
-    ? await loadAiUserStatsSnapshot(client, userId)
-    : EMPTY_USER_STATS;
-  const quizSnapshot: AiQuizSnapshot | null = userId ? await loadAiQuizSnapshot(client, userId) : null;
+
+  const questionContext = request.lessonId
+    ? `Amirant preparation — focus on lesson ${request.lessonId}${request.topic ? `, topic ${request.topic}` : ""}.`
+    : `Amirant preparation — course-wide. ${request.topic ? ` topic filter: ${request.topic}.` : ""}`;
+
+  const vectorText = buildVectorQueryText({
+    query: request.userMessage,
+    questionContext,
+    lessonId: request.lessonId,
+    topic: request.topic,
+  });
+
+  // Parallelize: user stats + quiz snapshot + embedding computation — none depend on each other
+  const [userStats, quizSnapshot, embeddingResult] = await Promise.all([
+    userId ? loadAiUserStatsSnapshot(client, userId) : Promise.resolve(EMPTY_USER_STATS),
+    userId ? loadAiQuizSnapshot(client, userId) : Promise.resolve(null),
+    vectorText.trim() ? runEmbedding({ text: vectorText }).catch(() => null) : Promise.resolve(null),
+  ]);
+  const precomputedEmbedding = embeddingResult?.embedding;
+
   const userStatsText = JSON.stringify(userStats);
   const quizStatsText = JSON.stringify(quizSnapshot ?? { note: "no quiz snapshot" });
 
@@ -203,15 +223,12 @@ export async function runAmirantChatbot(
     });
   }
 
-  const questionContext = request.lessonId
-    ? `Amirant preparation — focus on lesson ${request.lessonId}${request.topic ? `, topic ${request.topic}` : ""}.`
-    : `Amirant preparation — course-wide. ${request.topic ? ` topic filter: ${request.topic}.` : ""}`;
-
   const baseRetrieval = {
     query: request.userMessage,
     questionContext,
     lessonId: request.lessonId,
     operation: "lesson_chat" as const,
+    precomputedEmbedding,
   };
   let chunks = await retrieveCourseChunks(client, { ...baseRetrieval, topic: request.topic });
   if (chunks.length === 0 && request.topic) {
@@ -294,23 +311,42 @@ export async function runAmirantChatbot(
       contextBlocks: chunkContextBlocks,
       userStatsText,
       quizStatsText,
+      activeQuestionText: request.activeQuestionText,
     }),
   ].join("");
 
   let parsed: AmirantChatbotAiResponse;
+  const fullUserPrompt = userPrompt + `\n\nCite only chunkIds from the context. Output intent: ${outIntent}.`;
 
   try {
-    const ai = await runStructuredAi({
-      operation: "lesson_chat",
-      schema: amirantChatbotAiResponseSchema,
-      schemaName: "amirant_chatbot",
-      systemPrompt,
-      userPrompt: userPrompt + `\n\nCite only chunkIds from the context. Output intent: ${outIntent}.`,
-      cacheContext: { userQuery: request.userMessage + outIntent + String(stage), chunkIds },
-      usageLog: { userId: userId ?? undefined, sessionId: logCtx?.sessionId, requestIp: logCtx?.requestIp },
-    });
+    if (onToken) {
+      // Streaming path: json_object mode + token callback; parse result manually
+      const jsonText = await streamOpenAiJsonResponse({
+        systemPrompt,
+        userPrompt: fullUserPrompt,
+        operation: "lesson_chat",
+        onToken,
+      });
+      let raw: unknown;
+      try { raw = JSON.parse(jsonText); } catch { raw = {}; }
+      const result = amirantChatbotAiResponseSchema.safeParse(raw);
+      if (!result.success) throw new Error("Stream JSON parse failed: " + result.error.message);
+      parsed = { ...result.data, intent: outIntent };
+    } else {
+      // Non-streaming structured output path (default)
+      const ai = await runStructuredAi({
+        operation: "lesson_chat",
+        schema: amirantChatbotAiResponseSchema,
+        schemaName: "amirant_chatbot",
+        systemPrompt,
+        userPrompt: fullUserPrompt,
+        cacheContext: { userQuery: request.userMessage + outIntent + String(stage), chunkIds },
+        usageLog: { userId: userId ?? undefined, sessionId: logCtx?.sessionId, requestIp: logCtx?.requestIp },
+      });
+      parsed = { ...ai.output, intent: outIntent };
+    }
     const safety = validateAiGroundedNumericClaims({
-      texts: [ai.output.answer],
+      texts: [parsed.answer],
       allowedSnapshots: [request, userStats, quizSnapshot],
     });
     if (!safety.ok) {
@@ -326,12 +362,10 @@ export async function runAmirantChatbot(
         safeFallback: true,
         references: [],
       };
-    } else {
-      parsed = { ...ai.output, intent: outIntent };
     }
   } catch (e) {
     const errMsg = e instanceof Error ? e.message : String(e);
-    console.error("[chatbot-router] runStructuredAi failed:", errMsg);
+    console.error("[chatbot-router] AI call failed:", errMsg);
     parsed = {
       intent: outIntent,
       answer: "המודל לא הצליח להשיב כרגע. נסו/י שוב או נסחו קצר יותר.",

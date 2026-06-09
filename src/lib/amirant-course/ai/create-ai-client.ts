@@ -291,6 +291,82 @@ export async function runStructuredAi<T>(params: RunStructuredAiParams<T>): Prom
 }
 
 /**
+ * Streams an OpenAI chat completion with json_object mode.
+ * Calls `onToken` for each text delta and resolves with the full accumulated JSON string.
+ * Falls back to non-streaming if streaming is unavailable.
+ */
+export async function streamOpenAiJsonResponse(params: {
+  systemPrompt: string;
+  userPrompt: string;
+  operation: string;
+  onToken: (delta: string) => void;
+}): Promise<string> {
+  const key = getOpenAiApiKey();
+  if (!key) throw new Error("OPENAI_API_KEY is missing");
+  assertWithinTokenBudget(params.systemPrompt, params.userPrompt);
+  const openai = new OpenAI({ apiKey: key });
+  logAiRequest({
+    operation: params.operation,
+    provider: "openai",
+    promptChars: params.systemPrompt.length + params.userPrompt.length,
+  });
+  const started = Date.now();
+  const stream = openai.chat.completions.stream({
+    model: OPENAI_CHAT_MODEL,
+    messages: [
+      { role: "system", content: params.systemPrompt },
+      { role: "user", content: params.userPrompt },
+    ],
+    temperature: 0.2,
+    max_tokens: Math.min(getMaxOutputTokens(), 800),
+    response_format: { type: "json_object" },
+  });
+
+  let accumulated = "";
+  // Track whether we're inside the "answer" string value for incremental display
+  let answerStartIdx = -1;
+  let inAnswer = false;
+
+  for await (const chunk of stream) {
+    const delta = chunk.choices[0]?.delta?.content ?? "";
+    if (!delta) continue;
+    accumulated += delta;
+
+    // Find the start of the answer value once (after `"answer":"`)
+    if (!inAnswer && answerStartIdx === -1) {
+      const marker = '"answer":"';
+      const idx = accumulated.indexOf(marker);
+      if (idx !== -1) {
+        answerStartIdx = idx + marker.length;
+        inAnswer = true;
+      }
+    }
+
+    if (inAnswer) {
+      // Emit only characters that are part of the answer value (stop at unescaped closing quote)
+      const tail = accumulated.slice(answerStartIdx);
+      // Find where the answer value ends (unescaped `"`)
+      let end = -1;
+      for (let i = 0; i < tail.length; i++) {
+        if (tail[i] === '"' && (i === 0 || tail[i - 1] !== '\\')) { end = i; break; }
+      }
+      const visiblePart = end === -1 ? tail : tail.slice(0, end);
+      // Only emit the new portion added by this delta
+      const prevVisible = accumulated.slice(answerStartIdx, accumulated.length - delta.length > answerStartIdx ? accumulated.length - delta.length : answerStartIdx);
+      const newChars = visiblePart.slice(prevVisible.length);
+      if (newChars) params.onToken(newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"'));
+      if (end !== -1) inAnswer = false; // answer value ended
+    }
+  }
+
+  const finalCompletion = await stream.finalChatCompletion();
+  const durationMs = Date.now() - started;
+  logAiResponse({ operation: params.operation, provider: "openai", model: OPENAI_CHAT_MODEL, durationMs, outputChars: accumulated.length });
+  void finalCompletion; // usage logged separately if needed
+  return accumulated;
+}
+
+/**
  * @param provider — if passed, use only that provider (no cross-failover). Useful for tests.
  */
 export function createAIClient(provider: AIChatProvider) {

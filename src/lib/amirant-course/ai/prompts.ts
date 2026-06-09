@@ -61,12 +61,18 @@ export function lessonChatPrompt(params: {
   contextBlocks: string[];
   userStatsText: string;
   quizStatsText: string;
+  /** Plain text of the step/question currently on screen — use this as the primary grounding when answering. */
+  activeQuestionText?: string;
 }): string {
   const scope = params.lessonId
     ? `Task: answer a student's question for a specific lesson. lessonId=${params.lessonId}.`
     : "Task: answer a student's question about the Amirant preparation course using the chunks below (course-wide; not limited to one lesson).";
+  const activeQ = params.activeQuestionText?.trim()
+    ? `\nCurrently displayed content (the student is looking at this right now):\n"""\n${params.activeQuestionText}\n"""\nUse this as the primary grounding when answering hints, explanations, or question-specific help.`
+    : "";
   return [
     scope,
+    activeQ,
     "Answer ONLY from the context blocks. Ground strictly in the provided course/lesson context.",
     "If context is missing, say so and ask student to open a relevant lesson or rephrase.",
     "Do not fabricate scores or progress beyond the inputs.",

@@ -23,6 +23,8 @@ export type RetrieveCourseChunksParams = {
   questionContext?: string;
   lessonId?: string;
   topic?: string;
+  /** Pre-computed embedding vector — skips the runEmbedding call when provided. */
+  precomputedEmbedding?: number[];
   /**
    * Number of chunks to pass to the model, clamped to 5–8. Default 8.
    * RPC over-fetches, then we filter and sort.
@@ -188,9 +190,9 @@ export async function retrieveCourseChunks(
   });
   const hasVectorText = vectorText.trim().length > 0;
 
-  if (hasVectorText) {
+  if (hasVectorText || params.precomputedEmbedding) {
     try {
-      const { embedding } = await runEmbedding({ text: vectorText });
+      const embedding = params.precomputedEmbedding ?? (await runEmbedding({ text: vectorText })).embedding;
       const matchCount = overfetchCount(topK);
       const { data, error } = await client.rpc("match_course_content_chunks", {
         query_embedding: embedding,

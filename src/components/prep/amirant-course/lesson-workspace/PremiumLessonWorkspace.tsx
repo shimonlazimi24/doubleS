@@ -33,6 +33,7 @@ import { useWorkspaceState } from "./use-workspace-state";
 import type { SidebarNextLessonProps } from "@/lib/amirant-course";
 import { cn } from "@/lib/design-system/cn";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
+import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
 
 type Props = {
   lessonId: string;
@@ -110,6 +111,18 @@ export function PremiumLessonWorkspace({
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   }, [activeIndex, lessonId, prefersReducedMotion]);
+
+  // Notify the floating chat panel whenever the active step changes so it knows what's on screen
+  useEffect(() => {
+    if (!current?.card?.body?.trim()) return;
+    const plain = markdownishToPlain(current.card.body, 800).trim();
+    if (!plain) return;
+    dispatchAmirantQuestionContext({
+      questionText: plain,
+      topic: current.label,
+      lessonId,
+    });
+  }, [activeIndex, lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onInteractionContinue = useCallback(() => {
     if (activeIndex < n - 1) {
