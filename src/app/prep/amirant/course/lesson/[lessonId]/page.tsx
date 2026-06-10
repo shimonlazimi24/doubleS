@@ -4,9 +4,9 @@ import { notFound, redirect } from "next/navigation";
 import {
   displayModuleTitleHe,
   getAmirantCourseLessonEntry,
-  getLessonContent,
   getManifestLesson,
 } from "@/lib/amirant-course";
+import { getLessonContentWithCmsOverride } from "@/lib/amirant-course/cms-override.server";
 import type { ContentBlock } from "@/lib/amirant-course/types/content-blocks";
 import { getAmirantCourseLessonNeighbors } from "@/lib/amirant-course/navigation";
 import { splitMarkdownByMasachH1, stripMasachNumberingForDisplay } from "@/lib/amirant-course/content-source/split-markdown-masach";
@@ -121,13 +121,18 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     );
   }
 
-  const content = getLessonContent(params.lessonId);
+  const { content, source: contentSource } = await getLessonContentWithCmsOverride(params.lessonId);
   if (!content) notFound();
-  const hasMd = Boolean(content.amirnetMarkdownRel);
+  const isCmsOverride = contentSource === "cms";
+  // CMS override: body_markdown is injected as cmsMarkdown
+  const cmsMarkdown = isCmsOverride ? (content as typeof content & { cmsMarkdown?: string }).cmsMarkdown ?? null : null;
+  const hasMd = isCmsOverride ? Boolean(cmsMarkdown) : Boolean(content.amirnetMarkdownRel);
   const hasBlocks = content.blocks.length > 0;
   if (!hasMd && !hasBlocks) notFound();
 
-  const md = hasMd && content.amirnetMarkdownRel ? readAmirantCourseMarkdownSource(content.amirnetMarkdownRel) : null;
+  const md = isCmsOverride && cmsMarkdown
+    ? { ok: true as const, body: cmsMarkdown }
+    : (hasMd && content.amirnetMarkdownRel ? readAmirantCourseMarkdownSource(content.amirnetMarkdownRel) : null);
   const lessonBody = md?.ok
     ? stripMasachNumberingForDisplay(markdownBodyForLesson(md.body, content))
     : null;
