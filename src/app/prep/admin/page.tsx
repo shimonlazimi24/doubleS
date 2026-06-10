@@ -23,7 +23,7 @@ export default async function AdminDashboard() {
   ];
 
   return (
-    <div className="max-w-3xl">
+    <div dir="rtl" className="max-w-3xl">
       <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
       <p className="text-zinc-400 text-sm mb-8">ניהול תכנים — שיעורים, שאלות, סרטונים</p>
 

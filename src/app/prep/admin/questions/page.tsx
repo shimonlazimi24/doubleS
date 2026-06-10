@@ -31,7 +31,7 @@ export default async function QuestionsPage() {
   const questions = await getQuestions();
 
   return (
-    <div className="max-w-4xl">
+    <div dir="rtl" className="max-w-4xl">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">בנק שאלות</h1>

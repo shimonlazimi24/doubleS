@@ -24,7 +24,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col">
+    <div dir="rtl" className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col">
       {/* Top bar */}
       <header className="sticky top-0 z-50 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between px-6 h-14">
         <span className="font-bold text-base tracking-widest text-white">PREPARE <span className="text-zinc-500 font-normal text-sm">admin</span></span>
@@ -38,7 +38,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       <div className="flex flex-1">
         {/* Sidebar */}
-        <nav className="w-52 shrink-0 bg-zinc-900 border-r border-zinc-800 pt-6 flex flex-col gap-1 px-3">
+        <nav className="w-52 shrink-0 bg-zinc-900 border-l border-zinc-800 pt-6 flex flex-col gap-1 px-3">
           {NAV.map(({ href, label, exact }) => {
             const active = exact ? pathname === href : pathname.startsWith(href);
             return (
