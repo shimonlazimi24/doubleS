@@ -2,151 +2,141 @@ import Link from "next/link";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 
-async function getCmsLessons() {
+async function getCmsLessonIds(): Promise<Set<string>> {
   const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return [];
+  if (!supabase) return new Set();
   const { data } = await supabase
     .from("cms_lessons")
-    .select("id, title, kind, published, module_id, estimated_minutes, updated_at")
-    .order("module_id")
-    .order("sort_order");
-  return data ?? [];
+    .select("id, published");
+  if (!data) return new Set();
+  // Return map id → published
+  return new Set(data.filter((l) => l.published).map((l) => l.id));
 }
 
-type CmsLesson = {
-  id: string;
-  title: string;
-  kind: string;
-  published: boolean;
-  module_id: string | null;
-  estimated_minutes: number;
-  updated_at: string;
-};
+async function getCmsLessonsMap(): Promise<Map<string, { published: boolean }>> {
+  const supabase = createPrepSupabaseServerClient();
+  if (!supabase) return new Map();
+  const { data } = await supabase
+    .from("cms_lessons")
+    .select("id, published");
+  const map = new Map<string, { published: boolean }>();
+  for (const row of data ?? []) map.set(row.id, { published: row.published });
+  return map;
+}
 
-const MODULE_TITLES: Record<string, string> = {
-  "mod-intro": "מבוא לקורס",
-  "mod-vocab": "מילון מושגים",
-  "mod-sc": "השלמת משפטים",
-  "mod-rephrase": "ניסוח מחדש",
-  "mod-reading": "קטעי קריאה",
-  "mod-reform": "רפורמה 2026",
-  "mod-sims": "סימולציות מלאות",
-  "mod-tips": "טיפים ואסטרטגיות",
-  "mod-summary": "סיכום הקורס",
+const MODULE_ICON: Record<string, string> = {
+  "mod-intro":     "🗺️",
+  "mod-vocab":     "📚",
+  "mod-sc":        "✏️",
+  "mod-rephrase":  "🔄",
+  "mod-reading":   "📖",
+  "mod-reform":    "🎧",
+  "mod-sims":      "🎯",
+  "mod-tips":      "💡",
+  "mod-summary":   "🏁",
+  "mod-logistics": "📋",
 };
 
 export default async function LessonsPage() {
-  const cmsLessons = await getCmsLessons() as CmsLesson[];
-  const cmsIds = new Set(cmsLessons.map((l) => l.id));
-
-  // All manifest lessons — show which ones have a CMS override
-  const manifestLessons = AMIRANT_PREPARATION_MANIFEST.modules.flatMap((mod) =>
-    mod.lessons.map((l) => ({ ...l, moduleId: mod.id, moduleTitle: mod.title }))
-  );
+  const cmsMap = await getCmsLessonsMap();
+  const manifest = AMIRANT_PREPARATION_MANIFEST;
+  const totalLessons = manifest.modules.reduce((s, m) => s + m.lessons.length, 0);
+  const editedCount = manifest.modules
+    .flatMap((m) => m.lessons)
+    .filter((l) => cmsMap.has(l.id)).length;
 
   return (
-    <div dir="rtl" className="max-w-5xl">
+    <div dir="rtl" className="max-w-3xl">
+      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">שיעורים</h1>
+          <h1 className="text-2xl font-bold">עריכת הקורס</h1>
           <p className="text-zinc-400 text-sm mt-1">
-            {manifestLessons.length} שיעורים בקורס · {cmsLessons.length} עם תוכן מותאם אישית
+            {totalLessons} שיעורים ·{" "}
+            <span className="text-blue-400">{editedCount} עם תוכן מותאם</span>
           </p>
         </div>
         <Link
           href="/prep/admin/lessons/new"
-          className="px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-zinc-200 transition"
+          className="px-4 py-2 bg-zinc-700 text-white text-sm rounded-lg hover:bg-zinc-600 transition"
         >
           + שיעור חדש
         </Link>
       </div>
 
-      {/* CMS-only lessons (not in manifest) */}
-      {cmsLessons.filter((l) => !manifestLessons.find((m) => m.id === l.id)).length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-2">שיעורים חדשים (לא בקורס הרשמי עדיין)</h2>
-          <div className="border border-amber-900/40 rounded-xl overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-zinc-800 bg-zinc-900">
-                  <th className="text-right px-4 py-3 font-medium text-zinc-400">כותרת</th>
-                  <th className="text-right px-4 py-3 font-medium text-zinc-400">מודול</th>
-                  <th className="text-right px-4 py-3 font-medium text-zinc-400">סטטוס</th>
-                  <th className="px-4 py-3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {cmsLessons
-                  .filter((l) => !manifestLessons.find((m) => m.id === l.id))
-                  .map((lesson) => (
-                    <tr key={lesson.id} className="border-b border-zinc-800/50 hover:bg-zinc-900/50 transition">
-                      <td className="px-4 py-3 font-medium">{lesson.title}</td>
-                      <td className="px-4 py-3 text-zinc-400 text-xs">{MODULE_TITLES[lesson.module_id ?? ""] ?? lesson.module_id ?? "—"}</td>
-                      <td className="px-4 py-3">
-                        <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${lesson.published ? "bg-green-500/20 text-green-400" : "bg-zinc-700 text-zinc-400"}`}>
-                          {lesson.published ? "פורסם" : "טיוטה"}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-left">
-                        <Link href={`/prep/admin/lessons/${lesson.id}`} className="text-blue-400 hover:underline text-xs">
-                          עריכה →
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
+      {/* Course tree */}
+      <div className="space-y-4">
+        {manifest.modules.map((mod) => {
+          const editedInMod = mod.lessons.filter((l) => cmsMap.has(l.id)).length;
+          return (
+            <div key={mod.id} className="border border-zinc-800 rounded-2xl overflow-hidden">
+              {/* Module header */}
+              <div className="flex items-center gap-3 px-4 py-3 bg-zinc-900">
+                <span className="text-lg">{MODULE_ICON[mod.id] ?? "📌"}</span>
+                <div className="flex-1">
+                  <p className="font-semibold text-zinc-100">{mod.title}</p>
+                  <p className="text-[11px] text-zinc-500">{mod.lessons.length} שיעורים</p>
+                </div>
+                {editedInMod > 0 && (
+                  <span className="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">
+                    {editedInMod} נערכו
+                  </span>
+                )}
+              </div>
 
-      {/* All manifest lessons */}
-      <h2 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">שיעורי הקורס</h2>
-      <div className="border border-zinc-800 rounded-xl overflow-hidden">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-zinc-800 bg-zinc-900">
-              <th className="text-right px-4 py-3 font-medium text-zinc-400">שיעור</th>
-              <th className="text-right px-4 py-3 font-medium text-zinc-400">מודול</th>
-              <th className="text-right px-4 py-3 font-medium text-zinc-400">תוכן</th>
-              <th className="px-4 py-3"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {manifestLessons.map((lesson) => {
-              const hasOverride = cmsIds.has(lesson.id);
-              const cmsLesson = cmsLessons.find((l) => l.id === lesson.id);
-              return (
-                <tr key={lesson.id} className="border-b border-zinc-800/50 hover:bg-zinc-900/50 transition">
-                  <td className="px-4 py-3">
-                    <p className="font-medium text-zinc-100">{lesson.title}</p>
-                    <p className="text-[10px] text-zinc-600 font-mono mt-0.5">{lesson.id}</p>
-                  </td>
-                  <td className="px-4 py-3 text-xs text-zinc-400">{lesson.moduleTitle}</td>
-                  <td className="px-4 py-3">
-                    {hasOverride ? (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-medium">
-                        {cmsLesson?.published ? "✏️ CMS פורסם" : "✏️ CMS טיוטה"}
-                      </span>
-                    ) : (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-500">
-                        קובץ ברירת מחדל
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-3 text-left">
+              {/* Lessons */}
+              <div className="divide-y divide-zinc-800/60">
+                {mod.lessons.map((lesson) => {
+                  const cms = cmsMap.get(lesson.id);
+                  const href = cms
+                    ? `/prep/admin/lessons/${lesson.id}`
+                    : `/prep/admin/lessons/new?id=${lesson.id}&title=${encodeURIComponent(lesson.title)}&module=${mod.id}`;
+
+                  return (
                     <Link
-                      href={hasOverride ? `/prep/admin/lessons/${lesson.id}` : `/prep/admin/lessons/new?id=${lesson.id}&title=${encodeURIComponent(lesson.title)}&module=${lesson.moduleId}`}
-                      className="text-blue-400 hover:underline text-xs"
+                      key={lesson.id}
+                      href={href}
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-zinc-800/50 transition group"
                     >
-                      {hasOverride ? "עריכה →" : "ערוך תוכן →"}
+                      {/* Status dot */}
+                      <span className={`w-2 h-2 rounded-full shrink-0 ${
+                        cms
+                          ? cms.published ? "bg-green-400" : "bg-yellow-400"
+                          : "bg-zinc-700"
+                      }`} />
+
+                      {/* Title + ID */}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm text-zinc-200 group-hover:text-white transition truncate">
+                          {lesson.title}
+                        </p>
+                        <p className="text-[10px] text-zinc-600 font-mono">{lesson.id}</p>
+                      </div>
+
+                      {/* Badge */}
+                      <span className={`text-[10px] shrink-0 px-2 py-0.5 rounded-full ${
+                        cms
+                          ? cms.published
+                            ? "bg-green-500/20 text-green-400"
+                            : "bg-yellow-500/20 text-yellow-400"
+                          : "text-zinc-600 group-hover:text-zinc-400"
+                      }`}>
+                        {cms ? (cms.published ? "פורסם" : "טיוטה") : "ערוך →"}
+                      </span>
                     </Link>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Legend */}
+      <div className="mt-6 flex gap-4 text-[11px] text-zinc-500">
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400" /> פורסם — מוצג לתלמידים</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-yellow-400" /> טיוטה — רק אתה רואה</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-zinc-700" /> ברירת מחדל</span>
       </div>
     </div>
   );
