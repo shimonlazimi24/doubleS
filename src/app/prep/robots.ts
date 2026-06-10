@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
           "/prep/dashboard",
           "/prep/settings",
           "/prep/onboarding",
+          "/prep/admin/",            // admin panel — never index
           "/prep/amirant/course/",   // course pages require login — no SEO value
         ],
       },

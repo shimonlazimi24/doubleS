@@ -48,11 +48,33 @@ async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextRes
   return response;
 }
 
+async function handleAdminRequest(req: NextRequest): Promise<NextResponse> {
+  if (isPrepAuthBypassEnabled()) {
+    const res = NextResponse.next();
+    setNoStore(res);
+    return res;
+  }
+  const { user } = await getPrepUserFromMiddleware(req);
+  if (!user || user.user_metadata?.is_admin !== true) {
+    const login = new URL("/prep/login", req.url);
+    login.searchParams.set("next", req.nextUrl.pathname);
+    const redirect = NextResponse.redirect(login);
+    setNoStore(redirect);
+    return redirect;
+  }
+  const res = NextResponse.next();
+  setNoStore(res);
+  return res;
+}
+
 /** `/prep/*` Supabase session + learning routes `/lesson`, `/quiz`, `/results`. */
 export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname;
 
   if (path.startsWith("/prep")) {
+    if (path.startsWith("/prep/admin")) {
+      return handleAdminRequest(req);
+    }
     if (isPrepPublicPath(path)) {
       const res = NextResponse.next();
       setNoStore(res);
