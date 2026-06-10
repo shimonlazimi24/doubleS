@@ -55,7 +55,7 @@ export function AmirantCurriculumHub() {
   const nextLesson = allLessons.find((l) => l.id === nextLessonId);
 
   return (
-    <div dir="rtl" className="mx-auto max-w-2xl px-4 py-10">
+    <div dir="rtl" className="mx-auto max-w-3xl px-4 py-10 text-right">
 
       {/* ── Overall progress ── */}
       <div className="mb-8">
@@ -79,8 +79,8 @@ export function AmirantCurriculumHub() {
         )}
       </div>
 
-      {/* ── Module list ── */}
-      <div className="space-y-1">
+      {/* ── Module cards grid ── */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {manifest.modules.map((mod) => {
           const done = mod.lessons.filter((l) => completedIds.has(l.id)).length;
           const total = mod.lessons.length;
@@ -98,52 +98,57 @@ export function AmirantCurriculumHub() {
             <Link
               key={mod.id}
               href={href}
-              className={`group flex items-center gap-4 rounded-xl px-4 py-3.5 transition-colors ${
+              className={`group relative flex flex-col rounded-2xl border p-4 transition-all ${
                 isCurrent
-                  ? "bg-[#fffbee] ring-1 ring-[#d4a843]/40"
-                  : "hover:bg-[#f8faff]"
+                  ? "border-[#d4a843]/50 bg-[#fffbee] shadow-sm"
+                  : allDone
+                  ? "border-emerald-200 bg-emerald-50/50"
+                  : "border-[#e8edf5] bg-white hover:border-[#0f1e3d]/20 hover:shadow-sm"
               }`}
             >
               {/* Icon */}
-              <span className="text-xl w-7 shrink-0 text-center">
+              <span className="mb-3 text-2xl">
                 {allDone ? "✅" : MODULE_ICON[mod.id] ?? "📌"}
               </span>
 
-              {/* Title + bar */}
-              <div className="min-w-0 flex-1">
-                <p className={`truncate text-sm font-semibold ${allDone ? "text-[#64748b]" : "text-[#0f1e3d]"}`}>
-                  {mod.title}
-                </p>
-                <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-[#edf0f7]">
-                  <div
-                    className={`h-1 rounded-full transition-all ${allDone ? "bg-emerald-400" : "bg-[#0f1e3d]"}`}
-                    style={{ width: `${modPct}%` }}
-                  />
-                </div>
+              {/* Title */}
+              <p className={`text-sm font-semibold leading-snug mb-auto ${allDone ? "text-[#64748b]" : "text-[#0f1e3d]"}`}>
+                {mod.title}
+              </p>
+
+              {/* Lesson count */}
+              <p className="mt-2 text-xs text-[#94a3b8]">
+                {total} שיעורים
+              </p>
+
+              {/* Progress bar */}
+              <div className="mt-2 h-1 overflow-hidden rounded-full bg-[#edf0f7]">
+                <div
+                  className={`h-1 rounded-full transition-all duration-500 ${allDone ? "bg-emerald-400" : isCurrent ? "bg-[#d4a843]" : "bg-[#0f1e3d]"}`}
+                  style={{ width: `${modPct}%` }}
+                />
               </div>
 
-              {/* Status */}
-              <span className="shrink-0 text-xs text-[#94a3b8] group-hover:text-[#0f1e3d] transition-colors">
-                {allDone ? "✓" : isCurrent ? "ממשיך ←" : done > 0 ? `${done}/${total}` : `${total} שיעורים`}
-              </span>
+              {/* Status badge */}
+              {isCurrent && (
+                <span className="absolute top-3 left-3 text-[10px] font-semibold text-[#d4a843] bg-[#d4a843]/10 rounded-full px-2 py-0.5">
+                  ממשיך
+                </span>
+              )}
             </Link>
           );
         })}
 
-        {/* Simulations */}
+        {/* Simulations card */}
         {manifest.simulations.length > 0 && (
           <Link
             href={`${BASE}/simulation/${manifest.simulations[0]!.id}`}
-            className="group flex items-center gap-4 rounded-xl px-4 py-3.5 transition-colors hover:bg-[#f8faff]"
+            className="group flex flex-col rounded-2xl border border-[#e8edf5] bg-white p-4 transition-all hover:border-[#0f1e3d]/20 hover:shadow-sm"
           >
-            <span className="text-xl w-7 shrink-0 text-center">🏆</span>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-sm font-semibold text-[#0f1e3d]">סימולציות מלאות</p>
-              <p className="mt-0.5 text-xs text-[#94a3b8]">מבחן בתנאי אמת</p>
-            </div>
-            <span className="shrink-0 text-xs text-[#94a3b8] group-hover:text-[#0f1e3d] transition-colors">
-              {manifest.simulations.length} מבחנים
-            </span>
+            <span className="mb-3 text-2xl">🏆</span>
+            <p className="text-sm font-semibold text-[#0f1e3d] leading-snug mb-auto">סימולציות מלאות</p>
+            <p className="mt-2 text-xs text-[#94a3b8]">{manifest.simulations.length} מבחנים בתנאי אמת</p>
+            <div className="mt-2 h-1 rounded-full bg-[#edf0f7]" />
           </Link>
         )}
       </div>
