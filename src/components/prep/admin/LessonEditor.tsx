@@ -118,7 +118,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
             disabled={isPending}
             className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 transition disabled:opacity-50"
           >
-            {form.published ? "עדכן ופרסם" : "פרסם →"}
+            {form.published ? "עדכן ופרסם" : "פרסם"}
           </button>
         </div>
       </div>
@@ -222,7 +222,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
               onClick={() => setPreview((p) => !p)}
               className="text-xs text-blue-400 hover:underline"
             >
-              {preview ? "← עריכה" : "תצוגה מקדימה →"}
+              {preview ? "עריכה" : "תצוגה מקדימה"}
             </button>
           </div>
 

@@ -121,7 +121,7 @@ export default async function LessonsPage() {
                             : "bg-yellow-500/20 text-yellow-400"
                           : "text-zinc-600 group-hover:text-zinc-400"
                       }`}>
-                        {cms ? (cms.published ? "פורסם" : "טיוטה") : "ערוך →"}
+                        {cms ? (cms.published ? "פורסם" : "טיוטה") : "ערוך"}
                       </span>
                     </Link>
                   );

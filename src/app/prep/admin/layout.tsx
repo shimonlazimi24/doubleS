@@ -32,7 +32,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           onClick={handleLogout}
           className="text-xs text-zinc-400 hover:text-white transition"
         >
-          יציאה ←
+          יציאה
         </button>
       </header>
 

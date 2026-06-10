@@ -126,7 +126,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
             שמור טיוטה
           </button>
           <button onClick={() => handleSave(true)} disabled={isPending} className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 disabled:opacity-50">
-            {form.published ? "עדכן ופרסם" : "פרסם →"}
+            {form.published ? "עדכן ופרסם" : "פרסם"}
           </button>
         </div>
       </div>

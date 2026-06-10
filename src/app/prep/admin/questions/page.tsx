@@ -82,7 +82,7 @@ export default async function QuestionsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <Link href={`/prep/admin/questions/${q.id}`} className="text-blue-400 hover:underline text-xs">עריכה →</Link>
+                    <Link href={`/prep/admin/questions/${q.id}`} className="text-blue-400 hover:underline text-xs">עריכה</Link>
                   </td>
                 </tr>
               ))}
