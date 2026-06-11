@@ -20,7 +20,7 @@ export function TrustIndicators({
       )}
     >
       {items.map((item) => (
-        <li key={item.label} className="bg-paper px-4 py-3.5">
+        <li key={item.label} className="bg-paper px-4 py-3.5 text-right">
           <p className="font-brand text-lg font-semibold tabular-nums tracking-tight text-primary">
             {item.value}
           </p>

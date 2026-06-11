@@ -19,7 +19,7 @@ export function HeroSection() {
 
       <Container className={cn("relative py-12 md:py-16 lg:py-[4.5rem]")}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
-          <div className="max-w-xl lg:max-w-lg order-2 lg:order-1">
+          <div className="max-w-xl lg:max-w-lg order-2 lg:order-1 text-right">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Academic English Prep
             </p>
@@ -32,7 +32,7 @@ export function HeroSection() {
 
             <TrustIndicators items={hero.trust} className="mt-7" />
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-end gap-3">
               <ButtonLink
                 href={hero.ctaPrimary.href}
                 variant="primary"

@@ -53,8 +53,8 @@ export function PrepMarketingHome() {
               className="rounded-surface border border-line/80 bg-paper p-6 shadow-card"
             >
               <StepIcon step={step.step} />
-              <h3 className="mt-3 text-lg font-semibold text-ink">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+              <h3 className="mt-3 text-lg font-semibold text-ink text-right">{step.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted text-right">{step.body}</p>
             </li>
           ))}
         </ol>

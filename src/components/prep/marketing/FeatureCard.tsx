@@ -12,7 +12,7 @@ export function FeatureCard({ title, body, icon, className }: Props) {
   return (
     <article
       className={cn(
-        "flex h-full flex-col rounded-surface border border-line/70 bg-paper p-5 shadow-card transition duration-200 hover:border-primary/15 hover:shadow-lift md:p-6",
+        "flex h-full flex-col rounded-surface border border-line/70 bg-paper p-5 shadow-card transition duration-200 hover:border-primary/15 hover:shadow-lift md:p-6 text-right",
         className,
       )}
     >
