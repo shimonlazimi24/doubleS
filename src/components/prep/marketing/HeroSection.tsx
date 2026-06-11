@@ -19,7 +19,7 @@ export function HeroSection() {
 
       <Container className={cn("relative py-12 md:py-16 lg:py-[4.5rem]")}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
-          <div className="max-w-xl lg:max-w-lg">
+          <div className="max-w-xl lg:max-w-lg order-2 lg:order-1">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Academic English Prep
             </p>
@@ -54,7 +54,7 @@ export function HeroSection() {
             </p>
           </div>
 
-          <ProductDashboardPreview />
+          <div className="order-1 lg:order-2"><ProductDashboardPreview /></div>
         </div>
       </Container>
     </section>

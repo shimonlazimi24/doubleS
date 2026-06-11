@@ -31,7 +31,7 @@ export function MarketingSection({
   return (
     <section id={id} className={cn("py-section md:py-section-lg", tones[tone], className)}>
       <Container max="shell">
-        <header className="mb-8 max-w-2xl md:mb-9">
+        <header className="mb-8 max-w-2xl md:mb-9 text-right">
           {eyebrow ? (
             <p
               className={cn(

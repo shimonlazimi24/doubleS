@@ -33,7 +33,7 @@ export default function PrepRootLayout({ children }: { children: React.ReactNode
   return (
     <>
       <JsonLdScript data={organizationJsonLd(siteUrl)} />
-      <div className="flex min-h-screen flex-col">
+      <div dir="rtl" className="flex min-h-screen flex-col">
         <MarketingHeader />
         <main className="relative z-0 isolate min-w-0 flex-1">{children}</main>
         <MarketingFooter />
