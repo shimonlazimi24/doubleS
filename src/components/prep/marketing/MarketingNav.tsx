@@ -51,16 +51,6 @@ export function MarketingNav() {
       aria-label="ניווט ראשי"
       className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:gap-x-8"
     >
-      {LINKS.map((item) => (
-        <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
-      ))}
-      <PrepCoursesDropdown />
-      <Link
-        href={`${PREP_BASE}/login`}
-        className="inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink"
-      >
-        התחברות
-      </Link>
       <ButtonLink
         href={`${PREP_BASE}/amirant/course`}
         variant="primary"
@@ -68,6 +58,16 @@ export function MarketingNav() {
       >
         כניסה לקורס
       </ButtonLink>
+      <Link
+        href={`${PREP_BASE}/login`}
+        className="inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink"
+      >
+        התחברות
+      </Link>
+      <PrepCoursesDropdown />
+      {LINKS.map((item) => (
+        <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
+      ))}
     </nav>
   );
 }
