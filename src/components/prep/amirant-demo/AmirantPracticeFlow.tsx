@@ -798,7 +798,9 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                   <span className="font-semibold text-ink sm:max-w-[42%]">
                     {SUBTOPIC_LABEL_HE[m.subtopicId] ?? m.subtopicId}
                   </span>
-                  <p className="text-muted sm:text-end">{formatSubtopicStatsHe(m)}</p>
+                  <p className="text-muted sm:text-end">
+                    {m.totalAnswered} שאלות · {Math.round(m.accuracy * 100)}% נכונות
+                  </p>
                 </li>
               ))}
             </ul>

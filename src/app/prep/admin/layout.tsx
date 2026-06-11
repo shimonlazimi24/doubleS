@@ -24,13 +24,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div dir="rtl" className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col">
+    <div dir="rtl" className="min-h-screen bg-canvas text-ink flex flex-col">
       {/* Top bar */}
-      <header className="sticky top-0 z-50 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between px-6 h-14">
-        <span className="font-bold text-base tracking-widest text-white">PREPARE <span className="text-zinc-500 font-normal text-sm">admin</span></span>
+      <header className="sticky top-0 z-50 bg-paper border-b border-line flex items-center justify-between px-6 h-14">
+        <span className="font-bold text-base tracking-widest text-ink">PREPARE <span className="text-muted font-normal text-sm">admin</span></span>
         <button
           onClick={handleLogout}
-          className="text-xs text-zinc-400 hover:text-white transition"
+          className="text-xs text-muted hover:text-ink transition"
         >
           יציאה
         </button>
@@ -38,7 +38,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       <div className="flex flex-1">
         {/* Sidebar */}
-        <nav className="w-52 shrink-0 bg-zinc-900 border-l border-zinc-800 pt-6 flex flex-col gap-1 px-3">
+        <nav className="w-52 shrink-0 bg-paper border-l border-line pt-6 flex flex-col gap-1 px-3">
           {NAV.map(({ href, label, exact }) => {
             const active = exact ? pathname === href : pathname.startsWith(href);
             return (
@@ -47,8 +47,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 href={href}
                 className={`px-3 py-2 rounded-lg text-sm transition ${
                   active
-                    ? "bg-white/10 text-white font-medium"
-                    : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    ? "bg-primary/10 text-primary font-medium"
+                    : "text-muted hover:text-ink hover:bg-primary/5"
                 }`}
               >
                 {label}
