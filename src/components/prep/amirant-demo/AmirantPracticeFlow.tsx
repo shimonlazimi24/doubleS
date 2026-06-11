@@ -77,23 +77,6 @@ const PILOT_SPEC = {
   label: "פרק פיילוט (לא נספר לציון)",
 } as const;
 
-function masteryStatusHe(m: SubtopicMasteryView["mastery"]): string {
-  if (m === "weak") return "דורש חיזוק";
-  if (m === "strong") return "חזק";
-  return "ביניים";
-}
-
-function formatSubtopicStatsHe(m: SubtopicMasteryView): string {
-  const pct = Math.round(m.accuracy * 100);
-  const parts = [
-    `${m.totalAnswered} שאלות`,
-    `${pct}% נכונות`,
-    `Wilson תחתון ${m.wilsonLowerBound.toFixed(2)}`,
-    masteryStatusHe(m.mastery),
-  ];
-  if (m.wrongAnswered > 0) parts.push(`${m.wrongAnswered} טעויות`);
-  return parts.join(" · ");
-}
 
 const QUESTIONS_BY_ID = new Map(AMIRANT_DEMO_QUESTIONS.map((q) => [q.id, q]));
 
@@ -256,6 +239,17 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
   }, []);
 
   const currentQuestion = currentQuestionId ? (QUESTIONS_BY_ID.get(currentQuestionId) ?? null) : null;
+
+  const shuffledOptions = useMemo(() => {
+    if (!currentQuestion) return [];
+    // Deterministic shuffle per question so position varies across questions
+    const seed = currentQuestion.id.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+    return [...currentQuestion.options].sort((a, b) => {
+      const ha = (seed * a.id.charCodeAt(a.id.length - 1)) % 7;
+      const hb = (seed * b.id.charCodeAt(b.id.length - 1)) % 7;
+      return ha - hb;
+    });
+  }, [currentQuestion]);
 
   const goToNextShortQuestion = useCallback(
     (afterIndex: number) => {
@@ -568,7 +562,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                   variant="caption"
                   className={shortQuizOnly ? "text-[#f0c96a]" : "text-primary"}
                 >
-                  {TOPIC_TYPE_LABEL_HE[currentQuestion.topicId] ?? "שאלה"} · רמה {currentQuestion.difficulty} · שאלה{" "}
+                  {TOPIC_TYPE_LABEL_HE[currentQuestion.topicId] ?? "שאלה"} · שאלה{" "}
                   {questionIndex + 1} מתוך {SESSION_LENGTH_SHORT}
                 </Text>
               </div>
@@ -577,7 +571,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                   {amirantExamQuestionPromptForDisplay(currentQuestion.prompt)}
                 </p>
                 <ul className="space-y-2">
-                  {currentQuestion.options.map((opt) => (
+                  {shuffledOptions.map((opt) => (
                     <li key={opt.id}>
                       <button
                         type="button"
@@ -635,43 +629,30 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
 
       {phase === "short-summary" && (
         <div className="mt-10 space-y-6">
-          <Text as="h2" variant="headline" className="mb-2">
-            סיכום תרגול קצר
-          </Text>
-          <Text as="p" variant="body" className="max-w-readable text-muted">
-            דירוג חולשות לפי Wilson lower bound על תתי-נושאים.
-          </Text>
-
-          <Card className="p-6">
-            <Text as="h3" variant="headlineSm" className="mb-4">
-              תתי-נושאים (מהחלש לחזק)
-            </Text>
-            <ul className="space-y-3">
-              {masteryViews.map((m) => (
-                <li
-                  key={m.subtopicId}
-                  className="flex flex-col gap-2 rounded-control border border-line/60 bg-paper px-4 py-3 text-sm sm:flex-row sm:items-start sm:justify-between sm:gap-4"
-                >
-                  <span className="shrink-0 font-semibold leading-snug text-ink sm:max-w-[42%]">
-                    {SUBTOPIC_LABEL_HE[m.subtopicId] ?? `תת-נושא (${m.subtopicId.slice(0, 8)}…)`}
-                  </span>
-                  <p className="min-w-0 flex-1 break-words text-muted leading-relaxed sm:text-end">
-                    {formatSubtopicStatsHe(m)}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </Card>
+          {(() => {
+            const totalAnswered = Object.values(subtopicRows).reduce((s, r) => s + r.totalAnswered, 0);
+            const totalCorrect = Object.values(subtopicRows).reduce((s, r) => s + r.correctAnswered, 0);
+            const pct = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+            const grade = pct >= 80 ? "מצוין" : pct >= 60 ? "טוב" : "יש מקום לשיפור";
+            return (
+              <Card className="p-6 text-center">
+                <p className="text-5xl font-bold text-primary tabular-nums">{pct}%</p>
+                <p className="mt-2 text-lg font-semibold text-ink">{grade}</p>
+                <p className="mt-1 text-sm text-muted">{totalCorrect} מתוך {totalAnswered} שאלות נכונות</p>
+              </Card>
+            );
+          })()}
 
           {weakList.length > 0 && (
             <Card className="border-amber-500/25 bg-amber-500/5 p-6">
-              <Text as="h3" variant="headlineSm" className="mb-2 text-amber-950">
-                המלצות
+              <Text as="h3" variant="headlineSm" className="mb-3">
+                נושאים לחיזוק
               </Text>
-              <ul className="list-disc pr-5 text-sm text-ink">
+              <ul className="space-y-1.5">
                 {weakList.map((w) => (
-                  <li key={w.subtopicId}>
-                    חיזוק בנושא: <strong>{SUBTOPIC_LABEL_HE[w.subtopicId] ?? w.subtopicId}</strong>
+                  <li key={w.subtopicId} className="flex items-center gap-2 text-sm text-ink">
+                    <span className="text-amber-600">•</span>
+                    <span>{SUBTOPIC_LABEL_HE[w.subtopicId] ?? w.subtopicId}</span>
                   </li>
                 ))}
               </ul>
