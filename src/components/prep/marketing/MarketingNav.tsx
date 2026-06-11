@@ -48,7 +48,6 @@ function NavLink({
 export function MarketingNav() {
   return (
     <nav
-      dir="rtl"
       aria-label="ניווט ראשי"
       className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-x-6 gap-y-2 lg:gap-x-8"
     >

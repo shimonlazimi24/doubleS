@@ -10,6 +10,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* RTL: right-align all text by default; explicit text-center/text-left classes override this */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
   ::selection {
     background-color: rgba(30, 58, 95, 0.14);
     color: var(--color-ink);
