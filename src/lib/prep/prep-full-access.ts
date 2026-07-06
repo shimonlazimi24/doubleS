@@ -3,9 +3,18 @@ import { PREP_BASE } from "./constants";
 /**
  * Full access / purchase flag (client + server). Opt-in: unset = not purchased for conversion copy.
  * לשימושי המרה/CTA; **עוזר AI** — ראו `getPrepShowCourseAssistant()`.
+ *
+ * מנוטרל תמיד בפרודקשן: גישה בתשלום נקבעת אך ורק לפי `course_entitlements`
+ * (`hasAmirantFullAccess`). הדגל מכובד רק ב־dev מקומי או ב־Vercel preview.
  */
 export function getPrepHasFullAccess(): boolean {
   if (typeof process === "undefined") return false;
+  if (
+    process.env.NODE_ENV === "production" &&
+    process.env.NEXT_PUBLIC_VERCEL_ENV !== "preview"
+  ) {
+    return false;
+  }
   const v = process.env.NEXT_PUBLIC_PREP_HAS_FULL_ACCESS;
   return v === "1" || v === "true";
 }

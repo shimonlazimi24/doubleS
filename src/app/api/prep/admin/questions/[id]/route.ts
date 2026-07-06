@@ -1,3 +1,4 @@
+import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { NextResponse } from "next/server";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 
@@ -5,7 +6,7 @@ async function requireAdmin() {
   const supabase = createPrepSupabaseServerClient();
   if (!supabase) return null;
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user || user.user_metadata?.is_admin !== true) return null;
+  if (!user || !isPrepAdminUser(user)) return null;
   return supabase;
 }
 

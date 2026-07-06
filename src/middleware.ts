@@ -1,3 +1,4 @@
+import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { isPrepAmirantCoursePublicPreviewPath } from "@/lib/prep/amirant-public-preview";
@@ -55,7 +56,7 @@ async function handleAdminRequest(req: NextRequest): Promise<NextResponse> {
     return res;
   }
   const { user } = await getPrepUserFromMiddleware(req);
-  if (!user || user.user_metadata?.is_admin !== true) {
+  if (!user || !isPrepAdminUser(user)) {
     const login = new URL("/prep/login", req.url);
     login.searchParams.set("next", req.nextUrl.pathname);
     const redirect = NextResponse.redirect(login);
