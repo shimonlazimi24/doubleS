@@ -11,7 +11,9 @@ import { AMIRANT_COURSE_COACH_EVENT } from "@/lib/prep/amirant-lesson-coach-even
  */
 export function AmirantCourseFloatingChat() {
   const pathname = usePathname() ?? "";
-  const [open, setOpen] = useState(true);
+  // סגור כברירת מחדל — פאנל שנפתח לבד מכסה את תוכן השיעור; נפתח בלחיצה
+  // או כשהתלמיד מבקש עזרה מתוך שיעור (coach event).
+  const [open, setOpen] = useState(false);
   const [lastLesson, setLastLesson] = useState<string | null>(null);
 
   useEffect(() => {

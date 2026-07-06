@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "prep-dev",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev", "-p", "3458"],
+      "port": 3458,
+      "env": { "PREP_AUTH_BYPASS": "1" }
+    }
+  ]
+}
