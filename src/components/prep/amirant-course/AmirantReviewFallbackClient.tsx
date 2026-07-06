@@ -13,10 +13,10 @@ export function AmirantReviewFallbackClient() {
   return (
     <div className="space-y-6">
       <Text as="h1" variant="titlePage">
-        סקירות בוחנים (דמו מקומי)
+        סקירות בוחנים
       </Text>
       <Text as="p" variant="bodySm" className="text-muted">
-        בלי התחברות מוצג רק תקציר נסיונות מקומיים, ללא פירוט טעויות פר-שאלה.
+        מוצג תקציר הניסיונות מהמכשיר הזה. התחברו כדי לקבל סקירה מלאה עם פירוט טעויות לכל שאלה.
       </Text>
 
       <Card>

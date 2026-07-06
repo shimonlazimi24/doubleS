@@ -5,7 +5,7 @@ import { loadQuizReviewData } from "@/lib/amirant-course/student-insights";
 import { AmirantQuizReviewView } from "@/components/prep/amirant-course/AmirantQuizReviewView";
 
 export const metadata: Metadata = {
-  title: "סקירת בוחן | Amirant Preparation",
+  title: "סקירת בוחן | הכנה לאמירנט",
 };
 
 export default async function AmirantCourseReviewAttemptPage({

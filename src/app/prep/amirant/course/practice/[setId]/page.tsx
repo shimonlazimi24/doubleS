@@ -9,7 +9,7 @@ type Props = { params: { setId: string } };
 export function generateMetadata({ params }: Props): Metadata {
   const hit = getManifestPracticeSet(params.setId);
   if (!hit) return { title: "תרגול" };
-  return { title: `${hit.set.title} | Amirant Preparation` };
+  return { title: `${hit.set.title} | הכנה לאמירנט` };
 }
 
 export default function AmirantCoursePracticePage({ params }: Props) {

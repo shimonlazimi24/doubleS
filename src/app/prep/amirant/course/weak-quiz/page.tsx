@@ -3,7 +3,7 @@ import { Container } from "@/components/ui";
 import { AmirantWeakQuizPageClient } from "@/components/prep/amirant-course/AmirantWeakQuizPageClient";
 
 export const metadata: Metadata = {
-  title: "בוחן חולשות | Amirant Preparation",
+  title: "בוחן חולשות | הכנה לאמירנט",
 };
 
 export default function AmirantCourseWeakQuizPage() {

@@ -4,13 +4,14 @@ export const MARKETING_HERO = {
   headline: "פטור מאנגלית — בלי קורסי השלמה",
   subheadline:
     "מסלול הכנה לאמירנט שמוביל לציון שחוסך אלפי שקלים וחודשים מהתואר. תרגול אדפטיבי, סימולציות מלאות וליווי AI.",
-  ctaPrimary: { label: "נסה מבחן חינם", href: `${PREP_BASE}/amirant#demo` },
+  ctaPrimary: { label: "מבחן רמה חינם", href: `${PREP_BASE}/amirant/course/quiz/quiz-entry-diagnostic` },
   ctaSecondary: { label: "כניסה לקורס", href: `${PREP_BASE}/amirant/course` },
+  // רק טענות שנכונות בפועל — בלי מספרי "שיפור ממוצע" בלי דאטה מאחוריהם
   trust: [
     { value: "78", label: "שיעורים בקורס" },
-    { value: "AI", label: "Coach אחרי כל בוחן" },
-    { value: "100%", label: "חינם כרגע" },
-    { value: "↑24", label: "שיפור ממוצע בנקודות" },
+    { value: "כ־300", label: "שאלות תרגול עם הסברים" },
+    { value: "6", label: "סימולציות בתנאי אמת" },
+    { value: "AI", label: "עוזר אישי בכל שיעור" },
   ],
 } as const;
 
@@ -89,8 +90,8 @@ export const AI_VALUE = {
 } as const;
 
 export const MARKETING_CTA = {
-  title: "מוכנים? הקורס המלא פתוח עכשיו",
-  subtitle: "כל השיעורים, הבוחנים, הסימולציות והדשבורד — בלי תשלום, בלי הגבלה.",
-  primary: { label: "כניסה לקורס המלא", href: `${PREP_BASE}/amirant/course` },
-  secondary: { label: "נסה מבחן חינם", href: `${PREP_BASE}/amirant#demo` },
+  title: "מוכנים להתחיל?",
+  subtitle: "מודול המבוא ומבחן הרמה פתוחים חינם — הקורס המלא בגישה משבוע עד חודש, לפי הקצב שלכם.",
+  primary: { label: "התחילו במבחן רמה חינם", href: `${PREP_BASE}/amirant/course/quiz/quiz-entry-diagnostic` },
+  secondary: { label: "לצפייה במחירים", href: `${PREP_BASE}/pricing` },
 } as const;

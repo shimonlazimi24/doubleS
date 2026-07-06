@@ -9,7 +9,7 @@ type Props = { params: { simId: string } };
 export function generateMetadata({ params }: Props): Metadata {
   const s = getSimulation(params.simId);
   if (!s) return { title: "סימולציה" };
-  return { title: `${s.title} | Amirant Preparation` };
+  return { title: `${s.title} | הכנה לאמירנט` };
 }
 
 export default function AmirantCourseSimulationPage({ params }: Props) {

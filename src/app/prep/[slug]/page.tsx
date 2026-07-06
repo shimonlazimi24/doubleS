@@ -55,7 +55,7 @@ export default function PrepMarketingPage({ params }: Props) {
       </PageLayout>
       <Section tone="canvas" padding="loose" className="border-t border-line/80">
         <Container max="measure">
-          <Text as="p" variant="bodyLg">
+          <Text as="p" variant="bodyLg" className="whitespace-pre-line">
             {body}
           </Text>
         </Container>

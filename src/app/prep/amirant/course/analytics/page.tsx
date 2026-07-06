@@ -3,7 +3,7 @@ import { Container } from "@/components/ui";
 import { AmirantCourseAnalyticsClient } from "@/components/prep/amirant-course/AmirantCourseAnalyticsClient";
 
 export const metadata: Metadata = {
-  title: "אנליטיקה | Amirant Preparation",
+  title: "אנליטיקה | הכנה לאמירנט",
 };
 
 export default function AmirantCourseAnalyticsPage() {

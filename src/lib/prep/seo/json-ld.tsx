@@ -46,7 +46,12 @@ export function amirantCourseJsonLd(baseUrl: string): JsonLdObject {
     educationalLevel: "HigherEducation",
     inLanguage: "he",
     courseMode: "online",
-    isAccessibleForFree: true,
+    isAccessibleForFree: false,
+    offers: [
+      { "@type": "Offer", price: "179", priceCurrency: "ILS", name: "גישה לשבוע", category: "Paid" },
+      { "@type": "Offer", price: "229", priceCurrency: "ILS", name: "גישה לשבועיים", category: "Paid" },
+      { "@type": "Offer", price: "339", priceCurrency: "ILS", name: "גישה לחודש", category: "Paid" },
+    ],
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "online",

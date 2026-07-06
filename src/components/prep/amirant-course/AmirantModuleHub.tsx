@@ -37,7 +37,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
       <div>
         <nav className="text-xs font-medium text-muted">
           <Link href={courseBase} className="transition hover:text-primary">
-            Amirant Preparation
+            הכנה לאמירנט
           </Link>
           <span className="mx-2 text-line">/</span>
           <span className="text-ink">{titleHe}</span>

@@ -25,10 +25,10 @@ export function AmirantDashboardFallbackClient() {
   return (
     <div className="space-y-6">
       <Text as="h1" variant="titlePage">
-        לוח תלמיד (דמו מקומי)
+        לוח תלמיד
       </Text>
       <Text as="p" variant="bodySm" className="text-muted">
-        אינך מחובר. מוצגים נתונים מקומיים מהדפדפן.
+        מוצגת התקדמות מהמכשיר הזה. התחברו כדי לשמור את ההתקדמות בחשבון ולסנכרן בין מכשירים.
       </Text>
 
       <AmirantNextBestActionCard action={recommended} className="border-primary/20" />

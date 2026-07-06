@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Heebo, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const heebo = Heebo({
@@ -26,6 +28,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${heebo.variable} ${inter.variable} min-h-screen bg-canvas font-sans text-ink antialiased`}
       >
         {children}
+        <Analytics />
+        {process.env.NEXT_PUBLIC_GA_ID ? <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> : null}
       </body>
     </html>
   );

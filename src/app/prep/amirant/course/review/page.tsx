@@ -6,7 +6,7 @@ import { loadStudentDashboardData } from "@/lib/amirant-course/student-insights"
 import { AmirantReviewFallbackClient } from "@/components/prep/amirant-course/AmirantReviewFallbackClient";
 
 export const metadata: Metadata = {
-  title: "סקירות בוחנים | Amirant Preparation",
+  title: "סקירות בוחנים | הכנה לאמירנט",
 };
 
 export default async function AmirantCourseReviewIndexPage() {

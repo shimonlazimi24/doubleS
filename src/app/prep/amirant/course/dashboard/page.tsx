@@ -6,7 +6,7 @@ import { AmirantStudentDashboardView } from "@/components/prep/amirant-course/Am
 import { AmirantDashboardFallbackClient } from "@/components/prep/amirant-course/AmirantDashboardFallbackClient";
 
 export const metadata: Metadata = {
-  title: "לוח תלמיד | Amirant Preparation",
+  title: "לוח תלמיד | הכנה לאמירנט",
 };
 
 export default async function AmirantCourseDashboardPage() {

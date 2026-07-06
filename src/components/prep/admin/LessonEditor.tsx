@@ -40,6 +40,9 @@ const EMPTY: LessonFormData = {
   published: false,
 };
 
+/** שיעורים עם חוויית צעדים "curated" — שינוי כותרות H2 עלול לשבור את סיווג הצעדים. */
+const CURATED_LESSON_IDS = new Set(["lesson.intro.welcome", "lesson.intro.roadmap"]);
+
 export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> }) {
   const router = useRouter();
   const [form, setForm] = useState<LessonFormData>({ ...EMPTY, ...initial });
@@ -48,6 +51,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
   const [isPending, startTransition] = useTransition();
 
   const isNew = !initial?.id;
+  const isCurated = !isNew && CURATED_LESSON_IDS.has(form.id);
 
   function set<K extends keyof LessonFormData>(key: K, value: LessonFormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -98,7 +102,20 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">{isNew ? "שיעור חדש" : "עריכת שיעור"}</h1>
-          {!isNew && <p className="text-zinc-500 text-xs mt-1 font-mono">{form.id}</p>}
+          {!isNew && (
+            <p className="text-zinc-500 text-xs mt-1 font-mono">
+              {form.id}
+              {" · "}
+              <a
+                href={`/prep/amirant/course/lesson/${form.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline-offset-2 hover:underline"
+              >
+                צפה באתר ↗
+              </a>
+            </p>
+          )}
         </div>
         <div className="flex gap-2 items-center">
           {!isNew && (
@@ -126,6 +143,13 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
       {error && (
         <div className="mb-4 px-4 py-3 bg-red-900/40 border border-red-700 rounded-lg text-sm text-red-300">
           {error}
+        </div>
+      )}
+
+      {isCurated && (
+        <div className="mb-4 px-4 py-3 bg-amber-500/10 border border-amber-500/40 rounded-lg text-sm text-amber-900">
+          ⚠️ לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים — עדיף לערוך את
+          הטקסט בתוך הסעיפים בלי לשנות כותרות. אפשר גם לפרסם רק «וידאו לשיעור» ולהשאיר את התוכן ריק.
         </div>
       )}
 

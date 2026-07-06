@@ -12,7 +12,7 @@ type Props = { params: { moduleSlug: string } };
 export function generateMetadata({ params }: Props): Metadata {
   const mod = getManifestModuleBySlug(params.moduleSlug);
   if (!mod) return { title: "מודול" };
-  return { title: `${displayModuleTitleHe(mod)} | Amirant Preparation` };
+  return { title: `${displayModuleTitleHe(mod)} | הכנה לאמירנט` };
 }
 
 export default function AmirantCourseModulePage({ params }: Props) {
