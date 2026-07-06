@@ -182,7 +182,9 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                   })}
                 </ul>
                 {checked && q.explanation ? (
-                  <div className="mt-4 rounded-xl border border-sky-100 bg-sky-50/50 p-4">
+                  // "הערת מורה" — קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
+                  <div className="mt-4 rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4 ps-4">
+                    <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
                     <PremiumMarkdownBody body={q.explanation} variant="card" />
                   </div>
                 ) : null}

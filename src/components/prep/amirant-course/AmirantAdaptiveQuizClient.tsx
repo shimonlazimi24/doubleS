@@ -470,7 +470,11 @@ export function AmirantAdaptiveQuizClient({
         <Card className="mt-6 border-primary/25">
           <CardBody className="space-y-5 p-6">
             <Text as="p" variant="body">
-              ציון: {summary.correct} / {manifestQuiz.questionCount} ({summary.scorePct}%)
+              ציון:{" "}
+              <span className="text-xl font-extrabold tabular-nums text-score">
+                {summary.correct}/{manifestQuiz.questionCount}
+              </span>{" "}
+              ({summary.scorePct}%)
             </Text>
             <Text as="p" variant="body">
               רמה משוערת: {summary.estimatedLevel}

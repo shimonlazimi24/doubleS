@@ -59,7 +59,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
               <Link
                 href={BASE}
                 dir="rtl"
-                className="flex items-center gap-2 py-3.5 text-sm font-bold text-[#0f1e3d] transition hover:opacity-80"
+                className="flex items-center gap-2 py-3.5 text-sm font-bold text-primary transition hover:opacity-80"
               >
                 <span className="text-[1.1rem] leading-none">◈</span>
                 הכנה לאמירנט
@@ -69,13 +69,13 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
               <nav dir="rtl" className="flex items-center gap-0.5 py-2">
                 <Link
                   href={BASE}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-[#5a6480] transition hover:bg-[#f0f4ff] hover:text-[#0f1e3d]"
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
                 >
                   תוכנית הקורס
                 </Link>
                 <Link
                   href={`${BASE}/dashboard`}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-[#5a6480] transition hover:bg-[#f0f4ff] hover:text-[#0f1e3d]"
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
                 >
                   לוח תלמיד
                 </Link>

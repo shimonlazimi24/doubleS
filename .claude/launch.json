@@ -6,7 +6,7 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["next", "dev", "-p", "3458"],
       "port": 3458,
-      "env": { "PREP_AUTH_BYPASS": "1" }
+      "env": { "PREP_AUTH_BYPASS": "1", "NEXT_PUBLIC_PREP_HAS_FULL_ACCESS": "1" }
     }
   ]
 }

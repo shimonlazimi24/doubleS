@@ -17,6 +17,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
+import { PremiumMarkdownBody } from "./premium/PremiumMarkdownBody";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -185,10 +186,12 @@ export function AmirantPracticeSetClient({
                     </li>
                   ))}
                 </ul>
-                {submitted ? (
-                  <Text as="p" variant="bodySm" className="text-muted">
-                    {q.explanation}
-                  </Text>
+                {submitted && q.explanation ? (
+                  // "הערת מורה" — עקבי עם התרגול בשיעורים
+                  <div className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4">
+                    <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
+                    <PremiumMarkdownBody body={q.explanation} variant="card" />
+                  </div>
                 ) : null}
               </CardBody>
             </Card>

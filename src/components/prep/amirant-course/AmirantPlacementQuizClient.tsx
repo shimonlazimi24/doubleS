@@ -294,11 +294,12 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
         </Text>
         <Card className="border-primary/25">
           <CardBody className="space-y-6 p-6 sm:p-8">
+            {/* רגע הציון — זהב (חתימת "אקדמי מחודד") */}
             <div className="rounded-2xl bg-surface-low px-6 py-8 text-center">
               <Text as="p" variant="labelAccent" className="text-muted">
                 ציון משוער בסולם 50–150
               </Text>
-              <p className="mt-2 text-6xl font-extrabold tabular-nums text-primary">{results.normalizedScore}</p>
+              <p className="mt-2 text-6xl font-extrabold tabular-nums text-score">{results.normalizedScore}</p>
               <Text as="p" variant="bodySm" className="mt-2 text-muted">
                 נרמול פשוט מהאחוז — אינדיקציה בלבד, לא ציון רשמי
               </Text>
