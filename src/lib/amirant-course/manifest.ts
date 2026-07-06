@@ -25,6 +25,7 @@ const DEMO_MANIFEST: CourseManifest = {
       lessons: [
         {
           id: "lesson.intro.welcome",
+          videoSlot: true,
           title: "ברוכים הבאים לקורס",
           kind: "text",
           estimatedMinutes: 25,
@@ -37,7 +38,7 @@ const DEMO_MANIFEST: CourseManifest = {
         },
         {
           id: "lesson.intro.diagnostic",
-          title: "מבחן אבחון כניסה",
+          title: "מבחן רמה",
           kind: "text",
           estimatedMinutes: 25,
           quizId: "quiz-entry-diagnostic",
@@ -53,8 +54,9 @@ const DEMO_MANIFEST: CourseManifest = {
       quizzes: [
         {
           id: "quiz-entry-diagnostic",
-          title: "מבחן אבחון כניסה (15 שאלות, תערובת נושאים)",
-          adaptive: true,
+          title: "מבחן רמה (15 שאלות)",
+          adaptive: false,
+          format: "fixed_placement",
           questionCount: 15,
           timeLimitSec: 20 * 60,
           topicSlugs: ["sentence_completion", "rephrasing", "reading_comprehension"],

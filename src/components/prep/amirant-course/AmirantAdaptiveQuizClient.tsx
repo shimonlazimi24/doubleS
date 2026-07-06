@@ -36,16 +36,12 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/AmirantNextBestActionCard";
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { formatClock } from "@/lib/amirant-course/format-clock";
+import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
-
-function formatClock(totalSec: number): string {
-  const m = Math.floor(Math.max(0, totalSec) / 60);
-  const s = Math.max(0, totalSec) % 60;
-  return `${m}:${String(s).padStart(2, "0")}`;
-}
 
 type Phase = "active" | "results";
 
@@ -519,7 +515,7 @@ export function AmirantAdaptiveQuizClient({
     <div className="space-y-6">
       <nav className="text-xs font-medium text-muted">
         <Link href={COURSE_BASE} className="hover:text-primary">
-          Amirant Preparation
+          הכנה לאמירנט
         </Link>
         <span className="mx-2 text-line">/</span>
         <span className="text-ink">מבחן</span>
@@ -579,6 +575,7 @@ export function AmirantAdaptiveQuizClient({
             {AMIRANT_TOPIC_LABEL_HE[currentQ.topicSlug]} · קושי {currentQ.difficulty}
           </CardTitle>
           <CardBody className="space-y-6 p-6">
+            <QuizPassagePanel passageId={currentQ.passageId} />
             <p className="text-base font-medium leading-relaxed text-ink">
               {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
             </p>

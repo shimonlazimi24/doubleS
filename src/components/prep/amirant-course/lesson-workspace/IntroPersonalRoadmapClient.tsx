@@ -26,10 +26,21 @@ type Props = {
   className?: string;
 };
 
+/** שמות היסטוריים של מבחן הכניסה — סשנים ישנים נשמרו תחת הכותרות הקודמות. */
+const LEGACY_DIAGNOSTIC_LABELS = new Set([
+  "מבחן אבחון כניסה (15 שאלות, תערובת נושאים)",
+  "מבחן אבחון כניסה",
+]);
+
 function latestDiagnosticScorePct(diagnosticLabel: string): number | null {
   if (typeof window === "undefined") return null;
   const a = loadAnalytics();
-  const quizSessions = a.sessions.filter((s) => s.kind === "quiz" && s.label === diagnosticLabel && s.scorePct != null);
+  const quizSessions = a.sessions.filter(
+    (s) =>
+      s.kind === "quiz" &&
+      (s.label === diagnosticLabel || LEGACY_DIAGNOSTIC_LABELS.has(s.label)) &&
+      s.scorePct != null,
+  );
   if (quizSessions.length === 0) return null;
   const last = quizSessions[quizSessions.length - 1]!;
   return last.scorePct ?? null;
@@ -49,7 +60,7 @@ export function IntroPersonalRoadmapClient({
   className,
 }: Props) {
   const diagnosticQuiz = getManifestQuiz(DIAGNOSTIC_QUIZ_ID);
-  const diagnosticLabel = diagnosticQuiz?.title ?? "מבחן אבחון כניסה";
+  const diagnosticLabel = diagnosticQuiz?.title ?? "מבחן רמה";
 
   const [scorePct, setScorePct] = useState<number | null>(null);
   useEffect(() => {
@@ -59,7 +70,7 @@ export function IntroPersonalRoadmapClient({
   const syllabus = getSyllabusUiForModule(module);
   const fallbackParagraph =
     syllabus?.howToHe?.[1] ??
-    "אבחון כניסה: 6 השלמות, 4 ניסוח, 5 קריאה — ~20 דק׳, ואז \"מבחן\" בקורס (מנוע אדפטיבי, 15 שאלות).";
+    "מבחן רמה: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא — כ־20 דק׳, ובסיום ציון משוער בסולם 50–150.";
 
   const personalized = scorePct != null ? recommendationHeForDiagnosticScorePct(scorePct) : null;
 
@@ -74,14 +85,14 @@ export function IntroPersonalRoadmapClient({
               <AmirantLessonTrackIsland lessonId={lessonId} lessonTitle={lessonTitle} className="w-full sm:w-auto" />
             </div>
             <Text as="p" variant="body" className="mt-3 text-slate-600">
-              התאמה אישית מבוססת על <strong>תוצאת מבחן האבחון האדפטיבי</strong> בקורס. אם עדיין לא נבחנתם — התחילו
-              במבחן האבחון ואז חזרו לעמוד זה.
+              ההתאמה האישית מבוססת על <strong>תוצאת מבחן הרמה</strong> בקורס. אם עדיין לא נבחנתם — התחילו
+              במבחן הרמה ואז חזרו לעמוד זה.
             </Text>
           </div>
 
           {scorePct != null && personalized ? (
             <div className="rounded-2xl border border-stone-200/90 bg-white p-5 ring-1 ring-slate-900/[0.04] sm:p-6">
-              <p className="text-sm font-medium text-slate-500">תוצאה אחרונה במבחן האבחון (בקורס)</p>
+              <p className="text-sm font-medium text-slate-500">תוצאה אחרונה במבחן הרמה</p>
               <p className="mt-1 text-3xl font-bold tabular-nums text-[#0f2347]">{scorePct}%</p>
               <h2 className="mt-4 text-lg font-semibold text-[#0f2347]">{personalized.title}</h2>
               <div className="prose prose-slate mt-3 max-w-none whitespace-pre-line text-base leading-relaxed text-slate-700">
@@ -90,7 +101,7 @@ export function IntroPersonalRoadmapClient({
             </div>
           ) : (
             <div className="rounded-2xl border border-amber-200/80 bg-amber-50/40 p-5 sm:p-6">
-              <h2 className="text-lg font-semibold text-amber-950">עדיין אין תוצאת אבחון במערכת</h2>
+              <h2 className="text-lg font-semibold text-amber-950">עדיין אין תוצאת מבחן רמה במערכת</h2>
               <Text as="p" variant="body" className="mt-2 text-amber-950/90">
                 {fallbackParagraph}
               </Text>
@@ -98,7 +109,7 @@ export function IntroPersonalRoadmapClient({
                 href={`${courseBase}/quiz/${DIAGNOSTIC_QUIZ_ID}`}
                 className="mt-4 inline-flex min-h-[2.75rem] items-center justify-center rounded-xl bg-[#0f2347] px-5 text-sm font-medium text-white shadow-sm transition hover:bg-[#0f2347]/90"
               >
-                מעבר למבחן אבחון כניסה
+                מעבר למבחן רמה
               </Link>
             </div>
           )}

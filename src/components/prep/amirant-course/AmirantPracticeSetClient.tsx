@@ -16,6 +16,7 @@ import type { AmirantBankTopicSlug } from "@/lib/amirant-course/types/bank-quest
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -161,6 +162,7 @@ export function AmirantPracticeSetClient({
                 <Text as="p" variant="caption" className="text-muted">
                   שאלה {idx + 1} · {q.topicSlug} · קושי {q.difficulty}
                 </Text>
+                <QuizPassagePanel passageId={q.passageId} />
                 <p className="font-medium text-ink">{amirantExamQuestionPromptForDisplay(q.prompt)}</p>
                 <ul className="space-y-2">
                   {q.options.map((opt) => (

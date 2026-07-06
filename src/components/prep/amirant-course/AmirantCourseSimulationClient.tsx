@@ -22,6 +22,9 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import type { BankQuestion } from "@/lib/amirant-course/types/bank-question";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { formatClock } from "@/lib/amirant-course/format-clock";
+import { AmirantVideoEmbed } from "./lesson/AmirantVideoEmbed";
+import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import {
   buildAdaptiveDecisionEvent,
@@ -29,12 +32,6 @@ import {
 } from "@/lib/amirant-course/adaptive-telemetry";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
-
-function formatClock(totalSec: number): string {
-  const m = Math.floor(Math.max(0, totalSec) / 60);
-  const s = Math.max(0, totalSec) % 60;
-  return `${m}:${String(s).padStart(2, "0")}`;
-}
 
 type RunPhase = "intro" | "running" | "summary";
 
@@ -371,6 +368,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
             <Text as="h2" variant="headlineSm">
               {sim.title}
             </Text>
+            <AmirantVideoEmbed src={sim.videoPath ?? null} title={`סרטון הסבר — ${sim.title}`} />
             <Text as="p" variant="bodySm" className="text-muted">
               פיילוט {Math.round(sim.pilot.seconds / 60)} דק׳, אחריו {sim.sections.length} פרקי ציון ({sim.sections.reduce((a, s) => a + s.questionCount, 0)}{" "}
               שאלות) ב־{Math.round(sim.sections.reduce((a, s) => a + s.seconds, 0) / 60)} דק׳. ניתן לעבור בין שאלות באותו פרק עד לסיום.
@@ -422,6 +420,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
                   <Text as="p" variant="caption" className="text-muted">
                     רמת כניסה לפרק: {run.sectionEnterLevel} · קושי שאלה: {q.difficulty}
                   </Text>
+                  <QuizPassagePanel passageId={q.passageId} />
                   <p className="text-base font-medium leading-relaxed text-ink">
                     {amirantExamQuestionPromptForDisplay(q.prompt)}
                   </p>

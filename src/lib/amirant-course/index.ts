@@ -32,15 +32,27 @@ export { AMIRANT_PREPARATION_MANIFEST, getManifestLesson, getManifestPracticeSet
 export { AMIRANT_LESSON_REGISTRY, getLessonContent } from "./lesson-registry";
 export {
   AMIRANT_BANK_QUESTIONS,
+  AMIRANT_GENERAL_BANK_QUESTIONS,
   AMIRANT_QUESTION_POOL,
   AMIRANT_CONTENT_MODE,
+  AMIRANT_BANK_MODE,
   getBankQuestion,
+  getBankQuestionsByTag,
+  getPassage,
   bankQuestionsToPoolItems,
   filterBankByTopics,
   filterBankByTopicsAndVocabMode,
   amirantExamQuestionPromptForDisplay,
   type VocabQuizMode,
+  type AmirantPassage,
 } from "./question-bank";
+export { buildPlacementQuizForm, placementNormalizedScore } from "./session/build-placement-quiz-form";
+export type { PlacementQuizForm } from "./session/build-placement-quiz-form";
+export {
+  loadRecentPlacementForms,
+  rememberPlacementForm,
+  recentPlacementExclusions,
+} from "./adaptive/placement-recent-storage";
 export { parseVocabQuizParam, isVocabQuizMode } from "./question-bank/vocab-quiz-mode";
 export { pickAdaptiveQuestionIds } from "./adaptive/pick-from-bank";
 export { initialInTestLevel, updateInTestLevelAfterAnswer } from "./adaptive/in-test-level";
