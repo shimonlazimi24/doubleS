@@ -3,24 +3,30 @@
  * Tailwind maps these in tailwind.config.ts; components use tokens via utilities.
  */
 :root {
-  /* —— Palette: academic prep (navy + sky) —— */
-  --color-ink: #0f172a;
-  --color-muted: #64748b;
-  --color-muted-2: #94a3b8;
-  --color-canvas: #f8fafc;
-  --color-surface-low: #f1f5f9;
-  --color-surface-high: #e2e8f0;
-  --color-line: #e2e8f0;
-  --color-paper: #ffffff;
+  /* —— Palette: "אקדמי מחודד" — navy ground, ink-blue accent, gold for scores ——
+     כל צבע גם כטריפלט RGB כדי ש-Tailwind יוכל להחיל שקיפויות (/60 וכו') */
+  --color-ink: #0f172a;              --color-ink-rgb: 15 23 42;
+  --color-muted: #5a6480;            --color-muted-rgb: 90 100 128;
+  --color-muted-2: #94a3b8;          --color-muted-2-rgb: 148 163 184;
+  --color-canvas: #fbfcfe;           --color-canvas-rgb: 251 252 254;
+  --color-surface-low: #f3f6fb;      --color-surface-low-rgb: 243 246 251;
+  --color-surface-high: #e5eaf4;     --color-surface-high-rgb: 229 234 244;
+  --color-line: #dce3ef;             --color-line-rgb: 220 227 239;
+  --color-paper: #ffffff;            --color-paper-rgb: 255 255 255;
 
-  --color-primary: #0f2347;
-  --color-primary-hover: #0b1a35;
+  --color-primary: #0f2347;          --color-primary-rgb: 15 35 71;
+  --color-primary-hover: #0b1a35;    --color-primary-hover-rgb: 11 26 53;
   --color-primary-muted: rgba(15, 35, 71, 0.06);
-  --color-primary-container: #1a3358;
+  --color-primary-container: #1a3358; --color-primary-container-rgb: 26 51 88;
 
-  --color-accent: #0ea5e9;
-  --color-accent-muted: rgba(14, 165, 233, 0.12);
-  --color-sage: #0d9488;
+  /* כחול-דיו עמוק — קריא גם כטקסט על לבן (בניגוד לתכלת הקודמת) */
+  --color-accent: #0e6fc2;           --color-accent-rgb: 14 111 194;
+  --color-accent-muted: rgba(14, 111, 194, 0.1);
+  --color-sage: #0d9488;             --color-sage-rgb: 13 148 136;
+
+  /* רגעי למידה: זהב לציונים/הישגים, "עט מורה" לסימוני נכון/טעות */
+  --color-score: #b8860b;            --color-score-rgb: 184 134 11;
+  --color-pen: #c4372b;              --color-pen-rgb: 196 55 43;
 
   /* —— 8px spacing scale (rem @ 16px root) —— */
   --space-1: 0.5rem; /* 8 */
@@ -45,8 +51,8 @@
   --radius-surface: 1rem;
   --radius-control: 0.875rem;
 
-  /* —— Elevation (subtle only) —— */
-  --shadow-card: 0 1px 2px rgba(18, 21, 26, 0.06), 0 8px 24px rgba(18, 21, 26, 0.04);
+  /* —— Elevation (hairline-first: גבולות דקים, צל מינימלי) —— */
+  --shadow-card: 0 1px 2px rgba(15, 35, 71, 0.05);
   --shadow-nav: 0 1px 0 rgba(18, 21, 26, 0.06), 0 12px 40px rgba(18, 21, 26, 0.06);
   --shadow-lift: 0 20px 50px -12px rgba(15, 35, 71, 0.12), 0 8px 16px rgba(15, 35, 71, 0.06);
   --shadow-preview: 0 32px 64px -16px rgba(15, 35, 71, 0.18), 0 0 0 1px rgba(15, 35, 71, 0.06);

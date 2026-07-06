@@ -6,21 +6,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "var(--color-ink)",
-        muted: "var(--color-muted)",
-        "muted-2": "var(--color-muted-2)",
-        canvas: "var(--color-canvas)",
-        "surface-low": "var(--color-surface-low)",
-        "surface-high": "var(--color-surface-high)",
-        line: "var(--color-line)",
-        paper: "var(--color-paper)",
-        primary: "var(--color-primary)",
-        "primary-hover": "var(--color-primary-hover)",
+        // טריפלטים של RGB + <alpha-value> — כדי ששקיפויות כמו border-line/60
+        // באמת יעבדו (עם hex ב-var, Tailwind נופל בשקט לצבע ברירת-מחדל)
+        ink: "rgb(var(--color-ink-rgb) / <alpha-value>)",
+        muted: "rgb(var(--color-muted-rgb) / <alpha-value>)",
+        "muted-2": "rgb(var(--color-muted-2-rgb) / <alpha-value>)",
+        canvas: "rgb(var(--color-canvas-rgb) / <alpha-value>)",
+        "surface-low": "rgb(var(--color-surface-low-rgb) / <alpha-value>)",
+        "surface-high": "rgb(var(--color-surface-high-rgb) / <alpha-value>)",
+        line: "rgb(var(--color-line-rgb) / <alpha-value>)",
+        paper: "rgb(var(--color-paper-rgb) / <alpha-value>)",
+        primary: "rgb(var(--color-primary-rgb) / <alpha-value>)",
+        "primary-hover": "rgb(var(--color-primary-hover-rgb) / <alpha-value>)",
         "primary-muted": "var(--color-primary-muted)",
-        "primary-container": "var(--color-primary-container)",
-        accent: "var(--color-accent)",
+        "primary-container": "rgb(var(--color-primary-container-rgb) / <alpha-value>)",
+        accent: "rgb(var(--color-accent-rgb) / <alpha-value>)",
         "accent-muted": "var(--color-accent-muted)",
-        sage: "var(--color-sage)",
+        sage: "rgb(var(--color-sage-rgb) / <alpha-value>)",
+        score: "rgb(var(--color-score-rgb) / <alpha-value>)",
+        pen: "rgb(var(--color-pen-rgb) / <alpha-value>)",
       },
       maxWidth: {
         measure: "var(--max-measure)",

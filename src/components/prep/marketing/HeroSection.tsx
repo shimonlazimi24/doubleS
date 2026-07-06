@@ -7,16 +7,8 @@ import { cn } from "@/lib/design-system/cn";
 export function HeroSection() {
   const hero = MARKETING_HERO;
   return (
-    <section className="relative overflow-hidden border-b border-line/50 bg-paper">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_80%_-20%,rgba(14,165,233,0.12),transparent_50%)]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_100%,rgba(15,35,71,0.05),transparent_55%)]"
-        aria-hidden
-      />
-
+    // "אקדמי מחודד": נייר נקי בלי washes — קווי שיער עושים את העבודה
+    <section className="relative border-b border-line bg-paper">
       <Container className={cn("relative py-12 md:py-16 lg:py-[4.5rem]")}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">
           <div className="max-w-xl lg:max-w-lg order-2 lg:order-1 text-right">
