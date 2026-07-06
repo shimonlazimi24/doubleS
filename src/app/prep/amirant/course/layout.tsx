@@ -14,12 +14,12 @@ import { AmirantPersistenceProvider } from "@/components/prep/amirant-course/Ami
 const BASE = `${PREP_BASE}/amirant/course`;
 
 export const metadata: Metadata = {
-  title: "Amirant Preparation",
+  title: "הכנה לאמירנט",
   description: AMIRANT_PREPARATION_MANIFEST.description,
 };
 
 export default async function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
-  // Show chat to any logged-in user (course is free during beta; gate to paid later)
+  // העוזר האישי — למנויים בלבד (תואם את הגייט ב-lesson-chat route); dev/preview דרך הדגל
   let showCourseChat = getPrepShowCourseAssistant();
   if (!showCourseChat) {
     const client = createPrepSupabaseServerClient();
@@ -27,7 +27,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
       const {
         data: { user },
       } = await client.auth.getUser();
-      showCourseChat = !!user;
+      showCourseChat = user ? await hasAmirantFullAccess(client, user.id) : false;
     }
   }
   return (

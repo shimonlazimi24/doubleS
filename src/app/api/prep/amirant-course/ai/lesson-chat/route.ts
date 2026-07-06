@@ -1,5 +1,6 @@
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { getPrepHasFullAccess, getPrepShowCourseAssistant } from "@/lib/prep/prep-full-access";
+import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { checkAiRouteRateLimit, checkAiUserAndIpRateLimit } from "@/lib/amirant-course/ai/rate-limit";
 import { runLessonChatAi } from "@/lib/amirant-course/ai/lesson-chat";
 import { amirantChatbotRequestSchema } from "@/lib/amirant-course/ai/chatbot/schemas";
@@ -18,13 +19,21 @@ export async function POST(req: Request) {
   const { requestIp, sessionId } = getAiRequestMeta(req);
   const { data: { user } } = await client.auth.getUser();
 
-  const isLoggedIn = !!user;
-  const assistantAllowed = getPrepShowCourseAssistant() || getPrepHasFullAccess() || isLoggedIn;
+  // העוזר הוא פיצ'ר בתשלום (וה-RAG שלו מעוגן בתוכן הקורס המלא) — בפרודקשן
+  // נדרש מנוי פעיל. ב-dev/preview הדגלים (שממילא כבויים בפרודקשן) פותחים אותו.
+  const assistantAllowed =
+    getPrepShowCourseAssistant() ||
+    getPrepHasFullAccess() ||
+    (user ? await hasAmirantFullAccess(client, user.id) : false);
   if (!assistantAllowed) {
-    return new Response(JSON.stringify({ error: "עוזר הקורס זמין למשתמשים מחוברים. התחברו כדי להמשיך." }), {
-      status: 403,
-      headers: { "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        error: user
+          ? "העוזר האישי זמין למנויי הקורס. אפשר להצטרף בעמוד המחירים — והוא ילווה אתכם בכל שיעור."
+          : "עוזר הקורס זמין למשתמשים מחוברים. התחברו כדי להמשיך.",
+      }),
+      { status: 403, headers: { "Content-Type": "application/json" } },
+    );
   }
 
   if (user) {

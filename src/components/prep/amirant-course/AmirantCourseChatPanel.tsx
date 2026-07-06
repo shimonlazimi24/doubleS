@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import {
   AMIRANT_COURSE_COACH_EVENT,
   AMIRANT_COURSE_QUESTION_CONTEXT_EVENT,
@@ -20,6 +21,20 @@ type LessonChatClientPayload = {
   vocabularyWord?: string;
   topic?: string;
 };
+
+/** עד 8 תורות אחרונים, חתוכים ל-600 תווים — כדי שהעוזר יזכור את השיחה. */
+function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; text: string }[] {
+  return messages
+    .filter((m) => m.text.trim())
+    .slice(-8)
+    .map((m) => ({ role: m.role, text: m.text.slice(0, 600) }));
+}
+
+const STARTER_PROMPTS = [
+  "איך כדאי לגשת לשאלות השלמת משפטים?",
+  "מה ההבדל בין רמות הקושי במבחן?",
+  "תן לי טיפ לניהול זמן במבחן",
+];
 
 type HintSession = { stage: number; questionType?: string };
 
@@ -51,6 +66,9 @@ export function AmirantCourseChatPanel({
   // Ref so sendWithPayload (memoized on loading/activeLessonId) can always read the latest value
   const currentQuestionRef = useRef<AmirantQuestionContextDetail | null>(null);
   useEffect(() => { currentQuestionRef.current = currentQuestion; }, [currentQuestion]);
+  // בזמן השליחה ה-ref עוד לא כולל את ההודעה החדשה — בדיוק ההיסטוריה שרוצים לשלוח
+  const messagesRef = useRef<Msg[]>([]);
+  useEffect(() => { messagesRef.current = messages; }, [messages]);
   const listRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = useCallback(() => {
@@ -81,6 +99,9 @@ export function AmirantCourseChatPanel({
         const cq = currentQuestionRef.current;
         if (cq?.questionText && !body.activeQuestionText) body.activeQuestionText = cq.questionText.slice(0, 800);
         if (cq?.topic && !body.topic) body.topic = cq.topic;
+        // היסטוריית השיחה (בלי ההודעה הנוכחית שכבר ב-userMessage)
+        const history = buildHistoryPayload(messagesRef.current);
+        if (history.length) body.history = history;
 
         const res = await fetch("/api/prep/amirant-course/ai/lesson-chat", {
           method: "POST",
@@ -211,11 +232,26 @@ export function AmirantCourseChatPanel({
         )}
       >
         {messages.length === 0 ? (
-          <p className="text-muted">
-            {activeLessonId
-              ? "שאלו על תוכן השיעור: ניסוח, אסטרטגיה, או נקודה שלא הובנה."
-              : "שאלו כל נושא הקשור לקורס (מבחן, מודול, תרגול). ניסוח ספציפי עוזר."}
-          </p>
+          <div className="space-y-2.5">
+            <p className="text-muted">
+              {activeLessonId
+                ? "שאלו על תוכן השיעור: ניסוח, אסטרטגיה, או נקודה שלא הובנה."
+                : "שאלו כל נושא הקשור לקורס (מבחן, מודול, תרגול). ניסוח ספציפי עוזר."}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {STARTER_PROMPTS.map((q) => (
+                <button
+                  key={q}
+                  type="button"
+                  disabled={loading}
+                  onClick={() => void sendWithText(q)}
+                  className="rounded-full border border-primary/25 bg-paper px-3 py-1.5 text-xs text-primary transition hover:bg-primary/5"
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          </div>
         ) : null}
         {messages.map((msg) => (
           <div
@@ -225,10 +261,21 @@ export function AmirantCourseChatPanel({
               msg.role === "user" ? "ms-8 bg-primary/10 text-ink" : "me-8 border border-line/60 bg-paper text-ink",
             )}
           >
-            {msg.text}
+            {msg.role === "assistant" ? (
+              msg.text ? (
+                <PremiumMarkdownBody body={msg.text} variant="card" />
+              ) : (
+                <span className="inline-flex gap-1 text-muted" aria-label="העוזר מקליד">
+                  <span className="animate-bounce">·</span>
+                  <span className="animate-bounce [animation-delay:120ms]">·</span>
+                  <span className="animate-bounce [animation-delay:240ms]">·</span>
+                </span>
+              )
+            ) : (
+              <span className="whitespace-pre-line">{msg.text}</span>
+            )}
           </div>
         ))}
-        {loading ? <p className="text-xs text-muted">מגיב…</p> : null}
       </div>
 
       {error ? <p className="text-sm text-red-600 dark:text-red-400">{error}</p> : null}

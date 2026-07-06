@@ -321,8 +321,9 @@ export async function streamOpenAiJsonResponse<T>(params: {
       { role: "system", content: params.systemPrompt },
       { role: "user", content: params.userPrompt },
     ],
-    temperature: 0.2,
-    max_tokens: Math.min(getMaxOutputTokens(), 800),
+    // 0.4 — עברית טבעית יותר מ-0.2 בלי לאבד דיוק; 1100 טוקנים כדי שתשובות בעברית לא ייחתכו
+    temperature: 0.4,
+    max_tokens: Math.min(getMaxOutputTokens(), 1100),
     response_format: zodResponseFormat(params.schema, params.schemaName),
   });
 

@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { runEmbedding } from "./openai-client";
 
 const RAG_TOPK_MIN = 5;
@@ -179,6 +180,11 @@ export async function retrieveCourseChunks(
   client: SupabaseClient,
   params: RetrieveCourseChunksParams,
 ): Promise<RetrievedChunk[]> {
+  // אחזור תוכן קורס תמיד עם service client כשזמין: RLS על course_content_chunks
+  // מתיר קריאה רק ל-authenticated, ולכן session client לא-מחובר (dev/preview)
+  // מחזיר בשקט 0 קטעים — לכל צרכני ה-AI (chat, quiz-review, recommendations,
+  // coach). הגישה ל-routes עצמם מוגנת שם; כאן זה אינדקס תוכן, לא דאטת משתמש.
+  const retrievalClient = getPrepSupabaseServiceClient() ?? client;
   const topK = clampRagTopK(params.topK);
   const min = getRagMinSimilarity(params.minSimilarity);
   const op = params.operation;
@@ -194,7 +200,7 @@ export async function retrieveCourseChunks(
     try {
       const embedding = params.precomputedEmbedding ?? (await runEmbedding({ text: vectorText })).embedding;
       const matchCount = overfetchCount(topK);
-      const { data, error } = await client.rpc("match_course_content_chunks", {
+      const { data, error } = await retrievalClient.rpc("match_course_content_chunks", {
         query_embedding: embedding,
         match_count: matchCount,
         filter_course_slug: "amirant-preparation",

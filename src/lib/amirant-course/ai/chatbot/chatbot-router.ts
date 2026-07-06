@@ -92,8 +92,16 @@ export async function runAmirantChatbot(
     ? `Amirant preparation — focus on lesson ${request.lessonId}${request.topic ? `, topic ${request.topic}` : ""}.`
     : `Amirant preparation — course-wide. ${request.topic ? ` topic filter: ${request.topic}.` : ""}`;
 
+  // שאלות המשך קצרות ("לא הבנתי", "ומה לגבי...") נשענות על ההודעה הקודמת —
+  // מוסיפים את התור האחרון לשאילתת האחזור כדי שה-RAG ימצא את ההקשר הנכון.
+  const lastUserTurn = request.history?.filter((h) => h.role === "user").slice(-1)[0]?.text ?? "";
+  const retrievalQuery =
+    request.userMessage.length < 60 && lastUserTurn
+      ? `${lastUserTurn}\n${request.userMessage}`
+      : request.userMessage;
+
   const vectorText = buildVectorQueryText({
-    query: request.userMessage,
+    query: retrievalQuery,
     questionContext,
     lessonId: request.lessonId,
     topic: request.topic,
@@ -133,11 +141,11 @@ export async function runAmirantChatbot(
     if (inCourse == null) {
       return amirantChatbotResponseSchema.parse({
         intent: "vocabulary_lookup" as const,
-        answer: `המילה **${w}** אינה מזוהה כרגע בקבצי אוצר המילים שסרקנו בקורס, ולכן אין \"תרגום־רשמי\" מהמאגר. בואו בחומר Vocabulary / קוויז, או שאלו על משפט-הקשר ברמת RAG (בלי להמציא אוצר).`,
+        answer: `המילה **${w}** לא נמצאת במאגר אוצר המילים של הקורס, אז אין לי עליה כרטיסייה מוכנה. אפשר לשאול אותי עליה במשפט רגיל (למשל: "מה המשמעות של ${w} במשפט הזה?") ואנסה לעזור מתוך חומרי הקורס.`,
         questionType: "vocabulary" as const,
         hintStage: null,
         nextHintAvailable: false,
-        recommendedAction: "לעבור למודול אוצר מילים ולחפש הערה דומה, או לבחור שיעור vocabulary מהמניפסט.",
+        recommendedAction: "מומלץ לעבור על מודול אוצר המילים — 2000+ מילים מסודרות לפי רמות.",
         references: [],
         referencedChunks: [],
         usedStudentData: false,
@@ -224,12 +232,14 @@ export async function runAmirantChatbot(
   }
 
   const baseRetrieval = {
-    query: request.userMessage,
+    query: retrievalQuery,
     questionContext,
     lessonId: request.lessonId,
     operation: "lesson_chat" as const,
     precomputedEmbedding,
   };
+  // בחירת ה-client לאחזור (service, בגלל RLS) חיה בתוך retrieveCourseChunks —
+  // כך גם quiz-review/recommendations/coach מקבלים את אותו תיקון.
   let chunks = await retrieveCourseChunks(client, { ...baseRetrieval, topic: request.topic });
   if (chunks.length === 0 && request.topic) {
     chunks = await retrieveCourseChunks(client, { ...baseRetrieval, topic: undefined });
@@ -264,21 +274,8 @@ export async function runAmirantChatbot(
       });
   }
 
-  if (chunks.length === 0) {
-    return amirantChatbotResponseSchema.parse({
-      intent: (intent === "logistics" ? "logistics" : "general_course_help") as AmirantChatbotResponse["intent"],
-      answer:
-        "אין כרגע קטעי קורס רלוונטיים לשאלה הזו, ולכן אי אפשר לתת תשובה מבוססת מקור. פתח/י שיעור או שאל/י בצורה ספציפית יותר (או «תנו לי רמז» במקום הפתרון המלא).",
-      questionType,
-      hintStage: useStaged ? (Math.min(stage, 3) as 1 | 2 | 3) : wantsReveal ? 4 : null,
-      nextHintAvailable: useStaged && stage < 3,
-      recommendedAction: "לפתוח שיעור ממודול רלוונטי ולנסות שוב.",
-      references: [],
-      referencedChunks: [],
-      usedStudentData: false,
-      safeFallback: true,
-    });
-  }
+  // גם בלי קטעי קורס תואמים ממשיכים למודל — הוא עונה ברמת אסטרטגיה כללית
+  // (בלי להמציא עובדות מבחן) במקום סירוב שגורם לתחושת "הבוט לא עוזר".
 
   const outIntent: AmirantChatbotResponse["intent"] =
     promptStage4
@@ -312,6 +309,7 @@ export async function runAmirantChatbot(
       userStatsText,
       quizStatsText,
       activeQuestionText: request.activeQuestionText,
+      history: request.history,
     }),
   ].join("");
 
@@ -351,11 +349,11 @@ export async function runAmirantChatbot(
       logAiSafetyValidationFailure({ operation: "lesson_chat", userId: userId ?? undefined, violations: safety.violations });
       parsed = {
         intent: outIntent,
-        answer: "התשובה נבלמה — זוהו מספרים/טענות שאי אפשר לאמת מנתוני הקורס. נסו/י שוב, או פתח/י שיעור רלוונטי.",
+        answer: "לא הצלחתי לאמת חלק מהנתונים בתשובה, אז עצרתי אותה ליתר ביטחון. נסו לנסח את השאלה שוב — או שאלו אותי בלי להתייחס לציונים ומספרים.",
         questionType,
         hintStage: useStaged ? (Math.min(stage, 3) as 1 | 2 | 3) : promptStage4 ? 4 : null,
         nextHintAvailable: useStaged && stage < 3,
-        recommendedAction: "חזרו לניסוח או הוסיפו הקשר מחומר הקורס בלבד.",
+        recommendedAction: null,
         usedStudentData: false,
         safeFallback: true,
         references: [],
@@ -366,7 +364,7 @@ export async function runAmirantChatbot(
     console.error("[chatbot-router] AI call failed:", errMsg);
     parsed = {
       intent: outIntent,
-      answer: "המודל לא הצליח להשיב כרגע. נסו/י שוב או נסחו קצר יותר.",
+      answer: "משהו השתבש אצלי — נסו לשלוח שוב בעוד רגע. אם זה חוזר על עצמו, נסחו את השאלה קצת אחרת.",
       questionType,
       hintStage: useStaged ? (Math.min(stage, 3) as 1 | 2 | 3) : promptStage4 ? 4 : null,
       nextHintAvailable: useStaged && stage < 3,
