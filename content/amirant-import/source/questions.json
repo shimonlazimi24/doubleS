@@ -11334,6 +11334,839 @@
     ]
   },
   {
+    "questionId": "simulation-3-challenge-q1",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The researcher's findings have been met with considerable ______ from the scientific community.",
+    "options": [
+      {
+        "id": "a",
+        "label": "hostility"
+      },
+      {
+        "id": "b",
+        "label": "indifference"
+      },
+      {
+        "id": "c",
+        "label": "skepticism"
+      },
+      {
+        "id": "d",
+        "label": "enthusiasm"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "`considerable skepticism` = Collocation מחקרי-אקדמי קלאסי. כשקהילה מדעית מקבלת ממצאים חדשים, התגובה הטבעית היא ספקנות (עד שהדברים מאומתים).\n\n- ❌ `hostility` - עוינות. חזק מדי, בדרך כלל ספקנות מקצועית אינה עוינות.\n- ❌ `indifference` - אדישות. לא מתאים ל-\"considerable\" (משמעותי).\n- ✅ `skepticism` - ספקנות. Collocation טבעי.\n- ❌ `enthusiasm` - התלהבות. \"Considerable enthusiasm\" היה יוצר משפט חיובי - אבל פחות טבעי בהקשר של \"findings met with\" שלרוב מרמז על תגובה ביקורתית.\n\n**💡 טיפ:** `met with skepticism/resistance/opposition` - ביטויים נפוצים לתגובה ביקורתית.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q2",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The politician was forced to ______ his earlier statement after new evidence emerged.",
+    "options": [
+      {
+        "id": "a",
+        "label": "confirm"
+      },
+      {
+        "id": "b",
+        "label": "retract"
+      },
+      {
+        "id": "c",
+        "label": "celebrate"
+      },
+      {
+        "id": "d",
+        "label": "announce"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "\"New evidence emerged\" → הפוליטיקאי נאלץ **לבטל/למשוך** את ההצהרה הקודמת.\n\n- ❌ `confirm` - לאשר. סותר \"forced to\".\n- ✅ `retract` - לבטל, למשוך הצהרה פומבית. הפועל המדויק להקשר פוליטי-משפטי.\n- ❌ `celebrate` - לחגוג. לא הגיוני.\n- ❌ `announce` - להכריז. לא מתאים (הוא כבר הצהיר).\n\n**💡 טיפ:** `retract a statement/claim` = ביטוי קבוע לביטול פומבי של אמירה.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q3",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The committee reached a ______ decision after hours of heated debate.",
+    "options": [
+      {
+        "id": "a",
+        "label": "unanimous"
+      },
+      {
+        "id": "b",
+        "label": "divisive"
+      },
+      {
+        "id": "c",
+        "label": "partial"
+      },
+      {
+        "id": "d",
+        "label": "temporary"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "\"After hours of heated debate, [reached] a ___ decision\". החלטה שהושגה לאחר ויכוח ארוך ולבסוף כולם הסכימו = **פה אחד**.\n\n- ✅ `unanimous` - פה אחד. ההחלטה שממסכמת ויכוח.\n- ❌ `divisive` - מפלג. לא \"reach\" אותה.\n- ❌ `partial` - חלקית. לא הגיוני להחלטה.\n- ❌ `temporary` - זמנית. לא קשור לויכוח.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q4",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The government introduced new measures to ______ the rising cost of housing.",
+    "options": [
+      {
+        "id": "a",
+        "label": "accelerate"
+      },
+      {
+        "id": "b",
+        "label": "curb"
+      },
+      {
+        "id": "c",
+        "label": "celebrate"
+      },
+      {
+        "id": "d",
+        "label": "ignore"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "\"Introduce measures to ___ rising cost\" - ממשלה רוצה **לבלום** עלייה במחירים.\n\n- ❌ `accelerate` - להאיץ. הפוך.\n- ✅ `curb` - לרסן, לבלום. Collocation נפוץ עם \"rising costs\".\n- ❌ `celebrate`, `ignore` - לא הגיוניים.\n\n**💡 טיפ:** `curb inflation/crime/spending` - פעלים של הגבלה חשובים.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q5",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "Her research ______ light on the previously unexplored connections between diet and sleep.",
+    "options": [
+      {
+        "id": "a",
+        "label": "put"
+      },
+      {
+        "id": "b",
+        "label": "cast"
+      },
+      {
+        "id": "c",
+        "label": "sheds"
+      },
+      {
+        "id": "d",
+        "label": "brings"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "`sheds light on X` = Collocation קבוע. הצורה היחידה הנכונה עם \"light on\".\n\n- ❌ `put`, `cast`, `brings` - לא Collocations נכונים עם \"light on\" באנגלית.\n- ✅ `sheds light on` = שופך אור על.\n\n**💡 טיפ:** יש גם `cast light on` (אבל `shed light on` נפוץ יותר). שני הביטויים נכונים באופן עקרוני; כאן `sheds` תואם את ההקשר.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q6",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The company's decision to lower prices ______ from its competitors.",
+    "options": [
+      {
+        "id": "a",
+        "label": "sets it apart"
+      },
+      {
+        "id": "b",
+        "label": "brings it closer"
+      },
+      {
+        "id": "c",
+        "label": "takes it away"
+      },
+      {
+        "id": "d",
+        "label": "puts it off"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "\"Sets X apart from Y\" = מבדיל את X מ-Y. כאן: ההחלטה של החברה מבדילה אותה מהמתחרים.\n\n- ✅ `sets it apart` - phrasal verb תקני.\n- ❌ `brings it closer` - הפוך.\n- ❌ `takes it away` - לוקח אותה משם. לא מתאים.\n- ❌ `puts it off` - דוחה אותה. לא קשור.\n\n**💡 טיפ:** `set apart from` = to distinguish, לבדל. Phrasal verb חשוב.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q7",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "Despite ______ criticism, the author refused to revise her controversial book.",
+    "options": [
+      {
+        "id": "a",
+        "label": "marginal"
+      },
+      {
+        "id": "b",
+        "label": "widespread"
+      },
+      {
+        "id": "c",
+        "label": "occasional"
+      },
+      {
+        "id": "d",
+        "label": "positive"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "\"Despite\" = ניגוד. המחברת סירבה לשנות **למרות** הביקורת. הביקורת חייבת להיות **משמעותית** כדי להיות \"ראויה לציון\" בניגוד.\n\n- ❌ `marginal` - שולית. \"Despite marginal criticism\" - חלש.\n- ✅ `widespread` - רווחת, מקיפה. Collocation קבוע: `widespread criticism`.\n- ❌ `occasional` - מדי פעם. לא מתאים לניגוד חזק.\n- ❌ `positive` - חיובית. לא יוצרת ניגוד ל\"refuse to revise\".",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q8",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The ______ of the disease has been linked to both environmental and genetic factors.",
+    "options": [
+      {
+        "id": "a",
+        "label": "onset"
+      },
+      {
+        "id": "b",
+        "label": "outcome"
+      },
+      {
+        "id": "c",
+        "label": "outlook"
+      },
+      {
+        "id": "d",
+        "label": "offset"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "\"The ___ of the disease has been linked to factors\". המילה \"disease\" + \"factors\" + \"linked to\" מרמזות על **הופעה** של מחלה.\n\n- ✅ `onset` = הופעה, תחילה (של מחלה/תופעה). מונח רפואי.\n- ❌ `outcome` - תוצאה. לא מתאים לפתיחה.\n- ❌ `outlook` - תחזית. לא מתאים.\n- ❌ `offset` - קיזוז. לא רפואי.\n\n**💡 טיפ:** `onset of a disease/symptom` = מונח רפואי חשוב.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q9",
+    "topic": "reading_comprehension",
+    "subtopic": "reading_comprehension-simulation-mixed",
+    "difficultyLevel": 4,
+    "questionText": "What is the main idea of the passage?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Cities are in terminal decline and will soon be abandoned worldwide."
+      },
+      {
+        "id": "b",
+        "label": "Urbanization has been a defining trend, but new forces are beginning to reshape the future of cities in uncertain ways."
+      },
+      {
+        "id": "c",
+        "label": "Remote work alone will cause all major cities to shrink dramatically."
+      },
+      {
+        "id": "d",
+        "label": "Rural areas will soon become more populous than urban ones."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Main Idea. הקטע מאזן: מתאר את העלייה הגדולה בעיור, אבל מציג גורמים חדשים שמערערים על הכיוון. הסיום: \"turn in a long story of continuous adaptation\" - לא משבר, אלא שינוי.\n\n- ❌ (A) \"terminal decline, soon abandoned\" - מוגזם לחלוטין.\n- ✅ (B) \"defining trend, but new forces... uncertain ways\" - תופס את שני הצדדים.\n- ❌ (C) \"remote work alone\" - פשטני; הקטע מונה כמה גורמים.\n- ❌ (D) \"rural more populous than urban\" - הקטע אומר ההפך (70% ב-2050).",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 110,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ],
+    "passageId": "simulation-3-challenge-p1"
+  },
+  {
+    "questionId": "simulation-3-challenge-q10",
+    "topic": "reading_comprehension",
+    "subtopic": "reading_comprehension-simulation-mixed",
+    "difficultyLevel": 4,
+    "questionText": "According to the passage, approximately what percentage of the world's population is projected to live in urban areas by 2050?",
+    "options": [
+      {
+        "id": "a",
+        "label": "About 30 percent"
+      },
+      {
+        "id": "b",
+        "label": "About 55 percent"
+      },
+      {
+        "id": "c",
+        "label": "About 70 percent"
+      },
+      {
+        "id": "d",
+        "label": "About 90 percent"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Specific Detail. פסקה 1: \"the United Nations projects it will approach 70 percent by 2050.\"",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 110,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ],
+    "passageId": "simulation-3-challenge-p1"
+  },
+  {
+    "questionId": "simulation-3-challenge-q11",
+    "topic": "reading_comprehension",
+    "subtopic": "reading_comprehension-simulation-mixed",
+    "difficultyLevel": 4,
+    "questionText": "Which of the following is mentioned as a factor now weakening urban growth?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The decline of remote work."
+      },
+      {
+        "id": "b",
+        "label": "Declining global population."
+      },
+      {
+        "id": "c",
+        "label": "Rising housing costs in major cities."
+      },
+      {
+        "id": "d",
+        "label": "A lack of cultural activities in cities."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Specific Detail. פסקה 3: \"Housing costs in major cities have risen to levels that make ownership impossible for many middle-class residents\".\n\n- ❌ (A) \"decline of remote work\" - הפוך; זה דווקא **גדל**.\n- ❌ (B) \"declining global population\" - לא מוזכר.\n- ✅ (C) \"rising housing costs\" - ציטוט פרפרזי.\n- ❌ (D) \"lack of cultural activities\" - הקטע אומר שערים עדיין שולטות בתרבות.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 110,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ],
+    "passageId": "simulation-3-challenge-p1"
+  },
+  {
+    "questionId": "simulation-3-challenge-q12",
+    "topic": "reading_comprehension",
+    "subtopic": "reading_comprehension-simulation-mixed",
+    "difficultyLevel": 4,
+    "questionText": "In paragraph 4, the word \"polycentric\" most likely refers to:",
+    "options": [
+      {
+        "id": "a",
+        "label": "a future dominated by a single massive city"
+      },
+      {
+        "id": "b",
+        "label": "a future with multiple centers of importance rather than a few dominant ones"
+      },
+      {
+        "id": "c",
+        "label": "a future with no cities at all"
+      },
+      {
+        "id": "d",
+        "label": "a future in which rural areas replace cities entirely"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "Vocabulary in Context. \"polycentric\" = multi-center (poly = many, centric = center). ההקשר מחזק: \"mid-sized cities and regional hubs gain importance at the expense of traditional megacities\" = ריבוי מרכזים במקום כמה מגה-ערים.\n\n- ❌ (A) \"single massive city\" - הפוך.\n- ✅ (B) \"multiple centers\" - פרפרזה מדויקת.\n- ❌ (C) \"no cities\" - סותר.\n- ❌ (D) \"rural replaces cities\" - סותר.\n\n**💡 טיפ:** `poly-` = רבים. Poly-gon (ריבוי צלעות), poly-theism (ריבוי אלים), poly-centric (ריבוי מרכזים).",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 110,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ],
+    "passageId": "simulation-3-challenge-p1"
+  },
+  {
+    "questionId": "simulation-3-challenge-q13",
+    "topic": "reading_comprehension",
+    "subtopic": "reading_comprehension-simulation-mixed",
+    "difficultyLevel": 4,
+    "questionText": "What can be inferred about the author's overall view of the future of cities?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Cities will certainly disappear within the next century."
+      },
+      {
+        "id": "b",
+        "label": "The changes facing cities represent a crisis that cannot be resolved."
+      },
+      {
+        "id": "c",
+        "label": "Cities face significant challenges, but their adaptability will likely lead to transformation rather than collapse."
+      },
+      {
+        "id": "d",
+        "label": "No meaningful changes are actually occurring in urban life."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "Inference. הפסקה האחרונה: \"do not represent a simple crisis... another turn in a long story of continuous adaptation\" - הטון **מאוזן וסובלני**.\n\n- ❌ (A) \"disappear within century\" - מוגזם.\n- ❌ (B) \"crisis that cannot be resolved\" - סותר; המחבר **דוחה** את מילת \"crisis\".\n- ✅ (C) \"significant challenges, but adaptability... transformation rather than collapse\" - תופס את הטון המאוזן.\n- ❌ (D) \"no meaningful changes\" - סותר את כל הקטע.\n\n**💡 טיפ:** כש-author בוחר לכתוב \"do not represent a simple crisis\" - הוא **דוחה** את השימוש ב-\"crisis\", זה רמז לטון האופטימי שלו.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 110,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ],
+    "passageId": "simulation-3-challenge-p1"
+  },
+  {
+    "questionId": "simulation-3-challenge-q14",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** Not only did the initiative fail to reduce emissions, but it also strained relations between allied nations.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The initiative succeeded in reducing emissions despite tensions."
+      },
+      {
+        "id": "b",
+        "label": "The initiative reduced emissions but caused diplomatic problems."
+      },
+      {
+        "id": "c",
+        "label": "The initiative both failed in its environmental goal and harmed diplomatic relations."
+      },
+      {
+        "id": "d",
+        "label": "The initiative accomplished its goals with no negative consequences."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "`Not only X but also Y` = שני דברים קרו. כאן: (1) failed to reduce emissions + (2) strained relations.\n\n- ❌ (A) \"succeeded\" - הפוך.\n- ❌ (B) \"reduced emissions but caused diplomatic problems\" - חצי נכון; היא **לא** הפחיתה פליטות.\n- ✅ (C) \"both failed... and harmed\" - תופס את שתי השליליות.\n- ❌ (D) \"accomplished goals\" - הפוך.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q15",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** Hardly had the contract been signed when the economic crisis began.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The contract was signed long before the economic crisis."
+      },
+      {
+        "id": "b",
+        "label": "The economic crisis prevented the contract from being signed."
+      },
+      {
+        "id": "c",
+        "label": "Almost immediately after the contract was signed, the economic crisis started."
+      },
+      {
+        "id": "d",
+        "label": "The contract was signed as a response to the economic crisis."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**Inversion:** `Hardly had X V3 when Y happened` = \"כמעט שלא X, עד ש-Y\" = \"מיד אחרי X, Y\".\n\n- ❌ (A) \"long before\" - הפוך.\n- ❌ (B) \"prevented\" - לא; הוא **כן** נחתם.\n- ✅ (C) \"almost immediately after... started\" - פרפרזה מדויקת.\n- ❌ (D) \"in response to\" - היפוך קשר סיבה-תוצאה.\n\n**💡 טיפ:** `Hardly had X when Y` = `No sooner had X than Y` = `Scarcely had X when Y`.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q16",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** Were it not for the generosity of anonymous donors, the charity would have closed years ago.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The charity closed years ago despite the donors' help."
+      },
+      {
+        "id": "b",
+        "label": "Without the donors' generosity, the charity would have closed long ago."
+      },
+      {
+        "id": "c",
+        "label": "Anonymous donors forced the charity to close years ago."
+      },
+      {
+        "id": "d",
+        "label": "The charity has never received any donations."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**Inversion of 3rd Conditional with \"Were\":** `Were it not for X, Y would have V3` = `Without X, Y would have V3` = `If it hadn't been for X, Y would have V3`.\n\n- ❌ (A) \"closed years ago despite donors\" - סותר.\n- ✅ (B) \"Without the donors' generosity, the charity would have closed long ago\" - פרפרזה מדויקת.\n- ❌ (C) \"donors forced closure\" - הפוך.\n- ❌ (D) \"never received donations\" - סותר.\n\n**💡 טיפ:** 4 מבנים זהים: `Were it not for X` / `If it were not for X` / `But for X` / `Without X`.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q17",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** The evidence is far from conclusive, and further research is clearly warranted.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The evidence has proven the case beyond all doubt."
+      },
+      {
+        "id": "b",
+        "label": "The evidence is insufficient to draw firm conclusions, and more research is needed."
+      },
+      {
+        "id": "c",
+        "label": "No additional research is necessary given the strong evidence."
+      },
+      {
+        "id": "d",
+        "label": "The evidence is entirely misleading and should be discarded."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "`far from conclusive` = \"רחוק מלהיות חותך\" = לא מספיק להסיק. `warranted` = \"מוצדק, רצוי\". \"Further research is warranted\" = \"נדרש מחקר נוסף\".\n\n- ❌ (A) \"proven beyond all doubt\" - הפוך לחלוטין.\n- ✅ (B) \"insufficient to draw firm conclusions, more research is needed\" - פרפרזה מדויקת.\n- ❌ (C) \"no additional research necessary\" - הפוך.\n- ❌ (D) \"entirely misleading\" - חזק מדי; המקור אומר שהראיה לא חותכת, לא שהיא \"מטעה\".\n\n**💡 טיפ:** `far from X` = \"רחוק מ-X\", כלומר **לא** X. `warranted` = מוצדק.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q18",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** The study's findings are consistent with those of earlier research in the field.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The study contradicts all previous research in the field."
+      },
+      {
+        "id": "b",
+        "label": "The study's results agree with findings from earlier research."
+      },
+      {
+        "id": "c",
+        "label": "The study is the first of its kind in the field."
+      },
+      {
+        "id": "d",
+        "label": "No previous research has been done on this subject."
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "`consistent with X` = `agrees with X`. Collocation מחקרי.\n\n- ❌ (A) \"contradicts all\" - הפוך.\n- ✅ (B) \"results agree with earlier research\" - פרפרזה מדויקת.\n- ❌ (C) \"first of its kind\" - סותר \"consistent with earlier\".\n- ❌ (D) \"no previous research\" - סותר.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q19",
+    "topic": "rephrasing",
+    "subtopic": "rephrasing-simulation-restatement",
+    "difficultyLevel": 4,
+    "questionText": "**Original:** Had the warning signs been heeded, the disaster might well have been prevented.",
+    "options": [
+      {
+        "id": "a",
+        "label": "The disaster occurred despite all warning signs being followed."
+      },
+      {
+        "id": "b",
+        "label": "There were no warning signs before the disaster."
+      },
+      {
+        "id": "c",
+        "label": "If the warning signs had been taken seriously, the disaster could probably have been avoided."
+      },
+      {
+        "id": "d",
+        "label": "The disaster was inevitable regardless of any warnings."
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**Third Conditional inverted:** `Had X been V-ed, Y might have been V-ed`. משמעות: **במציאות** - X לא קרה (signs not heeded), ולכן Y כן קרה (disaster happened).\n\n- ❌ (A) \"despite signs being followed\" - סותר; הסימנים **לא** נלקחו בחשבון.\n- ❌ (B) \"no warning signs\" - סותר; היו סימנים.\n- ✅ (C) \"if the warning signs had been taken seriously, disaster could probably have been avoided\" - פרפרזה מדויקת.\n- ❌ (D) \"inevitable regardless\" - סותר.\n\n**💡 טיפ:** `heed X` = לשים לב ל-X, לציית ל-X. `heeded` = נלקחו בחשבון.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q20",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The senator's remarks were widely ______ as insensitive and out of touch.",
+    "options": [
+      {
+        "id": "a",
+        "label": "praised"
+      },
+      {
+        "id": "b",
+        "label": "celebrated"
+      },
+      {
+        "id": "c",
+        "label": "condemned"
+      },
+      {
+        "id": "d",
+        "label": "welcomed"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "\"Insensitive and out of touch\" - ביטויים שליליים. הפועל חייב להיות שלילי.\n\n- ❌ `praised`, `celebrated`, `welcomed` - כולם חיוביים.\n- ✅ `condemned` - גונו. מתאים לביקורת ציבורית.\n\n**💡 טיפ:** `widely condemned` = Collocation לביקורת פומבית.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q21",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The report's findings were ______ with the government's official position, leading to a public dispute.",
+    "options": [
+      {
+        "id": "a",
+        "label": "at odds"
+      },
+      {
+        "id": "b",
+        "label": "in agreement"
+      },
+      {
+        "id": "c",
+        "label": "in alignment"
+      },
+      {
+        "id": "d",
+        "label": "compatible"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "\"Leading to a public dispute\" - רמז חזק: דו\"ח וממשלה במחלוקת.\n\n- ✅ `at odds with` = בסתירה עם. יוצר את המחלוקת.\n- ❌ `in agreement`, `in alignment`, `compatible` - כולם מרמזים הסכמה; לא מסבירים מחלוקת.\n\n**💡 טיפ:** `at odds with X` = בסכסוך עם X. Collocation חשוב.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q22",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "Modern technology has ______ our ability to access information instantly.",
+    "options": [
+      {
+        "id": "a",
+        "label": "transformed"
+      },
+      {
+        "id": "b",
+        "label": "damaged"
+      },
+      {
+        "id": "c",
+        "label": "limited"
+      },
+      {
+        "id": "d",
+        "label": "ignored"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "\"Our ability to access information instantly\" - טון חיובי לטכנולוגיה. Collocation: `technology has transformed X`.\n\n- ✅ `transformed` = שינתה מיסודו. חיובי ומתאים.\n- ❌ `damaged`, `limited`, `ignored` - שליליים/לא מתאימים ל\"ability to access\".",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "simulation-3-challenge-q23",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-simulation",
+    "difficultyLevel": 4,
+    "questionText": "The senator's response was ______, revealing neither her true opinion nor her voting intentions.",
+    "options": [
+      {
+        "id": "a",
+        "label": "transparent"
+      },
+      {
+        "id": "b",
+        "label": "evasive"
+      },
+      {
+        "id": "c",
+        "label": "enthusiastic"
+      },
+      {
+        "id": "d",
+        "label": "straightforward"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "\"Revealing neither her true opinion nor her voting intentions\" = **חומקת, מתחמקת**.\n\n- ❌ `transparent`, `enthusiastic`, `straightforward` - כולם של גילוי/ישירות.\n- ✅ `evasive` = חמקני, מתחמק. מילה חשובה לשפה פוליטית.",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 65,
+    "tags": [
+      "imported",
+      "real_markdown",
+      "simulation-3-challenge",
+      "simulation",
+      "difficulty_4"
+    ]
+  },
+  {
     "questionId": "vocab-vocabulary-1-easy-part-a-verbs-q1",
     "topic": "vocabulary",
     "subtopic": "vocab-verbs-1",
@@ -11342,22 +12175,22 @@
     "options": [
       {
         "id": "a",
-        "label": "למות"
-      },
-      {
-        "id": "b",
-        "label": "להוציא (כסף), לבלות (זמן)"
-      },
-      {
-        "id": "c",
         "label": "לשחק; לנגן"
       },
       {
-        "id": "d",
+        "id": "b",
         "label": "להיות"
+      },
+      {
+        "id": "c",
+        "label": "למות"
+      },
+      {
+        "id": "d",
+        "label": "להציע"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**be** = להיות\n\n**Definition:** to exist; to have a particular quality or state\n\n**Example:** I am a student at the university.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11378,7 +12211,7 @@
     "options": [
       {
         "id": "a",
-        "label": "לאחל, לייחל"
+        "label": "להציל; לחסוך; לשמור"
       },
       {
         "id": "b",
@@ -11386,11 +12219,11 @@
       },
       {
         "id": "c",
-        "label": "לקוות"
+        "label": "לענות, להשיב"
       },
       {
         "id": "d",
-        "label": "להציע"
+        "label": "לאחל, לייחל"
       }
     ],
     "correctOptionId": "b",
@@ -11418,7 +12251,7 @@
       },
       {
         "id": "b",
-        "label": "להציע"
+        "label": "להציע, לרמוז"
       },
       {
         "id": "c",
@@ -11426,7 +12259,7 @@
       },
       {
         "id": "d",
-        "label": "ללמוד (במסגרת מסודרת), לחקור"
+        "label": "לבנות"
       }
     ],
     "correctOptionId": "a",
@@ -11450,22 +12283,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לשמור, לחזיק"
+        "label": "להרגיש"
       },
       {
         "id": "b",
-        "label": "לנסות"
-      },
-      {
-        "id": "c",
         "label": "לתאר"
       },
       {
+        "id": "c",
+        "label": "ליפול"
+      },
+      {
         "id": "d",
-        "label": "להתעמל"
+        "label": "לנסות"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "d",
     "explanation": "**try** = לנסות\n\n**Definition:** to make an effort; to test something\n\n**Example:** Try your best on the exam.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11486,22 +12319,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לאחל, לייחל"
+        "label": "להתעמל"
       },
       {
         "id": "b",
-        "label": "לשאול, לבקש"
+        "label": "לאחל, לייחל"
       },
       {
         "id": "c",
-        "label": "לתאר"
+        "label": "לקנות"
       },
       {
         "id": "d",
-        "label": "להפסיק"
+        "label": "לשאול, לבקש"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "d",
     "explanation": "**ask** = לשאול, לבקש\n\n**Definition:** to put a question; to request\n\n**Example:** I want to ask you something.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11526,18 +12359,18 @@
       },
       {
         "id": "b",
-        "label": "לתקן"
+        "label": "לתהות"
       },
       {
         "id": "c",
-        "label": "לדון"
+        "label": "לישון"
       },
       {
         "id": "d",
-        "label": "לתהות"
+        "label": "לקבל, להסכים"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**wonder** = לתהות\n\n**Definition:** to ask oneself; to be curious\n\n**Example:** I wonder where he went.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11558,22 +12391,22 @@
     "options": [
       {
         "id": "a",
-        "label": "ללמד, להורות"
+        "label": "להזמין; לצוות"
       },
       {
         "id": "b",
-        "label": "לעלות, להתרומם"
-      },
-      {
-        "id": "c",
         "label": "לזוז, לעבור"
       },
       {
-        "id": "d",
+        "id": "c",
         "label": "להתחיל"
+      },
+      {
+        "id": "d",
+        "label": "להתעורר"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "b",
     "explanation": "**move** = לזוז, לעבור\n\n**Definition:** to change position or location\n\n**Example:** Please move your car.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11594,22 +12427,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לשלוח"
+        "label": "לשחות"
       },
       {
         "id": "b",
-        "label": "לבחור"
+        "label": "ללמד, להורות"
       },
       {
         "id": "c",
-        "label": "לעשות"
+        "label": "לשמוע"
       },
       {
         "id": "d",
-        "label": "לשחות"
+        "label": "לעשות"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "a",
     "explanation": "**swim** = לשחות\n\n**Definition:** to move through water\n\n**Example:** Can you swim?",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11630,11 +12463,11 @@
     "options": [
       {
         "id": "a",
-        "label": "לעלות (במחיר)"
+        "label": "לבחור"
       },
       {
         "id": "b",
-        "label": "להוביל, לנהל"
+        "label": "לנסות"
       },
       {
         "id": "c",
@@ -11642,7 +12475,7 @@
       },
       {
         "id": "d",
-        "label": "להשתמש ב-"
+        "label": "לעלות (במחיר)"
       }
     ],
     "correctOptionId": "c",
@@ -11666,22 +12499,22 @@
     "options": [
       {
         "id": "a",
-        "label": "להביא"
+        "label": "לעמוד"
       },
       {
         "id": "b",
-        "label": "לדחוף"
+        "label": "להזמין; לצוות"
       },
       {
         "id": "c",
-        "label": "לרוץ; להפעיל"
+        "label": "לעזוב"
       },
       {
         "id": "d",
-        "label": "להזמין; לצוות"
+        "label": "לדחוף"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**order** = להזמין; לצוות\n\n**Definition:** to request; to command\n\n**Example:** I'll order a pizza.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11918,22 +12751,22 @@
     "options": [
       {
         "id": "a",
-        "label": "נשיא"
+        "label": "מידע"
       },
       {
         "id": "b",
-        "label": "עוף (חי או בשר)"
+        "label": "נשיא"
       },
       {
         "id": "c",
-        "label": "כסף"
+        "label": "לילה"
       },
       {
         "id": "d",
-        "label": "לילה"
+        "label": "כסף"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "d",
     "explanation": "**money** = כסף\n\n**Definition:** currency used to buy things\n\n**Example:** I don't have enough money.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -11954,15 +12787,15 @@
     "options": [
       {
         "id": "a",
-        "label": "מכתב; אות"
+        "label": "אח"
       },
       {
         "id": "b",
-        "label": "שולחן"
+        "label": "גבר, איש"
       },
       {
         "id": "c",
-        "label": "גבר, איש"
+        "label": "שולחן"
       },
       {
         "id": "d",
@@ -11990,11 +12823,11 @@
     "options": [
       {
         "id": "a",
-        "label": "הווה; מתנה"
+        "label": "מגזין, כתב עת"
       },
       {
         "id": "b",
-        "label": "אמת"
+        "label": "הווה; מתנה"
       },
       {
         "id": "c",
@@ -12002,7 +12835,7 @@
       },
       {
         "id": "d",
-        "label": "עוגה"
+        "label": "אמת"
       }
     ],
     "correctOptionId": "c",
@@ -12026,22 +12859,22 @@
     "options": [
       {
         "id": "a",
-        "label": "מכתב; אות"
-      },
-      {
-        "id": "b",
         "label": "ארוחת ערב"
       },
       {
+        "id": "b",
+        "label": "עובדה"
+      },
+      {
         "id": "c",
-        "label": "עיר"
+        "label": "עולם"
       },
       {
         "id": "d",
-        "label": "עובדה"
+        "label": "מכתב; אות"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**fact** = עובדה\n\n**Definition:** something known to be true\n\n**Example:** That's a fact.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -12746,7 +13579,7 @@
     "options": [
       {
         "id": "a",
-        "label": "תודה / תודה לך"
+        "label": "בקרוב"
       },
       {
         "id": "b",
@@ -12754,14 +13587,14 @@
       },
       {
         "id": "c",
-        "label": "כן"
+        "label": "בזהירות"
       },
       {
         "id": "d",
-        "label": "בזהירות"
+        "label": "כן"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "d",
     "explanation": "**yes** = כן\n\n**Definition:** a positive answer\n\n**Example:** \"Do you like it?\" \"Yes, I do.\"",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -14006,22 +14839,22 @@
     "options": [
       {
         "id": "a",
-        "label": "בנוסף, יתר על כן"
+        "label": "בגילוי לב"
       },
       {
         "id": "b",
-        "label": "לכן"
+        "label": "כנראה, לפי הנראה"
       },
       {
         "id": "c",
-        "label": "ומכאן, לכן"
+        "label": "לכן"
       },
       {
         "id": "d",
-        "label": "כנראה, לפי הנראה"
+        "label": "ומכאן, לכן"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**therefore** = לכן\n\n**Definition:** for that reason\n\n**Example:** I'm tired; therefore, I'll go to bed.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -14042,7 +14875,7 @@
     "options": [
       {
         "id": "a",
-        "label": "בסופו של דבר"
+        "label": "באופן כללי"
       },
       {
         "id": "b",
@@ -14050,11 +14883,11 @@
       },
       {
         "id": "c",
-        "label": "באופן כללי"
+        "label": "אף על פי כן"
       },
       {
         "id": "d",
-        "label": "אף על פי כן"
+        "label": "בנוסף ל-"
       }
     ],
     "correctOptionId": "b",
@@ -14078,22 +14911,22 @@
     "options": [
       {
         "id": "a",
-        "label": "עם זאת"
+        "label": "במיוחד"
       },
       {
         "id": "b",
-        "label": "בדרך כלל"
-      },
-      {
-        "id": "c",
         "label": "אלא אם כן"
       },
       {
+        "id": "c",
+        "label": "עם זאת"
+      },
+      {
         "id": "d",
-        "label": "במיוחד"
+        "label": "בדרך כלל"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "b",
     "explanation": "**unless** = אלא אם כן\n\n**Definition:** except if\n\n**Example:** I won't go unless you come.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -14114,15 +14947,15 @@
     "options": [
       {
         "id": "a",
-        "label": "כנראה, לפי הנראה"
-      },
-      {
-        "id": "b",
         "label": "די, לגמרי"
       },
       {
+        "id": "b",
+        "label": "בגילוי לב"
+      },
+      {
         "id": "c",
-        "label": "מיד"
+        "label": "בעיקר"
       },
       {
         "id": "d",
@@ -14150,7 +14983,7 @@
     "options": [
       {
         "id": "a",
-        "label": "אף על פי כן"
+        "label": "בעיקר"
       },
       {
         "id": "b",
@@ -14158,11 +14991,11 @@
       },
       {
         "id": "c",
-        "label": "באופן ברור"
+        "label": "לאחרונה"
       },
       {
         "id": "d",
-        "label": "בגילוי לב"
+        "label": "בדיוק"
       }
     ],
     "correctOptionId": "b",
@@ -14186,7 +15019,7 @@
     "options": [
       {
         "id": "a",
-        "label": "בעיקר"
+        "label": "בנוסף ל-"
       },
       {
         "id": "b",
@@ -14194,11 +15027,11 @@
       },
       {
         "id": "c",
-        "label": "בנוסף ל-"
+        "label": "כתוצאה מכך"
       },
       {
         "id": "d",
-        "label": "לאחרונה"
+        "label": "אולי"
       }
     ],
     "correctOptionId": "b",
@@ -15230,22 +16063,22 @@
     "options": [
       {
         "id": "a",
-        "label": "חיוני, שאי אפשר בלעדיו"
-      },
-      {
-        "id": "b",
-        "label": "חומל"
-      },
-      {
-        "id": "c",
         "label": "חובה"
       },
       {
-        "id": "d",
+        "id": "b",
         "label": "לא ידוע, עמום"
+      },
+      {
+        "id": "c",
+        "label": "אמין"
+      },
+      {
+        "id": "d",
+        "label": "חומל"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**obscure** = לא ידוע, עמום\n\n**Definition:** not well-known; unclear\n\n**Example:** An obscure poet.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -15270,11 +16103,11 @@
       },
       {
         "id": "b",
-        "label": "שחצן"
+        "label": "מכריע, נחוש"
       },
       {
         "id": "c",
-        "label": "לא תקף"
+        "label": "שחצן"
       },
       {
         "id": "d",
@@ -15446,22 +16279,22 @@
     "options": [
       {
         "id": "a",
-        "label": "במידה ניכרת"
+        "label": "ומכאן; מעתה"
       },
       {
         "id": "b",
-        "label": "כמו כן, באותו אופן"
+        "label": "בנוגע ל-"
       },
       {
         "id": "c",
-        "label": "שבאמצעותו"
+        "label": "כמו כן, באותו אופן"
       },
       {
         "id": "d",
-        "label": "בנוגע ל-"
+        "label": "במידה ניכרת"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**likewise** = כמו כן, באותו אופן\n\n**Definition:** in the same way\n\n**Example:** She left, and likewise did he.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -15482,22 +16315,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לאחר מכן"
+        "label": "בכוונה תחילה"
       },
       {
         "id": "b",
-        "label": "בולטות"
+        "label": "לאחר מכן"
       },
       {
         "id": "c",
-        "label": "שבאמצעותו"
+        "label": "בולטות"
       },
       {
         "id": "d",
         "label": "מטבעו"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "b",
     "explanation": "**subsequently** = לאחר מכן\n\n**Definition:** after that\n\n**Example:** She graduated and subsequently found a job.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -15518,15 +16351,15 @@
     "options": [
       {
         "id": "a",
-        "label": "בעיקר"
-      },
-      {
-        "id": "b",
         "label": "ברור, ניכר"
       },
       {
-        "id": "c",
+        "id": "b",
         "label": "בכוונה"
+      },
+      {
+        "id": "c",
+        "label": "בעיקר"
       },
       {
         "id": "d",
@@ -15554,22 +16387,22 @@
     "options": [
       {
         "id": "a",
-        "label": "למרות זאת"
+        "label": "באופן משמעותי"
       },
       {
         "id": "b",
-        "label": "ייתכן, אולי"
+        "label": "באופן חותך"
       },
       {
         "id": "c",
-        "label": "בסופו של דבר"
+        "label": "ייתכן, אולי"
       },
       {
         "id": "d",
-        "label": "באופן משמעותי"
+        "label": "למרות זאת"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**arguably** = ייתכן, אולי\n\n**Definition:** possibly\n\n**Example:** He's arguably the best player.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -15594,18 +16427,18 @@
       },
       {
         "id": "b",
-        "label": "עד כה"
+        "label": "בעיקר"
       },
       {
         "id": "c",
-        "label": "יש להניח"
+        "label": "ברור, ניכר"
       },
       {
         "id": "d",
-        "label": "ברור, ניכר"
+        "label": "עד כה"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "c",
     "explanation": "**evidently** = ברור, ניכר\n\n**Definition:** clearly\n\n**Example:** She was evidently upset.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -15626,22 +16459,22 @@
     "options": [
       {
         "id": "a",
-        "label": "באופן יוצא דופן"
+        "label": "מיד"
       },
       {
         "id": "b",
-        "label": "על פי דיווחים"
+        "label": "באופן יוצא דופן"
       },
       {
         "id": "c",
-        "label": "בטעות"
+        "label": "על פי דיווחים"
       },
       {
         "id": "d",
-        "label": "בסופו של דבר"
+        "label": "בטעות"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "d",
     "explanation": "**inadvertently** = בטעות\n\n**Definition:** by accident; unintentionally\n\n**Example:** I inadvertently deleted the file.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16742,7 +17575,7 @@
     "options": [
       {
         "id": "a",
-        "label": "שיטת פעולה"
+        "label": "תמיד, ללא יוצא מן הכלל"
       },
       {
         "id": "b",
@@ -16750,14 +17583,14 @@
       },
       {
         "id": "c",
-        "label": "תמיד, ללא יוצא מן הכלל"
+        "label": "בתאווה, בזלילה"
       },
       {
         "id": "d",
-        "label": "ולהיפך"
+        "label": "שיטת פעולה"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "a",
     "explanation": "**invariably** = תמיד, ללא יוצא מן הכלל\n\n**Definition:** always; without exception\n\n**Example:** She invariably arrives late.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16778,22 +17611,22 @@
     "options": [
       {
         "id": "a",
-        "label": "ולהיפך"
+        "label": "מאחר ש-"
       },
       {
         "id": "b",
-        "label": "יוצא מן הכלל"
+        "label": "אליו"
       },
       {
         "id": "c",
-        "label": "בתאווה, בזלילה"
+        "label": "יוצא מן הכלל"
       },
       {
         "id": "d",
-        "label": "מעתה ואילך"
+        "label": "בתאווה, בזלילה"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**exceptionally** = יוצא מן הכלל\n\n**Definition:** unusually; very\n\n**Example:** Exceptionally talented.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16814,22 +17647,22 @@
     "options": [
       {
         "id": "a",
-        "label": "באופן מעריכי"
+        "label": "בחשאי"
       },
       {
         "id": "b",
-        "label": "באופן נאמן"
+        "label": "לסירוגין"
       },
       {
         "id": "c",
-        "label": "בדלילות, מדי פעם"
+        "label": "באופן נאמן"
       },
       {
         "id": "d",
-        "label": "בגלוי"
+        "label": "אמיתי, כנה"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**staunchly** = באופן נאמן\n\n**Definition:** loyally and firmly\n\n**Example:** Staunchly defended.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16850,22 +17683,22 @@
     "options": [
       {
         "id": "a",
-        "label": "בתאווה, בזלילה"
+        "label": "בתנאי ש-"
       },
       {
         "id": "b",
-        "label": "מלבד, אלא אם כן"
+        "label": "בתאווה, בזלילה"
       },
       {
         "id": "c",
-        "label": "יוצא מן הכלל"
+        "label": "אשר בו"
       },
       {
         "id": "d",
-        "label": "ללא הגבלה"
+        "label": "מעתה ואילך"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "b",
     "explanation": "**voraciously** = בתאווה, בזלילה\n\n**Definition:** with great hunger\n\n**Example:** Reading voraciously.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16890,15 +17723,15 @@
       },
       {
         "id": "b",
-        "label": "באופן פרדוקסלי"
+        "label": "אמיתי, כנה"
       },
       {
         "id": "c",
-        "label": "בחשאי"
+        "label": "ולהיפך"
       },
       {
         "id": "d",
-        "label": "אשר בו"
+        "label": "שיטת פעולה"
       }
     ],
     "correctOptionId": "a",
@@ -16922,22 +17755,22 @@
     "options": [
       {
         "id": "a",
-        "label": "ולהיפך"
+        "label": "בתוקף, בתשוקה"
       },
       {
         "id": "b",
-        "label": "למעשה"
-      },
-      {
-        "id": "c",
         "label": "מאחר ש-"
       },
       {
+        "id": "c",
+        "label": "בדלילות, מדי פעם"
+      },
+      {
         "id": "d",
-        "label": "אליו"
+        "label": "ללא כישלון"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "b",
     "explanation": "**inasmuch as** = מאחר ש-\n\n**Definition:** because; since\n\n**Example:** Inasmuch as he agreed, we proceeded.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16958,22 +17791,22 @@
     "options": [
       {
         "id": "a",
-        "label": "באופן פרדוקסלי"
-      },
-      {
-        "id": "b",
         "label": "בתוקף, בתשוקה"
       },
       {
+        "id": "b",
+        "label": "אליו"
+      },
+      {
         "id": "c",
-        "label": "שיטת פעולה"
+        "label": "מייד לאחר"
       },
       {
         "id": "d",
-        "label": "אליו"
+        "label": "באופן בלתי הפיך"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**thereto** = אליו\n\n**Definition:** to that\n\n**Example:** The agreement thereto.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -16994,7 +17827,7 @@
     "options": [
       {
         "id": "a",
-        "label": "כשלעצמו"
+        "label": "קפוץ על ההזדמנות"
       },
       {
         "id": "b",
@@ -17002,11 +17835,11 @@
       },
       {
         "id": "c",
-        "label": "לסירוגין"
+        "label": "באופן בלתי נמנע"
       },
       {
         "id": "d",
-        "label": "בתוקף, בתשוקה"
+        "label": "בהתאם ל-"
       }
     ],
     "correctOptionId": "b",
@@ -17030,22 +17863,22 @@
     "options": [
       {
         "id": "a",
-        "label": "כשלעצמו"
+        "label": "עמוקות"
       },
       {
         "id": "b",
-        "label": "באופן בלתי נמנע"
+        "label": "כשלעצמו"
       },
       {
         "id": "c",
-        "label": "באופן אירוני"
+        "label": "ולהיפך"
       },
       {
         "id": "d",
-        "label": "קפוץ על ההזדמנות"
+        "label": "אליו"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "b",
     "explanation": "**per se** = כשלעצמו\n\n**Definition:** by itself; intrinsically\n\n**Example:** Money isn't evil per se.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17066,22 +17899,22 @@
     "options": [
       {
         "id": "a",
-        "label": "עמוקות"
+        "label": "בתוך כך"
       },
       {
         "id": "b",
-        "label": "לצורך מיוחד, אד-הוק"
-      },
-      {
-        "id": "c",
         "label": "חוקית, לפי החוק"
       },
       {
+        "id": "c",
+        "label": "באופן בלתי הפיך"
+      },
+      {
         "id": "d",
-        "label": "בבוטות"
+        "label": "תמיד, ללא יוצא מן הכלל"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "b",
     "explanation": "**de jure** = חוקית, לפי החוק\n\n**Definition:** by law; legally\n\n**Example:** De jure recognition.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17138,7 +17971,7 @@
     "options": [
       {
         "id": "a",
-        "label": "לנקות"
+        "label": "להיות תלוי ב-"
       },
       {
         "id": "b",
@@ -17146,11 +17979,11 @@
       },
       {
         "id": "c",
-        "label": "להיות תלוי ב-"
+        "label": "לנקות"
       },
       {
         "id": "d",
-        "label": "לפטר (בגלל מחסור בעבודה)"
+        "label": "לסרב; להנמיך"
       }
     ],
     "correctOptionId": "b",
@@ -17178,18 +18011,18 @@
       },
       {
         "id": "b",
-        "label": "לקום"
+        "label": "לבלוט"
       },
       {
         "id": "c",
-        "label": "לפתור, לסדר"
+        "label": "לקום"
       },
       {
         "id": "d",
         "label": "להיתקל; להתרשם"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**get up** = לקום\n\n**Definition:** to rise from bed\n\n**Example:** I get up at 6 AM.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17210,22 +18043,22 @@
     "options": [
       {
         "id": "a",
-        "label": "להיות תלוי ב-"
+        "label": "לבלוט"
       },
       {
         "id": "b",
-        "label": "לזלזל"
+        "label": "להתעורר; להתקרב"
       },
       {
         "id": "c",
-        "label": "להסיר; להמריא"
+        "label": "להיות תלוי ב-"
       },
       {
         "id": "d",
-        "label": "לבלוט"
+        "label": "להסיר; להמריא"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "d",
     "explanation": "**take off** = להסיר; להמריא\n\n**Definition:** to remove; to leave (plane)\n\n**Example:** Take off your shoes.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17246,22 +18079,22 @@
     "options": [
       {
         "id": "a",
-        "label": "למדוד (בגד)"
+        "label": "להמשיך"
       },
       {
         "id": "b",
-        "label": "להתחיל תחביב; לתפוס מקום"
+        "label": "לדון"
       },
       {
         "id": "c",
-        "label": "לטפל ב-"
+        "label": "לדחות"
       },
       {
         "id": "d",
-        "label": "להמשיך"
+        "label": "לטפל ב-"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "a",
     "explanation": "**go on** = להמשיך\n\n**Definition:** to continue\n\n**Example:** Go on - don't stop!",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17282,22 +18115,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לעבור על, לסקור"
-      },
-      {
-        "id": "b",
-        "label": "למלא (טופס)"
-      },
-      {
-        "id": "c",
         "label": "להיכנע"
       },
       {
-        "id": "d",
+        "id": "b",
         "label": "לחפש (מידע)"
+      },
+      {
+        "id": "c",
+        "label": "לבצע"
+      },
+      {
+        "id": "d",
+        "label": "להוציא לאור"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "a",
     "explanation": "**give in** = להיכנע\n\n**Definition:** to surrender; to yield\n\n**Example:** Don't give in to pressure.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17318,22 +18151,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לחזור"
+        "label": "לעבור (דרך)"
       },
       {
         "id": "b",
-        "label": "לזלזל"
+        "label": "לערוך (מסמך)"
       },
       {
         "id": "c",
-        "label": "להתיישב, להתמקם"
+        "label": "לחזור"
       },
       {
         "id": "d",
-        "label": "לעבור (דרך)"
+        "label": "להעלות (רעיון)"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "a",
     "explanation": "**go through** = לעבור (דרך)\n\n**Definition:** to examine; to experience\n\n**Example:** Go through the documents.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17358,15 +18191,15 @@
       },
       {
         "id": "b",
-        "label": "לסרב; להנמיך"
+        "label": "להיתקל; להתרשם"
       },
       {
         "id": "c",
-        "label": "לעמוד על"
+        "label": "להיפרד"
       },
       {
         "id": "d",
-        "label": "להיפרד"
+        "label": "להשתוות, להדביק"
       }
     ],
     "correctOptionId": "a",
@@ -17390,11 +18223,11 @@
     "options": [
       {
         "id": "a",
-        "label": "לעודד"
+        "label": "להתאהב"
       },
       {
         "id": "b",
-        "label": "להמשיך, לקדמה"
+        "label": "לעודד"
       },
       {
         "id": "c",
@@ -17402,10 +18235,10 @@
       },
       {
         "id": "d",
-        "label": "לרשום"
+        "label": "להתעורר; להתקרב"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "b",
     "explanation": "**cheer up** = לעודד\n\n**Definition:** to become or make happy\n\n**Example:** Cheer up - things will improve!",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17426,22 +18259,22 @@
     "options": [
       {
         "id": "a",
-        "label": "להיתקל; להתרשם"
+        "label": "להצביע על, לציין"
       },
       {
         "id": "b",
-        "label": "להדליק/לכבות"
+        "label": "להתגבר על"
       },
       {
         "id": "c",
-        "label": "לחקור, לבדוק"
+        "label": "לפגר"
       },
       {
         "id": "d",
-        "label": "להתגבר על"
+        "label": "להדליק/לכבות"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**get over** = להתגבר על\n\n**Definition:** to recover from\n\n**Example:** Get over your fear.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17462,22 +18295,22 @@
     "options": [
       {
         "id": "a",
-        "label": "לא רק... אלא גם"
-      },
-      {
-        "id": "b",
-        "label": "בינתיים"
-      },
-      {
-        "id": "c",
         "label": "בו-זמנית"
       },
       {
-        "id": "d",
+        "id": "b",
+        "label": "לעומת זאת"
+      },
+      {
+        "id": "c",
         "label": "בנוסף"
+      },
+      {
+        "id": "d",
+        "label": "בינתיים"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "c",
     "explanation": "**in addition** = בנוסף\n\n**Definition:** also; as well\n\n**Example:** In addition, we need more funds.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17498,7 +18331,7 @@
     "options": [
       {
         "id": "a",
-        "label": "כתוצאה מכך"
+        "label": "כמו גם"
       },
       {
         "id": "b",
@@ -17506,11 +18339,11 @@
       },
       {
         "id": "c",
-        "label": "כמו גם"
+        "label": "לסיכום"
       },
       {
         "id": "d",
-        "label": "לסיכום"
+        "label": "להמחיש"
       }
     ],
     "correctOptionId": "b",
@@ -17534,22 +18367,22 @@
     "options": [
       {
         "id": "a",
-        "label": "מצד שני"
+        "label": "כמו גם"
       },
       {
         "id": "b",
-        "label": "כתוצאה מכך"
+        "label": "מצד שני"
       },
       {
         "id": "c",
-        "label": "קל וחומר"
+        "label": "לדוגמה"
       },
       {
         "id": "d",
-        "label": "כמו גם"
+        "label": "קל וחומר"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "b",
     "explanation": "**on the other hand** = מצד שני\n\n**Definition:** from another perspective\n\n**Example:** It's expensive. On the other hand, it's quality.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17570,22 +18403,22 @@
     "options": [
       {
         "id": "a",
-        "label": "שלא לומר"
+        "label": "לעומת זאת"
       },
       {
         "id": "b",
-        "label": "למרות"
+        "label": "כלומר"
       },
       {
         "id": "c",
-        "label": "ומעל הכל"
+        "label": "למרות"
       },
       {
         "id": "d",
-        "label": "לעומת זאת"
+        "label": "שלא לומר"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**in spite of** = למרות\n\n**Definition:** despite\n\n**Example:** In spite of the rain, we went.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17610,7 +18443,7 @@
       },
       {
         "id": "b",
-        "label": "יחד עם"
+        "label": "בגלל"
       },
       {
         "id": "c",
@@ -17618,10 +18451,10 @@
       },
       {
         "id": "d",
-        "label": "בגלל"
+        "label": "יחד עם"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**due to** = בגלל\n\n**Definition:** because of\n\n**Example:** Cancelled due to rain.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17650,7 +18483,7 @@
       },
       {
         "id": "c",
-        "label": "למרות זאת"
+        "label": "בינתיים"
       },
       {
         "id": "d",
@@ -17678,22 +18511,22 @@
     "options": [
       {
         "id": "a",
-        "label": "מצד שני (לא פורמלי)"
+        "label": "כגון"
       },
       {
         "id": "b",
-        "label": "לדוגמה"
+        "label": "ובכל זאת"
       },
       {
         "id": "c",
-        "label": "בסופו של דבר, בסיכומו של עניין"
+        "label": "לדוגמה"
       },
       {
         "id": "d",
-        "label": "בקצרה"
+        "label": "בזכות"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**for example** = לדוגמה\n\n**Definition:** such as\n\n**Example:** Many fruits, for example apples, are healthy.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17718,15 +18551,15 @@
       },
       {
         "id": "b",
-        "label": "שנית"
+        "label": "מסיבה זו"
       },
       {
         "id": "c",
-        "label": "לעומת זאת"
+        "label": "בתחילה"
       },
       {
         "id": "d",
-        "label": "בו-זמנית"
+        "label": "להיפך"
       }
     ],
     "correctOptionId": "a",
@@ -17750,7 +18583,7 @@
     "options": [
       {
         "id": "a",
-        "label": "מצד שני (לא פורמלי)"
+        "label": "בסופו של דבר, בסיכומו של עניין"
       },
       {
         "id": "b",
@@ -17758,11 +18591,11 @@
       },
       {
         "id": "c",
-        "label": "להמחיש"
+        "label": "לעומת זאת"
       },
       {
         "id": "d",
-        "label": "לדוגמה"
+        "label": "מצד שני (לא פורמלי)"
       }
     ],
     "correctOptionId": "b",
@@ -17790,15 +18623,15 @@
       },
       {
         "id": "b",
-        "label": "כלומר"
+        "label": "לסיכום"
       },
       {
         "id": "c",
-        "label": "שנית"
+        "label": "בגלל, עקב"
       },
       {
         "id": "d",
-        "label": "לדוגמה"
+        "label": "בסך הכל"
       }
     ],
     "correctOptionId": "a",
@@ -17822,22 +18655,22 @@
     "options": [
       {
         "id": "a",
-        "label": "רועש, קולני"
+        "label": "לחשמל, לעורר לפעולה"
       },
       {
         "id": "b",
-        "label": "הגזמה"
+        "label": "להלל, לשבח עד מאוד"
       },
       {
         "id": "c",
-        "label": "חנפן"
+        "label": "חסר כל"
       },
       {
         "id": "d",
-        "label": "להלל, לשבח עד מאוד"
+        "label": "רועש, קולני"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "b",
     "explanation": "**extol** = להלל, לשבח עד מאוד\n\n**Definition:** to praise enthusiastically\n\n**Example:** Critics extolled her novel.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17858,22 +18691,22 @@
     "options": [
       {
         "id": "a",
-        "label": "עצמאי מאוד, מורד"
+        "label": "חנפן"
       },
       {
         "id": "b",
-        "label": "לזלזל, להשמיץ"
+        "label": "יהירות"
       },
       {
         "id": "c",
-        "label": "לרכך, לפייס"
+        "label": "לזלזל, להשמיץ"
       },
       {
         "id": "d",
-        "label": "רועש, קולני"
+        "label": "יומרני"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "c",
     "explanation": "**disparage** = לזלזל, להשמיץ\n\n**Definition:** to speak badly of\n\n**Example:** Don't disparage others.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17894,22 +18727,22 @@
     "options": [
       {
         "id": "a",
-        "label": "חסכן"
+        "label": "להקל"
       },
       {
         "id": "b",
-        "label": "להשמיץ"
+        "label": "להחמיר"
       },
       {
         "id": "c",
-        "label": "לרכך, לפייס"
+        "label": "רוח הזמן"
       },
       {
         "id": "d",
-        "label": "מצוקה, מצב קשה"
+        "label": "לרכך, לפייס"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "d",
     "explanation": "**mollify** = לרכך, לפייס\n\n**Definition:** to soothe anger\n\n**Example:** Tried to mollify her anger.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17930,22 +18763,22 @@
     "options": [
       {
         "id": "a",
-        "label": "רוח הזמן"
+        "label": "לכאורה"
       },
       {
         "id": "b",
-        "label": "חסר כל"
+        "label": "שעמום משעמם"
       },
       {
         "id": "c",
-        "label": "להרגיז"
+        "label": "סודי, נסתר"
       },
       {
         "id": "d",
-        "label": "עצמאי מאוד, מורד"
+        "label": "רוח הזמן"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "d",
     "explanation": "**zeitgeist** = רוח הזמן\n\n**Definition:** the spirit of the times\n\n**Example:** The zeitgeist of the 1960s.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -17966,22 +18799,22 @@
     "options": [
       {
         "id": "a",
-        "label": "מלומד"
+        "label": "חנפן"
       },
       {
         "id": "b",
-        "label": "להקל"
+        "label": "אפוסטריורי, מתוך ניסיון"
       },
       {
         "id": "c",
-        "label": "סודי, נסתר"
+        "label": "אוקסימורון"
       },
       {
         "id": "d",
-        "label": "להלל, לשבח עד מאוד"
+        "label": "מלומד"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "d",
     "explanation": "**savant** = מלומד\n\n**Definition:** a learned person\n\n**Example:** A scientific savant.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -18002,22 +18835,22 @@
     "options": [
       {
         "id": "a",
-        "label": "חנפן"
-      },
-      {
-        "id": "b",
-        "label": "לזכות מאשמה"
-      },
-      {
-        "id": "c",
         "label": "שעמום משעמם"
       },
       {
+        "id": "b",
+        "label": "להתחמק בדיבור"
+      },
+      {
+        "id": "c",
+        "label": "להקל, למתן"
+      },
+      {
         "id": "d",
-        "label": "קקופוניה"
+        "label": "לזלזל, להשמיץ"
       }
     ],
-    "correctOptionId": "c",
+    "correctOptionId": "a",
     "explanation": "**ennui** = שעמום משעמם\n\n**Definition:** boredom resulting from dissatisfaction\n\n**Example:** Overcome by ennui.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -18038,22 +18871,22 @@
     "options": [
       {
         "id": "a",
-        "label": "נסתר, אזוטרי"
+        "label": "חסר פרוטה"
       },
       {
         "id": "b",
-        "label": "להקל, למתן"
+        "label": "עשיר"
       },
       {
         "id": "c",
-        "label": "אוקסימורון"
+        "label": "נסתר, אזוטרי"
       },
       {
         "id": "d",
-        "label": "הגזמה"
+        "label": "לדחות, להתמהמה"
       }
     ],
-    "correctOptionId": "a",
+    "correctOptionId": "c",
     "explanation": "**esoteric** = נסתר, אזוטרי\n\n**Definition:** understood only by a few\n\n**Example:** Esoteric knowledge.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -18074,22 +18907,22 @@
     "options": [
       {
         "id": "a",
-        "label": "להסוות"
+        "label": "הפכפך"
       },
       {
         "id": "b",
-        "label": "עשיר"
+        "label": "להשמיץ"
       },
       {
         "id": "c",
-        "label": "להתחמק בדיבור"
+        "label": "ראוותני"
       },
       {
         "id": "d",
-        "label": "הפכפך"
+        "label": "להתחמק, לפזל"
       }
     ],
-    "correctOptionId": "d",
+    "correctOptionId": "a",
     "explanation": "**capricious** = הפכפך\n\n**Definition:** changing unpredictably\n\n**Example:** Capricious weather.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -18114,15 +18947,15 @@
       },
       {
         "id": "b",
-        "label": "קתרזיס, טיהור רגשי"
+        "label": "מבוכה, דילמה"
       },
       {
         "id": "c",
-        "label": "ראוותני"
+        "label": "נדיף, לא יציב"
       },
       {
         "id": "d",
-        "label": "חולשה כללית, תחושה של חוסר שביעות רצון"
+        "label": "פטפטן"
       }
     ],
     "correctOptionId": "a",
@@ -18146,22 +18979,22 @@
     "options": [
       {
         "id": "a",
-        "label": "פטפטן"
-      },
-      {
-        "id": "b",
         "label": "יחיד במינו"
       },
       {
+        "id": "b",
+        "label": "להתחמק, לפזל"
+      },
+      {
         "id": "c",
-        "label": "נדיף, לא יציב"
+        "label": "מבוכה, דילמה"
       },
       {
         "id": "d",
-        "label": "מצית, מסית"
+        "label": "חסר פרוטה"
       }
     ],
-    "correctOptionId": "b",
+    "correctOptionId": "a",
     "explanation": "**sui generis** = יחיד במינו\n\n**Definition:** one of a kind\n\n**Example:** A sui generis style.",
     "distractorExplanations": {},
     "estimatedTimeSec": 40,
@@ -18171,839 +19004,6 @@
       "vocab-quiz-vocabulary-5-mastery-level",
       "vocabulary",
       "difficulty_6"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q1",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The researcher's findings have been met with considerable ______ from the scientific community.",
-    "options": [
-      {
-        "id": "a",
-        "label": "hostility"
-      },
-      {
-        "id": "b",
-        "label": "indifference"
-      },
-      {
-        "id": "c",
-        "label": "skepticism"
-      },
-      {
-        "id": "d",
-        "label": "enthusiasm"
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "`considerable skepticism` = Collocation מחקרי-אקדמי קלאסי. כשקהילה מדעית מקבלת ממצאים חדשים, התגובה הטבעית היא ספקנות (עד שהדברים מאומתים).\n\n- ❌ `hostility` - עוינות. חזק מדי, בדרך כלל ספקנות מקצועית אינה עוינות.\n- ❌ `indifference` - אדישות. לא מתאים ל-\"considerable\" (משמעותי).\n- ✅ `skepticism` - ספקנות. Collocation טבעי.\n- ❌ `enthusiasm` - התלהבות. \"Considerable enthusiasm\" היה יוצר משפט חיובי - אבל פחות טבעי בהקשר של \"findings met with\" שלרוב מרמז על תגובה ביקורתית.\n\n**💡 טיפ:** `met with skepticism/resistance/opposition` - ביטויים נפוצים לתגובה ביקורתית.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q2",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The politician was forced to ______ his earlier statement after new evidence emerged.",
-    "options": [
-      {
-        "id": "a",
-        "label": "confirm"
-      },
-      {
-        "id": "b",
-        "label": "retract"
-      },
-      {
-        "id": "c",
-        "label": "celebrate"
-      },
-      {
-        "id": "d",
-        "label": "announce"
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "\"New evidence emerged\" → הפוליטיקאי נאלץ **לבטל/למשוך** את ההצהרה הקודמת.\n\n- ❌ `confirm` - לאשר. סותר \"forced to\".\n- ✅ `retract` - לבטל, למשוך הצהרה פומבית. הפועל המדויק להקשר פוליטי-משפטי.\n- ❌ `celebrate` - לחגוג. לא הגיוני.\n- ❌ `announce` - להכריז. לא מתאים (הוא כבר הצהיר).\n\n**💡 טיפ:** `retract a statement/claim` = ביטוי קבוע לביטול פומבי של אמירה.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q3",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The committee reached a ______ decision after hours of heated debate.",
-    "options": [
-      {
-        "id": "a",
-        "label": "unanimous"
-      },
-      {
-        "id": "b",
-        "label": "divisive"
-      },
-      {
-        "id": "c",
-        "label": "partial"
-      },
-      {
-        "id": "d",
-        "label": "temporary"
-      }
-    ],
-    "correctOptionId": "a",
-    "explanation": "\"After hours of heated debate, [reached] a ___ decision\". החלטה שהושגה לאחר ויכוח ארוך ולבסוף כולם הסכימו = **פה אחד**.\n\n- ✅ `unanimous` - פה אחד. ההחלטה שממסכמת ויכוח.\n- ❌ `divisive` - מפלג. לא \"reach\" אותה.\n- ❌ `partial` - חלקית. לא הגיוני להחלטה.\n- ❌ `temporary` - זמנית. לא קשור לויכוח.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q4",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The government introduced new measures to ______ the rising cost of housing.",
-    "options": [
-      {
-        "id": "a",
-        "label": "accelerate"
-      },
-      {
-        "id": "b",
-        "label": "curb"
-      },
-      {
-        "id": "c",
-        "label": "celebrate"
-      },
-      {
-        "id": "d",
-        "label": "ignore"
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "\"Introduce measures to ___ rising cost\" - ממשלה רוצה **לבלום** עלייה במחירים.\n\n- ❌ `accelerate` - להאיץ. הפוך.\n- ✅ `curb` - לרסן, לבלום. Collocation נפוץ עם \"rising costs\".\n- ❌ `celebrate`, `ignore` - לא הגיוניים.\n\n**💡 טיפ:** `curb inflation/crime/spending` - פעלים של הגבלה חשובים.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q5",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "Her research ______ light on the previously unexplored connections between diet and sleep.",
-    "options": [
-      {
-        "id": "a",
-        "label": "put"
-      },
-      {
-        "id": "b",
-        "label": "cast"
-      },
-      {
-        "id": "c",
-        "label": "sheds"
-      },
-      {
-        "id": "d",
-        "label": "brings"
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "`sheds light on X` = Collocation קבוע. הצורה היחידה הנכונה עם \"light on\".\n\n- ❌ `put`, `cast`, `brings` - לא Collocations נכונים עם \"light on\" באנגלית.\n- ✅ `sheds light on` = שופך אור על.\n\n**💡 טיפ:** יש גם `cast light on` (אבל `shed light on` נפוץ יותר). שני הביטויים נכונים באופן עקרוני; כאן `sheds` תואם את ההקשר.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q6",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The company's decision to lower prices ______ from its competitors.",
-    "options": [
-      {
-        "id": "a",
-        "label": "sets it apart"
-      },
-      {
-        "id": "b",
-        "label": "brings it closer"
-      },
-      {
-        "id": "c",
-        "label": "takes it away"
-      },
-      {
-        "id": "d",
-        "label": "puts it off"
-      }
-    ],
-    "correctOptionId": "a",
-    "explanation": "\"Sets X apart from Y\" = מבדיל את X מ-Y. כאן: ההחלטה של החברה מבדילה אותה מהמתחרים.\n\n- ✅ `sets it apart` - phrasal verb תקני.\n- ❌ `brings it closer` - הפוך.\n- ❌ `takes it away` - לוקח אותה משם. לא מתאים.\n- ❌ `puts it off` - דוחה אותה. לא קשור.\n\n**💡 טיפ:** `set apart from` = to distinguish, לבדל. Phrasal verb חשוב.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q7",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "Despite ______ criticism, the author refused to revise her controversial book.",
-    "options": [
-      {
-        "id": "a",
-        "label": "marginal"
-      },
-      {
-        "id": "b",
-        "label": "widespread"
-      },
-      {
-        "id": "c",
-        "label": "occasional"
-      },
-      {
-        "id": "d",
-        "label": "positive"
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "\"Despite\" = ניגוד. המחברת סירבה לשנות **למרות** הביקורת. הביקורת חייבת להיות **משמעותית** כדי להיות \"ראויה לציון\" בניגוד.\n\n- ❌ `marginal` - שולית. \"Despite marginal criticism\" - חלש.\n- ✅ `widespread` - רווחת, מקיפה. Collocation קבוע: `widespread criticism`.\n- ❌ `occasional` - מדי פעם. לא מתאים לניגוד חזק.\n- ❌ `positive` - חיובית. לא יוצרת ניגוד ל\"refuse to revise\".",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q8",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The ______ of the disease has been linked to both environmental and genetic factors.",
-    "options": [
-      {
-        "id": "a",
-        "label": "onset"
-      },
-      {
-        "id": "b",
-        "label": "outcome"
-      },
-      {
-        "id": "c",
-        "label": "outlook"
-      },
-      {
-        "id": "d",
-        "label": "offset"
-      }
-    ],
-    "correctOptionId": "a",
-    "explanation": "\"The ___ of the disease has been linked to factors\". המילה \"disease\" + \"factors\" + \"linked to\" מרמזות על **הופעה** של מחלה.\n\n- ✅ `onset` = הופעה, תחילה (של מחלה/תופעה). מונח רפואי.\n- ❌ `outcome` - תוצאה. לא מתאים לפתיחה.\n- ❌ `outlook` - תחזית. לא מתאים.\n- ❌ `offset` - קיזוז. לא רפואי.\n\n**💡 טיפ:** `onset of a disease/symptom` = מונח רפואי חשוב.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q9",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
-    "difficultyLevel": 4,
-    "questionText": "What is the main idea of the passage?",
-    "options": [
-      {
-        "id": "a",
-        "label": "Cities are in terminal decline and will soon be abandoned worldwide."
-      },
-      {
-        "id": "b",
-        "label": "Urbanization has been a defining trend, but new forces are beginning to reshape the future of cities in uncertain ways."
-      },
-      {
-        "id": "c",
-        "label": "Remote work alone will cause all major cities to shrink dramatically."
-      },
-      {
-        "id": "d",
-        "label": "Rural areas will soon become more populous than urban ones."
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "Main Idea. הקטע מאזן: מתאר את העלייה הגדולה בעיור, אבל מציג גורמים חדשים שמערערים על הכיוון. הסיום: \"turn in a long story of continuous adaptation\" - לא משבר, אלא שינוי.\n\n- ❌ (A) \"terminal decline, soon abandoned\" - מוגזם לחלוטין.\n- ✅ (B) \"defining trend, but new forces... uncertain ways\" - תופס את שני הצדדים.\n- ❌ (C) \"remote work alone\" - פשטני; הקטע מונה כמה גורמים.\n- ❌ (D) \"rural more populous than urban\" - הקטע אומר ההפך (70% ב-2050).",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 110,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ],
-    "passageId": "simulation-3-challenge-p1"
-  },
-  {
-    "questionId": "simulation-3-challenge-q10",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
-    "difficultyLevel": 4,
-    "questionText": "According to the passage, approximately what percentage of the world's population is projected to live in urban areas by 2050?",
-    "options": [
-      {
-        "id": "a",
-        "label": "About 30 percent"
-      },
-      {
-        "id": "b",
-        "label": "About 55 percent"
-      },
-      {
-        "id": "c",
-        "label": "About 70 percent"
-      },
-      {
-        "id": "d",
-        "label": "About 90 percent"
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "Specific Detail. פסקה 1: \"the United Nations projects it will approach 70 percent by 2050.\"",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 110,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ],
-    "passageId": "simulation-3-challenge-p1"
-  },
-  {
-    "questionId": "simulation-3-challenge-q11",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
-    "difficultyLevel": 4,
-    "questionText": "Which of the following is mentioned as a factor now weakening urban growth?",
-    "options": [
-      {
-        "id": "a",
-        "label": "The decline of remote work."
-      },
-      {
-        "id": "b",
-        "label": "Declining global population."
-      },
-      {
-        "id": "c",
-        "label": "Rising housing costs in major cities."
-      },
-      {
-        "id": "d",
-        "label": "A lack of cultural activities in cities."
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "Specific Detail. פסקה 3: \"Housing costs in major cities have risen to levels that make ownership impossible for many middle-class residents\".\n\n- ❌ (A) \"decline of remote work\" - הפוך; זה דווקא **גדל**.\n- ❌ (B) \"declining global population\" - לא מוזכר.\n- ✅ (C) \"rising housing costs\" - ציטוט פרפרזי.\n- ❌ (D) \"lack of cultural activities\" - הקטע אומר שערים עדיין שולטות בתרבות.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 110,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ],
-    "passageId": "simulation-3-challenge-p1"
-  },
-  {
-    "questionId": "simulation-3-challenge-q12",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
-    "difficultyLevel": 4,
-    "questionText": "In paragraph 4, the word \"polycentric\" most likely refers to:",
-    "options": [
-      {
-        "id": "a",
-        "label": "a future dominated by a single massive city"
-      },
-      {
-        "id": "b",
-        "label": "a future with multiple centers of importance rather than a few dominant ones"
-      },
-      {
-        "id": "c",
-        "label": "a future with no cities at all"
-      },
-      {
-        "id": "d",
-        "label": "a future in which rural areas replace cities entirely"
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "Vocabulary in Context. \"polycentric\" = multi-center (poly = many, centric = center). ההקשר מחזק: \"mid-sized cities and regional hubs gain importance at the expense of traditional megacities\" = ריבוי מרכזים במקום כמה מגה-ערים.\n\n- ❌ (A) \"single massive city\" - הפוך.\n- ✅ (B) \"multiple centers\" - פרפרזה מדויקת.\n- ❌ (C) \"no cities\" - סותר.\n- ❌ (D) \"rural replaces cities\" - סותר.\n\n**💡 טיפ:** `poly-` = רבים. Poly-gon (ריבוי צלעות), poly-theism (ריבוי אלים), poly-centric (ריבוי מרכזים).",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 110,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ],
-    "passageId": "simulation-3-challenge-p1"
-  },
-  {
-    "questionId": "simulation-3-challenge-q13",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
-    "difficultyLevel": 4,
-    "questionText": "What can be inferred about the author's overall view of the future of cities?",
-    "options": [
-      {
-        "id": "a",
-        "label": "Cities will certainly disappear within the next century."
-      },
-      {
-        "id": "b",
-        "label": "The changes facing cities represent a crisis that cannot be resolved."
-      },
-      {
-        "id": "c",
-        "label": "Cities face significant challenges, but their adaptability will likely lead to transformation rather than collapse."
-      },
-      {
-        "id": "d",
-        "label": "No meaningful changes are actually occurring in urban life."
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "Inference. הפסקה האחרונה: \"do not represent a simple crisis... another turn in a long story of continuous adaptation\" - הטון **מאוזן וסובלני**.\n\n- ❌ (A) \"disappear within century\" - מוגזם.\n- ❌ (B) \"crisis that cannot be resolved\" - סותר; המחבר **דוחה** את מילת \"crisis\".\n- ✅ (C) \"significant challenges, but adaptability... transformation rather than collapse\" - תופס את הטון המאוזן.\n- ❌ (D) \"no meaningful changes\" - סותר את כל הקטע.\n\n**💡 טיפ:** כש-author בוחר לכתוב \"do not represent a simple crisis\" - הוא **דוחה** את השימוש ב-\"crisis\", זה רמז לטון האופטימי שלו.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 110,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ],
-    "passageId": "simulation-3-challenge-p1"
-  },
-  {
-    "questionId": "simulation-3-challenge-q14",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** Not only did the initiative fail to reduce emissions, but it also strained relations between allied nations.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The initiative succeeded in reducing emissions despite tensions."
-      },
-      {
-        "id": "b",
-        "label": "The initiative reduced emissions but caused diplomatic problems."
-      },
-      {
-        "id": "c",
-        "label": "The initiative both failed in its environmental goal and harmed diplomatic relations."
-      },
-      {
-        "id": "d",
-        "label": "The initiative accomplished its goals with no negative consequences."
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "`Not only X but also Y` = שני דברים קרו. כאן: (1) failed to reduce emissions + (2) strained relations.\n\n- ❌ (A) \"succeeded\" - הפוך.\n- ❌ (B) \"reduced emissions but caused diplomatic problems\" - חצי נכון; היא **לא** הפחיתה פליטות.\n- ✅ (C) \"both failed... and harmed\" - תופס את שתי השליליות.\n- ❌ (D) \"accomplished goals\" - הפוך.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q15",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** Hardly had the contract been signed when the economic crisis began.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The contract was signed long before the economic crisis."
-      },
-      {
-        "id": "b",
-        "label": "The economic crisis prevented the contract from being signed."
-      },
-      {
-        "id": "c",
-        "label": "Almost immediately after the contract was signed, the economic crisis started."
-      },
-      {
-        "id": "d",
-        "label": "The contract was signed as a response to the economic crisis."
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "**Inversion:** `Hardly had X V3 when Y happened` = \"כמעט שלא X, עד ש-Y\" = \"מיד אחרי X, Y\".\n\n- ❌ (A) \"long before\" - הפוך.\n- ❌ (B) \"prevented\" - לא; הוא **כן** נחתם.\n- ✅ (C) \"almost immediately after... started\" - פרפרזה מדויקת.\n- ❌ (D) \"in response to\" - היפוך קשר סיבה-תוצאה.\n\n**💡 טיפ:** `Hardly had X when Y` = `No sooner had X than Y` = `Scarcely had X when Y`.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q16",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** Were it not for the generosity of anonymous donors, the charity would have closed years ago.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The charity closed years ago despite the donors' help."
-      },
-      {
-        "id": "b",
-        "label": "Without the donors' generosity, the charity would have closed long ago."
-      },
-      {
-        "id": "c",
-        "label": "Anonymous donors forced the charity to close years ago."
-      },
-      {
-        "id": "d",
-        "label": "The charity has never received any donations."
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "**Inversion of 3rd Conditional with \"Were\":** `Were it not for X, Y would have V3` = `Without X, Y would have V3` = `If it hadn't been for X, Y would have V3`.\n\n- ❌ (A) \"closed years ago despite donors\" - סותר.\n- ✅ (B) \"Without the donors' generosity, the charity would have closed long ago\" - פרפרזה מדויקת.\n- ❌ (C) \"donors forced closure\" - הפוך.\n- ❌ (D) \"never received donations\" - סותר.\n\n**💡 טיפ:** 4 מבנים זהים: `Were it not for X` / `If it were not for X` / `But for X` / `Without X`.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q17",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** The evidence is far from conclusive, and further research is clearly warranted.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The evidence has proven the case beyond all doubt."
-      },
-      {
-        "id": "b",
-        "label": "The evidence is insufficient to draw firm conclusions, and more research is needed."
-      },
-      {
-        "id": "c",
-        "label": "No additional research is necessary given the strong evidence."
-      },
-      {
-        "id": "d",
-        "label": "The evidence is entirely misleading and should be discarded."
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "`far from conclusive` = \"רחוק מלהיות חותך\" = לא מספיק להסיק. `warranted` = \"מוצדק, רצוי\". \"Further research is warranted\" = \"נדרש מחקר נוסף\".\n\n- ❌ (A) \"proven beyond all doubt\" - הפוך לחלוטין.\n- ✅ (B) \"insufficient to draw firm conclusions, more research is needed\" - פרפרזה מדויקת.\n- ❌ (C) \"no additional research necessary\" - הפוך.\n- ❌ (D) \"entirely misleading\" - חזק מדי; המקור אומר שהראיה לא חותכת, לא שהיא \"מטעה\".\n\n**💡 טיפ:** `far from X` = \"רחוק מ-X\", כלומר **לא** X. `warranted` = מוצדק.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q18",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** The study's findings are consistent with those of earlier research in the field.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The study contradicts all previous research in the field."
-      },
-      {
-        "id": "b",
-        "label": "The study's results agree with findings from earlier research."
-      },
-      {
-        "id": "c",
-        "label": "The study is the first of its kind in the field."
-      },
-      {
-        "id": "d",
-        "label": "No previous research has been done on this subject."
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "`consistent with X` = `agrees with X`. Collocation מחקרי.\n\n- ❌ (A) \"contradicts all\" - הפוך.\n- ✅ (B) \"results agree with earlier research\" - פרפרזה מדויקת.\n- ❌ (C) \"first of its kind\" - סותר \"consistent with earlier\".\n- ❌ (D) \"no previous research\" - סותר.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q19",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
-    "difficultyLevel": 4,
-    "questionText": "**Original:** Had the warning signs been heeded, the disaster might well have been prevented.",
-    "options": [
-      {
-        "id": "a",
-        "label": "The disaster occurred despite all warning signs being followed."
-      },
-      {
-        "id": "b",
-        "label": "There were no warning signs before the disaster."
-      },
-      {
-        "id": "c",
-        "label": "If the warning signs had been taken seriously, the disaster could probably have been avoided."
-      },
-      {
-        "id": "d",
-        "label": "The disaster was inevitable regardless of any warnings."
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "**Third Conditional inverted:** `Had X been V-ed, Y might have been V-ed`. משמעות: **במציאות** - X לא קרה (signs not heeded), ולכן Y כן קרה (disaster happened).\n\n- ❌ (A) \"despite signs being followed\" - סותר; הסימנים **לא** נלקחו בחשבון.\n- ❌ (B) \"no warning signs\" - סותר; היו סימנים.\n- ✅ (C) \"if the warning signs had been taken seriously, disaster could probably have been avoided\" - פרפרזה מדויקת.\n- ❌ (D) \"inevitable regardless\" - סותר.\n\n**💡 טיפ:** `heed X` = לשים לב ל-X, לציית ל-X. `heeded` = נלקחו בחשבון.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q20",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The senator's remarks were widely ______ as insensitive and out of touch.",
-    "options": [
-      {
-        "id": "a",
-        "label": "praised"
-      },
-      {
-        "id": "b",
-        "label": "celebrated"
-      },
-      {
-        "id": "c",
-        "label": "condemned"
-      },
-      {
-        "id": "d",
-        "label": "welcomed"
-      }
-    ],
-    "correctOptionId": "c",
-    "explanation": "\"Insensitive and out of touch\" - ביטויים שליליים. הפועל חייב להיות שלילי.\n\n- ❌ `praised`, `celebrated`, `welcomed` - כולם חיוביים.\n- ✅ `condemned` - גונו. מתאים לביקורת ציבורית.\n\n**💡 טיפ:** `widely condemned` = Collocation לביקורת פומבית.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q21",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The report's findings were ______ with the government's official position, leading to a public dispute.",
-    "options": [
-      {
-        "id": "a",
-        "label": "at odds"
-      },
-      {
-        "id": "b",
-        "label": "in agreement"
-      },
-      {
-        "id": "c",
-        "label": "in alignment"
-      },
-      {
-        "id": "d",
-        "label": "compatible"
-      }
-    ],
-    "correctOptionId": "a",
-    "explanation": "\"Leading to a public dispute\" - רמז חזק: דו\"ח וממשלה במחלוקת.\n\n- ✅ `at odds with` = בסתירה עם. יוצר את המחלוקת.\n- ❌ `in agreement`, `in alignment`, `compatible` - כולם מרמזים הסכמה; לא מסבירים מחלוקת.\n\n**💡 טיפ:** `at odds with X` = בסכסוך עם X. Collocation חשוב.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q22",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "Modern technology has ______ our ability to access information instantly.",
-    "options": [
-      {
-        "id": "a",
-        "label": "transformed"
-      },
-      {
-        "id": "b",
-        "label": "damaged"
-      },
-      {
-        "id": "c",
-        "label": "limited"
-      },
-      {
-        "id": "d",
-        "label": "ignored"
-      }
-    ],
-    "correctOptionId": "a",
-    "explanation": "\"Our ability to access information instantly\" - טון חיובי לטכנולוגיה. Collocation: `technology has transformed X`.\n\n- ✅ `transformed` = שינתה מיסודו. חיובי ומתאים.\n- ❌ `damaged`, `limited`, `ignored` - שליליים/לא מתאימים ל\"ability to access\".",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
-    ]
-  },
-  {
-    "questionId": "simulation-3-challenge-q23",
-    "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
-    "difficultyLevel": 4,
-    "questionText": "The senator's response was ______, revealing neither her true opinion nor her voting intentions.",
-    "options": [
-      {
-        "id": "a",
-        "label": "transparent"
-      },
-      {
-        "id": "b",
-        "label": "evasive"
-      },
-      {
-        "id": "c",
-        "label": "enthusiastic"
-      },
-      {
-        "id": "d",
-        "label": "straightforward"
-      }
-    ],
-    "correctOptionId": "b",
-    "explanation": "\"Revealing neither her true opinion nor her voting intentions\" = **חומקת, מתחמקת**.\n\n- ❌ `transparent`, `enthusiastic`, `straightforward` - כולם של גילוי/ישירות.\n- ✅ `evasive` = חמקני, מתחמק. מילה חשובה לשפה פוליטית.",
-    "distractorExplanations": {},
-    "estimatedTimeSec": 65,
-    "tags": [
-      "imported",
-      "real_markdown",
-      "simulation-3-challenge",
-      "simulation",
-      "difficulty_4"
     ]
   }
 ]

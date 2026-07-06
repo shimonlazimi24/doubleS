@@ -82,6 +82,20 @@ function distinctTranslations(a, b) {
   return !x.includes(y) && !y.includes(x);
 }
 
+function wordCount(s) {
+  return s.trim().split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * אורכי אופציות מאוזנים: פער אורכים קיצוני (יחס ≥3.2 במילים) הופך את
+ * האלימינציה לטריוויאלית — מסיחים נבחרים באורך דומה לתרגום הנכון.
+ */
+function lengthsBalanced(candidates, target) {
+  const lens = [...candidates, target].map((e) => wordCount(e.translation)).filter((n) => n > 0);
+  if (lens.length < 2) return true;
+  return Math.max(...lens) / Math.min(...lens) < 3.2;
+}
+
 function pickDistractors(entries, target, count, rng) {
   const pool = entries.filter(
     (e) => e.word !== target.word && distinctTranslations(e.translation, target.translation),
@@ -89,10 +103,12 @@ function pickDistractors(entries, target, count, rng) {
   const out = [];
   const used = new Set();
   let guard = 0;
-  while (out.length < count && guard++ < 200 && pool.length >= count) {
+  while (out.length < count && guard++ < 400 && pool.length >= count) {
     const cand = pool[Math.floor(rng() * pool.length)];
     if (used.has(cand.word)) continue;
     if (out.some((o) => !distinctTranslations(o.translation, cand.translation))) continue;
+    // איזון אורכים — אחרי 250 ניסיונות מרפים כדי לא להיתקע על מילים חריגות
+    if (guard < 250 && !lengthsBalanced([...out, cand], target)) continue;
     used.add(cand.word);
     out.push(cand);
   }

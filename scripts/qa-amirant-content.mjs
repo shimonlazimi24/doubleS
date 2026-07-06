@@ -38,9 +38,11 @@ function run(command, args) {
 }
 
 function optionNorm(s) {
+  // כולל עברית — בלעדיה כל אופציה עברית מתנרמלת ל-"" וכל שאלת אוצר מילים
+  // נספרת כ"אופציות כפולות" (false positive שהפיל את שער ה-CI)
   return String(s ?? "")
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/[^a-z0-9֐-׿\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

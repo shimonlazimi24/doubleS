@@ -220,7 +220,12 @@ function evaluateQuestion(q, stemFrequency) {
     );
   }
 
-  if (subtopic && topic && !subtopic.startsWith(topic)) {
+  // `vocab-<kind>-<difficulty>` היא הקונבנציה שהרנטיים משתמש בה לסינון סוגי
+  // מילים (filterBankByTopicsAndVocabMode) — תקפה לנושא vocabulary
+  const subtopicAligned =
+    subtopic.startsWith(topic) ||
+    (topic === "vocabulary" && subtopic.startsWith("vocab-"));
+  if (subtopic && topic && !subtopicAligned) {
     addIssue(
       issues,
       "topic_subtopic_mismatch",
@@ -250,7 +255,13 @@ function evaluateQuestion(q, stemFrequency) {
     );
   }
 
-  if (stemFrequency.get(stem) >= 3) {
+  // פתיחי הבנת-הנקרא קנוניים חוזרים בין קטעים במבחן האמיתי — לא שיבוט תבניות
+  const CANONICAL_COMPREHENSION_STEMS = new Set([
+    "what is the main idea of the passage",
+    "what is the main idea of this passage",
+    "what is the main purpose of the passage",
+  ]);
+  if (stemFrequency.get(stem) >= 3 && !CANONICAL_COMPREHENSION_STEMS.has(stem)) {
     const freq = stemFrequency.get(stem);
     addIssue(
       issues,
