@@ -1,4 +1,3 @@
-import { PrepCourseCatalog } from "@/components/prep/catalog/PrepCourseCatalog";
 import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
 import { CTASection } from "@/components/prep/marketing/CTASection";
 import { ExamStructureCards } from "@/components/prep/marketing/ExamStructureCards";
@@ -88,7 +87,8 @@ export function PrepMarketingHome() {
 
       <AIValueSection />
 
-      <PrepCourseCatalog id="limudim" />
+      {/* קטלוג הקורסים הוסר מדף הבית (תמונות סטוק, קורס אחד חי) — נשאר ב-/prep/courses;
+          יוחזר כשיהיו כמה קורסים חיים עם ויז'ואלים אמיתיים */}
 
       <CTASection />
     </>
