@@ -17,6 +17,9 @@ import {
   type PremiumMarkdownSection,
 } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import { contentBlocksToPremiumFlow } from "@/lib/amirant-course/lesson-content/blocks-to-premium-flow";
+import { getLessonQuestionGroup, SIMULATION_LESSON_RUNTIME } from "@/lib/amirant-course/lesson-content/lesson-question-groups";
+import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
+import { getBankQuestionsByTag } from "@/lib/amirant-course";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -24,6 +27,7 @@ import { requireAmirantLessonAccess } from "@/lib/prep/amirant-lesson-access.ser
 import { AmirantCourseLessonScopeTracker } from "@/components/prep/amirant-course/AmirantCourseLessonScopeTracker";
 import { IntroPersonalRoadmapClient } from "@/components/prep/amirant-course/lesson-workspace/IntroPersonalRoadmapClient";
 import { AmirantPremiumLessonView, type UnifiedFlowItem } from "@/components/prep/amirant-course/premium/AmirantPremiumLessonView";
+import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
 import { Card, CardBody } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 
@@ -59,7 +63,7 @@ type Props = { params: { lessonId: string } };
 export function generateMetadata({ params }: Props): Metadata {
   const hit = getManifestLesson(params.lessonId);
   if (!hit) return { title: "שיעור" };
-  return { title: `${hit.lesson.title} | Amirant Preparation` };
+  return { title: `${hit.lesson.title} | הכנה לאמירנט` };
 }
 
 function buildBlockIntro(blocks: ContentBlock[]): string {
@@ -95,7 +99,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         <AmirantCourseLessonScopeTracker lessonId={hit.lesson.id} />
         <nav className="text-xs font-medium text-muted [direction:rtl]">
           <Link href={BASE} className="transition hover:text-primary">
-            Amirant Preparation
+            הכנה לאמירנט
           </Link>
           <span className="mx-2 text-line">/</span>
           <Link href={`${BASE}/module/${hit.module.slug}`} className="text-ink transition hover:text-primary">
@@ -121,7 +125,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     );
   }
 
-  const { content, source: contentSource } = await getLessonContentWithCmsOverride(params.lessonId);
+  const { content, source: contentSource, videoUrl: cmsVideoUrl } = await getLessonContentWithCmsOverride(params.lessonId);
   if (!content) notFound();
   const isCmsOverride = contentSource === "cms";
   // CMS override: body_markdown is injected as cmsMarkdown
@@ -133,9 +137,20 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   const md = isCmsOverride && cmsMarkdown
     ? { ok: true as const, body: cmsMarkdown }
     : (hasMd && content.amirnetMarkdownRel ? readAmirantCourseMarkdownSource(content.amirnetMarkdownRel) : null);
-  const lessonBody = md?.ok
+  // שיעורי "מבחן תרגול": השאלות השטוחות נחתכות מה-md ומרונדרות כרכיב אינטראקטיבי מהבנק.
+  // חותכים רק אם קבוצת השאלות באמת נמצאה בבנק — אחרת (תג הוסב / מאגר נכשל)
+  // עדיף להשאיר את השאלות כטקסט מאשר שיעור בלי שאלות בכלל.
+  const questionGroup = getLessonQuestionGroup(params.lessonId);
+  const groupQuestions = questionGroup ? getBankQuestionsByTag(questionGroup.tag) : [];
+  const hasInteractiveQuestions = groupQuestions.length > 0;
+  const simulationRuntimeId = SIMULATION_LESSON_RUNTIME[params.lessonId] ?? null;
+  const rawLessonBody = md?.ok
     ? stripMasachNumberingForDisplay(markdownBodyForLesson(md.body, content))
     : null;
+  const lessonBody =
+    rawLessonBody != null && (hasInteractiveQuestions || simulationRuntimeId)
+      ? stripQuestionSections(rawLessonBody)
+      : rawLessonBody;
   const vocabParsed = lessonBody != null ? parseVocabularyMarkdown(lessonBody) : null;
   const useVocabUi = hit.module.id === "mod-vocab" && vocabParsed != null && vocabularyBodyHasNumberedWordEntries(vocabParsed);
 
@@ -174,6 +189,9 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       flow = [...sectionItems, { kind: "gate" }];
     } else if (hit.lesson.id === "lesson.intro.roadmap") {
       flow = sectionItems;
+    } else if (questionGroup || simulationRuntimeId) {
+      // שיעורי תרגול/סימולציה: בלי gates — הסבר ואז שאלות אינטראקטיביות
+      flow = sectionItems;
     } else {
       flow = interleaveMarkdownGates(sections).map((x): UnifiedFlowItem => {
         if ("kind" in x && x.kind === "gate") {
@@ -191,6 +209,31 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     }
   }
 
+  if (questionGroup && hasInteractiveQuestions) {
+    flow = [
+      ...flow,
+      {
+        kind: "questions",
+        id: `inline-questions-${questionGroup.tag}`,
+        title: "תרגול אינטראקטיבי",
+        questionIds: groupQuestions.map((q) => q.id),
+        timeLimitSec: questionGroup.timeLimitSec,
+      },
+    ];
+  }
+  if (simulationRuntimeId) {
+    flow = [
+      ...flow,
+      {
+        kind: "section",
+        id: "simulation-runtime-cta",
+        title: "סימולציה אינטראקטיבית",
+        variant: "insight",
+        body: `הסימולציה המלאה רצה בסביבה אינטראקטיבית עם טיימר לכל פרק, בדיוק כמו במבחן האמיתי.\n\n[▶ התחלת הסימולציה האינטראקטיבית](${BASE}/simulation/${simulationRuntimeId})`,
+      },
+    ];
+  }
+
   const practiceHref = hit.lesson.practiceSetId ? `${BASE}/practice/${hit.lesson.practiceSetId}` : null;
   const quizHref = hit.lesson.quizId ? `${BASE}/quiz/${hit.lesson.quizId}` : null;
 
@@ -201,7 +244,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       <AmirantCourseLessonScopeTracker lessonId={hit.lesson.id} />
       <nav className="text-xs font-medium text-muted [direction:rtl]">
         <Link href={BASE} className="transition hover:text-primary">
-          Amirant Preparation
+          הכנה לאמירנט
         </Link>
         <span className="mx-2 text-line">/</span>
         <Link href={`${BASE}/module/${hit.module.slug}`} className="text-ink transition hover:text-primary">
@@ -209,10 +252,13 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         </Link>
       </nav>
 
-      {hit.lesson.videoPath ? (
-        <Card className="mt-6">
-          <CardBody className="p-4 text-sm text-muted [direction:rtl]">וידאו (נתיב): {hit.lesson.videoPath}</CardBody>
-        </Card>
+      {cmsVideoUrl || hit.lesson.videoPath || hit.lesson.videoSlot ? (
+        <div className="mt-6">
+          <AmirantVideoEmbed
+            src={cmsVideoUrl ?? hit.lesson.videoPath ?? null}
+            title={`סרטון הסבר — ${hit.lesson.title}`}
+          />
+        </div>
       ) : null}
 
       {md && !md.ok ? (

@@ -51,7 +51,7 @@ export default function AmirantLearnHomePage() {
                   href={`${PREP_BASE}/amirant/course`}
                   className="inline-flex items-center justify-center rounded-control border border-primary/40 bg-paper px-5 py-3 text-sm font-semibold text-primary shadow-card hover:bg-primary/5"
                 >
-                  קורס Amirant Preparation
+                  קורס ההכנה לאמירנט
                 </Link>
               </div>
             </div>

@@ -30,7 +30,7 @@ export async function getCmsLesson(lessonId: string): Promise<CmsLesson | null> 
     .select("id, module_id, title, kind, body_markdown, video_url, estimated_minutes, sort_order, published")
     .eq("id", lessonId)
     .eq("published", true)
-    .single();
+    .maybeSingle();
   return (data as CmsLesson | null) ?? null;
 }
 
@@ -54,12 +54,14 @@ export async function getAllCmsLessons(): Promise<CmsLesson[]> {
  *
  * If the DB has a body_markdown for this lesson, it overrides the static file.
  * If the DB has no entry, falls back to the existing JSON / markdown source.
+ * `videoUrl` מוחזר מה-CMS גם כשאין body (פרסום «וידאו בלבד» מהאדמין).
  */
 export async function getLessonContentWithCmsOverride(
   lessonId: string,
-): Promise<{ content: LessonContent | null; source: "cms" | "static" | "none" }> {
+): Promise<{ content: LessonContent | null; source: "cms" | "static" | "none"; videoUrl: string | null }> {
   // 1. Check DB
   const cmsLesson = await getCmsLesson(lessonId);
+  const videoUrl = cmsLesson?.video_url?.trim() || null;
   if (cmsLesson?.body_markdown?.trim()) {
     return {
       content: {
@@ -70,12 +72,13 @@ export async function getLessonContentWithCmsOverride(
         videoUrl: cmsLesson.video_url ?? undefined,
       } as LessonContent & { cmsMarkdown: string; videoUrl?: string },
       source: "cms",
+      videoUrl,
     };
   }
 
   // 2. Fall back to static registry
   const static_ = getStaticLessonContent(lessonId);
-  if (static_) return { content: static_, source: "static" };
+  if (static_) return { content: static_, source: "static", videoUrl };
 
-  return { content: null, source: "none" };
+  return { content: null, source: "none", videoUrl };
 }

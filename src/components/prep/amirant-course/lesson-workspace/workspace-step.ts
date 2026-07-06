@@ -21,6 +21,14 @@ export type UnifiedFlowItem =
       body?: string;
       items?: string[];
       bullets?: string[];
+    }
+  | {
+      /** שאלות אינטראקטיביות מהבנק (שיעורי "מבחן תרגול" / סימולציה). */
+      kind: "questions";
+      id: string;
+      title: string;
+      questionIds: string[];
+      timeLimitSec?: number;
     };
 
 /**
@@ -33,6 +41,7 @@ export type WorkspaceStepKind =
   | "tip"
   | "warning"
   | "quick_check"
+  | "inline_questions"
   | "summary"
   | "practice_cta"
   | "ai_help";
@@ -60,6 +69,8 @@ export type BuiltWorkspaceStep = {
   welcome?: WelcomeStepPayload;
   /** When true, render the flow gate interaction (בדיקה קצרה) inline after this step’s card — `flowIndex` must point at the gate. */
   embedQuickCheck?: boolean;
+  /** שלב שאלות אינטראקטיביות — payload מ־UnifiedFlowItem kind "questions". */
+  questions?: { title: string; questionIds: string[]; timeLimitSec?: number };
 };
 
 const TRUNC = 40;
@@ -170,6 +181,17 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
   flow.forEach((item, i) => {
     if (item.kind === "gate") {
       out.push({ id: `ws-gate-${i}`, kind: "quick_check", label: "בדיקה קצרה", flowIndex: i, ...nil });
+      return;
+    }
+    if (item.kind === "questions") {
+      out.push({
+        id: `ws-questions-${i}`,
+        kind: "inline_questions",
+        label: item.title || "תרגול אינטראקטיבי",
+        flowIndex: i,
+        ...nil,
+        questions: { title: item.title, questionIds: item.questionIds, timeLimitSec: item.timeLimitSec },
+      });
       return;
     }
     const k = variantToKind(item.variant);

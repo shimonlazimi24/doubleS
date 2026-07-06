@@ -19,6 +19,7 @@ const KIND_LABEL: Record<WorkspaceStepKind, string> = {
   tip: "טיפ",
   warning: "שים לב",
   quick_check: "בדיקה קצרה",
+  inline_questions: "תרגול אינטראקטיבי",
   summary: "סיכום והמשך",
   practice_cta: "המשך",
   ai_help: "עזרה",

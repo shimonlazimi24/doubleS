@@ -2,8 +2,6 @@
  * Structured Unit 1.1 (welcome) for premium step rendering — no new facts.
  */
 
-export type StudentCommitmentParts = { introPart: string; schedulePart: string };
-
 export type ScoreRangeRow = { range: string; meaning: string; detail: string };
 export type CourseUnitRow = { n: string; title: string };
 export type GoldenRule = { n: number; text: string };
@@ -12,14 +10,6 @@ export type ExamQuestionTypeRow = { n: string; type: string; count: string; time
 export type OpenPremiumData = { intro: string; highlight: string };
 export type WhyPremiumData = { lede: string; goal: string; scoreRows: ScoreRangeRow[] };
 export type WhatPremiumData = { units: CourseUnitRow[]; bonusTitle: string; bonusItems: string[] };
-export type CommitmentPremiumData = {
-  ourItems: string[];
-  yoursLede: string;
-  planTitle: string;
-  planOptions: { label: string; detail: string }[];
-  ironTitle: string;
-  ironItems: string[];
-};
 export type SuccessPremiumData = { rules: GoldenRule[] };
 export type ExamPremiumData = {
   lede: string;
@@ -48,7 +38,6 @@ export type WelcomeStepPayload =
   | { step: "open"; data: OpenPremiumData }
   | { step: "why"; data: WhyPremiumData }
   | { step: "what"; data: WhatPremiumData }
-  | { step: "commitment"; data: CommitmentPremiumData }
   | { step: "success"; data: SuccessPremiumData }
   | { step: "exam"; data: ExamPremiumData }
   | { step: "closing"; data: ClosingPremiumData };
@@ -65,12 +54,6 @@ export function stripUnitMeta(s: string): string {
   t = t.replace(/(?:^|\n)#{1,6}\s*Unit\s*1:.*\n?/gim, "\n");
   t = stripFences(t);
   return t.replace(/\n{3,}/g, "\n\n").trim();
-}
-
-export function splitStudentCommitmentsBody(raw: string): StudentCommitmentParts {
-  const m = /^###\s*לוח הזמנים המומלץ/m.exec(raw);
-  if (!m) return { introPart: raw.trim(), schedulePart: "" };
-  return { introPart: raw.slice(0, m.index).trim(), schedulePart: raw.slice(m.index).trim() };
 }
 
 function dedupeParagraphs(text: string): string {
@@ -170,54 +153,6 @@ export function parseWhatPremium(whatBody: string): WhatPremiumData {
     }
   }
   return { units, bonusTitle: "מה בנוסף", bonusItems: bonus.filter(Boolean) };
-}
-
-function parseOurs(ours: string): string[] {
-  const t = stripFences(ours.replace(/\r\n/g, "\n"));
-  const out: string[] = [];
-  for (const line of t.split("\n")) {
-    const s = line.trim();
-    if (!/^\d+\./.test(s)) continue;
-    out.push(s.replace(/^\d+\.\s+/, "").replace(/\s+/g, " ").trim());
-  }
-  return out;
-}
-
-export function parseCommitmentPremium(commit: string, yours: string, split: StudentCommitmentParts): CommitmentPremiumData {
-  const ourItems = parseOurs(commit);
-  const introP = split.introPart.split(/\n\n/)[0]?.trim() ?? "";
-  const sp = (split.schedulePart || "").replace(/\r\n/g, "\n");
-  const ironSplit = sp.split(/###\s*כללי הברזל/);
-  const planChunk = (ironSplit[0] || sp).trim();
-  const ironPart = (ironSplit[1] || "").trim();
-  const planTitle = (planChunk.match(/###\s*([^\n]+)/)?.[1] ?? "לוח הזמנים המומלץ").replace(/#/g, "").trim();
-  const planOptions: { label: string; detail: string }[] = [];
-  for (const line of planChunk.split("\n")) {
-    const s = line.trim();
-    if (!/^[-*]/.test(s) || !s.includes("שבועות")) continue;
-    const m = s.replace(/^[-*]\s*/, "").match(/^\*\*([^*]+)\*\*\s*[–-]?\s*(.*)$/);
-    if (m) planOptions.push({ label: m[1]!.trim(), detail: m[2]!.trim() });
-  }
-  const iron: string[] = [];
-  for (const line of ironPart.split("\n")) {
-    const s = line.trim();
-    if (!/^\d+\./.test(s) || s.startsWith("###")) continue;
-    iron.push(s.replace(/^\d+\.\s+/, "").replace(/\s+/g, " ").trim());
-  }
-  return {
-    ourItems: ourItems.length ? ourItems : parseOurs(commit + introP),
-    yoursLede: introP,
-    planTitle,
-    planOptions: planOptions.length
-      ? planOptions
-      : [
-          { label: "6 שבועות", detail: "תוכנית סטנדרטית (2-3 שעות ביום)" },
-          { label: "4 שבועות", detail: "תוכנית אינטנסיבית (4-5 שעות ביום)" },
-          { label: "8 שבועות", detail: "תוכנית רגועה (1-2 שעות ביום)" },
-        ],
-    ironTitle: "כללי הברזל",
-    ironItems: iron,
-  };
 }
 
 export function parseSuccessRules(successBody: string): SuccessPremiumData {

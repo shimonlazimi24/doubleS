@@ -11,6 +11,7 @@ import { LessonInteractionBlock } from "../lesson/LessonInteractionBlock";
 import { LessonAiBlock } from "../lesson/LessonAiBlock";
 import { LessonKeyTakeawayClosing } from "../lesson/LessonKeyTakeawayClosing";
 import { LessonFooterCTA } from "../lesson/LessonFooterCTA";
+import { AmirantInlineQuestionsCard } from "../lesson/AmirantInlineQuestionsCard";
 import { VocabularyLessonExperience } from "../VocabularyLessonExperience";
 import type { VocabParseResult } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { lessonSaaS } from "../lesson/ui/lesson-saas-tokens";
@@ -306,6 +307,18 @@ type RenderParams = {
 
 function renderStepBody(p: RenderParams) {
   const c = p.current;
+  if (c.kind === "inline_questions" && c.questions) {
+    return (
+      <LessonStepContent kind="inline_questions" showTopLabel={false} className="!min-h-0">
+        <AmirantInlineQuestionsCard
+          title={c.questions.title}
+          questionIds={c.questions.questionIds}
+          timeLimitSec={c.questions.timeLimitSec}
+          sessionLabel={p.title}
+        />
+      </LessonStepContent>
+    );
+  }
   if (p.mode === "vocab" && c.id === "ws-intro") {
     return (
       <LessonStepContent kind="intro">
@@ -384,7 +397,6 @@ function renderStepBody(p: RenderParams) {
               quizHref={p.quizHref}
               nextLessonHref={p.nextLessonHref}
               nextLessonTitle={p.nextLessonTitle}
-              lessonId={p.lessonId}
               surface="embed"
             />
           </div>
@@ -476,8 +488,8 @@ function renderStepBody(p: RenderParams) {
               quizHref={p.quizHref}
               nextLessonHref={p.nextLessonHref}
               nextLessonTitle={p.nextLessonTitle}
-              lessonId={p.lessonId}
               surface="embed"
+              emphasizeNext
             />
           </div>
         </div>
@@ -507,7 +519,6 @@ function renderStepBody(p: RenderParams) {
           quizHref={p.quizHref}
           nextLessonHref={p.nextLessonHref}
           nextLessonTitle={p.nextLessonTitle}
-          lessonId={p.lessonId}
           surface="embed"
         />
       </LessonStepContent>

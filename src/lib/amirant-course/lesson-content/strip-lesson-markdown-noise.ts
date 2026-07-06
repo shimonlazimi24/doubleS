@@ -17,6 +17,16 @@ export function stripTakeawayBlocksFromBody(body: string | undefined): string | 
   return t.replace(/\n{3,}/g, "\n\n").trim();
 }
 
+/**
+ * עוגני HTML גולמיים (<a name="פח6"></a>) שהגיעו ממסמכי המקור מרונדרים כטקסט מילולי
+ * ב־ReactMarkdown — מסירים אותם תמיד לפני רינדור.
+ */
+export function stripHtmlAnchorNoise(body: string): string {
+  return body
+    .replace(/<a\s+name=[^>]*>\s*<\/a>/gi, "")
+    .replace(/<a\s+name=[^>]*\/>/gi, "");
+}
+
 /** Strips common markdown separator noise (horizontal rules, pipes-only lines) from edges only. */
 export function stripEdgeSeparatorNoise(body: string): string {
   const normalized = body.replace(/\r\n/g, "\n");

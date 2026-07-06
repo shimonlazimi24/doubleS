@@ -149,21 +149,6 @@ export function WelcomePremiumBody({ payload, stepId, onInteractionContinue, emb
       const d = payload.data;
       return <CourseIncludesGrid units={d.units} bonusTitle={d.bonusTitle} bonusItems={d.bonusItems} />;
     }
-    case "commitment": {
-      const d = payload.data;
-      return (
-        <div className={cn(surface, "space-y-6")}>
-          {d.ourItems.length ? <ChecklistBlock title="המחויבות שלי אליכם" items={d.ourItems} asNumbers /> : null}
-          {d.yoursLede ? (
-            <IntroTextBlock>
-              <PremiumMarkdownBody body={d.yoursLede} variant="lesson" />
-            </IntroTextBlock>
-          ) : null}
-          <StudyPlanCards title={d.planTitle} options={d.planOptions} />
-          {d.ironItems.length ? <ChecklistBlock title={d.ironTitle} items={d.ironItems} asNumbers /> : null}
-        </div>
-      );
-    }
     case "success": {
       return (
         <div className={cn(surface, "space-y-3")}>

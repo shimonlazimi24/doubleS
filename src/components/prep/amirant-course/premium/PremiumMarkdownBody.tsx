@@ -3,6 +3,30 @@ import remarkGfm from "remark-gfm";
 import { AMIRANT_COURSE_MD_COMPONENTS } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import type { Components } from "react-markdown";
 import { cn } from "@/lib/design-system/cn";
+import { stripHtmlAnchorNoise } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
+
+/**
+ * Shortcode להטמעת וידאו בתוך markdown (כולל תוכן CMS):
+ * `{{video:https://youtu.be/XXXX|כותרת אופציונלית}}`
+ */
+const VIDEO_SHORTCODE = /\{\{video:([^|}]+)(?:\|([^}]*))?\}\}/g;
+
+type BodySegment = { kind: "markdown"; value: string } | { kind: "video"; src: string; title: string };
+
+function splitBodyOnVideoShortcodes(body: string): BodySegment[] {
+  const segments: BodySegment[] = [];
+  let lastIndex = 0;
+  VIDEO_SHORTCODE.lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = VIDEO_SHORTCODE.exec(body)) !== null) {
+    if (match.index > lastIndex) segments.push({ kind: "markdown", value: body.slice(lastIndex, match.index) });
+    segments.push({ kind: "video", src: match[1]!.trim(), title: match[2]?.trim() || "סרטון הסבר" });
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < body.length) segments.push({ kind: "markdown", value: body.slice(lastIndex) });
+  return segments;
+}
 
 const baseCompact: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
@@ -134,10 +158,12 @@ const lessonProse: Components = {
 type Props = { body: string; className?: string; variant?: "default" | "card" | "lesson" };
 
 export function PremiumMarkdownBody({ body, className, variant = "default" }: Props) {
-  if (!body.trim()) {
+  const cleanBody = stripHtmlAnchorNoise(body);
+  if (!cleanBody.trim()) {
     return null;
   }
   const c = variant === "card" ? cardCompact : variant === "lesson" ? lessonProse : baseCompact;
+  const segments = splitBodyOnVideoShortcodes(cleanBody);
   return (
     <div
       className={cn(
@@ -148,9 +174,15 @@ export function PremiumMarkdownBody({ body, className, variant = "default" }: Pr
       dir="rtl"
       lang="he"
     >
-      <ReactMarkdown remarkPlugins={[remarkGfm]} components={c}>
-        {body}
-      </ReactMarkdown>
+      {segments.map((seg, i) =>
+        seg.kind === "video" ? (
+          <AmirantVideoEmbed key={`video-${i}`} src={seg.src} title={seg.title} className="my-4" />
+        ) : seg.value.trim() ? (
+          <ReactMarkdown key={`md-${i}`} remarkPlugins={[remarkGfm]} components={c}>
+            {seg.value}
+          </ReactMarkdown>
+        ) : null,
+      )}
     </div>
   );
 }

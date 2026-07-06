@@ -2,13 +2,11 @@ import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/
 import type { ExpandedLessonCard } from "@/lib/amirant-course/lesson-content/microsection-split";
 import {
   parseClosingPremium,
-  parseCommitmentPremium,
   parseExamPremium,
   parseOpenPremium,
   parseSuccessRules,
   parseWhatPremium,
   parseWhyPremium,
-  splitStudentCommitmentsBody,
   type WelcomeStepPayload,
 } from "@/lib/amirant-course/lesson-content/welcome-premium-extract";
 import type { BuiltWorkspaceStep, UnifiedFlowItem } from "./workspace-step";
@@ -24,8 +22,8 @@ type Bucket =
   | "welcome"
   | "why"
   | "what"
-  | "commitment"
-  | "yours"
+  | "course_guide"
+  | "legacy_commitment"
   | "exam_intro"
   | "reform"
   | "success"
@@ -36,10 +34,11 @@ function classifySectionHeading(title: string): Bucket {
   const t = title.trim();
   if (/unit\s*1.*welcome|welcome\s*&\s*course\s*introduction/i.test(t)) return "meva";
   if (/שלום.*מזל|מזל טוב על הצעד|ברוכים הבאים לקורס/i.test(t)) return "welcome";
-  if (/למה בעצם|למה.*צריך.*מבחן/i.test(t)) return "why";
+  if (/ציוני המבחן|למה בעצם|למה.*צריך.*מבחן/i.test(t)) return "why";
   if (/מה תקבלו|מה מקבלים/i.test(t)) return "what";
-  if (/המחויבות שלי(?!.*לעצמ)/i.test(t)) return "commitment";
-  if (/המחויבות שלכם|לעצמכם/i.test(t)) return "yours";
+  if (/איך הקורס בנוי|העוזר האישי/i.test(t)) return "course_guide";
+  // עותקי CMS ישנים: סעיפי "המחויבות" הוסרו מהשיעור — נבלעים ולא מרונדרים
+  if (/המחויבות שלי(?!.*לעצמ)|המחויבות שלכם|לעצמכם/i.test(t)) return "legacy_commitment";
   if (/מבוא קצר.*מבחן/i.test(t)) return "exam_intro";
   if (/הרפורמה החדשה|19\.4\.2026/i.test(t)) return "reform";
   if (/איך מצליחים בקורס|💪/i.test(t)) return "success";
@@ -71,9 +70,9 @@ function joinBodies(bodies: string[]): string {
 
 const LABEL = {
   welcome: "ברוכים הבאים",
-  why: "למה צריך את מבחן אמירנט?",
+  why: "ציוני המבחן והמשמעות",
   what: "מה מקבלים בקורס?",
-  ourCommitment: "המחויבות שלנו",
+  courseGuide: "איך הקורס בנוי + עוזר AI",
   success: "איך מצליחים בקורס הזה?",
   exam: "מבוא קצר למבחן אמירנט",
   closing: "סיכום והמשך",
@@ -92,8 +91,8 @@ export function buildCuratedUnit1WelcomeSteps(flow: UnifiedFlowItem[], pageIntro
     welcome: [],
     why: [],
     what: [],
-    commitment: [],
-    yours: [],
+    course_guide: [],
+    legacy_commitment: [],
     exam_intro: [],
     reform: [],
     success: [],
@@ -106,11 +105,7 @@ export function buildCuratedUnit1WelcomeSteps(flow: UnifiedFlowItem[], pageIntro
     buckets[classifySectionHeading(s.title)].push(body);
   }
 
-  const yoursJoined = joinBodies(buckets.yours);
-  const splitY = splitStudentCommitmentsBody(yoursJoined);
-  const commitmentMerged = joinBodies(
-    [...buckets.commitment, splitY.introPart, splitY.schedulePart].filter(Boolean),
-  );
+  const courseGuideBody = joinBodies(buckets.course_guide);
   const examBody = joinBodies([...buckets.exam_intro, ...buckets.reform]);
   const closingBody = joinBodies([...buckets.wrap_up, ...buckets.closing]);
 
@@ -123,9 +118,6 @@ export function buildCuratedUnit1WelcomeSteps(flow: UnifiedFlowItem[], pageIntro
     : null;
   const welcomePayloadWhat: WelcomeStepPayload | null = joinBodies(buckets.what)
     ? { step: "what", data: parseWhatPremium(joinBodies(buckets.what)) }
-    : null;
-  const welcomePayloadCommit: WelcomeStepPayload | null = commitmentMerged
-    ? { step: "commitment", data: parseCommitmentPremium(joinBodies(buckets.commitment), yoursJoined, splitY) }
     : null;
   const welcomePayloadSuccess: WelcomeStepPayload | null = joinBodies(buckets.success)
     ? { step: "success", data: parseSuccessRules(joinBodies(buckets.success)) }
@@ -173,15 +165,14 @@ export function buildCuratedUnit1WelcomeSteps(flow: UnifiedFlowItem[], pageIntro
     });
   }
 
-  if (welcomePayloadCommit) {
+  if (courseGuideBody) {
     steps.push({
-      id: "curated-welcome-commitment",
+      id: "curated-welcome-course-guide",
       kind: "explanation",
-      label: LABEL.ourCommitment,
+      label: LABEL.courseGuide,
       flowIndex: null,
       ...nil,
-      card: makeCard("commitment", LABEL.ourCommitment, commitmentMerged, "explanation"),
-      welcome: welcomePayloadCommit,
+      card: makeCard("course-guide", LABEL.courseGuide, courseGuideBody, "explanation"),
     });
   }
 
