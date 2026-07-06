@@ -81,6 +81,8 @@ export const questionSourceItemSchema = z
     distractorExplanations: z.record(z.string(), z.string()).default({}),
     estimatedTimeSec: z.number().int().positive(),
     tags: z.array(z.string().min(1)).default([]),
+    /** קטע קריאה משותף (הבנת הנקרא) — הפניה ל־passages. */
+    passageId: z.string().min(1).optional(),
   })
   .superRefine((val, ctx) => {
     const ids = new Set(val.options.map((o) => o.id));
@@ -154,6 +156,14 @@ export const syllabusMappingPartSchema = z.object({
   items: z.array(syllabusMappingItemSchema),
 });
 
+/** קטע קריאה (הבנת הנקרא) — משותף לכמה שאלות דרך passageId. */
+export const passageSourceItemSchema = z.object({
+  passageId: z.string().min(1),
+  title: z.string().default(""),
+  bodyMarkdown: z.string().min(1),
+  sourceTag: z.string().default(""),
+});
+
 export const amirantContentSourceSchema = z.object({
   meta: z.object({
     courseSlug: z.literal("amirant-preparation"),
@@ -167,6 +177,8 @@ export const amirantContentSourceSchema = z.object({
   simulationSections: z.array(simulationSectionSourceItemSchema),
   aiRetrieval: z.array(aiRetrievalItemSchema),
   syllabusMapping: z.array(syllabusMappingPartSchema).default([]),
+  /** אופציונלי — חבילות ישנות עדיין תקפות. */
+  passages: z.array(passageSourceItemSchema).default([]),
 });
 
 export type AmirantContentSourceInput = z.infer<typeof amirantContentSourceSchema>;

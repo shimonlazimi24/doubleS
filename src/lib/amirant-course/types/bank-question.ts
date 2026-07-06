@@ -21,4 +21,8 @@ export interface BankQuestion {
   topicSlug: AmirantBankTopicSlug;
   subtopicSlug: string;
   difficulty: DifficultyLevel;
+  /** תגי מקור (כולל תג קבוצת החידון, למשל `sc-quiz-2-easy`) — לשיוך שאלות לשיעור. */
+  tags?: string[];
+  /** קטע קריאה משותף (הבנת הנקרא) — מזהה ב־passages.json. */
+  passageId?: string;
 }

@@ -271,19 +271,6 @@ Note: Since the findings might be controversial, "skepticism" (ספקנות) is 
 
 ---
 
-**Q21.** The report's findings were ______ with the government's official position on the issue.
-
-(A) at odds
-(B) in harmony
-(C) at peace
-(D) in line
-
-Wait - I need to check this. "At odds with" means "in conflict with". "In harmony with" and "in line with" both mean "consistent with". Only one of these is "wrong" in the sense of being inconsistent. The context "the report's findings were ___ with the government's official position" is ambiguous without more context. Let me ensure only ONE is correct:
-
-Actually, (A) at odds = conflict, (B) in harmony = agreement, (D) in line = agreement. (B) and (D) mean the same. This is a flaw. Let me make it: "The report's findings were [A] with the government's official position, leading to a public dispute." Now "at odds" is clearly correct due to the dispute.
-
-Let me rewrite the question below:
-
 **Q21.** The report's findings were ______ with the government's official position, leading to a public dispute.
 
 (A) at odds

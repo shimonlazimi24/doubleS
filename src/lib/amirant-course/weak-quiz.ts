@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AMIRANT_BANK_QUESTIONS } from "@/lib/amirant-course/question-bank";
+import { AMIRANT_GENERAL_BANK_QUESTIONS } from "@/lib/amirant-course/question-bank";
 import type { AmirantBankTopicSlug, BankQuestion } from "@/lib/amirant-course/types/bank-question";
 import { clampDifficultyLevel } from "@/lib/amirant-course/difficulty-clamp";
 import { wilsonLowerBound } from "@/lib/learning-intelligence/analytics";
@@ -193,7 +193,7 @@ export function generateWeakTopicsQuiz(params: {
   const used = new Set<string>();
   const questionIds: string[] = [];
 
-  const availableBank = AMIRANT_BANK_QUESTIONS;
+  const availableBank = AMIRANT_GENERAL_BANK_QUESTIONS;
 
   for (const topic of topics) {
     const topicQuestions = availableBank.filter((q) => q.topicSlug === topic);

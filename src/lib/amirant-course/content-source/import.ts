@@ -118,6 +118,24 @@ function buildSimulationBlueprints(
   return out;
 }
 
+/** ממפה שורות שאלה מה־source package ל־BankQuestion (כולל tags ו־passageId). */
+export function mapSourceQuestionsToBank(
+  questions: AmirantContentSourceInput["questions"],
+): BankQuestion[] {
+  return questions.map((q) => ({
+    id: normId(q.questionId),
+    prompt: q.questionText,
+    options: q.options.map((o) => ({ id: o.id, label: o.label })),
+    correctOptionId: q.correctOptionId,
+    explanation: q.explanation,
+    topicSlug: q.topic,
+    subtopicSlug: q.subtopic,
+    difficulty: q.difficultyLevel as DifficultyLevel,
+    tags: q.tags,
+    passageId: q.passageId,
+  }));
+}
+
 export interface ImportedAmirantCourseContent {
   sourceKind: "production" | "demo";
   readiness: "placeholder" | "production_ready";
@@ -156,16 +174,7 @@ export function importAmirantCourseContent(
     };
   }
 
-  const questionBank: BankQuestion[] = parsed.questions.map((q) => ({
-    id: normId(q.questionId),
-    prompt: q.questionText,
-    options: q.options.map((o) => ({ id: o.id, label: o.label })),
-    correctOptionId: q.correctOptionId,
-    explanation: q.explanation,
-    topicSlug: q.topic,
-    subtopicSlug: q.subtopic,
-    difficulty: q.difficultyLevel as DifficultyLevel,
-  }));
+  const questionBank: BankQuestion[] = mapSourceQuestionsToBank(parsed.questions);
 
   const practiceSets: ManifestPracticeSet[] = parsed.practiceSets.map((p) => ({
     id: normId(p.practiceSetId),

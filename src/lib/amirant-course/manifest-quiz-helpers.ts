@@ -1,10 +1,10 @@
-import { AMIRANT_BANK_QUESTIONS } from "./question-bank";
+import { AMIRANT_GENERAL_BANK_QUESTIONS } from "./question-bank";
 import type { AmirantBankTopicSlug } from "./types/bank-question";
 import type { ManifestQuiz } from "./types/course-manifest";
 import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 
 export function takeQuestionIds(topic: AmirantBankTopicSlug, n: number): string[] {
-  return AMIRANT_BANK_QUESTIONS.filter((q) => q.topicSlug === topic)
+  return AMIRANT_GENERAL_BANK_QUESTIONS.filter((q) => q.topicSlug === topic)
     .slice(0, n)
     .map((q) => q.id);
 }
@@ -16,7 +16,7 @@ export function takeQuestionIdsByDifficulty(
   minLevel: DifficultyLevel,
   maxLevel: DifficultyLevel,
 ): string[] {
-  return AMIRANT_BANK_QUESTIONS.filter(
+  return AMIRANT_GENERAL_BANK_QUESTIONS.filter(
     (q) => q.topicSlug === topic && q.difficulty >= minLevel && q.difficulty <= maxLevel,
   )
     .slice(0, n)

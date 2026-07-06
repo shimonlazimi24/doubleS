@@ -5,6 +5,7 @@ import practiceSetsJson from "../../../../content/amirant-import/source/practice
 import simulationsJson from "../../../../content/amirant-import/source/simulations.json";
 import aiRetrievalJson from "../../../../content/amirant-import/source/ai-retrieval.json";
 import syllabusMappingJson from "../../../../content/amirant-import/source/syllabus-mapping.json";
+import passagesJson from "../../../../content/amirant-import/source/passages.json";
 
 /**
  * Production authoring source (to be filled by content team).
@@ -26,4 +27,5 @@ export const AMIRANT_PRODUCTION_CONTENT_SOURCE: AmirantContentSourceInput = {
   syllabusMapping:
     ((syllabusMappingJson as { parts?: unknown[] }).parts ??
       []) as AmirantContentSourceInput["syllabusMapping"],
+  passages: passagesJson as AmirantContentSourceInput["passages"],
 };

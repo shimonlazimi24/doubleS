@@ -7,6 +7,8 @@ export interface ManifestLesson {
   estimatedMinutes: number;
   /** Optional video path when hosted (Supabase storage / CDN). */
   videoPath?: string | null;
+  /** מציג סלוט וידאו בראש השיעור (placeholder עד שמוגדר videoPath / video_url ב-CMS). */
+  videoSlot?: boolean;
   /** Practice: fixed set of question ids from bank (subset). */
   practiceSetId?: string;
   /** Adaptive or fixed quiz id from manifest. */
@@ -24,6 +26,11 @@ export interface ManifestQuiz {
   title: string;
   /** Adaptive MCQ test — engine picks 16 from bank. */
   adaptive: boolean;
+  /**
+   * "fixed_placement" — מבחן רמה בטופס קבוע (8 השלמת משפטים → 4 ניסוח מחדש →
+   * 3 הבנת הנקרא על קטע אחד), לא אדפטיבי. ברירת מחדל: "adaptive".
+   */
+  format?: "adaptive" | "fixed_placement";
   questionCount: number;
   timeLimitSec: number | null;
   /** Filter bank by these topic slugs; empty = all topics. */
@@ -48,6 +55,8 @@ export interface ManifestModule {
 export interface ManifestSimulation {
   id: string;
   title: string;
+  /** סרטון הסבר בעברית למסך הפתיחה של הסימולציה (placeholder כשריק). */
+  videoPath?: string | null;
   /** Pilot section (not scored). */
   pilot: { seconds: number; questionCount: number; topicSlug: string };
   /** Scored sections — timers must sum to 39 minutes. */

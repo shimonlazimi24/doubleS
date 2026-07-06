@@ -8,22 +8,75 @@ import { buildAmirantQuestionBank } from "./build-bank";
 import type { VocabQuizMode } from "./vocab-quiz-mode";
 export type { VocabQuizMode } from "./vocab-quiz-mode";
 export { amirantExamQuestionPromptForDisplay } from "./prompt-for-display";
-import { getResolvedAmirantProductionContent, getAmirantContentMode } from "../content-source/resolved-content";
+import {
+  getResolvedAmirantPassages,
+  getAmirantContentMode,
+  getResolvedAmirantQuestionBank,
+} from "../content-source/resolved-content";
+
+export { getResolvedAmirantPassages };
+export type { AmirantPassage } from "../content-source/resolved-content";
+
+export const AMIRANT_CONTENT_MODE: "production" | "demo" = getAmirantContentMode();
 
 /**
- * Explicit source split:
- * - production: imported validated content package
- * - demo: generated fallback bank (`build-bank.ts`)
+ * הבנק: שאלות אמיתיות מיובאות; שורות demo סינתטיות רק כמילוי לנושאים שחסרים
+ * במאגר האמיתי (וכשכל הנושאים מכוסים — ה-demo לא נבנה בכלל). ה-mode נגזר
+ * מאותה החלטה עצמה — לא מביטוי מקביל שעלול לסטות ממנה.
  */
-const imported = getResolvedAmirantProductionContent();
-export const AMIRANT_CONTENT_MODE: "production" | "demo" = getAmirantContentMode();
-export const AMIRANT_BANK_QUESTIONS: BankQuestion[] =
-  imported?.questionBank ?? buildAmirantQuestionBank();
+function buildMergedBank(): { bank: BankQuestion[]; mode: "production" | "demo" } {
+  const realBank = getResolvedAmirantQuestionBank();
+  if (!realBank?.length) return { bank: buildAmirantQuestionBank(), mode: "demo" };
+  const realTopics = new Set(realBank.map((q) => q.topicSlug));
+  const allTopics: AmirantBankTopicSlug[] = ["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"];
+  if (allTopics.every((t) => realTopics.has(t))) return { bank: realBank, mode: "production" };
+  const fillers = buildAmirantQuestionBank().filter((q) => !realTopics.has(q.topicSlug));
+  return { bank: [...realBank, ...fillers], mode: "production" };
+}
+
+const merged = buildMergedBank();
+
+/** "production" — הבנק האמיתי פעיל (גם אם המניפסט demo); "demo" — fallback סינתטי בלבד. */
+export const AMIRANT_BANK_MODE: "production" | "demo" = merged.mode;
+
+export const AMIRANT_BANK_QUESTIONS: BankQuestion[] = merged.bank;
+
+/**
+ * הבנק לחידונים/תרגולים רגילים — בלי שאלות הסימולציות: הן שמורות לשיעורי
+ * הסימולציה (getBankQuestionsByTag), ואם יופיעו בחידון רגיל הן "ישרפו" את
+ * הסימולציה שהתלמיד יפגוש אחר כך.
+ */
+export const AMIRANT_GENERAL_BANK_QUESTIONS: BankQuestion[] = AMIRANT_BANK_QUESTIONS.filter(
+  (q) => !q.tags?.includes("simulation"),
+);
 
 const BY_ID = new Map(AMIRANT_BANK_QUESTIONS.map((q) => [q.id, q]));
 
 export function getBankQuestion(id: string): BankQuestion | undefined {
   return BY_ID.get(id);
+}
+
+/** קטע קריאה לפי מזהה (הבנת הנקרא). */
+export function getPassage(passageId: string) {
+  return getResolvedAmirantPassages().get(passageId);
+}
+
+// אינדקס תגים — נבנה עצלנית בקריאה הראשונה (הבנק אימוטבילי בזמן ריצה)
+let byTag: Map<string, BankQuestion[]> | undefined;
+
+/** שאלות בנק לפי תג קבוצה (למשל `sc-quiz-2-easy`) — לשיוך שאלות לשיעור. */
+export function getBankQuestionsByTag(tag: string): BankQuestion[] {
+  if (!byTag) {
+    byTag = new Map();
+    for (const q of AMIRANT_BANK_QUESTIONS) {
+      for (const t of q.tags ?? []) {
+        const list = byTag.get(t);
+        if (list) list.push(q);
+        else byTag.set(t, [q]);
+      }
+    }
+  }
+  return byTag.get(tag) ?? [];
 }
 
 export function bankQuestionsToPoolItems(questions: BankQuestion[]): QuestionPoolItem[] {
@@ -39,7 +92,7 @@ export const AMIRANT_QUESTION_POOL: QuestionPoolItem[] = bankQuestionsToPoolItem
 
 export function filterBankByTopics(topics: AmirantBankTopicSlug[]): BankQuestion[] {
   const set = new Set(topics);
-  return AMIRANT_BANK_QUESTIONS.filter((q) => set.has(q.topicSlug));
+  return AMIRANT_GENERAL_BANK_QUESTIONS.filter((q) => set.has(q.topicSlug));
 }
 
 const VOCAB_MODES: VocabQuizMode[] = ["verbs", "nouns", "adjectives", "adverbs", "phrasal"];
