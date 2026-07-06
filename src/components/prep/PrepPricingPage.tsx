@@ -1,16 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { PREP_BASE } from "@/lib/prep/constants";
-import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
-import { Text } from "@/components/ui";
-
-const COURSE = `${PREP_BASE}/amirant/course`;
+import { readUtmParams, trackEvent } from "@/lib/prep/analytics";
+import { PLAN_DAYS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
 
 export type PlanId = "week" | "two_weeks" | "month";
 
+const SHARED_FEATURES = [
+  "כל המודולים + 6 סימולציות מלאות",
+  "בוחנים אדפטיביים לפי הרמה שלך",
+  "עוזר AI אישי בכל שיעור",
+  "דשבורד התקדמות אישי",
+];
+
+/**
+ * מחירים וימים מגיעים מ-pricing-plans.ts — אותו מקור שה-checkout מחייב לפיו.
+ * כאן רק קופי שיווקי (תוויות, badge, פיצ'רים) — כדי שעדכון מחיר לא יציג
+ * מחיר אחד ויחייב אחר.
+ */
 export const PLANS: {
   id: PlanId;
   label: string;
@@ -19,43 +27,16 @@ export const PLANS: {
   badge?: string;
   features: string[];
 }[] = [
-  {
-    id: "week",
-    label: "שבוע",
-    duration: "7 ימים",
-    price: 179,
-    features: [
-      "כל 8 מודולים + 4 סימולציות",
-      "בוחנים אדפטיביים AI",
-      "עוזר AI חי בכל שאלה",
-      "דשבורד התקדמות אישי",
-    ],
-  },
+  { id: "week", label: "שבוע", duration: `${PLAN_DAYS.week} ימים`, price: PLAN_PRICES_NIS.week!, features: SHARED_FEATURES },
   {
     id: "two_weeks",
     label: "שבועיים",
-    duration: "14 ימים",
-    price: 229,
+    duration: `${PLAN_DAYS.two_weeks} ימים`,
+    price: PLAN_PRICES_NIS.two_weeks!,
     badge: "הנבחר",
-    features: [
-      "כל 8 מודולים + 4 סימולציות",
-      "בוחנים אדפטיביים AI",
-      "עוזר AI חי בכל שאלה",
-      "דשבורד התקדמות אישי",
-    ],
+    features: SHARED_FEATURES,
   },
-  {
-    id: "month",
-    label: "חודש",
-    duration: "30 ימים",
-    price: 339,
-    features: [
-      "כל 8 מודולים + 4 סימולציות",
-      "בוחנים אדפטיביים AI",
-      "עוזר AI חי בכל שאלה",
-      "דשבורד התקדמות אישי",
-    ],
-  },
+  { id: "month", label: "חודש", duration: `${PLAN_DAYS.month} ימים`, price: PLAN_PRICES_NIS.month!, features: SHARED_FEATURES },
 ];
 
 export const EXTENSION_PLANS: {
@@ -64,66 +45,48 @@ export const EXTENSION_PLANS: {
   price: number;
   days: number;
 }[] = [
-  { id: "ext_week", label: "+שבוע", price: 20, days: 7 },
-  { id: "ext_two_weeks", label: "+שבועיים", price: 50, days: 14 },
-  { id: "ext_month", label: "+חודש", price: 70, days: 30 },
+  { id: "ext_week", label: "+שבוע", price: PLAN_PRICES_NIS.ext_week!, days: PLAN_DAYS.ext_week! },
+  { id: "ext_two_weeks", label: "+שבועיים", price: PLAN_PRICES_NIS.ext_two_weeks!, days: PLAN_DAYS.ext_two_weeks! },
+  { id: "ext_month", label: "+חודש", price: PLAN_PRICES_NIS.ext_month!, days: PLAN_DAYS.ext_month! },
 ];
 
-function safeNextPath(raw: string | null): string | null {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return null;
-  return raw;
-}
-
-function FreeBanner({ afterPayPath }: { afterPayPath: string | null }) {
-  return (
-    <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-emerald-700">גישה פתוחה</p>
-      <h2 className="mt-2 text-xl font-semibold text-ink">הקורס פתוח חינם כרגע</h2>
-      <Text as="p" variant="body" className="mt-2 text-muted">
-        כל המודולים, בוחנים אדפטיביים, סימולציות ועוזר AI — זמינים ללא תשלום.
-      </Text>
-      <div className="mt-6">
-        <Link
-          href={afterPayPath ?? COURSE}
-          className="inline-flex min-h-11 items-center justify-center rounded-control bg-[#0f1e3d] px-6 text-sm font-bold text-white transition hover:bg-[#16306a]"
-        >
-          התחל ללמוד עכשיו ←
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-export function PrepPricingPage({ mode = "purchase" }: { mode?: "purchase" | "extension" }) {
+export function PrepPricingPage() {
   const searchParams = useSearchParams();
   const lockedModule = searchParams.get("module");
   const checkoutState = searchParams.get("checkout");
-  const afterPayPath = safeNextPath(searchParams.get("next"));
 
   const [selected, setSelected] = useState<PlanId>("two_weeks");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  if (getPrepHasFullAccess()) {
-    return <FreeBanner afterPayPath={afterPayPath} />;
+  useEffect(() => {
+    trackEvent("view_pricing", {});
+  }, []);
+
+  function selectPlan(planId: PlanId) {
+    setSelected(planId);
+    trackEvent("select_plan", { plan: planId });
   }
 
   async function startCheckout(planId: string) {
     setError(null);
     setBusy(true);
+    trackEvent("begin_checkout", { plan: planId });
     try {
       const res = await fetch("/api/prep/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ planId }),
+        body: JSON.stringify({ planId, utm: readUtmParams() ?? undefined }),
       });
       const data = (await res.json()) as { url?: string; error?: string };
       if (!res.ok || !data.url) {
+        trackEvent("checkout_failed", { plan: planId, stage: "create" });
         setError(data.error ?? "לא ניתן לפתוח תשלום. התחברו קודם או פנו לתמיכה.");
         return;
       }
       window.location.href = data.url;
     } catch {
+      trackEvent("checkout_failed", { plan: planId, stage: "network" });
       setError("שגיאת רשת. נסו שוב.");
     } finally {
       setBusy(false);
@@ -153,7 +116,7 @@ export function PrepPricingPage({ mode = "purchase" }: { mode?: "purchase" | "ex
             <button
               key={plan.id}
               type="button"
-              onClick={() => setSelected(plan.id)}
+              onClick={() => selectPlan(plan.id)}
               className={`relative rounded-2xl border-2 p-5 text-right transition-all ${
                 isSelected
                   ? "border-[#0f1e3d] bg-[#0f1e3d] text-white shadow-lg"

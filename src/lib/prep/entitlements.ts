@@ -58,21 +58,6 @@ export async function hasAmirantFullAccess(
   return ent.accessType === "paid" || ent.accessType === "admin";
 }
 
-export async function grantCourseEntitlement(params: {
-  client: SupabaseClient;
-  userId: string;
-  courseSlug: string;
-  accessType: CourseAccessType;
-}): Promise<void> {
-  const { error } = await params.client.from("course_entitlements").upsert(
-    {
-      user_id: params.userId,
-      course_slug: params.courseSlug,
-      access_type: params.accessType,
-      starts_at: new Date().toISOString(),
-      ends_at: null,
-    },
-    { onConflict: "user_id,course_slug" },
-  );
-  if (error) throw error;
-}
+// ההענקה עצמה קורית ב-callback התשלום דרך grant_course_days (פונקציית SQL
+// אטומית, ראו supabase/payments-schema.sql) — אין כאן helper הענקה כדי שלא
+// ייווצר מסלול מקביל עם סמנטיקה שונה (איפוס starts_at / דריסת הארכות).

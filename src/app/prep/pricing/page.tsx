@@ -7,7 +7,7 @@ import { Container, Heading, PageLayout, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "מחירים",
-  description: "רכישת גישה מלאה לקורס Amirant Preparation.",
+  description: "רכישת גישה מלאה לקורס ההכנה לאמירנט.",
 };
 
 export default function PricingRoutePage() {
