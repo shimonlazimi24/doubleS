@@ -5,6 +5,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { getPrepShowCourseAssistant } from "@/lib/prep/prep-full-access";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { ensureTesterEntitlement } from "@/lib/prep/ensure-tester-entitlement.server";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
 import { Container } from "@/components/ui";
 import { AmirantCourseFloatingChat } from "@/components/prep/amirant-course/AmirantCourseFloatingChat";
@@ -27,7 +28,11 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
       const {
         data: { user },
       } = await client.auth.getUser();
-      showCourseChat = user ? await hasAmirantFullAccess(client, user.id) : false;
+      if (user) {
+        // בודקים מ-PREP_TESTER_EMAILS מקבלים entitlement אוטומטית בביקור הראשון
+        await ensureTesterEntitlement(client, user);
+        showCourseChat = await hasAmirantFullAccess(client, user.id);
+      }
     }
   }
   return (
