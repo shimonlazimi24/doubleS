@@ -13,12 +13,11 @@ import { Input } from "@/components/ui/input";
 import { Text } from "@/components/ui";
 
 const ERROR_MESSAGES: Record<string, string> = {
-  missing_code: "קישור ההתחברות לא תקין או שפג תוקף. בקשו קישור חדש.",
+  missing_code: "קישור ההתחברות לא תקין או שפג תוקפו. בקשו קוד חדש.",
   missing_config: "המערכת לא מוגדרת (Supabase). פנו לתמיכה.",
-  auth:
-    "ההתחברות נכשלה. פתחו את הקישור באותו דפדפן שבו ביקשתם אותו, או בקשו קישור חדש (תוקף ~5 דק׳).",
+  auth: "ההתחברות נכשלה. בקשו קוד חדש ונסו שוב (תוקף הקוד ~5 דק׳).",
   pkce_mismatch:
-    "הקישור נפתח בדפדפן אחר מזה שבו ביקשתם את המייל. בקשו קישור חדש ופתחו באותו חלון, או לבדיקה: npm run prep:login-link",
+    "הקישור נפתח בדפדפן אחר מזה שבו ביקשתם את המייל. הדרך הקלה: בקשו קוד חדש והקלידו כאן את 6 הספרות מהמייל — זה עובד מכל מכשיר.",
 };
 
 function safeReturnPath(raw: string | null): string {
@@ -39,6 +38,7 @@ export function PrepLoginForm() {
   const [email, setEmail] = useState("");
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
+  const [code, setCode] = useState("");
   const [message, setMessage] = useState<string | null>(null);
 
   const callbackUrl = useMemo(() => {
@@ -97,6 +97,38 @@ export function PrepLoginForm() {
     setSent(true);
   }
 
+  /**
+   * אימות בקוד 6 ספרות — עובד מכל דפדפן/מכשיר, בניגוד לקישור (PKCE) שחייב
+   * להיפתח באותו דפדפן שביקש אותו. זה המסלול הראשי; הקישור נשאר כנוחות.
+   */
+  async function verifyCode(e: React.FormEvent) {
+    e.preventDefault();
+    setMessage(null);
+    const client = createPrepSupabaseBrowserClient();
+    if (!client) {
+      setMessage("חסרים משתני Supabase. הגדירו NEXT_PUBLIC_SUPABASE_URL ו־ANON_KEY.");
+      return;
+    }
+    const token = code.replace(/\D/g, "");
+    if (token.length !== 6) {
+      setMessage("הקוד הוא 6 ספרות — כפי שמופיע במייל.");
+      return;
+    }
+    setBusy(true);
+    const { error } = await client.auth.verifyOtp({
+      email: email.trim(),
+      token,
+      type: "email",
+    });
+    if (error) {
+      setBusy(false);
+      setMessage(mapSupabaseAuthError(error));
+      return;
+    }
+    // ניווט מלא (לא router.push) כדי שה-middleware יראה את עוגיית הסשן מיד
+    window.location.assign(returnTo);
+  }
+
   return (
     <div className="mx-auto max-w-md space-y-6">
       {errorKey ? (
@@ -123,10 +155,48 @@ export function PrepLoginForm() {
       ) : null}
 
       {sent ? (
-        <div className="rounded-xl border border-line/80 bg-canvas px-4 py-5">
-          <Text as="p" variant="body">
-            שלחנו קישור התחברות ל־<strong>{email.trim()}</strong>. בדקו את תיבת הדוא״ל (וגם ספאם).
-          </Text>
+        <div className="space-y-4">
+          <div className="rounded-xl border border-line/80 bg-canvas px-4 py-4">
+            <Text as="p" variant="body">
+              שלחנו מייל ל־<strong>{email.trim()}</strong> עם <strong>קוד בן 6 ספרות</strong> וקישור
+              התחברות. בדקו גם בספאם.
+            </Text>
+          </div>
+          <form onSubmit={verifyCode} className="space-y-3">
+            <label className="block space-y-2">
+              <span className="text-sm font-medium text-ink">הקוד מהמייל</span>
+              <Input
+                type="text"
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                maxLength={6}
+                value={code}
+                onChange={(ev) => setCode(ev.target.value)}
+                placeholder="123456"
+                dir="ltr"
+                className="text-center text-xl font-bold tracking-[0.4em] tabular-nums"
+                autoFocus
+              />
+            </label>
+            <Button type="submit" variant="primary" className="w-full min-h-11" disabled={busy}>
+              {busy ? "מאמת…" : "כניסה"}
+            </Button>
+          </form>
+          <div className="flex items-center justify-between text-xs text-muted">
+            <button
+              type="button"
+              className="underline underline-offset-2 hover:text-ink"
+              disabled={busy}
+              onClick={() => {
+                setSent(false);
+                setCode("");
+                setMessage(null);
+              }}
+            >
+              שליחה חוזרת / כתובת אחרת
+            </button>
+            <span>אפשר גם ללחוץ על הקישור במייל — באותו דפדפן</span>
+          </div>
         </div>
       ) : (
         <form onSubmit={sendMagicLink} className="space-y-4">

@@ -89,9 +89,7 @@ export function PrepAuthCompleteClient() {
               const { error: hashErr } = await client.auth.setSession(hashRetry);
               if (hashErr) throw hashErr;
             } else if (isPkceMismatch(error)) {
-              throw new Error(
-                "pkce_mismatch: פתחו את הקישור באותו דפדפן שבו לחצתם «שליחת קישור», או השתמשו ב-npm run prep:login-link",
-              );
+              throw new Error("pkce_mismatch");
             } else {
               throw error;
             }
@@ -118,7 +116,7 @@ export function PrepAuthCompleteClient() {
         if (!cancelled) {
           setMessage(
             detail.includes("pkce_mismatch")
-              ? "יש לפתוח את הקישור באותו דפדפן שבו ביקשתם אותו, או ליצור קישור בדיקה עם npm run prep:login-link"
+              ? "הקישור נפתח בדפדפן אחר. חוזרים למסך ההתחברות — הקלידו שם את הקוד מהמייל."
               : "ההתחברות נכשלה…",
           );
         }
