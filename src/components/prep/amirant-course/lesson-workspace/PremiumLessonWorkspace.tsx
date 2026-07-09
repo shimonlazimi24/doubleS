@@ -160,30 +160,11 @@ export function PremiumLessonWorkspace({
 
   return (
     <div className={cn(lessonSaaS.pageWrap, lessonSaaS.workspaceFull, "w-full max-w-none")}>
-      {/*
-        RTL row: first column = sidebar (physical right), second = main (physical left).
-      */}
-      <div className="flex w-full max-w-none flex-col pb-4 sm:pb-6 lg:min-h-0 lg:flex-row lg:items-start lg:gap-0" dir="rtl" lang="he">
-        <CourseOutlineSidebar
-          className={cn(
-            "order-1 hidden min-h-0 w-full min-w-0 flex-col",
-            "lg:flex lg:w-[min(26rem,92vw)] lg:min-w-[19rem] lg:max-w-[26rem] lg:shrink-0",
-            "lg:sticky lg:top-0 lg:max-h-[min(100dvh,100vh)] lg:self-start lg:overflow-hidden",
-            "lg:border-s lg:border-stone-200/80",
-          )}
-          lessonId={lessonId}
-          courseHomeHref={courseHomeHref}
-          steps={steps}
-          activeIndex={activeIndex}
-          completedIndices={completedIndices}
-          onSelectStep={selectStep}
-          nextInSequence={sidebarNextLesson}
-          variant="panel"
-        />
-
+      {/* השיעור בגדול במרכז הדף; התפריט — drawer שנפתח מימין בכל הגדלים */}
+      <div className="w-full max-w-none pb-4 sm:pb-6" dir="rtl" lang="he">
         {outlineOpen ? (
           <div
-            className="fixed inset-0 z-50 lg:hidden"
+            className="fixed inset-0 z-50"
             role="dialog"
             aria-modal="true"
             aria-label="תוכנית הקורס"
@@ -218,17 +199,21 @@ export function PremiumLessonWorkspace({
 
         <main
           id="amirant-lesson-pulse"
-          className="order-2 min-h-0 w-full min-w-0 flex-1 bg-[#fafaf8]/80 lg:order-2 lg:border-s lg:border-stone-200/50"
+          className="min-h-0 w-full min-w-0"
         >
-          <div className="h-full w-full min-w-0 py-4 ps-3 pe-4 sm:py-5 sm:ps-5 sm:pe-6 lg:px-7 lg:py-5 xl:px-9">
+          <div className="h-full w-full min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
             <div className={cn(lessonSaaS.readingProse, "min-w-0")}>
-              <div className="sticky top-0 z-20 -mx-1 mb-3 flex items-center justify-between gap-2 rounded-xl border border-stone-200/85 bg-white/95 px-3 py-2.5 shadow-sm backdrop-blur-sm lg:hidden">
+              {/* טריגר תפריט מינימלי — לא תופס מקום */}
+              <div className="sticky top-2 z-20 mb-4 flex justify-start">
                 <button
                   type="button"
                   onClick={() => setOutlineOpen(true)}
-                  className="flex min-h-10 flex-1 items-center justify-between gap-2 rounded-lg border border-[#0a1224]/10 bg-slate-50/90 px-3 text-start text-sm font-semibold text-[#0f2347] transition hover:border-[#0a1224]/20 hover:bg-white"
+                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-sm backdrop-blur-sm transition hover:border-[#0f2347]/25"
+                  aria-haspopup="dialog"
+                  aria-expanded={outlineOpen}
                 >
-                  <span>תוכנית הקורס</span>
+                  <span aria-hidden>☰</span>
+                  <span>תוכן הקורס</span>
                   <span className="tabular-nums text-slate-500">
                     {n > 0 ? `${activeIndex + 1}/${n}` : "—"}
                   </span>

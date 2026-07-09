@@ -59,6 +59,7 @@ export function markdownishToPlain(text: string, maxLen: number): string {
   const t = text
     .replace(/\r\n/g, "\n")
     .replace(/^#+\s+/gm, "")
+    .replace(/^\s*-{3,}\s*$/gm, "") // קווי הפרדה (---) של markdown אינם טקסט
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
@@ -66,6 +67,7 @@ export function markdownishToPlain(text: string, maxLen: number): string {
     .replace(/\n{2,}/g, "\n")
     .replace(/\n/g, " ")
     .replace(/\s+/g, " ")
+    .replace(/\s*-{3,}\s*$/, "")
     .trim();
   if (t.length <= maxLen) return t;
   const cut = t.slice(0, maxLen);

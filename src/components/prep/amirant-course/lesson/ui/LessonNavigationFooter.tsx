@@ -27,43 +27,42 @@ export function LessonNavigationFooter({
   sticky = true,
 }: Props) {
   return (
+    // ניווט תחתון גדול וברור: הקודם מימין (עם חץ ימינה), הבא/תרגול משמאל
     <div
       className={cn(
-        "flex flex-col gap-2.5 [direction:rtl] [text-align:start] sm:flex-row sm:items-center sm:justify-between",
+        "flex items-center justify-between gap-3 border-t border-stone-200/80 pt-5 [direction:rtl] [text-align:start]",
         sticky &&
-          "max-lg:sticky max-lg:bottom-0 max-lg:z-20 max-lg:-mx-1 max-lg:border-t max-lg:border-stone-200/90 max-lg:bg-white/95 max-lg:px-2 max-lg:py-3 max-lg:pb-[max(0.65rem,env(safe-area-inset-bottom))] max-lg:backdrop-blur-md lg:static lg:bottom-auto",
-        "lg:mt-0 lg:border-t lg:border-stone-200/70 lg:pt-3 lg:pb-0",
-        !sticky && "mt-2 sm:mt-0",
+          "max-lg:sticky max-lg:bottom-0 max-lg:z-20 max-lg:-mx-1 max-lg:bg-white/95 max-lg:px-2 max-lg:py-3 max-lg:pb-[max(0.75rem,env(safe-area-inset-bottom))] max-lg:backdrop-blur-md lg:static lg:bottom-auto",
         className,
       )}
     >
-      <div className="flex flex-wrap items-center gap-2">
+      <Button
+        type="button"
+        variant="secondary"
+        className="min-h-12 min-w-[7.5rem] rounded-xl border-stone-200 bg-white px-6 text-base text-slate-700 shadow-sm disabled:opacity-40"
+        onClick={onPrev}
+        disabled={!canPrev}
+      >
+        <span aria-hidden className="me-1.5">→</span>
+        הקודם
+      </Button>
+      {canNext ? (
         <Button
           type="button"
-          variant="secondary"
-          className="min-h-10 min-w-[6.75rem] rounded-lg border-stone-200 bg-white px-4 text-[0.9375rem] text-slate-800 shadow-sm sm:min-h-9"
-          onClick={onPrev}
-          disabled={!canPrev}
+          variant="primary"
+          className="min-h-12 min-w-[9rem] rounded-xl px-8 text-base font-bold shadow-sm"
+          onClick={onNext}
         >
-          קודם
+          הבא
+          <span aria-hidden className="ms-1.5">←</span>
         </Button>
-        {canNext ? (
-          <Button
-            type="button"
-            variant="primary"
-            className="min-h-10 min-w-[6.75rem] rounded-lg px-4 text-[0.9375rem] shadow-sm sm:min-h-9"
-            onClick={onNext}
-          >
-            הבא
-          </Button>
-        ) : null}
-      </div>
-      {isLast && practiceHref ? (
+      ) : isLast && practiceHref ? (
         <Link
           href={practiceHref}
-          className="inline-flex min-h-10 items-center justify-center rounded-lg border border-sky-800/25 bg-white px-4 text-sm font-medium text-sky-900 transition hover:border-sky-800/40 hover:bg-sky-50/80"
+          className="inline-flex min-h-12 min-w-[9rem] items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-sm transition hover:bg-primary-hover"
         >
           עבור לתרגול
+          <span aria-hidden className="ms-1.5">←</span>
         </Link>
       ) : null}
     </div>
