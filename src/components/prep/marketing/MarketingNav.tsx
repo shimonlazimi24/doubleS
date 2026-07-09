@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PrepCoursesDropdown } from "@/components/prep/PrepCoursesDropdown";
 import { ButtonLink } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -64,7 +63,7 @@ export function MarketingNav() {
       >
         התחברות
       </Link>
-      <PrepCoursesDropdown />
+      {/* תפריט «קורסים» הוסר — קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
       {LINKS.map((item) => (
         <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
       ))}
