@@ -362,7 +362,10 @@ export async function streamOpenAiJsonResponse<T>(params: {
       const prevEmitted = Math.max(0, prevAccLen - answerStartIdx);
       const newChars = tail.slice(prevEmitted, visibleLen);
       if (newChars) {
-        params.onToken(newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\"));
+        // מקף ארוך מוחלף גם בזרימה החיה - עקבי עם שאר המערכת
+        params.onToken(
+          newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\").replace(/—/g, "-"),
+        );
       }
       if (end !== -1) { inAnswer = false; answerDone = true; }
     }

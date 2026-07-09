@@ -327,7 +327,7 @@ export async function runAmirantChatbot(
         schemaName: "amirant_chatbot",
         onToken,
       });
-      parsed = { ...result, intent: outIntent };
+      parsed = { ...result, intent: outIntent, answer: result.answer.replace(/—/g, "-") };
     } else {
       // Non-streaming structured output path (default)
       const ai = await runStructuredAi({
@@ -339,7 +339,7 @@ export async function runAmirantChatbot(
         cacheContext: { userQuery: request.userMessage + outIntent + String(stage), chunkIds },
         usageLog: { userId: userId ?? undefined, sessionId: logCtx?.sessionId, requestIp: logCtx?.requestIp },
       });
-      parsed = { ...ai.output, intent: outIntent };
+      parsed = { ...ai.output, intent: outIntent, answer: ai.output.answer.replace(/—/g, "-") };
     }
     const safety = validateAiGroundedNumericClaims({
       texts: [parsed.answer],
