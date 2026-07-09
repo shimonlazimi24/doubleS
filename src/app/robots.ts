@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/prep",
+        allow: "/",
         disallow: [
           "/prep/auth/",
           "/prep/dashboard",
