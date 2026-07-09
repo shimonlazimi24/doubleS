@@ -15,7 +15,7 @@ export type WordCardProps = {
  * Premium word surface: large EN headword, POS, visible translation, tabbed detail.
  */
 export function WordCard({ word, className }: WordCardProps) {
-  const posDisplay = word.partOfSpeech && word.partOfSpeech !== "—" ? word.partOfSpeech : "";
+  const posDisplay = word.partOfSpeech && word.partOfSpeech !== "-" ? word.partOfSpeech : "";
   const showEx = word.examples.length > 0;
   const hasSyn = Boolean(word.synonyms?.length);
   const hasAnt = Boolean(word.antonyms?.length);
@@ -57,7 +57,7 @@ export function WordCard({ word, className }: WordCardProps) {
                     <p className="mt-1 text-base leading-8 text-slate-800 [text-wrap:pretty]">{word.definition}</p>
                   </div>
                 ) : (
-                  <p className="text-sm text-slate-500">אין הגדרה נפרדת — עברו לדוגמאות.</p>
+                  <p className="text-sm text-slate-500">אין הגדרה נפרדת - עברו לדוגמאות.</p>
                 )}
               </div>
             ),

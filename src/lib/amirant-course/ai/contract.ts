@@ -2,11 +2,11 @@ import { z } from "zod";
 
 /**
  * API contract for `POST /api/prep/amirant-course/ai-analysis`.
- * The server only echoes **client-supplied** stats and lesson snippets — it never
+ * The server only echoes **client-supplied** stats and lesson snippets - it never
  * invents exam scores, percentages, or "official" Amirant results.
  *
  * TODO(future-llm): Add optional `openai: { model, messages, temperature: 0 }` when wiring
- * OpenAI — keep a separate code path that **rejects** any response containing numeric
+ * OpenAI - keep a separate code path that **rejects** any response containing numeric
  * claims not present in `stats` (post-filter or structured JSON output with Zod).
  */
 
@@ -24,7 +24,7 @@ export const aiAnalysisSessionEntrySchema = z.object({
 
 /**
  * All numeric fields are **user-provided analytics snapshots**; the model must not be trusted
- * to add new numbers — pass only what you already store in `localStorage` or DB.
+ * to add new numbers - pass only what you already store in `localStorage` or DB.
  */
 export const aiAnalysisStatsPayloadSchema = z.object({
   weakTopics: z.array(z.string()).optional(),
@@ -42,7 +42,7 @@ export const aiAnalysisLessonSnippetSchema = z.object({
 });
 
 /**
- * Input body — deterministic handler ignores unknown keys; Zod is used to validate shape only.
+ * Input body - deterministic handler ignores unknown keys; Zod is used to validate shape only.
  */
 export const aiAnalysisRequestSchema = z.object({
   kind: z.string().optional(),
@@ -90,6 +90,6 @@ export function buildDeterministicAnalysisText(input: {
     "המלצות לימוד (כלליות, בהתאם לנתונים בלבד):",
     "- לחזור על שיעורי המודולים שבהם מופיעים הנושאים החלשים.",
     "- להריץ מבחן אדפטיבי נוסף אחרי תרגול ממוקד.",
-    "- לעקוב אחרי זמן תשובה ממוצע אם גבוה — לתרגל קצב.",
+    "- לעקוב אחרי זמן תשובה ממוצע אם גבוה - לתרגל קצב.",
   ].join("\n");
 }

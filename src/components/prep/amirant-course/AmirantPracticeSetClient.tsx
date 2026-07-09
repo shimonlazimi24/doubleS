@@ -42,7 +42,7 @@ function buildTopicImprovementLines(params: {
     const label = AMIRANT_TOPIC_LABEL_HE[topic] ?? topic;
     if (preA == null && postA != null) {
       lines.push(
-        `${label}: בסיס אחרי הסט — ${Math.round(postA * 100)}% (נתון ראשון בנישה זו)`,
+        `${label}: בסיס אחרי הסט - ${Math.round(postA * 100)}% (נתון ראשון בנישה זו)`,
       );
     } else if (preA != null && postA != null) {
       const d = Math.round((postA - preA) * 100);
@@ -51,7 +51,7 @@ function buildTopicImprovementLines(params: {
           `${label}: ${Math.round(preA * 100)}% ← ${Math.round(postA * 100)}% (${d > 0 ? "+" : ""}${d} נק׳ דיוק)`,
         );
       } else {
-        lines.push(`${label}: יציב סביב ${Math.round(postA * 100)}% — עקבו אחרי רצף הימים הבאים`);
+        lines.push(`${label}: יציב סביב ${Math.round(postA * 100)}% - עקבו אחרי רצף הימים הבאים`);
       }
     }
   }
@@ -187,7 +187,7 @@ export function AmirantPracticeSetClient({
                   ))}
                 </ul>
                 {submitted && q.explanation ? (
-                  // "הערת מורה" — עקבי עם התרגול בשיעורים
+                  // "הערת מורה" - עקבי עם התרגול בשיעורים
                   <div className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4">
                     <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
                     <PremiumMarkdownBody body={q.explanation} variant="card" />

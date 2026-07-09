@@ -1,12 +1,12 @@
 /**
- * אינטגרציית סליקה מול Hyp (Yaad Sarig) — שרת בלבד.
+ * אינטגרציית סליקה מול Hyp (Yaad Sarig) - שרת בלבד.
  *
  * זרימה:
- * 1. `createHypPaymentUrl` — חתימה שרתית (action=APISign&What=SIGN עם KEY+PassP)
+ * 1. `createHypPaymentUrl` - חתימה שרתית (action=APISign&What=SIGN עם KEY+PassP)
  *    מול https://pay.hyp.co.il/p3/ ומקבלים querystring חתום לדף התשלום המתארח.
  * 2. הלקוח משלם בדף של Hyp ומוחזר לכתובת ההצלחה/שגיאה שמוגדרת בפורטל Hyp
  *    (יש להגדיר בפורטל: /api/prep/checkout/callback) עם פרמטרי העסקה + Sign.
- * 3. `verifyHypCallback` — אימות HMAC-SHA256 מקומי של הפרמטרים (בסדר הקנוני של
+ * 3. `verifyHypCallback` - אימות HMAC-SHA256 מקומי של הפרמטרים (בסדר הקנוני של
  *    Yaad) ואופציונלית אימות roundtrip‏ (What=VERIFY) מול השרת של Hyp.
  *
  * משתני סביבה: HYP_MASOF (מספר מסוף), HYP_API_KEY, HYP_PASSP,
@@ -26,7 +26,7 @@ function hypApiBase(): string {
   return process.env.HYP_API_BASE?.trim() || DEFAULT_API_BASE;
 }
 
-/** rawurlencode של PHP — כמו encodeURIComponent אבל מקודד גם !*'() */
+/** rawurlencode של PHP - כמו encodeURIComponent אבל מקודד גם !*'() */
 function phpRawUrlEncode(value: string): string {
   return encodeURIComponent(value).replace(
     /[!'()*]/g,
@@ -35,10 +35,10 @@ function phpRawUrlEncode(value: string): string {
 }
 
 export type HypCreatePaymentParams = {
-  /** הערך שיחזור בשדה Order בקולבק — מזהה רשומת התשלום אצלנו (אקראי). */
+  /** הערך שיחזור בשדה Order בקולבק - מזהה רשומת התשלום אצלנו (אקראי). */
   orderRef: string;
   amountNis: number;
-  /** תיאור העסקה (Info) — מופיע ללקוח ובפורטל. */
+  /** תיאור העסקה (Info) - מופיע ללקוח ובפורטל. */
   description: string;
   clientName?: string;
   email?: string;
@@ -46,7 +46,7 @@ export type HypCreatePaymentParams = {
 
 /**
  * בונה URL חתום לדף התשלום המתארח של Hyp.
- * זורק שגיאה אם החתימה נכשלת — אין fallback שקט.
+ * זורק שגיאה אם החתימה נכשלת - אין fallback שקט.
  */
 export async function createHypPaymentUrl(params: HypCreatePaymentParams): Promise<string> {
   const masof = process.env.HYP_MASOF?.trim();
@@ -101,7 +101,7 @@ export type HypCallbackVerification = {
   amountNis: number | null;
   /** ה-Order ששלחנו (order_ref של רשומת התשלום). */
   orderRef: string | null;
-  /** כל הפרמטרים — לשמירה ב-raw_callback. */
+  /** כל הפרמטרים - לשמירה ב-raw_callback. */
   raw: Record<string, string>;
   failureReason?: string;
 };
@@ -157,7 +157,7 @@ async function remoteVerifyValid(params: Record<string, string>): Promise<boolea
 }
 
 /**
- * מאמת קולבק תשלום מ-Hyp. `ok` = החתימה אומתה (לא אומר שהעסקה הצליחה —
+ * מאמת קולבק תשלום מ-Hyp. `ok` = החתימה אומתה (לא אומר שהעסקה הצליחה -
  * לבדוק `ccode === "0"` בנפרד).
  */
 export async function verifyHypCallback(searchParams: URLSearchParams): Promise<HypCallbackVerification> {
@@ -196,7 +196,7 @@ export async function verifyHypCallback(searchParams: URLSearchParams): Promise<
     return { ...base, ok: true };
   }
 
-  // מצב רגיל: Sign מקומי תקין מספיק; בלעדיו — roundtrip.
+  // מצב רגיל: Sign מקומי תקין מספיק; בלעדיו - roundtrip.
   if (localOk) return { ...base, ok: true };
   const remoteOk = await remoteVerifyValid(raw);
   if (remoteOk) return { ...base, ok: true };

@@ -320,7 +320,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
         {/* Body */}
         <div className="px-6 py-8 md:px-8">
 
-          {/* Step 1 — Exam date */}
+          {/* Step 1 - Exam date */}
           {step === 1 && (
             <div className="space-y-5">
               <StepHeading title="מתי מבחן המיון שלך?" subtitle="נעזור לך לתכנן את הקצב הנכון" />
@@ -373,7 +373,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 2 — Institution */}
+          {/* Step 2 - Institution */}
           {step === 2 && (
             <div className="space-y-5">
               <StepHeading title="באיזה מוסד לימודים?" subtitle="כדי להתאים את החומר לדרישות שלך" />
@@ -388,7 +388,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 3 — Field of study */}
+          {/* Step 3 - Field of study */}
           {step === 3 && (
             <div className="space-y-5">
               <StepHeading title="מה תחום הלימודים?" subtitle="נשתמש בזה להמלצות מותאמות" />
@@ -403,7 +403,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 4 — First time */}
+          {/* Step 4 - First time */}
           {step === 4 && (
             <div className="space-y-4">
               <StepHeading title="האם זו הפעם הראשונה?" />
@@ -426,7 +426,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 5 — Daily study time */}
+          {/* Step 5 - Daily study time */}
           {step === 5 && (
             <div className="space-y-4">
               <StepHeading title="כמה זמן ביום ללמידה?" subtitle="נתכנן איתך קצב ריאלי" />
@@ -449,7 +449,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 6 — Heard about */}
+          {/* Step 6 - Heard about */}
           {step === 6 && (
             <div className="space-y-4">
               <StepHeading title="איך שמעת עלינו?" subtitle="ניתן לבחור יותר מאפשרות אחת" />
@@ -472,7 +472,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             </div>
           )}
 
-          {/* Step 7 — Done */}
+          {/* Step 7 - Done */}
           {step === 7 && (
             <div className="space-y-6 py-4 text-center">
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-3xl">

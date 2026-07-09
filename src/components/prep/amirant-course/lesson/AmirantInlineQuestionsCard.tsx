@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * שאלות אינטראקטיביות בתוך שיעור — מחליף את השאלות השטוחות שהודבקו מה-md:
+ * שאלות אינטראקטיביות בתוך שיעור - מחליף את השאלות השטוחות שהודבקו מה-md:
  * שאלה, מתחתיה אפשרויות אחת מתחת לשנייה (לחיצות), טיימר אופציונלי שמתחיל
  * בלחיצה, בדיקת תשובות עם הסברים מהבנק.
  */
@@ -76,7 +76,7 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
       });
       saveAnalytics(analytics);
     } catch {
-      // אנליטיקס בלבד — לא חוסם את חוויית הבדיקה
+      // אנליטיקס בלבד - לא חוסם את חוויית הבדיקה
     }
   }, [answers, questions, sessionLabel, title]);
 
@@ -182,7 +182,7 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                   })}
                 </ul>
                 {checked && q.explanation ? (
-                  // "הערת מורה" — קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
+                  // "הערת מורה" - קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
                   <div className="mt-4 rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4 ps-4">
                     <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
                     <PremiumMarkdownBody body={q.explanation} variant="card" />

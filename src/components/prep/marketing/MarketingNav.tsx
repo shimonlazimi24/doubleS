@@ -63,7 +63,7 @@ export function MarketingNav() {
       >
         התחברות
       </Link>
-      {/* תפריט «קורסים» הוסר — קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
+      {/* תפריט «קורסים» הוסר - קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
       {LINKS.map((item) => (
         <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
       ))}

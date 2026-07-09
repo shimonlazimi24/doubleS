@@ -17,7 +17,7 @@ const ERROR_MESSAGES: Record<string, string> = {
   missing_config: "המערכת לא מוגדרת (Supabase). פנו לתמיכה.",
   auth: "ההתחברות נכשלה. בקשו קוד חדש ונסו שוב (תוקף הקוד ~5 דק׳).",
   pkce_mismatch:
-    "הקישור נפתח בדפדפן אחר מזה שבו ביקשתם את המייל. הדרך הקלה: בקשו קוד חדש והקלידו כאן את 6 הספרות מהמייל — זה עובד מכל מכשיר.",
+    "הקישור נפתח בדפדפן אחר מזה שבו ביקשתם את המייל. הדרך הקלה: בקשו קוד חדש והקלידו כאן את 6 הספרות מהמייל - זה עובד מכל מכשיר.",
 };
 
 function safeReturnPath(raw: string | null): string {
@@ -98,7 +98,7 @@ export function PrepLoginForm() {
   }
 
   /**
-   * אימות בקוד 6 ספרות — עובד מכל דפדפן/מכשיר, בניגוד לקישור (PKCE) שחייב
+   * אימות בקוד 6 ספרות - עובד מכל דפדפן/מכשיר, בניגוד לקישור (PKCE) שחייב
    * להיפתח באותו דפדפן שביקש אותו. זה המסלול הראשי; הקישור נשאר כנוחות.
    */
   async function verifyCode(e: React.FormEvent) {
@@ -111,7 +111,7 @@ export function PrepLoginForm() {
     }
     const token = code.replace(/\D/g, "");
     if (token.length !== 6) {
-      setMessage("הקוד הוא 6 ספרות — כפי שמופיע במייל.");
+      setMessage("הקוד הוא 6 ספרות - כפי שמופיע במייל.");
       return;
     }
     setBusy(true);
@@ -195,7 +195,7 @@ export function PrepLoginForm() {
             >
               שליחה חוזרת / כתובת אחרת
             </button>
-            <span>אפשר גם ללחוץ על הקישור במייל — באותו דפדפן</span>
+            <span>אפשר גם ללחוץ על הקישור במייל - באותו דפדפן</span>
           </div>
         </div>
       ) : (

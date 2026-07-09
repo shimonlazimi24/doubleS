@@ -11,7 +11,7 @@ export interface BankQuestionOption {
   label: string;
 }
 
-/** Single MCQ row — source of truth for adaptive selection + UI. */
+/** Single MCQ row - source of truth for adaptive selection + UI. */
 export interface BankQuestion {
   id: string;
   prompt: string;
@@ -21,8 +21,8 @@ export interface BankQuestion {
   topicSlug: AmirantBankTopicSlug;
   subtopicSlug: string;
   difficulty: DifficultyLevel;
-  /** תגי מקור (כולל תג קבוצת החידון, למשל `sc-quiz-2-easy`) — לשיוך שאלות לשיעור. */
+  /** תגי מקור (כולל תג קבוצת החידון, למשל `sc-quiz-2-easy`) - לשיוך שאלות לשיעור. */
   tags?: string[];
-  /** קטע קריאה משותף (הבנת הנקרא) — מזהה ב־passages.json. */
+  /** קטע קריאה משותף (הבנת הנקרא) - מזהה ב־passages.json. */
   passageId?: string;
 }

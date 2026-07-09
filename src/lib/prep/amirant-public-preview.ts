@@ -15,7 +15,7 @@ function normalizePath(pathname: string): string {
   return pathname;
 }
 
-/** Course home + introduction module lessons/quizzes — no login required. */
+/** Course home + introduction module lessons/quizzes - no login required. */
 export function isPrepAmirantCoursePublicPreviewPath(pathname: string): boolean {
   const path = normalizePath(pathname);
   if (path === COURSE_BASE) return true;

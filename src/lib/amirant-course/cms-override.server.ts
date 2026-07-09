@@ -1,5 +1,5 @@
 /**
- * CMS DB override — checks cms_lessons in Supabase before falling back to the
+ * CMS DB override - checks cms_lessons in Supabase before falling back to the
  * static file-based lesson registry.  Server-only (uses cookies / headers).
  */
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
@@ -50,7 +50,7 @@ export async function getAllCmsLessons(): Promise<CmsLesson[]> {
 }
 
 /**
- * Returns lesson content — DB first, then static registry fallback.
+ * Returns lesson content - DB first, then static registry fallback.
  *
  * If the DB has a body_markdown for this lesson, it overrides the static file.
  * If the DB has no entry, falls back to the existing JSON / markdown source.
@@ -67,7 +67,7 @@ export async function getLessonContentWithCmsOverride(
       content: {
         lessonId,
         blocks: [],
-        // Inject markdown directly — the lesson page will use this string
+        // Inject markdown directly - the lesson page will use this string
         cmsMarkdown: cmsLesson.body_markdown,
         videoUrl: cmsLesson.video_url ?? undefined,
       } as LessonContent & { cmsMarkdown: string; videoUrl?: string },

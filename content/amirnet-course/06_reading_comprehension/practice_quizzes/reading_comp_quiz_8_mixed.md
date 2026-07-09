@@ -14,7 +14,7 @@
 
 > Over the past decade, plant-based diets have moved from a niche lifestyle choice to a significant global trend. Once associated mainly with a small number of committed vegetarians and vegans, eating fewer animal products has become increasingly common among mainstream consumers. Sales of plant-based meat alternatives have grown rapidly, and many restaurants now offer dedicated vegetarian or vegan menus.
 >
-> Several factors have contributed to this shift. Concerns about personal health are often cited as a primary motivation. Studies have linked diets high in fruits, vegetables, legumes, and whole grains to reduced risks of heart disease, type 2 diabetes, and certain cancers. Environmental awareness has also played a major role, as producing meat — especially beef — requires significantly more water, land, and energy than producing plant foods. Animal welfare remains another important consideration for many consumers.
+> Several factors have contributed to this shift. Concerns about personal health are often cited as a primary motivation. Studies have linked diets high in fruits, vegetables, legumes, and whole grains to reduced risks of heart disease, type 2 diabetes, and certain cancers. Environmental awareness has also played a major role, as producing meat - especially beef - requires significantly more water, land, and energy than producing plant foods. Animal welfare remains another important consideration for many consumers.
 >
 > Still, the transition to plant-based eating is not without challenges. Some nutrients, such as vitamin B12 and certain types of iron, are more easily obtained from animal sources. Careful planning is needed to ensure a balanced diet, particularly for children, pregnant women, and athletes. Critics also argue that some plant-based substitutes, although marketed as healthy, contain high levels of salt or processed ingredients.
 >
@@ -162,7 +162,7 @@ Based on the final paragraph, what is the author's view on efforts to preserve e
 
 ### ✅ Question 3 – Correct Answer: **(B)**
 
-**איפה בקטע:** פסקה 2: "producing meat — especially beef — requires significantly more water, land, and energy than producing plant foods."
+**איפה בקטע:** פסקה 2: "producing meat - especially beef - requires significantly more water, land, and energy than producing plant foods."
 
 - (A) "no measurable effect" – סותר.
 - ✅ **(B)** – ציטוט ישיר.

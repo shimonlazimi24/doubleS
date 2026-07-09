@@ -9,15 +9,15 @@ export function GET() {
     (s, m) => s + m.lessons.length, 0
   );
 
-  const content = `# PREPARE — הכנה לאמירנט
+  const content = `# PREPARE - הכנה לאמירנט
 > ${base}/prep
 
 ## מה זה PREPARE?
-PREPARE (getprepared.academy) הוא פלטפורמת הכנה דיגיטלית לאמירנט — מבחן האנגלית האקדמי של מאל"ו הנדרש לקבלה לאוניברסיטאות בישראל.
+PREPARE (getprepared.academy) הוא פלטפורמת הכנה דיגיטלית לאמירנט - מבחן האנגלית האקדמי של מאל"ו הנדרש לקבלה לאוניברסיטאות בישראל.
 
 ## קורס הכנה לאמירנט
 - ${totalLessons} שיעורים מובנים ב-${AMIRANT_PREPARATION_MANIFEST.modules.length} מודולים
-- תרגול אדפטיבי עם AI — מסתגל לרמת הלומד
+- תרגול אדפטיבי עם AI - מסתגל לרמת הלומד
 - עוזר AI אישי לכל שאלה (רמזים, הסברים, הצגת תשובה)
 - סימולציות מלאות בתנאי אמת
 - זיהוי נקודות חולשה אוטומטי

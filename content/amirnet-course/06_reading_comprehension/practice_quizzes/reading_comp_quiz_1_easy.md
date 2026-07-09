@@ -54,7 +54,7 @@ In the passage, the phrase "no specific skills" (paragraph 1) suggests that walk
 >
 > When Spanish explorers brought cacao beans to Europe in the 16th century, Europeans added sugar to make the drink sweeter. However, chocolate remained a luxury that only the wealthy could afford. It was not until the 19th century, when mass production began, that chocolate became available to ordinary people.
 >
-> Today, chocolate is enjoyed all over the world in many different forms — as bars, candies, cakes, and drinks. Although the chocolate we eat today is very different from the ancient Mayan drink, its popularity continues to grow.
+> Today, chocolate is enjoyed all over the world in many different forms - as bars, candies, cakes, and drinks. Although the chocolate we eat today is very different from the ancient Mayan drink, its popularity continues to grow.
 
 ---
 

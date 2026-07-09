@@ -23,7 +23,7 @@ export function mapSupabaseAuthError(input: AuthErrorInput): string {
 
   if (c === "over_email_send_rate_limit" || m.includes("over_email_send_rate_limit")) {
     return [
-      "Supabase חסם שליחת מיילי התחברות זמנית (מגבלת אבטחה — גם אם לא קיבלתם מייל קודם).",
+      "Supabase חסם שליחת מיילי התחברות זמנית (מגבלת אבטחה - גם אם לא קיבלתם מייל קודם).",
       "המתינו כ־60 דקות, או התחברו עם Google למטה.",
       "לפיתוח תכוף: ב-Supabase → Authentication → Rate Limits / SMTP מותאם (ראו docs/SUPABASE_AUTH_SETUP.md).",
     ].join(" ");

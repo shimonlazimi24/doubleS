@@ -1,5 +1,5 @@
 /**
- * הטמעת סרטון בשיעור/סימולציה — YouTube / Vimeo / קובץ ישיר (Supabase Storage),
+ * הטמעת סרטון בשיעור/סימולציה - YouTube / Vimeo / קובץ ישיר (Supabase Storage),
  * עם כרטיס placeholder כשעדיין אין סרטון (src ריק).
  */
 import { cn } from "@/lib/design-system/cn";

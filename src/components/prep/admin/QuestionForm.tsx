@@ -18,7 +18,7 @@ export type QuestionFormData = {
 };
 
 const TOPICS = [
-  { value: "vocabulary", label: "Vocabulary — אוצר מילים" },
+  { value: "vocabulary", label: "Vocabulary - אוצר מילים" },
   { value: "sentence_completion", label: "Sentence Completion" },
   { value: "rephrasing", label: "Restatement / Rephrasing" },
   { value: "reading_comprehension", label: "Reading Comprehension" },
@@ -179,7 +179,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
       </div>
 
       <div className="mb-4">
-        <label className="block text-xs text-zinc-400 mb-2">אפשרויות תשובה — לחץ על הנכונה</label>
+        <label className="block text-xs text-zinc-400 mb-2">אפשרויות תשובה - לחץ על הנכונה</label>
         <div className="space-y-2">
           {form.options.map((opt, idx) => (
             <div key={opt.id} className="flex gap-3 items-center">

@@ -149,7 +149,7 @@ function parseAnswersAndExplanations(markdown) {
     }
 
     const answerMatch = line.match(
-      /^###\s+.*Question\s+(\d+)\s+[—–-]\s+(?:Correct\s+)?Answer:\s*✅?\s*\*?\*?\(([A-D])\)[^*]*\*?\*?.*$/i,
+      /^###\s+.*Question\s+(\d+)\s+[-–-]\s+(?:Correct\s+)?Answer:\s*✅?\s*\*?\*?\(([A-D])\)[^*]*\*?\*?.*$/i,
     );
     if (answerMatch) {
       flush();
@@ -162,7 +162,7 @@ function parseAnswersAndExplanations(markdown) {
     if (!currentQuestion) continue;
 
     const nextQuestion = line.match(
-      /^###\s+.*Question\s+\d+\s+[—–-]\s+(?:Correct\s+)?Answer:/i,
+      /^###\s+.*Question\s+\d+\s+[-–-]\s+(?:Correct\s+)?Answer:/i,
     );
     if (nextQuestion) continue;
 

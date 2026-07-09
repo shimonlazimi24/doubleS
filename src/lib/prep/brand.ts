@@ -1,4 +1,4 @@
-/** prePare — brand tokens (single source of truth). */
+/** prePare - brand tokens (single source of truth). */
 
 /** Typography wordmark (header, marketing) */
 export const PREP_BRAND_WORDMARK = "PREPARE";
@@ -14,7 +14,7 @@ export const PREP_LOGO_PATH = "/prep/logo.png";
 export const PREP_LOGO_WIDTH = 1024;
 export const PREP_LOGO_HEIGHT = 576;
 export const PREP_BRAND_TAGLINE_HE =
-  "מבחנים וקורסים ללימוד אנגלית — ממוקד, מדיד, בלי רעש";
+  "מבחנים וקורסים ללימוד אנגלית - ממוקד, מדיד, בלי רעש";
 
 /** @deprecated Use PREP_BRAND_NAV_HE or PREP_BRAND_LATIN */
 export const PREP_PRODUCT_NAME = PREP_BRAND_NAV_HE;
@@ -61,7 +61,7 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
   },
 ] as const;
 
-/** Google sign-in UI — off only with NEXT_PUBLIC_PREP_OAUTH_GOOGLE=0 when Supabase is set. */
+/** Google sign-in UI - off only with NEXT_PUBLIC_PREP_OAUTH_GOOGLE=0 when Supabase is set. */
 export function isGoogleOAuthEnabledInApp(): boolean {
   if (typeof process === "undefined") return false;
   const v = process.env.NEXT_PUBLIC_PREP_OAUTH_GOOGLE?.trim().toLowerCase();

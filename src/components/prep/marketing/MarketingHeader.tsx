@@ -21,7 +21,7 @@ export function MarketingHeader() {
         <Link
           href={PREP_BASE}
           className="shrink-0 transition-opacity hover:opacity-85"
-          aria-label="PREPARE — דף הבית"
+          aria-label="PREPARE - דף הבית"
         >
           <BrandWordmark size="sm" showEnLine={false} />
         </Link>

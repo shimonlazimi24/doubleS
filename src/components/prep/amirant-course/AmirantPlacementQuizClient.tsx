@@ -63,11 +63,11 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
   const finalizeOnceRef = useRef(false);
   const attemptIdRef = useRef<string | null>(null);
 
-  /** התחלת המבחן: בונים טופס, פותחים attempt, ומתחילים את הטיימר — רק בלחיצה. */
+  /** התחלת המבחן: בונים טופס, פותחים attempt, ומתחילים את הטיימר - רק בלחיצה. */
   const startTest = useCallback(() => {
     const exclusions = recentPlacementExclusions();
     const built = buildPlacementQuizForm({
-      // הבנק הכללי — בלי שאלות הסימולציות, כדי לא "לשרוף" אותן לפני שיעורי הסימולציה
+      // הבנק הכללי - בלי שאלות הסימולציות, כדי לא "לשרוף" אותן לפני שיעורי הסימולציה
       bank: AMIRANT_GENERAL_BANK_QUESTIONS,
       seed: `placement:${Date.now()}:${Math.random()}`,
       excludeQuestionIds: exclusions.questionIds,
@@ -75,7 +75,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
     });
     rememberPlacementForm(built);
     setForm(built);
-    // גודל מערכי המצב נגזר מהטופס שנבנה בפועל — לא מהמניפסט, כדי שטופס קצר
+    // גודל מערכי המצב נגזר מהטופס שנבנה בפועל - לא מהמניפסט, כדי שטופס קצר
     // (מאגר מדולדל) לא ישאיר משבצות שלעולם אי אפשר לענות עליהן ולסיים.
     setAnswers(Array.from({ length: built.questionIds.length }, () => null));
     responseTimesRef.current = Array.from({ length: built.questionIds.length }, () => 0);
@@ -246,7 +246,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
           <CardBody className="space-y-5 p-6 sm:p-8">
             <Text as="p" variant="body" className="leading-relaxed">
               מבחן קצר שממפה את רמת האנגלית הנוכחית שלך וקובע נקודת פתיחה מותאמת אישית לקורס.
-              בסיום מקבלים ציון משוער בסולם 50–150 — כמו במבחן האמיתי.
+              בסיום מקבלים ציון משוער בסולם 50–150 - כמו במבחן האמיתי.
             </Text>
             <div className="rounded-2xl border border-line/70 bg-surface-low p-5">
               <Text as="p" variant="labelAccent" className="text-primary">
@@ -263,14 +263,14 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">3</span>
-                  שאלות הבנת הנקרא — על קטע קריאה אחד
+                  שאלות הבנת הנקרא - על קטע קריאה אחד
                 </li>
               </ul>
             </div>
             <ul className="space-y-1.5 text-sm text-muted">
-              <li>⏱️ משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות — הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
+              <li>⏱️ משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות - הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
               <li>🔁 אפשר לנווט בין שאלות ולשנות תשובות עד סיום המבחן.</li>
-              <li>🎯 אין ציון עובר — המטרה היא למפות את נקודת הפתיחה שלך.</li>
+              <li>🎯 אין ציון עובר - המטרה היא למפות את נקודת הפתיחה שלך.</li>
             </ul>
             <button
               type="button"
@@ -290,18 +290,18 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
     return (
       <div className="mx-auto max-w-2xl space-y-6" dir="rtl">
         <Text as="h1" variant="titlePage">
-          מבחן רמה — תוצאות
+          מבחן רמה - תוצאות
         </Text>
         <Card className="border-primary/25">
           <CardBody className="space-y-6 p-6 sm:p-8">
-            {/* רגע הציון — זהב (חתימת "אקדמי מחודד") */}
+            {/* רגע הציון - זהב (חתימת "אקדמי מחודד") */}
             <div className="rounded-2xl bg-surface-low px-6 py-8 text-center">
               <Text as="p" variant="labelAccent" className="text-muted">
                 ציון משוער בסולם 50–150
               </Text>
               <p className="mt-2 text-6xl font-extrabold tabular-nums text-score">{results.normalizedScore}</p>
               <Text as="p" variant="bodySm" className="mt-2 text-muted">
-                נרמול פשוט מהאחוז — אינדיקציה בלבד, לא ציון רשמי
+                נרמול פשוט מהאחוז - אינדיקציה בלבד, לא ציון רשמי
               </Text>
             </div>
             <div className="grid grid-cols-2 gap-3">

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # מעתיק מסמכי «הבנת הנקרא» (יחידה 6) מ־Downloads ל־content/amirnet-course.
-# אם קיים practice_quizzes-*.zip — מחלץ ממנו קבצי .md ל־practice_quizzes.
+# אם קיים practice_quizzes-*.zip - מחלץ ממנו קבצי .md ל־practice_quizzes.
 # הרצה: bash scripts/copy-reading-comprehension-from-downloads.sh
 
 set -euo pipefail
@@ -45,7 +45,7 @@ for f in \
   copy_one "$f" "$DEST/$f"
 done
 
-# חבילת zip (שם עם חותמת זמן) — רק .md, שטוח לתיקיית practice_quizzes
+# חבילת zip (שם עם חותמת זמן) - רק .md, שטוח לתיקיית practice_quizzes
 shopt -s nullglob
 zips=("$SRC"/practice_quizzes-*.zip)
 if ((${#zips[@]})); then
@@ -60,15 +60,15 @@ if ((${#zips[@]})); then
     fi
   done
 else
-  echo "אין practice_quizzes-*.zip ב־$SRC — מדלג"
+  echo "אין practice_quizzes-*.zip ב־$SRC - מדלג"
 fi
 shopt -u nullglob
 
 if [[ "$missing" -ne 0 ]] && [[ "$zip_ok" -eq 0 ]]; then
-  echo "חלק מהעתקות ה־md נכשלו וגם ה־zip לא חולץ — בדוק." >&2
+  echo "חלק מהעתקות ה־md נכשלו וגם ה־zip לא חולץ - בדוק." >&2
   exit 1
 fi
 if [[ "$missing" -ne 0 ]]; then
-  echo "הערה: חלק מהקבצים הבודדים חסרו ב־$SRC; אם ה־zip מכסה אותם — אין בעיה." >&2
+  echo "הערה: חלק מהקבצים הבודדים חסרו ב־$SRC; אם ה־zip מכסה אותם - אין בעיה." >&2
 fi
 echo "סיימתי. נתונים תחת $DEST"

@@ -1,5 +1,5 @@
 /**
- * Stable UUIDs for the Amirant E2E demo — must match `supabase/seeds/amirant-demo.sql`.
+ * Stable UUIDs for the Amirant E2E demo - must match `supabase/seeds/amirant-demo.sql`.
  * Use in tests, Storybook data, or route handlers that deep-link to this course.
  */
 export const AMIRANT_DEMO_IDS = {
@@ -31,7 +31,7 @@ export const AMIRANT_DEMO_IDS = {
     restatement: "20000001-0000-4000-8000-000000000047",
   },
   quiz: "20000001-0000-4000-8000-000000000040",
-  /** 23 questions — order_index 1..23 (בנק לסימולציה + דמו) */
+  /** 23 questions - order_index 1..23 (בנק לסימולציה + דמו) */
   questions: [
     "20000001-0000-4000-8000-000000000101",
     "20000001-0000-4000-8000-000000000102",

@@ -1,5 +1,5 @@
 /**
- * Layer boundaries — single source of truth for what may read/write what.
+ * Layer boundaries - single source of truth for what may read/write what.
  *
  * Course Engine: authoritative for content, enrollments, lesson_progress, quiz_attempts,
  *                quiz_attempt_answers, and all deterministic scoring.

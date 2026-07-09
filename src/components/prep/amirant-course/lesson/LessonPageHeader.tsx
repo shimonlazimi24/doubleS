@@ -13,7 +13,7 @@ type Props = {
 };
 
 /**
- * Top page chrome: title, step counter, progress bar — not the hero (see `LessonHeroCard`).
+ * Top page chrome: title, step counter, progress bar - not the hero (see `LessonHeroCard`).
  */
 export function LessonPageHeader({
   kindLabel,

@@ -3,7 +3,7 @@ import type { CourseId, QuestionId, TopicId, UserId } from "../domain";
 /** Difficulty label on content; numeric 1 (easiest) .. 6 (hardest). */
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
-/** Authoritative adaptive row shape — mirrors `learner_adaptive_topic_state`. */
+/** Authoritative adaptive row shape - mirrors `learner_adaptive_topic_state`. */
 export interface LearnerAdaptiveTopicState {
   userId: UserId;
   courseId: CourseId;
@@ -24,7 +24,7 @@ export interface LearnerAdaptiveTopicState {
 /** Derived read model (computed in code, not stored as source of truth). */
 export interface AdaptiveTopicDerived {
   recentAccuracy: number;
-  /** Wilson lower bound on topic-level correctness — aligns with analytics. */
+  /** Wilson lower bound on topic-level correctness - aligns with analytics. */
   confidence: number;
   averageResponseTimeSec: number | null;
 }
@@ -52,7 +52,7 @@ export interface SubtopicMasteryView extends LearnerSubtopicStatsRow {
   explain: string;
 }
 
-/** Pool row for selection — minimal fields from `quiz_questions` + joins. */
+/** Pool row for selection - minimal fields from `quiz_questions` + joins. */
 export interface QuestionPoolItem {
   questionId: QuestionId;
   topicId: TopicId;

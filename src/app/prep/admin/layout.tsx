@@ -5,7 +5,7 @@ import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { AdminShell } from "@/components/prep/admin/AdminShell";
 
 /**
- * גייט שרת לאדמין — הגנת עומק בנוסף ל-middleware (שגם בודק is_admin).
+ * גייט שרת לאדמין - הגנת עומק בנוסף ל-middleware (שגם בודק is_admin).
  * לא-אדמין מנותב ל-login לפני שהעמוד מרונדר בכלל.
  */
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

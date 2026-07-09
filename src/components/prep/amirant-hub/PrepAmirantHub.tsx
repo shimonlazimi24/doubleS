@@ -15,14 +15,14 @@ const SCORE_LANES = [
 ] as const;
 
 const HOW_STEPS = [
-  { n: "01", title: "מבחן רמה", body: "מבחן פתיחה קצר — מיפוי רמה, מהירות ונושאים חלשים." },
+  { n: "01", title: "מבחן רמה", body: "מבחן פתיחה קצר - מיפוי רמה, מהירות ונושאים חלשים." },
   { n: "02", title: "תרגול ממוקד", body: "יחידות אדפטיביות שמתאימות לרמה ומחזקות בדיוק איפה שצריך." },
-  { n: "03", title: "סימולציה מלאה", body: "מבחן בזמן אמת, תנאי לחץ, ודוח אישי — כמו ביום הבחינה." },
+  { n: "03", title: "סימולציה מלאה", body: "מבחן בזמן אמת, תנאי לחץ, ודוח אישי - כמו ביום הבחינה." },
 ] as const;
 
 const FEATURES = [
   { icon: "◈", title: "למידה אדפטיבית", body: "רמת קושי משתנה בזמן אמת לפי ביצועים, לא לפי מסלול גנרי." },
-  { icon: "✦", title: "AI Coach", body: "משוב ממוקד אחרי כל בוחן — מה מחזק ציון מיידית ומה לדחות." },
+  { icon: "✦", title: "AI Coach", body: "משוב ממוקד אחרי כל בוחן - מה מחזק ציון מיידית ומה לדחות." },
   { icon: "◎", title: "זיהוי חולשות", body: "בוחנים מותאמים לנקודות החלשות שלך במקום תרגול מיותר." },
   { icon: "▣", title: "סימולציות אמיתיות", body: "תרחיש מבחן מלא עם לחץ זמן וניהול קצב כמו ביום הבחינה." },
 ] as const;
@@ -50,7 +50,7 @@ export function PrepAmirantHub() {
             מעודכן 2026 · מבוסס נתוני מבחן אמיתיים
           </span>
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-[3.5rem]">
-            פטור מאנגלית —
+            פטור מאנגלית -
             <br className="hidden sm:block" />
             בלי קורסי השלמה מיותרים
           </h1>
@@ -114,7 +114,7 @@ export function PrepAmirantHub() {
           </div>
           <div className="rounded-xl border border-[#d4a843]/30 bg-[#fffbee] px-5 py-4 text-center">
             <p className="text-sm font-semibold text-[#0f1e3d]">
-              הציון שלך נקבע לפי מהירות, דיוק ואסטרטגיה — לא רק ידע. אפשר לשפר.
+              הציון שלך נקבע לפי מהירות, דיוק ואסטרטגיה - לא רק ידע. אפשר לשפר.
             </p>
           </div>
         </div>
@@ -241,7 +241,7 @@ export function PrepAmirantHub() {
             הקורס המלא פתוח עכשיו
           </h2>
           <p className="mx-auto max-w-lg text-base text-white/70">
-            כל השיעורים, הבוחנים, הסימולציות והדשבורד האישי — ללא תשלום, ללא הגבלה.
+            כל השיעורים, הבוחנים, הסימולציות והדשבורד האישי - ללא תשלום, ללא הגבלה.
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <Link

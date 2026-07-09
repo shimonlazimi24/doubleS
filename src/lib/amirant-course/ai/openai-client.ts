@@ -29,7 +29,7 @@ export async function runEmbedding(input: {
   return { embedding, model: res.model ?? model };
 }
 
-/** Same contract as before refactor — delegates to `runStructuredAi`. */
+/** Same contract as before refactor - delegates to `runStructuredAi`. */
 export async function runStructuredOpenAi<T>(params: {
   schema: z.ZodType<T>;
   schemaName: string;

@@ -462,7 +462,7 @@ export function AmirantAdaptiveQuizClient({
     return (
       <div className="space-y-6">
         <Text as="h1" variant="titlePage">
-          {manifestQuiz.title} — תוצאות
+          {manifestQuiz.title} - תוצאות
         </Text>
         {nextAfterQuiz ? (
           <AmirantNextBestActionCard action={nextAfterQuiz} className="border-primary/20" />
@@ -534,7 +534,7 @@ export function AmirantAdaptiveQuizClient({
         <Text as="p" variant="bodySm" className="mt-1.5 text-ink/90 [direction:rtl] [text-align:start]">
           <span className="text-muted">אוצר מילים במבחן: </span>
           {vocabMode === "mixed" ? (
-            <span>מעורב — כל סוגי המילים (ברירת מחדל)</span>
+            <span>מעורב - כל סוגי המילים (ברירת מחדל)</span>
           ) : (
             <span className="font-semibold text-primary">מסונן ל{` ${VOCAB_MODE_LABEL_HE[vocabMode]}`} בלבד (שאלות אחרות, אם יש, ללא שינוי)</span>
           )}
@@ -568,7 +568,7 @@ export function AmirantAdaptiveQuizClient({
       {!currentQ && (
         <Card className="mt-6 p-6">
           <Text as="p" variant="body">
-            לא ניתן לטעון שאלה מהבנק — בדקו את מסנני הנושא.
+            לא ניתן לטעון שאלה מהבנק - בדקו את מסנני הנושא.
           </Text>
         </Card>
       )}

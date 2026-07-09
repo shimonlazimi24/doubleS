@@ -1,10 +1,10 @@
 /**
- * מודל הערכת יכולת למבחן הסימולציה — **קירוב** לרוח CAT / מודל לוגיסטי (1PL),
+ * מודל הערכת יכולת למבחן הסימולציה - **קירוב** לרוח CAT / מודל לוגיסטי (1PL),
  * לא העתקה של מודל סגור של מאל״ו (שאינו חשוף).
  *
  * - כל שאלה עם קושי b ∈ [1,6]; יכולת θ באותו סקאלה.
- * - P(נכון | θ, b) = σ(α·(θ − b)) — כמו פריט בודד ב־IRT פשוט.
- * - אחרי פרק: עדכון θ לפי ממוצע השאריות (y − P) — שקול למעבר צעד בניקוד Fisher / גראדיאנט רך.
+ * - P(נכון | θ, b) = σ(α·(θ − b)) - כמו פריט בודד ב־IRT פשוט.
+ * - אחרי פרק: עדכון θ לפי ממוצע השאריות (y − P) - שקול למעבר צעד בניקוד Fisher / גראדיאנט רך.
  * - רמת הפרק הבא לבחירת שאלות: עיגול θ למספר שלם 1–6.
  *
  * בין מבחנים: שמירת θ ב־localStorage (יחד עם תאימות לערכים ישנים).
@@ -19,7 +19,7 @@ const LS_START_LEVEL = "amirant-sim:lastStartLevel";
 const DEFAULT_THETA = 3;
 /** רגישות מסלול קטן–גדול (דומה ל־a ב־2PL מוקטן). */
 const DISCRIMINATION = 1.35;
-/** קצב למידה לפרק — מאוזן מול רעש בפרקים קצרים. */
+/** קצב למידה לפרק - מאוזן מול רעש בפרקים קצרים. */
 const DEFAULT_SECTION_ETA = 0.55;
 const MAX_THETA_DELTA_PER_SECTION = 0.95;
 
@@ -42,7 +42,7 @@ export function raschLikeP(theta: number, itemDifficulty: number): number {
 
 /**
  * עדכון θ אחרי פרק ציון: ממוצע השאריות (y−P) עם קצב למידה.
- * פרקים עם תערובת קושים — «קשה» יותר משקללת (דרך P) מאשר דיוק גולמי.
+ * פרקים עם תערובת קושים - «קשה» יותר משקללת (דרך P) מאשר דיוק גולמי.
  */
 export function updateThetaFromSectionResponses(
   theta: number,
@@ -68,7 +68,7 @@ export function discreteLevelFromTheta(theta: number): DifficultyLevel {
   return clampFloat(Math.round(theta), 1, 6) as DifficultyLevel;
 }
 
-/** θ בין מבחן למבחן — עדיפות לערך השמור; אחרת תאימות לאחוז/רמה ישנים. */
+/** θ בין מבחן למבחן - עדיפות לערך השמור; אחרת תאימות לאחוז/רמה ישנים. */
 export function readStoredThetaBetweenExams(): number {
   if (typeof window === "undefined") return DEFAULT_THETA;
   const raw = window.localStorage.getItem(LS_THETA);
@@ -106,7 +106,7 @@ function round4(x: number): number {
   return Math.round(x * 10000) / 10000;
 }
 
-/** להצגה / דיבוג — ממוצע P לפי θ ורשימת קשיים (לא נדרש ללוגיקה). */
+/** להצגה / דיבוג - ממוצע P לפי θ ורשימת קשיים (לא נדרש ללוגיקה). */
 export function expectedMeanP(theta: number, difficulties: number[]): number {
   if (difficulties.length === 0) return 0;
   let s = 0;

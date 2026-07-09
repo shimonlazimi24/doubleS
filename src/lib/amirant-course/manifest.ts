@@ -1,5 +1,5 @@
 /**
- * Course manifest (modules, lessons, quizzes, simulations) — **MVP: authored in TypeScript**.
+ * Course manifest (modules, lessons, quizzes, simulations) - **MVP: authored in TypeScript**.
  * For production CMS/Supabase: load rows with the same stable `id` values so routes and
  * `getManifest*` helpers stay unchanged; this file becomes a thin loader over HTTP/DB.
  */
@@ -21,7 +21,7 @@ const DEMO_MANIFEST: CourseManifest = {
       slug: "introduction",
       title: "מבוא לקורס",
       sortOrder: 0,
-      /** יחידה 1 — מבוא: קבצי `01_welcome_and_intro/` + אבחון; לוגיסטיקה בקובץ נפרד. */
+      /** יחידה 1 - מבוא: קבצי `01_welcome_and_intro/` + אבחון; לוגיסטיקה בקובץ נפרד. */
       lessons: [
         {
           id: "lesson.intro.welcome",
@@ -64,7 +64,7 @@ const DEMO_MANIFEST: CourseManifest = {
       ],
     },
     ...AMIRNET_CONTENT_MODULES,
-    /** מחוץ למסלול הלמידה הראשי — נגיש מעמוד הקורס / קישור ישיר; אחרי סיכום הקורס בסדר מיון. */
+    /** מחוץ למסלול הלמידה הראשי - נגיש מעמוד הקורס / קישור ישיר; אחרי סיכום הקורס בסדר מיון. */
     {
       id: "mod-logistics",
       slug: "logistics-bureaucracy",

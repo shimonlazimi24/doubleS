@@ -21,7 +21,7 @@ export async function runLessonChatAi(
   if (userId) {
     const parsed = amirantChatbotRequestSchema.safeParse(raw);
     const req = parsed.success ? parsed.data : null;
-    // Fire-and-forget insight log — don't await so it doesn't block the response
+    // Fire-and-forget insight log - don't await so it doesn't block the response
     void client.from("amirant_ai_insights").insert({
       user_id: userId,
       insight_kind: "lesson_chat",

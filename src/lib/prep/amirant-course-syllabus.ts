@@ -1,5 +1,5 @@
 /**
- * סילבוס מלא — קורס הכנה לאמירנט (מאל״ו).
+ * סילבוס מלא - קורס הכנה לאמירנט (מאל״ו).
  * «אמירם» בשיח יומיומי; המבחן הרשמי הוא אמירנט.
  *
  * כל עלה בעץ (leaf) הופך לשיעור נפרד ב־`buildAmirantCourseModules`.
@@ -12,7 +12,7 @@ export const AMIRANT_DIFFICULTY_MAX = 6 as const;
 export type AmirantDifficultyLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
 /**
- * מפרט טכני למימוש מנוע הסימולציה והקורס — **לא** חלק מסילבוס הלמידה לנבחן.
+ * מפרט טכני למימוש מנוע הסימולציה והקורס - **לא** חלק מסילבוס הלמידה לנבחן.
  * ראו גם `AMIRANT_SIMULATION_BUILDER_SPEC_HE` (רשימת דרישות בעברית).
  */
 export const AMIRANT_SIMULATION_TECH = {
@@ -25,19 +25,19 @@ export const AMIRANT_SIMULATION_TECH = {
   adaptiveAtSectionBoundary: true,
   adaptiveBetweenFullExams: true,
   crossExamDifficultyResetRule:
-    "לאחר מבחן חלש, המבחן הבא יפתח ברמת קושי נמוכה משמעותית; לאחר מבחן חזק — נקודת פתיחה גבוהה יותר, בכפוף למנוע האדפטיבי.",
+    "לאחר מבחן חלש, המבחן הבא יפתח ברמת קושי נמוכה משמעותית; לאחר מבחן חזק - נקודת פתיחה גבוהה יותר, בכפוף למנוע האדפטיבי.",
   questionBankLargerThanSingleExam: true,
 } as const;
 
-/** דרישות מילוליות למפתחים — לא מוצגות כיחידות בסילבוס הקורס ללומד. */
+/** דרישות מילוליות למפתחים - לא מוצגות כיחידות בסילבוס הקורס ללומד. */
 export const AMIRANT_SIMULATION_BUILDER_SPEC_HE: readonly string[] = [
   "מבחנים אדפטיביים דורשים אלגוריתם שינוי רמה.",
-  "לאחר לחיצה על תשובה חייבת להיות אפשרות לחזור אחורה ולתקן — בתוך אותו פרק עד סיום הפרק.",
+  "לאחר לחיצה על תשובה חייבת להיות אפשרות לחזור אחורה ולתקן - בתוך אותו פרק עד סיום הפרק.",
   "לכל פרק (מקבץ) זמן קצוב נפרד.",
   "אדפטיביות גם בין מבחן מלא למבחן מלא: מבחן חלש → המבחן הבא נפתח ברמת קלות משמעותית (והפוך).",
   "סולם קושי 1 (הכי קל) עד 6 (הכי קשה).",
   "16 שאלות ציון לכל מבחן, מתוך בנק שאלות גדול יותר.",
-  "פרק פיילוט אחד לתרגול — לא נספר בציון הסופי של הסימולציה.",
+  "פרק פיילוט אחד לתרגול - לא נספר בציון הסופי של הסימולציה.",
   "סה״כ ~39 דקות לפרקי האמת (ללא זמן הפיילוט).",
 ];
 
@@ -54,12 +54,12 @@ export interface SyllabusPart {
 }
 
 export const AMIRANT_COURSE_SYLLABUS_META = {
-  courseTitleHe: "קורס הכנה — אמירנט (מיון אנגלית)",
+  courseTitleHe: "קורס הכנה - אמירנט (מיון אנגלית)",
   shortNoteHe:
     "המבחן הרשמי הוא אמירנט (מאי 2024 ואילך), יורש אמיר״ם. סולם הציונים 50–150 נשמר לרוב המוסדות.",
 } as const;
 
-/** סילבוס מלא לפי המסמך שסופק — סדר לימוד מומלץ. */
+/** סילבוס מלא לפי המסמך שסופק - סדר לימוד מומלץ. */
 export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
   {
     id: "intro",
@@ -73,18 +73,18 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
         id: "intro-scores-tracks",
         title: "סוגי ציונים (50–150) ואיך מתרגמים להקבצות אנגלית באקדמיה (פטור, מתקדמים, בסיסי וכו׳)",
       },
-      { id: "intro-how-prep", title: "איך מתכוננים — עקרונות כלליים" },
+      { id: "intro-how-prep", title: "איך מתכוננים - עקרונות כלליים" },
       {
         id: "intro-maalau-register",
-        title: "בירוקרטיה — הרשמה דרך מאל״ו: מועדים, תשלום (~275–315 ש״ח), מיקומים (ת״א, ירושלים, חיפה, באר שבע), הרשמה לפני המועד",
+        title: "בירוקרטיה - הרשמה דרך מאל״ו: מועדים, תשלום (~275–315 ש״ח), מיקומים (ת״א, ירושלים, חיפה, באר שבע), הרשמה לפני המועד",
       },
       {
         id: "intro-institution-register",
-        title: "בירוקרטיה — הרשמה דרך מוסד הלימודים: פורטל סטודנט, מחירים (~300–320 ש״ח), מועדים לפי המוסד",
+        title: "בירוקרטיה - הרשמה דרך מוסד הלימודים: פורטל סטודנט, מחירים (~300–320 ש״ח), מועדים לפי המוסד",
       },
       {
         id: "intro-retake-rules",
-        title: "מבחן חוזר: מינימום ~35 יום בין מבחני אנגלית (אמירנט/אמיר״ם/פסיכומטרי); השפעת ציון גבוה/נמוך יותר — לפי נהל מאל״ו והמוסד",
+        title: "מבחן חוזר: מינימום ~35 יום בין מבחני אנגלית (אמירנט/אמיר״ם/פסיכומטרי); השפעת ציון גבוה/נמוך יותר - לפי נהל מאל״ו והמוסד",
       },
       {
         id: "intro-exam-day-rules",
@@ -115,7 +115,7 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
       { id: "vocab-flashcards", title: "כרטיסיות למידה (SRS) ומשחקי זיכרון" },
       {
         id: "vocab-self-tests",
-        title: "מבחני עצמי לאוצר מילים — לפי סוג או מעורבב",
+        title: "מבחני עצמי לאוצר מילים - לפי סוג או מעורבב",
       },
     ],
   },
@@ -125,10 +125,10 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
     bullets: [
       { id: "sc-guide", title: "מדריך כתוב + אודיו" },
       { id: "sc-video", title: "סרטון הדרכה" },
-      { id: "sc-pack-easy", title: "מקבצי שאלות — רמה קלה" },
-      { id: "sc-pack-mid", title: "מקבצי שאלות — רמה בינונית" },
-      { id: "sc-pack-hard", title: "מקבצי שאלות — רמה גבוהה" },
-      { id: "sc-pack-adaptive", title: "מקבצי מבחן — רמה משתנה (אדפטיבי)" },
+      { id: "sc-pack-easy", title: "מקבצי שאלות - רמה קלה" },
+      { id: "sc-pack-mid", title: "מקבצי שאלות - רמה בינונית" },
+      { id: "sc-pack-hard", title: "מקבצי שאלות - רמה גבוהה" },
+      { id: "sc-pack-adaptive", title: "מקבצי מבחן - רמה משתנה (אדפטיבי)" },
     ],
   },
   {
@@ -137,22 +137,22 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
     bullets: [
       { id: "rs-guide", title: "מדריך כתוב + אודיו" },
       { id: "rs-video", title: "סרטון הדרכה" },
-      { id: "rs-pack-easy", title: "מקבצי שאלות — רמה קלה" },
-      { id: "rs-pack-mid", title: "מקבצי שאלות — רמה בינונית" },
-      { id: "rs-pack-hard", title: "מקבצי שאלות — רמה גבוהה" },
-      { id: "rs-pack-adaptive", title: "מקבצי מבחן — רמה משתנה (אדפטיבי)" },
+      { id: "rs-pack-easy", title: "מקבצי שאלות - רמה קלה" },
+      { id: "rs-pack-mid", title: "מקבצי שאלות - רמה בינונית" },
+      { id: "rs-pack-hard", title: "מקבצי שאלות - רמה גבוהה" },
+      { id: "rs-pack-adaptive", title: "מקבצי מבחן - רמה משתנה (אדפטיבי)" },
     ],
   },
   {
     id: "reading",
-    title: "קטעי קריאה — הבנת הנקרא (Reading comprehension)",
+    title: "קטעי קריאה - הבנת הנקרא (Reading comprehension)",
     bullets: [
       { id: "rc-guide", title: "מדריך כתוב + אודיו" },
       { id: "rc-video", title: "סרטון הדרכה" },
-      { id: "rc-pack-easy", title: "מקבצי שאלות — רמה קלה" },
-      { id: "rc-pack-mid", title: "מקבצי שאלות — רמה בינונית" },
-      { id: "rc-pack-hard", title: "מקבצי שאלות — רמה גבוהה" },
-      { id: "rc-pack-adaptive", title: "מקבצי מבחן — רמה משתנה (אדפטיבי)" },
+      { id: "rc-pack-easy", title: "מקבצי שאלות - רמה קלה" },
+      { id: "rc-pack-mid", title: "מקבצי שאלות - רמה בינונית" },
+      { id: "rc-pack-hard", title: "מקבצי שאלות - רמה גבוהה" },
+      { id: "rc-pack-adaptive", title: "מקבצי מבחן - רמה משתנה (אדפטיבי)" },
     ],
   },
   {
@@ -165,7 +165,7 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
       },
       {
         id: "pilot-listen-gap",
-        title: "השלמת קטע שמע — השלמה לוגית למשפט חסר",
+        title: "השלמת קטע שמע - השלמה לוגית למשפט חסר",
       },
       {
         id: "pilot-word-formation",
@@ -173,11 +173,11 @@ export const AMIRANT_COURSE_SYLLABUS_PARTS: SyllabusPart[] = [
       },
       {
         id: "pilot-grammar-context",
-        title: "דקדוק בהקשר — מבנים תחביריים בתוך פסקה",
+        title: "דקדוק בהקשר - מבנים תחביריים בתוך פסקה",
       },
       {
         id: "pilot-writing",
-        title: "מטלת כתיבה — הכנה לטקסט עצמאי (~12 דק׳) בפורמט אקדמי",
+        title: "מטלת כתיבה - הכנה לטקסט עצמאי (~12 דק׳) בפורמט אקדמי",
       },
       {
         id: "pilot-scoring-note",

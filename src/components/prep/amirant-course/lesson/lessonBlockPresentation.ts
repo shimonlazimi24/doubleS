@@ -3,7 +3,7 @@ import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/
 const shell = "rounded-2xl border p-6 shadow-sm [direction:rtl] [text-align:start] sm:p-8";
 
 /**
- * Card shell + label colors — last utility wins; borders are set per variant.
+ * Card shell + label colors - last utility wins; borders are set per variant.
  */
 export function getLessonBlockPresentation(
   v: PremiumSectionVariant,

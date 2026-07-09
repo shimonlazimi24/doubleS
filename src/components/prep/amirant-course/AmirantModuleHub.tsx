@@ -59,7 +59,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
         <ul className="list-inside list-disc space-y-2 text-sm leading-relaxed text-muted">
           {(ui?.howToHe?.length
             ? ui.howToHe
-            : ["התקדמו לפי שיעורי המודול, ואז תרגול ומבחנים — כפי שמופיעים למטה."]).map((p) => (
+            : ["התקדמו לפי שיעורי המודול, ואז תרגול ומבחנים - כפי שמופיעים למטה."]).map((p) => (
             <li key={p} className="ps-1 marker:text-primary/60">
               {p}
             </li>
@@ -121,7 +121,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
                 שיעורים
               </Heading>
               <p className="text-sm text-muted">
-                לכל שיעור: <strong className="font-medium text-ink">מדריך</strong> (טקסט) / <strong className="font-medium text-ink">וידאו</strong> / <strong className="font-medium text-ink">מעורב</strong> — לפי
+                לכל שיעור: <strong className="font-medium text-ink">מדריך</strong> (טקסט) / <strong className="font-medium text-ink">וידאו</strong> / <strong className="font-medium text-ink">מעורב</strong> - לפי
                 סוג בקורס. אודיו/וידאו מורחב יתווספו לפי אספקת קבצים.
               </p>
               <ol className="space-y-2">
@@ -151,7 +151,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
                 תרגול · מבחנים · אדפטיבי
               </Heading>
               <p className="text-sm text-muted">
-                מבחנים אדפטיביים מסוננים לפי מנגנון הקורס. אחרי בוחן — משוב בדף ותובנות;{" "}
+                מבחנים אדפטיביים מסוננים לפי מנגנון הקורס. אחרי בוחן - משוב בדף ותובנות;{" "}
                 <Link className="font-medium text-primary underline-offset-2 hover:underline" href={`${courseBase}/review`}>
                   סקירה
                 </Link>
@@ -195,7 +195,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
                   </ul>
                   {ui?.kind === "vocabulary" ? (
                     <div className="mt-3 rounded-surface border border-line/50 bg-surface-low/30 p-3 [direction:rtl] [text-align:start]">
-                      <p className="text-sm font-semibold text-ink">מבחנים עצמיים — לפי סוג או מעורב</p>
+                      <p className="text-sm font-semibold text-ink">מבחנים עצמיים - לפי סוג או מעורב</p>
                       <p className="mt-1.5 text-xs leading-relaxed text-muted">
                         במבחנים הכוללים אוצר מילים: אפשר לפתוח את אותו בוחן עם{" "}
                         <code className="rounded bg-paper px-0.5 text-[0.7rem]" dir="ltr" translate="no">
@@ -257,7 +257,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
             סימולציות מלאות · זמן · ניתוח
           </Heading>
           <p className="text-sm text-muted">
-            מבחן מלא בזמן, פיילוט, ומקטעי ציון — לפי הגדרת הסימולציה. אחרי הסיום: ניתוח בזרימת הקורס, ו־
+            מבחן מלא בזמן, פיילוט, ומקטעי ציון - לפי הגדרת הסימולציה. אחרי הסיום: ניתוח בזרימת הקורס, ו־
             <Link className="font-medium text-primary underline-offset-2 hover:underline" href={`${courseBase}/analytics`}>
               אנליטיקה
             </Link>

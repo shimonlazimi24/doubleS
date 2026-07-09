@@ -5,10 +5,10 @@ import { cn } from "@/lib/design-system/cn";
 type Props = { className?: string };
 
 const MSG =
-  "צריך/ה הסבר נוסף — נא להשיב **בהתאם בלבד לרקע השיעור (RAG)** — בלי הזכייה בחומר.";
+  "צריך/ה הסבר נוסף - נא להשיב **בהתאם בלבד לרקע השיעור (RAG)** - בלי הזכייה בחומר.";
 
 /**
- * Subtle, single row — not the full coach surface.
+ * Subtle, single row - not the full coach surface.
  */
 export function LessonAiBlock({ className }: Props) {
   return (

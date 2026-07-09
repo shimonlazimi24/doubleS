@@ -1,5 +1,5 @@
 -- =============================================================================
--- Amirant E2E demo — course + 23-question bank (difficulty 1–6, tagged topics)
+-- Amirant E2E demo - course + 23-question bank (difficulty 1–6, tagged topics)
 -- Short free demo: 10 Q, intermediate+ (see app `AMIRANT_DEMO_SHORT_QUIZ_*`).
 -- Prerequisites: run `learning-intelligence-schema.sql` first.
 -- Idempotent on fixed primary keys (ON CONFLICT DO NOTHING where applicable).
@@ -19,7 +19,7 @@ VALUES (
   '20000001-0000-4000-8000-000000000002',
   '20000001-0000-4000-8000-000000000001',
   'amirant-demo',
-  'אמירנט — קורס הכנה מלא (סילבוס)',
+  'אמירנט - קורס הכנה מלא (סילבוס)',
   'מבנה לפי סילבוס מאל״ו: מבוא, אוצר מילים, סוגי שאלות, פיילוט, סימולציות. בנק 23 שאלות, רמות קושי 1–6.',
   true,
   1
@@ -35,12 +35,12 @@ INSERT INTO modules (id, course_id, title, sort_order) VALUES
 ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO lessons (id, module_id, title, sort_order, kind, body_md, video_storage_path, video_duration_sec, estimated_minutes) VALUES
-  ('20000001-0000-4000-8000-000000000021', '20000001-0000-4000-8000-000000000010', 'פתיחה — אסטרטגיית קריאה', 0, 'video', NULL, 'demo/amirant/m1-intro-reading.mp4', 720, 12),
-  ('20000001-0000-4000-8000-000000000022', '20000001-0000-4000-8000-000000000010', 'דקדוק אקדמי — סקירה', 1, 'text', E'# דקדוק אקדמי\n\nשימו לב בזמנים, מילות קישור והתאמה לנושא.', NULL, NULL, 25),
+  ('20000001-0000-4000-8000-000000000021', '20000001-0000-4000-8000-000000000010', 'פתיחה - אסטרטגיית קריאה', 0, 'video', NULL, 'demo/amirant/m1-intro-reading.mp4', 720, 12),
+  ('20000001-0000-4000-8000-000000000022', '20000001-0000-4000-8000-000000000010', 'דקדוק אקדמי - סקירה', 1, 'text', E'# דקדוק אקדמי\n\nשימו לב בזמנים, מילות קישור והתאמה לנושא.', NULL, NULL, 25),
   ('20000001-0000-4000-8000-000000000023', '20000001-0000-4000-8000-000000000010', 'תרגול מודול 1', 2, 'mixed', E'# תרגול\n\nעברו על הדוגמאות והמשיכו לשיעור הבא.', NULL, NULL, 20),
-  ('20000001-0000-4000-8000-000000000024', '20000001-0000-4000-8000-000000000011', 'הבנת הנקרא — טכניקות', 0, 'video', NULL, 'demo/amirant/m2-reading-skills.mp4', 900, 15),
+  ('20000001-0000-4000-8000-000000000024', '20000001-0000-4000-8000-000000000011', 'הבנת הנקרא - טכניקות', 0, 'video', NULL, 'demo/amirant/m2-reading-skills.mp4', 900, 15),
   ('20000001-0000-4000-8000-000000000025', '20000001-0000-4000-8000-000000000011', 'אוצר מילים בהקשר', 1, 'text', E'# אוצר מילים\n\nלמדו מילים מתוך משפטים מלאים, לא רשימות מבודדות.', NULL, NULL, 30),
-  ('20000001-0000-4000-8000-000000000026', '20000001-0000-4000-8000-000000000011', 'בוחן דמו — מבחן אמירנט (מלא)', 2, 'mixed', E'# בוחן דמו\n\nלמטה מוצמד בוחן הערכה. זמן מומלץ: 45 דקות.', NULL, NULL, 45)
+  ('20000001-0000-4000-8000-000000000026', '20000001-0000-4000-8000-000000000011', 'בוחן דמו - מבחן אמירנט (מלא)', 2, 'mixed', E'# בוחן דמו\n\nלמטה מוצמד בוחן הערכה. זמן מומלץ: 45 דקות.', NULL, NULL, 45)
 ON CONFLICT (id) DO NOTHING;
 
 -- ---------------------------------------------------------------------------
@@ -70,7 +70,7 @@ INSERT INTO quizzes (id, lesson_id, title, time_limit_sec, passing_score_pct, so
 VALUES (
   '20000001-0000-4000-8000-000000000040',
   '20000001-0000-4000-8000-000000000026',
-  'בוחן דמו אמירנט — גרסת מערכת',
+  'בוחן דמו אמירנט - גרסת מערכת',
   2340,
   60,
   0
@@ -78,7 +78,7 @@ VALUES (
 ON CONFLICT (id) DO NOTHING;
 
 -- ---------------------------------------------------------------------------
--- Questions (20) — בנק לסימולציה; רמות 1–6
+-- Questions (20) - בנק לסימולציה; רמות 1–6
 -- ---------------------------------------------------------------------------
 INSERT INTO quiz_questions (id, quiz_id, order_index, prompt, type, topic_id, subtopic_id, difficulty, explanation) VALUES
 ('20000001-0000-4000-8000-000000000101', '20000001-0000-4000-8000-000000000040', 1,
@@ -136,11 +136,11 @@ INSERT INTO quiz_questions (id, quiz_id, order_index, prompt, type, topic_id, su
 ('20000001-0000-4000-8000-000000000114', '20000001-0000-4000-8000-000000000040', 14,
  E'In academic writing, "mitigate" is closest in meaning to:',
  'single_choice', '20000001-0000-4000-8000-000000000031', '20000001-0000-4000-8000-000000000042', 4,
- E'"Mitigate" means to make something less severe — "alleviate" fits best here.'),
+ E'"Mitigate" means to make something less severe - "alleviate" fits best here.'),
 ('20000001-0000-4000-8000-000000000115', '20000001-0000-4000-8000-000000000040', 15,
  E'The paragraph argues that "peer review does not guarantee truth, but it reduces obvious errors." The author''s stance is best described as:',
  'single_choice', '20000001-0000-4000-8000-000000000032', '20000001-0000-4000-8000-000000000043', 5,
- E'The author acknowledges limits while defending a modest benefit — qualified support.'),
+ E'The author acknowledges limits while defending a modest benefit - qualified support.'),
 ('20000001-0000-4000-8000-000000000116', '20000001-0000-4000-8000-000000000040', 16,
  E'_____ several limitations, the model predicts outcomes reasonably well.',
  'single_choice', '20000001-0000-4000-8000-000000000033', '20000001-0000-4000-8000-000000000045', 5,

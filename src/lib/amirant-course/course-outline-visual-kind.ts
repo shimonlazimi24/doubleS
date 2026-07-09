@@ -23,8 +23,8 @@ export function getOutlineLessonVisualKind(lesson: ManifestLesson, module: Manif
 }
 
 /**
- * «כניסה למבחן» ביחידת מבוא (למשל אבחון) — בלי אקורדיון שלבים; כפתור play. שאר הקורס (כולל
- * שיעורים שמסומנים כ־quiz במניפסט אבל עשירים בשלבים) — אקורדיון כשיש 2+ שלבים.
+ * «כניסה למבחן» ביחידת מבוא (למשל אבחון) - בלי אקורדיון שלבים; כפתור play. שאר הקורס (כולל
+ * שיעורים שמסומנים כ־quiz במניפסט אבל עשירים בשלבים) - אקורדיון כשיש 2+ שלבים.
  */
 export function lessonUsesOutlineSubstepAccordion(lesson: ManifestLesson, module: ManifestModule): boolean {
   if (module.id === "mod-intro" && getOutlineLessonVisualKind(lesson, module) === "quiz") {

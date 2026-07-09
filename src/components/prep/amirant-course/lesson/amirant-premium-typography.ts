@@ -1,5 +1,5 @@
 /**
- * Single scale for premium Amirant lesson body (welcome / roadmap) — match `lessonSaaS` + product spec.
+ * Single scale for premium Amirant lesson body (welcome / roadmap) - match `lessonSaaS` + product spec.
  */
 export const amirantPremiumTypo = {
   pageTitle: "text-3xl font-semibold text-[#0f2347] sm:text-4xl",

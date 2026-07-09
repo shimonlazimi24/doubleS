@@ -14,15 +14,15 @@
 
 > **The Puzzle of the Placebo Effect**
 >
-> For decades, medical researchers have observed a curious phenomenon: patients who receive fake treatments — sugar pills, inactive injections, or even sham surgeries — often show genuine improvement in their symptoms. This phenomenon, known as the placebo effect, has long been treated as a methodological nuisance, something that drug trials must control for rather than a subject of study in its own right. In recent years, however, researchers have begun to investigate placebos with new seriousness, and what they have uncovered is changing how we think about the relationship between mind and body.
+> For decades, medical researchers have observed a curious phenomenon: patients who receive fake treatments - sugar pills, inactive injections, or even sham surgeries - often show genuine improvement in their symptoms. This phenomenon, known as the placebo effect, has long been treated as a methodological nuisance, something that drug trials must control for rather than a subject of study in its own right. In recent years, however, researchers have begun to investigate placebos with new seriousness, and what they have uncovered is changing how we think about the relationship between mind and body.
 >
 > Classical theories explained the placebo effect largely in psychological terms. Patients who believed they were receiving treatment, the theory went, simply felt better because they expected to feel better. While this explanation captures part of the truth, it cannot account for all the evidence. Brain imaging studies have shown that placebos can produce measurable changes in neural activity, triggering the release of natural painkillers and altering immune function. In some cases, the body's response to a placebo mirrors, to a surprising degree, its response to actual medication.
 >
-> More intriguingly still, certain conditions respond more robustly to placebos than others. Chronic pain, depression, and irritable bowel syndrome show substantial placebo effects, while conditions with clear structural causes — broken bones, bacterial infections — generally do not. This pattern has led some researchers to suggest that placebos work best for illnesses where the brain plays a significant role in generating or regulating symptoms. If true, this would mean that the placebo effect is not a single phenomenon but a family of related effects, each tied to particular bodily systems.
+> More intriguingly still, certain conditions respond more robustly to placebos than others. Chronic pain, depression, and irritable bowel syndrome show substantial placebo effects, while conditions with clear structural causes - broken bones, bacterial infections - generally do not. This pattern has led some researchers to suggest that placebos work best for illnesses where the brain plays a significant role in generating or regulating symptoms. If true, this would mean that the placebo effect is not a single phenomenon but a family of related effects, each tied to particular bodily systems.
 >
-> Perhaps most surprising is the finding that placebos can work even when patients know they are taking them. In several recent trials, participants were told explicitly that the pills they were receiving contained no active ingredients — and still, many experienced relief. Researchers have yet to fully explain this "open-label" placebo effect, though some propose that the ritual of taking medication, combined with conditioning built up over a lifetime of actual treatment, may be enough to trigger healing responses.
+> Perhaps most surprising is the finding that placebos can work even when patients know they are taking them. In several recent trials, participants were told explicitly that the pills they were receiving contained no active ingredients - and still, many experienced relief. Researchers have yet to fully explain this "open-label" placebo effect, though some propose that the ritual of taking medication, combined with conditioning built up over a lifetime of actual treatment, may be enough to trigger healing responses.
 >
-> The implications extend beyond academic curiosity. If placebos can harness the body's own resources for healing, then understanding them better might lead to more effective treatments — not as replacements for proven medications, but as complements to them. It might also change the ethics of medical practice, raising questions about when, if ever, doctors are justified in using placebos to help patients. What is becoming clear is that the placebo effect, once dismissed as mere imagination, may hold genuine lessons about the deep connections between belief, biology, and health.
+> The implications extend beyond academic curiosity. If placebos can harness the body's own resources for healing, then understanding them better might lead to more effective treatments - not as replacements for proven medications, but as complements to them. It might also change the ethics of medical practice, raising questions about when, if ever, doctors are justified in using placebos to help patients. What is becoming clear is that the placebo effect, once dismissed as mere imagination, may hold genuine lessons about the deep connections between belief, biology, and health.
 
 ---
 
@@ -102,7 +102,7 @@ What does the author imply about the future of placebo research?
 
 **סוג השאלה:** Specific Detail.
 
-**איפה בקטע:** פסקה 3: "conditions with clear structural causes — broken bones, bacterial infections — generally do not [show placebo effect]."
+**איפה בקטע:** פסקה 3: "conditions with clear structural causes - broken bones, bacterial infections - generally do not [show placebo effect]."
 
 **ניתוח:**
 - ❌ (A) Chronic pain – המקור מזכיר במפורש שזו **כן** מגיבה לפלסבו.
@@ -118,7 +118,7 @@ What does the author imply about the future of placebo research?
 
 **סוג השאלה:** Inference / Specific Detail.
 
-**איפה בקטע:** פסקה 4: "Perhaps most surprising is the finding that placebos can work even when patients know they are taking them. In several recent trials, participants were told explicitly that the pills they were receiving contained no active ingredients — and still, many experienced relief."
+**איפה בקטע:** פסקה 4: "Perhaps most surprising is the finding that placebos can work even when patients know they are taking them. In several recent trials, participants were told explicitly that the pills they were receiving contained no active ingredients - and still, many experienced relief."
 
 **ניתוח:**
 - ❌ (A) "more effective than real drugs" – המקור לא טוען שהן יותר יעילות.
@@ -149,7 +149,7 @@ What does the author imply about the future of placebo research?
 
 **סוג השאלה:** Inference – עמדת המחבר.
 
-**איפה בקטע:** פסקה 5: "If placebos can harness the body's own resources for healing, then understanding them better might lead to more effective treatments — **not as replacements for proven medications, but as complements to them**."
+**איפה בקטע:** פסקה 5: "If placebos can harness the body's own resources for healing, then understanding them better might lead to more effective treatments - **not as replacements for proven medications, but as complements to them**."
 
 **ניתוח:**
 - ❌ (A) "unlikely to produce any useful applications" – סותר; הקטע מדגיש פוטנציאל.

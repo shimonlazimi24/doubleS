@@ -71,7 +71,7 @@ function buildBlockIntro(blocks: ContentBlock[]): string {
   if (intro) return markdownishToPlain(intro.body, 360);
   const ex = blocks.find((b) => b.type === "explanation");
   if (ex) return markdownishToPlain(ex.body, 280);
-  return "השיעור בקטעים — עברו במצב צעדים או עם «הצג הכל».";
+  return "השיעור בקטעים - עברו במצב צעדים או עם «הצג הכל».";
 }
 
 export default async function AmirantCourseLessonPage({ params }: Props) {
@@ -138,7 +138,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     ? { ok: true as const, body: cmsMarkdown }
     : (hasMd && content.amirnetMarkdownRel ? readAmirantCourseMarkdownSource(content.amirnetMarkdownRel) : null);
   // שיעורי "מבחן תרגול": השאלות השטוחות נחתכות מה-md ומרונדרות כרכיב אינטראקטיבי מהבנק.
-  // חותכים רק אם קבוצת השאלות באמת נמצאה בבנק — אחרת (תג הוסב / מאגר נכשל)
+  // חותכים רק אם קבוצת השאלות באמת נמצאה בבנק - אחרת (תג הוסב / מאגר נכשל)
   // עדיף להשאיר את השאלות כטקסט מאשר שיעור בלי שאלות בכלל.
   const questionGroup = getLessonQuestionGroup(params.lessonId);
   const groupQuestions = questionGroup ? getBankQuestionsByTag(questionGroup.tag) : [];
@@ -190,7 +190,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     } else if (hit.lesson.id === "lesson.intro.roadmap") {
       flow = sectionItems;
     } else if (questionGroup || simulationRuntimeId) {
-      // שיעורי תרגול/סימולציה: בלי gates — הסבר ואז שאלות אינטראקטיביות
+      // שיעורי תרגול/סימולציה: בלי gates - הסבר ואז שאלות אינטראקטיביות
       flow = sectionItems;
     } else {
       flow = interleaveMarkdownGates(sections).map((x): UnifiedFlowItem => {
@@ -256,7 +256,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         <div className="mt-6">
           <AmirantVideoEmbed
             src={cmsVideoUrl ?? hit.lesson.videoPath ?? null}
-            title={`סרטון הסבר — ${hit.lesson.title}`}
+            title={`סרטון הסבר - ${hit.lesson.title}`}
           />
         </div>
       ) : null}

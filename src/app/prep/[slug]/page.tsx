@@ -56,7 +56,7 @@ function ContactCard() {
 function StructuredMarketingPage({ title, content }: { title: string; content: MarketingPageContent }) {
   return (
     <div className="bg-canvas">
-      {/* Header קומפקטי — בלי חלל ריק */}
+      {/* Header קומפקטי - בלי חלל ריק */}
       <div className="border-b border-line bg-paper">
         <Container max="readable" className="py-10 md:py-14">
           <Link

@@ -1,5 +1,5 @@
 /**
- * Service layer boundaries — implement with Supabase in a dedicated module later.
+ * Service layer boundaries - implement with Supabase in a dedicated module later.
  * Keeps adaptive logic pure in sibling files; facade orchestrates DB + events.
  */
 
@@ -36,7 +36,7 @@ export interface GetWeakAreasInput {
 }
 
 /**
- * Facade — single entry for adaptive engines + tutor context assembly.
+ * Facade - single entry for adaptive engines + tutor context assembly.
  * Implementation: load/save rows in `learner_adaptive_topic_state`, `learner_subtopic_stats`,
  * emit `learning_events` via `LearningService.emitEvent` where appropriate.
  */

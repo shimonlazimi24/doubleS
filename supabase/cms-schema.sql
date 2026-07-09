@@ -1,5 +1,5 @@
 -- ============================================================
--- PREPARE CMS — Content Management Tables
+-- PREPARE CMS - Content Management Tables
 -- Run in Supabase SQL Editor
 -- ============================================================
 

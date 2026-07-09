@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 /** הודעות ידידותיות לקודי תשובה נפוצים של Hyp/Yaad (CCode). */
 const CCODE_MESSAGES: Record<string, string> = {
   "1": "העסקה לא אושרה על ידי חברת האשראי. כדאי לוודא את פרטי הכרטיס או לנסות כרטיס אחר.",
-  "2": "העסקה לא אושרה — כרטיס חסום או מוגבל. פנו לחברת האשראי.",
-  "3": "העסקה לא אושרה — קוד שגוי. נסו שוב בזהירות.",
+  "2": "העסקה לא אושרה - כרטיס חסום או מוגבל. פנו לחברת האשראי.",
+  "3": "העסקה לא אושרה - קוד שגוי. נסו שוב בזהירות.",
   "4": "העסקה נדחתה על ידי חברת האשראי.",
-  "6": "העסקה נדחתה — סירוב חברת האשראי. אפשר לנסות כרטיס אחר.",
+  "6": "העסקה נדחתה - סירוב חברת האשראי. אפשר לנסות כרטיס אחר.",
   "33": "פרטי הכרטיס שגויים. בדקו מספר, תוקף ו-CVV ונסו שוב.",
   "800": "העסקה בוטלה.",
 };
 
 const REASON_MESSAGES: Record<string, string> = {
-  verify: "לא הצלחנו לאמת את התשלום מול חברת הסליקה. אם חויבתם — פנו לתמיכה ונטפל בזה מיד.",
-  order: "לא נמצאה עסקה תואמת. אם חויבתם — פנו לתמיכה עם צילום האישור.",
-  amount: "זוהתה אי-התאמה בסכום העסקה. לא בוצע חיוב על הגישה — פנו לתמיכה.",
-  server: "שגיאת מערכת זמנית. אם חויבתם — הגישה תוענק אוטומטית; אחרת נסו שוב.",
+  verify: "לא הצלחנו לאמת את התשלום מול חברת הסליקה. אם חויבתם - פנו לתמיכה ונטפל בזה מיד.",
+  order: "לא נמצאה עסקה תואמת. אם חויבתם - פנו לתמיכה עם צילום האישור.",
+  amount: "זוהתה אי-התאמה בסכום העסקה. לא בוצע חיוב על הגישה - פנו לתמיכה.",
+  server: "שגיאת מערכת זמנית. אם חויבתם - הגישה תוענק אוטומטית; אחרת נסו שוב.",
   plan: "התוכנית שנרכשה אינה מזוהה. פנו לתמיכה ונסדיר את הגישה.",
 };
 
@@ -35,7 +35,7 @@ export default function CheckoutFailurePage({
   const message =
     (searchParams.code && CCODE_MESSAGES[searchParams.code]) ??
     (searchParams.reason && REASON_MESSAGES[searchParams.reason]) ??
-    "התשלום לא הושלם. לא בוצע חיוב — אפשר לנסות שוב.";
+    "התשלום לא הושלם. לא בוצע חיוב - אפשר לנסות שוב.";
 
   return (
     <Container max="measure" className="py-12" dir="rtl">
@@ -64,7 +64,7 @@ export default function CheckoutFailurePage({
           </Link>
           <a
             href={`mailto:support@getprepared.academy?subject=${encodeURIComponent("בעיה בתשלום")}${
-              searchParams.order ? encodeURIComponent(` — הזמנה ${searchParams.order}`) : ""
+              searchParams.order ? encodeURIComponent(` - הזמנה ${searchParams.order}`) : ""
             }`}
             className="inline-flex min-h-12 items-center justify-center rounded-xl border border-line px-6 text-sm font-semibold text-primary"
           >

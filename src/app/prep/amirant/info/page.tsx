@@ -9,9 +9,9 @@ import { AMIRANT_COURSE_SYLLABUS_META } from "@/lib/prep/amirant-course-syllabus
 import { PREP_BASE } from "@/lib/prep/constants";
 
 export const metadata: Metadata = {
-  title: "אמירנט — מידע כללי וסילבוס",
+  title: "אמירנט - מידע כללי וסילבוס",
   description:
-    "מבוא למבחן מאל״ו, מעבר מאמיר״ם לאמירנט, סולם ציונים, נהלים, הכנה ורפורמות — לצד סילבוס הקורס באפליקציה.",
+    "מבוא למבחן מאל״ו, מעבר מאמיר״ם לאמירנט, סולם ציונים, נהלים, הכנה ורפורמות - לצד סילבוס הקורס באפליקציה.",
 };
 
 export default function AmirantInfoPage() {
@@ -26,7 +26,7 @@ export default function AmirantInfoPage() {
             ← חזרה לאמירנט
           </Link>
           <Heading level={1} className="mt-ds-6">
-            דף מידע כללי — אמירנט
+            דף מידע כללי - אמירנט
           </Heading>
           <Text as="p" variant="bodyLg" className="mt-ds-4 max-w-readable leading-relaxed text-muted">
             {AMIRANT_COURSE_SYLLABUS_META.shortNoteHe} למטה: סקירה מערכתית לפי המסמך שסיפקת, ואחריה עץ הסילבוס הטכני של קורס ההכנה במוצר.
@@ -44,7 +44,7 @@ export default function AmirantInfoPage() {
       <Section tone="paper" padding="loose" className="border-t border-line/80">
         <Container max="measureWide" className="space-y-4">
           <Text as="p" variant="bodySm" className="text-muted">
-            דפי מידע מעוצבים (מדריך, ציונים, רפורמה, טיפים, עלויות) זמינים כ־HTML סטטי — רשימה מלאה ו־Markdown של הקורס ב־
+            דפי מידע מעוצבים (מדריך, ציונים, רפורמה, טיפים, עלויות) זמינים כ־HTML סטטי - רשימה מלאה ו־Markdown של הקורס ב־
             <Link href={`${PREP_BASE}/amirant/materials`} className="font-semibold text-primary hover:underline">
               אינדקס החומרים
             </Link>

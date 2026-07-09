@@ -11,7 +11,7 @@ import type {
 } from "./domain";
 
 // ---------------------------------------------------------------------------
-// Zod schemas — strict metadata per eventType (single source of truth)
+// Zod schemas - strict metadata per eventType (single source of truth)
 // ---------------------------------------------------------------------------
 
 const lessonStarted = z
@@ -183,7 +183,7 @@ export function validateLearningEventMetadata<T extends LearningEventType>(
 }
 
 // ---------------------------------------------------------------------------
-// Envelope builder — metadata must pass Zod or the operation fails
+// Envelope builder - metadata must pass Zod or the operation fails
 // ---------------------------------------------------------------------------
 
 export type CreateLearningEventEnvelopeInput = {

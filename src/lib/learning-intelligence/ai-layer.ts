@@ -1,7 +1,7 @@
 import type { AttemptId, CourseId, LessonId, QuizId, TopicId, UserId } from "./domain";
 
 /**
- * AI may ONLY produce artifacts — never mutate authoritative tables.
+ * AI may ONLY produce artifacts - never mutate authoritative tables.
  * All outputs reference input_refs (chunk ids, lesson version, analytics snapshot ids).
  */
 
@@ -17,7 +17,7 @@ export interface AiInputRef {
   id: string;
 }
 
-/** Structured outputs — validate with zod at runtime in API route. */
+/** Structured outputs - validate with zod at runtime in API route. */
 export interface QuizExplanationOutput {
   kind: "quiz_explanation";
   questionId: string;
@@ -39,7 +39,7 @@ export interface CoachSummaryOutput {
   periodLabel: string;
   highlights: string[];
   nextSteps: string[];
-  /** Numbers must copy from analytics payload — not invented. */
+  /** Numbers must copy from analytics payload - not invented. */
   statsEcho: {
     completionRate: number;
     avgQuizScore: number | null;

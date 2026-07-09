@@ -30,7 +30,7 @@ const sizes = {
   },
 } as const;
 
-/** Vector-style typography logo — no raster image. */
+/** Vector-style typography logo - no raster image. */
 export function BrandWordmark({
   size = "md",
   className,

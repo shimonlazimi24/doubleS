@@ -1,6 +1,6 @@
 /**
  * פרסר לתוכן שיעורי "אוצר מילים": כותרות H2, ואז מקטעי `### 1. **word**` …
- * משמשים ל־UI של קורס, כרטיסיות ומשחק — בלי שינוי קבצי ה־MD.
+ * משמשים ל־UI של קורס, כרטיסיות ומשחק - בלי שינוי קבצי ה־MD.
  */
 
 import { stripMasachNumberingForDisplay } from "../content-source/split-markdown-masach";
@@ -31,7 +31,7 @@ const H2 = /^##(?!#)/;
 const H3_NUM = /^\s*###\s+(\d+)\.(\s+|$)/;
 
 /**
- * הכי נפוץ: `**achieve**` — נשלף את הראשון בשורת ה־H3
+ * הכי נפוץ: `**achieve**` - נשלף את הראשון בשורת ה־H3
  */
 export function extractVocabEntryWord(entryMd: string): string {
   const first = entryMd.split(/\r?\n/)[0] ?? "";
@@ -40,7 +40,7 @@ export function extractVocabEntryWord(entryMd: string): string {
   return first
     .replace(H3_NUM, "")
     .replace(/^\s*#+\s*/, "")
-    .trim() || "—";
+    .trim() || "-";
 }
 
 /**
@@ -53,10 +53,10 @@ export function extractVocabHebrewTranslation(entryMd: string): string {
     const s = line.replace(/^\s*[-*•]\s*/, "");
     const m1 = s.match(/\*?\*?תרגום:?\*?\*?\s*[:：]?\s*(.+?)\s*$/i);
     if (m1) {
-      return m1[1].replace(/^\*\*|\*\*$/g, "").replace(/\*\*/g, "").trim() || "—";
+      return m1[1].replace(/^\*\*|\*\*$/g, "").replace(/\*\*/g, "").trim() || "-";
     }
   }
-  return "—";
+  return "-";
 }
 
 function makeEntryData(fullMd: string, n: number): VocabEntryData {

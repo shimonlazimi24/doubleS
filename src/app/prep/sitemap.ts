@@ -5,7 +5,7 @@ const BASE = getPublicSiteUrl();
 const PREP = `${BASE}/prep`;
 
 /**
- * רק עמודים ציבוריים אמיתיים: בלי redirects (info/practice) ובלי עמודי שיעור —
+ * רק עמודים ציבוריים אמיתיים: בלי redirects (info/practice) ובלי עמודי שיעור -
  * robots.txt חוסם את /prep/amirant/course/ (דורש התחברות, אין ערך SEO).
  */
 export default function sitemap(): MetadataRoute.Sitemap {

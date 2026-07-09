@@ -7,7 +7,7 @@ import { cn } from "@/lib/design-system/cn";
 export function HeroSection() {
   const hero = MARKETING_HERO;
   return (
-    // "אקדמי מחודד": נייר נקי בלי washes — קווי שיער עושים את העבודה
+    // "אקדמי מחודד": נייר נקי בלי washes - קווי שיער עושים את העבודה
     <section className="relative border-b border-line bg-paper">
       <Container className={cn("relative py-12 md:py-16 lg:py-[4.5rem]")}>
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-14">

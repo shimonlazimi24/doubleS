@@ -1,5 +1,5 @@
 /**
- * Display-only cleanup for lesson bodies — no semantic changes to stored curriculum.
+ * Display-only cleanup for lesson bodies - no semantic changes to stored curriculum.
  */
 
 /** Remove duplicate «מה לקחת מזה» blocks when the UI adds its own key-takeaway line. */
@@ -19,7 +19,7 @@ export function stripTakeawayBlocksFromBody(body: string | undefined): string | 
 
 /**
  * עוגני HTML גולמיים (<a name="פח6"></a>) שהגיעו ממסמכי המקור מרונדרים כטקסט מילולי
- * ב־ReactMarkdown — מסירים אותם תמיד לפני רינדור.
+ * ב־ReactMarkdown - מסירים אותם תמיד לפני רינדור.
  */
 export function stripHtmlAnchorNoise(body: string): string {
   return body
@@ -40,7 +40,7 @@ export function stripEdgeSeparatorNoise(body: string): string {
     // Pure HR: ---, ***, ___
     if (/^[-*_]{3,}$/.test(t)) return true;
     // Pure-pipes-only line: | --- | --- |  (no real content between pipes)
-    // Only match if every cell is empty or dashes/spaces — not a real table separator between data rows
+    // Only match if every cell is empty or dashes/spaces - not a real table separator between data rows
     if (/^\|[\s|:-]+\|$/.test(t) && !/\w/.test(t)) return true;
     return false;
   };

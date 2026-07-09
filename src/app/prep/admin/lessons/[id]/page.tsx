@@ -52,7 +52,7 @@ export default async function EditLessonPage({ params }: { params: { id: string 
     );
   }
 
-  // No CMS entry — pre-fill from static registry
+  // No CMS entry - pre-fill from static registry
   if (!staticMarkdown) notFound();
 
   // Get lesson title from manifest

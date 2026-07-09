@@ -1,6 +1,6 @@
 import type { CourseId, TopicId, UserId } from "./domain";
 
-/** One row per (user, course, topic) — updated by batch job or incremental worker. */
+/** One row per (user, course, topic) - updated by batch job or incremental worker. */
 export interface LearnerTopicStats {
   userId: UserId;
   courseId: CourseId;
@@ -10,7 +10,7 @@ export interface LearnerTopicStats {
   /** accuracy = questionsCorrect / questionsAttempted (0 if attempted === 0). */
   accuracy: number;
   /**
-   * Confidence in [0,1] — Wilson score lower bound or Beta posterior (MVP: Wilson).
+   * Confidence in [0,1] - Wilson score lower bound or Beta posterior (MVP: Wilson).
    * Prevents "100% weak" on n=1.
    */
   confidence: number;
@@ -45,7 +45,7 @@ export function averageScore(scores: number[]): number | null {
   return scores.reduce((a, b) => a + b, 0) / scores.length;
 }
 
-/** Wilson score interval lower bound for binomial proportion — stabilizes small n. */
+/** Wilson score interval lower bound for binomial proportion - stabilizes small n. */
 export function wilsonLowerBound(correct: number, total: number, z = 1.96): number {
   if (total <= 0) return 0;
   const p = correct / total;
@@ -106,7 +106,7 @@ export function isStrongTopic(
 
 /**
  * Improvement over time: compare mean score in first half vs second half of attempts (by time).
- * Implemented in SQL/job; here — pure function on ordered scores.
+ * Implemented in SQL/job; here - pure function on ordered scores.
  */
 export function improvementDeltaScores(orderedScores: number[]): number | null {
   if (orderedScores.length < 4) return null;

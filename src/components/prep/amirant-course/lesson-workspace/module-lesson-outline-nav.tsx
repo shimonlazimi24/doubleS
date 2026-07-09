@@ -1,6 +1,6 @@
 /**
  * Module-level lesson list (e.g. for a module hub page). Not mounted on `/course/lesson/[lessonId]`
- * — lesson pages use `CourseOutlineSidebar` (current module only) as the only right rail.
+ * - lesson pages use `CourseOutlineSidebar` (current module only) as the only right rail.
  */
 import Link from "next/link";
 import { cn } from "@/lib/design-system/cn";
@@ -76,7 +76,7 @@ export function ModuleLessonOutlineNav({ outline, variant, className }: Props) {
     <div className={cn("mt-3 border-t border-stone-200/80 pt-3 [direction:rtl] [text-align:start]", className)} lang="he">
       <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">שיעורים במודול</p>
       <p className="mt-1 text-[0.8125rem] font-semibold leading-snug text-[#0f2347] sm:text-sm">{moduleTitleHe}</p>
-      <p className="mt-1 text-[11px] leading-relaxed text-slate-500 sm:text-xs">כל השיעורים בפרק — לחצו כדי לעבור (גם לפני סיום השלבים).</p>
+      <p className="mt-1 text-[11px] leading-relaxed text-slate-500 sm:text-xs">כל השיעורים בפרק - לחצו כדי לעבור (גם לפני סיום השלבים).</p>
       <nav className="mt-2.5 space-y-1" aria-label="שיעורים במודול">
         {lessons.map((l, i) => {
           const here = l.id === currentLessonId;

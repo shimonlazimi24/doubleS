@@ -14,7 +14,7 @@ type Props = {
 
 const STEP_EASE = "duration-200 ease-out motion-reduce:duration-0";
 
-/** Nested step under the current lesson — compact, light surface. */
+/** Nested step under the current lesson - compact, light surface. */
 export function CourseOutlineStepRow({ index, label, active, completed, onSelect, prefersReducedMotion }: Props) {
   return (
     <button

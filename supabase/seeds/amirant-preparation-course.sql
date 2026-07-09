@@ -1,4 +1,4 @@
--- Amirant Preparation — optional DB alignment (stable UUIDs can be added when wiring Supabase).
+-- Amirant Preparation - optional DB alignment (stable UUIDs can be added when wiring Supabase).
 -- Source of truth for the shipped course is TypeScript: `src/lib/amirant-course/*`.
 -- Run after `learning-intelligence-schema.sql` / course tables exist in your project.
 

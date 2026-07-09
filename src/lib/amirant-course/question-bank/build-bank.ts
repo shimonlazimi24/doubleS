@@ -100,7 +100,7 @@ function buildForTopic(topic: AmirantBankTopicSlug, difficulty: DifficultyLevel,
   };
 }
 
-/** 4 topics × 6 levels × 5 variants = 120 questions — enough for adaptive + simulations. */
+/** 4 topics × 6 levels × 5 variants = 120 questions - enough for adaptive + simulations. */
 export function buildAmirantQuestionBank(): BankQuestion[] {
   const topics: AmirantBankTopicSlug[] = [
     "vocabulary",

@@ -16,7 +16,7 @@ const DIAGNOSTIC_QUIZ_ID = "quiz-entry-diagnostic";
 type Props = {
   courseBase: string;
   module: ManifestModule;
-  /** Present on lesson route — enables progress tracking + complete CTA. */
+  /** Present on lesson route - enables progress tracking + complete CTA. */
   lessonId: string;
   lessonTitle: string;
   nextLessonHref: string;
@@ -26,7 +26,7 @@ type Props = {
   className?: string;
 };
 
-/** שמות היסטוריים של מבחן הכניסה — סשנים ישנים נשמרו תחת הכותרות הקודמות. */
+/** שמות היסטוריים של מבחן הכניסה - סשנים ישנים נשמרו תחת הכותרות הקודמות. */
 const LEGACY_DIAGNOSTIC_LABELS = new Set([
   "מבחן אבחון כניסה (15 שאלות, תערובת נושאים)",
   "מבחן אבחון כניסה",
@@ -70,7 +70,7 @@ export function IntroPersonalRoadmapClient({
   const syllabus = getSyllabusUiForModule(module);
   const fallbackParagraph =
     syllabus?.howToHe?.[1] ??
-    "מבחן רמה: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא — כ־20 דק׳, ובסיום ציון משוער בסולם 50–150.";
+    "מבחן רמה: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא - כ־20 דק׳, ובסיום ציון משוער בסולם 50–150.";
 
   const personalized = scorePct != null ? recommendationHeForDiagnosticScorePct(scorePct) : null;
 
@@ -85,7 +85,7 @@ export function IntroPersonalRoadmapClient({
               <AmirantLessonTrackIsland lessonId={lessonId} lessonTitle={lessonTitle} className="w-full sm:w-auto" />
             </div>
             <Text as="p" variant="body" className="mt-3 text-slate-600">
-              ההתאמה האישית מבוססת על <strong>תוצאת מבחן הרמה</strong> בקורס. אם עדיין לא נבחנתם — התחילו
+              ההתאמה האישית מבוססת על <strong>תוצאת מבחן הרמה</strong> בקורס. אם עדיין לא נבחנתם - התחילו
               במבחן הרמה ואז חזרו לעמוד זה.
             </Text>
           </div>

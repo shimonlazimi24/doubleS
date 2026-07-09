@@ -15,7 +15,7 @@ export interface Recommendation {
   title: string;
   reason: string;
   courseId: CourseId;
-  /** Targets for navigation — nullable per kind. */
+  /** Targets for navigation - nullable per kind. */
   lessonId?: LessonId;
   quizId?: QuizId;
   topicId?: TopicId;
@@ -33,7 +33,7 @@ export interface RecommendationContext {
 }
 
 /**
- * MVP rule engine — pure, explainable, no ML.
+ * MVP rule engine - pure, explainable, no ML.
  * Order: continue → retake failed → weak topic practice → review.
  */
 export function buildRecommendations(ctx: RecommendationContext): Recommendation[] {

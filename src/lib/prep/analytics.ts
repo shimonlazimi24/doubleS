@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * מעקב המרות — עוטף GA4 (gtag) + Vercel Analytics בקריאה אחת.
+ * מעקב המרות - עוטף GA4 (gtag) + Vercel Analytics בקריאה אחת.
  * אירועי המשפך: view_pricing → select_plan → begin_checkout → purchase / checkout_failed.
  */
 import { track as vercelTrack } from "@vercel/analytics";
@@ -30,7 +30,7 @@ export function trackEvent(name: string, params: EventParams = {}): void {
 const UTM_COOKIE = "prep_utm";
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"] as const;
 
-/** לוכד פרמטרי utm_* מה-URL לעוגייה (30 יום) — לשיוך רכישות לקמפיינים. */
+/** לוכד פרמטרי utm_* מה-URL לעוגייה (30 יום) - לשיוך רכישות לקמפיינים. */
 export function captureUtmParams(search: string): void {
   try {
     const params = new URLSearchParams(search);

@@ -1,4 +1,4 @@
-/** Branded IDs — use across services without mixing entity types. */
+/** Branded IDs - use across services without mixing entity types. */
 export type UserId = string;
 export type CourseId = string;
 export type ModuleId = string;
@@ -24,7 +24,7 @@ export type LessonProgressStatus = "not_started" | "in_progress" | "completed";
 
 export type EnrollmentStatus = "active" | "completed" | "paused" | "dropped";
 
-/** Content hierarchy — mirrors `supabase/learning-intelligence-schema.sql`. */
+/** Content hierarchy - mirrors `supabase/learning-intelligence-schema.sql`. */
 export interface CourseCategory {
   id: string;
   slug: string;
@@ -121,7 +121,7 @@ export interface Enrollment {
   enrolledAt: string;
 }
 
-/** Business truth for lesson completion — not inferred from AI. */
+/** Business truth for lesson completion - not inferred from AI. */
 export interface LessonProgress {
   id: string;
   userId: UserId;
@@ -132,7 +132,7 @@ export interface LessonProgress {
   updatedAt: string;
 }
 
-/** Score and pass computed by application on submit — deterministic. */
+/** Score and pass computed by application on submit - deterministic. */
 export interface QuizAttempt {
   id: AttemptId;
   userId: UserId;

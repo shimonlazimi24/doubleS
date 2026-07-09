@@ -34,7 +34,7 @@ function parseGroupTitle(title: string, index: number): { num: string; name: str
 }
 
 /**
- * בוחר נושא (רשימה אנכית אחידה) + צ'ק-ליסט של הנושא הנבחר בלבד — במקום עמוד
+ * בוחר נושא (רשימה אנכית אחידה) + צ'ק-ליסט של הנושא הנבחר בלבד - במקום עמוד
  * ארוך של כל הרשימות. הבחירה והסימונים נשמרים ב-localStorage.
  */
 export function RoadmapMilestoneChecklist({ groups }: Props) {
@@ -88,9 +88,9 @@ export function RoadmapMilestoneChecklist({ groups }: Props) {
 
   return (
     <div className="space-y-4 [direction:rtl]">
-      <p className={cn(lessonSaaS.eyebrowGuided, "text-pretty")}>בחרו נושא — ותקבלו את רשימת המשימות שלו</p>
+      <p className={cn(lessonSaaS.eyebrowGuided, "text-pretty")}>בחרו נושא - ותקבלו את רשימת המשימות שלו</p>
 
-      {/* בוחר נושא — רשימה אנכית אחידה: מספר · שם · התקדמות */}
+      {/* בוחר נושא - רשימה אנכית אחידה: מספר · שם · התקדמות */}
       <div
         className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white"
         role="tablist"

@@ -1,9 +1,9 @@
 /**
- * Design system — single source: color, type scale, 8px spacing, radius, elevation.
+ * Design system - single source: color, type scale, 8px spacing, radius, elevation.
  * Tailwind maps these in tailwind.config.ts; components use tokens via utilities.
  */
 :root {
-  /* —— Palette: "אקדמי מחודד" — navy ground, ink-blue accent, gold for scores ——
+  /* -- Palette: "אקדמי מחודד" - navy ground, ink-blue accent, gold for scores --
      כל צבע גם כטריפלט RGB כדי ש-Tailwind יוכל להחיל שקיפויות (/60 וכו') */
   --color-ink: #0f172a;              --color-ink-rgb: 15 23 42;
   --color-muted: #5a6480;            --color-muted-rgb: 90 100 128;
@@ -19,7 +19,7 @@
   --color-primary-muted: rgba(15, 35, 71, 0.06);
   --color-primary-container: #1a3358; --color-primary-container-rgb: 26 51 88;
 
-  /* כחול-דיו עמוק — קריא גם כטקסט על לבן (בניגוד לתכלת הקודמת) */
+  /* כחול-דיו עמוק - קריא גם כטקסט על לבן (בניגוד לתכלת הקודמת) */
   --color-accent: #0e6fc2;           --color-accent-rgb: 14 111 194;
   --color-accent-muted: rgba(14, 111, 194, 0.1);
   --color-sage: #0d9488;             --color-sage-rgb: 13 148 136;
@@ -28,7 +28,7 @@
   --color-score: #b8860b;            --color-score-rgb: 184 134 11;
   --color-pen: #c4372b;              --color-pen-rgb: 196 55 43;
 
-  /* —— 8px spacing scale (rem @ 16px root) —— */
+  /* -- 8px spacing scale (rem @ 16px root) -- */
   --space-1: 0.5rem; /* 8 */
   --space-2: 1rem; /* 16 */
   --space-3: 1.5rem; /* 24 */
@@ -45,25 +45,25 @@
   --space-section-y-lg: var(--space-10);
   --space-hero-pad-y: var(--space-6);
 
-  /* —— Radius —— */
+  /* -- Radius -- */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-surface: 1rem;
   --radius-control: 0.875rem;
 
-  /* —— Elevation (hairline-first: גבולות דקים, צל מינימלי) —— */
+  /* -- Elevation (hairline-first: גבולות דקים, צל מינימלי) -- */
   --shadow-card: 0 1px 2px rgba(15, 35, 71, 0.05);
   --shadow-nav: 0 1px 0 rgba(18, 21, 26, 0.06), 0 12px 40px rgba(18, 21, 26, 0.06);
   --shadow-lift: 0 20px 50px -12px rgba(15, 35, 71, 0.12), 0 8px 16px rgba(15, 35, 71, 0.06);
   --shadow-preview: 0 32px 64px -16px rgba(15, 35, 71, 0.18), 0 0 0 1px rgba(15, 35, 71, 0.06);
   --shadow-cta: 0 16px 40px -12px rgba(30, 58, 95, 0.22);
 
-  /* —— Layout measure —— */
+  /* -- Layout measure -- */
   --max-measure: 38rem;
   --max-readable: 48rem;
   --max-shell: 72rem;
 
-  /* —— Typography —— */
+  /* -- Typography -- */
   --leading-tight: 1.15;
   --leading-snug: 1.3;
   --leading-body: 1.65;

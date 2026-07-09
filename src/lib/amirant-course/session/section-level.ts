@@ -1,6 +1,6 @@
 import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 
-/** Between scored simulation sections — stable, not per-question streak. */
+/** Between scored simulation sections - stable, not per-question streak. */
 export function nextSimulationSectionEnterLevel(prev: DifficultyLevel, correct: number, total: number): DifficultyLevel {
   if (total <= 0) return prev;
   const ratio = correct / total;

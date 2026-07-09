@@ -75,7 +75,7 @@ export async function runAmirantChatbot(
   userId: string | null,
   raw: unknown,
   logCtx?: AiRequestLogContext,
-  /** Optional streaming callback — receives answer tokens as they arrive (OpenAI streaming path only). */
+  /** Optional streaming callback - receives answer tokens as they arrive (OpenAI streaming path only). */
   onToken?: (delta: string) => void,
 ): Promise<AmirantChatbotResponse> {
   const request = amirantChatbotRequestSchema.parse(raw) as AmirantChatbotRequest;
@@ -89,10 +89,10 @@ export async function runAmirantChatbot(
   const { stage, isNext } = resolveStagedStage(request, intent);
 
   const questionContext = request.lessonId
-    ? `Amirant preparation — focus on lesson ${request.lessonId}${request.topic ? `, topic ${request.topic}` : ""}.`
-    : `Amirant preparation — course-wide. ${request.topic ? ` topic filter: ${request.topic}.` : ""}`;
+    ? `Amirant preparation - focus on lesson ${request.lessonId}${request.topic ? `, topic ${request.topic}` : ""}.`
+    : `Amirant preparation - course-wide. ${request.topic ? ` topic filter: ${request.topic}.` : ""}`;
 
-  // שאלות המשך קצרות ("לא הבנתי", "ומה לגבי...") נשענות על ההודעה הקודמת —
+  // שאלות המשך קצרות ("לא הבנתי", "ומה לגבי...") נשענות על ההודעה הקודמת -
   // מוסיפים את התור האחרון לשאילתת האחזור כדי שה-RAG ימצא את ההקשר הנכון.
   const lastUserTurn = request.history?.filter((h) => h.role === "user").slice(-1)[0]?.text ?? "";
   const retrievalQuery =
@@ -107,7 +107,7 @@ export async function runAmirantChatbot(
     topic: request.topic,
   });
 
-  // Parallelize: user stats + quiz snapshot + embedding computation — none depend on each other
+  // Parallelize: user stats + quiz snapshot + embedding computation - none depend on each other
   const [userStats, quizSnapshot, embeddingResult] = await Promise.all([
     userId ? loadAiUserStatsSnapshot(client, userId) : Promise.resolve(EMPTY_USER_STATS),
     userId ? loadAiQuizSnapshot(client, userId) : Promise.resolve(null),
@@ -145,7 +145,7 @@ export async function runAmirantChatbot(
         questionType: "vocabulary" as const,
         hintStage: null,
         nextHintAvailable: false,
-        recommendedAction: "מומלץ לעבור על מודול אוצר המילים — 2000+ מילים מסודרות לפי רמות.",
+        recommendedAction: "מומלץ לעבור על מודול אוצר המילים - 2000+ מילים מסודרות לפי רמות.",
         references: [],
         referencedChunks: [],
         usedStudentData: false,
@@ -204,7 +204,7 @@ export async function runAmirantChatbot(
     if (!userId) {
       return amirantChatbotResponseSchema.parse({
         intent: "recommendation" as const,
-        answer: "המלצה ממוקדת (מבחן, שיעור, מיקוד) עובדת הכי טוב אחרי התחברות — כי אז אפשר לקרוא מסלול הלמידה שלכם. בינתיים: בחרו נושא שמפחדים ממנו, עשו מבחן אדפטיבי קצר, וחזרו לשיעור הראשי בנושא הזה.",
+        answer: "המלצה ממוקדת (מבחן, שיעור, מיקוד) עובדת הכי טוב אחרי התחברות - כי אז אפשר לקרוא מסלול הלמידה שלכם. בינתיים: בחרו נושא שמפחדים ממנו, עשו מבחן אדפטיבי קצר, וחזרו לשיעור הראשי בנושא הזה.",
         questionType: "unknown" as const,
         hintStage: null,
         nextHintAvailable: false,
@@ -238,7 +238,7 @@ export async function runAmirantChatbot(
     operation: "lesson_chat" as const,
     precomputedEmbedding,
   };
-  // בחירת ה-client לאחזור (service, בגלל RLS) חיה בתוך retrieveCourseChunks —
+  // בחירת ה-client לאחזור (service, בגלל RLS) חיה בתוך retrieveCourseChunks -
   // כך גם quiz-review/recommendations/coach מקבלים את אותו תיקון.
   let chunks = await retrieveCourseChunks(client, { ...baseRetrieval, topic: request.topic });
   if (chunks.length === 0 && request.topic) {
@@ -274,7 +274,7 @@ export async function runAmirantChatbot(
       });
   }
 
-  // גם בלי קטעי קורס תואמים ממשיכים למודל — הוא עונה ברמת אסטרטגיה כללית
+  // גם בלי קטעי קורס תואמים ממשיכים למודל - הוא עונה ברמת אסטרטגיה כללית
   // (בלי להמציא עובדות מבחן) במקום סירוב שגורם לתחושת "הבוט לא עוזר".
 
   const outIntent: AmirantChatbotResponse["intent"] =
@@ -349,7 +349,7 @@ export async function runAmirantChatbot(
       logAiSafetyValidationFailure({ operation: "lesson_chat", userId: userId ?? undefined, violations: safety.violations });
       parsed = {
         intent: outIntent,
-        answer: "לא הצלחתי לאמת חלק מהנתונים בתשובה, אז עצרתי אותה ליתר ביטחון. נסו לנסח את השאלה שוב — או שאלו אותי בלי להתייחס לציונים ומספרים.",
+        answer: "לא הצלחתי לאמת חלק מהנתונים בתשובה, אז עצרתי אותה ליתר ביטחון. נסו לנסח את השאלה שוב - או שאלו אותי בלי להתייחס לציונים ומספרים.",
         questionType,
         hintStage: useStaged ? (Math.min(stage, 3) as 1 | 2 | 3) : promptStage4 ? 4 : null,
         nextHintAvailable: useStaged && stage < 3,
@@ -364,7 +364,7 @@ export async function runAmirantChatbot(
     console.error("[chatbot-router] AI call failed:", errMsg);
     parsed = {
       intent: outIntent,
-      answer: "משהו השתבש אצלי — נסו לשלוח שוב בעוד רגע. אם זה חוזר על עצמו, נסחו את השאלה קצת אחרת.",
+      answer: "משהו השתבש אצלי - נסו לשלוח שוב בעוד רגע. אם זה חוזר על עצמו, נסחו את השאלה קצת אחרת.",
       questionType,
       hintStage: useStaged ? (Math.min(stage, 3) as 1 | 2 | 3) : promptStage4 ? 4 : null,
       nextHintAvailable: useStaged && stage < 3,

@@ -33,7 +33,7 @@ export default function PrepBlogPostPage({ params }: Props) {
           </header>
           <div className="mt-ds-10 border-t border-line/80 pt-ds-8">
             <Text as="p" variant="bodyLg">
-              טיוטה — יוחלף בתוכן מ־MDX, מערכת ניהול או ייצור סטטי כשתהליך עריכה יהיה מוכן.
+              טיוטה - יוחלף בתוכן מ־MDX, מערכת ניהול או ייצור סטטי כשתהליך עריכה יהיה מוכן.
             </Text>
           </div>
         </Container>

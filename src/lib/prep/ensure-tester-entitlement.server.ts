@@ -6,8 +6,8 @@ import { isPrepTesterEmail } from "@/lib/prep/tester-allowlist";
 
 /**
  * הענקת גישת בודק אוטומטית: אם המייל ב-`PREP_TESTER_EMAILS` ואין כבר
- * entitlement פעיל — נכתבת שורת 'admin' לשנה (service client; RLS לא מתירה
- * למשתמשים לכתוב לעצמם). רץ מ-layout הקורס בכל ביקור — זול (בדיקה אחת)
+ * entitlement פעיל - נכתבת שורת 'admin' לשנה (service client; RLS לא מתירה
+ * למשתמשים לכתוב לעצמם). רץ מ-layout הקורס בכל ביקור - זול (בדיקה אחת)
  * ואידמפוטנטי. לא נוגע ב-entitlement פעיל קיים (בודק שקנה לא יידרס).
  */
 export async function ensureTesterEntitlement(
@@ -31,6 +31,6 @@ export async function ensureTesterEntitlement(
       { onConflict: "user_id,course_slug" },
     );
   } catch {
-    // הענקת בודק היא נוחות — כשל שקט לא חוסם את הקורס
+    // הענקת בודק היא נוחות - כשל שקט לא חוסם את הקורס
   }
 }

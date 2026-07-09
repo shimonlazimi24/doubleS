@@ -1,4 +1,4 @@
--- Adaptive learning — additive tables (see src/lib/learning-intelligence/adaptive/).
+-- Adaptive learning - additive tables (see src/lib/learning-intelligence/adaptive/).
 -- Run after learning-intelligence-schema.sql. RLS per tenant policy TBD.
 
 -- Per learner, course, topic: level + streaks + rolling outcomes for adaptive rules.
@@ -36,7 +36,7 @@ create table if not exists learner_subtopic_stats (
 
 create index if not exists learner_subtopic_stats_user_course on learner_subtopic_stats (user_id, course_id);
 
--- Recent question usage — avoid repeating same question too often (optional; cap rows in app).
+-- Recent question usage - avoid repeating same question too often (optional; cap rows in app).
 create table if not exists learner_question_exposure (
   user_id uuid not null references auth.users (id) on delete cascade,
   course_id uuid not null references courses (id) on delete cascade,

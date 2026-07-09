@@ -96,17 +96,17 @@ function AmirantDemoFullExperience() {
         >
           <span className="text-white">הכנה ל</span>{" "}
           <span className="text-[#d4a843]">אמירנט 2026</span>
-          <span className="block text-white sm:inline"> — חוויית מוצר</span>
+          <span className="block text-white sm:inline"> - חוויית מוצר</span>
         </h1>
         <p className="mx-auto mt-4 max-w-[36rem] text-base text-white/75 md:text-lg">
-          {AMIRANT_DEMO_COURSE_NAME} — בוחן הדמה למטה: 10 שאלות, רמות 3–5, מנוע אמיתי כמו ב־SQL.
+          {AMIRANT_DEMO_COURSE_NAME} - בוחן הדמה למטה: 10 שאלות, רמות 3–5, מנוע אמיתי כמו ב־SQL.
         </p>
       </section>
 
       <div className="border-b border-[#e2ddd5] bg-white">
         <Container className="py-6">
           <Text as="p" variant="bodySm" className="text-[#5a6480]">
-            דשבורד, וידאו, AI ודוחות: מוק · מבחן הדמה ומבחן המערכת המלא: אותו בנק שאלות, ולוגיקה אמיתית — ללא שרת.
+            דשבורד, וידאו, AI ודוחות: מוק · מבחן הדמה ומבחן המערכת המלא: אותו בנק שאלות, ולוגיקה אמיתית - ללא שרת.
           </Text>
           <nav
             aria-label="מקטעי הדמו"
@@ -172,7 +172,7 @@ function AmirantDemoFullExperience() {
             שיעור וידאו + אינטראקציה (מוק)
           </Text>
           <Text as="p" variant="body" className="mb-8 max-w-readable">
-            גררו את הזמן מעל ~{Math.floor(mockVideoMeta.interaction.atSec / 60)}:{String(mockVideoMeta.interaction.atSec % 60).padStart(2, "0")} כדי להפעיל שאלת ביניים — כמו נגן עם נקודות עצירה.
+            גררו את הזמן מעל ~{Math.floor(mockVideoMeta.interaction.atSec / 60)}:{String(mockVideoMeta.interaction.atSec % 60).padStart(2, "0")} כדי להפעיל שאלת ביניים - כמו נגן עם נקודות עצירה.
           </Text>
 
           <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
@@ -232,12 +232,12 @@ function AmirantDemoFullExperience() {
                       שליחה (דמו)
                     </button>
                     {videoInteractionSolved && (
-                      <p className="mt-3 text-sm font-semibold text-sage">נכון — ממשיכים (דמו).</p>
+                      <p className="mt-3 text-sm font-semibold text-sage">נכון - ממשיכים (דמו).</p>
                     )}
                     {videoChoice !== null &&
                       videoChoice !== mockVideoMeta.interaction.correctIndex &&
                       !videoInteractionSolved && (
-                        <p className="mt-3 text-sm text-muted">לא בדיוק — נסו אפשרות אחרת (דמו).</p>
+                        <p className="mt-3 text-sm text-muted">לא בדיוק - נסו אפשרות אחרת (דמו).</p>
                       )}
                   </div>
                 )}
@@ -265,7 +265,7 @@ function AmirantDemoFullExperience() {
         </Container>
       </section>
 
-      {/* מבחן דמו — 10 שאלות, מנוע אמת */}
+      {/* מבחן דמו - 10 שאלות, מנוע אמת */}
       <section
         id="demo-quiz"
         className="scroll-mt-28 border-t border-[#e2ddd5] bg-[#faf8f3] py-12 md:py-section"
@@ -275,7 +275,7 @@ function AmirantDemoFullExperience() {
             className="mb-2 inline-block border-b-2 border-[#d4a843] pb-2 text-2xl font-bold text-[#0f1e3d] md:text-3xl"
             style={{ fontFamily: "var(--font-amirant-frank), serif" }}
           >
-            בוחן דמה — 10 שאלות
+            בוחן דמה - 10 שאלות
           </h2>
           <p className="mb-2 max-w-[52rem] text-sm text-[#5a6480]">
             בינוני־מתקדם (רמות 3–5) · מעורב: השלמת משפטים, ניסוח מחדש, הבנת הנקרא · בנק כמו ב־amirant-demo
@@ -357,7 +357,7 @@ function AmirantDemoFullExperience() {
                     <td className="px-4 py-3 text-muted">{row.event}</td>
                     <td className="px-4 py-3 font-medium">{row.count}</td>
                     <td className="px-4 py-3 text-muted">
-                      {row.avgMinutes !== null ? row.avgMinutes : "—"}
+                      {row.avgMinutes !== null ? row.avgMinutes : "-"}
                     </td>
                   </tr>
                 ))}
@@ -367,7 +367,7 @@ function AmirantDemoFullExperience() {
         </Container>
       </section>
 
-      {/* בוחן אדפטיבי — מנוע אמת (לא מוק) */}
+      {/* בוחן אדפטיבי - מנוע אמת (לא מוק) */}
       <section id="demo-adaptive" className="scroll-mt-28 border-t border-[#e2ddd5] bg-white py-12 md:py-section">
         <Container>
           <Text
@@ -379,7 +379,7 @@ function AmirantDemoFullExperience() {
             מבחן מערכת (סימולציה מלאה)
           </Text>
           <Text as="p" variant="body" className="mb-8 max-w-readable text-[#5a6480]">
-            אותו בנק שאלות — כאן: מבנה קורס, תרגול קצר 10 או{" "}
+            אותו בנק שאלות - כאן: מבנה קורס, תרגול קצר 10 או{" "}
             <strong className="font-semibold text-[#0f1e3d]">סימולציה מלאה</strong> (פיילוט + 4 פרקי ציון).{" "}
             <code className="rounded bg-[#faf8f3] px-1 py-0.5 text-xs ring-1 ring-[#e2ddd5]">amirant-demo.sql</code>
           </Text>
@@ -418,7 +418,7 @@ function AmirantDemoFullExperience() {
             צ׳אט עם עוזר הלמידה
           </Text>
           <Text as="p" variant="body" className="mb-8 max-w-readable">
-            ממשק בסגנון אפליקציות צ׳אט מודרניות — בועות, אווטארים, אינדיקטור הקלדה ושליחה בכפתור עגול. בפרודקשן: RAG
+            ממשק בסגנון אפליקציות צ׳אט מודרניות - בועות, אווטארים, אינדיקטור הקלדה ושליחה בכפתור עגול. בפרודקשן: RAG
             מהחומר שלכם + מודל.
           </Text>
           <AmirantDemoChat />

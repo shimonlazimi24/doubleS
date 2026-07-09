@@ -1,5 +1,5 @@
 /**
- * מבחן רמה — טופס קבוע (לא אדפטיבי): 8 השלמת משפטים → 4 ניסוח מחדש →
+ * מבחן רמה - טופס קבוע (לא אדפטיבי): 8 השלמת משפטים → 4 ניסוח מחדש →
  * 3 הבנת הנקרא על קטע אחד. תמהיל קושי מאוזן, בחירה דטרמיניסטית לפי seed
  * (משתנה בין ניסיונות), עם החרגת שאלות/קטעים שנראו לאחרונה.
  */
@@ -53,7 +53,7 @@ function shuffled<T>(items: T[], rng: () => number): T[] {
   return out;
 }
 
-/** בוחר count שאלות בטווח קושי; אם אין מספיק אחרי החרגות — מרפה את ההחרגה ואז את הטווח. */
+/** בוחר count שאלות בטווח קושי; אם אין מספיק אחרי החרגות - מרפה את ההחרגה ואז את הטווח. */
 function pickByDifficulty(params: {
   pool: BankQuestion[];
   min: number;
@@ -69,7 +69,7 @@ function pickByDifficulty(params: {
   const source = fresh.length >= count ? fresh : inRange;
   const picked = shuffled(source, rng).slice(0, count);
   if (picked.length < count) {
-    // הרפיית טווח קושי — כל השאלות בנושא שטרם נלקחו
+    // הרפיית טווח קושי - כל השאלות בנושא שטרם נלקחו
     const rest = shuffled(
       pool.filter((q) => !taken.has(q.id) && !picked.some((p) => p.id === q.id)),
       rng,

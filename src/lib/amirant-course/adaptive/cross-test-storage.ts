@@ -24,7 +24,7 @@ export function writeCrossTestSnapshot(s: CrossTestSnapshot): void {
   window.localStorage.setItem(LS_CROSS_TEST, JSON.stringify(s));
 }
 
-/** Starting level for next adaptive test / simulation — soft reset after weak run. */
+/** Starting level for next adaptive test / simulation - soft reset after weak run. */
 export function nextStartLevelFromCrossTest(): DifficultyLevel {
   const snap = readCrossTestSnapshot();
   if (!snap) return 3;

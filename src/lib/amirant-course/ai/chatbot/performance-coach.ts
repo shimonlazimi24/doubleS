@@ -47,7 +47,7 @@ export function buildPerformanceCoachCopy(params: {
   }
 
   const weak = pickWeakest(userStats.topicRollups);
-  const weakLabel = weak ? (AMIRANT_TOPIC_LABEL_HE[weak.topic as AmirantBankTopicSlug] ?? weak.topic) : "—";
+  const weakLabel = weak ? (AMIRANT_TOPIC_LABEL_HE[weak.topic as AmirantBankTopicSlug] ?? weak.topic) : "-";
   const lines: string[] = [];
   if (weak) {
     const pct = Math.round(weak.acc * 100);
@@ -94,7 +94,7 @@ export async function loadPerformanceCoachInputs(
 export function buildPerformanceUserPromptForAi(userMessage: string, base: string, recommendedAction: string): string {
   return [
     "Task: give a VERY short, actionable performance summary in Hebrew (unless the user wrote in English).",
-    "Start with the weakest area and why it matters for the exam, then one concrete next step (quiz / lesson / simulation) — do not invent numbers not in the data block.",
+    "Start with the weakest area and why it matters for the exam, then one concrete next step (quiz / lesson / simulation) - do not invent numbers not in the data block.",
     'End with a line: "מה לעשות עכשיו:" and one line.',
     "",
     `User message: ${userMessage}`,

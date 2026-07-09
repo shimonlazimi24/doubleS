@@ -15,7 +15,7 @@ function Lm(lessonId: string, rel: string): LessonContent {
 type Pair = readonly [id: string, rel: string];
 
 const PAIRS: Pair[] = [
-  // —— אוצר מילים (20) ——
+  // -- אוצר מילים (20) --
   ["lesson.vocab.01", "03_vocabulary/vocabulary_1_easy_part_a_verbs.md"],
   ["lesson.vocab.02", "03_vocabulary/vocabulary_1_easy_part_b_nouns.md"],
   ["lesson.vocab.03", "03_vocabulary/vocabulary_1_easy_part_c_adjectives.md"],
@@ -36,7 +36,7 @@ const PAIRS: Pair[] = [
   ["lesson.vocab.18", "03_vocabulary/vocabulary_advanced_connectives.md"],
   ["lesson.vocab.19", "03_vocabulary/vocabulary_5_mastery_level.md"],
   ["lesson.vocab.20", "03_vocabulary/SAMPLE_vocabulary_package_100_words.md"],
-  // —— השלמת משפטים (11) ——
+  // -- השלמת משפטים (11) --
   ["lesson.sc.01", "04_sentence_completion/4.2_solving_methods_master_guide.md"],
   ["lesson.sc.02", "04_sentence_completion/4.3_common_traps_guide.md"],
   ["lesson.sc.03", "04_sentence_completion/SAMPLE_video_script_5_solving_methods.md"],
@@ -48,7 +48,7 @@ const PAIRS: Pair[] = [
   ["lesson.sc.09", "04_sentence_completion/practice_quizzes/sc_quiz_6_hard.md"],
   ["lesson.sc.10", "04_sentence_completion/practice_quizzes/sc_quiz_7_mixed.md"],
   ["lesson.sc.11", "04_sentence_completion/practice_quizzes/sc_quiz_8_mixed.md"],
-  // —— ניסוח מחדש (12) ——
+  // -- ניסוח מחדש (12) --
   ["lesson.rephrase.01", "05_restatement/5.2_solving_methods_master_guide.md"],
   ["lesson.rephrase.02", "05_restatement/5.3_sentence_structures_guide.md"],
   ["lesson.rephrase.03", "05_restatement/5.4_common_traps_guide.md"],
@@ -61,7 +61,7 @@ const PAIRS: Pair[] = [
   ["lesson.rephrase.10", "05_restatement/practice_quizzes/restatement_quiz_6_hard.md"],
   ["lesson.rephrase.11", "05_restatement/practice_quizzes/restatement_quiz_7_mixed.md"],
   ["lesson.rephrase.12", "05_restatement/practice_quizzes/restatement_quiz_8_mixed.md"],
-  // —— הבנת הנקרא (12) ——
+  // -- הבנת הנקרא (12) --
   ["lesson.reading.01", "06_reading_comprehension/6.2_solving_methods_master_guide.md"],
   ["lesson.reading.02", "06_reading_comprehension/6.3_paragraph_structure_guide.md"],
   ["lesson.reading.03", "06_reading_comprehension/6.6_common_traps_guide.md"],
@@ -74,7 +74,7 @@ const PAIRS: Pair[] = [
   ["lesson.reading.10", "06_reading_comprehension/practice_quizzes/reading_comp_quiz_6_hard.md"],
   ["lesson.reading.11", "06_reading_comprehension/practice_quizzes/reading_comp_quiz_7_mixed.md"],
   ["lesson.reading.12", "06_reading_comprehension/practice_quizzes/reading_comp_quiz_8_mixed.md"],
-  // —— רפורמה 2026 (9) ——
+  // -- רפורמה 2026 (9) --
   ["lesson.reform.01", "07_new_reform_audio_writing/7.1_reform_overview.md"],
   ["lesson.reform.02", "07_new_reform_audio_writing/7.2_listening_guide.md"],
   ["lesson.reform.03", "07_new_reform_audio_writing/7.3_listening_practice_quizzes.md"],
@@ -84,7 +84,7 @@ const PAIRS: Pair[] = [
   ["lesson.reform.07", "07_new_reform_audio_writing/7.7_grammar_practice.md"],
   ["lesson.reform.08", "07_new_reform_audio_writing/7.8_writing_guide.md"],
   ["lesson.reform.09", "07_new_reform_audio_writing/7.9_writing_examples_and_practice.md"],
-  // —— סימולציות (7) ——
+  // -- סימולציות (7) --
   ["lesson.sim.01", "08_full_simulations/8.1_how_to_run_simulation.md"],
   ["lesson.sim.02", "08_full_simulations/8.2_reading_simulation_report.md"],
   ["lesson.sim.03", "08_full_simulations/8.3_progress_tracking_sheet.md"],
@@ -92,7 +92,7 @@ const PAIRS: Pair[] = [
   ["lesson.sim.05", "08_full_simulations/simulation_2_warmup.md"],
   ["lesson.sim.06", "08_full_simulations/simulation_3_challenge.md"],
   ["lesson.sim.07", "08_full_simulations/simulation_4_final.md"],
-  // —— טיפים + סיכום ——
+  // -- טיפים + סיכום --
   ["lesson.tips.01", "09_winning_tips/unit_9_winning_tips_and_strategies.md"],
   ["lesson.summary.01", "10_summary_feedback/unit_10_summary_and_feedback.md"],
 ];
@@ -107,22 +107,22 @@ const VOCAB: ManifestModule = {
   title: "מילון מושגים",
   sortOrder: 1,
   lessons: [
-    { id: "lesson.vocab.01", title: "אוצר מילים · קל — פעלים", kind: "mixed", estimatedMinutes: 35, videoSlot: true, practiceSetId: "pr-vocab-1", quizId: "quiz-vocab" },
-    { id: "lesson.vocab.02", title: "אוצר מילים · קל — שמות עצם", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.03", title: "אוצר מילים · קל — תוארים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.04", title: "אוצר מילים · קל — תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.05", title: "אוצר מילים · בינוני — פעלים", kind: "text", estimatedMinutes: 30, quizId: "quiz-vocab-2" },
-    { id: "lesson.vocab.06", title: "אוצר מילים · בינוני — שמות עצם", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.07", title: "אוצר מילים · בינוני — תוארים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.08", title: "אוצר מילים · בינוני — תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.09", title: "אוצר מילים · מתקדמים — פעלים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.10", title: "אוצר מילים · מתקדמים — שמות עצם", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.11", title: "אוצר מילים · מתקדמים — תוארים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.12", title: "אוצר מילים · מתקדמים — תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.13", title: "אוצר מילים · מומחה — פעלים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.14", title: "אוצר מילים · מומחה — שמות עצם", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.15", title: "אוצר מילים · מומחה — תוארים", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.16", title: "אוצר מילים · מומחה — תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.01", title: "אוצר מילים · קל - פעלים", kind: "mixed", estimatedMinutes: 35, videoSlot: true, practiceSetId: "pr-vocab-1", quizId: "quiz-vocab" },
+    { id: "lesson.vocab.02", title: "אוצר מילים · קל - שמות עצם", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.03", title: "אוצר מילים · קל - תוארים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.04", title: "אוצר מילים · קל - תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.05", title: "אוצר מילים · בינוני - פעלים", kind: "text", estimatedMinutes: 30, quizId: "quiz-vocab-2" },
+    { id: "lesson.vocab.06", title: "אוצר מילים · בינוני - שמות עצם", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.07", title: "אוצר מילים · בינוני - תוארים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.08", title: "אוצר מילים · בינוני - תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.09", title: "אוצר מילים · מתקדמים - פעלים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.10", title: "אוצר מילים · מתקדמים - שמות עצם", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.11", title: "אוצר מילים · מתקדמים - תוארים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.12", title: "אוצר מילים · מתקדמים - תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.13", title: "אוצר מילים · מומחה - פעלים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.14", title: "אוצר מילים · מומחה - שמות עצם", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.15", title: "אוצר מילים · מומחה - תוארים", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.vocab.16", title: "אוצר מילים · מומחה - תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.vocab.17", title: "Phrasal verbs", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.vocab.18", title: "Connectives (מתקדמים)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.vocab.19", title: "Mastery level", kind: "text", estimatedMinutes: 25 },
@@ -152,16 +152,16 @@ const SENT: ManifestModule = {
   lessons: [
     {
       id: "lesson.sc.01",
-      title: "4.2 — מדריך (כתוב) · מסלול אודיו (במסמך)",
+      title: "4.2 - מדריך (כתוב) · מסלול אודיו (במסמך)",
       kind: "text",
       estimatedMinutes: 40,
       videoSlot: true,
       practiceSetId: "pr-sc-mid",
       quizId: "quiz-sc",
     },
-    { id: "lesson.sc.02", title: "4.3 — מלכודות נפוצות", kind: "text", estimatedMinutes: 25, quizId: "quiz-sc-2" },
-    { id: "lesson.sc.03", title: "סרטון הדרכה — 5 שיטות (תסריט / וידאו)", kind: "video", estimatedMinutes: 15 },
-    { id: "lesson.sc.04", title: "מבחן תרגול — דוגמה (קל)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.sc.02", title: "4.3 - מלכודות נפוצות", kind: "text", estimatedMinutes: 25, quizId: "quiz-sc-2" },
+    { id: "lesson.sc.03", title: "סרטון הדרכה - 5 שיטות (תסריט / וידאו)", kind: "video", estimatedMinutes: 15 },
+    { id: "lesson.sc.04", title: "מבחן תרגול - דוגמה (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.sc.05", title: "מבחן תרגול 2 (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.sc.06", title: "מבחן תרגול 3 (בינוני)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.sc.07", title: "מבחן תרגול 4 (בינוני)", kind: "text", estimatedMinutes: 25 },
@@ -173,17 +173,17 @@ const SENT: ManifestModule = {
   practiceSets: [
     {
       id: "pr-sc-easy",
-      title: "השלמת משפטים — מקבץ קל (רמות 1–2)",
+      title: "השלמת משפטים - מקבץ קל (רמות 1–2)",
       questionIds: takeQuestionIdsByDifficulty("sentence_completion", 10, 1, 2),
     },
     {
       id: "pr-sc-mid",
-      title: "השלמת משפטים — מקבץ בינוני (רמות 3–4)",
+      title: "השלמת משפטים - מקבץ בינוני (רמות 3–4)",
       questionIds: takeQuestionIdsByDifficulty("sentence_completion", 10, 3, 4),
     },
     {
       id: "pr-sc-hard",
-      title: "השלמת משפטים — מקבץ גבוה (רמות 5–6)",
+      title: "השלמת משפטים - מקבץ גבוה (רמות 5–6)",
       questionIds: takeQuestionIdsByDifficulty("sentence_completion", 10, 5, 6),
     },
   ],
@@ -196,10 +196,10 @@ const REPH: ManifestModule = {
   title: "ניסוח מחדש",
   sortOrder: 3,
   lessons: [
-    { id: "lesson.rephrase.01", title: "ניסוח מחדש — שיטות (5.2)", kind: "mixed", estimatedMinutes: 35, videoSlot: true, practiceSetId: "pr-rephrase", quizId: "quiz-rephrase" },
-    { id: "lesson.rephrase.02", title: "ניסוח מחדש — מבני משפט (5.3)", kind: "text", estimatedMinutes: 30, quizId: "quiz-rephrase-2" },
-    { id: "lesson.rephrase.03", title: "ניסוח מחדש — מלכודות (5.4)", kind: "text", estimatedMinutes: 25 },
-    { id: "lesson.rephrase.04", title: "מבחן תרגול — דוגמה (בינוני)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.rephrase.01", title: "ניסוח מחדש - שיטות (5.2)", kind: "mixed", estimatedMinutes: 35, videoSlot: true, practiceSetId: "pr-rephrase", quizId: "quiz-rephrase" },
+    { id: "lesson.rephrase.02", title: "ניסוח מחדש - מבני משפט (5.3)", kind: "text", estimatedMinutes: 30, quizId: "quiz-rephrase-2" },
+    { id: "lesson.rephrase.03", title: "ניסוח מחדש - מלכודות (5.4)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.rephrase.04", title: "מבחן תרגול - דוגמה (בינוני)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.rephrase.05", title: "מבחן תרגול 1 (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.rephrase.06", title: "מבחן תרגול 2 (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.rephrase.07", title: "מבחן תרגול 3 (בינוני)", kind: "text", estimatedMinutes: 25 },
@@ -219,10 +219,10 @@ const READ: ManifestModule = {
   title: "קטעי קריאה",
   sortOrder: 4,
   lessons: [
-    { id: "lesson.reading.01", title: "קריאה — שיטות (6.2)", kind: "mixed", estimatedMinutes: 40, videoSlot: true, practiceSetId: "pr-reading", quizId: "quiz-reading" },
-    { id: "lesson.reading.02", title: "קריאה — מבנה פסקה (6.3)", kind: "text", estimatedMinutes: 25, quizId: "quiz-reading-2" },
-    { id: "lesson.reading.03", title: "קריאה — מלכודות (6.6)", kind: "text", estimatedMinutes: 25 },
-    { id: "lesson.reading.04", title: "מבחן תרגול — דוגמה (בינוני)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.reading.01", title: "קריאה - שיטות (6.2)", kind: "mixed", estimatedMinutes: 40, videoSlot: true, practiceSetId: "pr-reading", quizId: "quiz-reading" },
+    { id: "lesson.reading.02", title: "קריאה - מבנה פסקה (6.3)", kind: "text", estimatedMinutes: 25, quizId: "quiz-reading-2" },
+    { id: "lesson.reading.03", title: "קריאה - מלכודות (6.6)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.reading.04", title: "מבחן תרגול - דוגמה (בינוני)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.reading.05", title: "מבחן תרגול 1 (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.reading.06", title: "מבחן תרגול 2 (קל)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.reading.07", title: "מבחן תרגול 3 (בינוני)", kind: "text", estimatedMinutes: 25 },
@@ -242,7 +242,7 @@ const REF: ManifestModule = {
   title: "רפורמה 2026",
   sortOrder: 5,
   lessons: [
-    { id: "lesson.reform.01", title: "רפורמה — סקירה (7.1)", kind: "mixed", estimatedMinutes: 30, videoSlot: true, practiceSetId: "pr-reform", quizId: "quiz-reform" },
+    { id: "lesson.reform.01", title: "רפורמה - סקירה (7.1)", kind: "mixed", estimatedMinutes: 30, videoSlot: true, practiceSetId: "pr-reform", quizId: "quiz-reform" },
     { id: "lesson.reform.02", title: "Listening (7.2)", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.reform.03", title: "מבחני שמיעה (7.3)", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.reform.04", title: "Word formation (7.4)", kind: "text", estimatedMinutes: 30 },
@@ -270,10 +270,10 @@ const SIM: ManifestModule = {
     { id: "lesson.sim.01", title: "איך להריץ סימולציה (8.1)", kind: "text", estimatedMinutes: 20 },
     { id: "lesson.sim.02", title: "קריאת דוח סימולציה (8.2)", kind: "text", estimatedMinutes: 20 },
     { id: "lesson.sim.03", title: "גיליון מעקב (8.3)", kind: "text", estimatedMinutes: 20 },
-    { id: "lesson.sim.04", title: "סימולציה 1 — Baseline", kind: "text", estimatedMinutes: 45, videoSlot: true },
-    { id: "lesson.sim.05", title: "סימולציה 2 — Warmup", kind: "text", estimatedMinutes: 45, videoSlot: true },
-    { id: "lesson.sim.06", title: "סימולציה 3 — Challenge", kind: "text", estimatedMinutes: 45, videoSlot: true },
-    { id: "lesson.sim.07", title: "סימולציה 4 — Final", kind: "text", estimatedMinutes: 45, videoSlot: true },
+    { id: "lesson.sim.04", title: "סימולציה 1 - Baseline", kind: "text", estimatedMinutes: 45, videoSlot: true },
+    { id: "lesson.sim.05", title: "סימולציה 2 - Warmup", kind: "text", estimatedMinutes: 45, videoSlot: true },
+    { id: "lesson.sim.06", title: "סימולציה 3 - Challenge", kind: "text", estimatedMinutes: 45, videoSlot: true },
+    { id: "lesson.sim.07", title: "סימולציה 4 - Final", kind: "text", estimatedMinutes: 45, videoSlot: true },
   ],
   practiceSets: [],
   quizzes: [],

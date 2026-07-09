@@ -20,13 +20,13 @@ export default async function AdminDashboard() {
 
   const cards = [
     { label: "שיעורים", value: stats.lessons, sub: `${stats.published} פורסמו`, href: "/prep/admin/lessons", color: "bg-blue-500/10 border-blue-500/30" },
-    { label: "שאלות (CMS)", value: stats.questions, sub: "⚠️ לא פעיל עדיין — החידונים משתמשים בבנק המיובא", href: "/prep/admin/questions", color: "bg-purple-500/10 border-purple-500/30" },
+    { label: "שאלות (CMS)", value: stats.questions, sub: "⚠️ לא פעיל עדיין - החידונים משתמשים בבנק המיובא", href: "/prep/admin/questions", color: "bg-purple-500/10 border-purple-500/30" },
   ];
 
   return (
     <div dir="rtl" className="max-w-3xl">
       <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-      <p className="text-zinc-400 text-sm mb-4">ניהול תכנים — שיעורים, שאלות, סרטונים</p>
+      <p className="text-zinc-400 text-sm mb-4">ניהול תכנים - שיעורים, שאלות, סרטונים</p>
       <p className="mb-8 rounded-lg border border-line bg-paper px-4 py-2.5 text-xs text-muted">
         מקור תוכן: שיעורים מקבצי הקורס + דריסות CMS שפורסמו · בנק שאלות פעיל:{" "}
         <strong className="text-ink">

@@ -2,7 +2,7 @@ import type { z } from "zod";
 import type { AttemptId, LessonId, QuestionId, QuizId, UserId } from "./domain";
 import type { CreateLearningEventEnvelopeInput } from "./learning-event-metadata";
 
-/** Discriminated result for service methods — no thrown errors for expected failures. */
+/** Discriminated result for service methods - no thrown errors for expected failures. */
 export type ServiceResult<T> = { ok: true; data: T } | { ok: false; error: ServiceError };
 
 export type ServiceErrorCode =

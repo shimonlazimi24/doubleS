@@ -181,7 +181,7 @@ export type NextBestActionContext = {
 };
 
 /**
- * Product prioritization — dynamic inputs only; no user-specific hardcoded branches.
+ * Product prioritization - dynamic inputs only; no user-specific hardcoded branches.
  */
 export function computeNextBestAction(ctx: NextBestActionContext): NextBestAction {
   const base = normBase(ctx.courseBase);
@@ -217,7 +217,7 @@ export function computeNextBestAction(ctx: NextBestActionContext): NextBestActio
     const accPct = top && top.totalAnswered > 0 ? Math.round(accuracy(top) * 100) : null;
     const weakHint = top
       ? `${topicLine(top.topic)}${
-          accPct != null ? ` — כ-${accPct}% דיוק בניסיונות` : " — מעט נתונים עדיין"
+          accPct != null ? ` - כ-${accPct}% דיוק בניסיונות` : " - מעט נתונים עדיין"
         }`
       : "לפי אופי השאלות האחרונות";
     return {
@@ -239,7 +239,7 @@ export function computeNextBestAction(ctx: NextBestActionContext): NextBestActio
       kind: "simulation",
       title: `סימולציה: ${ctx.firstSimulation.title}`,
       description:
-        "בשלב הזה — סימולציה מלאה בודקת שליטה בלחץ זמן, קרוב לתנאי מבחן אמיתי.",
+        "בשלב הזה - סימולציה מלאה בודקת שליטה בלחץ זמן, קרוב לתנאי מבחן אמיתי.",
       href: ctx.firstSimulation.href,
       ctaLabel: "התחל סימולציה",
     };
@@ -259,7 +259,7 @@ export function computeNextBestAction(ctx: NextBestActionContext): NextBestActio
     return {
       kind: "practice_weak",
       title: `תרגול ממוקד: ${ctx.weakestTopicPractice.label}`,
-      description: "תרגול ממוספר לפי נתוני התאמה אישית — חיזוק הדיוק לפני בוחן נוסף.",
+      description: "תרגול ממוספר לפי נתוני התאמה אישית - חיזוק הדיוק לפני בוחן נוסף.",
       href: ctx.weakestTopicPractice.practiceHref,
       ctaLabel: "לתרגול",
     };
@@ -268,13 +268,13 @@ export function computeNextBestAction(ctx: NextBestActionContext): NextBestActio
   return {
     kind: "course_home",
     title: "לעמוד הקורס",
-    description: "בחרו בוחן, תרגול או שיעור — לפי הזמן הזמין עכשיו.",
+    description: "בחרו בוחן, תרגול או שיעור - לפי הזמן הזמין עכשיו.",
     href: base,
     ctaLabel: "לעמוד הקורס",
   };
 }
 
-/* ——— Display enrichment (does not change `computeNextBestAction` selection) ——— */
+/* --- Display enrichment (does not change `computeNextBestAction` selection) --- */
 
 function journeyProgressLine(percent: number): string {
   const p = Math.max(0, Math.min(100, Math.round(percent)));
@@ -297,19 +297,19 @@ function buildWhyNba(kind: NextBestActionKind, ctx: NextBestActionContext): stri
       return `כי בבוחן האחרון יש ${lastM} טעויות; סקירה קצרה מפחיתה חזרה על אותו דפוס לפני שמוסיפים עומס.`;
     case "weak_quiz":
       if (ctx.quizAttemptCount <= 1) {
-        return "כי בתחילת המסלול — בוחן ממוקד מזהה במהירות היכן לחזק, לפני שמתפזרים על הכל.";
+        return "כי בתחילת המסלול - בוחן ממוקד מזהה במהירות היכן לחזק, לפני שמתפזרים על הכל.";
       }
       if (top && acc != null) {
-        return `כי ${topLabel} בראש חולשות (כ-${acc}% דיוק) — בוחן ממוקד מכווץ שיפור.`;
+        return `כי ${topLabel} בראש חולשות (כ-${acc}% דיוק) - בוחן ממוקד מכווץ שיפור.`;
       }
       return "כי יש הפרשים בין נושאים; בוחן ממוקד מרענן דגימה סביב החולשות.";
     case "simulation":
-      return `בהתקדמות של ~${p}% בקורס, סימולציה בודקת ביצוע תחת לחץ — קרוב יותר לתנאי מבחן אמיתי.`;
+      return `בהתקדמות של ~${p}% בקורס, סימולציה בודקת ביצוע תחת לחץ - קרוב יותר לתנאי מבחן אמיתי.`;
     case "continue_lesson":
       return "כי עדיין יש שיעור פתוח; השלמה בונה בסיס לפני שמצטברים בוחנים.";
     case "practice_weak": {
       const label = ctx.weakestTopicPractice?.label ?? topLabel;
-      return `כי ${label} מוביל/ה בנתוני ניסיון — תרגול ממוקד מייצר עליה בדיוק.`;
+      return `כי ${label} מוביל/ה בנתוני ניסיון - תרגול ממוקד מייצר עליה בדיוק.`;
     }
     case "course_home":
     default:
@@ -324,35 +324,35 @@ function buildMomentumNba(
   const b = normBase(ctx.courseBase);
   if (kind === "review_mistakes") {
     return {
-      line: "אחרי הסקירה — בוחן ממוקד מעדכן דירוג נושאים",
+      line: "אחרי הסקירה - בוחן ממוקד מעדכן דירוג נושאים",
       cta: "לבוחן חולשות (אחרי סקירה)",
       href: `${b}/weak-quiz`,
     };
   }
   if (kind === "weak_quiz" && ctx.firstIncompleteLesson) {
     return {
-      line: "אחרי הבוחן — לחזק דרך השיעור",
+      line: "אחרי הבוחן - לחזק דרך השיעור",
       cta: `הבא: ${ctx.firstIncompleteLesson.title}`,
       href: ctx.firstIncompleteLesson.href,
     };
   }
   if (kind === "continue_lesson" && ctx.firstSimulation) {
     return {
-      line: "אחרי השיעור — לבדוק ביצועים בסימולציה",
+      line: "אחרי השיעור - לבדוק ביצועים בסימולציה",
       cta: "המשך: סימולציה",
       href: ctx.firstSimulation.href,
     };
   }
   if (kind === "practice_weak") {
     return {
-      line: "אחרי התרגול — עקבו אחרי אנליטיקה",
+      line: "אחרי התרגול - עקבו אחרי אנליטיקה",
       cta: "אנליטיקה",
       href: `${b}/analytics`,
     };
   }
   if (kind === "simulation") {
     return {
-      line: "אחרי הסימולציה — בוחן או לוח",
+      line: "אחרי הסימולציה - בוחן או לוח",
       cta: "ללוח תלמיד",
       href: `${b}/dashboard`,
     };
@@ -365,7 +365,7 @@ function buildMomentumNba(
     };
   }
   return {
-    line: "אחרי המשימה — בדקו איך הנושאים נעים בלוח",
+    line: "אחרי המשימה - בדקו איך הנושאים נעים בלוח",
     cta: "ללוח תלמיד",
     href: `${b}/dashboard`,
   };
@@ -408,7 +408,7 @@ export function withNextBestActionEnrichment(
           showUpgrade: true,
           pricingHref: pricingPath,
           pricingCta: "קבל תוכנית מלאה",
-          subtleLine: "התוכנית המלאה: מסלול מסודר ומעקב — בלי לוותר על מה שכבר בנית.",
+          subtleLine: "התוכנית המלאה: מסלול מסודר ומעקב - בלי לוותר על מה שכבר בנית.",
           primaryCtaIsUpgrade: primaryIsUpgrade,
         }
       : null,

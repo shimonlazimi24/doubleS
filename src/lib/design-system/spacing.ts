@@ -1,5 +1,5 @@
 /**
- * Layout primitives — align with `--space-*` in design-tokens.css (8px system).
+ * Layout primitives - align with `--space-*` in design-tokens.css (8px system).
  */
 
 /** Horizontal gutters for shell / container */

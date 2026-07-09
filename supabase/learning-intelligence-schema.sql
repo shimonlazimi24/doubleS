@@ -1,6 +1,6 @@
--- Learning Intelligence System — reference DDL for Postgres (Supabase).
+-- Learning Intelligence System - reference DDL for Postgres (Supabase).
 -- Apply via migrations; enable RLS + policies per tenant model.
--- AI never writes scores/completion here — only ai_artifacts + optional chat logs.
+-- AI never writes scores/completion here - only ai_artifacts + optional chat logs.
 
 -- ---------------------------------------------------------------------------
 -- COURSE ENGINE
@@ -177,7 +177,7 @@ create index if not exists learning_events_type_created on learning_events (even
 create index if not exists learning_events_course on learning_events (course_id, created_at desc);
 
 -- ---------------------------------------------------------------------------
--- ANALYTICS LAYER (derived; updated by jobs or triggers — not by AI)
+-- ANALYTICS LAYER (derived; updated by jobs or triggers - not by AI)
 -- ---------------------------------------------------------------------------
 
 create table if not exists learner_topic_stats (
@@ -209,7 +209,7 @@ create table if not exists student_profiles_summary (
 );
 
 -- ---------------------------------------------------------------------------
--- AI LAYER (artifacts only — never authoritative for grades)
+-- AI LAYER (artifacts only - never authoritative for grades)
 -- ---------------------------------------------------------------------------
 
 create type ai_artifact_kind as enum (

@@ -1,7 +1,7 @@
 import { markdownishToPlain } from "./split-markdown-lesson";
 
 /**
- * One-line excerpt from existing lesson body only (display helper — no new facts).
+ * One-line excerpt from existing lesson body only (display helper - no new facts).
  */
 export function takeawayLineFromLessonBody(body: string | undefined): string | null {
   const plain = markdownishToPlain(body ?? "", 800).trim();

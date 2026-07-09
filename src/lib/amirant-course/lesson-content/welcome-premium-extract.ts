@@ -1,5 +1,5 @@
 /**
- * Structured Unit 1.1 (welcome) for premium step rendering — no new facts.
+ * Structured Unit 1.1 (welcome) for premium step rendering - no new facts.
  */
 
 export type ScoreRangeRow = { range: string; meaning: string; detail: string };

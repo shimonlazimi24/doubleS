@@ -11,7 +11,7 @@ import {
 } from "@/lib/amirant-course/lesson-content/welcome-premium-extract";
 import type { BuiltWorkspaceStep, UnifiedFlowItem } from "./workspace-step";
 
-/** Curated welcome lesson (`lesson.intro.welcome`) — 7 steps, grouped from `unit_1_complete_welcome_and_intro.md` masach 1.1 only. */
+/** Curated welcome lesson (`lesson.intro.welcome`) - 7 steps, grouped from `unit_1_complete_welcome_and_intro.md` masach 1.1 only. */
 export const CURATED_WELCOME_LESSON_ID = "lesson.intro.welcome";
 
 const CLOSING_STEP_ID = "ws-curated-welcome-closing";
@@ -37,7 +37,7 @@ function classifySectionHeading(title: string): Bucket {
   if (/ציוני המבחן|למה בעצם|למה.*צריך.*מבחן/i.test(t)) return "why";
   if (/מה תקבלו|מה מקבלים/i.test(t)) return "what";
   if (/איך הקורס בנוי|העוזר האישי/i.test(t)) return "course_guide";
-  // עותקי CMS ישנים: סעיפי "המחויבות" הוסרו מהשיעור — נבלעים ולא מרונדרים
+  // עותקי CMS ישנים: סעיפי "המחויבות" הוסרו מהשיעור - נבלעים ולא מרונדרים
   if (/המחויבות שלי(?!.*לעצמ)|המחויבות שלכם|לעצמכם/i.test(t)) return "legacy_commitment";
   if (/מבוא קצר.*מבחן/i.test(t)) return "exam_intro";
   if (/הרפורמה החדשה|19\.4\.2026/i.test(t)) return "reform";

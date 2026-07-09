@@ -1,9 +1,9 @@
 import { ImageResponse } from "next/og";
 
-/** תמונת OG 1200×630 — נוצרת בזמן build עם צבעי המותג (מחליפה JPEG 1024×576 עם רקע משבצות). */
+/** תמונת OG 1200×630 - נוצרת בזמן build עם צבעי המותג (מחליפה JPEG 1024×576 עם רקע משבצות). */
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "PREPARE — הכנה לאמירנט";
+export const alt = "PREPARE - הכנה לאמירנט";
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             display: "flex",
           }}
         >
-          הכנה לאמירנט — קורס דיגיטלי מלא
+          הכנה לאמירנט - קורס דיגיטלי מלא
         </div>
         <div
           style={{

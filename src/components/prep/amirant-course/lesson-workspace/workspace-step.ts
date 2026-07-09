@@ -10,7 +10,7 @@ import { mergeFlowContentStepsForGranularity } from "./merge-workspace-flow-step
 import type { RoadmapStepPayload } from "@/lib/amirant-course/lesson-content/roadmap-premium-parse";
 import type { WelcomeStepPayload } from "@/lib/amirant-course/lesson-content/welcome-premium-extract";
 
-/** Single unit in the lesson body (from markdown or JSON blocks) — same shape as the premium view. */
+/** Single unit in the lesson body (from markdown or JSON blocks) - same shape as the premium view. */
 export type UnifiedFlowItem =
   | { kind: "gate" }
   | {
@@ -49,7 +49,7 @@ export type WorkspaceStepKind =
 export type BuiltWorkspaceStep = {
   id: string;
   kind: WorkspaceStepKind;
-  /** Sidebar label (RTL), sanitized — never placeholder-only titles like "---". */
+  /** Sidebar label (RTL), sanitized - never placeholder-only titles like "---". */
   label: string;
   /** Index in `flow` for section/gate steps; null for synthetic steps. */
   flowIndex: number | null;
@@ -60,16 +60,16 @@ export type BuiltWorkspaceStep = {
   /** N for this flow section when `partIndex` is set; null otherwise. */
   partTotal: number | null;
   /**
-   * Pre-expanded card for this step — **single source of truth** for section body (sidebar + main use the same object).
+   * Pre-expanded card for this step - **single source of truth** for section body (sidebar + main use the same object).
    */
   card?: ExpandedLessonCard;
   /** `lesson.intro.roadmap` curated: structured UI instead of raw markdown. */
   roadmap?: RoadmapStepPayload;
   /** `lesson.intro.welcome` curated: premium blocks. */
   welcome?: WelcomeStepPayload;
-  /** When true, render the flow gate interaction (בדיקה קצרה) inline after this step’s card — `flowIndex` must point at the gate. */
+  /** When true, render the flow gate interaction (בדיקה קצרה) inline after this step’s card - `flowIndex` must point at the gate. */
   embedQuickCheck?: boolean;
-  /** שלב שאלות אינטראקטיביות — payload מ־UnifiedFlowItem kind "questions". */
+  /** שלב שאלות אינטראקטיביות - payload מ־UnifiedFlowItem kind "questions". */
   questions?: { title: string; questionIds: string[]; timeLimitSec?: number };
 };
 
@@ -81,12 +81,12 @@ function truncate(s: string, n = TRUNC): string {
   return t.slice(0, n - 1) + "…";
 }
 
-/** Horizontal rules / empty headings often become "---" in CMS — treat as missing title. */
+/** Horizontal rules / empty headings often become "---" in CMS - treat as missing title. */
 export function isPlaceholderStepTitle(s: string): boolean {
   const t = s.replace(/\s+/g, " ").trim();
   if (!t) return true;
-  if (t === "---" || t === "—" || t === "-") return true;
-  if (/^[\-–—_]{2,}$/.test(t)) return true;
+  if (t === "---" || t === "-" || t === "—") return true;
+  if (/^[-–—_]{2,}$/.test(t)) return true;
   return false;
 }
 
@@ -147,7 +147,7 @@ export type BuildLessonStepsOpts = {
   mode: "markdown" | "blocks" | "vocab";
   /** When set with curated lesson ids, uses explicit step maps instead of generic expansion. */
   lessonId?: string;
-  /** Page intro (preamble) — used by curated Unit 1 builder. */
+  /** Page intro (preamble) - used by curated Unit 1 builder. */
   intro?: string;
 };
 
@@ -230,7 +230,7 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
   return mergeFlowContentStepsForGranularity(out);
 }
 
-/** @deprecated Use `buildLessonSteps` — kept for existing imports. */
+/** @deprecated Use `buildLessonSteps` - kept for existing imports. */
 export const buildWorkspaceSteps = buildLessonSteps;
 
 export function flowItemAtIndex(flow: UnifiedFlowItem[], flowIndex: number | null): UnifiedFlowItem | null {

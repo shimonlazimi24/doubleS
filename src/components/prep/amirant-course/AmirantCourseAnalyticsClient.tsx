@@ -83,10 +83,10 @@ export function AmirantCourseAnalyticsClient() {
   return (
     <div className="space-y-8">
       <Text as="h1" variant="titlePage">
-        אנליטיקה — הכנה לאמירנט
+        אנליטיקה - הכנה לאמירנט
       </Text>
       <Text as="p" variant="bodySm" className="text-muted">
-        נתונים מקומיים בדפדפן בלבד. אין המצאת ציונים — ה-AI מקבל רק את מה שמוצג כאן.
+        נתונים מקומיים בדפדפן בלבד. אין המצאת ציונים - ה-AI מקבל רק את מה שמוצג כאן.
       </Text>
 
       <Card>
@@ -112,7 +112,7 @@ export function AmirantCourseAnalyticsClient() {
               );
             })}
           </ul>
-          {Object.keys(analytics.byTopic).length === 0 ? <Text as="p" variant="bodySm">אין עדיין נתונים — התחילו מבחן או תרגול.</Text> : null}
+          {Object.keys(analytics.byTopic).length === 0 ? <Text as="p" variant="bodySm">אין עדיין נתונים - התחילו מבחן או תרגול.</Text> : null}
         </CardBody>
       </Card>
 

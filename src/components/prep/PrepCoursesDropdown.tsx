@@ -12,7 +12,7 @@ const navTap =
   "relative inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink";
 
 /**
- * <details> נשאר „פתוח” אחרי Next.js client navigation — לכן נסגור בלחיצה וב־route change.
+ * <details> נשאר „פתוח” אחרי Next.js client navigation - לכן נסגור בלחיצה וב־route change.
  */
 export function PrepCoursesDropdown() {
   const detailsRef = useRef<HTMLDetailsElement>(null);

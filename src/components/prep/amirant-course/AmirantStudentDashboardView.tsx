@@ -47,10 +47,10 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
           לוח תלמיד
         </p>
         <h1 className="mt-2 font-display text-2xl font-bold leading-snug md:text-3xl">
-          שלום — הנה התמונה שלך
+          שלום - הנה התמונה שלך
         </h1>
         <p className="mt-1.5 text-sm text-white/65">
-          מעקב התקדמות, המלצות ונושאים לחיזוק — הכל במקום אחד.
+          מעקב התקדמות, המלצות ונושאים לחיזוק - הכל במקום אחד.
         </p>
         <Link
           href={data.recommendedNextAction.href ?? COURSE}
@@ -79,7 +79,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
               label="בוחנים שהושלמו"
             />
             <StatChip
-              value={data.currentLevelByTopic[0] ? `${data.currentLevelByTopic[0].level}` : "—"}
+              value={data.currentLevelByTopic[0] ? `${data.currentLevelByTopic[0].level}` : "-"}
               label="רמה נוכחית"
             />
           </div>

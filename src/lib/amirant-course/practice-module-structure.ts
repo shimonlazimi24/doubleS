@@ -62,7 +62,7 @@ export function getSecondaryAdaptiveQuizzes(mod: ManifestModule): ManifestQuiz[]
   return mod.quizzes.slice(1);
 }
 
-/** שיעורי מסלול מפורשים (שלב 3 סילבוס) — mod-sc */
+/** שיעורי מסלול מפורשים (שלב 3 סילבוס) - mod-sc */
 const SC_GUIDE_LESSON_IDS = ["lesson.sc.01", "lesson.sc.02"] as const;
 const SC_VIDEO_LESSON_IDS = ["lesson.sc.03"] as const;
 

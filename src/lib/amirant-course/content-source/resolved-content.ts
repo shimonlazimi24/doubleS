@@ -9,7 +9,7 @@ let cached:
   | null
   | undefined;
 
-/** תוצאת הייבוא הגולמית — נשמרת גם כששער הסימולציות נכשל, כדי לא לפרסר פעמיים. */
+/** תוצאת הייבוא הגולמית - נשמרת גם כששער הסימולציות נכשל, כדי לא לפרסר פעמיים. */
 let cachedImport:
   | ReturnType<typeof importAmirantCourseContent>
   | null
@@ -51,7 +51,7 @@ export function getAmirantContentMode(): "production" | "demo" {
 let cachedBank: BankQuestion[] | null | undefined;
 
 /**
- * בנק השאלות האמיתי — מנותק משער הסימולציות של `getResolvedAmirantProductionContent`
+ * בנק השאלות האמיתי - מנותק משער הסימולציות של `getResolvedAmirantProductionContent`
  * (שנופל כי אין סקשן pilot ב־simulations.json ומפיל את כל הקורס ל־demo). כך
  * המניפסט העברי נשאר demo אבל השאלות בחידונים אמיתיות.
  * משתמש בתוצאת הייבוא שכבר קיימת (parse אחד); ולידציה נפרדת של השאלות רק
@@ -81,9 +81,9 @@ export type AmirantPassage = z.infer<typeof passageSourceItemSchema>;
 let cachedPassages: Map<string, AmirantPassage> | undefined;
 
 /**
- * קטעי קריאה (הבנת הנקרא) מתוך חבילת המקור — מפתח לפי passageId.
+ * קטעי קריאה (הבנת הנקרא) מתוך חבילת המקור - מפתח לפי passageId.
  * ולידציה פר-שורה: קטע פגום אחד לא מעלים את כל הקטעים (שאלות RC בלי קטע
- * אינן ניתנות למענה) — הוא מדולג עם שגיאה בלוג.
+ * אינן ניתנות למענה) - הוא מדולג עם שגיאה בלוג.
  */
 export function getResolvedAmirantPassages(): Map<string, AmirantPassage> {
   if (cachedPassages !== undefined) return cachedPassages;

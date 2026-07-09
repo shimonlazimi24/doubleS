@@ -1,5 +1,5 @@
 /**
- * LearningService — server-side orchestration for course engine + validated events.
+ * LearningService - server-side orchestration for course engine + validated events.
  * Ordering: persist business rows first, then emit events (Zod-validated metadata).
  * Not transactional across Postgres + events: if event insert fails after a write,
  * callers should log/retry; production may wrap in a DB transaction + outbox table.

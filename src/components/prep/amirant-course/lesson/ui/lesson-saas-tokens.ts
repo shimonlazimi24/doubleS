@@ -1,14 +1,14 @@
 /**
- * Amirant lesson — premium SaaS surface (2026). Single source for card + type scale.
+ * Amirant lesson - premium SaaS surface (2026). Single source for card + type scale.
  */
 export const lessonSaaS = {
-  /** Full-bleed workspace — קנבס לבן אחיד: התוכן ישירות על הדף, בלי קופסה עוטפת. */
+  /** Full-bleed workspace - קנבס לבן אחיד: התוכן ישירות על הדף, בלי קופסה עוטפת. */
   pageWrap: "min-h-[50vh] [direction:rtl] [text-align:start] bg-white",
   /** Legacy centered shell (e.g. marketing blocks). */
   container: "mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8",
-  /** Full-width lesson workspace — no centering, no max-width on the shell. */
+  /** Full-width lesson workspace - no centering, no max-width on the shell. */
   workspaceFull: "w-full max-w-none [direction:rtl] [text-align:start]",
-  /** השיעור בגדול במרכז הדף — עמודת קריאה ממורכזת. */
+  /** השיעור בגדול במרכז הדף - עמודת קריאה ממורכזת. */
   readingProse: "w-full max-w-[min(54rem,100%)] mx-auto",
   sectionGap: "space-y-8 sm:space-y-10",
   contentGap: "space-y-6 sm:space-y-8",
@@ -27,11 +27,11 @@ export const lessonSaaS = {
   body: "text-lg leading-8 text-slate-700 sm:text-lg",
   bodySm: "text-sm leading-relaxed text-gray-600 sm:text-base",
   divider: "my-6 border-0 border-t border-gray-100",
-  /** Step body: no extra wrapper — padding comes from the workspace main column. */
+  /** Step body: no extra wrapper - padding comes from the workspace main column. */
   stepContent: "min-h-0 border-0 bg-transparent p-0 shadow-none [direction:rtl] [text-align:start]",
   progressBarTrack: "h-1.5 w-full overflow-hidden rounded-full bg-slate-200/80",
   progressBarFill: "h-full rounded-full bg-sky-700 transition-[width] duration-500 ease-out",
-  /** משטח צעד שטוח — בלי כרטיסייה עוטפת (cards-in-cards מסבך ולא נקי). */
+  /** משטח צעד שטוח - בלי כרטיסייה עוטפת (cards-in-cards מסבך ולא נקי). */
   stepReadingSurface: "border-0 bg-transparent p-0 shadow-none ring-0",
   stepInsightShort:
     "rounded-xl border border-slate-200/70 bg-slate-50/90 p-4 sm:p-5",

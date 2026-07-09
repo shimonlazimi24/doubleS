@@ -11,7 +11,7 @@ type Props = {
 };
 
 function buildPrompt(lessonId: string, section: string, mode: "explain" | "summarize" | "example" | "drill2"): string {
-  const s = section.trim() || "השיעור הנוכחי (ללא כותרת משנה — השתמש/י בקטעי המקור ב־RAG).";
+  const s = section.trim() || "השיעור הנוכחי (ללא כותרת משנה - השתמש/י בקטעי המקור ב־RAG).";
   const base = `שיעור (מזהה): ${lessonId}. הפרד בין “הסבר מהמקור” לבין “המלצה אישית” אם יש. אל תייצר עובדות, ציונים, או שאלות אמיתיות ממבחנים. התבסס/י **רק** על קטעי הקורס (RAG). `;
   switch (mode) {
     case "explain":
@@ -21,14 +21,14 @@ function buildPrompt(lessonId: string, section: string, mode: "explain" | "summa
     case "example":
       return `${base}הוסף/י 1–2 משפטי דוגמה, בהתאם לסגנון הקורס, עבור «${s}» (לא חוברות חיצוניות).`;
     case "drill2":
-      return `${base}הצע/י שתי **שאלות תרגול לדוגמה בלבד** (לא ממבחן אמיתי), ברמת A2–B1, סביב «${s}». הוסף/י: “השאלות להמחשה בלבד — לא הועתקו ממבחן.”`;
+      return `${base}הצע/י שתי **שאלות תרגול לדוגמה בלבד** (לא ממבחן אמיתי), ברמת A2–B1, סביב «${s}». הוסף/י: “השאלות להמחשה בלבד - לא הועתקו ממבחן.”`;
     default:
       return base;
   }
 }
 
 /**
- * Calm “private coach” — opens the existing RAG chat with action-oriented prefills.
+ * Calm “private coach” - opens the existing RAG chat with action-oriented prefills.
  */
 export function LessonAiCoachBlock({ lessonId, lastSectionTitle, className }: Props) {
   const s = lastSectionTitle;
@@ -88,7 +88,7 @@ export function LessonAiCoachBlock({ lessonId, lastSectionTitle, className }: Pr
           שאל את המאמן
         </Button>
       </div>
-      <p className="mt-2 text-[0.65rem] text-muted">“צריך הסבר נוסף” גם בבדיקות — עוזר רקע נשלח בצ’אט (מקור בקורס).</p>
+      <p className="mt-2 text-[0.65rem] text-muted">“צריך הסבר נוסף” גם בבדיקות - עוזר רקע נשלח בצ’אט (מקור בקורס).</p>
     </div>
   );
 }

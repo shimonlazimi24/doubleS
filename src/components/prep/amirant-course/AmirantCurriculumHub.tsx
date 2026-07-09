@@ -26,7 +26,7 @@ const MODULE_META: Record<string, { icon: string; color: string; badge?: string 
 };
 
 
-/** Single module card — direct link to next lesson, no drawer */
+/** Single module card - direct link to next lesson, no drawer */
 function ModuleCard({
   mod,
   completedIds,
@@ -158,7 +158,7 @@ export function AmirantCurriculumHub() {
         <div className="mx-auto max-w-4xl">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#f1d286]">הכנה לאמירנט</p>
           <h1 className="mt-2 text-2xl font-bold md:text-3xl">
-            {completedCount === 0 ? "ברוכים הבאים לקורס" : `המשך — שיעור ${completedCount + 1} מתוך ${totalLessons}`}
+            {completedCount === 0 ? "ברוכים הבאים לקורס" : `המשך - שיעור ${completedCount + 1} מתוך ${totalLessons}`}
           </h1>
 
           <div className="mt-5 max-w-sm">
@@ -210,7 +210,7 @@ export function AmirantCurriculumHub() {
       {/* ── Module grid ── */}
       <div className="mx-auto max-w-4xl px-4 pt-8">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#b88a2f]">
-          {manifest.modules.length} מודולים · {totalLessons} שיעורים — לחץ על מודול לפתיחה
+          {manifest.modules.length} מודולים · {totalLessons} שיעורים - לחץ על מודול לפתיחה
         </p>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">

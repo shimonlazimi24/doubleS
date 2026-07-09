@@ -272,13 +272,13 @@ function parseAnswerEntries(markdown) {
     const line = stripMd(raw);
     const answerHeader =
       line.match(
-        /^(?:#+\s*)?(?:✅\s*)?Question\s+(\d+)\s+[—–-]\s+Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
+        /^(?:#+\s*)?(?:✅\s*)?Question\s+(\d+)\s+[-–-]\s+Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
       ) ||
       line.match(
-        /^(?:#+\s*)?(?:✅\s*)?Question\s+(\d+)\s+[—–-]\s+Correct Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
+        /^(?:#+\s*)?(?:✅\s*)?Question\s+(\d+)\s+[-–-]\s+Correct Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
       ) ||
       line.match(
-        /^(?:#+\s*)?(?:✅\s*)?Q(\d+)\s+[—–-]\s+Correct Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
+        /^(?:#+\s*)?(?:✅\s*)?Q(\d+)\s+[-–-]\s+Correct Answer:\s*✅?\s*\*?\*?\(([A-D])\)/i,
       );
     if (answerHeader) {
       flush();
@@ -289,8 +289,8 @@ function parseAnswerEntries(markdown) {
     }
     if (!current) continue;
     const nextHeader =
-      /^(?:#+\s*)?(?:✅\s*)?Question\s+\d+\s+[—–-]\s+(?:Correct )?Answer:/i.test(line) ||
-      /^(?:#+\s*)?(?:✅\s*)?Q\d+\s+[—–-]\s+Correct Answer:/i.test(line) ||
+      /^(?:#+\s*)?(?:✅\s*)?Question\s+\d+\s+[-–-]\s+(?:Correct )?Answer:/i.test(line) ||
+      /^(?:#+\s*)?(?:✅\s*)?Q\d+\s+[-–-]\s+Correct Answer:/i.test(line) ||
       /^##\s+Part\s+3/i.test(line) ||
       /^##\s+🎯/i.test(line);
     if (nextHeader) {

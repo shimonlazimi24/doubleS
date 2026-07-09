@@ -12,9 +12,9 @@
 
 > **The Science of Habits**
 >
-> Most of our daily behavior is shaped by habits — automatic routines that we perform with little conscious thought. From the way we brush our teeth in the morning to the route we take to work, habits allow us to conserve mental energy for more demanding tasks. Researchers estimate that nearly 40 percent of our daily actions are not deliberate choices but habitual responses to familiar situations.
+> Most of our daily behavior is shaped by habits - automatic routines that we perform with little conscious thought. From the way we brush our teeth in the morning to the route we take to work, habits allow us to conserve mental energy for more demanding tasks. Researchers estimate that nearly 40 percent of our daily actions are not deliberate choices but habitual responses to familiar situations.
 >
-> Psychologists describe habits as following a three-part loop. First comes a cue, which is a trigger that tells the brain to go into automatic mode. Next is the routine itself — the physical, mental, or emotional behavior. Finally, there is a reward, which helps the brain decide whether the loop is worth remembering for the future. Over time, as this cycle repeats, the connection between cue and routine becomes so strong that it feels almost impossible to resist.
+> Psychologists describe habits as following a three-part loop. First comes a cue, which is a trigger that tells the brain to go into automatic mode. Next is the routine itself - the physical, mental, or emotional behavior. Finally, there is a reward, which helps the brain decide whether the loop is worth remembering for the future. Over time, as this cycle repeats, the connection between cue and routine becomes so strong that it feels almost impossible to resist.
 >
 > Understanding this loop is the key to changing unwanted habits. Research suggests that trying to eliminate a habit completely is usually unsuccessful. A more effective approach is to keep the cue and reward the same, but replace the routine with a healthier alternative. Someone who wants to stop eating cookies in the afternoon, for example, might find that the cue is actually boredom at work, and the reward is a brief mental break. Replacing the cookies with a short walk can satisfy the same underlying need while supporting a healthier lifestyle.
 >

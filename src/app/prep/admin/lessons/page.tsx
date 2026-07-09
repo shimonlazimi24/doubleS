@@ -134,8 +134,8 @@ export default async function LessonsPage() {
 
       {/* Legend */}
       <div className="mt-6 flex gap-4 text-[11px] text-zinc-500">
-        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400" /> פורסם — מוצג לתלמידים</span>
-        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-yellow-400" /> טיוטה — רק אתה רואה</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-400" /> פורסם - מוצג לתלמידים</span>
+        <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-yellow-400" /> טיוטה - רק אתה רואה</span>
         <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-zinc-700" /> ברירת מחדל</span>
       </div>
     </div>

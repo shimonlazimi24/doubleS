@@ -3,7 +3,7 @@ import { PREP_BASE, PREP_PROTECTED_PREFIXES, PREP_PUBLIC_PATHS } from "@/lib/pre
 /** Plain-text body for `/llms.txt`, derived from route constants to avoid drift. */
 export function buildLlmsTxtBody(baseUrl: string): string {
   const lines: string[] = [
-    `# prePare — הכנה למבחני אנגלית`,
+    `# prePare - הכנה למבחני אנגלית`,
     `User-agent: *`,
     `Allow: ${PREP_BASE}/`,
     ``,

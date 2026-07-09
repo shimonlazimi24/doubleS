@@ -55,7 +55,7 @@ function PromoSection() {
         קוד הנחה לקורס הבא
       </h2>
       <p className="mt-1.5 text-sm text-[#5a6480]">
-        15% הנחה על כל קורס עתידי באתר — לשימוש אישי בלבד
+        15% הנחה על כל קורס עתידי באתר - לשימוש אישי בלבד
       </p>
       <div className="mt-5 flex items-center justify-center gap-3">
         <code className="rounded-xl border border-[#d4a843]/50 bg-white px-6 py-3 font-mono text-xl font-bold tracking-widest text-[#0f1e3d] shadow-sm">
@@ -121,7 +121,7 @@ function ContactSection() {
         קבל עדכונים וקורסים חדשים
       </h2>
       <p className="mt-1.5 text-sm text-[#5a6480]">
-        נעדכן אותך על TOEFL, קורסים חדשים ומבצעים — בלי ספאם.
+        נעדכן אותך על TOEFL, קורסים חדשים ומבצעים - בלי ספאם.
       </p>
 
       <div className="mt-5 space-y-3">
@@ -158,7 +158,7 @@ function ContactSection() {
           {status === "sending" ? "שולח..." : "הישארו מעודכנים ←"}
         </button>
         {status === "error" && (
-          <p className="text-center text-sm text-red-600">משהו השתבש — נסה שוב.</p>
+          <p className="text-center text-sm text-red-600">משהו השתבש - נסה שוב.</p>
         )}
       </div>
     </div>
@@ -179,7 +179,7 @@ function NextSteps() {
           { icon: "◈", text: "חזור על נושאים חלשים בדשבורד האישי" },
           { icon: "▣", text: "הרץ סימולציה נוספת תחת תנאי לחץ" },
           { icon: "✦", text: "קרא שוב את תחומי החולשה שה-AI זיהה" },
-          { icon: "◎", text: "קח הפסקה — אתה מוכן" },
+          { icon: "◎", text: "קח הפסקה - אתה מוכן" },
         ].map((item) => (
           <div key={item.text} className="flex items-start gap-3">
             <span className="mt-0.5 text-lg text-[#b88a2f]">{item.icon}</span>

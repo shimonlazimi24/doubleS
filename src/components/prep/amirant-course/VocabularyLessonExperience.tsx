@@ -106,7 +106,7 @@ function FlashPanel({ pairs }: { pairs: FlashPair[] }) {
 type MemCard = { uid: string; n: number; kind: "en" | "he"; text: string; face: boolean; matched: boolean };
 
 function buildMemoryGame(pairs: FlashPair[], pairCount: 4 | 6 | 8) {
-  const use = pairs.filter((e) => e.translation !== "—" && e.word !== "—" && e.word.length > 0);
+  const use = pairs.filter((e) => e.translation !== "-" && e.word !== "-" && e.word.length > 0);
   const nPick = Math.min(Math.min(pairCount, 8), Math.max(0, use.length));
   if (nPick < 1) return [] as MemCard[];
   const sh = shuffleInPlace([...use]).slice(0, nPick);
@@ -299,7 +299,7 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
           <CardBody className="space-y-2 p-4 sm:p-6">
             <CardTitle>
               <Heading level={2} className="text-base sm:text-lg">
-                כרטיסיות — English ⟷ עברית
+                כרטיסיות - English ⟷ עברית
               </Heading>
             </CardTitle>
             <Text as="p" variant="bodySm" className="text-slate-500">

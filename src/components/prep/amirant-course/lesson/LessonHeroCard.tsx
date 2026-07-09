@@ -28,7 +28,7 @@ function ClockIcon({ className }: { className?: string }) {
 }
 
 /**
- * First content card: short intro + primary CTA — all on white, calm premium course style.
+ * First content card: short intro + primary CTA - all on white, calm premium course style.
  */
 export function LessonHeroCard({
   title,

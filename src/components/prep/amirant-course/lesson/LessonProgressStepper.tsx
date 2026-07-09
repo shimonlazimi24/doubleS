@@ -16,7 +16,7 @@ type Props = {
 };
 
 /**
- * Calm path overview — not a game map; shows where you are in the micro-flow.
+ * Calm path overview - not a game map; shows where you are in the micro-flow.
  */
 export function LessonProgressStepper({
   items,

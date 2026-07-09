@@ -2,7 +2,7 @@ import { PREP_BASE } from "./constants";
 
 /**
  * Full access / purchase flag (client + server). Opt-in: unset = not purchased for conversion copy.
- * לשימושי המרה/CTA; **עוזר AI** — ראו `getPrepShowCourseAssistant()`.
+ * לשימושי המרה/CTA; **עוזר AI** - ראו `getPrepShowCourseAssistant()`.
  *
  * מנוטרל תמיד בפרודקשן: גישה בתשלום נקבעת אך ורק לפי `course_entitlements`
  * (`hasAmirantFullAccess`). הדגל מכובד רק ב־dev מקומי או ב־Vercel preview.
@@ -20,7 +20,7 @@ export function getPrepHasFullAccess(): boolean {
 }
 
 /**
- * עוזר AI בקורס (צ'אט צף + `/api/.../lesson-chat`): מוצג כשיש גישה מלאה, **או** ב־`next dev` — בלי דגל,
+ * עוזר AI בקורס (צ'אט צף + `/api/.../lesson-chat`): מוצג כשיש גישה מלאה, **או** ב־`next dev` - בלי דגל,
  * כדי שלא "ייעלם" בפיתוח. בפרודקשן נשארת דרישת `NEXT_PUBLIC_PREP_HAS_FULL_ACCESS`.
  */
 export function getPrepShowCourseAssistant(): boolean {

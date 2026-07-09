@@ -116,7 +116,7 @@ type WProps = {
 };
 
 /**
- * Curated `lesson.intro.welcome` body — no generic markdown wall; no duplicate «מה לקחת מזה».
+ * Curated `lesson.intro.welcome` body - no generic markdown wall; no duplicate «מה לקחת מזה».
  */
 export function WelcomePremiumBody({ payload, stepId, onInteractionContinue, embedQuickCheck, firstGateIndex, flowIndex }: WProps) {
   switch (payload.step) {

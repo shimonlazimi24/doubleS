@@ -1,5 +1,5 @@
 /**
- * Canonical structured vocabulary model for premium UI — derived from parsed MD only.
+ * Canonical structured vocabulary model for premium UI - derived from parsed MD only.
  */
 
 import type { VocabEntryData, VocabParseResult } from "./parse-vocabulary-markdown";
@@ -106,7 +106,7 @@ export function buildVocabularyLessonModel(
 
     section.entries.forEach((entry: VocabEntryData) => {
       const s = structureVocabEntry(entry.fullMd, entry.word, entry.translation, entry.n);
-      const pos = s.posLabel.replace(/^\(|\)$/g, "").trim() || "—";
+      const pos = s.posLabel.replace(/^\(|\)$/g, "").trim() || "-";
       const syns = splitSynonymsLine(s.synonyms);
       const ants = splitSynonymsLine(s.antonyms);
 
@@ -142,7 +142,7 @@ export function buildVocabularyLessonModel(
 export function wordsToFlashPairs(words: VocabularyWord[]): { word: string; translation: string; n: number }[] {
   return words.map((w, i) => ({
     word: w.word,
-    translation: w.translation || "—",
+    translation: w.translation || "-",
     n: i + 1,
   }));
 }

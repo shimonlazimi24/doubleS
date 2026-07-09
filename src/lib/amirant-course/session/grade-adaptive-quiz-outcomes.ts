@@ -24,7 +24,7 @@ export function gradeAdaptiveQuizOutcomes(params: {
   questionEnteredAtMs: number;
   prevAnalytics: AmirantCourseAnalytics;
   sessionLabel: string;
-  /** אם הוגדר במניפסט — אותו רצף מעבר רמה כמו ב־`buildAdaptiveQuizQuestionIds`. */
+  /** אם הוגדר במניפסט - אותו רצף מעבר רמה כמו ב־`buildAdaptiveQuizQuestionIds`. */
   minInTestLevel?: DifficultyLevel;
 }): {
   nextAnalytics: AmirantCourseAnalytics;

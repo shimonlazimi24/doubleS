@@ -45,7 +45,7 @@ export function AmirantLearnShell({ children }: { children: React.ReactNode }) {
             ← יציאה מהקורס
           </Link>
           <p className="mt-4 font-display text-lg font-semibold leading-snug">{AMIRANT_DEMO_COURSE.title}</p>
-          <p className="mt-2 text-xs leading-relaxed text-white/70">חוויית קורס — ניווט שיעורים, התקדמות (דמו), ומבחן מערכת.</p>
+          <p className="mt-2 text-xs leading-relaxed text-white/70">חוויית קורס - ניווט שיעורים, התקדמות (דמו), ומבחן מערכת.</p>
 
           <nav aria-label="תוכנית הקורס" className="mt-8 space-y-3">
             <div>
@@ -127,7 +127,7 @@ export function AmirantLearnShell({ children }: { children: React.ReactNode }) {
 
           <div className="mt-10 rounded-lg border border-white/15 bg-white/5 p-3 text-xs leading-relaxed text-white/75">
             <p className="font-semibold text-white/90">טיפ</p>
-            <p className="mt-1">שיעור המבחן מפנה לתרגול האדפטיבי — כמו בקורסים דיגיטליים שמשלבים יחידת מבחן נפרדת.</p>
+            <p className="mt-1">שיעור המבחן מפנה לתרגול האדפטיבי - כמו בקורסים דיגיטליים שמשלבים יחידת מבחן נפרדת.</p>
           </div>
         </div>
       </aside>

@@ -5,7 +5,7 @@ import { Container, Heading, PageLayout, Section, Text } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "בלוג",
-  description: `בלוג ${PREP_PRODUCT_NAME} — מאמרים על הכנה לאמירנט ולימודים בארה״ב.`,
+  description: `בלוג ${PREP_PRODUCT_NAME} - מאמרים על הכנה לאמירנט ולימודים בארה״ב.`,
 };
 
 const PLACEHOLDER_POSTS = [
@@ -28,7 +28,7 @@ export default function PrepBlogIndexPage() {
             בלוג
           </Heading>
           <Text as="p" variant="body" className="mt-3 text-muted">
-            מאמרים בדרך — בינתיים רשימת כותרות לדוגמה.
+            מאמרים בדרך - בינתיים רשימת כותרות לדוגמה.
           </Text>
         </Container>
       </PageLayout>

@@ -48,7 +48,7 @@ function parseQuizFile(filePath, tag) {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    // עוצרים בחלק התשובות — שאלות אחריו הן העתקים בהסברים
+    // עוצרים בחלק התשובות - שאלות אחריו הן העתקים בהסברים
     if (/^##\s.*(Answers|Answer Key|תשובות)/i.test(line)) break;
 
     const passageHeader =

@@ -5,7 +5,7 @@ import { containerPaddingX } from "@/lib/design-system/spacing";
 const maxMap = {
   shell: "max-w-shell",
   measure: "max-w-measure",
-  /** מאמרים וסילבוס ארוך — עמודות רחבות יחסית ל-measure */
+  /** מאמרים וסילבוס ארוך - עמודות רחבות יחסית ל-measure */
   measureWide: "max-w-[52rem]",
   readable: "max-w-readable",
 } as const;

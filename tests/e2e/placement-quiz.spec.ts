@@ -3,11 +3,11 @@ import { expect, test } from "@playwright/test";
 test("placement quiz: intro screen, fixed 15 questions, normalized score, no review link", async ({
   page,
 }) => {
-  // כניסה משיעור מבחן הרמה — מפנה לחידון
+  // כניסה משיעור מבחן הרמה - מפנה לחידון
   await page.goto("/prep/amirant/course/lesson/lesson.intro.diagnostic");
   await expect(page).toHaveURL(/\/prep\/amirant\/course\/quiz\/quiz-entry-diagnostic/);
 
-  // מסך פתיחה: כותרת, מבנה, כפתור התחלה — ובלי טיימר רץ
+  // מסך פתיחה: כותרת, מבנה, כפתור התחלה - ובלי טיימר רץ
   await expect(page.getByRole("heading", { name: "מבחן רמה" })).toBeVisible();
   await expect(page.getByRole("button", { name: "התחל מבחן" })).toBeVisible();
   await expect(page.getByText("שאלה 1 מתוך")).not.toBeVisible();
@@ -22,7 +22,7 @@ test("placement quiz: intro screen, fixed 15 questions, normalized score, no rev
   for (let i = 0; i < 15; i++) {
     await page.locator("li > button").first().click();
     if (i === 12) {
-      // שאלות הבנת הנקרא — קטע קריאה מוצג
+      // שאלות הבנת הנקרא - קטע קריאה מוצג
       await expect(page.getByText("הבנת הנקרא")).toBeVisible();
     }
     if (i < 14) {

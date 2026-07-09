@@ -40,11 +40,11 @@
 >
 > The reasons behind this shift are varied. For some, urban farming is primarily about food security. As the distance between farms and consumers has grown, many people have become concerned about the freshness and quality of the produce they eat. Growing vegetables on a balcony or a shared rooftop allows urban residents to know exactly where their food comes from and how it was grown. Others are motivated by environmental concerns: transporting food across long distances contributes significantly to carbon emissions, and local growing reduces this impact. A 2023 report by the World Resources Institute estimated that urban agriculture, if expanded globally, could supply up to 10 percent of the world's vegetable demand while cutting food-related emissions by an estimated 5 percent.
 >
-> However, urban farming is not without its challenges. Space is the most obvious limitation — in densely built cities, even finding a sunny corner for a small garden can be difficult. Soil quality is another concern; many urban soils are contaminated with heavy metals from decades of industrial activity, making it unsafe to grow vegetables directly in the ground. To overcome these obstacles, urban farmers have turned to creative solutions such as raised garden beds, hydroponic systems (which grow plants in water rather than soil), and vertical farming, where crops are stacked in tall, indoor structures under artificial light.
+> However, urban farming is not without its challenges. Space is the most obvious limitation - in densely built cities, even finding a sunny corner for a small garden can be difficult. Soil quality is another concern; many urban soils are contaminated with heavy metals from decades of industrial activity, making it unsafe to grow vegetables directly in the ground. To overcome these obstacles, urban farmers have turned to creative solutions such as raised garden beds, hydroponic systems (which grow plants in water rather than soil), and vertical farming, where crops are stacked in tall, indoor structures under artificial light.
 >
 > Despite its limitations, urban farming has shown clear social benefits beyond food production. Studies from several cities have found that community gardens often strengthen neighborhood ties, providing a space where residents from different backgrounds can meet and work together. In some neighborhoods, previously unused lots have been transformed into thriving gardens, which in turn have contributed to lower crime rates and increased property values. For these reasons, a growing number of city governments now actively support urban farming through grants, tax incentives, and dedicated land-use policies.
 >
-> Still, experts caution against overstating what urban farming can achieve. While it may help improve local food quality and build stronger communities, it is unlikely to replace traditional large-scale agriculture anytime soon. As one researcher put it, urban farming is best understood not as a substitute for rural farming, but as a valuable complement to it — one that reconnects city dwellers with the origins of their food.
+> Still, experts caution against overstating what urban farming can achieve. While it may help improve local food quality and build stronger communities, it is unlikely to replace traditional large-scale agriculture anytime soon. As one researcher put it, urban farming is best understood not as a substitute for rural farming, but as a valuable complement to it - one that reconnects city dwellers with the origins of their food.
 
 ---
 
@@ -105,7 +105,7 @@ What can be inferred from the final paragraph about the author's view of urban f
 (A) The author believes urban farming is overrated and offers no real value.
 (B) The author thinks urban farming should aim to completely replace rural farming.
 (C) The author sees urban farming as useful, but with realistic limits on what it can achieve.
-(D) The author believes that only governments — not individuals — can make urban farming succeed.
+(D) The author believes that only governments - not individuals - can make urban farming succeed.
 
 ---
 
@@ -193,7 +193,7 @@ What can be inferred from the final paragraph about the author's view of urban f
 - ❌ (A) "overrated and no real value" – סותר; הכותב כותב על "valuable complement".
 - ❌ (B) "aim to completely replace rural farming" – הפוך; המחבר אומר במפורש שזה **לא** יכול להחליף.
 - ✅ **(C) "useful, but with realistic limits"** – זה בדיוק האיזון שהמחבר מציג בפסקה האחרונה: תועלת ברורה, אבל בהכרה במגבלות.
-- ❌ (D) "only governments — not individuals — can make it succeed" – לא נאמר או מרומז.
+- ❌ (D) "only governments - not individuals - can make it succeed" – לא נאמר או מרומז.
 
 **📝 טיפ: Inference** – שאלת הסקה דורשת ממך להבין את הטון והכוונה הכללית. חפש **מילים שמאפיינות עמדה** של המחבר: "however", "still", "best understood as", "caution", "valuable". אלה רמזים לטון.
 

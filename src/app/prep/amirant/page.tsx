@@ -7,7 +7,7 @@ import { getPublicSiteUrl } from "@/lib/prep/site-url";
 const siteUrl = getPublicSiteUrl();
 
 export const metadata: Metadata = {
-  title: "הכנה לאמירנט — קורס דיגיטלי מלא | PREPARE",
+  title: "הכנה לאמירנט - קורס דיגיטלי מלא | PREPARE",
   description:
     "קורס הכנה מקיף לאמירנט (מבחן האנגלית של מאל״ו). " +
     "תרגול אדפטיבי עם AI, " +
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${siteUrl}/prep/amirant` },
   openGraph: {
-    title: "הכנה לאמירנט — קורס דיגיטלי מלא",
+    title: "הכנה לאמירנט - קורס דיגיטלי מלא",
     description: "תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות מלאות. הכינו לאמירנט בחכמה.",
     url: `${siteUrl}/prep/amirant`,
     locale: "he_IL",

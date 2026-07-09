@@ -44,7 +44,7 @@ export function AmirantPremiumLessonView({
 }: Props) {
   const defaultIntroFallback =
     mode === "vocab"
-      ? "למידת אוצר מילים — עברו בין הלשוניות: קריאה, כרטיסיות והתאמות."
+      ? "למידת אוצר מילים - עברו בין הלשוניות: קריאה, כרטיסיות והתאמות."
       : "השיעור בנוי שלב־אחר־שלב. השתמשו במסלול הימני או בכפתורי הבא/קודם.";
 
   if (mode === "vocab" && !vocabData) {

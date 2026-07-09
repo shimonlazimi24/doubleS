@@ -34,7 +34,7 @@ export function AIValueSection() {
           <div className="mt-6 rounded-control border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
             <p className="font-medium text-paper">דוגמה לשימוש</p>
             <p className="mt-2 leading-relaxed">
-              אחרי מבחן תרגול — סיכום נקודות לחיזוק והמלצה על יחידות להמשך, לפי הביצועים שלכם.
+              אחרי מבחן תרגול - סיכום נקודות לחיזוק והמלצה על יחידות להמשך, לפי הביצועים שלכם.
             </p>
           </div>
         </aside>

@@ -11,7 +11,7 @@ type Props = {
 };
 
 /**
- * Constrained, centered column — matches premium lesson max width (1000px).
+ * Constrained, centered column - matches premium lesson max width (1000px).
  */
 export function LessonSection({ id, className, children, title, eyebrow }: Props) {
   return (

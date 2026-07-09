@@ -52,7 +52,7 @@ function resolvedUnderDocsPrepRoot(absFile: string): boolean {
 }
 
 /**
- * שיעור קורס: קודם `content/amirnet-course/{rel}`. אם אין — נסיון `docs/amirnet-prep/{אותו שם קובץ}` (שימושי כשמעדכנים רק ב־docs).
+ * שיעור קורס: קודם `content/amirnet-course/{rel}`. אם אין - נסיון `docs/amirnet-prep/{אותו שם קובץ}` (שימושי כשמעדכנים רק ב־docs).
  */
 export function readAmirantCourseMarkdownSource(
   rel: string,

@@ -116,7 +116,7 @@ export function PrepAuthCompleteClient() {
         if (!cancelled) {
           setMessage(
             detail.includes("pkce_mismatch")
-              ? "הקישור נפתח בדפדפן אחר. חוזרים למסך ההתחברות — הקלידו שם את הקוד מהמייל."
+              ? "הקישור נפתח בדפדפן אחר. חוזרים למסך ההתחברות - הקלידו שם את הקוד מהמייל."
               : "ההתחברות נכשלה…",
           );
         }

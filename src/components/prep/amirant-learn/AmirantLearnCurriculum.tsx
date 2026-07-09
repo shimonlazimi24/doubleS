@@ -45,7 +45,7 @@ export function AmirantLearnCurriculum({ modules }: { modules: DemoModule[] }) {
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary/90">מסלול הלמידה</p>
           <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-ink md:text-3xl">תוכנית הלימודים</h2>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-            מודולים מסודרים לפי נושאים. בכל שיעור — מדריכים, תרגול או מבחן, לפי הסוג. לחצו על שורה כדי להיכנס לשיעור.
+            מודולים מסודרים לפי נושאים. בכל שיעור - מדריכים, תרגול או מבחן, לפי הסוג. לחצו על שורה כדי להיכנס לשיעור.
           </p>
         </div>
         <div className="flex shrink-0 flex-wrap gap-2 text-xs text-muted">

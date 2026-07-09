@@ -16,7 +16,7 @@ type Props = Omit<HTMLAttributes<HTMLDivElement>, "children"> & {
   pad?: Pad;
 };
 
-/** Page content wrapper — vertical rhythm only (nav/footer live in layout). */
+/** Page content wrapper - vertical rhythm only (nav/footer live in layout). */
 export function PageLayout({ children, pad = "md", className, ...props }: Props) {
   return (
     <div className={cn("min-w-0", pads[pad], className)} {...props}>

@@ -14,7 +14,7 @@ import {
 } from "@/lib/amirant-course/lesson-content/unit1-verbatim-snippets";
 import type { BuiltWorkspaceStep, UnifiedFlowItem } from "./workspace-step";
 
-/** Curated roadmap lesson (`lesson.intro.roadmap`) — masach 1.2 from the same Unit 1 markdown file. */
+/** Curated roadmap lesson (`lesson.intro.roadmap`) - masach 1.2 from the same Unit 1 markdown file. */
 export const CURATED_ROADMAP_LESSON_ID = "lesson.intro.roadmap";
 
 const CLOSING_STEP_ID = "ws-curated-roadmap-closing";

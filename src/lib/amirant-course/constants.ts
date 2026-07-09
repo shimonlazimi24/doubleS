@@ -1,4 +1,4 @@
-/** Canonical course identity — align DB seeds with this slug/id when syncing. */
+/** Canonical course identity - align DB seeds with this slug/id when syncing. */
 export const AMIRANT_PREPARATION_COURSE_ID = "amirant-preparation-v1";
 export const AMIRANT_PREPARATION_SLUG = "amirant-preparation";
 

@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   const { requestIp, sessionId } = getAiRequestMeta(req);
   const { data: { user } } = await client.auth.getUser();
 
-  // העוזר הוא פיצ'ר בתשלום (וה-RAG שלו מעוגן בתוכן הקורס המלא) — בפרודקשן
+  // העוזר הוא פיצ'ר בתשלום (וה-RAG שלו מעוגן בתוכן הקורס המלא) - בפרודקשן
   // נדרש מנוי פעיל. ב-dev/preview הדגלים (שממילא כבויים בפרודקשן) פותחים אותו.
   const assistantAllowed =
     getPrepShowCourseAssistant() ||
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     return new Response(
       JSON.stringify({
         error: user
-          ? "העוזר האישי זמין למנויי הקורס. אפשר להצטרף בעמוד המחירים — והוא ילווה אתכם בכל שיעור."
+          ? "העוזר האישי זמין למנויי הקורס. אפשר להצטרף בעמוד המחירים - והוא ילווה אתכם בכל שיעור."
           : "עוזר הקורס זמין למשתמשים מחוברים. התחברו כדי להמשיך.",
       }),
       { status: 403, headers: { "Content-Type": "application/json" } },

@@ -1,7 +1,7 @@
 import type { VocabEntryData, VocabParseResult } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 
 /**
- * Minimal sample for tests / Storybook / demos — mirrors real MD shape from `03_vocabulary/*.md`.
+ * Minimal sample for tests / Storybook / demos - mirrors real MD shape from `03_vocabulary/*.md`.
  *
  * @example
  * ```tsx

@@ -1,11 +1,11 @@
 /**
- * ייבוא שאלות סימולציות 2–4 מקבצי ה-md אל בנק השאלות (questions.json) —
+ * ייבוא שאלות סימולציות 2–4 מקבצי ה-md אל בנק השאלות (questions.json) -
  * עד עכשיו רק סימולציה 1 הייתה בבנק, וזמן-הריצה של סימולציות 2–4 שאב
  * שאלות גנריות במקום השאלות הייעודיות שנכתבו להן.
  *
  * מפרק: שאלות (**QN.** + אופציות A–D), מפתח תשובות (#### ✅ QN – **(X) ...**)
  * עם ההסבר המלא, וקטע קריאה לפרק הבנת הנקרא. פרקים ניסיוניים (🧪 Grammar /
- * Word Formation) מדולגים — אינם נושאי בנק.
+ * Word Formation) מדולגים - אינם נושאי בנק.
  *
  * אידמפוטנטי: שאלות שכבר קיימות לא מיובאות שוב.
  * הרצה: node scripts/import-simulation-questions.mjs
@@ -28,7 +28,7 @@ function sectionTopic(header) {
   if (/sentence\s*completion/i.test(header)) return "sentence_completion";
   if (/reading/i.test(header)) return "reading_comprehension";
   if (/restatement|rephras/i.test(header)) return "rephrasing";
-  return null; // Grammar / Word Formation / Listening — לא נושאי בנק
+  return null; // Grammar / Word Formation / Listening - לא נושאי בנק
 }
 
 function subtopicFor(topic) {

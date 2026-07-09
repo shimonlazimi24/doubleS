@@ -55,7 +55,7 @@ export function VocabularyLessonShell({ lessonTitle, model, estimatedMinutes, cl
             {model.wordCount} מילים
           </span>
           <span className="rounded-full border border-stone-200/90 bg-stone-50 px-3 py-1 text-sm font-medium text-slate-700">
-            {estimatedMinutes != null ? `~${estimatedMinutes} דק׳` : "זמן משוער —"}
+            {estimatedMinutes != null ? `~${estimatedMinutes} דק׳` : "זמן משוער -"}
           </span>
         </div>
       </header>

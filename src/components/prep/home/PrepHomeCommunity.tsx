@@ -20,7 +20,7 @@ export function PrepHomeCommunity() {
               לומדים סקרנים
             </Heading>
             <Text as="p" variant="bodyInverse" className="mt-ds-5 max-w-lg">
-              עדכונים על מסלולים, טיפים לתזמון לפני מבחן ותכנים נבחרים — טופס הדגמה בלבד (אין שליחה לשרת).
+              עדכונים על מסלולים, טיפים לתזמון לפני מבחן ותכנים נבחרים - טופס הדגמה בלבד (אין שליחה לשרת).
             </Text>
 
             <div className="mt-ds-8 flex max-w-lg flex-col gap-ds-2 sm:flex-row sm:flex-row-reverse sm:items-stretch">

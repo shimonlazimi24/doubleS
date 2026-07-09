@@ -10,7 +10,7 @@ type Props = {
 };
 
 /**
- * Short reflection between card groups — three clear options, not gamified.
+ * Short reflection between card groups - three clear options, not gamified.
  */
 export function LessonInteractionBlock({ onContinue, className, surface = "card" }: Props) {
   const helpMsg =

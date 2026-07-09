@@ -19,7 +19,7 @@ test("adaptive quiz full demo flow ends in analytics/dashboard/review", async ({
   await page.getByRole("link", { name: "אנליטיקה" }).click();
   await expect(page).toHaveURL(/\/prep\/amirant\/course\/analytics/);
   await page.getByRole("button", { name: "בקשת ניתוח" }).click();
-  // קריאת AI אמיתית — עד 30 שניות
+  // קריאת AI אמיתית - עד 30 שניות
   await expect(
     page.getByText(/הסבר:|בקשה נדחתה.|שגיאת רשת.|fallback/i),
   ).toBeVisible({ timeout: 30_000 });

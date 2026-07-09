@@ -44,7 +44,7 @@ export function AmirantExpiryBanner({ expiresAt }: Props) {
           </p>
           <p className="mt-0.5 text-sm opacity-80">
             {expired
-              ? "הארך גישה כדי להמשיך מהנקודה שעצרת — ההתקדמות שמורה."
+              ? "הארך גישה כדי להמשיך מהנקודה שעצרת - ההתקדמות שמורה."
               : "הארך עכשיו לפני שההתקדמות תיחסם."}
           </p>
         </div>

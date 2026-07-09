@@ -1,6 +1,6 @@
-/** נתוני דמו בלבד — הכנה למבחן אמירנט (מוק לפלטפורמה). */
+/** נתוני דמו בלבד - הכנה למבחן אמירנט (מוק לפלטפורמה). */
 
-export const AMIRANT_DEMO_COURSE_NAME = "אמירנט — קורס הכנה (סילבוס + מבחן מערכת)";
+export const AMIRANT_DEMO_COURSE_NAME = "אמירנט - קורס הכנה (סילבוס + מבחן מערכת)";
 
 export const mockDashboardStats = [
   { label: "התקדמות במסלול", value: "38%", hint: "יחידה 2 מתוך 5 (דמו)" },
@@ -33,7 +33,7 @@ export const mockVideoMeta = {
 } as const;
 
 export const mockQuiz = {
-  title: "בוחן דמה — אנגלית ודקדוק (אמירנט)",
+  title: "בוחן דמה - אנגלית ודקדוק (אמירנט)",
   questions: [
     {
       id: "q1",
@@ -56,7 +56,7 @@ export const mockQuiz = {
     },
     {
       id: "q3",
-      prompt: "בטקסט קצר: המטרה העיקרית של הפסקה היא —",
+      prompt: "בטקסט קצר: המטרה העיקרית של הפסקה היא -",
       options: [
         "להציג נתונים גולמיים בלבד",
         "לפתח טיעון מרכזי אחד עם דוגמאות",
@@ -77,15 +77,15 @@ export const mockAiAnalysis = {
   gaps: ["התאמת זמנים בהקשר ארוך", "שאלות Truth Value בזמן לחץ"],
   nextSteps: [
     "תרגול ממוקד: 15 שאלות Present Perfect (יומיים)",
-    "מבחן דמה קצר — 20 דק׳ — בעוד 3 ימים",
+    "מבחן דמה קצר - 20 דק׳ - בעוד 3 ימים",
   ],
   modelLabel: "דמו: שכבת AI (ללא קריאה חיצונית)",
 } as const;
 
 export const mockBehaviorReport = {
-  title: "דוח התנהגות — 14 יום אחרונים (דמו)",
+  title: "דוח התנהגות - 14 יום אחרונים (דמו)",
   rows: [
-    { event: "צפייה בווידאו — יחידה 2", count: 4, avgMinutes: 8.2 },
+    { event: "צפייה בווידאו - יחידה 2", count: 4, avgMinutes: 8.2 },
     { event: "התחלת בוחן דמה", count: 3, avgMinutes: null },
     { event: "השלמת בוחן", count: 2, avgMinutes: 24 },
     { event: "הודעות צ׳אט (דמו)", count: 12, avgMinutes: null },
@@ -107,10 +107,10 @@ export const mockIntegrations = [
   { name: "SSO (OIDC)", status: "אופציונלי", detail: "ארגונים" },
 ] as const;
 
-/** תשובות צ׳אט דמו — לפי מילות מפתח (ללא שרת). */
+/** תשובות צ׳אט דמו - לפי מילות מפתח (ללא שרת). */
 export function getMockChatReply(userMessage: string): string {
   const t = userMessage.trim().toLowerCase();
-  if (!t) return "כתבו שאלה על המבנה, הדקדוק או אסטרטגיית זמן — זו תשובת דמו.";
+  if (!t) return "כתבו שאלה על המבנה, הדקדוק או אסטרטגיית זמן - זו תשובת דמו.";
   if (/אמירנט|מבחן|משך|זמן/.test(t)) {
     return "בדמו: המבחן בודק אנגלית ברמה אקדמית. מומלץ לתרגל בלוקים של 45 דק׳ ולהדמות מבחן מלא פעם בשבוע.";
   }
@@ -118,10 +118,10 @@ export function getMockChatReply(userMessage: string): string {
     return "בדמו: נשמור טעויות נפוצות ב-Present Perfect ומילות קישור. בשלב הבא נחבר ניתוח אישי לפי תשובותיך.";
   }
   if (/אוצר|מילים|vocab/.test(t)) {
-    return "בדמו: בונים אוצר אקדמי מרשימות שמקושרות לטקסטים בקורס — לא רשימות מבודדות.";
+    return "בדמו: בונים אוצר אקדמי מרשימות שמקושרות לטקסטים בקורס - לא רשימות מבודדות.";
   }
   if (/הבנה|קריאה|reading/.test(t)) {
-    return "בדמו: קראו את הפסקה פעמיים — פעם ראשונה גלובלית, פעם שנייה עם שאלות בראש.";
+    return "בדמו: קראו את הפסקה פעמיים - פעם ראשונה גלובלית, פעם שנייה עם שאלות בראש.";
   }
   if (/ציון|ציונים|תוצאה/.test(t)) {
     return "בדמו: הציון המוצג כאן הוא מדומה. בפרודקשן הציון יגיע ממנוע ההערכה + אימות.";

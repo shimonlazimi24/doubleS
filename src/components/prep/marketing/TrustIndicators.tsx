@@ -13,7 +13,7 @@ export function TrustIndicators({
   className?: string;
 }) {
   return (
-    // עמודות עם מפרידי קו-שיער (בלי קופסאות) — שקט ו"אקדמי".
+    // עמודות עם מפרידי קו-שיער (בלי קופסאות) - שקט ו"אקדמי".
     // RTL: border-s = הקצה הימני של הפריט; מדלגים על הראשון בכל שורה.
     <ul
       className={cn(

@@ -7,7 +7,7 @@
 | Category | `amirant-prep` |
 | Course | slug `amirant-demo`, id in `src/lib/prep/amirant-demo/seed-constants.ts` |
 | Modules | 2 (יסודות · מיומנויות מבחן) |
-| Lessons | 6 — mix of **video**, **text**, **mixed** (practice / exam wrapper) |
+| Lessons | 6 - mix of **video**, **text**, **mixed** (practice / exam wrapper) |
 | Topics | `vocabulary`, `reading_comprehension`, `sentence_completion` |
 | Subtopics | academic verbs, synonyms, main idea, inference, connectors, collocations |
 | Quiz | 1 quiz on the **last lesson** (מבחן דמו מלא), 45 min suggested, pass 60% |
@@ -43,7 +43,7 @@ Re-running is mostly idempotent (`ON CONFLICT (id) DO NOTHING` on fixed PKs). If
 
 Edit and run `amirant-demo-learner-sample.sql` after replacing `YOUR-USER-UUID-HERE` with a real `auth.users.id`.
 
-For **events** and **attempts**, use the app `LearningService` (server) — do not hand-insert `quiz_attempt_answers.is_correct` without the same logic the service uses.
+For **events** and **attempts**, use the app `LearningService` (server) - do not hand-insert `quiz_attempt_answers.is_correct` without the same logic the service uses.
 
 ---
 
@@ -57,7 +57,7 @@ For **events** and **attempts**, use the app `LearningService` (server) — do n
 ### 2. Open lesson
 
 - List: `select id, title, kind from lessons where module_id in (...)` using module IDs from `seed-constants`.
-- **Video** rows have `video_storage_path` (placeholder path — replace with real storage in prod).
+- **Video** rows have `video_storage_path` (placeholder path - replace with real storage in prod).
 
 ### 3. Start quiz
 
@@ -76,7 +76,7 @@ For **events** and **attempts**, use the app `LearningService` (server) — do n
 
 ### 6. Submit quiz
 
-- `LearningService.submitQuiz({ userId, attemptId })` — score and `passed` are **server-side**.
+- `LearningService.submitQuiz({ userId, attemptId })` - score and `passed` are **server-side**.
 
 ### 7. Weak topics
 
@@ -88,7 +88,7 @@ For **events** and **attempts**, use the app `LearningService` (server) — do n
 
 ### 9. AI explanation / helper
 
-- Build `AiTutorGrounding` via `mergeTutorRequest` + RAG on lesson bodies; **never** let the model set official score — only explain using `question` + options + analytics snapshot.
+- Build `AiTutorGrounding` via `mergeTutorRequest` + RAG on lesson bodies; **never** let the model set official score - only explain using `question` + options + analytics snapshot.
 
 ---
 

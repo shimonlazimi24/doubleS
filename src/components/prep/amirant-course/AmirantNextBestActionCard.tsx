@@ -12,7 +12,7 @@ const btnBase =
   "inline-flex min-h-[2.5rem] items-center justify-center rounded-control px-4 py-2.5 text-sm font-semibold shadow-card transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
 
 /**
- * "מה כדאי לעשות עכשיו" — CTA, למה, התקדמות, מומנטום, ושדרוג עדין כשאין גישה מלאה.
+ * "מה כדאי לעשות עכשיו" - CTA, למה, התקדמות, מומנטום, ושדרוג עדין כשאין גישה מלאה.
  */
 export function AmirantNextBestActionCard({ action, className }: Props) {
   const { display, conversion, momentum, why, progressLine } = action;

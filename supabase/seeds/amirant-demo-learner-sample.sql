@@ -1,4 +1,4 @@
--- Optional: demo learner rows — run AFTER `amirant-demo.sql` and AFTER you have a real `auth.users` id.
+-- Optional: demo learner rows - run AFTER `amirant-demo.sql` and AFTER you have a real `auth.users` id.
 -- Replace the UUID below with your test user (Supabase Auth → Users, or sign up once and copy id).
 
 -- \set demo_user '''YOUR-USER-UUID-HERE'''

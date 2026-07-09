@@ -32,7 +32,7 @@ export function selectNextQuestion(params: {
    * Unrelated to the rolling `recent` window: prevents repeating a question once 12+ steps later.
    */
   excludedInSession?: ReadonlySet<QuestionPoolItem["questionId"]>;
-  /** Tie-break salt — e.g. `${userId}:${topicId}:${day}` */
+  /** Tie-break salt - e.g. `${userId}:${topicId}:${day}` */
   tieBreakSalt: string;
 }): NextQuestionSelection | null {
   const { pool, topicId, targetLevel, recentQuestionIds, tieBreakSalt, excludedInSession } = params;
@@ -64,6 +64,6 @@ export function selectNextQuestion(params: {
   return {
     questionId: choice.questionId,
     usedDifficultyLevel: choice.difficultyLevel,
-    reason: "no match at preferred levels — any unused question in topic",
+    reason: "no match at preferred levels - any unused question in topic",
   };
 }

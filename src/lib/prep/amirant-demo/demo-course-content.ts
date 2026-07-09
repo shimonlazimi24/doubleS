@@ -1,5 +1,5 @@
 /**
- * Mirrors `supabase/seeds/amirant-demo.sql` — use for in-browser practice without DB.
+ * Mirrors `supabase/seeds/amirant-demo.sql` - use for in-browser practice without DB.
  * Keep in sync when editing the SQL seed.
  */
 import { selectNextQuestion, type QuestionPoolItem } from "@/lib/learning-intelligence/adaptive";
@@ -103,7 +103,7 @@ function lessonKindForSyllabusLeaf(_partId: string, title: string): DemoLessonKi
 
 function bodyPreviewForSyllabusLeaf(part: SyllabusPart, leaf: SyllabusBullet): string {
   const theme = moduleThemeHe(part.id);
-  return `יחידה בנושא «${theme}»: ${leaf.title}. תוכן מלא (מדריך, אודיו, תרגול) יתווסף בהמשך — כרגע זהו מבנה הקורס לפי הסילבוס.`;
+  return `יחידה בנושא «${theme}»: ${leaf.title}. תוכן מלא (מדריך, אודיו, תרגול) יתווסף בהמשך - כרגע זהו מבנה הקורס לפי הסילבוס.`;
 }
 
 function estimatedMinutesForSyllabusLeaf(partId: string, title: string): number {
@@ -150,7 +150,7 @@ export function buildAmirantCourseModules(): DemoModule[] {
     fullSims.lessons.push({
       id: AMIRANT_DEMO_IDS.lessons.m2exam,
       moduleId: fullSims.id,
-      title: "מבחן סימולציה מלא — הפעלת מנוע אדפטיבי",
+      title: "מבחן סימולציה מלא - הפעלת מנוע אדפטיבי",
       sortOrder: fullSims.lessons.length,
       kind: "mixed",
       bodyPreview:
@@ -168,13 +168,13 @@ export const AMIRANT_DEMO_MODULES: DemoModule[] = buildAmirantCourseModules();
 export const AMIRANT_DEMO_QUIZ: DemoQuizMeta = {
   id: AMIRANT_DEMO_IDS.quiz,
   lessonId: AMIRANT_DEMO_IDS.lessons.m2exam,
-  title: "בוחן דמו אמירנט — גרסת מערכת",
-  /** 39 דק׳ לפרקי ציון (ללא פיילוט) — עקבי עם סילבוס הסימולציה. */
+  title: "בוחן דמו אמירנט - גרסת מערכת",
+  /** 39 דק׳ לפרקי ציון (ללא פיילוט) - עקבי עם סילבוס הסימולציה. */
   timeLimitSec: 2340,
   passingScorePct: 60,
 };
 
-/** Full question bank — IDs align with seed SQL. */
+/** Full question bank - IDs align with seed SQL. */
 export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
   {
     id: "20000001-0000-4000-8000-000000000101",
@@ -393,7 +393,7 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.synonyms,
     difficulty: 4,
-    explanation: '"Mitigate" means to make something less severe — "alleviate" fits best here.',
+    explanation: '"Mitigate" means to make something less severe - "alleviate" fits best here.',
     correctOptionId: "20000001-0000-4000-8000-000000000254",
     options: [
       { id: "20000001-0000-4000-8000-000000000253", label: "worsen" },
@@ -410,7 +410,7 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.mainIdea,
     difficulty: 5,
-    explanation: "The author acknowledges limits while defending a modest benefit — qualified support.",
+    explanation: "The author acknowledges limits while defending a modest benefit - qualified support.",
     correctOptionId: "20000001-0000-4000-8000-000000000258",
     options: [
       { id: "20000001-0000-4000-8000-000000000257", label: "Peer review is useless" },

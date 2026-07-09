@@ -11,7 +11,7 @@ export type DeckMetrics = { start: number; perView: number; filteredTotal: numbe
 export type WordLearningDeckProps = {
   words: VocabularyWord[];
   categoryFilter: string | "all";
-  /** Fired when navigation or filter changes — for lesson progress UI. */
+  /** Fired when navigation or filter changes - for lesson progress UI. */
   onDeckMetrics?: (m: DeckMetrics) => void;
   className?: string;
 };

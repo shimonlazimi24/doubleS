@@ -1,5 +1,5 @@
 /**
- * פרמטר URL (למשל `?vocab=verbs`) או בחירה ב־UI — לסינון שאלות אוצר מילים במבחן אדפטיבי.
+ * פרמטר URL (למשל `?vocab=verbs`) או בחירה ב־UI - לסינון שאלות אוצר מילים במבחן אדפטיבי.
  */
 export type VocabQuizMode = "mixed" | "verbs" | "nouns" | "adjectives" | "adverbs" | "phrasal";
 

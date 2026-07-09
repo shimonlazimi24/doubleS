@@ -22,7 +22,7 @@ type LessonChatClientPayload = {
   topic?: string;
 };
 
-/** עד 8 תורות אחרונים, חתוכים ל-600 תווים — כדי שהעוזר יזכור את השיחה. */
+/** עד 8 תורות אחרונים, חתוכים ל-600 תווים - כדי שהעוזר יזכור את השיחה. */
 function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; text: string }[] {
   return messages
     .filter((m) => m.text.trim())
@@ -39,14 +39,14 @@ const STARTER_PROMPTS = [
 type HintSession = { stage: number; questionType?: string };
 
 export type AmirantCourseChatPanelProps = {
-  /** מזהה שיעור ל־RAG; בלי — שאלות לרוחב הקורס */
+  /** מזהה שיעור ל־RAG; בלי - שאלות לרוחב הקורס */
   activeLessonId?: string | null;
   /** שורה קצרה מעל הצ'אט (למשל \"מיקוד: …\") */
   contextHint?: string;
-  /** כותרת; ברירה — עוזר הקורס */
+  /** כותרת; ברירה - עוזר הקורס */
   title?: string;
   className?: string;
-  /** פאנל צף — פחות padding / צל */
+  /** פאנל צף - פחות padding / צל */
   compact?: boolean;
 };
 
@@ -66,7 +66,7 @@ export function AmirantCourseChatPanel({
   // Ref so sendWithPayload (memoized on loading/activeLessonId) can always read the latest value
   const currentQuestionRef = useRef<AmirantQuestionContextDetail | null>(null);
   useEffect(() => { currentQuestionRef.current = currentQuestion; }, [currentQuestion]);
-  // בזמן השליחה ה-ref עוד לא כולל את ההודעה החדשה — בדיוק ההיסטוריה שרוצים לשלוח
+  // בזמן השליחה ה-ref עוד לא כולל את ההודעה החדשה - בדיוק ההיסטוריה שרוצים לשלוח
   const messagesRef = useRef<Msg[]>([]);
   useEffect(() => { messagesRef.current = messages; }, [messages]);
   const listRef = useRef<HTMLDivElement>(null);
@@ -132,7 +132,7 @@ export function AmirantCourseChatPanel({
               );
             } else if (event.t === "done" && event.d) {
               const data = event.d;
-              const suffix = data.safeFallback ? "\n\n(מצב זהיר — מידע מוגבל/חסר.)" : "";
+              const suffix = data.safeFallback ? "\n\n(מצב זהיר - מידע מוגבל/חסר.)" : "";
               const rec = typeof data.recommendedAction === "string" && data.recommendedAction.trim()
                 ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
               // Replace with final answer from done event (handles escaping edge cases)

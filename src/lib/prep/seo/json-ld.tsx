@@ -25,7 +25,7 @@ export function organizationJsonLd(baseUrl: string): JsonLdObject {
   };
 }
 
-/** Course schema — shown by Google as a course card in search results */
+/** Course schema - shown by Google as a course card in search results */
 export function amirantCourseJsonLd(baseUrl: string): JsonLdObject {
   const totalLessons = AMIRANT_PREPARATION_MANIFEST.modules.reduce(
     (s, m) => s + m.lessons.length, 0
@@ -33,7 +33,7 @@ export function amirantCourseJsonLd(baseUrl: string): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "Course",
-    name: "הכנה לאמירנט — קורס דיגיטלי מלא",
+    name: "הכנה לאמירנט - קורס דיגיטלי מלא",
     description:
       "קורס הכנה מקיף לאמירנט (מבחן האנגלית האקדמי של מאל״ו). כולל " +
       `${totalLessons} שיעורים, תרגול אדפטיבי עם AI, וסימולציות מלאות בתנאי אמת.`,
@@ -66,7 +66,7 @@ export function amirantCourseJsonLd(baseUrl: string): JsonLdObject {
   };
 }
 
-/** FAQPage schema — Google shows Q&A directly in search results */
+/** FAQPage schema - Google shows Q&A directly in search results */
 export function amirantFaqJsonLd(): JsonLdObject {
   const faqs = [
     {
@@ -87,7 +87,7 @@ export function amirantFaqJsonLd(): JsonLdObject {
     },
     {
       q: "כמה זמן ללמוד לאמירנט?",
-      a: "בממוצע 2-4 שבועות של לימוד מסודר. תלמידים עם בסיס טוב יכולים להכין ב-10 ימים; מי שצריך חיזוק משמעותי — 4-6 שבועות.",
+      a: "בממוצע 2-4 שבועות של לימוד מסודר. תלמידים עם בסיס טוב יכולים להכין ב-10 ימים; מי שצריך חיזוק משמעותי - 4-6 שבועות.",
     },
     {
       q: "אילו נושאים יש באמירנט?",
@@ -110,7 +110,7 @@ export function amirantFaqJsonLd(): JsonLdObject {
   };
 }
 
-/** BreadcrumbList — helps Google show path in search results */
+/** BreadcrumbList - helps Google show path in search results */
 export function breadcrumbJsonLd(
   baseUrl: string,
   crumbs: { name: string; path: string }[],

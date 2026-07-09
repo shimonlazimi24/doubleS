@@ -24,21 +24,21 @@
 
 ## 3. AI integration (existing `lesson-chat` + RAG)
 
-- `src/lib/prep/amirant-lesson-coach-events.ts` — `window` event `amirant:course:coach-prompt` with `{ userMessage, autoSend? }`.
+- `src/lib/prep/amirant-lesson-coach-events.ts` - `window` event `amirant:course:coach-prompt` with `{ userMessage, autoSend? }`.
 - `AmirantCourseChatPanel` listens, prefills input, optionally auto-sends; `AmirantCourseFloatingChat` opens the panel on the same event.
 - Prompts in `LessonAiCoachBlock` stress: **course RAG only**, no invented exam facts, short actionable answers.
 - `LessonQuickCheck` “צריך הסבר נוסף” sends a grounded help request with `autoSend: true`.
 
 ## 4. Example: Unit 1 (Introduction module)
 
-- Module: `mod-intro` → e.g. [`/prep/amirant/course/lesson/lesson.intro.doc-1-1`](https://localhost) — “ברוכים הבאים לקורס”.
+- Module: `mod-intro` → e.g. [`/prep/amirant/course/lesson/lesson.intro.doc-1-1`](https://localhost) - “ברוכים הבאים לקורס”.
 - Flow: hero with progress bar → stepper (sections + בדיקה קצרה) → micro cards → “מה חשוב לזכור” → footer actions → מאמן AI.
 
 ## 5. Files changed (this iteration)
 
 - **Added:** `PremiumLessonShell.tsx`, `LessonProgressStepper.tsx`, `LessonQuickCheck.tsx`, `LessonAiCoachBlock.tsx`, `LessonHero.tsx`, `LessonMicroSection.tsx`, `LessonFooterActions.tsx`, `amirant-lesson-coach-events.ts`, `microsection-split.ts`, `microsection-split.test.ts`
 - **Updated:** `AmirantPremiumLessonView.tsx`, `LessonHeader.tsx`, `LessonBlockCard.tsx` (bodyParts), `AmirantCourseChatPanel.tsx`, `AmirantCourseFloatingChat.tsx`, `LessonInteraction.tsx` (re-export), `LessonVariantCards.tsx`, `lesson/index.ts`
-- **Tests:** `npm run test:amirant` — the suite may still report failures in `content-source/import.test.ts` (production JSON schema / empty `items` on examples blocks) unrelated to this UX work; the new `microsection-split` tests pass in isolation.
+- **Tests:** `npm run test:amirant` - the suite may still report failures in `content-source/import.test.ts` (production JSON schema / empty `items` on examples blocks) unrelated to this UX work; the new `microsection-split` tests pass in isolation.
 
 ## 6. Commands
 

@@ -18,8 +18,8 @@ export type LessonBlockCardProps = {
    */
   sectionStack?: { index: number; total: number };
   /**
-   * `bodyOnly` — no card title h2; use when the page already shows the section heading.
-   * `workspaceFlat` — one reading surface: no inner bordered card, no icon box (avoids “card in card”).
+   * `bodyOnly` - no card title h2; use when the page already shows the section heading.
+   * `workspaceFlat` - one reading surface: no inner bordered card, no icon box (avoids “card in card”).
    */
   contentMode?: "full" | "bodyOnly" | "workspaceFlat";
 };

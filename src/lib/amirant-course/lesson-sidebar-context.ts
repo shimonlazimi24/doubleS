@@ -13,7 +13,7 @@ export function getCourseModuleOrdinal(moduleId: string): number {
   return i >= 0 ? i + 1 : 1;
 }
 
-/** First line under «מסלול השיעור» — e.g. יחידה 1: פתיחה והיכרות */
+/** First line under «מסלול השיעור» - e.g. יחידה 1: פתיחה והיכרות */
 export function unitHeadingLineForLessonSidebar(module: ManifestModule, moduleOrdinal: number): string {
   const sub =
     module.id === "mod-intro"
@@ -22,7 +22,7 @@ export function unitHeadingLineForLessonSidebar(module: ManifestModule, moduleOr
   return `יחידה ${moduleOrdinal}: ${sub}`;
 }
 
-/** Second header line — e.g. שיעור 1.1: כותרת */
+/** Second header line - e.g. שיעור 1.1: כותרת */
 export function lessonHeadingLineForSidebar(moduleOrdinal: number, indexInModule: number, lessonTitle: string): string {
   return `שיעור ${moduleOrdinal}.${indexInModule + 1}: ${lessonTitle}`;
 }

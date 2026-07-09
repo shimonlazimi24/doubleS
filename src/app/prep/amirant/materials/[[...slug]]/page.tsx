@@ -12,7 +12,7 @@ type Props = { params: { slug?: string[] } };
 
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.slug;
-  if (!slug?.length) return { title: "חומרי קורס ומידע — אמירנט" };
+  if (!slug?.length) return { title: "חומרי קורס ומידע - אמירנט" };
   return { title: `${slug.join(" / ")} | אמירנט` };
 }
 
@@ -63,8 +63,8 @@ export default function AmirantMaterialsPage({ params }: Props) {
             חומרי קורס ומידע
           </Heading>
           <Text as="p" variant="body" className="mt-3 max-w-readable text-muted">
-            <strong>Markdown</strong> — תיקיית <code className="rounded bg-surface-low px-1 text-sm">content/amirnet-course</code> (AMIRNET Course). תצוגה גולמית
-            בעמוד זה. <strong>HTML</strong> — דפים מעוצבים תחת <code className="rounded bg-surface-low px-1 text-sm">public/amirant-html</code> (נפתחים כדף מלא).
+            <strong>Markdown</strong> - תיקיית <code className="rounded bg-surface-low px-1 text-sm">content/amirnet-course</code> (AMIRNET Course). תצוגה גולמית
+            בעמוד זה. <strong>HTML</strong> - דפים מעוצבים תחת <code className="rounded bg-surface-low px-1 text-sm">public/amirant-html</code> (נפתחים כדף מלא).
             קבצי <strong>Word (.docx)</strong> אינם נטענים כאן; יש לייצא PDF/Markdown או להעתיק טקסט לפרויקט.
           </Text>
 
@@ -138,7 +138,7 @@ export default function AmirantMaterialsPage({ params }: Props) {
         </Heading>
         {truncated ? (
           <Text as="p" variant="bodySm" className="mt-2 text-amber-900">
-            הקובץ ארוך מאוד — מוצגים רק {maxChars.toLocaleString("he-IL")} התווים הראשונים.
+            הקובץ ארוך מאוד - מוצגים רק {maxChars.toLocaleString("he-IL")} התווים הראשונים.
           </Text>
         ) : null}
         <pre className="mt-6 overflow-x-auto whitespace-pre-wrap break-words rounded-surface border border-line/80 bg-paper p-4 text-sm leading-relaxed text-ink shadow-inner">

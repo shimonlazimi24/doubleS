@@ -24,10 +24,10 @@ export interface ManifestPracticeSet {
 export interface ManifestQuiz {
   id: string;
   title: string;
-  /** Adaptive MCQ test — engine picks 16 from bank. */
+  /** Adaptive MCQ test - engine picks 16 from bank. */
   adaptive: boolean;
   /**
-   * "fixed_placement" — מבחן רמה בטופס קבוע (8 השלמת משפטים → 4 ניסוח מחדש →
+   * "fixed_placement" - מבחן רמה בטופס קבוע (8 השלמת משפטים → 4 ניסוח מחדש →
    * 3 הבנת הנקרא על קטע אחד), לא אדפטיבי. ברירת מחדל: "adaptive".
    */
   format?: "adaptive" | "fixed_placement";
@@ -59,7 +59,7 @@ export interface ManifestSimulation {
   videoPath?: string | null;
   /** Pilot section (not scored). */
   pilot: { seconds: number; questionCount: number; topicSlug: string };
-  /** Scored sections — timers must sum to 39 minutes. */
+  /** Scored sections - timers must sum to 39 minutes. */
   sections: { label: string; seconds: number; topicSlug: string; questionCount: number }[];
 }
 

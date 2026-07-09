@@ -1,5 +1,5 @@
 /**
- * RLS verification helper — documents policies and fails if service role is missing when VERIFY_RLS=1.
+ * RLS verification helper - documents policies and fails if service role is missing when VERIFY_RLS=1.
  * Full cross-user tests require two test users; run manually against staging per docs/PRODUCTION_READINESS.md.
  */
 import { createClient } from "@supabase/supabase-js";

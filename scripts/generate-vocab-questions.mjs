@@ -1,14 +1,14 @@
 /**
  * מחולל שאלות אוצר מילים אמיתיות מתוך רשימות המילים של הקורס (2,000+ מילים
- * עם הגדרה, תרגום ודוגמאות) — מחליף את 30 שאלות הדמו הסינתטיות בחידוני
+ * עם הגדרה, תרגום ודוגמאות) - מחליף את 30 שאלות הדמו הסינתטיות בחידוני
  * אוצר המילים.
  *
- * פורמט אחד בלבד — meaning: "What is the meaning of X?" עם התרגום הנכון +
+ * פורמט אחד בלבד - meaning: "What is the meaning of X?" עם התרגום הנכון +
  * 3 תרגומים של מילים אחרות מאותה רמה. הפורמט חסין דו-משמעות מבנית (תרגומים
  * שונים זה מזה), בניגוד ל-context-blank שבו כמה מילים יכולות להתאים למשפט.
  *
  * מסיחים: מילים מאותו קובץ (אותו סוג + רמה), עם תרגום שונה לחלוטין.
- * הסבר: ההגדרה + התרגום + משפט הדוגמה — ישירות מהחומר.
+ * הסבר: ההגדרה + התרגום + משפט הדוגמה - ישירות מהחומר.
  *
  * אידמפוטנטי (מדלג על מזהים קיימים). הרצה: node scripts/generate-vocab-questions.mjs
  */
@@ -43,7 +43,7 @@ const FILES = [
   { file: "vocabulary_5_mastery_level.md", kind: "verbs", difficulty: 6 },
 ];
 
-/** PRNG דטרמיניסטי — אותן שאלות בכל הרצה (יציבות מזהים). */
+/** PRNG דטרמיניסטי - אותן שאלות בכל הרצה (יציבות מזהים). */
 function mulberry32(a) {
   return () => {
     a |= 0;
@@ -88,7 +88,7 @@ function wordCount(s) {
 
 /**
  * אורכי אופציות מאוזנים: פער אורכים קיצוני (יחס ≥3.2 במילים) הופך את
- * האלימינציה לטריוויאלית — מסיחים נבחרים באורך דומה לתרגום הנכון.
+ * האלימינציה לטריוויאלית - מסיחים נבחרים באורך דומה לתרגום הנכון.
  */
 function lengthsBalanced(candidates, target) {
   const lens = [...candidates, target].map((e) => wordCount(e.translation)).filter((n) => n > 0);
@@ -107,7 +107,7 @@ function pickDistractors(entries, target, count, rng) {
     const cand = pool[Math.floor(rng() * pool.length)];
     if (used.has(cand.word)) continue;
     if (out.some((o) => !distinctTranslations(o.translation, cand.translation))) continue;
-    // איזון אורכים — אחרי 250 ניסיונות מרפים כדי לא להיתקע על מילים חריגות
+    // איזון אורכים - אחרי 250 ניסיונות מרפים כדי לא להיתקע על מילים חריגות
     if (guard < 250 && !lengthsBalanced([...out, cand], target)) continue;
     used.add(cand.word);
     out.push(cand);
@@ -136,7 +136,7 @@ for (const spec of FILES) {
   }
   const entries = parseEntries(fs.readFileSync(filePath, "utf8"));
   if (entries.length < 8) {
-    console.warn(spec.file, "— only", entries.length, "parseable entries, skipping");
+    console.warn(spec.file, "- only", entries.length, "parseable entries, skipping");
     continue;
   }
   const rng = mulberry32(spec.file.length * 7919 + spec.difficulty);

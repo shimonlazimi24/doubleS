@@ -25,7 +25,7 @@ export function splitMarkdownByMasachH1(markdown: string): string[] {
 }
 
 /**
- * לפני תצוגה: מסיר מ־H1…H6 רק את החלק "מסמך X.Y:" (והטקסט לפניו, כגון אימוג'י) — בלי לשנות את הטקסט הזמין למשתמש.
+ * לפני תצוגה: מסיר מ־H1…H6 רק את החלק "מסמך X.Y:" (והטקסט לפניו, כגון אימוג'י) - בלי לשנות את הטקסט הזמין למשתמש.
  * מבוסס־שורה כדי שלא יידרש RegExp יוניקוד (u) לתווי אימוג'י.
  */
 function stripMasachFromHeadingLine(line: string): string {

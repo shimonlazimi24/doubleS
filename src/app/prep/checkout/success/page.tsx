@@ -62,7 +62,7 @@ export default async function CheckoutSuccessPage({
           <h1 className="mt-4 text-2xl font-bold text-ink">התשלום התקבל בהצלחה!</h1>
           <Text as="p" variant="body" className="mt-2 text-muted">
             {stillPending
-              ? "התשלום בעיבוד — הגישה תיפתח תוך רגעים. אם הדף לא מתעדכן, רעננו."
+              ? "התשלום בעיבוד - הגישה תיפתח תוך רגעים. אם הדף לא מתעדכן, רעננו."
               : "הגישה לקורס נפתחה. אפשר להתחיל ללמוד עכשיו."}
           </Text>
         </div>

@@ -3,7 +3,7 @@ import { cn } from "@/lib/design-system/cn";
 type Props = { className?: string; /** Flat on the workspace reading surface (no inner card). */ surface?: "card" | "embed" };
 
 /**
- * Structural end-cap — no new teaching content; points learners back to summary blocks in the body.
+ * Structural end-cap - no new teaching content; points learners back to summary blocks in the body.
  */
 const closingCopy =
   "הדגשים המרכזיים הופיעו בכרטיסי השיעור למעלה. לפני שעוברים לתרגול, כדאי לוודא שהנקודות הללו «יושבות» בבירור.";

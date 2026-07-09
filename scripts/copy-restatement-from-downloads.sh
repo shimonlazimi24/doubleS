@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # מעתיק מסמכי «ניסוח מחדש» (יחידה 5) מ־Downloads ל־content/amirnet-course.
-# הרצה: מהשורש של education — bash scripts/copy-restatement-from-downloads.sh
+# הרצה: מהשורש של education - bash scripts/copy-restatement-from-downloads.sh
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

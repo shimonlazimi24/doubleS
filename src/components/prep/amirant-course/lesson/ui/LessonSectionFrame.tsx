@@ -3,7 +3,7 @@ import { cn } from "@/lib/design-system/cn";
 import { lessonSaaS } from "./lesson-saas-tokens";
 
 type Props = {
-  /** Section heading — adds hierarchy without duplicating card chrome. */
+  /** Section heading - adds hierarchy without duplicating card chrome. */
   title?: string;
   eyebrow?: string;
   children: ReactNode;

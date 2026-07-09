@@ -16,7 +16,7 @@ type SectionProps = {
 
 type Props = ShellProps | SectionProps;
 
-/** מסכי טיוטה — מבוססי מערכת העיצוב בלבד. */
+/** מסכי טיוטה - מבוססי מערכת העיצוב בלבד. */
 export function PrepRouteStub(props: Props) {
   if (props.kind === "section") {
     return (

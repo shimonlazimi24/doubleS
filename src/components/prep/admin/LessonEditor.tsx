@@ -16,7 +16,7 @@ export type LessonFormData = {
 };
 
 const TOPICS = [
-  { value: "", label: "— בחר מודול —" },
+  { value: "", label: "- בחר מודול -" },
   { value: "intro", label: "מבוא" },
   { value: "vocabulary", label: "אוצר מילים (Vocabulary)" },
   { value: "sentence_completion", label: "Sentence Completion" },
@@ -40,7 +40,7 @@ const EMPTY: LessonFormData = {
   published: false,
 };
 
-/** שיעורים עם חוויית צעדים "curated" — שינוי כותרות H2 עלול לשבור את סיווג הצעדים. */
+/** שיעורים עם חוויית צעדים "curated" - שינוי כותרות H2 עלול לשבור את סיווג הצעדים. */
 const CURATED_LESSON_IDS = new Set(["lesson.intro.welcome", "lesson.intro.roadmap"]);
 
 export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> }) {
@@ -148,7 +148,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
 
       {isCurated && (
         <div className="mb-4 px-4 py-3 bg-amber-500/10 border border-amber-500/40 rounded-lg text-sm text-amber-900">
-          ⚠️ לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים — עדיף לערוך את
+          ⚠️ לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים - עדיף לערוך את
           הטקסט בתוך הסעיפים בלי לשנות כותרות. אפשר גם לפרסם רק «וידאו לשיעור» ולהשאיר את התוכן ריק.
         </div>
       )}
@@ -160,7 +160,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
           <input
             value={form.title}
             onChange={(e) => set("title", e.target.value)}
-            placeholder="למשל: מילים שכיחות — פעלים"
+            placeholder="למשל: מילים שכיחות - פעלים"
             className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -273,7 +273,7 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
   );
 }
 
-// Simple markdown preview — renders as HTML
+// Simple markdown preview - renders as HTML
 function MarkdownPreview({ source }: { source: string }) {
   if (!source.trim()) return <p className="text-zinc-500 italic">אין תוכן להצגה</p>;
   // Basic markdown rendering without external dependency

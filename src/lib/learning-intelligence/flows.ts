@@ -1,5 +1,5 @@
 /**
- * End-to-end flows (orchestration — implement in Next.js Route Handlers / Server Actions).
+ * End-to-end flows (orchestration - implement in Next.js Route Handlers / Server Actions).
  *
  * ## Lesson flow
  * 1. Client opens lesson → POST upsert `lesson_progress` (in_progress) if first open.

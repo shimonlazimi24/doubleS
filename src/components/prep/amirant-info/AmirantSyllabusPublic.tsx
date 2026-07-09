@@ -22,7 +22,7 @@ export function AmirantSyllabusPublic() {
         סילבוס הקורס (מבנה לימודים)
       </Heading>
       <Text as="p" variant="bodySm" className="mb-ds-8 max-w-readable text-muted">
-        המבנה הבא משמש גם לבניית מודולי הדמו באפליקציה (`AMIRANT_COURSE_SYLLABUS_PARTS`): לכל פריט עלה בעץ יש שיעור נפרד בנתיב הלמידה. דרישות טכניות למנוע הסימולציה (אדפטיביות, טיימרים, 16 שאלות וכו׳) אינן חלק מהסילבוס ללומד — הן מפורטות בקוד ב־`AMIRANT_SIMULATION_TECH` ו־`AMIRANT_SIMULATION_BUILDER_SPEC_HE`. תוכן עומק (מדריכים, אודיו, בנק שאלות) יתווסף בהדרגה.
+        המבנה הבא משמש גם לבניית מודולי הדמו באפליקציה (`AMIRANT_COURSE_SYLLABUS_PARTS`): לכל פריט עלה בעץ יש שיעור נפרד בנתיב הלמידה. דרישות טכניות למנוע הסימולציה (אדפטיביות, טיימרים, 16 שאלות וכו׳) אינן חלק מהסילבוס ללומד - הן מפורטות בקוד ב־`AMIRANT_SIMULATION_TECH` ו־`AMIRANT_SIMULATION_BUILDER_SPEC_HE`. תוכן עומק (מדריכים, אודיו, בנק שאלות) יתווסף בהדרגה.
       </Text>
       <div className="space-y-ds-10">
         {AMIRANT_COURSE_SYLLABUS_PARTS.map((part, idx) => (

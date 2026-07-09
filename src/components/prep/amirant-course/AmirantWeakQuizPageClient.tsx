@@ -81,7 +81,7 @@ export function AmirantWeakQuizPageClient() {
             בונים בוחן לפי חולשותיך
           </Text>
           <Text as="p" variant="bodySm" className="text-muted">
-            בוחרים שאלות לפי נתוני הניסיונות — רגע אחד.
+            בוחרים שאלות לפי נתוני הניסיונות - רגע אחד.
           </Text>
         </CardBody>
       </Card>

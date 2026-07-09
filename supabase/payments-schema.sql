@@ -1,5 +1,5 @@
 -- ============================================================
--- prep_payments — יומן תשלומים (Hyp) + אידמפוטנטיות הענקת גישה
+-- prep_payments - יומן תשלומים (Hyp) + אידמפוטנטיות הענקת גישה
 -- להריץ ב-Supabase SQL Editor אחרי amirant-production-mvp-schema.sql
 -- ============================================================
 
@@ -15,9 +15,9 @@ create table if not exists prep_payments (
     check (status in ('pending','paid','failed','cancelled','refunded')),
   -- Id מהקולבק של Hyp (מזהה עסקה)
   hyp_transaction_id text,
-  -- ACode — קוד אישור מחברת האשראי
+  -- ACode - קוד אישור מחברת האשראי
   hyp_acode text,
-  -- CCode — קוד תשובה גולמי (0 = הצלחה)
+  -- CCode - קוד תשובה גולמי (0 = הצלחה)
   hyp_ccode text,
   -- כל פרמטרי הקולבק המאומתים (לאודיט ותמיכה)
   raw_callback jsonb,
@@ -40,10 +40,10 @@ drop policy if exists prep_payments_own_select on prep_payments;
 create policy prep_payments_own_select on prep_payments
   for select to authenticated using (user_id = auth.uid());
 
--- כתיבה: אין policies — service role בלבד (checkout + callback רצים בשרת)
+-- כתיבה: אין policies - service role בלבד (checkout + callback רצים בשרת)
 
 -- ============================================================
--- הענקת ימי גישה אטומית — מונעת מרוץ בין שני קולבקים מקבילים
+-- הענקת ימי גישה אטומית - מונעת מרוץ בין שני קולבקים מקבילים
 -- (שתי רכישות/הארכות בו-זמנית): ההארכה מחושבת ב-DB בשורה נעולה,
 -- כך ששתי הענקות מצטברות במקום שהאחרונה תדרוס את הראשונה.
 -- ============================================================
@@ -71,7 +71,7 @@ begin
 end;
 $$;
 
--- service role בלבד — לא חשוף למשתמשים
+-- service role בלבד - לא חשוף למשתמשים
 revoke execute on function grant_course_days(uuid, text, int) from public;
 revoke execute on function grant_course_days(uuid, text, int) from anon;
 revoke execute on function grant_course_days(uuid, text, int) from authenticated;

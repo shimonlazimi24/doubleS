@@ -1,13 +1,13 @@
 /**
  * Derives structured fields from a vocabulary entry's `fullMd` (same source as parse-vocabulary-markdown).
- * Display-only — does not change stored curriculum.
+ * Display-only - does not change stored curriculum.
  */
 
 export type StructuredVocabEntry = {
   index: number;
   /** English headword, e.g. "be" */
   word: string;
-  /** e.g. "(v.)", "(n.)" — may be empty */
+  /** e.g. "(v.)", "(n.)" - may be empty */
   posLabel: string;
   /** First line after H3, markdown-ish title fragment for header */
   titleDisplay: string;
@@ -97,7 +97,7 @@ export function structureVocabEntry(fullMd: string, fallbackWord: string, fallba
     }
   }
 
-  if (!out.translation || out.translation === "—") {
+  if (!out.translation || out.translation === "-") {
     out.translation = fallbackTranslation;
   }
 
@@ -106,6 +106,6 @@ export function structureVocabEntry(fullMd: string, fallbackWord: string, fallba
 
 export function hasStructuredContent(s: StructuredVocabEntry): boolean {
   return Boolean(
-    s.definition || s.examples.length || s.synonyms || s.antonyms || s.memoryTip || (s.translation && s.translation !== "—"),
+    s.definition || s.examples.length || s.synonyms || s.antonyms || s.memoryTip || (s.translation && s.translation !== "-"),
   );
 }

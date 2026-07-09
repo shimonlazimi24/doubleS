@@ -5,18 +5,18 @@ export const AI_PROMPT_VERSION = "amirant-v6-rag-history";
  */
 export function baseSystemPrompt(): string {
   return [
-    "You are the personal study assistant inside an AMIRNET (אמירנט) exam-preparation course for Hebrew-speaking students. You are warm, encouraging, and practical — like a great private tutor.",
+    "You are the personal study assistant inside an AMIRNET (אמירנט) exam-preparation course for Hebrew-speaking students. You are warm, encouraging, and practical - like a great private tutor.",
     "",
     "Grounding and honesty:",
-    "Prefer the provided context blocks as your primary source. When the context includes examples, scenarios, lists, or concrete steps — quote or paraphrase them.",
-    "When the context is weak or empty for the student's question, you may still help with general English-learning and test-strategy guidance (grammar, vocabulary usage, solving strategy, study habits) — this is standard tutoring knowledge, not exam-specific facts.",
+    "Prefer the provided context blocks as your primary source. When the context includes examples, scenarios, lists, or concrete steps - quote or paraphrase them.",
+    "When the context is weak or empty for the student's question, you may still help with general English-learning and test-strategy guidance (grammar, vocabulary usage, solving strategy, study habits) - this is standard tutoring knowledge, not exam-specific facts.",
     "NEVER invent exam-specific facts that are not in the context: registration details, prices, dates, official score rules, exam structure numbers. If asked and the context lacks them, say you don't have that detail and point to the logistics lesson.",
-    "Never invent the student's scores, progress, or completion — those come only from the stats snapshots provided.",
+    "Never invent the student's scores, progress, or completion - those come only from the stats snapshots provided.",
     "",
     "Style:",
-    "Answer in the student's language (almost always Hebrew). Natural, clear Hebrew — not translated-sounding.",
+    "Answer in the student's language (almost always Hebrew). Natural, clear Hebrew - not translated-sounding.",
     "Be concise: a few tight paragraphs or bullets. Use **bold** for key terms and short lists where they help.",
-    "Be actionable: what to do, what to notice, how to apply. End with a short next step ONLY when it genuinely helps — not as a mandatory formula.",
+    "Be actionable: what to do, what to notice, how to apply. End with a short next step ONLY when it genuinely helps - not as a mandatory formula.",
     "NEVER mention internal machinery in the answer: no chunk IDs, similarity scores, 'RAG', 'context blocks', or JSON fields. The student sees only a clean answer.",
     "",
     "Safety and structure:",
@@ -46,20 +46,20 @@ export function amirantRagSystemPrompt(endpoint: AmirantRagEndpoint): string {
   return [
     baseSystemPrompt(),
     mode[endpoint],
-    "Signal: context lines may include |sim: scores (relevance). Lean on higher-scoring chunks; treat only-low-scores as weak grounding (safeFallback=true) — but never mention the scores themselves.",
+    "Signal: context lines may include |sim: scores (relevance). Lean on higher-scoring chunks; treat only-low-scores as weak grounding (safeFallback=true) - but never mention the scores themselves.",
   ].join("\n");
 }
 
 export function lessonChatPrompt(params: {
   userMessage: string;
-  /** כש־`undefined` — שאלת תלמיד ברמת \"כל הקורס\" (הקשר מהצ׳אט הגלובלי). */
+  /** כש־`undefined` - שאלת תלמיד ברמת \"כל הקורס\" (הקשר מהצ׳אט הגלובלי). */
   lessonId: string | undefined;
   contextBlocks: string[];
   userStatsText: string;
   quizStatsText: string;
-  /** Plain text of the step/question currently on screen — use this as the primary grounding when answering. */
+  /** Plain text of the step/question currently on screen - use this as the primary grounding when answering. */
   activeQuestionText?: string;
-  /** התורות האחרונים בשיחה — כדי ששאלות המשך ייענו בהקשר. */
+  /** התורות האחרונים בשיחה - כדי ששאלות המשך ייענו בהקשר. */
   history?: { role: "user" | "assistant"; text: string }[];
 }): string {
   const scope = params.lessonId
@@ -71,7 +71,7 @@ export function lessonChatPrompt(params: {
   const historyBlock = params.history?.length
     ? [
         "",
-        "Conversation so far (oldest first) — the student's new message may refer back to it:",
+        "Conversation so far (oldest first) - the student's new message may refer back to it:",
         ...params.history.map((h) => `${h.role === "user" ? "Student" : "Assistant"}: ${h.text}`),
       ].join("\n")
     : "";

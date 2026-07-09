@@ -1,5 +1,5 @@
 /**
- * זיכרון הטפסים האחרונים של מבחן הרמה (localStorage) — כדי שבמעבר חוזר על המבחן
+ * זיכרון הטפסים האחרונים של מבחן הרמה (localStorage) - כדי שבמעבר חוזר על המבחן
  * לא יופיעו אותן שאלות/קטע. שומרים את 2 הטפסים האחרונים.
  */
 export type PlacementRecentForm = {
@@ -36,7 +36,7 @@ export function rememberPlacementForm(form: { questionIds: string[]; passageId: 
     ].slice(0, MAX_FORMS);
     window.localStorage.setItem(LS_PLACEMENT_RECENT, JSON.stringify(next));
   } catch {
-    // localStorage לא זמין — מדלגים
+    // localStorage לא זמין - מדלגים
   }
 }
 

@@ -33,7 +33,7 @@ const NAV = [
 ] as const;
 
 const COMING_PRACTICE =
-  "סט ייעודי לרמה זו עדיין אינו מופיע במניפסט. בינתיים, המבחן האדפטיבי ממקם אותכם בקושי דינמי לפי ביצועים — ראו בקטע המבחן.";
+  "סט ייעודי לרמה זו עדיין אינו מופיע במניפסט. בינתיים, המבחן האדפטיבי ממקם אותכם בקושי דינמי לפי ביצועים - ראו בקטע המבחן.";
 
 type Props = {
   mod: ManifestModule;
@@ -57,7 +57,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
     <section className="space-y-5" aria-labelledby="amirant-pm-structured">
       <div>
         <Heading id="amirant-pm-structured" level={2} className="text-lg">
-          {sc ? "שלב 3 — מסלול «השלמת משפטים»" : "מסלול למידה מובנה"}
+          {sc ? "שלב 3 - מסלול «השלמת משפטים»" : "מסלול למידה מובנה"}
         </Heading>
         <p className="mt-1 text-sm text-muted">
           {sc
@@ -159,7 +159,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
                 <Text as="p" variant="bodySm" className="text-muted">
                   {sc
                     ? "הוסיפו שיעור וידאו/תסריט (למשל lesson.sc.03) במניפסט, או העלו מדיה היכן שמקושר בקורס."
-                    : "אין שיעורי וידאו או מעורב מוגדרים — ניתן להמשיך לתרגול ולמבחן האדפטיבי."}
+                    : "אין שיעורי וידאו או מעורב מוגדרים - ניתן להמשיך לתרגול ולמבחן האדפטיבי."}
                 </Text>
               )}
             </CardBody>
@@ -170,7 +170,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
           <LevelPracticeCard
             step={3}
             id="amirant-pm-easy"
-            title={sc ? "מקבצי שאלות — רמה קלה" : "תרגול — קל"}
+            title={sc ? "מקבצי שאלות - רמה קלה" : "תרגול - קל"}
             set={easyP}
             courseBase={courseBase}
             primaryQuizHref={primaryQ ? `${courseBase}/quiz/${primaryQ.id}` : null}
@@ -180,7 +180,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
           <LevelPracticeCard
             step={4}
             id="amirant-pm-mid"
-            title={sc ? "מקבצי שאלות — רמה בינונית" : "תרגול — בינוני"}
+            title={sc ? "מקבצי שאלות - רמה בינונית" : "תרגול - בינוני"}
             set={intP}
             courseBase={courseBase}
             primaryQuizHref={primaryQ ? `${courseBase}/quiz/${primaryQ.id}` : null}
@@ -190,7 +190,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
           <LevelPracticeCard
             step={5}
             id="amirant-pm-hard"
-            title={sc ? "מקבצי שאלות — רמה גבוהה" : "תרגול — מתקדם"}
+            title={sc ? "מקבצי שאלות - רמה גבוהה" : "תרגול - מתקדם"}
             set={hardP}
             courseBase={courseBase}
             primaryQuizHref={primaryQ ? `${courseBase}/quiz/${primaryQ.id}` : null}
@@ -208,7 +208,7 @@ export function AmirantPracticeModuleLearningPath({ mod, courseBase }: Props) {
                   6
                 </span>
                 <Heading level={3} className="text-base">
-                  {sc ? "מבחנים (רמה משתנה) — אדפטיבי" : "מבחן אדפטיבי"}
+                  {sc ? "מבחנים (רמה משתנה) - אדפטיבי" : "מבחן אדפטיבי"}
                 </Heading>
               </div>
               {primaryQ ? (

@@ -25,13 +25,13 @@ export function stagedHintModePrompt(params: {
     s === 1
       ? "- Stage 1: Name the type briefly, then ONE small strategy (how to start / what to notice)."
       : s === 2
-        ? "- Stage 2: Point to a clue, keyword, or structural feature in the text/options — not the solution end."
+        ? "- Stage 2: Point to a clue, keyword, or structural feature in the text/options - not the solution end."
         : s === 3
-          ? "- Stage 3: Name 1–2 *wrong* options with a short reason each (grammar clash, not in passage, etc.) — do NOT name the correct option or letter."
-          : "- Stage 4: The student is allowed a full solution path — explain reasoning; ground in context. If the key is not in the chunks, do not fabricate it.";
+          ? "- Stage 3: Name 1–2 *wrong* options with a short reason each (grammar clash, not in passage, etc.) - do NOT name the correct option or letter."
+          : "- Stage 4: The student is allowed a full solution path - explain reasoning; ground in context. If the key is not in the chunks, do not fabricate it.";
 
   return [
-    "Staged help — you are a learning assistant, not an answer key.",
+    "Staged help - you are a learning assistant, not an answer key.",
     `Inferred or provided question type: **${tl}** (internal label; use Hebrew in the answer).`,
     `Current hint STAGE: **${s}** (strict).`,
     "",
@@ -47,6 +47,6 @@ export function stagedHintModePrompt(params: {
     "- rephrasing: meaning preserved, certainty, time, added/omitted information.",
     "- reading_comprehension: main idea, evidence, paragraph role.",
     "- vocabulary: context, register, common confusions (no invention beyond context).",
-    "- simulation: pacing and strategy only — no invented scores or official rules.",
+    "- simulation: pacing and strategy only - no invented scores or official rules.",
   ].join("\n");
 }

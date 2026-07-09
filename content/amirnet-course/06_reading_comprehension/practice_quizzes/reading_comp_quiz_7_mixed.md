@@ -10,9 +10,9 @@
 
 ## 📖 Passage 1: How Stress Affects Memory
 
-> Most people have had the experience of forgetting a familiar name or an important fact during a stressful moment. This is not just a coincidence. Research has shown that stress can significantly affect how our brains form and retrieve memories. When a person is under severe stress, the body releases hormones such as cortisol, which can interfere with the functioning of the hippocampus — the part of the brain most closely involved in memory.
+> Most people have had the experience of forgetting a familiar name or an important fact during a stressful moment. This is not just a coincidence. Research has shown that stress can significantly affect how our brains form and retrieve memories. When a person is under severe stress, the body releases hormones such as cortisol, which can interfere with the functioning of the hippocampus - the part of the brain most closely involved in memory.
 >
-> However, the relationship between stress and memory is more complex than it first appears. Short-term, moderate stress can actually sharpen memory in some situations. Students who experience a manageable level of pressure before an exam often remember the material better than those who feel no pressure at all. The problem arises when stress becomes too intense or too prolonged. Chronic stress — lasting weeks or months — has been linked to significant memory problems and even structural changes in the brain.
+> However, the relationship between stress and memory is more complex than it first appears. Short-term, moderate stress can actually sharpen memory in some situations. Students who experience a manageable level of pressure before an exam often remember the material better than those who feel no pressure at all. The problem arises when stress becomes too intense or too prolonged. Chronic stress - lasting weeks or months - has been linked to significant memory problems and even structural changes in the brain.
 >
 > Scientists recommend several strategies to protect memory during stressful periods. Regular exercise, sufficient sleep, and social connection all help reduce the harmful effects of stress hormones. Understanding how stress affects the brain is not just an academic exercise; it can help people make better choices for their mental health in demanding times.
 
@@ -72,11 +72,11 @@ Which of the following is NOT mentioned in the passage as a strategy to protect 
 
 ## 📖 Passage 2: Why Cities are Becoming Greener
 
-> Across the world, urban planners are working to make cities greener — not just by adding more parks and trees, but by rethinking how buildings, streets, and public spaces are designed. The motivation for this change comes from a combination of environmental, health, and economic concerns. Warmer summers, rising pollution levels, and growing public interest in sustainability have pushed city governments to take action.
+> Across the world, urban planners are working to make cities greener - not just by adding more parks and trees, but by rethinking how buildings, streets, and public spaces are designed. The motivation for this change comes from a combination of environmental, health, and economic concerns. Warmer summers, rising pollution levels, and growing public interest in sustainability have pushed city governments to take action.
 >
-> One increasingly popular strategy is the creation of "green roofs" — rooftops covered with vegetation. These surfaces help insulate buildings, reducing both heating and cooling costs, while also absorbing rainwater and filtering pollution from the air. Some cities have even passed laws requiring green roofs on new buildings above a certain size. In Copenhagen, for example, all new flat-roofed buildings must include some form of green roof, a policy credited with reducing the city's carbon emissions and improving air quality.
+> One increasingly popular strategy is the creation of "green roofs" - rooftops covered with vegetation. These surfaces help insulate buildings, reducing both heating and cooling costs, while also absorbing rainwater and filtering pollution from the air. Some cities have even passed laws requiring green roofs on new buildings above a certain size. In Copenhagen, for example, all new flat-roofed buildings must include some form of green roof, a policy credited with reducing the city's carbon emissions and improving air quality.
 >
-> Other strategies include the installation of "bioswales" — shallow drainage channels filled with plants that capture stormwater and reduce flooding — as well as the conversion of unused lots into community gardens. Critics point out that such projects can be expensive and may benefit wealthier neighborhoods more than poorer ones. Supporters, however, argue that when designed thoughtfully, greener cities can improve quality of life for residents across all income levels. The debate over how best to green a city continues, but the trend itself shows no sign of slowing down.
+> Other strategies include the installation of "bioswales" - shallow drainage channels filled with plants that capture stormwater and reduce flooding - as well as the conversion of unused lots into community gardens. Critics point out that such projects can be expensive and may benefit wealthier neighborhoods more than poorer ones. Supporters, however, argue that when designed thoughtfully, greener cities can improve quality of life for residents across all income levels. The debate over how best to green a city continues, but the trend itself shows no sign of slowing down.
 
 ---
 
@@ -179,7 +179,7 @@ What does the phrase "shows no sign of slowing down" at the end of the passage s
 
 **סוג:** Inference.
 
-**איפה בקטע:** פסקה 2: "Chronic stress — lasting weeks or months — has been linked to significant memory problems and even structural changes in the brain."
+**איפה בקטע:** פסקה 2: "Chronic stress - lasting weeks or months - has been linked to significant memory problems and even structural changes in the brain."
 
 - ❌ (A) "no long-term consequences" – סותר.
 - ❌ (B) "identical to short-term" – סותר את הדיכוטומיה בקטע.

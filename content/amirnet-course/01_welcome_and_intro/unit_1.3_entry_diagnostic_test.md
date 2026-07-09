@@ -132,9 +132,9 @@ The novel, ______ popular at first, has now become a classic of modern literatur
 >
 > Studies at several universities have demonstrated that people who sleep well after learning something new remember it much better than those who stay awake. In one famous experiment, students who studied vocabulary and then slept for eight hours remembered about 35 percent more words the next day compared to students who studied the same words but stayed awake all night. This finding has changed how many educators and doctors think about the value of rest.
 >
-> However, not all sleep is equally helpful. The deepest stage of sleep, called slow-wave sleep, appears to be especially important for strengthening memories of facts and events. REM sleep — the stage when most dreaming occurs — seems more connected to processing emotions and creative problem-solving. Both stages are needed for full mental recovery, which is why a short nap, while refreshing, cannot fully replace a complete night of sleep.
+> However, not all sleep is equally helpful. The deepest stage of sleep, called slow-wave sleep, appears to be especially important for strengthening memories of facts and events. REM sleep - the stage when most dreaming occurs - seems more connected to processing emotions and creative problem-solving. Both stages are needed for full mental recovery, which is why a short nap, while refreshing, cannot fully replace a complete night of sleep.
 >
-> Given these findings, experts recommend getting at least seven to nine hours of sleep every night, especially during periods of intensive learning such as exam weeks. Unfortunately, many students do exactly the opposite — staying up late to study and then struggling to remember what they read. The science is clear: if you want to learn effectively, sleeping is not optional.
+> Given these findings, experts recommend getting at least seven to nine hours of sleep every night, especially during periods of intensive learning such as exam weeks. Unfortunately, many students do exactly the opposite - staying up late to study and then struggling to remember what they read. The science is clear: if you want to learn effectively, sleeping is not optional.
 
 ---
 

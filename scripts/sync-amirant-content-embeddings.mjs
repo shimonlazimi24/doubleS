@@ -25,7 +25,7 @@ if (!envParsed.success) {
     const v = process.env[k];
     return typeof v !== "string" || v.trim() === "";
   });
-  console.error("embeddings:amirant-sync — env validation failed.");
+  console.error("embeddings:amirant-sync - env validation failed.");
   console.error("Loads `.env` and `.env.local` from the project root (uncomment and set key=value lines).");
   if (empty.length > 0) {
     console.error("Unset or empty:", empty.join(", "));

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
-  // העוזר האישי — למנויים בלבד (תואם את הגייט ב-lesson-chat route); dev/preview דרך הדגל
+  // העוזר האישי - למנויים בלבד (תואם את הגייט ב-lesson-chat route); dev/preview דרך הדגל
   let showCourseChat = getPrepShowCourseAssistant();
   if (!showCourseChat) {
     const client = createPrepSupabaseServerClient();
@@ -40,7 +40,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
       <AmirantCourseAccessProvider>
       <AmirantCourseProgressProvider>
         <div className="bg-canvas min-h-screen">
-          {/* App-mode header — replaces the site MarketingHeader inside the course */}
+          {/* App-mode header - replaces the site MarketingHeader inside the course */}
           <header className="sticky top-0 z-[100] border-b border-line/60 bg-paper/95 backdrop-blur-lg">
             <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4 px-4 py-0 sm:px-6">
               {/* Left: back to site */}

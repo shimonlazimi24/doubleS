@@ -160,7 +160,7 @@ export function PremiumLessonWorkspace({
 
   return (
     <div className={cn(lessonSaaS.pageWrap, lessonSaaS.workspaceFull, "w-full max-w-none")}>
-      {/* השיעור בגדול במרכז הדף; התפריט — drawer שנפתח מימין בכל הגדלים */}
+      {/* השיעור בגדול במרכז הדף; התפריט - drawer שנפתח מימין בכל הגדלים */}
       <div className="w-full max-w-none pb-4 sm:pb-6" dir="rtl" lang="he">
         {outlineOpen ? (
           <div
@@ -203,7 +203,7 @@ export function PremiumLessonWorkspace({
         >
           <div className="h-full w-full min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
             <div className={cn(lessonSaaS.readingProse, "min-w-0")}>
-              {/* טריגר תפריט מינימלי — לא תופס מקום */}
+              {/* טריגר תפריט מינימלי - לא תופס מקום */}
               <div className="sticky top-2 z-20 mb-4 flex justify-start">
                 <button
                   type="button"
@@ -215,7 +215,7 @@ export function PremiumLessonWorkspace({
                   <span aria-hidden>☰</span>
                   <span>תוכן הקורס</span>
                   <span className="tabular-nums text-slate-500">
-                    {n > 0 ? `${activeIndex + 1}/${n}` : "—"}
+                    {n > 0 ? `${activeIndex + 1}/${n}` : "-"}
                   </span>
                 </button>
               </div>

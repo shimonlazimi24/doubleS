@@ -48,7 +48,7 @@ export function PrepHomeTracks() {
                 TOEFL
               </Heading>
               <Text as="p" variant="bodyInverse" className="mt-ds-3 max-w-xl">
-                מבנה, תזמון ומשוב ממוקד ציון — קריאה, כתיבה, דיבור והאזנה כמערכת אחת.
+                מבנה, תזמון ומשוב ממוקד ציון - קריאה, כתיבה, דיבור והאזנה כמערכת אחת.
               </Text>
               <div className="mt-ds-6 flex flex-wrap items-center gap-ds-4">
                 <span className="inline-flex rounded-control bg-paper px-ds-4 py-ds-2 text-sm font-semibold text-primary">

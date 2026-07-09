@@ -1,6 +1,6 @@
 /**
  * Verbatim evaluation lines from `content/amirnet-course/01_welcome_and_intro/unit_1.3_entry_diagnostic_test.md`
- * Part 5 — mapped by adaptive quiz score % (0–100), aligned to the same bands as ציון/15 בקובץ הנייר.
+ * Part 5 - mapped by adaptive quiz score % (0–100), aligned to the same bands as ציון/15 בקובץ הנייר.
  */
 export function recommendationHeForDiagnosticScorePct(scorePct: number): { title: string; body: string } {
   if (scorePct >= 87) {

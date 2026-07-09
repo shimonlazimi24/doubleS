@@ -221,7 +221,7 @@ function evaluateQuestion(q, stemFrequency) {
   }
 
   // `vocab-<kind>-<difficulty>` היא הקונבנציה שהרנטיים משתמש בה לסינון סוגי
-  // מילים (filterBankByTopicsAndVocabMode) — תקפה לנושא vocabulary
+  // מילים (filterBankByTopicsAndVocabMode) - תקפה לנושא vocabulary
   const subtopicAligned =
     subtopic.startsWith(topic) ||
     (topic === "vocabulary" && subtopic.startsWith("vocab-"));
@@ -255,7 +255,7 @@ function evaluateQuestion(q, stemFrequency) {
     );
   }
 
-  // פתיחי הבנת-הנקרא קנוניים חוזרים בין קטעים במבחן האמיתי — לא שיבוט תבניות
+  // פתיחי הבנת-הנקרא קנוניים חוזרים בין קטעים במבחן האמיתי - לא שיבוט תבניות
   const CANONICAL_COMPREHENSION_STEMS = new Set([
     "what is the main idea of the passage",
     "what is the main idea of this passage",

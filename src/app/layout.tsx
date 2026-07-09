@@ -17,8 +17,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PREPARE — הכנה ללימודים אקדמיים",
-  description: "PREPARE — הכנה ממוקדת למבחני אנגלית אקדמיים: אמירנט (פעיל) ו-TOEFL (בקרוב).",
+  title: "PREPARE - הכנה ללימודים אקדמיים",
+  description: "PREPARE - הכנה ממוקדת למבחני אנגלית אקדמיים: אמירנט (פעיל) ו-TOEFL (בקרוב).",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -8,7 +8,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { STITCH_HOME_HERO } from "@/lib/prep/stitch-home-assets";
 
-const HERO_PILLS = ["אמירנט — פעיל", "TOEFL — בקרוב", "משוב ממוקד"] as const;
+const HERO_PILLS = ["אמירנט - פעיל", "TOEFL - בקרוב", "משוב ממוקד"] as const;
 
 function Pill({ children }: { children: ReactNode }) {
   return (

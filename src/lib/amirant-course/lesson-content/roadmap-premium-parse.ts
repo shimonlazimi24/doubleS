@@ -1,6 +1,6 @@
 /**
  * Parses Unit 1 roadmap markdown (6-week program + milestones) into structured data
- * for premium UI — same wording as source, no pedagogical changes.
+ * for premium UI - same wording as source, no pedagogical changes.
  */
 
 export type RoadmapTableRow = { day: string; task: string; time: string };
@@ -160,7 +160,7 @@ export type RoadmapStepPayload = {
   weeks: RoadmapWeekParsed[];
   milestoneGroups: RoadmapMilestoneGroup[];
   tracking: { headers: string[]; rows: string[][] } | null;
-  /** One line e.g. סה"כ ~63 שעות — from source */
+  /** One line e.g. סה"כ ~63 שעות - from source */
   programTotalLine?: string;
 };
 
@@ -183,7 +183,7 @@ export function shortIntroFromPageIntro(pageIntro: string, maxLen = 320): string
 }
 
 /**
- * 2–3 line intro: section titles (H2) from the roadmap doc — all verbatim, no new facts.
+ * 2–3 line intro: section titles (H2) from the roadmap doc - all verbatim, no new facts.
  */
 export function buildRoadmapStructureIntroShort(sections: { title: string }[], pageIntro: string): string {
   const matchFns = [
@@ -216,7 +216,7 @@ export function parseTrackingTableMarkdown(tracking: string): { headers: string[
   const rows: string[][] = [];
   for (let i = 1; i < lines.length; i++) {
     const r = parseRow(lines[i]!);
-    if (/^[\-–—:| ]+$/.test(lines[i]!)) continue;
+    if (/^[-–—:| ]+$/.test(lines[i]!)) continue;
     if (r.length) rows.push(r);
   }
   if (!header.length) return null;

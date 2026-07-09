@@ -1,11 +1,11 @@
-# Supabase Auth — התחברות (מייל + Google)
+# Supabase Auth - התחברות (מייל + Google)
 
 ## קישור התחברות במייל (Magic Link)
 
 1. **Supabase** → Authentication → Providers → **Email** → Enable.
 2. **URL Configuration** (אותו תפריט):
    - **Site URL**: `http://localhost:3000` (פיתוח) או כתובת הפרודקשן.
-   - **Redirect URLs** — הוסיפו (לכל סביבה):
+   - **Redirect URLs** - הוסיפו (לכל סביבה):
      - `http://localhost:3000/prep/auth/verify`
      - `https://YOUR-DOMAIN/prep/auth/verify`
      - `http://localhost:3000/prep/auth/complete`
@@ -33,7 +33,7 @@
    - `https://YOUR-PROJECT-REF.supabase.co/auth/v1/callback`  
      (מוצאים ב-Supabase → Project Settings → API → Project URL, עם `/auth/v1/callback` בסוף)
 
-### 2. Supabase — הפעלת Google
+### 2. Supabase - הפעלת Google
 
 1. Authentication → **Providers** → **Google** → **Enable**.
 2. הדביקו **Client ID** ו-**Client Secret** מ-Google.
@@ -58,7 +58,7 @@ https://YOUR-DOMAIN/prep/auth/callback
 NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 ```
 
-בלי משתנה זה מוצגת רק התחברות במייל — כדי שלא יופיע כפתור שבור לפני ההגדרה.
+בלי משתנה זה מוצגת רק התחברות במייל - כדי שלא יופיע כפתור שבור לפני ההגדרה.
 
 ### 5. בדיקה
 
@@ -70,7 +70,7 @@ NEXT_PUBLIC_PREP_OAUTH_GOOGLE=1
 
 כש-Supabase חוסם שליחת מיילים (`over_email_send_rate_limit`), אפשר עדיין לבדוק התחברות:
 
-1. **service_role** מ-Supabase → API → Legacy → `service_role` (סודי — רק ב-`.env.local`)
+1. **service_role** מ-Supabase → API → Legacy → `service_role` (סודי - רק ב-`.env.local`)
 2. מהשורש של הפרויקט:
 
 ```bash
@@ -82,7 +82,7 @@ npm run prep:login-link -- your@email.com https://double-s.vercel.app
 3. העתיקו את הקישור ל-**`/prep/auth/verify`** (לא את קישור המייל הרגיל) → פתחו ב-Chrome
 4. אמור לעבור ישר ל-`/prep/amirant/continue` → onboarding / מחירון / קורס
 
-**אלטרנטיבה מהירה:** דוא״ל עם `+` (Gmail): `name+test1@gmail.com` — מגבלה לפעמים לפי כתובת.
+**אלטרנטיבה מהירה:** דוא״ל עם `+` (Gmail): `name+test1@gmail.com` - מגבלה לפעמים לפי כתובת.
 
 **בלי התחברות בכלל (רק UI מסלול):** ב-`.env.local` לפיתוח מקומי:
 
@@ -90,7 +90,7 @@ npm run prep:login-link -- your@email.com https://double-s.vercel.app
 PREP_AUTH_BYPASS=1
 ```
 
-`npm run dev` — דילוג על session בנתיבים מוגנים (לא ב-Vercel production).
+`npm run dev` - דילוג על session בנתיבים מוגנים (לא ב-Vercel production).
 
 ## מגבלת מיילים (Rate limit)
 
@@ -98,13 +98,13 @@ PREP_AUTH_BYPASS=1
 
 `over_email_send_rate_limit`
 
-**זה לא באג באתר** — השרת של Supabase מסרב לשלוח עוד מיילים.
+**זה לא באג באתר** - השרת של Supabase מסרב לשלוח עוד מיילים.
 
 **מה לעשות:**
 
 1. **המתינו ~60 דקות** (או בדקו Authentication → Rate Limits בלוח)
 2. **התחברות עם Google** (לא תלויה במייל)
-3. **SMTP מותאם:** Project Settings → Authentication → [SMTP](https://supabase.com/docs/guides/auth/auth-smtp) (Resend / SendGrid וכו') — מעלה מכסה ומשפר מסירה
+3. **SMTP מותאם:** Project Settings → Authentication → [SMTP](https://supabase.com/docs/guides/auth/auth-smtp) (Resend / SendGrid וכו') - מעלה מכסה ומשפר מסירה
 4. בפיתוח: אל תלחצו «שליחת קישור» עשרות פעמים ברצף
 
 ## פתרון בעיות

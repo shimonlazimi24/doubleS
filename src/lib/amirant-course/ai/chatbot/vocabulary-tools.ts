@@ -43,7 +43,7 @@ function buildVocabIndex(): Map<string, VocabIndexRow[]> {
     const parsed = parseVocabularyMarkdown(read.body);
     for (const entry of parsed.allEntries) {
       const w = extractVocabEntryWord(entry.fullMd).toLowerCase();
-      if (!w || w === "—") continue;
+      if (!w || w === "-") continue;
       const row: VocabIndexRow = {
         wordNorm: w,
         word: entry.word,
@@ -108,7 +108,7 @@ export function formatVocabLookupReply(wordNorm: string, opts?: { quiz: boolean;
           .map((x) => x.word)
           .join(", ")}.`
       : "";
-  const tags = r.sectionHeading.replace(/^##\s*/, "").slice(0, 120) || "—";
+  const tags = r.sectionHeading.replace(/^##\s*/, "").slice(0, 120) || "-";
   const quiz = opts?.quiz
     ? `מיני־מבחן: נסו לשחזר משפט בעברית למילה **${r.word}** (בלי לפתוח את הכרטיסיה) ורק אז בדקו מול \"תרגום\" למעלה.`
     : "";

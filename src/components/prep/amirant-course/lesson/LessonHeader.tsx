@@ -29,7 +29,7 @@ function ClockIcon({ className }: { className?: string }) {
 }
 
 /**
- * Calm, premium hero — typography-first, no playful gradients.
+ * Calm, premium hero - typography-first, no playful gradients.
  */
 export function LessonHeader({
   kindLabel,

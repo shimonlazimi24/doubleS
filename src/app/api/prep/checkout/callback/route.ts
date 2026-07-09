@@ -1,10 +1,10 @@
 /**
- * קולבק תשלום מ-Hyp — היעד של "כתובת הצלחה/שגיאה" בפורטל Hyp.
+ * קולבק תשלום מ-Hyp - היעד של "כתובת הצלחה/שגיאה" בפורטל Hyp.
  *
  * אבטחה: שום דבר לא נכתב לפני `verifyHypCallback` (HMAC / roundtrip VERIFY).
- * אידמפוטנטיות: ההענקה קורית רק במעבר pending→paid (update מותנה) — קולבק כפול
+ * אידמפוטנטיות: ההענקה קורית רק במעבר pending→paid (update מותנה) - קולבק כפול
  * או ריענון של דף ההצלחה לא מעניקים פעמיים.
- * זהות: user/plan נטענים מרשומת prep_payments לפי Order — לא מהפרמטרים בכתובת.
+ * זהות: user/plan נטענים מרשומת prep_payments לפי Order - לא מהפרמטרים בכתובת.
  */
 import { NextResponse } from "next/server";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
@@ -26,7 +26,7 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
     return { redirect: `/prep/checkout/failure?reason=server`, ok: false };
   }
 
-  // האימות (שעשוי לכלול roundtrip ל-Hyp) ושליפת התשלום בלתי-תלויים — במקביל.
+  // האימות (שעשוי לכלול roundtrip ל-Hyp) ושליפת התשלום בלתי-תלויים - במקביל.
   // הקריאה היא read בלבד; שום כתיבה לא קורית לפני verification.ok.
   const rawOrderRef = searchParams.get("Order");
   const [verification, paymentRes] = await Promise.all([
@@ -71,7 +71,7 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
     };
   }
 
-  // אימות סכום — אי-התאמה נרשמת ולא מוענקת
+  // אימות סכום - אי-התאמה נרשמת ולא מוענקת
   const expected = Number(payment.amount_nis);
   if (verification.amountNis == null || Math.abs(verification.amountNis - expected) > 0.01) {
     await service
@@ -93,7 +93,7 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
     return { redirect: `/prep/checkout/failure?reason=plan&order=${orderRef}`, ok: false };
   }
 
-  // מעבר אטומי pending→paid; 0 שורות = כבר טופל (קולבק כפול) — הצלחה אידמפוטנטית
+  // מעבר אטומי pending→paid; 0 שורות = כבר טופל (קולבק כפול) - הצלחה אידמפוטנטית
   const { data: transitioned } = await service
     .from("prep_payments")
     .update({
@@ -110,7 +110,7 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
     .select("order_ref");
 
   if (transitioned && transitioned.length > 0) {
-    // הענקה אטומית ב-DB (grant_course_days) — שני קולבקים מקבילים מצטברים
+    // הענקה אטומית ב-DB (grant_course_days) - שני קולבקים מקבילים מצטברים
     // במקום שהאחרון ידרוס. fallback ל-read-then-upsert אם הפונקציה חסרה.
     let endsAt: string | null = null;
     const { data: grantedEndsAt, error: rpcError } = await service.rpc("grant_course_days", {
@@ -142,7 +142,7 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
         { onConflict: "user_id,course_slug" },
       );
       if (grantError) {
-        // התשלום נרשם אך ההענקה נכשלה — דף ההצלחה מציג פנייה לתמיכה
+        // התשלום נרשם אך ההענקה נכשלה - דף ההצלחה מציג פנייה לתמיכה
         return { redirect: `/prep/checkout/success?order=${orderRef}&grant=retry`, ok: true };
       }
     }
@@ -161,7 +161,7 @@ export async function GET(req: Request) {
   return redirectTo(req, result.redirect);
 }
 
-/** נוטיפיקציית שרת (אם מוגדרת בפורטל) — אותה לוגיקה, תשובת JSON. */
+/** נוטיפיקציית שרת (אם מוגדרת בפורטל) - אותה לוגיקה, תשובת JSON. */
 export async function POST(req: Request) {
   const contentType = req.headers.get("content-type") ?? "";
   let params: URLSearchParams;

@@ -199,7 +199,7 @@ async function runGeminiStructured<T>(params: {
 
 /**
  * Tries `AI_PROVIDER` first, then the other key if the first call throws (network / quota / parse).
- * Does not invent data — callers keep safety validation on snapshots.
+ * Does not invent data - callers keep safety validation on snapshots.
  */
 export async function runStructuredAi<T>(params: RunStructuredAiParams<T>): Promise<StructuredAiResult<T>> {
   const order = resolveChatProvidersToTry();
@@ -321,7 +321,7 @@ export async function streamOpenAiJsonResponse<T>(params: {
       { role: "system", content: params.systemPrompt },
       { role: "user", content: params.userPrompt },
     ],
-    // 0.4 — עברית טבעית יותר מ-0.2 בלי לאבד דיוק; 1100 טוקנים כדי שתשובות בעברית לא ייחתכו
+    // 0.4 - עברית טבעית יותר מ-0.2 בלי לאבד דיוק; 1100 טוקנים כדי שתשובות בעברית לא ייחתכו
     temperature: 0.4,
     max_tokens: Math.min(getMaxOutputTokens(), 1100),
     response_format: zodResponseFormat(params.schema, params.schemaName),
@@ -378,7 +378,7 @@ export async function streamOpenAiJsonResponse<T>(params: {
 }
 
 /**
- * @param provider — if passed, use only that provider (no cross-failover). Useful for tests.
+ * @param provider - if passed, use only that provider (no cross-failover). Useful for tests.
  */
 export function createAIClient(provider: AIChatProvider) {
   return {

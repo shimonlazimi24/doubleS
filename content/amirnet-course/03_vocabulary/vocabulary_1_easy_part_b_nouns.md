@@ -702,7 +702,7 @@
 - **Antonyms:** yesterday
 - **💡 Memory tip:** איות מסובך: tomorrow (2 r, 1 m).
 
-### 231. **Monday** (n.) — ו-בני משפחתו
+### 231. **Monday** (n.) - ו-בני משפחתו
 - **Definition:** the first weekday (or second, depending on culture)
 - **תרגום:** יום שני
 - **Example 1:** I have a meeting on **Monday**.

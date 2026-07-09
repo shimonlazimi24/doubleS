@@ -5,7 +5,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 
 export const metadata: Metadata = {
   title: `קורסים | ${PREP_BRAND_LATIN}`,
-  description: "קטלוג הכנות למבחני אנגלית — אמירנט פעיל, TOEFL בקרוב.",
+  description: "קטלוג הכנות למבחני אנגלית - אמירנט פעיל, TOEFL בקרוב.",
 };
 
 export default function PrepCoursesPage() {

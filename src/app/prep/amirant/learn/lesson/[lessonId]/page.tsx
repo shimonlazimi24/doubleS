@@ -100,7 +100,7 @@ export default function AmirantLessonPage({ params }: Props) {
                     {row.lesson.bodyPreview}
                   </Text>
                   <Text as="p" variant="bodySm" className="text-muted">
-                    גוף מלא (Markdown / קבצים) יחובר ל-Supabase או ל-CMS בהמשך — כרגע תקציר מהמבנה הקורס.
+                    גוף מלא (Markdown / קבצים) יחובר ל-Supabase או ל-CMS בהמשך - כרגע תקציר מהמבנה הקורס.
                   </Text>
                 </CardBody>
               </Card>

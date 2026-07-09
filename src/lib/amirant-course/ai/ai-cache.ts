@@ -16,7 +16,7 @@ export function getAiResponseCacheTtlMs(): number {
 }
 
 /**
- * @param modelHint — first-try chat model (matches resolve order) for the cache key.
+ * @param modelHint - first-try chat model (matches resolve order) for the cache key.
  */
 export function buildStructuredAiCacheKey(params: {
   operation: string;

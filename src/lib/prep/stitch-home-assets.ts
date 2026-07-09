@@ -1,4 +1,4 @@
-/** רקעים ותמונות מהמוקאפ המקומי של Stitch (Google AIDA) — לשימור דמיון ויזואלי. */
+/** רקעים ותמונות מהמוקאפ המקומי של Stitch (Google AIDA) - לשימור דמיון ויזואלי. */
 export const STITCH_HOME_HERO =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCwq_ql12QL27Zc_q8CmpAyhRWNSknUgwfIVtp1UV6t1yIcYq8Z8Di7leUbpyyiLTJqkKYFmCC75p0RxuGubIhQDmhWkWR-Hl4Fvtx4dHVfEKxOQCRnAG7l5pDZ4-OpItQEEN-QdmssjKm8kBZFwWRJMLvUJ1Ei6H0GPSsD2xcXpd5-SRUnzz7Y5o3T6qlICHtLDZc49iqrgX7--g584n2_0HL3hoRY-ElJF6H2pWdWNDbjFPaFxrWODplr_qdC-RyHegef6AZMYM4";
 

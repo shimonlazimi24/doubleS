@@ -38,7 +38,7 @@ export function AmirantCourseCurriculum({ modules }: { modules: ManifestModule[]
           כל השיעורים לפי מודול
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted">
-          מבט מפורט (שורה = שיעור). מעל כבר מופיעים התקדמות, מודולים ו־&quot;סקירת הפרק&quot; — כאן אפשר לרדת לרמת שיעור
+          מבט מפורט (שורה = שיעור). מעל כבר מופיעים התקדמות, מודולים ו־&quot;סקירת הפרק&quot; - כאן אפשר לרדת לרמת שיעור
           בודד.
         </p>
       </div>
@@ -87,7 +87,7 @@ export function AmirantCourseCurriculum({ modules }: { modules: ManifestModule[]
 
               {lessons.length === 0 ? (
                 <p className="px-4 py-4 text-sm text-muted md:px-6">
-                  אין שיעורים במניפסט במודול זה — התוכן מופיע בדף המודול (סילבוס והסבר).
+                  אין שיעורים במניפסט במודול זה - התוכן מופיע בדף המודול (סילבוס והסבר).
                 </p>
               ) : (
               <ol className="divide-y divide-line/50">

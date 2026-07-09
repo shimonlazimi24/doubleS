@@ -116,7 +116,7 @@ My brother is ______ than me; he is 185 cm, and I am only 170 cm.
 
 ## Part 2: Answer Key & Full Explanations
 
-### Question 1 — Answer: ✅ (A) adopt
+### Question 1 - Answer: ✅ (A) adopt
 
 **Why (A) is correct:**
 The clue word **"shelter"** (a place for homeless animals) combined with "loves animals" points to the action of taking an animal home to care for it. "**Adopt**" is the exact verb used for this action ("adopt a pet" = לאמץ חיית מחמד).
@@ -130,10 +130,10 @@ The clue word **"shelter"** (a place for homeless animals) combined with "loves 
 
 ---
 
-### Question 2 — Answer: ✅ (C) quiet
+### Question 2 - Answer: ✅ (C) quiet
 
 **Why (C) is correct:**
-The clue is **"people go there to read and study quietly"** — this is a direct definition clue. A place where people need quiet is naturally described as "**quiet**."
+The clue is **"people go there to read and study quietly"** - this is a direct definition clue. A place where people need quiet is naturally described as "**quiet**."
 
 **Why the other options are wrong:**
 - **(A) loud** = רועש. The **opposite** of what is described. This is the classic "trap answer" that tests if you read carefully.
@@ -144,7 +144,7 @@ The clue is **"people go there to read and study quietly"** — this is a direct
 
 ---
 
-### Question 3 — Answer: ✅ (B) wet
+### Question 3 - Answer: ✅ (B) wet
 
 **Why (B) is correct:**
 **Logical cause-and-effect:** no umbrella + rain → you become **wet** (רטוב). This is the direct physical consequence.
@@ -158,13 +158,13 @@ The clue is **"people go there to read and study quietly"** — this is a direct
 
 ---
 
-### Question 4 — Answer: ✅ (B) because
+### Question 4 - Answer: ✅ (B) because
 
 **Why (B) is correct:**
-This is a **cause-and-effect** relationship. First part: "Tom studies hard." Second part: "he wants to pass the final exam" — this is the REASON for studying hard. "**Because**" introduces a reason.
+This is a **cause-and-effect** relationship. First part: "Tom studies hard." Second part: "he wants to pass the final exam" - this is the REASON for studying hard. "**Because**" introduces a reason.
 
 **Why the other options are wrong:**
-- **(A) but** = אבל. This shows contrast, not cause. There's no contrast here — both facts are consistent.
+- **(A) but** = אבל. This shows contrast, not cause. There's no contrast here - both facts are consistent.
 - **(C) although** = למרות ש-. Also shows contrast. Wanting to pass is not the opposite of studying hard.
 - **(D) or** = או. Shows alternatives, but the sentence is presenting a single logical flow.
 
@@ -176,10 +176,10 @@ This is a **cause-and-effect** relationship. First part: "Tom studies hard." Sec
 
 ---
 
-### Question 5 — Answer: ✅ (C) excited
+### Question 5 - Answer: ✅ (C) excited
 
 **Why (C) is correct:**
-A **surprise birthday cake** is a joyful event. Children seeing it would naturally feel **excited** (נרגשים, שמחים) — a positive emotion.
+A **surprise birthday cake** is a joyful event. Children seeing it would naturally feel **excited** (נרגשים, שמחים) - a positive emotion.
 
 **Why the other options are wrong:**
 - **(A) sad** = עצובים. Opposite of a happy event.
@@ -190,7 +190,7 @@ A **surprise birthday cake** is a joyful event. Children seeing it would natural
 
 ---
 
-### Question 6 — Answer: ✅ (A) help
+### Question 6 - Answer: ✅ (A) help
 
 **Why (A) is correct:**
 The request "can you please ______ me?" after saying the problem is difficult is a natural request for assistance. "**Help**" fits perfectly.
@@ -204,7 +204,7 @@ The request "can you please ______ me?" after saying the problem is difficult is
 
 ---
 
-### Question 7 — Answer: ✅ (B) fluently
+### Question 7 - Answer: ✅ (B) fluently
 
 **Why (B) is correct:**
 The sentence mentions she speaks **three languages** and lists them (English, Spanish, French). The context suggests high ability. "**Fluently**" (ברהיטות) describes speaking a language well.
@@ -218,7 +218,7 @@ The sentence mentions she speaks **three languages** and lists them (English, Sp
 
 ---
 
-### Question 8 — Answer: ✅ (A) turn off
+### Question 8 - Answer: ✅ (A) turn off
 
 **Why (A) is correct:**
 Before leaving a room, the logical action regarding lights is to **turn them off** (לכבות). This is a very common phrasal verb.
@@ -232,7 +232,7 @@ Before leaving a room, the logical action regarding lights is to **turn them off
 
 ---
 
-### Question 9 — Answer: ✅ (B) drink
+### Question 9 - Answer: ✅ (B) drink
 
 **Why (B) is correct:**
 The natural collocation with "water" is "**drink water**." This is a basic, fixed phrase in English.
@@ -246,7 +246,7 @@ The natural collocation with "water" is "**drink water**." This is a basic, fixe
 
 ---
 
-### Question 10 — Answer: ✅ (C) taller
+### Question 10 - Answer: ✅ (C) taller
 
 **Why (C) is correct:**
 The sentence provides measurements: 185 cm vs. 170 cm. The comparative for height is "**taller**" (גבוה יותר). 185 > 170, so the brother is **taller**.

@@ -58,7 +58,7 @@ export function splitBodyIntoMicroParts(
   }
   const blocks = raw.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
   const source = blocks.length ? blocks : [raw];
-  // Keep markdown tables atomic — chunkStringToMax would break them mid-row
+  // Keep markdown tables atomic - chunkStringToMax would break them mid-row
   const flat = source.flatMap((b) => isMarkdownTable(b) ? [b] : chunkStringToMax(b, maxChars));
   if (flat.length === 0) {
     return [raw];
@@ -69,7 +69,7 @@ export function splitBodyIntoMicroParts(
 /** Strip unit prefixes so sidebar titles read naturally in Hebrew. */
 export function cleanLessonStepSectionTitle(title: string): string {
   let t = title.replace(/\s+/g, " ").trim();
-  t = t.replace(/^unit\s*\d+[:\s.\-–—]+\s*/i, "");
+  t = t.replace(/^unit\s*\d+[:\s.\-–-]+\s*/i, "");
   t = t.replace(/^יחידה\s*[\d.]+\s*[:\s]+/, "");
   return t.trim() || title.trim();
 }
@@ -222,7 +222,7 @@ function listGroupStepLabel(
 ): string {
   const base = cleanLessonStepSectionTitle(sectionTitle);
   if (groupCount === 1) {
-    return hasBody ? shortenLabel(`${base} — פירוט`) : shortenLabel(base);
+    return hasBody ? shortenLabel(`${base} - פירוט`) : shortenLabel(base);
   }
   const hint = group[0]?.replace(/\s+/g, " ").trim() ?? "";
   return hint ? shortenLabel(hint, 52) : shortenLabel(base);
@@ -254,7 +254,7 @@ export type ExpandedLessonCard = {
   key: string;
   /** Legacy card title; keep in sync with stepLabel for tooling. */
   title: string;
-  /** Sidebar + main column H2 — derived from headings / content, not `2/3` splits. */
+  /** Sidebar + main column H2 - derived from headings / content, not `2/3` splits. */
   stepLabel: string;
   variant: PremiumSectionVariant;
   body?: string;

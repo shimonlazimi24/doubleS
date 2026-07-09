@@ -10,7 +10,7 @@ import type { ExamQuestionTypeRow } from "@/lib/amirant-course/lesson-content/we
 
 type ScoreRow = { range: string; meaning: string; detail: string };
 
-/** Pull quote / important callout — sky-tinted, no heavy shadow. */
+/** Pull quote / important callout - sky-tinted, no heavy shadow. */
 export function LearningHighlight({ text }: { text: string }) {
   if (!text.trim()) return null;
   return (
@@ -24,7 +24,7 @@ export function LearningHighlight({ text }: { text: string }) {
   );
 }
 
-/** One-line or short key point — use when not duplicating body «מה לקחת» */
+/** One-line or short key point - use when not duplicating body «מה לקחת» */
 export function KeyTakeawayLine({ children }: { children: ReactNode }) {
   return (
     <div

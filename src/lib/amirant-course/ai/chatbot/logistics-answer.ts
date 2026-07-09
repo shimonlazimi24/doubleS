@@ -1,5 +1,5 @@
 /**
- * System prompt layer for exam logistics / course FAQ — RAG only, no invented official rules.
+ * System prompt layer for exam logistics / course FAQ - RAG only, no invented official rules.
  */
 export function logisticsModePrompt(): string {
   return [

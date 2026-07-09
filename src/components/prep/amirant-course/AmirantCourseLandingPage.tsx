@@ -18,7 +18,7 @@ const DIFFERENTIATORS = [
 ] as const;
 
 const HOW_IT_WORKS = [
-  { title: "מבחן רמה", body: "מבחן פתיחה שממפה רמה, מהירות ונושאים חלשים — עם ציון בסולם 50–150." },
+  { title: "מבחן רמה", body: "מבחן פתיחה שממפה רמה, מהירות ונושאים חלשים - עם ציון בסולם 50–150." },
   { title: "תוכנית אישית", body: "מערכת שמגדירה סדר עדיפויות לימודי לפי נתוני אמת." },
   { title: "אימון ממוקד", body: "תרגול אדפטיבי + סימולציות מלאות עד יציבות בביצוע." },
   { title: "שיפור מדיד", body: "דשבורד עם ציון, זמן לשאלה והתקדמות לפטור." },
@@ -251,7 +251,7 @@ export function AmirantCourseLandingPage({
 
         <section className="rounded-[20px] border border-[#d4a843]/45 bg-gradient-to-b from-[#fff9ea] to-[#fffdf6] p-6 text-center shadow-card md:p-9">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#b88a2f]">Demo</p>
-          <h2 className="mt-2 font-display text-3xl font-bold text-[#0f1e3d] md:text-4xl">מבחן אמיתי — לא דמו</h2>
+          <h2 className="mt-2 font-display text-3xl font-bold text-[#0f1e3d] md:text-4xl">מבחן אמיתי - לא דמו</h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[#5a6480] md:text-base">
             אותו סגנון חשיבה, אותו לחץ זמן, ואותה תחושת מבחן. זה המקום לראות איפה אתה עומד באמת.
           </p>
@@ -347,11 +347,11 @@ export function AmirantCourseLandingPage({
         <section className="rounded-[22px] border border-[#1b3366] bg-gradient-to-br from-[#0f1e3d] via-[#142a54] to-[#0f1e3d] p-6 text-white shadow-lift md:p-9">
           <SectionTitle
             kicker={isFree ? "גישה פתוחה" : "המסלול המלא"}
-            title={isFree ? "הכל פתוח — בלי תשלום" : "מה מקבלים בגישה מלאה"}
+            title={isFree ? "הכל פתוח - בלי תשלום" : "מה מקבלים בגישה מלאה"}
             subtitle={
               isFree
-                ? "שיעורים, בוחנים אדפטיביים, סימולציות מלאות ומשוב AI — זמינים עכשיו לחלוטין חינם."
-                : "שיעורים, בוחנים אדפטיביים, סימולציות מלאות, דשבורד אישי ומשוב AI — הכל במקום אחד."
+                ? "שיעורים, בוחנים אדפטיביים, סימולציות מלאות ומשוב AI - זמינים עכשיו לחלוטין חינם."
+                : "שיעורים, בוחנים אדפטיביים, סימולציות מלאות, דשבורד אישי ומשוב AI - הכל במקום אחד."
             }
             light
           />

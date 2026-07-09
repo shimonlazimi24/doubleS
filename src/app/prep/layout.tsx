@@ -15,10 +15,10 @@ const siteUrl = getPublicSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${PREP_BRAND_WORDMARK} — ${PREP_BRAND_SUBTITLE_HE}`,
+    default: `${PREP_BRAND_WORDMARK} - ${PREP_BRAND_SUBTITLE_HE}`,
     template: `%s | ${PREP_BRAND_WORDMARK}`,
   },
-  description: `${PREP_BRAND_SUBTITLE_HE} — קורסים דיגיטליים, תרגול חכם והכנה ממוקדת לאמירנט. TOEFL בקרוב.`,
+  description: `${PREP_BRAND_SUBTITLE_HE} - קורסים דיגיטליים, תרגול חכם והכנה ממוקדת לאמירנט. TOEFL בקרוב.`,
   openGraph: {
     locale: "he_IL",
     type: "website",

@@ -6,27 +6,27 @@ export const aiRefSchema = z.object({
   topic: z.string().optional(),
 });
 
-// Strict variant for OpenAI structured output — no .optional(), only .nullable()
+// Strict variant for OpenAI structured output - no .optional(), only .nullable()
 export const aiRefSchemaStrict = z.object({
   chunkId: z.string().min(1),
   lessonId: z.string().nullable().default(null),
   topic: z.string().nullable().default(null),
 });
 
-/** תור אחד בהיסטוריית השיחה — נשלח מהפאנל כדי שהעוזר יזכור את ההקשר. */
+/** תור אחד בהיסטוריית השיחה - נשלח מהפאנל כדי שהעוזר יזכור את ההקשר. */
 export const chatHistoryTurnSchema = z.object({
   role: z.enum(["user", "assistant"]),
   text: z.string().min(1).max(600),
 });
 
 export const lessonChatRequestSchema = z.object({
-  /** אופציונלי — בלי `lessonId` מחפשים הקשר לרוחב כל קורס ההכנה (RAG). */
+  /** אופציונלי - בלי `lessonId` מחפשים הקשר לרוחב כל קורס ההכנה (RAG). */
   lessonId: z.string().min(1).optional(),
   topic: z.string().optional(),
   userMessage: z.string().min(1).max(1500),
-  /** Plain-text content of the step/question currently visible on screen — injected by the client. */
+  /** Plain-text content of the step/question currently visible on screen - injected by the client. */
   activeQuestionText: z.string().max(800).optional(),
-  /** התורות האחרונים בשיחה (עד 8) — בלעדיהם שאלות המשך נענות בלי הקשר. */
+  /** התורות האחרונים בשיחה (עד 8) - בלעדיהם שאלות המשך נענות בלי הקשר. */
   history: z.array(chatHistoryTurnSchema).max(8).optional(),
 });
 
@@ -76,7 +76,7 @@ export const quizReviewResponseSchema = z.object({
   actionItems: z.array(z.string()).default([]),
   references: z.array(aiRefSchema).default([]),
   safeFallback: z.boolean().default(false),
-}); // all fields required or have defaults — OK for structured output
+}); // all fields required or have defaults - OK for structured output
 
 export const recommendationsRequestSchema = z.object({
   weakTopics: z.array(z.string()).default([]),

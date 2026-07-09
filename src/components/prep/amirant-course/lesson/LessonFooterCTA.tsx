@@ -49,7 +49,7 @@ export function LessonFooterCTA({
   return (
     <div className={cn(shell, className)} lang="he">
       <h2 className="text-xl font-semibold text-gray-900 sm:text-2xl">השלבים הבאים</h2>
-      <p className="mt-2 text-base text-gray-600 sm:mt-3 sm:text-lg">תרגול או שיעור הבא — אפשר לבחור לפי הזמן הזמין.</p>
+      <p className="mt-2 text-base text-gray-600 sm:mt-3 sm:text-lg">תרגול או שיעור הבא - אפשר לבחור לפי הזמן הזמין.</p>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         {emphasizeNext ? nextLessonLink : null}
         {practiceHref ? (

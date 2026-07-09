@@ -55,7 +55,7 @@ function routeStatus(params: {
 }
 
 /**
- * @param service — optional service-role client for RAG stats (bypasses RLS). If null, DB counts are null and table read is false.
+ * @param service - optional service-role client for RAG stats (bypasses RLS). If null, DB counts are null and table read is false.
  */
 export async function getAiSystemHealth(params: { service: SupabaseClient | null }): Promise<AiSystemHealth> {
   const config = {

@@ -368,7 +368,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
             <Text as="h2" variant="headlineSm">
               {sim.title}
             </Text>
-            <AmirantVideoEmbed src={sim.videoPath ?? null} title={`סרטון הסבר — ${sim.title}`} />
+            <AmirantVideoEmbed src={sim.videoPath ?? null} title={`סרטון הסבר - ${sim.title}`} />
             <Text as="p" variant="bodySm" className="text-muted">
               פיילוט {Math.round(sim.pilot.seconds / 60)} דק׳, אחריו {sim.sections.length} פרקי ציון ({sim.sections.reduce((a, s) => a + s.questionCount, 0)}{" "}
               שאלות) ב־{Math.round(sim.sections.reduce((a, s) => a + s.seconds, 0) / 60)} דק׳. ניתן לעבור בין שאלות באותו פרק עד לסיום.
@@ -460,7 +460,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         <Card>
           <CardBody className="space-y-4 p-6">
             <Text as="h2" variant="headlineSm">
-              סיכום — {sim.title}
+              סיכום - {sim.title}
             </Text>
             <Text as="p" variant="body">
               פרקי ציון: {summary.correct} נכונות מתוך {summary.total} (

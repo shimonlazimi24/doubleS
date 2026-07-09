@@ -6,7 +6,7 @@ import {
 import { clampDifficultyLevel } from "../difficulty-clamp";
 
 /**
- * In-test adaptive level: **stable** step changes — two correct in a row to move up,
+ * In-test adaptive level: **stable** step changes - two correct in a row to move up,
  * two wrong in a row to move down (uses shared `applyStreakLevelTransition`).
  * Levels are always within 1–6 (`applyStreakLevelTransition` + clamp on init).
  */

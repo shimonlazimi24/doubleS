@@ -1,5 +1,5 @@
 /**
- * prePare — `/prep` product routes and middleware helpers.
+ * prePare - `/prep` product routes and middleware helpers.
  */
 
 export {

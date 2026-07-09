@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-/** Favicon ריבועי — נוצר בזמן build (מחליף JPEG לא-ריבועי עם רקע משבצות). */
+/** Favicon ריבועי - נוצר בזמן build (מחליף JPEG לא-ריבועי עם רקע משבצות). */
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 

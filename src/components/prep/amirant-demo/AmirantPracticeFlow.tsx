@@ -62,12 +62,12 @@ const TOPIC_TYPE_LABEL_HE: Record<string, string> = {
 const SESSION_LENGTH_SHORT = AMIRANT_DEMO_SHORT_QUIZ_LENGTH;
 const RECENT_WINDOW = 5;
 
-/** ארבעת פרקי הציון — 8+8+9+14 דק׳ = 39 דק׳ (עקבי עם סילבוס). */
+/** ארבעת פרקי הציון - 8+8+9+14 דק׳ = 39 דק׳ (עקבי עם סילבוס). */
 const SCORED_SECTION_SPEC = [
-  { topicId: T.sentence, seconds: 8 * 60, label: "פרק ציון 1 — השלמת משפטים (דמו)" },
-  { topicId: T.sentence, seconds: 8 * 60, label: "פרק ציון 2 — השלמת משפטים (דמו)" },
-  { topicId: T.vocabulary, seconds: 9 * 60, label: "פרק ציון 3 — אוצר מילים (דמו)" },
-  { topicId: T.reading, seconds: 14 * 60, label: "פרק ציון 4 — הבנת הנקרא (דמו)" },
+  { topicId: T.sentence, seconds: 8 * 60, label: "פרק ציון 1 - השלמת משפטים (דמו)" },
+  { topicId: T.sentence, seconds: 8 * 60, label: "פרק ציון 2 - השלמת משפטים (דמו)" },
+  { topicId: T.vocabulary, seconds: 9 * 60, label: "פרק ציון 3 - אוצר מילים (דמו)" },
+  { topicId: T.reading, seconds: 14 * 60, label: "פרק ציון 4 - הבנת הנקרא (דמו)" },
 ] as const;
 
 const PILOT_SPEC = {
@@ -323,7 +323,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
     [fullExam],
   );
 
-  /** טיימר פרק במבחן המלא — מתאפס רק כשמשתנה פרק (מפתח יציב). */
+  /** טיימר פרק במבחן המלא - מתאפס רק כשמשתנה פרק (מפתח יציב). */
   useEffect(() => {
     if (phase !== "full-exam" || !fullExamSectionKey) return;
     const t = window.setInterval(() => {
@@ -535,7 +535,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
           {!currentQuestion && (
             <Card className="p-6">
               <Text as="p" variant="body">
-                לא נמצאה שאלה מתאימה — נסו להתחיל מחדש.
+                לא נמצאה שאלה מתאימה - נסו להתחיל מחדש.
               </Text>
               <button
                 type="button"
@@ -771,7 +771,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
             סיכום מבחן מלא
           </Text>
           <Text as="p" variant="body" className="max-w-readable text-muted">
-            הפרקים הנספרים לציון כללו {AMIRANT_SIMULATION_TECH.scoredQuestionsPerExam} שאלות. אחרי כל פרק עודכנה הערכת היכולת θ לפי קושי השאלות והתשובות (קירוב ל־IRT/1PL — לא זהה למאל״ו). הניקוד, θ והתאמה למבחן הבא נשמרים בדפדפן (מקומי).
+            הפרקים הנספרים לציון כללו {AMIRANT_SIMULATION_TECH.scoredQuestionsPerExam} שאלות. אחרי כל פרק עודכנה הערכת היכולת θ לפי קושי השאלות והתשובות (קירוב ל־IRT/1PL - לא זהה למאל״ו). הניקוד, θ והתאמה למבחן הבא נשמרים בדפדפן (מקומי).
           </Text>
           {fullScoredResults && (
             <Card className="p-6">
@@ -781,7 +781,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                 %)
               </Text>
               <Text as="p" variant="bodySm" className="mt-3 text-muted">
-                הערכת יכולת סופית (θ): ≈ {fullScoredResults.theta.toFixed(2)} על סולם 1–6 — משמשת לנקודת פתיחה במבחן הבא.
+                הערכת יכולת סופית (θ): ≈ {fullScoredResults.theta.toFixed(2)} על סולם 1–6 - משמשת לנקודת פתיחה במבחן הבא.
               </Text>
             </Card>
           )}
@@ -845,7 +845,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
         <Container className="py-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <Text as="p" variant="caption" className="font-semibold text-primary">
-              תרגול ומבחני סימולציה — נתונים מקומיים בלבד. בנק שאלות כמו בזרע SQL.
+              תרגול ומבחני סימולציה - נתונים מקומיים בלבד. בנק שאלות כמו בזרע SQL.
             </Text>
             <div className="flex flex-wrap gap-3 text-xs font-semibold">
               <Link href={`${PREP_BASE}/amirant/demo`} className="text-primary underline-offset-4 hover:underline">

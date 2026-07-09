@@ -1,5 +1,5 @@
 /**
- * Typography roles — use via `<Text variant="…" />` or `<Heading level={n} />`.
+ * Typography roles - use via `<Text variant="…" />` or `<Heading level={n} />`.
  * Strong hierarchy: display > page title > section > body.
  */
 export const typography = {

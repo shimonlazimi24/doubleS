@@ -3,7 +3,7 @@ import type { User } from "@supabase/supabase-js";
 /**
  * בדיקת אדמין אחת לכל השערים (middleware, layout, API).
  *
- * חשוב: `app_metadata` בלבד — את `user_metadata` כל משתמש יכול לכתוב לעצמו
+ * חשוב: `app_metadata` בלבד - את `user_metadata` כל משתמש יכול לכתוב לעצמו
  * דרך `supabase.auth.updateUser({ data: ... })` עם ה-anon key, ולכן בדיקה
  * עליו מאפשרת לכל תלמיד להפוך את עצמו לאדמין.
  *

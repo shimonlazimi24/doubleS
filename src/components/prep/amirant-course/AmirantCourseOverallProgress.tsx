@@ -5,7 +5,7 @@ import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 
 /**
- * מד השלמת שיעורים בקורס — דף קורס ועמודי מודול (למעלה), לא בעמוד שיעור בודד.
+ * מד השלמת שיעורים בקורס - דף קורס ועמודי מודול (למעלה), לא בעמוד שיעור בודד.
  */
 export function AmirantCourseOverallProgress({ className }: { className?: string }) {
   const p = useAmirantCourseProgress();

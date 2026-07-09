@@ -24,7 +24,7 @@ export type RetrieveCourseChunksParams = {
   questionContext?: string;
   lessonId?: string;
   topic?: string;
-  /** Pre-computed embedding vector — skips the runEmbedding call when provided. */
+  /** Pre-computed embedding vector - skips the runEmbedding call when provided. */
   precomputedEmbedding?: number[];
   /**
    * Number of chunks to pass to the model, clamped to 5–8. Default 8.
@@ -115,7 +115,7 @@ function logRagRetrieval(params: {
  * After RPC, sort by similarity (desc) and keep rows at or above `min`.
  * If *none* pass the threshold but we have scored rows, still return the top-K by score
  * (best-effort); prompts use `|sim:` so the model can treat low matches as weak grounding
- * — better than discarding all chunks and leaving RAG empty.
+ * - better than discarding all chunks and leaving RAG empty.
  */
 function selectBySimilarity(
   rows: RetrievedChunk[],
@@ -182,7 +182,7 @@ export async function retrieveCourseChunks(
 ): Promise<RetrievedChunk[]> {
   // אחזור תוכן קורס תמיד עם service client כשזמין: RLS על course_content_chunks
   // מתיר קריאה רק ל-authenticated, ולכן session client לא-מחובר (dev/preview)
-  // מחזיר בשקט 0 קטעים — לכל צרכני ה-AI (chat, quiz-review, recommendations,
+  // מחזיר בשקט 0 קטעים - לכל צרכני ה-AI (chat, quiz-review, recommendations,
   // coach). הגישה ל-routes עצמם מוגנת שם; כאן זה אינדקס תוכן, לא דאטת משתמש.
   const retrievalClient = getPrepSupabaseServiceClient() ?? client;
   const topK = clampRagTopK(params.topK);

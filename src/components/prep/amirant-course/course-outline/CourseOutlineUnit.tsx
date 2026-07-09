@@ -38,7 +38,7 @@ function outlineChromeForLesson(lesson: ManifestLesson, module: ManifestModule, 
 }
 
 /**
- * שיעורי מבחן (מזוהי quiz במניפסט) — play; שיעור עם 2+ שלבים — צ'ברון+אקורדיון; שלב בודד — בלי בקרה מובילה.
+ * שיעורי מבחן (מזוהי quiz במניפסט) - play; שיעור עם 2+ שלבים - צ'ברון+אקורדיון; שלב בודד - בלי בקרה מובילה.
  */
 export function CourseOutlineUnit({
   module,

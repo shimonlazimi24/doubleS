@@ -15,8 +15,8 @@ const SHARED_FEATURES = [
 ];
 
 /**
- * מחירים וימים מגיעים מ-pricing-plans.ts — אותו מקור שה-checkout מחייב לפיו.
- * כאן רק קופי שיווקי (תוויות, badge, פיצ'רים) — כדי שעדכון מחיר לא יציג
+ * מחירים וימים מגיעים מ-pricing-plans.ts - אותו מקור שה-checkout מחייב לפיו.
+ * כאן רק קופי שיווקי (תוויות, badge, פיצ'רים) - כדי שעדכון מחיר לא יציג
  * מחיר אחד ויחייב אחר.
  */
 export const PLANS: {
@@ -50,7 +50,7 @@ export const EXTENSION_PLANS: {
   { id: "ext_month", label: "+חודש", price: PLAN_PRICES_NIS.ext_month!, days: PLAN_DAYS.ext_month! },
 ];
 
-// שמות עבריים ל-slugs של מודולים — שלא יופיע «sentence-completion» למשתמש
+// שמות עבריים ל-slugs של מודולים - שלא יופיע «sentence-completion» למשתמש
 const MODULE_LABEL_HE: Record<string, string> = {
   vocabulary: "אוצר מילים",
   "sentence-completion": "השלמת משפטים",
@@ -175,7 +175,7 @@ export function PrepPricingPage() {
             onClick={() => void startCheckout(selected)}
             className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-8 text-sm font-bold text-white transition hover:bg-primary-hover disabled:opacity-50"
           >
-            {busy ? "מעביר לתשלום…" : `רכישה — ₪${currentPlan.price} ל${currentPlan.label}`}
+            {busy ? "מעביר לתשלום…" : `רכישה - ₪${currentPlan.price} ל${currentPlan.label}`}
           </button>
           <p className="text-xs text-muted-2">תשלום מאובטח · ביטול בכל עת</p>
         </div>
@@ -200,7 +200,7 @@ export function PrepPricingPage() {
               onClick={() => void startCheckout(ext.id)}
               className="rounded-xl border border-line bg-surface-low px-4 py-2 text-sm font-semibold text-primary transition hover:border-primary/40 hover:bg-white disabled:opacity-50"
             >
-              {ext.label} — ₪{ext.price}
+              {ext.label} - ₪{ext.price}
             </button>
           ))}
         </div>

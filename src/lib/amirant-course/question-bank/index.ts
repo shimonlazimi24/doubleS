@@ -1,5 +1,5 @@
 /**
- * Question bank — **MVP: built in TS** (`build-bank.ts`). Production: sync from the same
+ * Question bank - **MVP: built in TS** (`build-bank.ts`). Production: sync from the same
  * schema as `adaptive-learning-schema` / `quiz_questions` with `difficulty_level` 1–6.
  */
 import type { QuestionPoolItem } from "@/lib/learning-intelligence/adaptive";
@@ -21,8 +21,8 @@ export const AMIRANT_CONTENT_MODE: "production" | "demo" = getAmirantContentMode
 
 /**
  * הבנק: שאלות אמיתיות מיובאות; שורות demo סינתטיות רק כמילוי לנושאים שחסרים
- * במאגר האמיתי (וכשכל הנושאים מכוסים — ה-demo לא נבנה בכלל). ה-mode נגזר
- * מאותה החלטה עצמה — לא מביטוי מקביל שעלול לסטות ממנה.
+ * במאגר האמיתי (וכשכל הנושאים מכוסים - ה-demo לא נבנה בכלל). ה-mode נגזר
+ * מאותה החלטה עצמה - לא מביטוי מקביל שעלול לסטות ממנה.
  */
 function buildMergedBank(): { bank: BankQuestion[]; mode: "production" | "demo" } {
   const realBank = getResolvedAmirantQuestionBank();
@@ -36,13 +36,13 @@ function buildMergedBank(): { bank: BankQuestion[]; mode: "production" | "demo" 
 
 const merged = buildMergedBank();
 
-/** "production" — הבנק האמיתי פעיל (גם אם המניפסט demo); "demo" — fallback סינתטי בלבד. */
+/** "production" - הבנק האמיתי פעיל (גם אם המניפסט demo); "demo" - fallback סינתטי בלבד. */
 export const AMIRANT_BANK_MODE: "production" | "demo" = merged.mode;
 
 export const AMIRANT_BANK_QUESTIONS: BankQuestion[] = merged.bank;
 
 /**
- * הבנק לחידונים/תרגולים רגילים — בלי שאלות הסימולציות: הן שמורות לשיעורי
+ * הבנק לחידונים/תרגולים רגילים - בלי שאלות הסימולציות: הן שמורות לשיעורי
  * הסימולציה (getBankQuestionsByTag), ואם יופיעו בחידון רגיל הן "ישרפו" את
  * הסימולציה שהתלמיד יפגוש אחר כך.
  */
@@ -61,10 +61,10 @@ export function getPassage(passageId: string) {
   return getResolvedAmirantPassages().get(passageId);
 }
 
-// אינדקס תגים — נבנה עצלנית בקריאה הראשונה (הבנק אימוטבילי בזמן ריצה)
+// אינדקס תגים - נבנה עצלנית בקריאה הראשונה (הבנק אימוטבילי בזמן ריצה)
 let byTag: Map<string, BankQuestion[]> | undefined;
 
-/** שאלות בנק לפי תג קבוצה (למשל `sc-quiz-2-easy`) — לשיוך שאלות לשיעור. */
+/** שאלות בנק לפי תג קבוצה (למשל `sc-quiz-2-easy`) - לשיוך שאלות לשיעור. */
 export function getBankQuestionsByTag(tag: string): BankQuestion[] {
   if (!byTag) {
     byTag = new Map();
@@ -99,7 +99,7 @@ const VOCAB_MODES: VocabQuizMode[] = ["verbs", "nouns", "adjectives", "adverbs",
 
 /**
  * מסנן שאלות `vocabulary` לפי סוג מילה (פעלים, שמות עצם, …) או מעורב.
- * במבחן שמשלב נושאים (למשל אוצר + השלמה) — מסננים רק את שאלות אוצר המילים; יתר הנושאים נשארים.
+ * במבחן שמשלב נושאים (למשל אוצר + השלמה) - מסננים רק את שאלות אוצר המילים; יתר הנושאים נשארים.
  * אם אין מספיק שאלות אחרי הסינון, חוזרים ל־`filterBankByTopics` (מעורב).
  */
 export function filterBankByTopicsAndVocabMode(

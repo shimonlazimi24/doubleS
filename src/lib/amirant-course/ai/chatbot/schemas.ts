@@ -42,7 +42,7 @@ export const amirantChatbotResponseSchema = lessonChatResponseSchema;
 
 export type AmirantChatbotResponse = z.infer<typeof amirantChatbotResponseSchema>;
 
-// OpenAI structured output requires all fields required or .nullable() — no bare .optional()
+// OpenAI structured output requires all fields required or .nullable() - no bare .optional()
 export const amirantChatbotAiResponseSchema = z.object({
   intent: z.enum(amirantChatIntentValues),
   answer: z.string().min(1),

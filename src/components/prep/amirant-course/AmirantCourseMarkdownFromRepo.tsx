@@ -66,18 +66,18 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
 };
 
 /**
- * מציג קובץ Markdown מעוצב (לא גולמי) — היה `<pre>` שגרם ל־`#` ו־`**` להופיע כטקסט.
+ * מציג קובץ Markdown מעוצב (לא גולמי) - היה `<pre>` שגרם ל־`#` ו־`**` להופיע כטקסט.
  */
 export function AmirantCourseMarkdownFromRepo({ body }: Props) {
   const truncated = body.length > MAX_CHARS;
-  const raw = truncated ? `${body.slice(0, MAX_CHARS)}\n\n… [נחתך — ${body.length.toLocaleString("he-IL")} תווים בקובץ]` : body;
+  const raw = truncated ? `${body.slice(0, MAX_CHARS)}\n\n… [נחתך - ${body.length.toLocaleString("he-IL")} תווים בקובץ]` : body;
   const display = stripHtmlAnchorNoise(stripMasachNumberingForDisplay(raw));
 
   return (
     <div className="space-y-3">
       {truncated ? (
         <Text as="p" variant="bodySm" className="text-amber-900">
-          הקובץ ארוך — מוצגים {MAX_CHARS.toLocaleString("he-IL")} תווים ראשונים.
+          הקובץ ארוך - מוצגים {MAX_CHARS.toLocaleString("he-IL")} תווים ראשונים.
         </Text>
       ) : null}
       <div

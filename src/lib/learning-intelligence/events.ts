@@ -4,7 +4,7 @@ import type { LearningEventEnvelopeValidated } from "./learning-event-metadata";
 export type { EventVersion };
 
 /**
- * Append-only catalog + Zod metadata — see `learning-event-metadata.ts` for schemas.
+ * Append-only catalog + Zod metadata - see `learning-event-metadata.ts` for schemas.
  */
 export {
   LEARNING_EVENT_TYPES,
@@ -38,7 +38,7 @@ export const METADATA_KEYS = {
   source: "source",
 } as const;
 
-/** Example: idempotent ingest from client — hash(userId+type+lessonId+minuteBucket). */
+/** Example: idempotent ingest from client - hash(userId+type+lessonId+minuteBucket). */
 export function buildDedupeKey(parts: string[]): string {
   return parts.join(":");
 }

@@ -9,7 +9,7 @@ const levelStyles = {
   4: "font-display text-lg font-semibold leading-snug text-ink",
 } as const;
 
-/** Marketing hero only — dominant display. */
+/** Marketing hero only - dominant display. */
 const heroPreset =
   "font-display text-[2.25rem] font-semibold leading-tight tracking-tight text-ink sm:text-5xl md:text-6xl";
 

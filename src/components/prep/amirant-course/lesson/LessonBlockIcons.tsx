@@ -25,7 +25,7 @@ function ListOrdered() {
   );
 }
 
-/** Subtle “focus / insight” mark — not a literal object illustration. */
+/** Subtle “focus / insight” mark - not a literal object illustration. */
 function InsightMark() {
   return (
     <svg className={iconClass} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>

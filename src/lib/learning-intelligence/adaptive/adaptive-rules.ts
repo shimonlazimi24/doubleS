@@ -1,7 +1,7 @@
 import { wilsonLowerBound } from "../analytics";
 import type { DifficultyLevel, LearnerAdaptiveTopicState } from "./adaptive-state.types";
 
-/** Streak-based level changes — MVP default. */
+/** Streak-based level changes - MVP default. */
 export const DEFAULT_STREAK_RULES = {
   correctInARowToMoveUp: 2,
   wrongInARowToMoveDown: 2,
@@ -27,7 +27,7 @@ export interface LevelTransitionResult {
 
 /**
  * Pure transition: updates streaks and optionally level after one graded answer.
- * Does not persist — caller writes DB.
+ * Does not persist - caller writes DB.
  */
 export function applyStreakLevelTransition(
   state: Pick<LearnerAdaptiveTopicState, "currentLevel" | "correctStreak" | "wrongStreak">,

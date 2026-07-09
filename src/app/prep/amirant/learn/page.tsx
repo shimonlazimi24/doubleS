@@ -7,8 +7,8 @@ import { AmirantLearnCurriculum } from "@/components/prep/amirant-learn/AmirantL
 import { Card, CardBody, CardTitle, Container, Heading, Text } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "אמירנט — הקורס",
-  description: "תוכנית לימודים, התקדמות ושיעורים — חוויית קורס דיגיטלי.",
+  title: "אמירנט - הקורס",
+  description: "תוכנית לימודים, התקדמות ושיעורים - חוויית קורס דיגיטלי.",
 };
 
 export default function AmirantLearnHomePage() {
@@ -79,7 +79,7 @@ export default function AmirantLearnHomePage() {
                   </div>
                 </div>
                 <Text as="p" variant="bodySm" className="text-muted">
-                  בהמשך התקדמות תישמר בחשבון (Supabase) — כרגע ערכי הדמו לתצוגה בלבד.
+                  בהמשך התקדמות תישמר בחשבון (Supabase) - כרגע ערכי הדמו לתצוגה בלבד.
                 </Text>
               </CardBody>
             </Card>
