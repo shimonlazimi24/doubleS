@@ -161,10 +161,10 @@ export function AmirantPracticeSetClient({
             <Card>
               <CardBody className="space-y-4 p-6">
                 <Text as="p" variant="caption" className="text-muted">
-                  שאלה {idx + 1} · {q.topicSlug} · קושי {q.difficulty}
+                  שאלה {idx + 1}
                 </Text>
                 <QuizPassagePanel passageId={q.passageId} />
-                <p className="font-medium text-ink">{amirantExamQuestionPromptForDisplay(q.prompt)}</p>
+                <p className="font-medium text-ink" dir="ltr" style={{ textAlign: "left" }}>{amirantExamQuestionPromptForDisplay(q.prompt)}</p>
                 <ul className="space-y-2">
                   {q.options.map((opt) => (
                     <li key={opt.id}>

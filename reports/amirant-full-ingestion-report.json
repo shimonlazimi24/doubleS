@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T21:03:49.824Z",
+  "generatedAt": "2026-07-12T14:33:59.679Z",
   "filesScanned": 62,
   "fileTypeCounts": {
     "lesson": 32,
@@ -10,18 +10,19 @@
   "aiRetrievalDocs": 29,
   "practiceSets": 25,
   "simulationSections": 6,
-  "questionsImported": 267,
+  "questionsImported": 526,
   "coverageByTopic": {
-    "sentence_completion": 116,
-    "rephrasing": 100,
-    "reading_comprehension": 51
+    "sentence_completion": 152,
+    "rephrasing": 118,
+    "reading_comprehension": 66,
+    "vocabulary": 190
   },
   "coverageByDifficulty": {
-    "1": 39,
-    "2": 36,
-    "3": 62,
-    "4": 56,
-    "5": 39,
-    "6": 35
+    "1": 59,
+    "2": 56,
+    "3": 135,
+    "4": 119,
+    "5": 112,
+    "6": 45
   }
 }

@@ -1276,7 +1276,7 @@
       },
       {
         "id": "c",
-        "label": "In spite of"
+        "label": "Despite"
       },
       {
         "id": "d",
@@ -3968,7 +3968,7 @@
     "options": [
       {
         "id": "a",
-        "label": "She is the older sibling in her family."
+        "label": "She is older than her sister."
       },
       {
         "id": "b",
@@ -4120,7 +4120,7 @@
       },
       {
         "id": "c",
-        "label": "This book is less expensive than that one."
+        "label": "This book is less interesting than that one."
       },
       {
         "id": "d",
@@ -4736,7 +4736,7 @@
       },
       {
         "id": "d",
-        "label": "She lacks a valid passport for international travel."
+        "label": "She has the money but not the time to travel."
       }
     ],
     "correctOptionId": "b",
@@ -6236,7 +6236,7 @@
     "options": [
       {
         "id": "a",
-        "label": "Coffee is her preferred drink over tea."
+        "label": "I like coffee more than tea."
       },
       {
         "id": "b",
@@ -6738,7 +6738,7 @@
     "topic": "reading_comprehension",
     "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 1,
-    "questionText": "In the passage, the phrase \"no specific skills\" suggests that walking:",
+    "questionText": "In the passage, the phrase \"no specific skills\" (paragraph 1) suggests that walking: ## 📖 Passage 2: The History of Chocolate > Chocolate has a long and fascinating history. It originated in Mesoamerica, where the ancient Maya and Aztec civilizations used cacao beans to make a bitter drink. This drink was not sweet like the chocolate we know today. Instead, it was often flavored with chili peppers and spices. > > When Spanish explorers brought cacao beans to Europe in the 16th century, Europeans added sugar to make the drink sweeter. However, chocolate remained a luxury that only the wealthy could afford. It was not until the 19th century, when mass production began, that chocolate became available to ordinary people. > > Today, chocolate is enjoyed all over the world in many different forms - as bars, candies, cakes, and drinks. Although the chocolate we eat today is very different from the ancient Mayan drink, its popularity continues to grow.",
     "options": [
       {
         "id": "a",
@@ -7071,7 +7071,7 @@
     "topic": "reading_comprehension",
     "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 3,
-    "questionText": "Which statement best summarizes the passage as a whole?",
+    "questionText": "What is the main idea of the passage?",
     "options": [
       {
         "id": "a",
@@ -7256,7 +7256,7 @@
     "topic": "reading_comprehension",
     "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 3,
-    "questionText": "What central argument does the passage develop from beginning to end?",
+    "questionText": "What is the main idea of the passage?",
     "options": [
       {
         "id": "a",
@@ -7626,7 +7626,7 @@
     "topic": "reading_comprehension",
     "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 5,
-    "questionText": "Which option captures the passage's primary claim most accurately?",
+    "questionText": "What is the main idea of the passage?",
     "options": [
       {
         "id": "a",
@@ -7819,7 +7819,7 @@
       },
       {
         "id": "b",
-        "label": "Stress can improve memory at moderate levels, but prolonged stress damages recall."
+        "label": "The relationship between stress and memory is complex: moderate stress can help, while severe or prolonged stress harms memory."
       },
       {
         "id": "c",
@@ -8659,7 +8659,7 @@
     "topic": "sentence_completion",
     "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
-    "questionText": "Despite the cold weather, the children ______ to play outside.",
+    "questionText": "Despite the cold weather, the children ______ to play outside. ### 🔹 פרק 2 – Sentence Completion (4 שאלות, 4 דקות)",
     "options": [
       {
         "id": "a",
@@ -8803,7 +8803,7 @@
     "topic": "sentence_completion",
     "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
-    "questionText": "The company's profits have increased ______ over the past five years.",
+    "questionText": "The company's profits have increased ______ over the past five years. ### 🔹 פרק 3 – Reading Comprehension (5 שאלות, 15 דקות) #### 📖 Passage: The Hidden Cost of Fast Fashion > In the last two decades, the global fashion industry has undergone a dramatic transformation. Clothing that once cost hundreds of dollars and was expected to last for years is now available for a fraction of the price, with new styles appearing in stores every few weeks. This phenomenon, known as \"fast fashion,\" has made trendy clothing accessible to millions of consumers worldwide. Yet beneath the surface of cheap prices and endless variety lies a complex set of problems that few shoppers consider when making a purchase. > > The environmental impact of fast fashion is substantial. The industry is now responsible for roughly 10 percent of global carbon emissions, more than international flights and maritime shipping combined. Producing a single cotton T-shirt can require more than 2,000 liters of water, and the synthetic fabrics used in many fast-fashion garments shed microscopic plastic fibers that eventually find their way into oceans and drinking water. When clothes are worn only a few times before being discarded, as often happens with fast-fashion items, this environmental burden multiplies accordingly. > > The human cost is equally troubling. To produce clothes cheaply and quickly, many fast-fashion brands rely on factories in countries where labor is inexpensive and regulations are weak. Workers in these facilities, often young women, may work long hours for minimal pay in conditions that would not be tolerated in wealthier nations. Investigations have repeatedly revealed safety violations, unpaid wages, and even cases of forced labor within fast-fashion supply chains. While some major brands have pledged reforms, progress has been uneven and difficult to verify. > > In response, a growing movement of consumers is questioning the true value of cheap clothing. Some are turning to second-hand shopping, repairing old garments, or buying fewer but higher-quality items designed to last. Others are supporting brands that commit to transparent supply chains and sustainable materials. Governments in several countries have also begun considering regulations that would hold fashion companies accountable for their environmental and social impacts. Whether these efforts will be enough to transform the industry remains unclear, but awareness of fast fashion's hidden costs continues to grow.",
     "options": [
       {
         "id": "a",
@@ -8836,8 +8836,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q9",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-main-idea",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
     "questionText": "What is the main idea of the passage?",
     "options": [
@@ -8873,8 +8873,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q10",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-detail",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
     "questionText": "According to the passage, what percentage of global carbon emissions does the fashion industry produce?",
     "options": [
@@ -8910,8 +8910,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q11",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-detail",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
     "questionText": "Which of the following is mentioned as a human cost of fast fashion?",
     "options": [
@@ -8947,8 +8947,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q12",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-vocab-context",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
     "questionText": "In paragraph 3, the phrase \"uneven and difficult to verify\" most likely means:",
     "options": [
@@ -8984,10 +8984,10 @@
   },
   {
     "questionId": "simulation-1-baseline-q13",
-    "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-inference",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
-    "questionText": "What can be inferred about the author's attitude toward fast fashion?",
+    "questionText": "What can be inferred about the author's attitude toward fast fashion? ### 🔹 פרק 4 – Restatement (3 שאלות, 6 דקות)",
     "options": [
       {
         "id": "a",
@@ -9021,8 +9021,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q14",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
     "questionText": "Original: The concert was cancelled due to the heavy rain.",
     "options": [
@@ -9057,8 +9057,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q15",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
     "questionText": "Original: Only after the report was reviewed did the committee reach a decision.",
     "options": [
@@ -9093,10 +9093,10 @@
   },
   {
     "questionId": "simulation-1-baseline-q16",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
-    "questionText": "Original: She would have attended the wedding had she not been sick.",
+    "questionText": "Original: She would have attended the wedding had she not been sick. ### 🔹 פרק 5 – Restatement (3 שאלות, 6 דקות)",
     "options": [
       {
         "id": "a",
@@ -9129,8 +9129,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q17",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
     "questionText": "Original: The findings suggest that the treatment may be effective.",
     "options": [
@@ -9165,8 +9165,8 @@
   },
   {
     "questionId": "simulation-1-baseline-q18",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 4,
     "questionText": "Original: Neither the manager nor the employees were informed about the decision.",
     "options": [
@@ -9201,10 +9201,10 @@
   },
   {
     "questionId": "simulation-1-baseline-q19",
-    "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "topic": "sentence_completion",
+    "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
-    "questionText": "Original: The new software allows users to complete tasks more efficiently.",
+    "questionText": "Original: The new software allows users to complete tasks more efficiently. ### 🔹 פרק 6 – Sentence Completion (4 שאלות, 4 דקות)",
     "options": [
       {
         "id": "a",
@@ -9348,7 +9348,7 @@
     "topic": "sentence_completion",
     "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
-    "questionText": "The findings of the study were ______ with those of previous research on the topic.",
+    "questionText": "The findings of the study were ______ with those of previous research on the topic. ### 🧪 פרק 7 (ניסיוני) – Word Formation (4 שאלות, 3 דקות) > שימו לב: השאלות דורשות להפוך מילה נתונה לצורה דקדוקית הנכונה בהקשר.",
     "options": [
       {
         "id": "a",
@@ -9492,7 +9492,7 @@
     "topic": "sentence_completion",
     "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
-    "questionText": "The report highlights the ______ of early intervention in education. (IMPORTANT)",
+    "questionText": "The report highlights the ______ of early intervention in education. (IMPORTANT) ### 🧪 פרק 8 (ניסיוני) – Grammar in Context (4 שאלות, 4 דקות)",
     "options": [
       {
         "id": "a",
@@ -9636,7 +9636,7 @@
     "topic": "sentence_completion",
     "subtopic": "sentence_completion-contrast-linkers",
     "difficultyLevel": 3,
-    "questionText": "She is one of the most talented musicians ______ I have ever heard.",
+    "questionText": "She is one of the most talented musicians ______ I have ever heard. # 🛑 STOP! סיימת את כל 31 השאלות? לפני שמסתכלים על התשובות: 1. בדקו שענינו על כל השאלות 2. רשמו את הזמן הכולל שלקח לכם 3. רק עכשיו – עברו לחלק ההסברים ## 📝 Part 2: Answer Key and Explanations ### 🔹 פרק 1 – Sentence Completion #### ✅ Q1 – Correct Answer: (A) stuck ניתוח: \"was ______ in traffic\" - ביטוי נפוץ לציון הילכדות בפקק. - ✅ stuck in traffic = תקוע בפקק. Collocation קלאסי. - ❌ relaxed, excited, hungry - לא קשורים לתנועה/עיכוב. 💡 טיפ: stuck + מקום (traffic, elevator, snow) = Collocation קבוע. #### ✅ Q2 – Correct Answer: (B) reads ניתוח: \"Every morning\" = הרגל → הווה פשוט. \"Father\" = גוף שלישי יחיד → פועל + s. - ❌ read - צורת הבסיס; לרבים או משפט תלוי. - ✅ reads - הווה פשוט, יחיד. תקין. - ❌ reading - Gerund. - ❌ have read - Present Perfect (רבים / אני). #### ✅ Q3 – Correct Answer: (C) review ניתוח: \"Teacher asked students to ___ essays before submitting\" - מורה מבקש מהתלמידים לבדוק את החיבורים לפני הגשה. - ❌ forget, ignore, destroy - כולם שליליים, לא מה שמורה מבקש. - ✅ review = לבדוק, לעבור שוב. Collocation נפוץ לעבודה אקדמית. #### ✅ Q4 – Correct Answer: (C) insisted ניתוח: \"Despite the cold weather\" = ניגוד. הילדים, למרות הקור, רצו לצאת לשחק. - ❌ refused - סירבו. סותר; הם רצו לצאת. - ❌ failed - נכשלו. לא הגיוני. - ✅ insisted = התעקשו. מתאים לניגוד של \"despite\". - ❌ pretended - התחזו. לא מתאים. 💡 טיפ: insist on V-ing = להתעקש על. מבנה קבוע. ### 🔹 פרק 2 – Sentence Completion #### ✅ Q5 – Correct Answer: (C) so ניתוח: \"Museum closed on Mondays ___ visitors should plan accordingly\" - קשר של סיבה → תוצאה. - ❌ but - ניגוד. לא מתאים. - ❌ although - ניגוד. - ✅ so = לכן, כתוצאה מכך. נכון. - ❌ unless - תנאי שלילי. לא מתאים. #### ✅ Q6 – Correct Answer: (B) for ניתוח: \"studying French ___ three years\" - משך זמן (3 שנים). - ❌ since - נקודת זמן (\"since 2020\"). לא משך. - ✅ for = למשך (משך זמן). נכון. - ❌ during - בזמן (אירוע). לא מתאים. - ❌ while - בעוד. לא מתאים. 💡 טיפ: for + duration (for 3 years, for a week). since + point in time (since Monday, since 2020). #### ✅ Q7 – Correct Answer: (B) challenges ניתוח: \"New theory ___ many long-held assumptions\" - תיאוריה חדשה לרוב מאתגרת אמונות ישנות. - ❌ supports - תומכת. אם תומכת, היא לא מעניינת כחדשה. - ✅ challenges = מאתגרת, מערערת. מתאים לחדשנות. - ❌ ignores - מתעלמת. תיאוריה לא \"מתעלמת\". - ❌ celebrates - חוגגת. לא הגיוני בהקשר מדעי. #### ✅ Q8 – Correct Answer: (B) substantially ניתוח: \"Profits increased ___ over past 5 years\" - מתאר עלייה משמעותית. - ❌ rarely - נדיר. לא תואר של עלייה. - ✅ substantially = באופן משמעותי. Collocation נפוץ בכלכלה. - ❌ occasionally - מדי פעם. לא מתאים להגדרת גודל. - ❌ never - אף פעם. סותר \"increased\". 💡 טיפ: עלייה/ירידה + adverb של גודל: substantially, significantly, considerably, moderately. ### 🔹 פרק 3 – Reading Comprehension #### ✅ Q9 – Correct Answer: (B) סוג: Main Idea. ניתוח: הקטע בנוי סביב הניגוד בין היתרון (מחירים נמוכים, גיוון) לחסרונות (סביבה, זכויות עובדים). התשובה חייבת לתפוס את שני הצדדים. - ❌ (A) \"more affordable and accessible\" - רק חצי מהרעיון. - ✅ (B) \"cheap prices but carries significant environmental and human costs\" - תופס את שני הצדדים. - ❌ (C) \"most polluting in the world\" - מוגזם; הקטע אומר 10% של פליטות, לא \"הכי מזהם\". - ❌ (D) \"never buy any new clothing\" - לא נאמר ולא רמוז. #### ✅ Q10 – Correct Answer: (B) סוג: Specific Detail. איפה בקטע: פסקה 2: \"The industry is now responsible for roughly 10 percent of global carbon emissions\". #### ✅ Q11 – Correct Answer: (B) סוג: Specific Detail. איפה בקטע: פסקה 3: \"Workers in these facilities, often young women, may work long hours for minimal pay in conditions that would not be tolerated in wealthier nations.\" - ❌ (A) \"rising prices\" - הפוך; הקטע אומר שהמחירים דווקא ירדו. - ✅ (B) \"workers may face poor conditions and low wages\" - ציטוט פרפרזי. - ❌ (C) \"decrease in stores\" - לא נאמר. - ❌ (D) \"less interested in fashion\" - הפוך. #### ✅ Q12 – Correct Answer: (B) סוג: Vocabulary in Context. ההקשר: \"progress has been uneven and difficult to verify\". - uneven = לא אחיד, לא קבוע. - difficult to verify = קשה לאמת. - ❌ (A) \"consistent and documented\" - הפוך. - ✅ (B) \"inconsistent and hard to confirm\" - פרפרזה מדויקת. - ❌ (C) \"complete and celebrated\" - הפוך. - ❌ (D) \"impossible and forbidden\" - מוגזם. #### ✅ Q13 – Correct Answer: (C) סוג: Inference – עמדת המחבר. ניתוח: הקטע ברובו ביקורתי (פסקאות 1-3 מדגישות בעיות), אבל פסקה 4 מציגה תנועה של שינוי (\"a growing movement\", \"awareness continues to grow\"). זה מאזן. - ❌ (A) \"strongly supports\" - סותר את הטון הביקורתי. - ❌ (B) \"indifferent\" - לא; המחבר עוסק בבעיות בעיון רב. - ✅ (C) \"critical but notes that changes are beginning to emerge\" - תופס בדיוק את הטון המאוזן-ביקורתי. - ❌ (D) \"completely beyond reform\" - סותר פסקה 4. ### 🔹 פרק 4 – Restatement #### ✅ Q14 – Correct Answer: (A) ניתוח: \"Cancelled due to heavy rain\" = \"Heavy rain caused the concert to be cancelled\". Passive cause → Active cause. - ✅ (A) פרפרזה ישירה של \"due to\" כ-\"caused\". - ❌ (B) \"despite\" - סותר. - ❌ (C) \"if it rains\" - עתיד, לא עבר. - ❌ (D) \"rain started after\" - לא נאמר. 💡 טיפ: X was cancelled due to Y = Y caused X to be cancelled. #### ✅ Q15 – Correct Answer: (C) ניתוח: Inversion אחרי \"Only after\": Only after X did Y happen = Y happened only after X. - ❌ (A) \"before reviewing\" - היפוך הסדר. - ❌ (B) \"could not make a decision\" - סותר. - ✅ (C) \"only after the report had been reviewed\" - פרפרזה מדויקת. - ❌ (D) \"never reviewed\" - סותר. 💡 טיפ: Only after X did Y → השלמה: Y לא קרה עד ש-X קרה קודם. #### ✅ Q16 – Correct Answer: (B) ניתוח: Third Conditional: \"She would have attended had she not been sick\" = \"If she had not been sick, she would have attended\". במציאות: היא הייתה חולה, ולא הגיעה. - ❌ (A) \"attended even though sick\" - סותר. - ✅ (B) \"did not attend because she was sick\" - תופס את המציאות של ה-3rd Conditional. - ❌ (C) \"was not sick, so attended\" - הפוך. - ❌ (D) \"plans next wedding\" - עתיד, לא קשור. ### 🔹 פרק 5 – Restatement #### ✅ Q17 – Correct Answer: (C) ניתוח: suggest that X may be Y = רמת וודאות נמוכה-בינונית. may = אפשרי. - ❌ (A) \"prove... always\" - חזק מדי (suggest ≠ prove, may ≠ always). - ❌ (B) \"not effective\" - הפוך. - ✅ (C) \"indicate that X could possibly be Y\" - פרפרזה של רמת וודאות. - ❌ (D) \"nothing to do with\" - סותר. 💡 טיפ: שימו לב לרמות הוודאות! suggest ≠ prove. may ≠ will. #### ✅ Q18 – Correct Answer: (D) ניתוח: Neither X nor Y were informed = גם X וגם Y לא ידעו. כולם לא נודע להם. - ❌ (A) \"both knew\" - הפוך. - ❌ (B) \"only manager\" - שגוי; אף אחד לא ידע. - ❌ (C) \"only employees\" - שגוי. - ✅ (D) \"neither... nor... knew\" - פרפרזה מדויקת. #### ✅ Q19 – Correct Answer: (B) ניתוח: allows X to V = makes it possible for X to V. מבנה היכולת. - ❌ (A) \"cannot complete\" - הפוך. - ✅ (B) \"makes it possible... to work more efficiently\" - פרפרזה מדויקת. - ❌ (C) \"slower\" - הפוך. - ❌ (D) \"required to work faster\" - שינוי משמעות (אילוץ במקום יכולת). ### 🔹 פרק 6 – Sentence Completion #### ✅ Q20 – Correct Answer: (A) examined ניתוח: \"Detective carefully ___ evidence before conclusion\" - בלש בודק ראיות. - ✅ examined = בדק. Collocation נפוץ לראיות. - ❌ destroyed, purchased, invented - לא עושים את זה עם ראיות. #### ✅ Q21 – Correct Answer: (A) breathtaking ניתוח: \"Hotel offers ___ views of mountains\" - בפרסומת של מלון, התואר צריך להיות חיובי. - ✅ breathtaking = עוצר נשימה. Collocation סטנדרטי ל\"views\". - ❌ ordinary, hidden, temporary - לא מתאימים לטון פרסומי. 💡 טיפ: Collocation: breathtaking views/beauty/scenery. #### ✅ Q22 – Correct Answer: (C) In spite of ניתוח: \"___ rising costs, profits increased\" - עליית עלויות + רווחים עלו = ניגוד. - ❌ Because of, Due to, As a result of - כולם סיבה, לא ניגוד. - ✅ In spite of = למרות. ניגוד. #### ✅ Q23 – Correct Answer: (A) consistent ניתוח: \"Findings of study were ___ with previous research\" - ממצאים תואמים למחקר קודם. - ✅ consistent with = עקביים עם, תואמים. Collocation מחקרי. - ❌ confused, competitive, complicated - לא Collocations של \"findings + with\". 💡 טיפ: consistent with = Collocation אקדמי חשוב. \"The results are consistent with the hypothesis.\" ### 🧪 פרק 7 (ניסיוני) – Word Formation #### ✅ Q24 – Correct Answer: (C) revolutionary ניתוח: \"Discovery was truly ___\" - מילה אחרי was צריכה להיות תואר (adjective). - ❌ revolution - noun. - ❌ revolutionize - verb. - ✅ revolutionary - adjective. נכון. - ❌ revolutionarily - adverb. #### ✅ Q25 – Correct Answer: (B) contribution ניתוח: \"Her ___ to the team\" - אחרי \"Her\" צריך שם עצם (noun). - ❌ contribute - verb. - ✅ contribution - noun. נכון (התרומה). - ❌ contributor - noun גם, אבל משמעותו \"תורם\" (אדם), לא \"תרומה\". \"Her contributor\" = לא הגיוני. - ❌ contributive - adjective (נדיר). #### ✅ Q26 – Correct Answer: (D) favorably ניתוח: \"Policy was ___ received\" - מילה לפני \"received\" צריכה להיות תואר הפועל (adverb) שמתאר איך התקבלה. - ❌ favor - verb/noun. - ❌ favorable - adjective. - ❌ favored - Past Participle. - ✅ favorably - adverb. נכון. 💡 טיפ: favorably received = Collocation נפוץ. מילת תואר הפועל -ly לפני פועל בסביל. #### ✅ Q27 – Correct Answer: (C) importance ניתוח: \"Highlights the ___ of early intervention\" - אחרי \"the\" צריך שם עצם. - ❌ important - adjective. - ❌ importantly - adverb. - ✅ importance - noun. נכון (החשיבות). - ❌ importing - gerund/verb. ### 🧪 פרק 8 (ניסיוני) – Grammar in Context #### ✅ Q28 – Correct Answer: (C) were ניתוח: Second Conditional: \"If I were you, I would...\" - זו צורת subjunctive. תמיד \"were\" (לא \"was\") עם \"I\", \"he\", \"she\" במשפטי If תנאי דמיוני. 💡 טיפ: זה דקדוק רשמי. \"If I were you\" - תבנית קבועה לעצה. #### ✅ Q29 – Correct Answer: (C) which ניתוח: Relative Pronoun לחפצים: \"The book ___ I borrowed\" - הספר הוא חפץ → which או that. - ❌ who - לאנשים. - ❌ what - לא עובד כ-relative pronoun. - ✅ which - לחפצים. - ❌ where - למקומות. #### ✅ Q30 – Correct Answer: (C) had started ניתוח: Past Perfect - שני אירועים בעבר. \"By the time we arrived\" = זמן עבר. ההצגה התחילה לפני כן → had started (Past Perfect). - ❌ starts - הווה, לא מתאים. - ❌ has started - Present Perfect; לא עם \"by the time we arrived\". - ✅ had started - Past Perfect. נכון. - ❌ is starting - הווה. 💡 טיפ: \"By the time [past event], [earlier event] had happened\". #### ✅ Q31 – Correct Answer: (C) that ניתוח: Relative pronoun after superlative (\"the most talented\") - אחרי superlatives, that הוא הבחירה המקובלת. - ❌ who - אפשרי לאנשים, אבל that מועדף אחרי superlatives. - ❌ which - לחפצים. - ✅ that - נכון ומקובל. - ❌ whose - שייכות. 💡 טיפ: אחרי \"the most/best/only + noun\" – בדרך כלל that. ## 📊 Part 3: חישוב הציון שלך ### שלב 1: ספור תשובות נכונות (רק הפרקים הנמדדים, 23 שאלות) | פרק | שאלות | נכונות | |-----|--------|--------| | 1 | Q1–Q4 | __ / 4 | | 2 | Q5–Q8 | __ / 4 | | 3 | Q9–Q13 | __ / 5 | | 4 | Q14–Q16 | __ / 3 | | 5 | Q17–Q19 | __ / 3 | | 6 | Q20–Q23 | __ / 4 | | סה\"כ נמדד | | __ / 23 | ### שלב 2: המרה לציון אמירנ\"ט משוער > ⚠️ הציון המשוער הוא הערכה המבוססת על מבחן לא-אדפטיבי. ציון המבחן האמיתי עשוי להיות שונה משמעותית. | נכונות מתוך 23 | ציון אמירנ\"ט משוער | רמה | |---|---|---| | 23 | 140–150 | פטור מלא 🌟 | | 21–22 | 130–139 | כמעט פטור ⭐ | | 18–20 | 115–129 | אדוונסד ✅ | | 15–17 | 100–114 | אינטרמדיאט 🟢 | | 12–14 | 85–99 | פרה-אינטרמדיאט 🟡 | | 9–11 | 70–84 | מתחת לסף 🟠 | | 6–8 | 60–69 | רמה בסיסית 🔴 | | 0–5 | 50–59 | מתחילים ⚫ | ### שלב 3: ניתוח לפי סוג שאלה מלא את הטבלה: | סוג שאלה | שאלות | נכונות | % | |---|---|---|---| | Sentence Completion | Q1–Q8, Q20–Q23 | __ / 12 | __% | | Reading Comprehension | Q9–Q13 | __ / 5 | __% | | Restatement | Q14–Q19 | __ / 6 | __% | ### שלב 4: פרקים ניסיוניים (לתרגול) | סוג | שאלות | נכונות | |-----|--------|--------| | Word Formation | Q24–Q27 | __ / 4 | | Grammar in Context | Q28–Q31 | __ / 4 | ## 🔍 Part 4: ניתוח ביצועים - מה לעשות עכשיו? ### אם הציון שלך 140+ (פטור מלא): - 🌟 אתה ברמה מצוינת! - המשך לשמר - תרגל סימולציה אחת בשבוע - התמקד ברמת Hard ובמבנים דקדוקיים מתקדמים ### אם הציון שלך 115–139 (אדוונסד): - ⭐ אתה כמעט שם! - זהה את החולשה העיקרית שלך (לפי אחוזים בטבלה למעלה) - התמקד בחיזוק החולשה ### אם הציון שלך 100–114 (אינטרמדיאט): - ✅ אתה במצב טוב, עובר לרוב האוניברסיטאות - השלם את מבחני Intermediate ועבור ל-Hard בהדרגה - אוצר מילים ברמה בינונית יעזור לך לעלות ### אם הציון שלך 85–99 (פרה-אינטרמדיאט): - 🟡 עברת את סף הקבלה, אבל יש עוד לעלות - התמקד בשיפור באזור החולשה - קרא מאמרים באנגלית 15 דקות ביום ### אם הציון שלך מתחת ל-85: - 🟠 יש עוד עבודה לעשות, אבל זה אפשרי - התחל מהיסוד: אוצר מילים בסיסי + תרגול Easy - תן לעצמך 6-8 שבועות של עבודה לפני מבחן אמיתי ## 📝 Part 5: יומן סימולציה אישי מלא את היומן כדי לעקוב אחר ההתקדמות: ### סימולציה #1 (Baseline) - תאריך: _______________ - זמן כולל שלקח לי: _______ דקות - ציון משוער: _______________ - החלק החזק ביותר שלי: _______________ - החלק החלש ביותר שלי: _______________ - 3 שאלות שטעיתי בהן ואני צריך להבין מחדש: 1. Q___ - סיבה לטעות: _______________ 2. Q___ - סיבה לטעות: _______________ 3. Q___ - סיבה לטעות: _______________ ### מה אעשה בשבוע הקרוב כדי להשתפר? 1. _______________ 2. _______________ 3. _______________ ## 🎯 Part 6: המלצות לקראת סימולציה #2 - ⏱️ בדוק אם עמדת בזמן של כל פרק בנפרד - 📚 עבור על הפחים שהמדריכים מתארים - ראה 4.3, 5.4, 6.6 - ✍️ אם הבנת הנקרא הייתה חולשה - חזור על מדריך 6.3 - 🔁 חזור לסימולציה הזו בעוד 2 שבועות כדי למדוד התקדמות ## 🏁 סיום מזל טוב על סיום הסימולציה הראשונה! 🎉 הנקודה החשובה ביותר: הציון הזה הוא נקודת התחלה, לא נקודת סיום. בדיוק בגלל זה אנחנו עושים סימולציה בשלב הזה - כדי לדעת מאיפה יצאנו. בשלב הבא (סימולציה #2), תראה התקדמות ניכרת אם תעבוד על החולשות שלך בשבועיים הקרובים. בהצלחה! 🍀 ⏭️ הבאה: סימולציה #2 – Warm-up ⬅️ חזרה למדריכי הפתרון",
     "options": [
       {
         "id": "a",

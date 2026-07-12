@@ -383,7 +383,6 @@ export function AmirantAdaptiveQuizClient({
     });
   }, []);
 
-  const currentLevelLabel = levelAtIndex[currentIndex] ?? startLevel;
 
   useEffect(() => {
     const qid = questionIds[currentIndex];
@@ -528,7 +527,7 @@ export function AmirantAdaptiveQuizClient({
         {manifestQuiz.title}
       </Text>
       <Text as="p" variant="bodySm" className="mt-2 text-muted">
-        {manifestQuiz.questionCount} שאלות · רמת פתיחה {startLevel} · נושאים: {topics.map((t) => AMIRANT_TOPIC_LABEL_HE[t]).join(" · ")}
+        {manifestQuiz.questionCount} שאלות · מותאם לרמה שלך · {topics.map((t) => AMIRANT_TOPIC_LABEL_HE[t]).join(" · ")}
       </Text>
       {hasVocabTopic ? (
         <Text as="p" variant="bodySm" className="mt-1.5 text-ink/90 [direction:rtl] [text-align:start]">
@@ -543,7 +542,7 @@ export function AmirantAdaptiveQuizClient({
 
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-surface border border-line/80 bg-surface-low px-4 py-3">
         <Text as="p" variant="labelAccent" className="text-primary">
-          שאלה {currentIndex + 1} מתוך {manifestQuiz.questionCount} · רמה נוכחית {currentLevelLabel}
+          שאלה {currentIndex + 1} מתוך {manifestQuiz.questionCount} · מותאם לרמה שלך
         </Text>
         <span className="font-mono text-lg font-bold text-ink">{formatClock(timeLeftSec)}</span>
       </div>
@@ -576,11 +575,11 @@ export function AmirantAdaptiveQuizClient({
       {currentQ && (
         <Card className="mt-6 overflow-hidden">
           <CardTitle className="border-b border-line/60 bg-surface-low px-6 py-3 text-sm">
-            {AMIRANT_TOPIC_LABEL_HE[currentQ.topicSlug]} · קושי {currentQ.difficulty}
+            {AMIRANT_TOPIC_LABEL_HE[currentQ.topicSlug]}
           </CardTitle>
           <CardBody className="space-y-6 p-6">
             <QuizPassagePanel passageId={currentQ.passageId} />
-            <p className="text-base font-medium leading-relaxed text-ink">
+            <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
               {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
             </p>
             <ul className="space-y-2">

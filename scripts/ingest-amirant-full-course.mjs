@@ -638,6 +638,44 @@ function writeJson(fileName, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`);
 }
 
+/**
+ * שימור שאלות שה-ingest לא מייצר: שאלות סימולציה מיובאות (tag "simulation")
+ * ואוצר מילים שנוצר מרשימות המילים (tag "generated_from_course_vocab") -
+ * בלי זה כל ריצת ingest הייתה מוחקת אותן. בנוסף: שיוכי passageId (קטעי
+ * קריאה) מוחלים מחדש על השאלות הנבנות לפי questionId.
+ */
+function mergePreservedQuestions(newQuestions) {
+  const outPath = path.join(OUTPUT_ROOT, "questions.json");
+  if (!fs.existsSync(outPath)) return newQuestions;
+  let existing;
+  try {
+    existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
+  } catch {
+    return newQuestions;
+  }
+  if (!Array.isArray(existing)) return newQuestions;
+
+  const isPreserved = (q) =>
+    Array.isArray(q.tags) &&
+    (q.tags.includes("simulation") || q.tags.includes("generated_from_course_vocab"));
+
+  const passageById = new Map(
+    existing.filter((q) => q.passageId).map((q) => [q.questionId, q.passageId]),
+  );
+
+  const newIds = new Set(newQuestions.map((q) => q.questionId));
+  const preserved = existing.filter((q) => isPreserved(q) && !newIds.has(q.questionId));
+
+  const withPassages = newQuestions.map((q) =>
+    passageById.has(q.questionId) ? { ...q, passageId: passageById.get(q.questionId) } : q,
+  );
+
+  console.log(
+    `[ingest] preserved ${preserved.length} imported/generated questions, re-applied ${[...passageById.keys()].filter((id) => newIds.has(id)).length} passage links`,
+  );
+  return [...withPassages, ...preserved];
+}
+
 function main() {
   const allFiles = [];
   for (const folder of TARGET_FOLDERS) {
@@ -666,8 +704,9 @@ function main() {
     aiRetrieval,
   );
 
+  const mergedQuestions = mergePreservedQuestions(questions);
   writeJson("lessons.json", lessons);
-  writeJson("questions.json", questions);
+  writeJson("questions.json", mergedQuestions);
   writeJson("practice-sets.json", practiceSets);
   writeJson("simulations.json", simulationSections);
   writeJson("ai-retrieval.json", aiRetrieval);
@@ -675,7 +714,7 @@ function main() {
 
   const coverageByTopic = {};
   const coverageByDifficulty = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
-  for (const q of questions) {
+  for (const q of mergedQuestions) {
     coverageByTopic[q.topic] = (coverageByTopic[q.topic] ?? 0) + 1;
     coverageByDifficulty[q.difficultyLevel] += 1;
   }
@@ -691,7 +730,7 @@ function main() {
     aiRetrievalDocs: aiRetrieval.length,
     practiceSets: practiceSets.length,
     simulationSections: simulationSections.length,
-    questionsImported: questions.length,
+    questionsImported: mergedQuestions.length,
     coverageByTopic,
     coverageByDifficulty,
   };

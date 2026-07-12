@@ -418,10 +418,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
               <Card className="overflow-hidden">
                 <CardBody className="space-y-6 p-6">
                   <Text as="p" variant="caption" className="text-muted">
-                    רמת כניסה לפרק: {run.sectionEnterLevel} · קושי שאלה: {q.difficulty}
+                    שאלה {run.focusIndex + 1} מתוך {run.questionIds.length} בפרק
                   </Text>
                   <QuizPassagePanel passageId={q.passageId} />
-                  <p className="text-base font-medium leading-relaxed text-ink">
+                  <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
                     {amirantExamQuestionPromptForDisplay(q.prompt)}
                   </p>
                   <ul className="space-y-2">

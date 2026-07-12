@@ -123,12 +123,12 @@ const VOCAB: ManifestModule = {
     { id: "lesson.vocab.14", title: "אוצר מילים · מומחה - שמות עצם", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.vocab.15", title: "אוצר מילים · מומחה - תוארים", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.vocab.16", title: "אוצר מילים · מומחה - תוארי־מעוף/קישור", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.vocab.17", title: "Phrasal verbs", kind: "text", estimatedMinutes: 25 },
-    { id: "lesson.vocab.18", title: "Connectives (מתקדמים)", kind: "text", estimatedMinutes: 25 },
-    { id: "lesson.vocab.19", title: "Mastery level", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.vocab.17", title: "פעלים מורכבים (Phrasal Verbs)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.vocab.18", title: "מילות קישור (מתקדמים)", kind: "text", estimatedMinutes: 25 },
+    { id: "lesson.vocab.19", title: "רמת שליטה מלאה", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.vocab.20", title: "דוגמה: חבילה 100 מילים", kind: "text", estimatedMinutes: 20 },
   ],
-  practiceSets: [{ id: "pr-vocab-1", title: "High-frequency items", questionIds: takeQuestionIds("vocabulary", 10) }],
+  practiceSets: [{ id: "pr-vocab-1", title: "מילים בשכיחות גבוהה", questionIds: takeQuestionIds("vocabulary", 10) }],
   quizzes: [
     {
       id: "quiz-landing-taste",
@@ -139,8 +139,8 @@ const VOCAB: ManifestModule = {
       topicSlugs: ["reading_comprehension", "sentence_completion"],
       minInTestLevel: 3,
     },
-    Q("quiz-vocab", "Vocabulary adaptive", ["vocabulary"]),
-    Q("quiz-vocab-2", "Vocabulary + sentence completion", ["vocabulary", "sentence_completion"]),
+    Q("quiz-vocab", "תרגול אוצר מילים", ["vocabulary"]),
+    Q("quiz-vocab-2", "אוצר מילים והשלמת משפטים", ["vocabulary", "sentence_completion"]),
   ],
 };
 
@@ -187,7 +187,7 @@ const SENT: ManifestModule = {
       questionIds: takeQuestionIdsByDifficulty("sentence_completion", 10, 5, 6),
     },
   ],
-  quizzes: [Q("quiz-sc", "Sentence completion adaptive", ["sentence_completion"]), Q("quiz-sc-2", "Mixed SC + vocabulary", ["sentence_completion", "vocabulary"])],
+  quizzes: [Q("quiz-sc", "תרגול השלמת משפטים", ["sentence_completion"]), Q("quiz-sc-2", "השלמת משפטים ואוצר מילים", ["sentence_completion", "vocabulary"])],
 };
 
 const REPH: ManifestModule = {
@@ -209,8 +209,8 @@ const REPH: ManifestModule = {
     { id: "lesson.rephrase.11", title: "מבחן תרגול 7 (מעורב)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.rephrase.12", title: "מבחן תרגול 8 (מעורב)", kind: "text", estimatedMinutes: 25 },
   ],
-  practiceSets: [{ id: "pr-rephrase", title: "Rephrasing set", questionIds: takeQuestionIds("rephrasing", 10) }],
-  quizzes: [Q("quiz-rephrase", "Rephrasing adaptive", ["rephrasing"]), Q("quiz-rephrase-2", "Rephrase + reading", ["rephrasing", "reading_comprehension"])],
+  practiceSets: [{ id: "pr-rephrase", title: "סט ניסוח מחדש", questionIds: takeQuestionIds("rephrasing", 10) }],
+  quizzes: [Q("quiz-rephrase", "תרגול ניסוח מחדש", ["rephrasing"]), Q("quiz-rephrase-2", "ניסוח מחדש והבנת הנקרא", ["rephrasing", "reading_comprehension"])],
 };
 
 const READ: ManifestModule = {
@@ -232,8 +232,8 @@ const READ: ManifestModule = {
     { id: "lesson.reading.11", title: "מבחן תרגול 7 (מעורב)", kind: "text", estimatedMinutes: 25 },
     { id: "lesson.reading.12", title: "מבחן תרגול 8 (מעורב)", kind: "text", estimatedMinutes: 25 },
   ],
-  practiceSets: [{ id: "pr-reading", title: "Reading set", questionIds: takeQuestionIds("reading_comprehension", 10) }],
-  quizzes: [Q("quiz-reading", "Reading adaptive", ["reading_comprehension"]), Q("quiz-reading-2", "Reading + rephrasing", ["reading_comprehension", "rephrasing"])],
+  practiceSets: [{ id: "pr-reading", title: "סט הבנת הנקרא", questionIds: takeQuestionIds("reading_comprehension", 10) }],
+  quizzes: [Q("quiz-reading", "תרגול הבנת הנקרא", ["reading_comprehension"]), Q("quiz-reading-2", "הבנת הנקרא וניסוח מחדש", ["reading_comprehension", "rephrasing"])],
 };
 
 const REF: ManifestModule = {
@@ -243,21 +243,21 @@ const REF: ManifestModule = {
   sortOrder: 5,
   lessons: [
     { id: "lesson.reform.01", title: "רפורמה - סקירה (7.1)", kind: "mixed", estimatedMinutes: 30, videoSlot: true, practiceSetId: "pr-reform", quizId: "quiz-reform" },
-    { id: "lesson.reform.02", title: "Listening (7.2)", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.reform.02", title: "הבנת הנשמע (7.2)", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.reform.03", title: "מבחני שמיעה (7.3)", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.reform.04", title: "Word formation (7.4)", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.reform.04", title: "תצורת מילים (7.4)", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.reform.05", title: "תרגול word formation (7.5)", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.reform.06", title: "Grammar in context (7.6)", kind: "text", estimatedMinutes: 30 },
+    { id: "lesson.reform.06", title: "דקדוק בהקשר (7.6)", kind: "text", estimatedMinutes: 30 },
     { id: "lesson.reform.07", title: "תרגול grammar (7.7)", kind: "text", estimatedMinutes: 30 },
-    { id: "lesson.reform.08", title: "Writing (7.8)", kind: "text", estimatedMinutes: 35, quizId: "quiz-reform-2" },
+    { id: "lesson.reform.08", title: "כתיבה (7.8)", kind: "text", estimatedMinutes: 35, quizId: "quiz-reform-2" },
     { id: "lesson.reform.09", title: "דוגמאות וכתיבה (7.9)", kind: "text", estimatedMinutes: 30 },
   ],
   practiceSets: [
-    { id: "pr-reform", title: "Mixed skills", questionIds: [...takeQuestionIds("vocabulary", 4), ...takeQuestionIds("sentence_completion", 4)] },
+    { id: "pr-reform", title: "תרגול משולב", questionIds: [...takeQuestionIds("vocabulary", 4), ...takeQuestionIds("sentence_completion", 4)] },
   ],
   quizzes: [
-    Q("quiz-reform", "Mixed adaptive (2026 prep)", ["vocabulary", "sentence_completion", "rephrasing"]),
-    Q("quiz-reform-2", "Full-topic mix", ["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"]),
+    Q("quiz-reform", "תרגול משולב (רפורמת 2026)", ["vocabulary", "sentence_completion", "rephrasing"]),
+    Q("quiz-reform-2", "תרגול כל הנושאים", ["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"]),
   ],
 };
 
@@ -287,8 +287,8 @@ const TIP: ManifestModule = {
   lessons: [
     { id: "lesson.tips.01", title: "טיפים מנצחים (יחידה 9)", kind: "mixed", estimatedMinutes: 25, practiceSetId: "pr-tips", quizId: "quiz-tips" },
   ],
-  practiceSets: [{ id: "pr-tips", title: "Quick mixed practice", questionIds: takeQuestionIds("sentence_completion", 8) }],
-  quizzes: [Q("quiz-tips", "Strategies check (mixed)", ["sentence_completion", "reading_comprehension"])],
+  practiceSets: [{ id: "pr-tips", title: "תרגול מהיר משולב", questionIds: takeQuestionIds("sentence_completion", 8) }],
+  quizzes: [Q("quiz-tips", "בדיקת אסטרטגיות", ["sentence_completion", "reading_comprehension"])],
 };
 
 const SUM: ManifestModule = {
@@ -300,7 +300,7 @@ const SUM: ManifestModule = {
     { id: "lesson.summary.01", title: "סיכום הקורס ומשוב (יחידה 10)", kind: "text", estimatedMinutes: 20, quizId: "quiz-final" },
   ],
   practiceSets: [],
-  quizzes: [Q("quiz-final", "Final adaptive review", ["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"])],
+  quizzes: [Q("quiz-final", "חזרה מסכמת", ["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"])],
 };
 
 /** מודולי תוכן שמקורם ב־NAVIGATION / תיקיית `content/amirnet-course` (ללא מבוא). */

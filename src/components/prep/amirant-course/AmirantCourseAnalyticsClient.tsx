@@ -10,7 +10,8 @@ import {
 import { AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
 import type { AmirantBankTopicSlug } from "@/lib/amirant-course/types/bank-question";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { Card, CardBody, Text } from "@/components/ui";
+import { Text } from "@/components/ui";
+import { cn } from "@/lib/design-system/cn";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -80,97 +81,118 @@ export function AmirantCourseAnalyticsClient() {
     }
   }
 
+  const hasData = Object.keys(analytics.byTopic).length > 0;
+
   return (
-    <div className="space-y-8">
-      <Text as="h1" variant="titlePage">
-        אנליטיקה - הכנה לאמירנט
-      </Text>
-      <Text as="p" variant="bodySm" className="text-muted">
-        נתונים מקומיים בדפדפן בלבד. אין המצאת ציונים - ה-AI מקבל רק את מה שמוצג כאן.
-      </Text>
-
-      <Card>
-        <CardBody className="space-y-4 p-6">
-          <Text as="h2" variant="headlineSm">
-            דיוק לפי נושא
-          </Text>
-          <ul className="space-y-2 text-sm">
-            {Object.entries(analytics.byTopic).map(([slug, roll]) => {
-              const pct = roll.total > 0 ? Math.round((roll.correct / roll.total) * 100) : 0;
-              const avgMs =
-                roll.responseTimeSamples && roll.responseTimeSamples > 0 && roll.responseTimeMsSum != null
-                  ? Math.round(roll.responseTimeMsSum / roll.responseTimeSamples)
-                  : null;
-              return (
-                <li key={slug} className="flex flex-wrap justify-between gap-2 border-b border-line/40 py-2 last:border-0">
-                  <span className="font-medium">{topicLabel(slug)}</span>
-                  <span className="text-muted">
-                    {roll.correct}/{roll.total} ({pct}%)
-                    {avgMs != null ? ` · ממוצע זמן ~${avgMs}ms` : ""}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-          {Object.keys(analytics.byTopic).length === 0 ? <Text as="p" variant="bodySm">אין עדיין נתונים - התחילו מבחן או תרגול.</Text> : null}
-        </CardBody>
-      </Card>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card>
-          <CardBody className="p-6">
-            <Text as="h3" variant="headlineSm" className="mb-2">
-              נושאים לחיזוק
-            </Text>
-            <ul className="list-disc pr-5 text-sm text-ink">
-              {weak.length ? weak.map((t) => <li key={t}>{topicLabel(t)}</li>) : <li>אין מספיק ניסיון (לפחות 3 ניסיונות לנושא).</li>}
-            </ul>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardBody className="p-6">
-            <Text as="h3" variant="headlineSm" className="mb-2">
-              נושאים חזקים
-            </Text>
-            <ul className="list-disc pr-5 text-sm text-ink">
-              {strong.length ? strong.map((t) => <li key={t}>{topicLabel(t)}</li>) : <li>אין מספיק ניסיון.</li>}
-            </ul>
-          </CardBody>
-        </Card>
+    <div className="mx-auto w-full max-w-[52rem] space-y-9" dir="rtl">
+      <div>
+        <Text as="h1" variant="titlePage">
+          ההתקדמות שלי
+        </Text>
+        <Text as="p" variant="bodySm" className="mt-2 text-muted">
+          איפה אתם חזקים, מה כדאי לחזק, ומה לעשות עכשיו.
+        </Text>
       </div>
 
-      <Card>
-        <CardBody className="space-y-2 p-6">
-          <Text as="h3" variant="headlineSm">
-            שיפור לאורך זמן
+      {!hasData ? (
+        /* empty state אחד מנחה - במקום "אין נתונים" מפוזר בכל סקשן */
+        <div className="rounded-2xl border border-line bg-paper p-8 text-center">
+          <Text as="p" variant="body" className="font-semibold text-ink">
+            עוד אין כאן נתונים
           </Text>
-          <Text as="p" variant="body">{improvementHint}</Text>
-        </CardBody>
-      </Card>
-
-      <Card>
-        <CardBody className="space-y-4 p-6">
-          <Text as="h3" variant="headlineSm">
-            סיכום AI (מבוסס נתונים בלבד)
+          <Text as="p" variant="bodySm" className="mt-2 text-muted">
+            השלימו מבחן רמה או תרגול ראשון - ותראו כאן דיוק לפי נושא, מגמת שיפור והמלצות אישיות.
           </Text>
-          <button
-            type="button"
-            disabled={aiLoading}
-            onClick={runAi}
-            className="rounded-control bg-primary px-5 py-2 text-sm font-semibold text-white disabled:opacity-50"
+          <Link
+            href={`${COURSE_BASE}/quiz/quiz-entry-diagnostic`}
+            className="mt-5 inline-flex min-h-11 items-center justify-center rounded-control bg-primary px-6 text-sm font-bold text-white transition hover:bg-primary-hover"
           >
-            {aiLoading ? "טוען…" : "בקשת ניתוח"}
-          </button>
-          {aiText ? (
-            <pre className="whitespace-pre-wrap rounded-control border border-line/60 bg-surface-low p-4 text-sm leading-relaxed text-ink">
-              {aiText}
-            </pre>
-          ) : null}
-        </CardBody>
-      </Card>
+            למבחן הרמה ←
+          </Link>
+        </div>
+      ) : (
+        <>
+          <section>
+            <h2 className="text-lg font-bold text-primary">דיוק לפי נושא</h2>
+            <ul className="mt-3">
+              {Object.entries(analytics.byTopic).map(([slug, roll]) => {
+                const pct = roll.total > 0 ? Math.round((roll.correct / roll.total) * 100) : 0;
+                return (
+                  <li
+                    key={slug}
+                    className="grid grid-cols-[1fr_auto] items-center gap-3 border-b border-line/60 py-3 last:border-0"
+                  >
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-ink">{topicLabel(slug)}</p>
+                      <div className="mt-1.5 h-1.5 w-full max-w-[16rem] overflow-hidden rounded-full bg-surface-high">
+                        <div
+                          className={cn("h-full rounded-full", pct >= 70 ? "bg-emerald-500" : "bg-accent")}
+                          style={{ width: `${pct}%` }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-sm tabular-nums text-muted">
+                      {pct}% <span className="text-xs">({roll.correct}/{roll.total})</span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          <section className="border-t border-line pt-6">
+            <h2 className="text-lg font-bold text-primary">מה זה אומר</h2>
+            <div className="mt-3 grid gap-6 sm:grid-cols-2">
+              <div>
+                <p className="text-xs font-semibold tracking-wide text-muted">כדאי לחזק</p>
+                <ul className="mt-2 space-y-1.5 text-sm text-ink">
+                  {weak.length ? (
+                    weak.map((t) => <li key={t}>{topicLabel(t)}</li>)
+                  ) : (
+                    <li className="text-muted">צריך עוד קצת תרגול (3+ שאלות לנושא) כדי לזהות</li>
+                  )}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-wide text-muted">חזקים אצלכם</p>
+                <ul className="mt-2 space-y-1.5 text-sm text-ink">
+                  {strong.length ? (
+                    strong.map((t) => <li key={t}>{topicLabel(t)}</li>)
+                  ) : (
+                    <li className="text-muted">עוד אין מספיק נתונים</li>
+                  )}
+                </ul>
+              </div>
+            </div>
+            <Text as="p" variant="bodySm" className="mt-4 text-muted">
+              {improvementHint}
+            </Text>
+          </section>
+
+          <section className="border-t border-line pt-6">
+            <h2 className="text-lg font-bold text-primary">המלצה אישית</h2>
+            <Text as="p" variant="bodySm" className="mt-1 text-muted">
+              ניתוח AI על בסיס הנתונים שלמעלה בלבד.
+            </Text>
+            <button
+              type="button"
+              disabled={aiLoading}
+              onClick={runAi}
+              className="mt-3 rounded-control bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:opacity-50"
+            >
+              {aiLoading ? "מנתח…" : "מה כדאי לי לתרגל עכשיו?"}
+            </button>
+            {aiText ? (
+              <div className="mt-4 rounded-e-xl border-s-[3px] border-accent/60 bg-accent-muted p-4">
+                <p className="whitespace-pre-wrap text-sm leading-relaxed text-ink">{aiText}</p>
+              </div>
+            ) : null}
+          </section>
+        </>
+      )}
 
       <Link href={COURSE_BASE} className="inline-block text-sm font-semibold text-primary">
-        חזרה לקורס
+        ← חזרה לקורס
       </Link>
     </div>
   );
