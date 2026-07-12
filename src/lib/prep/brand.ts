@@ -48,7 +48,7 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
     examSlug: "toefl",
     title: "TOEFL: הכנה מקוונת",
     shortTitle: "TOEFL",
-    blurb: "הכנה ממוקדת ל-TOEFL iBT - בפיתוח. השאירו פרטים בעמוד הקורס ונעדכן כשנפתח.",
+    blurb: "הכנה ממוקדת ל-TOEFL iBT - בפיתוח. בינתיים קורס האמירנט פתוח ופעיל.",
     href: "/prep/toefl",
     status: "coming_soon",
     priceFromIls: null,
