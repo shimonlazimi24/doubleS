@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const PLACEHOLDER_POSTS = [
-  { slug: "welcome", title: "ברוכים הבאים ל-prePare" },
+  { slug: "welcome", title: "ברוכים הבאים ל-PREPARE" },
   { slug: "amirant-tips", title: "טיפים למבחן אמירנט" },
 ];
 

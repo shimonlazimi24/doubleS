@@ -27,17 +27,22 @@ export async function POST(req: Request) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-  if (supabaseUrl && serviceKey) {
-    await fetch(`${supabaseUrl}/rest/v1/completion_contacts`, {
-      method: "POST",
-      headers: {
-        apikey: serviceKey,
-        Authorization: `Bearer ${serviceKey}`,
-        "Content-Type": "application/json",
-        Prefer: "return=minimal",
-      },
-      body: JSON.stringify({ name, email, phone: phone ?? null, course: course ?? null }),
-    });
+  if (!supabaseUrl || !serviceKey) {
+    return NextResponse.json({ error: "storage unavailable" }, { status: 503 });
+  }
+
+  const res = await fetch(`${supabaseUrl}/rest/v1/completion_contacts`, {
+    method: "POST",
+    headers: {
+      apikey: serviceKey,
+      Authorization: `Bearer ${serviceKey}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify({ name, email, phone: phone ?? null, course: course ?? null }),
+  });
+  if (!res.ok) {
+    return NextResponse.json({ error: "storage failed" }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });

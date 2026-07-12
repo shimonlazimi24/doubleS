@@ -1,4 +1,4 @@
-/** prePare - brand tokens (single source of truth). */
+/** PREPARE - brand tokens (single source of truth). */
 
 /** Typography wordmark (header, marketing) */
 export const PREP_BRAND_WORDMARK = "PREPARE";
@@ -6,7 +6,7 @@ export const PREP_BRAND_WORDMARK_EN = "Academic Prep";
 export const PREP_BRAND_SUBTITLE_HE = "הכנה ללימודים אקדמיים";
 
 /** Legal / metadata */
-export const PREP_BRAND_LATIN = "prePare";
+export const PREP_BRAND_LATIN = "PREPARE";
 /** @deprecated Prefer PREP_BRAND_SUBTITLE_HE in marketing surfaces */
 export const PREP_BRAND_NAV_HE = "הכנה למבחני אנגלית";
 /** Wordmark in `public/prep/logo.png` (favicon / OG only) */
@@ -26,12 +26,10 @@ export type PrepCourseCatalogItem = {
   examSlug: string;
   title: string;
   shortTitle: string;
+  blurb: string;
   href: string;
   status: PrepCourseStatus;
-  imageKey: "amirant" | "toefl";
   priceFromIls: number | null;
-  rating: number | null;
-  reviewCount: number | null;
 };
 
 export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
@@ -40,24 +38,20 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
     examSlug: "amirant",
     title: "אמירנט: ערכת הכנה אונליין",
     shortTitle: "אמירנט",
+    blurb: "קורס מלא לפטור מאנגלית: שיעורים, תרגול אדפטיבי, סימולציות וליווי AI. מבחן רמה חינם.",
     href: "/prep/amirant",
     status: "live",
-    imageKey: "amirant",
-    priceFromIls: null,
-    rating: null,
-    reviewCount: null,
+    priceFromIls: 179,
   },
   {
     id: "toefl",
     examSlug: "toefl",
     title: "TOEFL: הכנה מקוונת",
     shortTitle: "TOEFL",
+    blurb: "הכנה ממוקדת ל-TOEFL iBT - בפיתוח. השאירו פרטים בעמוד הקורס ונעדכן כשנפתח.",
     href: "/prep/toefl",
     status: "coming_soon",
-    imageKey: "toefl",
     priceFromIls: null,
-    rating: null,
-    reviewCount: null,
   },
 ] as const;
 

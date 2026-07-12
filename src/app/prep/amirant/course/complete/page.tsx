@@ -1,8 +1,8 @@
 import { AmirantCourseCompletionPage } from "@/components/prep/amirant-course/AmirantCourseCompletionPage";
 
 export const metadata = {
-  title: "כל הכבוד! | הכנה לאמירנט",
-  description: "סיימת את הקורס. קוד הנחה לקורס הבא ועדכונים לפי בקשה.",
+  title: "סיום הקורס",
+  description: "סיימתם את קורס ההכנה לאמירנט - הצעדים האחרונים לקראת יום הבחינה.",
 };
 
 export default function CourseCompletePage() {

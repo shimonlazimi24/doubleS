@@ -1,18 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import { Container, Heading, Text } from "@/components/ui";
 import { PrepBreadcrumbs } from "@/components/prep/catalog/PrepBreadcrumbs";
 import { PrepCourseCatalogCard } from "@/components/prep/catalog/PrepCourseCatalogCard";
-import { filterPrepCourses, type CourseCatalogFilter } from "@/lib/prep/course-catalog";
-import { PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
-import { cn } from "@/lib/design-system/cn";
-
-const FILTERS: { id: CourseCatalogFilter; label: string }[] = [
-  { id: "all", label: "הכל" },
-  { id: "amirant", label: "אמירנט" },
-  { id: "toefl", label: "TOEFL" },
-];
+import { PREP_BRAND_TAGLINE_HE, PREP_COURSES } from "@/lib/prep/brand";
 
 type Props = {
   showBreadcrumbs?: boolean;
@@ -20,10 +9,8 @@ type Props = {
   id?: string;
 };
 
+/* שני קורסים בקטלוג - סינון בצ'יפים היה כרום מיותר. */
 export function PrepCourseCatalog({ showBreadcrumbs = false, breadcrumbTrail = [], id = "catalog" }: Props) {
-  const [filter, setFilter] = useState<CourseCatalogFilter>("all");
-  const courses = filterPrepCourses(filter);
-
   return (
     <section id={id} className="border-t border-line/60 bg-paper py-section md:py-section-lg">
       <Container>
@@ -39,28 +26,8 @@ export function PrepCourseCatalog({ showBreadcrumbs = false, breadcrumbTrail = [
           </Text>
         </div>
 
-        <div className="mb-ds-8 flex flex-wrap gap-2" role="tablist" aria-label="סינון קורסים">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              role="tab"
-              aria-selected={filter === f.id}
-              onClick={() => setFilter(f.id)}
-              className={cn(
-                "rounded-full border px-4 py-2 text-sm font-medium transition",
-                filter === f.id
-                  ? "border-primary bg-primary text-paper"
-                  : "border-line bg-paper hover:bg-surface-low",
-              )}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-
-        <ul className="grid grid-cols-1 gap-ds-5 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
+        <ul className="grid grid-cols-1 gap-ds-5 sm:grid-cols-2">
+          {PREP_COURSES.map((course) => (
             <li key={course.id}>
               <PrepCourseCatalogCard course={course} />
             </li>

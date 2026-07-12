@@ -363,25 +363,25 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   return (
     <div className="space-y-6">
       {phase === "intro" && (
-        <Card>
-          <CardBody className="space-y-4 p-6">
-            <Text as="h2" variant="headlineSm">
-              {sim.title}
-            </Text>
-            <AmirantVideoEmbed src={sim.videoPath ?? null} title={`סרטון הסבר - ${sim.title}`} />
-            <Text as="p" variant="bodySm" className="text-muted">
-              פיילוט {Math.round(sim.pilot.seconds / 60)} דק׳, אחריו {sim.sections.length} פרקי ציון ({sim.sections.reduce((a, s) => a + s.questionCount, 0)}{" "}
-              שאלות) ב־{Math.round(sim.sections.reduce((a, s) => a + s.seconds, 0) / 60)} דק׳. ניתן לעבור בין שאלות באותו פרק עד לסיום.
-            </Text>
-            <button
-              type="button"
-              onClick={start}
-              className="rounded-control bg-primary px-6 py-3 text-sm font-semibold text-white shadow-card"
-            >
-              התחלת סימולציה
-            </button>
-          </CardBody>
-        </Card>
+        /* מסך פתיחה ממורכז - מטרה אחת: להבין את המבנה ולהתחיל */
+        <div className="mx-auto max-w-xl space-y-5 pt-4 text-center">
+          <Text as="h2" variant="headlineSm">
+            {sim.title}
+          </Text>
+          <AmirantVideoEmbed src={sim.videoPath ?? null} title={`סרטון הסבר - ${sim.title}`} />
+          <Text as="p" variant="bodySm" className="mx-auto max-w-md leading-relaxed text-muted">
+            פיילוט {Math.round(sim.pilot.seconds / 60)} דק׳, אחריו {sim.sections.length} פרקי ציון ({sim.sections.reduce((a, s) => a + s.questionCount, 0)}{" "}
+            שאלות) ב־{Math.round(sim.sections.reduce((a, s) => a + s.seconds, 0) / 60)} דק׳. ניתן לעבור בין שאלות באותו פרק עד לסיום.
+          </Text>
+          <button
+            type="button"
+            onClick={start}
+            className="inline-flex min-h-12 items-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
+          >
+            התחלת סימולציה
+          </button>
+          <p className="text-xs text-muted">הטיימר מתחיל רק אחרי הלחיצה.</p>
+        </div>
       )}
 
       {phase === "running" && run && (

@@ -7,7 +7,7 @@ import { Container, Heading, Text } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "התחברות",
-  description: "התחברות ל-prePare עם Google או קוד במייל - שמירת התקדמות וקורס אמירנט.",
+  description: "התחברות ל-PREPARE עם Google או קוד במייל - שמירת התקדמות וקורס אמירנט.",
 };
 
 /** מסך ממוקד אחד: כותרת צמודה לטופס, בלי רצועות ריק (DESIGN_GUIDELINES: one purpose per screen). */
