@@ -556,7 +556,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                 </Text>
               </div>
               <CardBody className="space-y-6 p-6">
-                <p className="text-base font-medium leading-relaxed text-ink">
+                <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
                   {amirantExamQuestionPromptForDisplay(currentQuestion.prompt)}
                 </p>
                 <ul className="space-y-2">
@@ -719,7 +719,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                       : ""}{" "}
                     · ניתן לשנות תשובה עד סיום הפרק
                   </Text>
-                  <p className="text-base font-medium leading-relaxed text-ink">
+                  <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
                     {amirantExamQuestionPromptForDisplay(fq.prompt)}
                   </p>
                   <ul className="space-y-2">

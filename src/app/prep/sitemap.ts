@@ -15,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: PREP, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${PREP}/amirant`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
     { url: `${PREP}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${PREP}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
     { url: `${PREP}/courses`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${PREP}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${PREP}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },

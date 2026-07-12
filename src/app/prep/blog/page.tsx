@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
-import { Container, Heading, PageLayout, Section, Text } from "@/components/ui";
+import { PREP_BASE } from "@/lib/prep/constants";
+import { Container, Heading, PageLayout, Text } from "@/components/ui";
 
+/* עד שיש מאמרים אמיתיים: עמוד "בקרוב" כן, בלי רשימת פוסטים מדומה ובלי אינדוקס. */
 export const metadata: Metadata = {
   title: "בלוג",
-  description: `בלוג ${PREP_PRODUCT_NAME} - מאמרים על הכנה לאמירנט ולימודים בארה״ב.`,
+  description: "מאמרים על הכנה לאמירנט ופטור מאנגלית - בקרוב.",
+  robots: { index: false, follow: false },
 };
-
-const PLACEHOLDER_POSTS = [
-  { slug: "welcome", title: "ברוכים הבאים ל-PREPARE" },
-  { slug: "amirant-tips", title: "טיפים למבחן אמירנט" },
-];
 
 export default function PrepBlogIndexPage() {
   return (
@@ -22,29 +19,22 @@ export default function PrepBlogIndexPage() {
             href={PREP_BASE}
             className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
           >
-            ← חזרה ל־{PREP_PRODUCT_NAME}
+            ← חזרה לדף הבית
           </Link>
           <Heading level={1} className="mt-ds-6">
             בלוג
           </Heading>
-          <Text as="p" variant="body" className="mt-3 text-muted">
-            מאמרים בדרך - בינתיים רשימת כותרות לדוגמה.
+          <Text as="p" variant="body" className="mt-3 max-w-readable text-muted">
+            מאמרים ראשונים על הכנה לאמירנט, אסטרטגיות מבחן ופטור מאנגלית יעלו כאן בקרוב.
           </Text>
+          <Link
+            href={`${PREP_BASE}/amirant`}
+            className="mt-8 inline-flex min-h-11 items-center rounded-control bg-primary px-6 text-sm font-bold text-white transition hover:bg-primary-hover"
+          >
+            בינתיים - לקורס האמירנט ←
+          </Link>
         </Container>
       </PageLayout>
-      <Section tone="canvas" padding="loose" className="border-t border-line/80">
-        <Container max="measure">
-          <ul className="space-y-3">
-            {PLACEHOLDER_POSTS.map((post) => (
-              <li key={post.slug}>
-                <Link href={`${PREP_BASE}/blog/${post.slug}`} className="text-primary font-medium hover:underline">
-                  {post.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </Section>
     </div>
   );
 }

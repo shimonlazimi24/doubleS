@@ -56,10 +56,10 @@ function StepDots({ current, total }: { current: number; total: number }) {
           className={cn(
             "inline-block rounded-full transition-all duration-300",
             i + 1 < current
-              ? "h-2 w-2 bg-[#d4a843]"
+              ? "h-2 w-2 bg-score"
               : i + 1 === current
-                ? "h-2.5 w-5 bg-[#0f1e3d]"
-                : "h-2 w-2 bg-[#d6deec]",
+                ? "h-2.5 w-5 bg-primary"
+                : "h-2 w-2 bg-line",
           )}
         />
       ))}
@@ -70,8 +70,8 @@ function StepDots({ current, total }: { current: number; total: number }) {
 function StepHeading({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
     <div className="mb-6 space-y-1.5 text-center">
-      <h2 className="font-display text-xl font-bold text-[#0f1e3d] md:text-2xl">{title}</h2>
-      {subtitle && <p className="text-sm text-[#5a6480]">{subtitle}</p>}
+      <h2 className="font-display text-xl font-bold text-primary md:text-2xl">{title}</h2>
+      {subtitle && <p className="text-sm text-muted">{subtitle}</p>}
     </div>
   );
 }
@@ -92,8 +92,8 @@ function RadioCard({
       className={cn(
         "w-full rounded-xl border px-4 py-3.5 text-right text-sm font-medium transition-all duration-150",
         selected
-          ? "border-[#0f1e3d] bg-[#0f1e3d] text-white shadow-sm"
-          : "border-[#d6deec] bg-white text-[#0f1e3d] hover:border-[#0f1e3d]/40 hover:bg-[#f8faff]",
+          ? "border-primary bg-primary text-white shadow-sm"
+          : "border-line bg-white text-primary hover:border-primary/40 hover:bg-surface-low",
       )}
     >
       {label}
@@ -117,8 +117,8 @@ function CheckChip({
       className={cn(
         "rounded-full border px-4 py-2 text-sm font-medium transition-all duration-150",
         selected
-          ? "border-[#0f1e3d] bg-[#0f1e3d] text-white"
-          : "border-[#d6deec] bg-white text-[#0f1e3d] hover:border-[#0f1e3d]/40 hover:bg-[#f8faff]",
+          ? "border-primary bg-primary text-white"
+          : "border-line bg-white text-primary hover:border-primary/40 hover:bg-surface-low",
       )}
     >
       {label}
@@ -150,7 +150,7 @@ function AutocompleteInput({
 
   return (
     <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-semibold text-[#0f1e3d]">
+      <label htmlFor={id} className="text-sm font-semibold text-primary">
         {label}
       </label>
       <div className="relative">
@@ -163,10 +163,10 @@ function AutocompleteInput({
           placeholder={placeholder}
           dir="rtl"
           autoComplete="off"
-          className="w-full rounded-xl border border-[#d6deec] bg-white px-4 py-3 text-right text-sm text-[#0f1e3d] outline-none transition placeholder:text-[#94a3b8] focus:border-[#0f1e3d] focus:ring-2 focus:ring-[#0f1e3d]/10"
+          className="w-full rounded-xl border border-line bg-white px-4 py-3 text-right text-sm text-primary outline-none transition placeholder:text-muted/70 focus:border-primary focus:ring-2 focus:ring-primary/10"
         />
         {open && filtered.length > 0 && (
-          <ul className="absolute z-20 mt-1.5 max-h-52 w-full overflow-auto rounded-xl border border-[#d6deec] bg-white shadow-[0_8px_24px_rgba(15,30,61,0.12)]">
+          <ul className="absolute z-20 mt-1.5 max-h-52 w-full overflow-auto rounded-xl border border-line bg-white shadow-card">
             {filtered.map((opt) => (
               <li key={opt}>
                 <button
@@ -176,7 +176,7 @@ function AutocompleteInput({
                     onChange(opt);
                     setOpen(false);
                   }}
-                  className="w-full px-4 py-2.5 text-right text-sm text-[#0f1e3d] transition hover:bg-[#f8faff]"
+                  className="w-full px-4 py-2.5 text-right text-sm text-primary transition hover:bg-surface-low"
                 >
                   {opt}
                 </button>
@@ -202,7 +202,7 @@ function OtherInput({
       onChange={(e) => onChange(e.target.value)}
       placeholder="פרטו..."
       dir="rtl"
-      className="mt-2 w-full rounded-xl border border-[#d6deec] bg-white px-4 py-3 text-right text-sm text-[#0f1e3d] outline-none transition placeholder:text-[#94a3b8] focus:border-[#0f1e3d] focus:ring-2 focus:ring-[#0f1e3d]/10"
+      className="mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-right text-sm text-primary outline-none transition placeholder:text-muted/70 focus:border-primary focus:ring-2 focus:ring-primary/10"
     />
   );
 }
@@ -300,17 +300,17 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
     <div dir="rtl" className="mx-auto w-full max-w-lg">
 
       {/* Card */}
-      <div className="rounded-2xl border border-[#d6deec] bg-white shadow-[0_8px_40px_rgba(15,30,61,0.10)]">
+      <div className="rounded-2xl border border-line bg-white shadow-card">
 
-        {/* Header */}
-        <div className="rounded-t-2xl border-b border-[#edf0f7] bg-gradient-to-r from-[#0f1e3d] to-[#1a3260] px-6 py-5">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-[#f1d286]">
-            שאלון הכרות
+        {/* Header - שפה בהירה, בלי גרדיאנט כהה+זהב */}
+        <div className="rounded-t-2xl border-b border-line/60 bg-surface-low px-6 py-5">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+            שאלון היכרות
           </p>
           {step <= TOTAL_STEPS && (
             <div className="mt-3">
               <StepDots current={step} total={TOTAL_STEPS} />
-              <p className="mt-2 text-center text-xs text-white/50">
+              <p className="mt-2 text-center text-xs text-muted">
                 שלב {step} מתוך {TOTAL_STEPS}
               </p>
             </div>
@@ -325,7 +325,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             <div className="space-y-5">
               <StepHeading title="מתי מבחן המיון שלך?" subtitle="נעזור לך לתכנן את הקצב הנכון" />
               <div className="space-y-2">
-                <label htmlFor="exam-date" className="text-sm font-semibold text-[#0f1e3d]">
+                <label htmlFor="exam-date" className="text-sm font-semibold text-primary">
                   תאריך
                 </label>
                 <input
@@ -338,10 +338,10 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                   }
                   dir="ltr"
                   className={cn(
-                    "w-full rounded-xl border px-4 py-3 text-left text-sm outline-none transition focus:ring-2 focus:ring-[#0f1e3d]/10",
+                    "w-full rounded-xl border px-4 py-3 text-left text-sm outline-none transition focus:ring-2 focus:ring-primary/10",
                     state.sortingExamDateUnknown
-                      ? "border-[#d6deec] bg-[#f8faff] text-[#94a3b8]"
-                      : "border-[#d6deec] bg-white text-[#0f1e3d] focus:border-[#0f1e3d]",
+                      ? "border-line bg-surface-low text-muted/70"
+                      : "border-line bg-white text-primary focus:border-primary",
                   )}
                 />
               </div>
@@ -356,15 +356,15 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                 className={cn(
                   "flex w-full items-center gap-3 rounded-xl border px-4 py-3.5 text-sm font-medium transition",
                   state.sortingExamDateUnknown
-                    ? "border-[#0f1e3d] bg-[#0f1e3d] text-white"
-                    : "border-[#d6deec] bg-white text-[#5a6480] hover:border-[#0f1e3d]/30 hover:bg-[#f8faff]",
+                    ? "border-primary bg-primary text-white"
+                    : "border-line bg-white text-muted hover:border-primary/30 hover:bg-surface-low",
                 )}
               >
                 <span className={cn(
                   "inline-flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs transition",
                   state.sortingExamDateUnknown
-                    ? "border-white bg-white text-[#0f1e3d]"
-                    : "border-[#d6deec]",
+                    ? "border-white bg-white text-primary"
+                    : "border-line",
                 )}>
                   {state.sortingExamDateUnknown ? "✓" : ""}
                 </span>
@@ -479,13 +479,13 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                 ✓
               </div>
               <div className="space-y-2">
-                <h2 className="font-display text-2xl font-bold text-[#0f1e3d]">מוכן להתחיל!</h2>
-                <p className="text-sm text-[#5a6480]">הפרופיל שלך נשמר. המסלול מחכה לך.</p>
+                <h2 className="font-display text-2xl font-bold text-primary">מוכן להתחיל!</h2>
+                <p className="text-sm text-muted">הפרופיל שלך נשמר. המסלול מחכה לך.</p>
               </div>
               <button
                 type="button"
                 onClick={() => router.push(nextPath)}
-                className="inline-flex w-full items-center justify-center rounded-xl bg-[#0f1e3d] px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#16306a]"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-hover"
               >
                 התחלת הקורס ←
               </button>
@@ -506,7 +506,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                 <button
                   type="button"
                   onClick={onBack}
-                  className="rounded-xl border border-[#d6deec] bg-white px-5 py-3 text-sm font-medium text-[#5a6480] transition hover:border-[#0f1e3d]/30 hover:text-[#0f1e3d]"
+                  className="rounded-xl border border-line bg-white px-5 py-3 text-sm font-medium text-muted transition hover:border-primary/30 hover:text-primary"
                 >
                   ← הקודם
                 </button>
@@ -520,8 +520,8 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                 className={cn(
                   "ms-auto rounded-xl px-6 py-3 text-sm font-bold transition",
                   canNext && !submitting
-                    ? "bg-[#0f1e3d] text-white shadow-sm hover:bg-[#16306a]"
-                    : "cursor-not-allowed bg-[#d6deec] text-[#94a3b8]",
+                    ? "bg-primary text-white shadow-sm hover:bg-primary-hover"
+                    : "cursor-not-allowed bg-line text-muted/70",
                 )}
               >
                 {step === 6 ? (submitting ? "שומר..." : "סיום ✓") : "המשך ←"}
@@ -533,7 +533,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
 
       {/* Skip */}
       {step <= TOTAL_STEPS && (
-        <p className="mt-4 text-center text-xs text-[#94a3b8]">
+        <p className="mt-4 text-center text-xs text-muted/70">
           <button
             type="button"
             onClick={() => router.push(nextPath)}

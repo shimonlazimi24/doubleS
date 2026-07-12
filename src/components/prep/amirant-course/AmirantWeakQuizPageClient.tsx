@@ -95,10 +95,10 @@ export function AmirantWeakQuizPageClient() {
           ← קורס
         </Link>
         <span className="mx-2 text-line">/</span>
-        <span>בוחן חולשות</span>
+        <span>תרגול ממוקד</span>
       </div>
       <AmirantPracticeSetClient
-        title="בוחן חולשות (16 שאלות)"
+        title="תרגול ממוקד - הנושאים שכדאי לחזק"
         questionIds={questionIds}
         variant="weak_quiz"
       />

@@ -53,7 +53,6 @@ ${AMIRANT_PREPARATION_MANIFEST.modules.map((m) =>
 - דף הקורס: ${base}/prep/amirant
 - כניסה לקורס: ${base}/prep/amirant/course
 - מבחן לדוגמה: ${base}/prep/amirant#demo
-- בלוג: ${base}/prep/blog
 `;
 
   return new Response(content, {
