@@ -153,12 +153,12 @@ export function PrepPricingPage() {
         })}
       </div>
 
-      {/* What's included */}
-      <div className={`rounded-2xl border p-5 ${selected === "two_weeks" ? "border-score/40 bg-score/5" : "border-line bg-white"}`}>
+      {/* כלול בתוכנית - רשימה שטוחה, בלי קופסה מקוננת */}
+      <div className="border-t border-line pt-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted">כלול ב{currentPlan.label}</p>
-        <ul className="mt-3 space-y-2">
+        <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
           {currentPlan.features.map((f) => (
-            <li key={f} className="flex items-center gap-2.5 text-sm text-primary">
+            <li key={f} className="flex items-center gap-2.5 text-sm text-ink">
               <svg className="h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 16 16" fill="none">
                 <circle cx="8" cy="8" r="7" fill="currentColor" fillOpacity="0.15" />
                 <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -167,30 +167,29 @@ export function PrepPricingPage() {
             </li>
           ))}
         </ul>
+      </div>
 
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <button
-            type="button"
-            disabled={busy}
-            onClick={() => void startCheckout(selected)}
-            className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-8 text-sm font-bold text-white transition hover:bg-primary-hover disabled:opacity-50"
-          >
-            {busy ? "מעביר לתשלום…" : `רכישה - ₪${currentPlan.price} ל${currentPlan.label}`}
-          </button>
-          <p className="text-xs text-muted-2">תשלום מאובטח · ביטול בכל עת</p>
-        </div>
-
+      {/* פעולה ראשית יחידה */}
+      <div className="flex flex-col items-center gap-2 pt-1">
+        <button
+          type="button"
+          disabled={busy}
+          onClick={() => void startCheckout(selected)}
+          className="inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover disabled:opacity-50"
+        >
+          {busy ? "מעביר לתשלום…" : `רכישה - ₪${currentPlan.price} ל${currentPlan.label}`}
+        </button>
+        <p className="text-xs text-muted-2">תשלום מאובטח · ביטול בכל עת</p>
         {error && (
-          <p className="mt-3 text-sm text-red-600" role="alert">
+          <p className="mt-1 rounded-lg border border-red-200 bg-red-50 px-4 py-2.5 text-center text-sm text-red-700" role="alert">
             {error}
           </p>
         )}
       </div>
 
-      {/* Extension section */}
-      <div className="rounded-2xl border border-line bg-white p-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">הארכת גישה קיימת</p>
-        <p className="mt-1 text-xs text-muted-2">כבר יש לך גישה ורוצה עוד זמן? הארך מבלי לאבד התקדמות.</p>
+      {/* הארכת גישה - שורה שטוחה מופרדת בקו-שיער */}
+      <div className="border-t border-line pt-6">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted">כבר יש לכם גישה? הארכה בלי לאבד התקדמות</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {EXTENSION_PLANS.map((ext) => (
             <button
@@ -198,7 +197,7 @@ export function PrepPricingPage() {
               type="button"
               disabled={busy}
               onClick={() => void startCheckout(ext.id)}
-              className="rounded-xl border border-line bg-surface-low px-4 py-2 text-sm font-semibold text-primary transition hover:border-primary/40 hover:bg-white disabled:opacity-50"
+              className="rounded-lg border border-line bg-surface-low px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary/40 hover:bg-white disabled:opacity-50"
             >
               {ext.label} - ₪{ext.price}
             </button>
@@ -207,8 +206,8 @@ export function PrepPricingPage() {
       </div>
 
       {/* Fine print */}
-      <div className="space-y-1 text-center text-xs text-muted-2">
-        <p>הגישה ניתנת מיד לאחר אישור התשלום · ₪ (שקלים ישראלים)</p>
+      <div className="space-y-1 pt-2 text-center text-xs text-muted-2">
+        <p>הגישה ניתנת מיד לאחר אישור התשלום · מחירים בשקלים</p>
         <p>שאלות? <a href="mailto:support@getprepared.academy" className="underline">support@getprepared.academy</a></p>
       </div>
     </div>

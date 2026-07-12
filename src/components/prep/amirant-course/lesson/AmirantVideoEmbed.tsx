@@ -22,22 +22,33 @@ function vimeoId(url: string): string | null {
   return m?.[1] ?? null;
 }
 
+/**
+ * תמיד מוגבל לעמודת הקריאה (52rem, ממורכז) - placeholder ברוחב מלא הפך
+ * במסך רחב לקופסה ריקה בגובה ~1000px שדחפה את כל השיעור מתחת לקיפול.
+ */
+const COLUMN = "mx-auto w-full max-w-[52rem]";
+
 export function AmirantVideoEmbed({ src, title, className }: Props) {
   const trimmed = src?.trim() || null;
 
   if (!trimmed) {
+    // פס קומפקטי - לא קופסת aspect-video ריקה
     return (
       <div
         dir="rtl"
         className={cn(
-          "flex aspect-video w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line/80 bg-surface-low text-center",
+          COLUMN,
+          "flex items-center gap-3 rounded-xl border border-dashed border-line bg-surface-low px-4 py-3",
           className,
         )}
       >
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-2xl" aria-hidden>
+        <span
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm text-primary"
+          aria-hidden
+        >
           ▶
         </span>
-        <p className="px-6 text-sm font-medium text-muted">סרטון הסבר בעברית יתווסף בקרוב</p>
+        <p className="text-sm text-muted">סרטון הסבר בעברית יתווסף בקרוב</p>
       </div>
     );
   }
@@ -45,7 +56,7 @@ export function AmirantVideoEmbed({ src, title, className }: Props) {
   const yt = youTubeId(trimmed);
   if (yt) {
     return (
-      <div className={cn("aspect-video w-full overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
+      <div className={cn(COLUMN, "aspect-video overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${yt}`}
           title={title}
@@ -61,7 +72,7 @@ export function AmirantVideoEmbed({ src, title, className }: Props) {
   const vm = vimeoId(trimmed);
   if (vm) {
     return (
-      <div className={cn("aspect-video w-full overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
+      <div className={cn(COLUMN, "aspect-video overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
         <iframe
           src={`https://player.vimeo.com/video/${vm}`}
           title={title}
@@ -76,7 +87,7 @@ export function AmirantVideoEmbed({ src, title, className }: Props) {
 
   // קובץ ישיר (למשל Supabase Storage / CDN)
   return (
-    <div className={cn("aspect-video w-full overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
+    <div className={cn(COLUMN, "aspect-video overflow-hidden rounded-2xl border border-line/70 bg-black", className)}>
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video src={trimmed} title={title} controls className="h-full w-full" preload="metadata" />
     </div>

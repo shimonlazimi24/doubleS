@@ -3,39 +3,36 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
 import { PrepLoginForm } from "@/components/prep/PrepLoginForm";
-import { Container, Heading, PageLayout, Section, Text } from "@/components/ui";
+import { Container, Heading, Text } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "התחברות",
-  description: "התחברות ל-prePare עם Google או קישור במייל - שמירת התקדמות וקורס אמירנט.",
+  description: "התחברות ל-prePare עם Google או קוד במייל - שמירת התקדמות וקורס אמירנט.",
 };
 
+/** מסך ממוקד אחד: כותרת צמודה לטופס, בלי רצועות ריק (DESIGN_GUIDELINES: one purpose per screen). */
 export default function PrepLoginPage() {
   return (
-    <div className="bg-paper">
-      <PageLayout pad="lg">
-        <Container max="measure">
-          <Link
-            href={PREP_BASE}
-            className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
-          >
-            ← חזרה ל־{PREP_PRODUCT_NAME}
-          </Link>
-          <Heading level={1} className="mt-ds-6">
-            התחברות
-          </Heading>
-          <Text as="p" variant="body" className="mt-3 text-muted">
-            התחברו עם Google או בקישור במייל - כדי לשמור התקדמות, לסיים את שאלון ההתאמה ולגשת לקורס המלא אחרי רכישה.
-          </Text>
-        </Container>
-      </PageLayout>
-      <Section tone="canvas" padding="loose" className="border-t border-line/80">
-        <Container max="measure">
+    <div className="min-h-[70vh] bg-canvas">
+      <Container max="measure" className="py-10 md:py-14">
+        <Link
+          href={PREP_BASE}
+          className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
+        >
+          ← חזרה ל־{PREP_PRODUCT_NAME}
+        </Link>
+        <Heading level={1} className="mt-5">
+          התחברות
+        </Heading>
+        <Text as="p" variant="body" className="mt-2 text-muted">
+          ההתקדמות שלכם נשמרת בחשבון - וממשיכים מאותה נקודה מכל מכשיר.
+        </Text>
+        <div className="mt-8">
           <Suspense fallback={<Text as="p" variant="body">טוען…</Text>}>
             <PrepLoginForm />
           </Suspense>
-        </Container>
-      </Section>
+        </div>
+      </Container>
     </div>
   );
 }

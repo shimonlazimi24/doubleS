@@ -40,6 +40,8 @@ export function PrepLoginForm() {
   const [sent, setSent] = useState(false);
   const [code, setCode] = useState("");
   const [message, setMessage] = useState<string | null>(null);
+  // גוגל הוא המסלול הראשי; המייל נפתח רק בלחיצה (progressive disclosure)
+  const [emailOpen, setEmailOpen] = useState(false);
 
   const callbackUrl = useMemo(() => {
     if (typeof window === "undefined") return "";
@@ -143,13 +145,29 @@ export function PrepLoginForm() {
       ) : null}
 
       {showGoogle && supabaseReady ? (
-        <PrepGoogleSignInButton disabled={busy} onClick={() => void signInWithGoogle()} />
+        <PrepGoogleSignInButton
+          disabled={busy}
+          onClick={() => void signInWithGoogle()}
+          className="min-h-12 border-primary/25 text-base shadow-sm hover:border-primary/45"
+        />
       ) : null}
 
-      {showGoogle && supabaseReady && !sent ? (
+      {showGoogle && supabaseReady && !sent && !emailOpen ? (
+        <p className="text-center">
+          <button
+            type="button"
+            className="text-sm text-muted underline underline-offset-4 transition hover:text-ink"
+            onClick={() => setEmailOpen(true)}
+          >
+            אין לכם Google? קבלו קוד כניסה למייל
+          </button>
+        </p>
+      ) : null}
+
+      {(emailOpen || !showGoogle || sent) && showGoogle && supabaseReady && !sent ? (
         <div className="relative flex items-center gap-3 py-1">
           <span className="h-px flex-1 bg-line/80" aria-hidden />
-          <span className="text-xs text-muted">או עם דוא״ל</span>
+          <span className="text-xs text-muted">כניסה עם קוד למייל</span>
           <span className="h-px flex-1 bg-line/80" aria-hidden />
         </div>
       ) : null}
@@ -198,7 +216,7 @@ export function PrepLoginForm() {
             <span>אפשר גם ללחוץ על הקישור במייל - באותו דפדפן</span>
           </div>
         </div>
-      ) : (
+      ) : emailOpen || !showGoogle || !supabaseReady ? (
         <form onSubmit={sendMagicLink} className="space-y-4">
           <label className="block space-y-2">
             <span className="text-sm font-medium text-ink">דוא״ל</span>
@@ -208,14 +226,15 @@ export function PrepLoginForm() {
               value={email}
               onChange={(ev) => setEmail(ev.target.value)}
               placeholder="you@example.com"
+              autoFocus={emailOpen}
               required
             />
           </label>
           <Button type="submit" variant="primary" className="w-full min-h-11" disabled={busy}>
-            {busy ? "שולח…" : "שליחת קישור התחברות"}
+            {busy ? "שולח…" : "שלחו לי קוד כניסה"}
           </Button>
         </form>
-      )}
+      ) : null}
 
       {message ? (
         <p className="text-sm text-red-700" role="alert">
