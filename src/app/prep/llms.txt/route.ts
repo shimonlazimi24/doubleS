@@ -52,7 +52,7 @@ ${AMIRANT_PREPARATION_MANIFEST.modules.map((m) =>
 ## קישורים מרכזיים
 - דף הקורס: ${base}/prep/amirant
 - כניסה לקורס: ${base}/prep/amirant/course
-- תרגול: ${base}/prep/amirant/practice
+- מבחן לדוגמה: ${base}/prep/amirant#demo
 - בלוג: ${base}/prep/blog
 `;
 

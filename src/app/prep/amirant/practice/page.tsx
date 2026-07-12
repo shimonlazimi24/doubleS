@@ -1,12 +1,7 @@
-import type { Metadata } from "next";
-import { AmirantPracticeFlow } from "@/components/prep/amirant-demo/AmirantPracticeFlow";
+import { permanentRedirect } from "next/navigation";
+import { PREP_BASE } from "@/lib/prep/constants";
 
-export const metadata: Metadata = {
-  title: "אמירנט - מבחן מערכת (אדפטיבי)",
-  description: "תרגול אדפטיבי מבוסס בנק השאלות של הדמו - ללא שאר מקטעי הדמו.",
-};
-
-/** מסלול מבחן בלבד (ללא דשבורד / אינטגרציות / צ׳אט של עמוד הדמו המלא). */
+/** מסלול תרגול-פרוטוטייפ ישן. המבחן לדוגמה מוטמע בעמוד האמירנט הראשי. */
 export default function AmirantPracticePage() {
-  return <AmirantPracticeFlow />;
+  permanentRedirect(`${PREP_BASE}/amirant#demo`);
 }

@@ -19,11 +19,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Legacy slug → hub (info / demo / sample tabs).
-      { source: "/prep/amirant/info", destination: "/prep/amirant?tab=info", permanent: false },
-      { source: "/prep/amirant/info/:path*", destination: "/prep/amirant?tab=info", permanent: false },
-      { source: "/prep/amirant/demo", destination: "/prep/amirant?tab=sample", permanent: false },
-      { source: "/prep/amirant/demo/:path*", destination: "/prep/amirant?tab=sample", permanent: false },
+      // Legacy slug → hub (the hub is a single scroll page; #demo hosts the sample quiz).
+      { source: "/prep/amirant/info", destination: "/prep/amirant", permanent: false },
+      { source: "/prep/amirant/info/:path*", destination: "/prep/amirant", permanent: false },
+      { source: "/prep/amirant/demo", destination: "/prep/amirant#demo", permanent: false },
+      { source: "/prep/amirant/demo/:path*", destination: "/prep/amirant#demo", permanent: false },
       { source: "/prep/study-usa", destination: "/prep/amirant", permanent: true },
       { source: "/prep/study-usa/:path*", destination: "/prep/amirant", permanent: true },
       // Legacy learn/practice/materials → full course app.

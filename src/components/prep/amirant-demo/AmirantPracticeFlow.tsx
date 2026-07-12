@@ -462,7 +462,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
         </Text>
       )}
       {embedded && shortQuizOnly && (
-        <p className="mb-4 max-w-readable text-sm text-[#5a6480]">
+        <p className="mx-auto mb-4 max-w-readable text-center text-sm text-muted">
           {SESSION_LENGTH_SHORT} שאלות · רמות קושי 3–5 (בינוני ומעלה) · מעורב: השלמת משפטים, ניסוח מחדש, הבנת הנקרא
         </p>
       )}
@@ -549,19 +549,8 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
 
           {currentQuestion && !lastFeedback && (
             <Card className="overflow-hidden">
-              <div
-                className={cn(
-                  "border-b px-6 py-3",
-                  shortQuizOnly
-                    ? "border-[#d4a843]/40 bg-[#0f1e3d] text-white"
-                    : "border-line/60 bg-surface-low",
-                )}
-              >
-                <Text
-                  as="p"
-                  variant="caption"
-                  className={shortQuizOnly ? "text-[#f0c96a]" : "text-primary"}
-                >
+              <div className="border-b border-line/60 bg-surface-low px-6 py-3">
+                <Text as="p" variant="caption" className="text-primary">
                   {TOPIC_TYPE_LABEL_HE[currentQuestion.topicId] ?? "שאלה"} · שאלה{" "}
                   {questionIndex + 1} מתוך {SESSION_LENGTH_SHORT}
                 </Text>
@@ -831,9 +820,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
 
   if (embedded) {
     return (
-      <div
-        className={cn("max-w-shell w-full", shortQuizOnly && "text-[#1a1a2e] [font-family:var(--amirant-demo-font,sans-serif)]")}
-      >
+      <div className="max-w-shell w-full">
         {mainBlock}
       </div>
     );

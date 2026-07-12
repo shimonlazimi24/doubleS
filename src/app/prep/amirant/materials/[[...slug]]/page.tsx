@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Container, Heading, Text } from "@/components/ui";
+import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { listAmirantPublicHtmlEntries } from "@/lib/prep/amirant-html-public.server";
 import { listAmirnetMarkdownFiles, safeReadAmirnetMarkdown } from "@/lib/prep/amirnet-materials.server";
+import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 
 const BASE = `${PREP_BASE}/amirant/materials`;
 
@@ -14,6 +17,16 @@ export function generateMetadata({ params }: Props): Metadata {
   const slug = params.slug;
   if (!slug?.length) return { title: "חומרי קורס ומידע - אמירנט" };
   return { title: `${slug.join(" / ")} | אמירנט` };
+}
+
+/** אינדקס חומרי מקור לצוות התוכן בלבד - חושף את כל ה-Markdown של הקורס בתשלום. */
+async function requireAdminOrRedirect(): Promise<void> {
+  if (isPrepAuthBypassEnabled()) return;
+  const client = createPrepSupabaseServerClient();
+  const user = client ? (await client.auth.getUser()).data.user : null;
+  if (!user || !isPrepAdminUser(user)) {
+    redirect(`${PREP_BASE}/amirant`);
+  }
 }
 
 function groupByTopFolder(files: string[]): Map<string, string[]> {
@@ -26,7 +39,8 @@ function groupByTopFolder(files: string[]): Map<string, string[]> {
   return m;
 }
 
-export default function AmirantMaterialsPage({ params }: Props) {
+export default async function AmirantMaterialsPage({ params }: Props) {
+  await requireAdminOrRedirect();
   const slug = params.slug;
 
   if (!slug || slug.length === 0) {
@@ -129,7 +143,7 @@ export default function AmirantMaterialsPage({ params }: Props) {
             ← רשימת כל הקבצים
           </Link>
           <span className="text-line">|</span>
-          <Link href={`${PREP_BASE}/amirant/learn`} className="text-sm font-semibold text-primary hover:underline">
+          <Link href={`${PREP_BASE}/amirant/course`} className="text-sm font-semibold text-primary hover:underline">
             חזרה לקורס באפליקציה
           </Link>
         </div>

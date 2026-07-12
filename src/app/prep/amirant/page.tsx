@@ -7,7 +7,7 @@ import { getPublicSiteUrl } from "@/lib/prep/site-url";
 const siteUrl = getPublicSiteUrl();
 
 export const metadata: Metadata = {
-  title: "הכנה לאמירנט - קורס דיגיטלי מלא | PREPARE",
+  title: "הכנה לאמירנט - קורס דיגיטלי מלא",
   description:
     "קורס הכנה מקיף לאמירנט (מבחן האנגלית של מאל״ו). " +
     "תרגול אדפטיבי עם AI, " +
