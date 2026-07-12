@@ -30,15 +30,10 @@ export function AmirantNextBestActionCard({ action, className }: Props) {
       <Text as="p" variant="bodySm" className="mt-1.5 text-muted">
         {action.description}
       </Text>
-      <div
-        className="mt-3 rounded-control border border-primary/20 bg-surface-low/60 px-3 py-2.5"
-        role="status"
-        aria-label="למה מומלץ"
-      >
-        <Text as="p" variant="labelAccent" className="text-xs text-primary/90">
-          למה עכשיו
-        </Text>
-        <Text as="p" variant="bodySm" className="mt-0.5 leading-relaxed text-ink/90">
+      {/* שטוח - קו-שיער במקום קופסה-בתוך-קופסה (DESIGN_GUIDELINES: cards) */}
+      <div className="mt-3 border-t border-line/60 pt-3" role="status" aria-label="למה מומלץ">
+        <Text as="p" variant="bodySm" className="leading-relaxed text-muted">
+          <span className="font-semibold text-primary">למה עכשיו: </span>
           {why}
         </Text>
       </div>

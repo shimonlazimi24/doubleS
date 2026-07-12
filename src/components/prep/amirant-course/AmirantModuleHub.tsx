@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { CourseManifest, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 import { displayModuleTitleHe, getSyllabusUiForModule } from "@/lib/amirant-course";
 import { isStructuredPracticeModule } from "@/lib/amirant-course/practice-module-structure";
-import { AmirantCourseOverallProgress } from "@/components/prep/amirant-course/AmirantCourseOverallProgress";
 import { AmirantModuleProgressCard } from "@/components/prep/amirant-course/AmirantModuleProgressCard";
 import { AmirantPracticeModuleLearningPath } from "@/components/prep/amirant-course/AmirantPracticeModuleLearningPath";
 import { Card, CardBody, Heading, Text } from "@/components/ui";
@@ -29,11 +28,8 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
 
   return (
     <div className="space-y-8">
-      <div className="grid gap-3 [direction:rtl] sm:grid-cols-2">
-        <AmirantCourseOverallProgress className="mb-0" />
-        <AmirantModuleProgressCard module={mod} moduleTitleHe={titleHe} className="mb-0" />
-      </div>
-
+      {/* הקשר אחד מלמעלה: פירורי לחם + כותרת + התקדמות המודול בשורה דקה -
+          בלי שני כרטיסי progress צפים (DESIGN_GUIDELINES: current location) */}
       <div>
         <nav className="text-xs font-medium text-muted">
           <Link href={courseBase} className="transition hover:text-primary">
@@ -50,6 +46,11 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
             {ui.oneLinerHe}
           </Text>
         ) : null}
+        <AmirantModuleProgressCard
+          module={mod}
+          moduleTitleHe={titleHe}
+          className="mb-0 mt-4 max-w-md border-0 bg-transparent p-0 shadow-none"
+        />
       </div>
 
       <section className="space-y-3">

@@ -33,32 +33,38 @@ export function AmirantDashboardFallbackClient() {
 
       <AmirantNextBestActionCard action={recommended} className="border-primary/20" />
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card>
-          <CardTitle>נושאים חלשים</CardTitle>
-          <CardBody>
-            <ul className="space-y-1 text-sm">
-              {weak.length
-                ? weak.map((x) => (
-                    <li key={x}>{AMIRANT_TOPIC_LABEL_HE[x]}</li>
-                  ))
-                : <li>אין מספיק נתונים.</li>}
-            </ul>
-          </CardBody>
-        </Card>
-        <Card>
-          <CardTitle>נושאים חזקים</CardTitle>
-          <CardBody>
-            <ul className="space-y-1 text-sm">
-              {strong.length
-                ? strong.map((x) => (
-                    <li key={x}>{AMIRANT_TOPIC_LABEL_HE[x]}</li>
-                  ))
-                : <li>אין מספיק נתונים.</li>}
-            </ul>
-          </CardBody>
-        </Card>
-      </div>
+      {/* ניתוח לפי נושאים - סקשן שטוח אחד; empty state מנחה (DESIGN_GUIDELINES) */}
+      <section className="border-t border-line pt-6">
+        <h2 className="text-lg font-bold text-primary">ניתוח לפי נושאים</h2>
+        {weak.length || strong.length ? (
+          <div className="mt-4 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold tracking-wide text-muted">כדאי לחזק</p>
+              <ul className="mt-2 space-y-1.5 text-sm text-ink">
+                {weak.length ? (
+                  weak.map((x) => <li key={x}>{AMIRANT_TOPIC_LABEL_HE[x]}</li>)
+                ) : (
+                  <li className="text-muted">אין נושאים חלשים בולטים 👏</li>
+                )}
+              </ul>
+            </div>
+            <div>
+              <p className="text-xs font-semibold tracking-wide text-muted">חזקים אצלכם</p>
+              <ul className="mt-2 space-y-1.5 text-sm text-ink">
+                {strong.length ? (
+                  strong.map((x) => <li key={x}>{AMIRANT_TOPIC_LABEL_HE[x]}</li>)
+                ) : (
+                  <li className="text-muted">עוד אין מספיק נתונים</li>
+                )}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <p className="mt-3 text-sm text-muted">
+            השלימו תרגול או בוחן ראשון - ותראו כאן אילו נושאים חזקים אצלכם ומה כדאי לחזק.
+          </p>
+        )}
+      </section>
     </div>
   );
 }
