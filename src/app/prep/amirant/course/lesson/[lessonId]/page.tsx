@@ -177,9 +177,10 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     mode = "blocks";
     flow = contentBlocksToPremiumFlow(content.blocks) as UnifiedFlowItem[];
     intro = buildBlockIntro(content.blocks);
-  } else if (md?.ok && useVocabUi && lessonBody) {
+  } else if (md?.ok && useVocabUi && lessonBody && vocabParsed) {
     mode = "vocab";
-    intro = markdownishToPlain(lessonBody, 360);
+    // מבוא נגזר ולא השטחת ה-MD הגולמי (טבלאות/אימוג'י נראו כזבל); המבנה המלא מוצג ממילא בחוויית המילים.
+    intro = `${vocabParsed.allEntries.length} מילים ללמידה בכרטיסים - עם הגדרות, דוגמאות וטיפים לזכירה. עברו לפי הסדר או סננו לפי קטגוריה.`;
   } else if (md?.ok && lessonBody) {
     mode = "markdown";
     const { intro: inIntro, sections } = splitMarkdownIntoSections(lessonBody, hit.lesson.title);

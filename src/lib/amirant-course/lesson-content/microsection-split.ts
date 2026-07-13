@@ -1,4 +1,4 @@
-import type { PremiumSectionVariant } from "./split-markdown-lesson";
+import { markdownishToPlain, type PremiumSectionVariant } from "./split-markdown-lesson";
 
 /** Tuned for ~3–4 short lines per card (avoids “document” walls). */
 export const DEFAULT_MICRO_CARD_CHARS = 300;
@@ -99,18 +99,9 @@ function extractFirstHeadingFromBody(body: string): string | null {
 }
 
 function excerptPlainOpening(body: string, maxLen: number): string | null {
-  const t = body
-    .replace(/^#{1,6}\s+/gm, "")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .replace(/\*([^*]+)\*/g, "$1")
-    .replace(/\s+/g, " ")
-    .trim();
-  if (!t) return null;
-  if (t.length <= maxLen) return t;
-  const cut = t.slice(0, maxLen);
-  const last = Math.max(cut.lastIndexOf("."), cut.lastIndexOf("!"), cut.lastIndexOf("?"));
-  if (last > 24) return cut.slice(0, last + 1);
-  return cut + "…";
+  // המנקה המרכזי מסיר גם שורות טבלה ואימוג'י - תווית צעד לעולם לא תציג markdown גולמי.
+  const t = markdownishToPlain(body, maxLen);
+  return t || null;
 }
 
 function titlesLooselyEqual(a: string, b: string): boolean {

@@ -60,10 +60,15 @@ export function markdownishToPlain(text: string, maxLen: number): string {
     .replace(/\r\n/g, "\n")
     .replace(/^#+\s+/gm, "")
     .replace(/^\s*-{3,}\s*$/gm, "") // קווי הפרדה (---) של markdown אינם טקסט
+    .replace(/^\s*\|.*\|\s*$/gm, "") // שורות טבלה (| ... |) אינן פרוזה - בתקציר הן זבל
+    .replace(/^>\s?/gm, "")
+    .replace(/^\s*(?:[-*+•]|\d+\.)\s+/gm, "")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    // אימוג'י ופיקטוגרמות מתוכן המקור - לא בשורת מבוא (זוגות surrogate + טווחי BMP)
+    .replace(/[\uD83C-\uD83E][\uDC00-\uDFFF]|[\u2600-\u27BF\u2B00-\u2BFF\u2190-\u21FF\uFE0F\u200D]/g, "")
     .replace(/\n{2,}/g, "\n")
     .replace(/\n/g, " ")
     .replace(/\s+/g, " ")

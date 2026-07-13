@@ -481,7 +481,9 @@ function renderStepBody(p: RenderParams) {
       </LessonStepContent>
     );
   }
-  if (c.kind === "summary") {
+  // רק צעד הסיכום האוטומטי (בלי כרטיס תוכן); סקשן אמיתי בסגנון key-takeaway
+  // חייב ליפול לענף c.card - אחרת גוף הסקשן (למשל טבלת הערכה עצמית) נעלם.
+  if (c.kind === "summary" && !c.card) {
     return (
       <LessonStepContent kind="summary" className="!min-h-0">
         <LessonKeyTakeawayClosing surface="embed" />
