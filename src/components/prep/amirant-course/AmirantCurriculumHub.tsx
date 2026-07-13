@@ -1,22 +1,160 @@
 "use client";
 
 /**
- * עמוד הקורס = לחדש את המסע (DESIGN_GUIDELINES):
+ * עמוד הקורס = לחדש את המסע:
  * 1) "המשך ללמוד" - הפעולה הראשית היחידה, עם הקשר מלא.
- * 2) "תוכנית הקורס" - רשימת מסע שטוחה: הושלם/נוכחי/בהמשך במבט אחד.
- * בלי hero כהה, בלי כרטיסי קישוט, בלי אימוג'י, בלי גריד כרטיסיות.
+ * 2) "תוכנית הקורס" - קוביות מודולים עם אימוג'י והסבר קצר (העדפת בעל המוצר),
+ *    על טוקנים של מערכת העיצוב: התקדמות, מודול נוכחי מסומן, CTA ברור.
  */
 import Link from "next/link";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
 import { cn } from "@/lib/design-system/cn";
-import type { ManifestLesson } from "@/lib/amirant-course/types/course-manifest";
+import type { ManifestLesson, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 
 const BASE = `${PREP_BASE}/amirant/course`;
 
 function lessonHref(lesson: ManifestLesson) {
   return `${BASE}/lesson/${lesson.id}`;
+}
+
+const MODULE_META: Record<string, { icon: string; badge?: string; desc: string }> = {
+  "mod-intro": {
+    icon: "🗺️",
+    desc: "איך המבחן בנוי, מה כל ציון שווה, ואיך מתקדמים בקורס - כולל מבחן רמה.",
+  },
+  "mod-vocab": {
+    icon: "📚",
+    badge: "קושי עולה",
+    desc: "חבילות מילים מדורגות עם כרטיסים, דוגמאות וטיפים לזכירה.",
+  },
+  "mod-sc": {
+    icon: "✏️",
+    badge: "תרגול אדפטיבי",
+    desc: "השלמת משפטים: זיהוי רמזים במשפט, פסילת מסיחים ותרגול ברמה שלכם.",
+  },
+  "mod-rephrase": {
+    icon: "🔄",
+    badge: "תרגול אדפטיבי",
+    desc: "ניסוח מחדש: לזהות את המשפט ששומר על אותה משמעות בדיוק.",
+  },
+  "mod-reading": {
+    icon: "📖",
+    badge: "תרגול אדפטיבי",
+    desc: "קטעי קריאה אקדמיים עם אסטרטגיות סקירה ושאלות בסגנון המבחן.",
+  },
+  "mod-reform": {
+    icon: "🎧",
+    badge: "2026",
+    desc: "מה השתנה ברפורמה: הבנת הנשמע, מבנה מעודכן ומה זה אומר לציון.",
+  },
+  "mod-sims": {
+    icon: "🎯",
+    badge: "סימולציות",
+    desc: "מבחנים מלאים בתנאי זמן אמיתיים, עם דוח אישי אחרי כל סימולציה.",
+  },
+  "mod-tips": {
+    icon: "💡",
+    desc: "אסטרטגיות מבחן, ניהול זמן ומה עושים כשנתקעים על שאלה.",
+  },
+  "mod-summary": {
+    icon: "🏁",
+    desc: "חזרה מרוכזת על כל החומר ותוכנית לערב שלפני המבחן.",
+  },
+  "mod-logistics": {
+    icon: "📋",
+    desc: "הרשמה, מועדים, מחירים ומה מביאים ליום המבחן.",
+  },
+};
+
+function ModuleCard({
+  mod,
+  index,
+  completedIds,
+  currentLessonId,
+}: {
+  mod: ManifestModule;
+  index: number;
+  completedIds: Set<string>;
+  currentLessonId: string | null;
+}) {
+  const doneInModule = mod.lessons.filter((l) => completedIds.has(l.id)).length;
+  const total = mod.lessons.length;
+  const pct = total > 0 ? Math.round((doneInModule / total) * 100) : 0;
+  const allDone = total > 0 && doneInModule === total;
+  const isCurrent = mod.lessons.some((l) => l.id === currentLessonId);
+  const hasAdaptiveQuiz = mod.quizzes.some((q) => q.adaptive);
+  const meta = MODULE_META[mod.id] ?? { icon: "📌", desc: `${total} שיעורים במודול הזה.` };
+
+  // יעד הקליק: השיעור הנוכחי > הבא שטרם הושלם > הראשון
+  const target =
+    mod.lessons.find((l) => l.id === currentLessonId) ??
+    mod.lessons.find((l) => !completedIds.has(l.id)) ??
+    mod.lessons[0];
+  const ctaLabel = allDone ? "חזרה על החומר" : doneInModule === 0 ? "התחל" : "המשך";
+
+  return (
+    <Link
+      href={target ? lessonHref(target) : BASE}
+      dir="rtl"
+      className={cn(
+        "group relative flex flex-col rounded-2xl border bg-paper p-5 transition-all",
+        allDone
+          ? "border-emerald-300/70 hover:border-emerald-400/70"
+          : isCurrent
+            ? "border-score/50 ring-1 ring-score/25 hover:shadow-card"
+            : "border-line hover:border-primary/35 hover:shadow-card",
+      )}
+    >
+      {isCurrent && !allDone ? (
+        <span className="absolute -top-2.5 right-4 rounded-full bg-score px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
+          ממשיכים כאן
+        </span>
+      ) : null}
+
+      <div className="flex items-start justify-between gap-2">
+        <span
+          className={cn(
+            "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl",
+            allDone ? "bg-emerald-500/10" : "bg-primary/[0.06]",
+          )}
+          aria-hidden
+        >
+          {allDone ? "✅" : meta.icon}
+        </span>
+        <span className="flex flex-wrap justify-end gap-1">
+          {hasAdaptiveQuiz ? (
+            <span className="rounded-full bg-accent-muted px-2 py-0.5 text-[10px] font-bold text-accent">AI</span>
+          ) : null}
+          {meta.badge ? (
+            <span className="rounded-full bg-surface-low px-2 py-0.5 text-[10px] text-muted">{meta.badge}</span>
+          ) : null}
+        </span>
+      </div>
+
+      <p className="mt-3 font-bold leading-snug text-ink">
+        <span className="text-muted/70">{index + 1}. </span>
+        {mod.title}
+      </p>
+      <p className="mt-1 text-xs leading-relaxed text-muted">{meta.desc}</p>
+
+      <div className="mt-auto pt-4">
+        <div className="h-1 overflow-hidden rounded-full bg-surface-high">
+          <div
+            className={cn("h-1 rounded-full transition-all", allDone ? "bg-emerald-500" : "bg-primary")}
+            style={{ width: `${pct}%` }}
+          />
+        </div>
+        <div className="mt-1.5 flex items-center justify-between text-[11px]">
+          <span className={cn("tabular-nums", allDone ? "font-medium text-emerald-700" : "text-muted")}>
+            {allDone ? "✓ הושלם" : `${doneInModule}/${total} שיעורים`}
+          </span>
+          <span className="font-semibold text-muted transition-colors group-hover:text-primary">{ctaLabel} ←</span>
+        </div>
+      </div>
+    </Link>
+  );
 }
 
 export function AmirantCurriculumHub() {
@@ -56,7 +194,7 @@ export function AmirantCurriculumHub() {
     : totalLessons;
 
   return (
-    <div dir="rtl" className="mx-auto w-full max-w-[52rem] px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
+    <div dir="rtl" className="mx-auto w-full max-w-[60rem] px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
       {/* ── המשך ללמוד - הפעולה הראשית ── */}
       <section className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
         {currentLesson ? (
@@ -102,7 +240,7 @@ export function AmirantCurriculumHub() {
         )}
       </section>
 
-      {/* ── תוכנית הקורס - רשימת מסע שטוחה ── */}
+      {/* ── תוכנית הקורס - קוביות מודולים ── */}
       <section className="mt-10">
         <div className="flex items-baseline justify-between">
           <h2 className="text-lg font-bold text-primary">תוכנית הקורס</h2>
@@ -111,67 +249,20 @@ export function AmirantCurriculumHub() {
           </span>
         </div>
 
-        <ol className="mt-4 overflow-hidden rounded-2xl border border-line bg-paper">
-          {manifest.modules.map((mod, mi) => {
-            const doneInModule = mod.lessons.filter((l) => completedIds.has(l.id)).length;
-            const total = mod.lessons.length;
-            const allDone = total > 0 && doneInModule === total;
-            const isCurrent = mod.lessons.some((l) => l.id === currentLessonId);
-            const target =
-              mod.lessons.find((l) => l.id === currentLessonId) ??
-              mod.lessons.find((l) => !completedIds.has(l.id)) ??
-              mod.lessons[0];
-            return (
-              <li key={mod.id} className={cn(mi > 0 && "border-t border-line/70")}>
-                <Link
-                  href={target ? lessonHref(target) : BASE}
-                  className={cn(
-                    "grid grid-cols-[2.25rem_1fr_auto] items-center gap-3 px-4 py-3.5 transition sm:px-5",
-                    isCurrent ? "bg-primary text-white" : "hover:bg-surface-low",
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold tabular-nums",
-                      allDone
-                        ? "bg-emerald-100 text-emerald-700"
-                        : isCurrent
-                          ? "bg-white/15 text-white"
-                          : "bg-primary/[0.06] text-primary",
-                    )}
-                    aria-hidden
-                  >
-                    {allDone ? "✓" : mi + 1}
-                  </span>
-                  <span className="min-w-0">
-                    <span className={cn("block truncate text-sm font-semibold sm:text-base", !isCurrent && "text-ink")}>
-                      {mod.title}
-                    </span>
-                    <span className={cn("block text-xs", isCurrent ? "text-white/70" : "text-muted")}>
-                      {total} שיעורים
-                      {isCurrent && currentLesson ? ` · עכשיו: ${currentLesson.title}` : ""}
-                    </span>
-                  </span>
-                  <span
-                    className={cn(
-                      "rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums",
-                      allDone
-                        ? "bg-emerald-100 text-emerald-800"
-                        : isCurrent
-                          ? "bg-white/15 text-white/90"
-                          : "bg-surface-low text-muted",
-                    )}
-                  >
-                    {allDone ? "הושלם" : `${doneInModule}/${total}`}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {manifest.modules.map((mod, mi) => (
+            <ModuleCard
+              key={mod.id}
+              mod={mod}
+              index={mi}
+              completedIds={completedIds}
+              currentLessonId={currentLessonId}
+            />
+          ))}
+        </div>
 
         {manifest.simulations.length > 0 ? (
-          <p className="mt-4 text-sm text-muted">
+          <p className="mt-6 text-sm text-muted">
             מוכנים לתרגול בתנאי אמת?{" "}
             <Link
               href={`${BASE}/simulation/${manifest.simulations[0].id}`}
