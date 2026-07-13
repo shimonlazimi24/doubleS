@@ -62,8 +62,8 @@ export function PrepHomeHero() {
           <ButtonLink href={`${PREP_BASE}#limudim`} variant="secondary" className="px-ds-4 py-ds-3 text-base">
             לכל ההכנות
           </ButtonLink>
-          <ButtonLink href={`${PREP_BASE}/login`} variant="ghost">
-            התחברות
+          <ButtonLink href={`${PREP_BASE}/settings`} variant="ghost">
+            אזור אישי
           </ButtonLink>
         </div>
       </Container>

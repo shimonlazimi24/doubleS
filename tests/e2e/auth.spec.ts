@@ -6,10 +6,10 @@ test.skip(
   "auth redirect is disabled by PREP_AUTH_BYPASS - run this spec without the flag",
 );
 
-test("redirects protected prep page to login when unauthenticated", async ({
+test("redirects protected prep page straight into Google sign-in when unauthenticated", async ({
   page,
 }) => {
   await page.goto("/prep/dashboard");
-  await expect(page).toHaveURL(/\/prep\/login/);
-  await expect(page.getByRole("heading", { name: "התחברות" })).toBeVisible();
+  // אנונימיים → /prep/auth/google, שמזניק מיד OAuth; מתקבל כל שלב בשרשרת.
+  await expect(page).toHaveURL(/\/prep\/auth\/google|accounts\.google|supabase/);
 });

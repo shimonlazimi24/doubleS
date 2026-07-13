@@ -79,6 +79,12 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
                 >
                   לוח תלמיד
                 </Link>
+                <Link
+                  href={`${PREP_BASE}/settings`}
+                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
+                >
+                  אזור אישי
+                </Link>
               </nav>
             </div>
           </header>

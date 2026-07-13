@@ -57,11 +57,12 @@ export function MarketingNav() {
       >
         כניסה לקורס
       </ButtonLink>
+      {/* לא מחוברים: ה-middleware מפנה ישר ל-Google; מחוברים: פרטים אישיים ומנוי. */}
       <Link
-        href={`${PREP_BASE}/login`}
+        href={`${PREP_BASE}/settings`}
         className="inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink"
       >
-        התחברות
+        אזור אישי
       </Link>
       {/* תפריט «קורסים» הוסר - קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
       {LINKS.map((item) => (
