@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { isPrepAmirantCoursePublicPreviewPath } from "@/lib/prep/amirant-public-preview";
 import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
+import { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";
 import { isPrepPublicPath } from "@/lib/prep/constants";
 import {
   hasCompletedPrepOnboarding,
@@ -25,7 +26,11 @@ async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextRes
 
   const { user, response, supabase } = await getPrepUserFromMiddleware(req);
   if (!user) {
-    const login = new URL("/prep/login", req.url);
+    // אנונימיים → ישר ל-Google; עמוד ה-login נשאר לשגיאות ולכניסה עם קוד מייל.
+    const login = new URL(
+      isGoogleOAuthEnabledInApp() ? "/prep/auth/google" : "/prep/login",
+      req.url,
+    );
     login.searchParams.set("next", req.nextUrl.pathname + req.nextUrl.search);
     const redirect = NextResponse.redirect(login);
     setNoStore(redirect);

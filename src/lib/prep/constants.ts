@@ -51,6 +51,7 @@ export const PREP_PUBLIC_PATHS = new Set<string>([
   `${PREP_BASE}/auth/callback`,
   `${PREP_BASE}/auth/complete`,
   `${PREP_BASE}/auth/verify`,
+  `${PREP_BASE}/auth/google`,
   `${PREP_BASE}/onboarding`,
 ]);
 
