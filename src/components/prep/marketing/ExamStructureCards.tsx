@@ -1,22 +1,37 @@
 import { EXAM_STRUCTURE } from "@/lib/prep/marketing/content";
-import { cn } from "@/lib/design-system/cn";
 
-export function ExamStructureCards() {
+function metaParts(meta: string): { questions: string; minutes: string } {
+  const [questions = "", minutes = ""] = meta.split("·").map((x) => x.trim());
+  return { questions, minutes };
+}
+
+/** מפרט המבחן כטבלת עובדות שטוחה - לא שלושה כרטיסים זהים. */
+export function ExamStructureTable() {
   return (
-    <ul className="grid gap-5 md:grid-cols-3">
-      {EXAM_STRUCTURE.parts.map((part, i) => (
-        <li
-          key={part.title}
-          className={cn(
-            "flex flex-col rounded-surface border border-line/80 bg-paper p-6 shadow-card",
-            i === 2 && "md:col-span-1",
-          )}
-        >
-          <span className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">{part.meta}</span>
-          <h3 className="mt-2 text-lg font-semibold text-ink">{part.title}</h3>
-          <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{part.body}</p>
-        </li>
-      ))}
-    </ul>
+    <div className="max-w-3xl">
+      <ul>
+        {EXAM_STRUCTURE.parts.map((part) => {
+          const { questions, minutes } = metaParts(part.meta);
+          return (
+            <li
+              key={part.title}
+              className="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-1 border-t border-line/70 py-4 first:border-t-0 sm:grid-cols-[11rem_1fr_auto]"
+            >
+              <h3 className="text-base font-semibold text-ink">{part.title}</h3>
+              <p className="col-span-2 text-sm leading-relaxed text-muted sm:col-span-1 sm:col-start-2">
+                {part.body}
+              </p>
+              <p className="row-start-1 text-sm tabular-nums text-primary sm:col-start-3" dir="rtl">
+                <span className="font-semibold">{questions}</span>
+                <span className="text-muted"> · {minutes}</span>
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="border-t border-line/70 pt-3 text-xs text-muted">
+        הפרקים חוזרים לאורך המבחן ברמת קושי מסתגלת - בקורס מתרגלים כל סוג בנפרד ואז יחד בסימולציה.
+      </p>
+    </div>
   );
 }

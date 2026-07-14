@@ -9,15 +9,15 @@ type Props = {
   subtitle?: string;
   children: ReactNode;
   className?: string;
-  tone?: "paper" | "canvas" | "navy";
+  tone?: "paper" | "canvas";
 };
 
 const tones = {
   paper: "bg-paper",
   canvas: "bg-canvas",
-  navy: "bg-primary text-paper",
 } as const;
 
+/** מקצב עריכתי הדוק: קו-שיער בין סקשנים, ריווח מתון, כותרת צמודה לתוכן. */
 export function MarketingSection({
   id,
   eyebrow,
@@ -27,33 +27,23 @@ export function MarketingSection({
   className,
   tone = "paper",
 }: Props) {
-  const onNavy = tone === "navy";
   return (
-    <section id={id} className={cn("py-section md:py-section-lg", tones[tone], className)}>
+    <section
+      id={id}
+      className={cn("border-t border-line/70 py-10 md:py-14", tones[tone], className)}
+    >
       <Container max="shell">
-        <header className="mb-8 max-w-2xl md:mb-9 text-right">
+        <header className="mb-6 max-w-2xl text-right md:mb-7">
           {eyebrow ? (
-            <p
-              className={cn(
-                "mb-2 text-xs font-semibold uppercase tracking-[0.14em]",
-                onNavy ? "text-sky-300" : "text-accent",
-              )}
-            >
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
               {eyebrow}
             </p>
           ) : null}
-          <h2
-            className={cn(
-              "text-2xl font-semibold leading-tight tracking-tight md:text-3xl",
-              onNavy ? "text-paper" : "text-ink",
-            )}
-          >
+          <h2 className="text-2xl font-semibold leading-tight tracking-tight text-ink md:text-3xl">
             {title}
           </h2>
           {subtitle ? (
-            <p className={cn("mt-3 text-base leading-relaxed md:text-lg", onNavy ? "text-slate-300" : "text-muted")}>
-              {subtitle}
-            </p>
+            <p className="mt-2 text-base leading-relaxed text-muted">{subtitle}</p>
           ) : null}
         </header>
         {children}

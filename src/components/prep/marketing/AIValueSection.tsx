@@ -1,6 +1,7 @@
 import { MarketingSection } from "@/components/prep/marketing/MarketingSection";
 import { AI_VALUE } from "@/lib/prep/marketing/content";
 
+/** שורות ✓ שטוחות + "הערת מורה" אחת (חתימת המותג) - בלי גלוסות ופאנלים כהים. */
 export function AIValueSection() {
   const content = AI_VALUE;
   return (
@@ -11,32 +12,26 @@ export function AIValueSection() {
       subtitle={content.subtitle}
       tone="canvas"
     >
-      <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-        <ul className="space-y-4">
+      <div className="grid max-w-4xl gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+        <ul className="space-y-3">
           {content.points.map((point) => (
-            <li
-              key={point}
-              className="flex gap-3 rounded-surface border border-line/80 bg-paper px-5 py-4 shadow-card"
-            >
-              <span
-                className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-muted text-xs font-bold text-accent"
-                aria-hidden
-              >
+            <li key={point} className="flex gap-3">
+              <span className="mt-1 font-bold text-accent" aria-hidden>
                 ✓
               </span>
               <span className="text-sm leading-relaxed text-ink md:text-base">{point}</span>
             </li>
           ))}
+          <li className="pt-2 text-xs leading-relaxed text-muted">{content.note}</li>
         </ul>
-        <aside className="rounded-surface border border-primary/15 bg-primary p-6 text-paper shadow-lift md:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.12em] text-sky-300">בתוך הקורס</p>
-          <p className="mt-4 text-base leading-relaxed text-slate-200">{content.note}</p>
-          <div className="mt-6 rounded-control border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
-            <p className="font-medium text-paper">דוגמה לשימוש</p>
-            <p className="mt-2 leading-relaxed">
-              אחרי מבחן תרגול - סיכום נקודות לחיזוק והמלצה על יחידות להמשך, לפי הביצועים שלכם.
-            </p>
-          </div>
+
+        <aside className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-5">
+          <p className="text-[11px] font-bold tracking-wide text-pen">כך זה נראה אחרי בוחן</p>
+          <p className="mt-2 text-sm leading-relaxed text-ink">
+            "סיימתם בוחן ניסוח מחדש עם 7/10. הנקודה לחיזוק: משפטים שבהם המבנה משתנה אבל המשמעות
+            נשמרת (שאלות 3 ו-8). מומלץ לחזור על שיטה 2 במדריך ולתרגל סט קצר של 6 שאלות."
+          </p>
+          <p className="mt-3 text-xs text-muted">דוגמה להמלצה - הנוסח נבנה מהביצועים שלכם בפועל.</p>
         </aside>
       </div>
     </MarketingSection>
