@@ -4,10 +4,14 @@ import { markdownishToPlain, type PremiumSectionVariant } from "./split-markdown
 export const DEFAULT_MICRO_CARD_CHARS = 300;
 const LIST_SLICE = 4;
 
+/** יחידת תת-כותרת (דוגמה/מלכודת/רמז) עד גודל זה נשארת שקופית אחת שלמה. */
+const WHOLE_SUBSECTION_CHARS = 1200;
+
 const MAX_STEP_LABEL = 56;
 
 /**
- * Splits a string to segments ≤ max, preferring last space in the window.
+ * Splits a string to segments ≤ max, preferring the last newline in the window
+ * (keeps list items and sentences whole), then the last space.
  */
 function chunkStringToMax(s: string, maxChars: number): string[] {
   const t = s.trim();
@@ -24,8 +28,11 @@ function chunkStringToMax(s: string, maxChars: number): string[] {
     }
     const win = rest.slice(0, maxChars);
     let cut = maxChars;
+    const nl = win.lastIndexOf("\n");
     const sp = win.lastIndexOf(" ");
-    if (sp > Math.floor(maxChars * 0.45)) {
+    if (nl > Math.floor(maxChars * 0.35)) {
+      cut = nl;
+    } else if (sp > Math.floor(maxChars * 0.45)) {
       cut = sp;
     }
     const part = rest.slice(0, cut).trim();
@@ -48,6 +55,14 @@ function isMarkdownTable(block: string): boolean {
   return tableLines.length >= 2;
 }
 
+/** רשימת markdown (בולטים/מספור/צ'קבוקסים) - לא נחתכת באמצע פריט. */
+function isMarkdownList(block: string): boolean {
+  const lines = block.trim().split("\n").filter(Boolean);
+  if (lines.length < 2) return false;
+  const listLines = lines.filter((l) => /^\s*(?:[-*+•]|\d+\.)\s/.test(l));
+  return listLines.length >= Math.ceil(lines.length * 0.6);
+}
+
 export function splitBodyIntoMicroParts(
   body: string,
   maxChars = DEFAULT_MICRO_CARD_CHARS,
@@ -58,8 +73,12 @@ export function splitBodyIntoMicroParts(
   }
   const blocks = raw.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
   const source = blocks.length ? blocks : [raw];
-  // Keep markdown tables atomic - chunkStringToMax would break them mid-row
-  const flat = source.flatMap((b) => isMarkdownTable(b) ? [b] : chunkStringToMax(b, maxChars));
+  // טבלאות ורשימות בגודל סביר נשארות אטומיות - חיתוך באמצען מפזר תוכן בין צעדים
+  const flat = source.flatMap((b) =>
+    isMarkdownTable(b) || (isMarkdownList(b) && b.length <= WHOLE_SUBSECTION_CHARS)
+      ? [b]
+      : chunkStringToMax(b, maxChars),
+  );
   if (flat.length === 0) {
     return [raw];
   }
@@ -174,12 +193,13 @@ function splitAtHeadingLevels(
     }
 
     const combined = `${first}\n${rest}`;
-    if (combined.length <= maxChars) {
+    const hasDeeperHeading = deeper.some((m) => new RegExp(`^${m}\\s+`, "m").test(rest));
+    // יחידת-עלה (דוגמה/מלכודת/רמז) נשארת שקופית אחת שלמה עד תקרה נדיבה -
+    // "שקופית לכל מלכודת, עם הדוגמה שלה" (משוב הבודקת)
+    if (combined.length <= (hasDeeperHeading ? maxChars : WHOLE_SUBSECTION_CHARS)) {
       out.push({ body: combined, stepLabel: headingPlain });
       continue;
     }
-
-    const hasDeeperHeading = deeper.some((m) => new RegExp(`^${m}\\s+`, "m").test(rest));
     if (hasDeeperHeading) {
       const kids = splitAtHeadingLevels(rest, maxChars, headingPlain, deeper);
       kids.forEach((kid, j) => {

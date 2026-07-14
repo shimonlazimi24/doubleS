@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { stripLeadingDuplicateSectionHeading } from "@/lib/amirant-course/lesson-content/strip-duplicate-section-heading";
 import { stripEdgeSeparatorNoise, stripTakeawayBlocksFromBody } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 import { markdownishToPlain } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
-import { takeawayLineFromLessonBody } from "@/lib/amirant-course/lesson-content/takeaway-line-from-body";
 import { LessonBlockCard } from "../lesson/LessonBlockCard";
 import { LessonHeroCard } from "../lesson/LessonHeroCard";
 import { LessonInteractionBlock } from "../lesson/LessonInteractionBlock";
@@ -535,13 +534,9 @@ function renderStepBody(p: RenderParams) {
     const plainFull = markdownishToPlain(bodyForDisplay ?? "", 20_000).trim();
     const isShort = plainFull.length > 0 && plainFull.length < 420;
     const isKeyTakeaway = card.variant === "key-takeaway";
-    const hasExplicitTakeaway = /מ\s*ה\s*ל[קק]חת\s*מזה|מה\s*ל[קק]חת\s*מזה/i.test(plainFull);
-    const takeaway = takeawayLineFromLessonBody(bodyForDisplay);
-    const showTakeaway =
-      Boolean(takeaway) &&
-      plainFull.length >= 160 &&
-      takeaway!.trim() !== plainFull.trim() &&
-      !hasExplicitTakeaway;
+    /* פס "מה לקחת מזה" האוטומטי הוסר לפי משוב הבודקת: הוא שכפל את גוף הצעד
+       כמעט מילה במילה בכל שקופית - "מרגיש AI, לא אורגני". תקציר אמיתי שכתוב
+       בתוכן המקור ממשיך להירנדר כרגיל כחלק מהגוף. */
 
     return (
       <LessonStepContent kind={k} showTopLabel={false} className="!min-h-0">
@@ -569,14 +564,6 @@ function renderStepBody(p: RenderParams) {
               contentMode="workspaceFlat"
             />
           </div>
-          {showTakeaway ? (
-            <div className="mt-4 border-t border-stone-100 pt-4">
-              <p className="text-sm leading-relaxed text-[#0f2347] sm:text-[0.9375rem]">
-                <span className="font-semibold text-sky-900">מה לקחת מזה: </span>
-                {takeaway}
-              </p>
-            </div>
-          ) : null}
           {c.embedQuickCheck && c.flowIndex != null ? (
             <div className="mt-6 space-y-5 border-t border-stone-100 pt-5">
               <LessonInteractionBlock onContinue={p.onInteractionContinue} surface="embed" />
