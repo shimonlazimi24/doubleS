@@ -46,17 +46,17 @@ function NavLink({
 
 export function MarketingNav() {
   return (
+    // ההדר עצמו LTR (לוגו לטיני) - ה-nav חוזר ל-RTL כדי שסדר הקריאה יהיה נכון:
+    // בית ← אמירנט ← אודות ← אזור אישי ← כניסה לקורס (ה-CTA בקצה השמאלי)
     <nav
+      dir="rtl"
       aria-label="ניווט ראשי"
       className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:gap-x-8"
     >
-      <ButtonLink
-        href={`${PREP_BASE}/amirant/course`}
-        variant="primary"
-        className="min-h-10 px-5 text-sm shadow-cta"
-      >
-        כניסה לקורס
-      </ButtonLink>
+      {/* תפריט «קורסים» הוסר - קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
+      {LINKS.map((item) => (
+        <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
+      ))}
       {/* לא מחוברים: ה-middleware מפנה ישר ל-Google; מחוברים: פרטים אישיים ומנוי. */}
       <Link
         href={`${PREP_BASE}/settings`}
@@ -64,10 +64,13 @@ export function MarketingNav() {
       >
         אזור אישי
       </Link>
-      {/* תפריט «קורסים» הוסר - קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
-      {LINKS.map((item) => (
-        <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
-      ))}
+      <ButtonLink
+        href={`${PREP_BASE}/amirant/course`}
+        variant="primary"
+        className="min-h-10 px-5 text-sm shadow-cta"
+      >
+        כניסה לקורס
+      </ButtonLink>
     </nav>
   );
 }
