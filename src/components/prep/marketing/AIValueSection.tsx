@@ -28,8 +28,8 @@ export function AIValueSection() {
         <aside className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-5">
           <p className="text-[11px] font-bold tracking-wide text-pen">כך זה נראה אחרי בוחן</p>
           <p className="mt-2 text-sm leading-relaxed text-ink">
-            "סיימתם בוחן ניסוח מחדש עם 7/10. הנקודה לחיזוק: משפטים שבהם המבנה משתנה אבל המשמעות
-            נשמרת (שאלות 3 ו-8). מומלץ לחזור על שיטה 2 במדריך ולתרגל סט קצר של 6 שאלות."
+            «סיימתם בוחן ניסוח מחדש עם 7/10. הנקודה לחיזוק: משפטים שבהם המבנה משתנה אבל המשמעות
+            נשמרת (שאלות 3 ו-8). מומלץ לחזור על שיטה 2 במדריך ולתרגל סט קצר של 6 שאלות.»
           </p>
           <p className="mt-3 text-xs text-muted">דוגמה להמלצה - הנוסח נבנה מהביצועים שלכם בפועל.</p>
         </aside>
