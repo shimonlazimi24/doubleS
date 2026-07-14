@@ -114,21 +114,34 @@ function titlesLooselyEqual(a: string, b: string): boolean {
 }
 
 /**
- * Prefer splitting on `##` headings so each step maps to a real subsection.
- * Long subsections are chunked with a stable "· המשך" suffix (no `1/3` style).
+ * Prefer splitting on the shallowest heading level present (`##`→`###`→`####`),
+ * recursing into deeper levels inside long subsections - a step never straddles
+ * a heading boundary (fix: הסבר של רמז א' זלג לכרטיס של רמז ב' והפך לכותרתו).
+ * Long flat runs are chunked with a stable "· המשך" suffix (no `1/3` style).
  */
 export function splitBodyIntoSemanticMicroParts(
   body: string,
   maxChars: number,
   sectionTitle: string,
 ): { body: string; stepLabel: string }[] {
+  return splitAtHeadingLevels(body, maxChars, cleanLessonStepSectionTitle(sectionTitle), [
+    "##",
+    "###",
+    "####",
+  ]);
+}
+
+function splitAtHeadingLevels(
+  body: string,
+  maxChars: number,
+  cleanedSection: string,
+  levels: string[],
+): { body: string; stepLabel: string }[] {
   const raw = body.trim();
   if (!raw) return [];
 
-  const cleanedSection = cleanLessonStepSectionTitle(sectionTitle);
-  const hasH2 = /^##\s+/m.test(raw);
-
-  if (!hasH2) {
+  const levelIdx = levels.findIndex((m) => new RegExp(`^${m}\\s+`, "m").test(raw));
+  if (levelIdx === -1) {
     const parts = splitBodyIntoMicroParts(raw, maxChars);
     return parts.map((b, i) => ({
       body: b,
@@ -136,21 +149,21 @@ export function splitBodyIntoSemanticMicroParts(
     }));
   }
 
-  const segments = raw.split(/(?=^##\s+)/m).map((s) => s.trim()).filter(Boolean);
+  const marker = levels[levelIdx]!;
+  const deeper = levels.slice(levelIdx + 1);
+  const segments = raw
+    .split(new RegExp(`(?=^${marker}\\s+)`, "m"))
+    .map((s) => s.trim())
+    .filter(Boolean);
   const out: { body: string; stepLabel: string }[] = [];
 
   for (const seg of segments) {
     const lines = seg.split("\n");
     const first = lines[0]?.trim() ?? "";
-    const hm = first.match(/^##\s+(.+)$/);
+    const hm = first.match(new RegExp(`^${marker}\\s+(.+)$`));
     if (!hm) {
-      const chunks = splitBodyIntoMicroParts(seg, maxChars);
-      chunks.forEach((b, j) =>
-        out.push({
-          body: b,
-          stepLabel: labelForFlatChunk(b, cleanedSection, j, chunks.length),
-        }),
-      );
+      // פתיח לפני הכותרת הראשונה - עדיין עשוי להכיל כותרות עמוקות יותר
+      out.push(...splitAtHeadingLevels(seg, maxChars, cleanedSection, deeper));
       continue;
     }
 
@@ -163,6 +176,16 @@ export function splitBodyIntoSemanticMicroParts(
     const combined = `${first}\n${rest}`;
     if (combined.length <= maxChars) {
       out.push({ body: combined, stepLabel: headingPlain });
+      continue;
+    }
+
+    const hasDeeperHeading = deeper.some((m) => new RegExp(`^${m}\\s+`, "m").test(rest));
+    if (hasDeeperHeading) {
+      const kids = splitAtHeadingLevels(rest, maxChars, headingPlain, deeper);
+      kids.forEach((kid, j) => {
+        // שורת הכותרת של האב נצמדת לילד הראשון (הפתיח שלו)
+        out.push(j === 0 ? { body: `${first}\n${kid.body}`, stepLabel: kid.stepLabel } : kid);
+      });
       continue;
     }
 
@@ -192,7 +215,8 @@ function labelForFlatChunk(
   index: number,
   total: number,
 ): string {
-  if (total === 1) return shortenLabel(cleanedSection);
+  // הצ'אנק הראשון מייצג את פתיחת הסקשן - כותרת הסקשן ולא excerpt
+  if (total === 1 || index === 0) return shortenLabel(cleanedSection);
   const fromHeading = extractFirstHeadingFromBody(body);
   if (fromHeading && !titlesLooselyEqual(fromHeading, cleanedSection)) {
     return shortenLabel(fromHeading);

@@ -152,7 +152,7 @@ const SENT: ManifestModule = {
   lessons: [
     {
       id: "lesson.sc.01",
-      title: "4.2 - מדריך (כתוב) · מסלול אודיו (במסמך)",
+      title: "מדריך השיטות המלא (4.2)",
       kind: "text",
       estimatedMinutes: 40,
       videoSlot: true,

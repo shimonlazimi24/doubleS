@@ -18,11 +18,18 @@ function approxSentenceCount(body: string | undefined): number {
 }
 
 function isEnoughContent(body: string | undefined): boolean {
+  // טבלת markdown היא תוכן מלא גם אם המנקה מוריד את שורותיה מהספירה
+  if (body && /^\s*\|.*\|\s*$/m.test(body)) return true;
   return plainLen(body) >= MIN_STEP_CHARS || approxSentenceCount(body) >= MIN_STEP_SENTENCES;
 }
 
 function isSyntheticChrome(s: BuiltWorkspaceStep): boolean {
   return s.id === "ws-summary" || s.id === "ws-ai" || s.id === "ws-cta";
+}
+
+/** כרטיס שנפתח בכותרת markdown הוא תחילת תת-נושא - לא ממזגים אותו אל צעד קודם. */
+function startsWithHeading(s: BuiltWorkspaceStep): boolean {
+  return /^#{2,6}\s/.test((s.card?.body ?? "").trimStart());
 }
 
 function isFlowContentStep(s: BuiltWorkspaceStep): boolean {
@@ -103,6 +110,14 @@ export function mergeFlowContentStepsForGranularity(steps: BuiltWorkspaceStep[])
       continue;
     }
     if (isFlowContentStep(s)) {
+      // לעולם לא ממזגים חוצה-סקשן: כותרת הצעד נלקחת מהכרטיס הראשון,
+      // ומיזוג בין סקשנים גורם לתוכן "להיעלם" תחת כותרת של סקשן אחר.
+      if (
+        buf.length > 0 &&
+        (buf[buf.length - 1]!.flowIndex !== s.flowIndex || startsWithHeading(s))
+      ) {
+        flushBuf();
+      }
       buf.push(s);
       const merged = joinWorkspaceContentSteps(buf);
       if (isEnoughContent(merged.card?.body)) {
@@ -120,6 +135,7 @@ export function mergeFlowContentStepsForGranularity(steps: BuiltWorkspaceStep[])
     const cur = out[i]!;
     const prev = out[i - 1]!;
     if (!isFlowContentStep(cur) || !isFlowContentStep(prev)) continue;
+    if (prev.flowIndex !== cur.flowIndex || startsWithHeading(cur)) continue;
     if (isEnoughContent(cur.card?.body)) continue;
     const joined = joinWorkspaceContentSteps([prev, cur]);
     out.splice(i - 1, 2, joined);
