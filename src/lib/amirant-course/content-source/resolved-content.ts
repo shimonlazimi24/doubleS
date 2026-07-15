@@ -78,6 +78,16 @@ export function getResolvedAmirantQuestionBank(): BankQuestion[] | null {
 
 export type AmirantPassage = z.infer<typeof passageSourceItemSchema>;
 
+/**
+ * סימוני blockquote ("> ") הם ארטיפקט חילוץ, לא סמנטיקה של הקטע: רנדרר
+ * ה-blockquote כולא ציטוטים ארוכים ב-max-height עם גלילה פנימית, וכך פסקאות
+ * 2+ של הקטע "נעלמות" והשאלה נראית לא קשורה (דווח ממבחן הרמה). מנרמלים
+ * לפסקאות רגילות בנקודת הטעינה - לכל הצרכנים.
+ */
+function stripBlockquoteMarkers(md: string): string {
+  return md.replace(/^>[ \t]?/gm, "");
+}
+
 let cachedPassages: Map<string, AmirantPassage> | undefined;
 
 /**
@@ -94,7 +104,10 @@ export function getResolvedAmirantPassages(): Map<string, AmirantPassage> {
   for (const raw of rows) {
     const parsed = passageSourceItemSchema.safeParse(raw);
     if (parsed.success) {
-      map.set(parsed.data.passageId, parsed.data);
+      map.set(parsed.data.passageId, {
+        ...parsed.data,
+        bodyMarkdown: stripBlockquoteMarkers(parsed.data.bodyMarkdown),
+      });
     } else {
       // eslint-disable-next-line no-console -- תקלת תוכן שדורשת תיקון בצד הסקריפטים
       console.error("[amirant-passages] invalid passage row skipped:", parsed.error.issues[0]?.message, raw);
