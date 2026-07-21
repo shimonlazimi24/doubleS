@@ -4,14 +4,66 @@ import { markdownishToPlain, type PremiumSectionVariant } from "./split-markdown
 export const DEFAULT_MICRO_CARD_CHARS = 300;
 const LIST_SLICE = 4;
 
-/** יחידת תת-כותרת (דוגמה/מלכודת/רמז) עד גודל זה נשארת שקופית אחת שלמה. */
-const WHOLE_SUBSECTION_CHARS = 1200;
+/**
+ * יחידת תת-כותרת (דוגמה/מלכודת/רמז) עד גודל זה נשארת שקופית אחת שלמה.
+ * הוגדל לפי משוב הבודקת: שאלה + 4 אפשרויות + ניתוח מלא חייבים להישאר יחד
+ * ("מעולה שיש השאלה והתשובה ביחד באותה שקופית").
+ */
+const WHOLE_SUBSECTION_CHARS = 2400;
 
 const MAX_STEP_LABEL = 56;
 
+const FENCE_OPEN = /^\s*(`{3,}|~{3,})/;
+
+function isFenceBlock(block: string): boolean {
+  return FENCE_OPEN.test(block.trimStart());
+}
+
 /**
- * Splits a string to segments ≤ max, preferring the last newline in the window
- * (keeps list items and sentences whole), then the last space.
+ * מפרק טקסט לבלוקים אטומיים: גדר קוד (```…```) היא בלוק אחד גם כשיש בתוכה
+ * שורות ריקות - פיצול בתוכה השאיר ``` פתוח שהפך את שאר השקופית לקוד גולמי
+ * (אפשרות D "קפצה" והניתוח הוצג עם ** מילולי - משוב הבודקת). שאר התוכן
+ * מפוצל בשורות ריקות.
+ */
+export function splitIntoAtomicBlocks(raw: string): string[] {
+  const lines = raw.split("\n");
+  const blocks: string[] = [];
+  let buf: string[] = [];
+  let inFence = false;
+  const flush = () => {
+    const t = buf.join("\n").trim();
+    if (t) blocks.push(t);
+    buf = [];
+  };
+  for (const line of lines) {
+    if (!inFence && FENCE_OPEN.test(line)) {
+      flush();
+      inFence = true;
+      buf.push(line);
+      continue;
+    }
+    if (inFence) {
+      buf.push(line);
+      if (FENCE_OPEN.test(line) && buf.length > 1) {
+        inFence = false;
+        flush();
+      }
+      continue;
+    }
+    if (!line.trim()) {
+      flush();
+      continue;
+    }
+    buf.push(line);
+  }
+  flush();
+  return blocks;
+}
+
+/**
+ * Splits a long prose block to segments ≤ max. Cuts only at sentence ends
+ * (., !, ?) when possible - a cut mid-sentence ("creates a…") reads as a bug
+ * (משוב הבודקת על קטעי הקריאה). Falls back to newline, then space.
  */
 function chunkStringToMax(s: string, maxChars: number): string[] {
   const t = s.trim();
@@ -27,13 +79,23 @@ function chunkStringToMax(s: string, maxChars: number): string[] {
       break;
     }
     const win = rest.slice(0, maxChars);
-    let cut = maxChars;
-    const nl = win.lastIndexOf("\n");
-    const sp = win.lastIndexOf(" ");
-    if (nl > Math.floor(maxChars * 0.35)) {
-      cut = nl;
-    } else if (sp > Math.floor(maxChars * 0.45)) {
-      cut = sp;
+    let cut = -1;
+    for (const re of [/[.!?…](?=\s)/g]) {
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(win)) !== null) {
+        if (m.index + 1 > cut) cut = m.index + 1;
+      }
+    }
+    if (cut <= Math.floor(maxChars * 0.3)) {
+      const nl = win.lastIndexOf("\n");
+      const sp = win.lastIndexOf(" ");
+      if (nl > Math.floor(maxChars * 0.35)) {
+        cut = nl;
+      } else if (sp > Math.floor(maxChars * 0.45)) {
+        cut = sp;
+      } else {
+        cut = maxChars;
+      }
     }
     const part = rest.slice(0, cut).trim();
     if (part.length) out.push(part);
@@ -44,10 +106,6 @@ function chunkStringToMax(s: string, maxChars: number): string[] {
   return out;
 }
 
-/**
- * Splits body into many short text blocks: paragraphs first, then chunks at `maxChars` (word-spaced when possible).
- * Produces as many small cards as needed (no text dropped).
- */
 function isMarkdownTable(block: string): boolean {
   const lines = block.trim().split("\n").filter(Boolean);
   if (lines.length < 2) return false;
@@ -63,6 +121,15 @@ function isMarkdownList(block: string): boolean {
   return listLines.length >= Math.ceil(lines.length * 0.6);
 }
 
+/** בלוק שאסור לחתוך באמצעו: גדר קוד, טבלה, או רשימה בגודל סביר. */
+function isAtomicBlock(block: string): boolean {
+  return (
+    isFenceBlock(block) ||
+    isMarkdownTable(block) ||
+    (isMarkdownList(block) && block.length <= WHOLE_SUBSECTION_CHARS)
+  );
+}
+
 export function splitBodyIntoMicroParts(
   body: string,
   maxChars = DEFAULT_MICRO_CARD_CHARS,
@@ -71,13 +138,10 @@ export function splitBodyIntoMicroParts(
   if (!raw) {
     return [body];
   }
-  const blocks = raw.split(/\n{2,}/).map((x) => x.trim()).filter(Boolean);
+  const blocks = splitIntoAtomicBlocks(raw);
   const source = blocks.length ? blocks : [raw];
-  // טבלאות ורשימות בגודל סביר נשארות אטומיות - חיתוך באמצען מפזר תוכן בין צעדים
   const flat = source.flatMap((b) =>
-    isMarkdownTable(b) || (isMarkdownList(b) && b.length <= WHOLE_SUBSECTION_CHARS)
-      ? [b]
-      : chunkStringToMax(b, maxChars),
+    isAtomicBlock(b) || b.length <= maxChars ? [b] : chunkStringToMax(b, maxChars),
   );
   if (flat.length === 0) {
     return [raw];
@@ -137,6 +201,7 @@ function titlesLooselyEqual(a: string, b: string): boolean {
  * recursing into deeper levels inside long subsections - a step never straddles
  * a heading boundary (fix: הסבר של רמז א' זלג לכרטיס של רמז ב' והפך לכותרתו).
  * Long flat runs are chunked with a stable "· המשך" suffix (no `1/3` style).
+ * Heading detection is block-based - a `###` inside a code fence is not a split point.
  */
 export function splitBodyIntoSemanticMicroParts(
   body: string,
@@ -150,6 +215,35 @@ export function splitBodyIntoSemanticMicroParts(
   ]);
 }
 
+type HeadingSegment = { headingLine: string | null; blocks: string[] };
+
+function groupBlocksByHeading(blocks: string[], marker: string): HeadingSegment[] {
+  const headingRe = new RegExp(`^${marker}\\s+`);
+  const segments: HeadingSegment[] = [];
+  let current: HeadingSegment | null = null;
+  for (const block of blocks) {
+    const firstLine = block.split("\n")[0] ?? "";
+    if (!isFenceBlock(block) && headingRe.test(firstLine.trim())) {
+      if (current) segments.push(current);
+      const restOfBlock = block.split("\n").slice(1).join("\n").trim();
+      current = { headingLine: firstLine.trim(), blocks: restOfBlock ? [restOfBlock] : [] };
+      continue;
+    }
+    if (!current) {
+      current = { headingLine: null, blocks: [block] };
+      continue;
+    }
+    current.blocks.push(block);
+  }
+  if (current) segments.push(current);
+  return segments;
+}
+
+function blocksHaveHeading(blocks: string[], marker: string): boolean {
+  const headingRe = new RegExp(`^${marker}\\s+`);
+  return blocks.some((b) => !isFenceBlock(b) && headingRe.test((b.split("\n")[0] ?? "").trim()));
+}
+
 function splitAtHeadingLevels(
   body: string,
   maxChars: number,
@@ -159,7 +253,8 @@ function splitAtHeadingLevels(
   const raw = body.trim();
   if (!raw) return [];
 
-  const levelIdx = levels.findIndex((m) => new RegExp(`^${m}\\s+`, "m").test(raw));
+  const blocks = splitIntoAtomicBlocks(raw);
+  const levelIdx = levels.findIndex((m) => blocksHaveHeading(blocks, m));
   if (levelIdx === -1) {
     const parts = splitBodyIntoMicroParts(raw, maxChars);
     return parts.map((b, i) => ({
@@ -170,30 +265,27 @@ function splitAtHeadingLevels(
 
   const marker = levels[levelIdx]!;
   const deeper = levels.slice(levelIdx + 1);
-  const segments = raw
-    .split(new RegExp(`(?=^${marker}\\s+)`, "m"))
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const segments = groupBlocksByHeading(blocks, marker);
   const out: { body: string; stepLabel: string }[] = [];
 
   for (const seg of segments) {
-    const lines = seg.split("\n");
-    const first = lines[0]?.trim() ?? "";
-    const hm = first.match(new RegExp(`^${marker}\\s+(.+)$`));
-    if (!hm) {
+    const rest = seg.blocks.join("\n\n").trim();
+    if (seg.headingLine === null) {
       // פתיח לפני הכותרת הראשונה - עדיין עשוי להכיל כותרות עמוקות יותר
-      out.push(...splitAtHeadingLevels(seg, maxChars, cleanedSection, deeper));
+      out.push(...splitAtHeadingLevels(rest, maxChars, cleanedSection, deeper));
       continue;
     }
 
-    const headingPlain = shortenLabel(cleanLessonStepSectionTitle(cleanStepHeading(hm[1]!)));
-    const rest = lines.slice(1).join("\n").trim();
-    if (!rest.trim()) {
+    const hm = seg.headingLine.match(new RegExp(`^${marker}\\s+(.+)$`));
+    const headingPlain = shortenLabel(
+      cleanLessonStepSectionTitle(cleanStepHeading(hm?.[1] ?? seg.headingLine)),
+    );
+    if (!rest) {
       continue;
     }
 
-    const combined = `${first}\n${rest}`;
-    const hasDeeperHeading = deeper.some((m) => new RegExp(`^${m}\\s+`, "m").test(rest));
+    const combined = `${seg.headingLine}\n${rest}`;
+    const hasDeeperHeading = deeper.some((m) => blocksHaveHeading(seg.blocks, m));
     // יחידת-עלה (דוגמה/מלכודת/רמז) נשארת שקופית אחת שלמה עד תקרה נדיבה -
     // "שקופית לכל מלכודת, עם הדוגמה שלה" (משוב הבודקת)
     if (combined.length <= (hasDeeperHeading ? maxChars : WHOLE_SUBSECTION_CHARS)) {
@@ -204,16 +296,15 @@ function splitAtHeadingLevels(
       const kids = splitAtHeadingLevels(rest, maxChars, headingPlain, deeper);
       kids.forEach((kid, j) => {
         // שורת הכותרת של האב נצמדת לילד הראשון (הפתיח שלו)
-        out.push(j === 0 ? { body: `${first}\n${kid.body}`, stepLabel: kid.stepLabel } : kid);
+        out.push(j === 0 ? { body: `${seg.headingLine}\n${kid.body}`, stepLabel: kid.stepLabel } : kid);
       });
       continue;
     }
 
-    const sub = isMarkdownTable(rest) ? [rest] : chunkStringToMax(rest, maxChars);
+    const sub = splitBodyIntoMicroParts(rest, maxChars);
     sub.forEach((chunk, j) => {
-      const pieceBody = j === 0 ? `${first}\n${chunk}` : chunk;
-      const lab =
-        j === 0 ? headingPlain : shortenLabel(`${headingPlain} · המשך`);
+      const pieceBody = j === 0 ? `${seg.headingLine}\n${chunk}` : chunk;
+      const lab = j === 0 ? headingPlain : shortenLabel(`${headingPlain} · המשך`);
       out.push({ body: pieceBody, stepLabel: lab });
     });
   }

@@ -20,11 +20,19 @@ export function stripTakeawayBlocksFromBody(body: string | undefined): string | 
 /**
  * עוגני HTML גולמיים (<a name="פח6"></a>) שהגיעו ממסמכי המקור מרונדרים כטקסט מילולי
  * ב־ReactMarkdown - מסירים אותם תמיד לפני רינדור.
+ * גם <details>/<summary> ממסמכי מקור הופיעו כטקסט על שקופיות (משוב הבודקת):
+ * התגיות מוסרות, טקסט ה-summary הופך לשורת הדגשה והתוכן נשאר גלוי.
  */
 export function stripHtmlAnchorNoise(body: string): string {
   return body
     .replace(/<a\s+name=[^>]*>\s*<\/a>/gi, "")
-    .replace(/<a\s+name=[^>]*\/>/gi, "");
+    .replace(/<a\s+name=[^>]*\/>/gi, "")
+    .replace(/<summary[^>]*>([\s\S]*?)<\/summary>/gi, (_m, t: string) => {
+      const label = t.replace(/\s+/g, " ").trim();
+      return label ? `**${label}**` : "";
+    })
+    .replace(/<\/?details[^>]*>/gi, "")
+    .replace(/<\/?summary[^>]*>/gi, "");
 }
 
 /** Strips common markdown separator noise (horizontal rules, pipes-only lines) from edges only. */

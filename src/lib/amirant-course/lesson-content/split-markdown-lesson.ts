@@ -39,7 +39,9 @@ export function guessSectionVariant(heading: string): PremiumSectionVariant {
   if (/טיפ|tip|💡|remember|note:/.test(heading) || /💡/.test(heading)) {
     return "tip";
   }
-  if (/לסיכום|סיכום|מה חשוב|key|takeaway|נקודות מפתח|עיקר|לזכור|תזכורת/.test(heading) || /🎯|📌/.test(heading)) {
+  // אימוג'י 🎯/📌 לבדו אינו טריגר: כותרות כמו "דוגמה מודרכת מלאה 🎯" קיבלו
+  // תווית "מה חשוב לזכור" על שקופיות של קטע קריאה (משוב הבודקת)
+  if (/לסיכום|סיכום|מה חשוב|key|takeaway|נקודות מפתח|עיקר|לזכור|תזכורת/.test(heading)) {
     return "key-takeaway";
   }
   if (/דוגמ|example|for example|sample|illustrat|תרחיש|מקרה בוחן/.test(h)) {
@@ -63,6 +65,7 @@ export function markdownishToPlain(text: string, maxLen: number): string {
     .replace(/^\s*\|.*\|\s*$/gm, "") // שורות טבלה (| ... |) אינן פרוזה - בתקציר הן זבל
     .replace(/^>\s?/gm, "")
     .replace(/^\s*(?:[-*+•]|\d+\.)\s+/gm, "")
+    .replace(/\[[ xX]\]\s*/g, "") // סמני צ'קבוקס GFM - "[ ]" מילולי אינו טקסט תקציר/תווית
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
     .replace(/`([^`]+)`/g, "$1")

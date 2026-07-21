@@ -50,7 +50,7 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
     );
   },
   pre: ({ children }) => (
-    <pre className="mb-4 overflow-x-auto rounded-surface border border-line/50 bg-ink/95 p-3 shadow-inner [direction:ltr] [text-align:left]">{children}</pre>
+    <pre className="mb-4 overflow-x-auto whitespace-pre-wrap [overflow-wrap:anywhere] rounded-surface border border-line/50 bg-ink/95 p-3 shadow-inner [direction:ltr] [text-align:left]">{children}</pre>
   ),
   table: ({ children }) => (
     <div className="my-4 overflow-x-auto rounded-surface border border-line/80">

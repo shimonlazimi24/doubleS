@@ -78,7 +78,7 @@ const cardCompact: Components = {
     </blockquote>
   ),
   pre: ({ children }) => (
-    <pre className="mb-2.5 max-h-40 min-w-0 max-w-full overflow-x-auto overflow-y-auto rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 text-start text-xs leading-relaxed text-slate-800 [direction:ltr] [overflow-wrap:anywhere] sm:text-xs">
+    <pre className="mb-2.5 max-h-72 min-w-0 max-w-full overflow-y-auto whitespace-pre-wrap rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 text-start text-xs leading-relaxed text-slate-800 [direction:ltr] [overflow-wrap:anywhere] sm:text-xs">
       {children}
     </pre>
   ),
