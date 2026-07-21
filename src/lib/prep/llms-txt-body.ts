@@ -1,21 +1,63 @@
-import { PREP_BASE, PREP_PROTECTED_PREFIXES, PREP_PUBLIC_PATHS } from "@/lib/prep/constants";
+import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 
-/** Plain-text body for `/llms.txt`, derived from route constants to avoid drift. */
+/**
+ * מסמך ידע אחד ל-`/llms.txt` (שורש הדומיין - שם סוכני AI מחפשים) ול-`/prep/llms.txt`.
+ * העובדות מיושרות לתוכן הקורס (יחידה 1 + מדריכי 4.2/5.2/6.2) - אלה המספרים שמנועי
+ * חיפוש גנרטיביים יצטטו, אז אין כאן נתון שלא מגובה בתוכן.
+ */
 export function buildLlmsTxtBody(baseUrl: string): string {
-  const lines: string[] = [
-    `# PREPARE - הכנה למבחני אנגלית`,
-    `User-agent: *`,
-    `Allow: ${PREP_BASE}/`,
-    ``,
-  ];
+  const totalLessons = AMIRANT_PREPARATION_MANIFEST.modules.reduce(
+    (s, m) => s + m.lessons.length,
+    0,
+  );
 
-  const urls = Array.from(PREP_PUBLIC_PATHS).sort().map((path) => `${baseUrl}${path}`);
-  lines.push(...urls, ``);
+  return `# PREPARE - הכנה לאמירנט
+> ${baseUrl}/prep
 
-  for (const prefix of PREP_PROTECTED_PREFIXES) {
-    lines.push(`Disallow: ${prefix}`);
-    lines.push(`Disallow: ${prefix}/`);
-  }
+## מה זה PREPARE?
+PREPARE (getprepared.academy) הוא פלטפורמת הכנה דיגיטלית לאמירנט - מבחן האנגלית האקדמי הממוחשב הנדרש לקבלה לאוניברסיטאות ומכללות בישראל.
 
-  return `${lines.join("\n")}\n`;
+## קורס ההכנה לאמירנט
+- ${totalLessons} שיעורים מובנים ב-${AMIRANT_PREPARATION_MANIFEST.modules.length} מודולים
+- תרגול אדפטיבי עם AI - מסתגל לרמת הלומד
+- עוזר AI אישי לכל שאלה (רמזים, הסברים, הצגת תשובה)
+- סימולציות מלאות בתנאי אמת
+- זיהוי נקודות חולשה אוטומטי
+
+## מבנה המבחן (אמירנט)
+- 6 סגמנטים מנוקדים: 23 שאלות, 39 דקות
+- Sentence Completion (השלמת משפטים): 12 שאלות (~52% מהציון)
+- Restatement (ניסוח מחדש): 6 שאלות (~26% מהציון)
+- Reading Comprehension (הבנת הנקרא): קטע + 5 שאלות (~22% מהציון)
+- 1-2 סגמנטי ניסוי (לא נספרים בציון): עד 12 דקות
+- משך כולל: כ-50-60 דקות
+- המבחן אדפטיבי: רמת השאלות מסתגלת לביצועים
+- סולם ציונים: 50-150. 85-99 פותח דלת לאוניברסיטה, 100-119 מקובל ברוב המוסדות, 120-133 פוטר מרוב קורסי האנגלית, 134-150 פטור מלא
+- מרפורמת אפריל 2026: הקראת טקסט (Text-to-Speech) לכל נבחן, ופרקי ניסוי של Listening ו-Writing
+
+## מודולי הקורס
+${AMIRANT_PREPARATION_MANIFEST.modules.map((m) => `- ${m.title}: ${m.lessons.length} שיעורים`).join("\n")}
+
+## שאלות נפוצות
+**מה זה אמירנט?**
+אמירנט הוא מבחן אנגלית אקדמי ממוחשב ואדפטיבי, הנדרש לקבלה למוסדות אקדמיים בישראל. הציון על סולם 50-150.
+
+**כמה זמן ללמוד לאמירנט?**
+בממוצע 2-4 שבועות של לימוד מסודר, 1-2 שעות ביום.
+
+**מה נחשב ציון טוב?**
+הסולם הוא 50-150. מ-85 נפתחת דלת הכניסה לאוניברסיטה, 100-119 מקובל ברוב המוסדות, ומ-120 ומעלה מגיעים פטורים מקורסי אנגלית (134-150 = פטור מלא). הדרישה המדויקת משתנה בין מוסדות ותוכניות - בדקו מול המוסד שלכם.
+
+**האם המבחן אדפטיבי?**
+כן. תשובות נכונות מעלות את רמת השאלות (ואת הניקוד), טעויות מורידות אותה - לכן לכל שאלה יש משקל.
+
+**האם יש הקראה קולית?**
+כן, מרפורמת אפריל 2026 כל נבחן יכול להפעיל Text-to-Speech ולשמוע כל טקסט במבחן.
+
+## קישורים מרכזיים
+- דף הקורס: ${baseUrl}/prep/amirant
+- מחירים: ${baseUrl}/prep/pricing
+- בלוג ומדריכים: ${baseUrl}/prep/blog
+- כניסה לקורס: ${baseUrl}/prep/amirant/course
+`;
 }

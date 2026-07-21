@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PrepHomeView } from "@/components/prep/PrepHomeView";
-import { JsonLdScript, organizationJsonLd } from "@/lib/prep/seo/json-ld";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 const siteUrl = getPublicSiteUrl();
@@ -30,10 +29,6 @@ export const metadata: Metadata = {
 };
 
 export default function PrepHomePage() {
-  return (
-    <>
-      <JsonLdScript data={organizationJsonLd(siteUrl)} />
-      <PrepHomeView />
-    </>
-  );
+  // Organization JSON-LD מוזרק פעם אחת ב-layout - כפילות כאן יצרה שני בלוקים זהים בעמוד.
+  return <PrepHomeView />;
 }
