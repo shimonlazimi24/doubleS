@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getManifestLesson } from "@/lib/amirant-course/manifest";
 import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 
@@ -10,8 +11,9 @@ export async function requireAmirantLessonAccess(lessonId: string): Promise<void
   const found = getManifestLesson(lessonId);
   if (!found) return;
 
-  const client = createPrepSupabaseServerClient();
-  let fullAccess = false;
+  // דגל ה-dev/preview תקף גם בלי Supabase מקומי (הדגל ממילא מנוטרל בפרודקשן)
+  let fullAccess = getPrepHasFullAccess();
+  const client = fullAccess ? null : createPrepSupabaseServerClient();
   if (client) {
     const {
       data: { user },
