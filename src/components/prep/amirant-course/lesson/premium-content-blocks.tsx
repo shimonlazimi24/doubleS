@@ -78,25 +78,80 @@ export function ChecklistBlock({
   );
 }
 
+/** Inline `**bold**` renderer for table-cell copy - never leaks raw asterisks. */
+function InlineMdBold({ text }: { text: string }) {
+  const parts = text.split(/\*\*([^*]+)\*\*/g);
+  return (
+    <>
+      {parts.map((p, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-semibold text-slate-900">
+            {p}
+          </strong>
+        ) : (
+          <span key={i}>{p.replace(/\*\*/g, "")}</span>
+        ),
+      )}
+    </>
+  );
+}
+
+/** צבע + רוחב פס לפי מיקום הטווח בסקאלה 50-150 (רמה עולה = פס ארוך וירוק יותר). */
+function scoreLaneVisual(range: string): { widthPct: number; tone: string } {
+  const nums = range.match(/\d+/g)?.map(Number) ?? [];
+  const hi = nums.length ? Math.max(...nums) : NaN;
+  const widthPct = Number.isNaN(hi) ? 50 : Math.min(95, Math.max(14, ((hi - 50) / 100) * 95));
+  const tone =
+    Number.isNaN(hi) || hi < 85
+      ? "bg-rose-700"
+      : hi < 100
+        ? "bg-amber-600"
+        : hi < 120
+          ? "bg-sky-600"
+          : hi < 134
+            ? "bg-sky-800"
+            : "bg-emerald-700";
+  return { widthPct, tone };
+}
+
+/** סולם ציונים קומפקטי: קונטיינר אחד, שורה לכל טווח + פס רמה - לא ערימת כרטיסיות. */
 export function ScoreRangeCards({ rows }: { rows: ScoreRow[] }) {
   if (!rows.length) return null;
   return (
-    <div className="grid gap-2.5 sm:grid-cols-1" role="list" aria-label="סולם ציונים">
-      {rows.map((r, i) => (
-        <div
-          key={i}
-          role="listitem"
-          className={cn(amirantPremiumCard, "bg-stone-50/30")}
-        >
-          <p className={cn(amirantPremiumTypo.labelSky, "text-sm normal-case !tracking-tight !text-sky-900/85")}>
-            {r.range.replace(/\*\*/g, "")}
-          </p>
-          <p className="mt-2 text-lg leading-8 text-slate-800 [text-align:start] [text-wrap:pretty]">
-            {r.meaning}
-            {r.detail ? <span className="text-slate-600"> · {r.detail}</span> : null}
-          </p>
-        </div>
-      ))}
+    <div
+      className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white [direction:rtl]"
+      role="list"
+      aria-label="סולם ציונים"
+    >
+      {rows.map((r, i) => {
+        const range = r.range.replace(/\*\*/g, "").replace(/(\d)\s*-\s*(\d)/, "$1–$2");
+        const { widthPct, tone } = scoreLaneVisual(range);
+        return (
+          <div
+            key={i}
+            role="listitem"
+            className={cn("px-4 py-3 sm:px-5", i > 0 && "border-t border-stone-100")}
+          >
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 sm:flex-nowrap">
+              <span className="w-[4.5rem] shrink-0 text-sm font-bold tabular-nums text-[#0f2347] [direction:ltr] [text-align:end] sm:w-[5.5rem]">
+                {range}
+              </span>
+              <p className="min-w-0 flex-1 text-base leading-7 text-slate-800 [text-align:start] [text-wrap:pretty]">
+                <InlineMdBold text={r.meaning} />
+                {r.detail ? (
+                  <span className="text-slate-500">
+                    {" "}
+                    · <InlineMdBold text={r.detail} />
+                  </span>
+                ) : null}
+              </p>
+            </div>
+            <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-stone-100" aria-hidden>
+              <div className={cn("h-full rounded-full", tone)} style={{ width: `${widthPct}%` }} />
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

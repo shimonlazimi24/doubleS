@@ -150,19 +150,31 @@ export function WelcomePremiumBody({ payload, stepId, onInteractionContinue, emb
       return <CourseIncludesGrid units={d.units} bonusTitle={d.bonusTitle} bonusItems={d.bonusItems} />;
     }
     case "success": {
+      const rules = payload.data.rules;
       return (
-        <div className={cn(surface, "space-y-3")}>
-          {payload.data.rules.map((r) => (
-            <div
-              key={r.n}
-              className="rounded-2xl border border-stone-200/80 bg-white p-4 [direction:rtl] [text-align:start] sm:p-5"
-            >
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-500">כלל {r.n} מתוך 5</p>
-              <div className="mt-1.5 text-lg leading-8 text-slate-800 [text-wrap:pretty]">
-                <PremiumMarkdownBody body={r.text} variant="lesson" className="[&_p]:!inline" />
+        <div className={cn(surface)}>
+          <div className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white [direction:rtl]" role="list">
+            {rules.map((r, i) => (
+              <div
+                key={r.n}
+                role="listitem"
+                className={cn(
+                  "flex items-baseline gap-3 px-4 py-3 [text-align:start] sm:gap-4 sm:px-5",
+                  i > 0 && "border-t border-stone-100",
+                )}
+              >
+                <span
+                  className="w-6 shrink-0 text-center text-sm font-bold tabular-nums text-sky-900/80"
+                  aria-label={`כלל ${r.n} מתוך ${rules.length}`}
+                >
+                  {r.n}
+                </span>
+                <div className="min-w-0 flex-1 text-lg leading-8 text-slate-800 [text-wrap:pretty]">
+                  <PremiumMarkdownBody body={r.text} variant="lesson" className="[&_p]:!inline" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       );
     }
