@@ -354,10 +354,17 @@ function listGroupStepLabel(
   return hint ? shortenLabel(hint, 52) : shortenLabel(base);
 }
 
+/** גוף שהוא רק קווי הפרדה (`---`) - סקשן "ריק" שיוצר שקופית בלי תוכן (משוב: "עמוד מיותר"). */
+function isSeparatorOnlyBody(body: string | undefined): boolean {
+  const t = body?.trim() ?? "";
+  return t.length > 0 && /^[-*_\s–—]+$/.test(t);
+}
+
 function dedupeExpandedCards(cards: ExpandedLessonCard[]): ExpandedLessonCard[] {
   const out: ExpandedLessonCard[] = [];
   for (const c of cards) {
-    const empty = !c.body?.trim() && !(c.items && c.items.length) && !(c.bullets && c.bullets.length);
+    const bodyMissing = !c.body?.trim() || isSeparatorOnlyBody(c.body);
+    const empty = bodyMissing && !(c.items && c.items.length) && !(c.bullets && c.bullets.length);
     if (empty) continue;
     const prev = out[out.length - 1];
     if (

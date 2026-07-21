@@ -33,6 +33,6 @@ export const lessonSaaS = {
   progressBarFill: "h-full rounded-full bg-sky-700 transition-[width] duration-500 ease-out",
   /** משטח צעד שטוח - בלי כרטיסייה עוטפת (cards-in-cards מסבך ולא נקי). */
   stepReadingSurface: "border-0 bg-transparent p-0 shadow-none ring-0",
-  stepInsightShort:
-    "rounded-xl border border-slate-200/70 bg-slate-50/90 p-4 sm:p-5",
+  /** תוכן קצר נשאר שטוח - קופסה אפורה סביב שתי שורות היא "כרטיסייה בתוך כרטיסייה" (משוב). */
+  stepInsightShort: "",
 } as const;

@@ -30,6 +30,7 @@ import {
 import { WelcomePremiumBody, welcomeStepTitleClass } from "./welcome-premium-body";
 import { buildLessonSteps, type UnifiedFlowItem, type BuiltWorkspaceStep } from "./workspace-step";
 import { useWorkspaceState } from "./use-workspace-state";
+import { useAmirantCourseProgress } from "../AmirantCourseProgressProvider";
 import type { SidebarNextLessonProps } from "@/lib/amirant-course";
 import { cn } from "@/lib/design-system/cn";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
@@ -99,6 +100,15 @@ export function PremiumLessonWorkspace({
   const { activeIndex, completedIndices, next, prev, selectStep, progressPercent } = useWorkspaceState(lessonId, steps);
   const firstGateIndex = useMemo(() => flow.findIndex((f) => f.kind === "gate"), [flow]);
   const current: BuiltWorkspaceStep | undefined = steps[activeIndex];
+  const { markLessonCompleted } = useAmirantCourseProgress();
+
+  // הגעה לשלב האחרון = השיעור הושלם. בלי זה ההתקדמות זזה רק בלחיצה ידנית על
+  // "סימון שיעור כהושלם" - והלוח/כרטיסי המודולים נשארים על 0 למרות שלמדו (משוב).
+  useEffect(() => {
+    if (n > 1 && activeIndex >= n - 1) {
+      markLessonCompleted(lessonId);
+    }
+  }, [activeIndex, n, lessonId, markLessonCompleted]);
 
   useEffect(() => {
     const el = stepBlockRef.current;

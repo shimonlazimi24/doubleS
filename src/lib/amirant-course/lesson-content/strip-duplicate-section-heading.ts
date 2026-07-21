@@ -4,7 +4,14 @@
  * Display-only; does not alter source files.
  */
 function normalizeForCompare(s: string): string {
-  return s.replace(/\s+/g, " ").trim();
+  return s
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/`([^`]+)`/g, "$1")
+    // אימוג'י בכותרת המקור לא קיים בתווית הצעד - לא רלוונטי להשוואה
+    .replace(/[\uD83C-\uD83E][\uDC00-\uDFFF]|[☀-➿️‍]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function headingsMatch(headingLine: string, sectionTitle: string): boolean {

@@ -46,21 +46,28 @@ export function LessonBlockCard({
   const mdClassName = isFlat ? "max-w-[65ch]" : "[&_p]:text-inherit";
   const mdVariant = isFlat ? "lesson" : "card";
 
+  // "הסבר" על כל שקופית = רעש; בשטוח מציגים תווית רק כשהיא נושאת מידע (טיפ/אזהרה/דוגמה).
+  const showVariantLabel = !isFlat || (variant !== "explanation" && variant !== "insight");
+
   const inner = (
     <>
-      <header>
-        <Text
-          as="p"
-          variant="caption"
-          className={cn(
-            isFlat ? "text-sm font-semibold sm:text-base" : "text-xs font-medium uppercase tracking-wide sm:text-sm",
-            p.labelColor,
-          )}
-        >
-          {p.label}
-        </Text>
-        {showCardTitle ? <h2 className={cn(lessonSaaS.h2, "mt-2.5", p.titleClass)}>{title}</h2> : null}
-      </header>
+      {showVariantLabel || showCardTitle ? (
+        <header>
+          {showVariantLabel ? (
+            <Text
+              as="p"
+              variant="caption"
+              className={cn(
+                isFlat ? "text-sm font-semibold sm:text-base" : "text-xs font-medium uppercase tracking-wide sm:text-sm",
+                p.labelColor,
+              )}
+            >
+              {p.label}
+            </Text>
+          ) : null}
+          {showCardTitle ? <h2 className={cn(lessonSaaS.h2, "mt-2.5", p.titleClass)}>{title}</h2> : null}
+        </header>
+      ) : null}
       {body?.trim() ? (
         <div className={cn("text-base leading-relaxed text-gray-600 sm:text-lg", isFlat && "mt-3 sm:mt-4")}>
           <PremiumMarkdownBody body={body} variant={mdVariant} className={mdClassName} />
