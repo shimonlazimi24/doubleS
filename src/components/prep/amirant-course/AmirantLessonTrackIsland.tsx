@@ -22,16 +22,16 @@ export function AmirantLessonTrackIsland({ lessonId, lessonTitle, className }: P
   return (
     <div className={cn("flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end", className)}>
       {done ? (
-        <Text as="p" variant="caption" className="text-emerald-800">
-          שיעור הושלם
+        <Text as="p" variant="caption" className="whitespace-nowrap font-medium text-emerald-700">
+          ✓ הושלם
         </Text>
       ) : (
         <button
           type="button"
           onClick={() => markLessonCompleted(lessonId)}
-          className="rounded-full border border-primary/50 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary"
+          className="whitespace-nowrap rounded-full border border-line/80 bg-white px-3.5 py-1.5 text-xs font-medium text-slate-600 transition hover:border-primary/40 hover:text-primary"
         >
-          סימון שיעור כהושלם
+          סימון כהושלם
         </button>
       )}
       <span className="sr-only">{lessonTitle}</span>

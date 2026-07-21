@@ -253,7 +253,9 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         </Link>
       </nav>
 
-      {cmsVideoUrl || hit.lesson.videoPath || hit.lesson.videoSlot ? (
+      {/* וידאו רק כשהוא קיים באמת - פס "בקרוב" על כל שיעור הוא הבטחה ריקה,
+          לא פרימיום (DESIGN_GUIDELINES: any element with no functional purpose) */}
+      {cmsVideoUrl || hit.lesson.videoPath ? (
         <div className="mt-6">
           <AmirantVideoEmbed
             src={cmsVideoUrl ?? hit.lesson.videoPath ?? null}

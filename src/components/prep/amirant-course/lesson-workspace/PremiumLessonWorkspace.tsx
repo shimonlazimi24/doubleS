@@ -228,17 +228,18 @@ export function PremiumLessonWorkspace({
                   </span>
                 </button>
               </div>
-              <LessonHeader
-                className="mb-1 sm:mb-1.5"
-                kindLabel={kindLabel}
-                title={title}
-                totalSteps={n}
-                activeIndex={activeIndex}
-                progressPercent={progressPercent}
-                reducedMotion={prefersReducedMotion}
-              />
-              <div className="mb-1.5 flex justify-end sm:mb-2">
-                <AmirantLessonTrackIsland lessonId={lessonId} lessonTitle={title} className="w-full sm:w-auto" />
+              {/* הדר דחוס: כותרת + סימון-הושלם בשורה אחת - פחות כרום לפני התוכן */}
+              <div className="mb-1.5 flex items-start justify-between gap-3 sm:mb-2">
+                <LessonHeader
+                  className="min-w-0 flex-1"
+                  kindLabel={kindLabel}
+                  title={title}
+                  totalSteps={n}
+                  activeIndex={activeIndex}
+                  progressPercent={progressPercent}
+                  reducedMotion={prefersReducedMotion}
+                />
+                <AmirantLessonTrackIsland lessonId={lessonId} lessonTitle={title} className="mt-1.5 shrink-0" />
               </div>
               <LessonMobileStepper
                 className="mb-1.5 max-lg:mt-0 lg:mb-2"

@@ -30,12 +30,8 @@ export function VocabularyPackageOverview({ rows, fallback, className }: Vocabul
       </div>
     );
   }
-  if (fallback) {
-    return (
-      <div className={cn("grid gap-2 sm:grid-cols-2", className)}>
-        <VocabularyStatCard label="מילים בשיעור" value={String(fallback.wordCount)} />
-      </div>
-    );
-  }
+  // בלי טבלת מבנה אמיתית אין מה להציג - כרטיס "מילים בשיעור" משכפל את שורת המטא
+  // שכבר מציגה את מספר המילים (DESIGN_GUIDELINES: אין כרטיס לכל סטטיסטיקה).
+  void fallback;
   return null;
 }

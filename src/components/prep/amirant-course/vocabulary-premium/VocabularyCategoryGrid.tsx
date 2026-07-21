@@ -2,7 +2,6 @@
 
 import type { VocabularyCategory } from "@/lib/amirant-course/vocabulary/vocabulary-word-model";
 import { cn } from "@/lib/design-system/cn";
-import { VocabularyCategoryCard } from "./VocabularyCategoryCard";
 
 export type VocabularyCategoryGridProps = {
   categories: VocabularyCategory[];
@@ -11,27 +10,39 @@ export type VocabularyCategoryGridProps = {
   className?: string;
 };
 
+/**
+ * שורת פילטרים קומפקטית במקום גריד כרטיסים (DESIGN_GUIDELINES: cards רק לאובייקט
+ * עצמאי משמעותי). קטגוריות ריקות - כותרות סקשן מהמקור, לא פילטר - לא מוצגות.
+ */
 export function VocabularyCategoryGrid({ categories, selectedId, onSelect, className }: VocabularyCategoryGridProps) {
-  if (categories.length <= 1) return null;
+  const real = categories.filter((c) => c.count > 0);
+  if (real.length <= 1) return null;
+  const total = real.reduce((s, c) => s + c.count, 0);
+
+  const pill = (selected: boolean) =>
+    cn(
+      "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 text-sm transition",
+      selected
+        ? "border-[#0f2347] bg-[#0f2347] font-semibold text-white"
+        : "border-line/80 bg-white text-slate-700 hover:border-primary/40 hover:text-primary",
+    );
 
   return (
-    <div className={cn("space-y-2 [direction:rtl] [text-align:start]", className)}>
-      <p className="text-xs font-semibold uppercase tracking-wide text-sky-900/85">סינון לפי קטגוריה</p>
-      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        <VocabularyCategoryCard
-          title="הכל"
-          count={categories.reduce((s, c) => s + c.count, 0)}
-          selected={selectedId === "all"}
-          onSelect={() => onSelect("all")}
-        />
-        {categories.map((c) => (
-          <VocabularyCategoryCard
-            key={c.id}
-            title={c.title}
-            count={c.count}
-            selected={selectedId === c.id}
-            onSelect={() => onSelect(c.id)}
-          />
+    <div className={cn("[direction:rtl] [text-align:start]", className)} role="group" aria-label="סינון לפי קטגוריה">
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="button" className={pill(selectedId === "all")} onClick={() => onSelect("all")}>
+          הכל
+          <span className={cn("tabular-nums text-xs", selectedId === "all" ? "text-white/80" : "text-slate-400")}>
+            {total}
+          </span>
+        </button>
+        {real.map((c) => (
+          <button key={c.id} type="button" className={pill(selectedId === c.id)} onClick={() => onSelect(c.id)}>
+            {c.title.replace(/^[^֐-׿A-Za-z0-9]+\s*/, "").replace(/:\s*$/, "")}
+            <span className={cn("tabular-nums text-xs", selectedId === c.id ? "text-white/80" : "text-slate-400")}>
+              {c.count}
+            </span>
+          </button>
         ))}
       </div>
     </div>
