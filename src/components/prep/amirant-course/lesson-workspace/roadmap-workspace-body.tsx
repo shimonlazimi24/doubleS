@@ -59,33 +59,43 @@ function RoadmapTableTaskRow({ r, isLast }: { r: RoadmapTableRow; isLast: boolea
   );
 }
 
+/** טבלה קומפקטית אחת במקום כרטיס-לכל-שבוע (משוב: "כרטיסיות" מנפחות עמוד בלי מידע). */
 function RoadmapTrackingCards({ payload }: { payload: RoadmapStepPayload["tracking"] }) {
   if (!payload?.rows?.length) return null;
   const headers = payload.headers ?? [];
   return (
     <div className="space-y-3 [direction:rtl] [text-align:start]">
       <h3 className={amirantPremiumTypo.sectionTitle}>מעקב אישי</h3>
-      <ul className="space-y-2" role="list" aria-label="מעקב אישי">
-        {payload.rows.map((row, ri) => (
-          <li
-            key={ri}
-            className="rounded-2xl border border-stone-200/80 bg-stone-50/30 p-3.5 sm:p-4"
-            role="listitem"
-          >
-            <div className="grid gap-3 [grid-template-columns:repeat(auto-fit,minmax(7rem,1fr))]">
-              {row.map((cell, ci) => {
-                const label = headers[ci] ?? `עמודה ${ci + 1}`;
-                return (
-                  <div key={ci} className="min-w-0 [text-align:start]">
-                    <p className="text-xs font-medium uppercase tracking-wide text-sky-800/85 [text-align:start]">{label}</p>
-                    <p className="mt-0.5 text-base leading-7 text-slate-800 [text-wrap:pretty] sm:text-lg sm:leading-8">{cell}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="overflow-x-auto rounded-2xl border border-stone-200/80 bg-white">
+        <table className="w-full border-collapse text-sm [direction:rtl]" aria-label="מעקב אישי">
+          <thead className="bg-stone-50/80">
+            <tr>
+              {headers.map((h, i) => (
+                <th
+                  key={i}
+                  className="border-b border-stone-200/70 px-3 py-2 text-start font-semibold text-slate-700"
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {payload.rows.map((row, ri) => (
+              <tr key={ri} className="odd:bg-white even:bg-stone-50/40">
+                {row.map((cell, ci) => (
+                  <td
+                    key={ci}
+                    className="border-b border-stone-100 px-3 py-2 text-start align-top leading-6 text-slate-800 last:border-b-0"
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

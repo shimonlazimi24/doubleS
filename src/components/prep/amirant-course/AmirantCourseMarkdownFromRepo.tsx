@@ -12,6 +12,25 @@ type Props = {
   body: string;
 };
 
+/** טקסט גולמי מתוך עץ ReactNode (מספיק לספירת תווים; לא לרינדור). */
+function nodeToText(node: unknown): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(nodeToText).join("");
+  if (typeof node === "object" && "props" in (node as Record<string, unknown>)) {
+    return nodeToText((node as { props?: { children?: unknown } }).props?.children);
+  }
+  return "";
+}
+
+/** גדר קוד שתוכנה בעיקר עברית - מרונדרת RTL כ"דף עבודה" ולא כקוד LTR. */
+export function isHebrewDominantNode(children: unknown): boolean {
+  const text = nodeToText(children);
+  const hebrew = (text.match(/[א-ת]/g) ?? []).length;
+  const latin = (text.match(/[A-Za-z]/g) ?? []).length;
+  return hebrew > 5 && hebrew > latin;
+}
+
 export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   h1: ({ children }) => (
     <h2 className="mb-3 mt-8 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
@@ -49,9 +68,20 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
       </code>
     );
   },
-  pre: ({ children }) => (
-    <pre className="mb-4 overflow-x-auto whitespace-pre-wrap [overflow-wrap:anywhere] rounded-surface border border-line/50 bg-ink/95 p-3 shadow-inner [direction:ltr] [text-align:left]">{children}</pre>
-  ),
+  pre: ({ children }) => {
+    if (isHebrewDominantNode(children)) {
+      // גדר שרובה עברית = "דף עבודה" (טבלת זמנים, גיליון מעקב) - RTL בקופסה בהירה,
+      // לא בלוק קוד כהה LTR שהופך את העברית לג'יבריש מיושר שמאלה.
+      return (
+        <pre className="mb-4 whitespace-pre-wrap rounded-surface border border-line/60 bg-surface-low/60 p-3 font-sans text-sm leading-relaxed text-ink [direction:rtl] [text-align:right] [overflow-wrap:anywhere]">
+          {children}
+        </pre>
+      );
+    }
+    return (
+      <pre className="mb-4 overflow-x-auto whitespace-pre-wrap [overflow-wrap:anywhere] rounded-surface border border-line/50 bg-ink/95 p-3 shadow-inner [direction:ltr] [text-align:left]">{children}</pre>
+    );
+  },
   table: ({ children }) => (
     <div className="my-4 overflow-x-auto rounded-surface border border-line/80">
       <table className="w-full min-w-[16rem] border-collapse text-sm">{children}</table>

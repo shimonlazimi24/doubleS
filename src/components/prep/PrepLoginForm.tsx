@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { getPrepSupabasePublishableEnv } from "@/lib/prep/supabase/env";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
@@ -28,11 +28,26 @@ function safeReturnPath(raw: string | null): string {
 }
 
 export function PrepLoginForm() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const returnTo = useMemo(
     () => safeReturnPath(searchParams.get("returnTo") ?? searchParams.get("next")),
     [searchParams],
   );
+
+  // כבר מחוברים? (קורה כשה-error בכתובת ישן מהחלפה כפולה) - ישר פנימה,
+  // לא משאירים משתמש מחובר מול מסך התחברות עם אזהרה מבלבלת.
+  useEffect(() => {
+    let cancelled = false;
+    const client = createPrepSupabaseBrowserClient();
+    if (!client) return;
+    void client.auth.getUser().then(({ data: { user } }) => {
+      if (!cancelled && user) router.replace(returnTo);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [router, returnTo]);
   const errorKey = searchParams.get("error");
   const errorDetail = searchParams.get("detail");
   const [email, setEmail] = useState("");

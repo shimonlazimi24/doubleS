@@ -237,10 +237,11 @@ export function PremiumLessonWorkspace({
                 onSelect={selectStep}
               />
               <div className="min-w-0 space-y-3 [direction:rtl] sm:space-y-3.5">
+                {/* גובה מינימלי לצעד: הבא/הקודם נשארים באותו אזור בין שקופית קצרה לארוכה */}
                 <div
                   ref={stepBlockRef}
                   id="amirant-step-viewport"
-                  className="min-w-0 scroll-mt-4"
+                  className="min-w-0 scroll-mt-4 min-h-[46vh] sm:min-h-[52vh]"
                 >
                   <div
                     key={`${lessonId}-${activeIndex}`}
@@ -252,15 +253,17 @@ export function PremiumLessonWorkspace({
                     {mainInner}
                   </div>
                 </div>
-                <LessonNavigationFooter
-                  className="mt-2 sm:mt-3"
-                  canPrev={canPrev}
-                  canNext={canNext}
-                  isLast={isLast}
-                  onPrev={prev}
-                  onNext={next}
-                  practiceHref={practiceHref}
-                />
+                {/* בשקופית ארוכה הפוטר נדבק לתחתית המסך - הכפתורים תמיד באותו מקום */}
+                <div className="sticky bottom-0 z-10 -mx-1 bg-gradient-to-t from-[#f8f8f7] via-[#f8f8f7]/95 to-transparent px-1 pb-2 pt-3">
+                  <LessonNavigationFooter
+                    canPrev={canPrev}
+                    canNext={canNext}
+                    isLast={isLast}
+                    onPrev={prev}
+                    onNext={next}
+                    practiceHref={practiceHref}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -325,7 +328,8 @@ function renderStepBody(p: RenderParams) {
   if (p.mode === "vocab" && c.id === "ws-vocab" && p.vocabData) {
     return (
       <LessonStepContent kind="explanation" className="!min-h-0">
-        <div className="overflow-hidden rounded-xl border border-gray-200/80 bg-white [direction:rtl]">
+        {/* בלי מסגרת עוטפת - חוויית המילים מציירת את הכרטיסים שלה בעצמה (משוב: כרטיסייה-בתוך-כרטיסייה) */}
+        <div className="[direction:rtl]">
           <VocabularyLessonExperience
             data={p.vocabData}
             lessonId={p.lessonId}

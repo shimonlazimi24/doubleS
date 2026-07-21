@@ -1,6 +1,9 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { AMIRANT_COURSE_MD_COMPONENTS } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
+import {
+  AMIRANT_COURSE_MD_COMPONENTS,
+  isHebrewDominantNode,
+} from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import type { Components } from "react-markdown";
 import { cn } from "@/lib/design-system/cn";
 import { stripHtmlAnchorNoise } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
@@ -73,18 +76,24 @@ const cardCompact: Components = {
   h3: ({ children }) => <h4 className="mb-1 mt-2 text-xs font-semibold text-slate-800">{children}</h4>,
   h4: AMIRANT_COURSE_MD_COMPONENTS.h4!,
   blockquote: ({ children }) => (
-    <blockquote className="mb-2.5 max-h-36 overflow-y-auto border-s-2 border-slate-200/80 ps-3 text-sm leading-[1.5] text-slate-700 [overflow-wrap:anywhere]">
+    <blockquote className="mb-2.5 border-s-2 border-slate-200/80 ps-3 text-sm leading-[1.5] text-slate-700 [overflow-wrap:anywhere]">
       {children}
     </blockquote>
   ),
-  pre: ({ children }) => (
-    <pre className="mb-2.5 max-h-72 min-w-0 max-w-full overflow-y-auto whitespace-pre-wrap rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 text-start text-xs leading-relaxed text-slate-800 [direction:ltr] [overflow-wrap:anywhere] sm:text-xs">
-      {children}
-    </pre>
-  ),
+  pre: ({ children }) =>
+    isHebrewDominantNode(children) ? (
+      <pre className="mb-2.5 min-w-0 max-w-full whitespace-pre-wrap rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 font-sans text-sm leading-relaxed text-slate-800 [direction:rtl] [text-align:right] [overflow-wrap:anywhere]">
+        {children}
+      </pre>
+    ) : (
+      <pre className="mb-2.5 max-h-72 min-w-0 max-w-full overflow-y-auto whitespace-pre-wrap rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 text-start text-xs leading-relaxed text-slate-800 [direction:ltr] [overflow-wrap:anywhere] sm:text-xs">
+        {children}
+      </pre>
+    ),
   code: AMIRANT_COURSE_MD_COMPONENTS.code!,
   table: ({ children }) => (
-    <div className="mb-2.5 max-h-44 max-w-full overflow-auto rounded-md border border-slate-200/60 [direction:ltr] sm:max-h-48">
+    // בלי תקרת גובה - טבלה קטומה באמצע שורה גרועה מטבלה ארוכה (משוב: "תעודת הזהות" נחתכה)
+    <div className="mb-2.5 max-w-full overflow-x-auto rounded-md border border-slate-200/60 [direction:ltr]">
       <table className="w-full min-w-0 text-xs text-slate-800">{children}</table>
     </div>
   ),
@@ -131,7 +140,7 @@ const lessonProse: Components = {
   pre: AMIRANT_COURSE_MD_COMPONENTS.pre!,
   code: AMIRANT_COURSE_MD_COMPONENTS.code!,
   table: ({ children }) => (
-    <div className="mb-3 max-h-48 max-w-[65ch] overflow-auto rounded-2xl border border-stone-200/70 [direction:ltr]">
+    <div className="mb-3 max-w-[65ch] overflow-x-auto rounded-2xl border border-stone-200/70 [direction:ltr]">
       <table className="w-full min-w-0 text-sm text-slate-800">{children}</table>
     </div>
   ),

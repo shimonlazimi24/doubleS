@@ -62,6 +62,18 @@ export function PrepAuthCompleteClient() {
       const type = searchParams.get("type");
 
       try {
+        // detectSessionInUrl כבר מחליף ?code= אוטומטית ביצירת הקליינט; אם יש כבר
+        // סשן - ההתחברות הצליחה, וקריאה ידנית נוספת רק תיכשל על code שנוצל.
+        {
+          const {
+            data: { session: existing },
+          } = await client.auth.getSession();
+          if (existing) {
+            if (!cancelled) router.replace(next);
+            return;
+          }
+        }
+
         const hashTokens = readHashSession();
         if (hashTokens) {
           const { error } = await client.auth.setSession(hashTokens);
@@ -84,14 +96,21 @@ export function PrepAuthCompleteClient() {
         } else if (code) {
           const { error } = await client.auth.exchangeCodeForSession(code);
           if (error) {
-            const hashRetry = readHashSession();
-            if (hashRetry) {
-              const { error: hashErr } = await client.auth.setSession(hashRetry);
-              if (hashErr) throw hashErr;
-            } else if (isPkceMismatch(error)) {
-              throw new Error("pkce_mismatch");
-            } else {
-              throw error;
+            // ייתכן שההחלפה האוטומטית (detectSessionInUrl) הספיקה לרוץ במקביל
+            // והקוד "נוצל" בהצלחה - סשן קיים פירושו שההתחברות דווקא הצליחה.
+            const {
+              data: { session: raced },
+            } = await client.auth.getSession();
+            if (!raced) {
+              const hashRetry = readHashSession();
+              if (hashRetry) {
+                const { error: hashErr } = await client.auth.setSession(hashRetry);
+                if (hashErr) throw hashErr;
+              } else if (isPkceMismatch(error)) {
+                throw new Error("pkce_mismatch");
+              } else {
+                throw error;
+              }
             }
           }
         } else {

@@ -10,8 +10,9 @@ import {
   defaultFirstSimulation,
   getCourseProgressMeta,
   getFirstIncompleteLesson,
-  withNextBestActionEnrichmentFromEnv,
+  withNextBestActionEnrichment,
 } from "./next-best-action";
+import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { loadSupabaseAmirantProgressState } from "./progress";
 import type { NextBestActionEnriched } from "./next-best-action";
 
@@ -289,9 +290,12 @@ export async function loadStudentDashboardData(
     firstSimulation: firstSim,
     weakestTopicPractice: buildWeakestTopicPractice(weakNba.length ? weakNba : nbaRows, COURSE_HREF),
   };
-  const recommendedNextAction: NextBestActionEnriched = withNextBestActionEnrichmentFromEnv(
+  // הזכאות האמיתית (course_entitlements) - לא דגל env: משלם לא יקבל CTA לתשלום.
+  const hasFullAccess = await hasAmirantFullAccess(client, userId);
+  const recommendedNextAction: NextBestActionEnriched = withNextBestActionEnrichment(
     computeNextBestAction(nbaContext),
     nbaContext,
+    { hasFullAccess },
   );
 
   const recentQuizAttempts = [...attemptRows]
