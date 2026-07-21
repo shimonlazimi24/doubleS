@@ -23,11 +23,12 @@ function AccuracyBar({ accuracy }: { accuracy: number }) {
   );
 }
 
+/** תא בתוך רצועת סטטים אחת - לא כרטיס נפרד לכל מספר (DESIGN_GUIDELINES: cards). */
 function StatChip({ value, label }: { value: string; label: string }) {
   return (
-    <div className="flex flex-col items-center rounded-xl border border-[#d6deec] bg-white px-4 py-4 text-center shadow-sm">
+    <div className="flex flex-col items-center px-4 py-3.5 text-center">
       <p className="font-display text-2xl font-bold tabular-nums text-[#0f1e3d]">{value}</p>
-      <p className="mt-1 text-xs leading-snug text-[#5a6480]">{label}</p>
+      <p className="mt-0.5 text-xs leading-snug text-[#5a6480]">{label}</p>
     </div>
   );
 }
@@ -69,7 +70,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#b88a2f]">
             ביצועים
           </p>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 divide-x divide-x-reverse divide-[#e8eef7] rounded-2xl border border-[#d6deec] bg-white shadow-sm [direction:rtl]">
             <StatChip
               value={`${data.accuracyOverTime.at(-1)?.accuracyPct ?? 0}%`}
               label="דיוק אחרון"
@@ -117,11 +118,12 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-[#b88a2f]">
             רמה לפי נושא
           </p>
-          <div className="grid gap-3 sm:grid-cols-2">
+          {/* שורות עם קו מפריד במקום קופסה-בתוך-כרטיס */}
+          <div className="divide-y divide-[#eef2f9]">
             {data.currentLevelByTopic.map((row) => (
               <div
                 key={row.topic}
-                className="flex items-center justify-between rounded-xl border border-[#e8eef7] bg-[#f8faff] px-4 py-3"
+                className="flex items-center justify-between px-1 py-3 first:pt-0 last:pb-0"
               >
                 <span className="text-sm font-medium text-[#0f1e3d]">{row.topicLabel}</span>
                 <div className="flex items-center gap-2">
