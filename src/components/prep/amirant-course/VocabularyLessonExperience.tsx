@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { VocabParseResult } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
+import type { VocabularyLevel } from "@/lib/amirant-course/vocabulary/vocabulary-word-model";
 import { buildVocabularyLessonModel, wordsToFlashPairs } from "@/lib/amirant-course/vocabulary/vocabulary-word-model";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardTitle, Heading, Text } from "@/components/ui";
@@ -9,6 +10,13 @@ import { cn } from "@/lib/design-system/cn";
 import { VocabularyLessonShell } from "./vocabulary-premium/VocabularyLessonShell";
 
 type TabId = "read" | "flash" | "memory";
+
+const LEVEL_HE: Record<VocabularyLevel, string> = {
+  easy: "קל",
+  intermediate: "בינוני",
+  advanced: "מתקדמים",
+  expert: "מומחה",
+};
 
 type FlashPair = { word: string; translation: string; id: number };
 
@@ -265,35 +273,44 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
     return null;
   }
 
+  const metaLine = [
+    `רמה: ${LEVEL_HE[model.level]}`,
+    `${model.wordCount} מילים`,
+    estimatedMinutes != null ? `~${estimatedMinutes} דק׳` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <div className="mt-2 space-y-4 [direction:rtl]">
-      <div className="inline-flex w-full max-w-2xl flex-col gap-1 rounded-2xl border border-stone-200/85 bg-stone-50/40 p-1.5 sm:inline-flex sm:flex-row sm:items-stretch sm:gap-0">
-        {(
-          [
-            { id: "read" as const, label: "למידה" },
-            { id: "flash" as const, label: "כרטיסיות" },
-            { id: "memory" as const, label: "התאמות" },
-          ] as const
-        ).map((t) => (
-          <button
-            key={t.id}
-            type="button"
-            onClick={() => setTab(t.id)}
-            className={cn(
-              "w-full min-h-[2.5rem] rounded-xl px-4 py-2.5 text-sm font-semibold transition",
-              tab === t.id
-                ? "bg-[#0f2347] text-white shadow-sm"
-                : "text-[#0f2347]/85 hover:bg-white/90 hover:text-[#0f2347]",
-            )}
-          >
-            {t.label}
-          </button>
-        ))}
+      <div className="space-y-2">
+        {/* בורר מצב קומפקטי - בלי כרטיס עוטף (DESIGN_GUIDELINES: אין קופסה בלי תפקיד) */}
+        <div className="inline-flex items-center rounded-full bg-stone-100/80 p-1" role="group" aria-label="אופן התרגול">
+          {(
+            [
+              { id: "read" as const, label: "למידה" },
+              { id: "flash" as const, label: "כרטיסיות" },
+              { id: "memory" as const, label: "התאמות" },
+            ] as const
+          ).map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setTab(t.id)}
+              aria-pressed={tab === t.id}
+              className={cn(
+                "min-h-9 rounded-full px-4 text-sm font-semibold transition",
+                tab === t.id ? "bg-[#0f2347] text-white shadow-sm" : "text-slate-600 hover:text-[#0f2347]",
+              )}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <p className="text-sm text-slate-500">{metaLine}</p>
       </div>
 
-      {tab === "read" ? (
-        <VocabularyLessonShell lessonTitle={title} model={model} estimatedMinutes={estimatedMinutes} />
-      ) : null}
+      {tab === "read" ? <VocabularyLessonShell model={model} /> : null}
       {tab === "flash" ? (
         <Card className="border-stone-200/85" padding="none">
           <CardBody className="space-y-2 p-4 sm:p-6">

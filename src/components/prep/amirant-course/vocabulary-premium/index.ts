@@ -6,8 +6,6 @@ export { VocabularyCategoryCard } from "./VocabularyCategoryCard";
 export { WordLearningDeck } from "./WordLearningDeck";
 export type { DeckMetrics } from "./WordLearningDeck";
 export { WordCard } from "./WordCard";
-export { WordCardTabs } from "./WordCardTabs";
-export type { WordCardTabId } from "./WordCardTabs";
 export { WordExampleBlock } from "./WordExampleBlock";
 export { WordMemoryTip } from "./WordMemoryTip";
 export { VocabularyProgressBar } from "./VocabularyProgressBar";
