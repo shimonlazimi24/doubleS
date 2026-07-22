@@ -38,7 +38,12 @@ export function VocabularyCategoryGrid({ categories, selectedId, onSelect, class
         </button>
         {real.map((c) => (
           <button key={c.id} type="button" className={pill(selectedId === c.id)} onClick={() => onSelect(c.id)}>
-            {c.title.replace(/^[^֐-׿A-Za-z0-9]+\s*/, "").replace(/:\s*$/, "")}
+            {c.title
+              .replace(/^[^֐-׿A-Za-z0-9]+\s*/, "")
+              .replace(/^Section\s+[A-Z]\d+\s*[:.-]\s*/i, "") // קידומת טכנית מכותרת המקור
+              .replace(/\s*\(\d+\s*[-–]\s*\d+\)\s*/g, " ") // טווחי (1-30) - הספירה כבר בפיל
+              .replace(/:\s*$/, "")
+              .trim()}
             <span className={cn("tabular-nums text-xs", selectedId === c.id ? "text-white/80" : "text-slate-400")}>
               {c.count}
             </span>
