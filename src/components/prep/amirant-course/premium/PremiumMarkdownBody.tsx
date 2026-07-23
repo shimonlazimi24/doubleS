@@ -79,7 +79,7 @@ const cardCompact: Components = {
   blockquote: ({ children }) =>
     isLatinDominantNode(children) ? (
       // ציטוט/קטע אנגלי: LTR ויישור שמאל - אחרת הפיסוק קופץ לתחילת השורה
-      <blockquote className="mb-2.5 max-w-none border-s border-slate-300/90 py-0.5 ps-3 pe-2 text-sm leading-[1.65] text-slate-700 [direction:ltr] [text-align:left] [overflow-wrap:anywhere]">
+      <blockquote className="mb-2.5 max-w-none py-0.5 text-sm leading-[1.65] text-slate-700 [direction:ltr] [text-align:left] [overflow-wrap:anywhere]">
         {children}
       </blockquote>
     ) : (
@@ -144,7 +144,7 @@ const lessonProse: Components = {
       // קטע קריאה אנגלי (הבנת הנקרא): פאנל קריאה רגוע במקום כרטיס צבעוני -
       // LTR + יישור שמאל (הפיסוק נשבר בירושת RTL), רקע לבן-כמעט, קו-שיער שמאלי,
       // ריווח שורות נדיב ורוחב מלא של העמודה.
-      <blockquote className="mb-3 max-w-none border-s border-stone-300/90 bg-stone-50/50 py-2 pe-3 ps-5 text-slate-800 [direction:ltr] [text-align:left] sm:ps-6 [&_li]:max-w-none [&_ol]:max-w-none [&_p]:max-w-none [&_p]:leading-[1.9] [&_ul]:max-w-none">
+      <blockquote className="mb-3 max-w-none py-1 text-slate-800 [direction:ltr] [text-align:left] [&_li]:max-w-none [&_ol]:max-w-none [&_p]:max-w-none [&_p]:leading-[1.9] [&_ul]:max-w-none">
         {children}
       </blockquote>
     ) : (

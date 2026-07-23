@@ -47,7 +47,7 @@ export function LessonBlockCard({
   const mdVariant = isFlat ? "lesson" : "card";
 
   // "הסבר" על כל שקופית = רעש; בשטוח מציגים תווית רק כשהיא נושאת מידע (טיפ/אזהרה/דוגמה).
-  const showVariantLabel = !isFlat || (variant !== "explanation" && variant !== "insight");
+  const showVariantLabel = !isFlat || variant === "tip" || variant === "warning" || variant === "common-mistake";
 
   const inner = (
     <>

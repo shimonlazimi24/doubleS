@@ -56,7 +56,7 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   blockquote: ({ children }) =>
     isLatinDominantNode(children) ? (
       // קטע אנגלי (הבנת הנקרא): פאנל קריאה שקט - LTR, יישור שמאל, קו-שיער בצד שמאל
-      <blockquote className="my-4 max-w-none border-s border-stone-300/90 bg-white py-1 ps-4 pe-2 leading-[1.8] text-ink [direction:ltr] [text-align:left] [&>p:last-child]:mb-0">
+      <blockquote className="my-4 max-w-none py-1 leading-[1.8] text-ink [direction:ltr] [text-align:left] [&>p:last-child]:mb-0">
         {children}
       </blockquote>
     ) : (
