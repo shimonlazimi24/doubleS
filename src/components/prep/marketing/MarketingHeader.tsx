@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BrandWordmark } from "@/components/prep/marketing/BrandWordmark";
+import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { MarketingNav } from "@/components/prep/marketing/MarketingNav";
 import { Container } from "@/components/ui";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -23,7 +23,7 @@ export function MarketingHeader() {
           className="shrink-0 transition-opacity hover:opacity-85"
           aria-label="PREPARE - דף הבית"
         >
-          <BrandWordmark size="sm" showEnLine={false} />
+          <PrepBrandLogo size="nav" />
         </Link>
         <MarketingNav />
       </Container>

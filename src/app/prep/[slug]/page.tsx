@@ -16,8 +16,6 @@ import {
   SUPPORT_EMAIL,
   type MarketingPageContent,
 } from "@/lib/prep/marketing-pages";
-import { MARKETING_HERO } from "@/lib/prep/marketing/content";
-import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
 import { Container, Heading, Text } from "@/components/ui";
 
 type Props = { params: { slug: string } };
@@ -83,8 +81,6 @@ function StructuredMarketingPage({ title, content }: { title: string; content: M
       </div>
 
       <Container max="readable" className="py-10 md:py-14">
-        {content.stats ? <TrustIndicators items={MARKETING_HERO.trust} className="mb-10 border-t-0 pt-0" /> : null}
-
         <div className="space-y-9">
           {content.sections.map((section, i) => (
             <section key={section.heading ?? i}>
@@ -129,6 +125,10 @@ export default function PrepMarketingPage({ params }: Props) {
   }
   if (slug === "pricing") {
     redirect(`${PREP_BASE}/pricing`);
+  }
+  if (slug === "about") {
+    // עמוד ייעודי - src/app/prep/about (עריכתי, עם פס נתונים וסקשן שיטה)
+    redirect(`${PREP_BASE}/about`);
   }
 
   const title = PREP_MARKETING_TITLES[slug];

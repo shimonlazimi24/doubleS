@@ -23,39 +23,15 @@ export type MarketingPageContent = {
   eyebrow: string;
   lede: string;
   sections: MarketingPageSection[];
-  /** פס הנתונים (78 שיעורים / כ-300 שאלות / 6 סימולציות / AI) - עמוד אודות */
-  stats?: boolean;
   /** כרטיס יצירת קשר עם כפתור mailto */
   contactCard?: boolean;
   /** privacy: תאריך עדכון אחרון */
   lastUpdated?: string;
 };
 
-/** תוכן מובנה לעמודי השיווק - מרונדר ב-src/app/prep/[slug]/page.tsx. */
+/** תוכן מובנה לעמודי השיווק - מרונדר ב-src/app/prep/[slug]/page.tsx.
+ *  «אודות» עבר לעמוד ייעודי עריכתי: src/app/prep/about/page.tsx. */
 export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPageContent>> = {
-  about: {
-    eyebrow: "מי אנחנו",
-    lede: "PREPARE נבנתה סביב עיקרון אחד: מבחן אנגלית הוא מיומנות - ומיומנות מתאמנים עליה.",
-    sections: [
-      {
-        heading: "מה בקורס ההכנה לאמירנט",
-        bullets: [
-          "עשרות שיעורים מובנים - מהיסודות ועד אסטרטגיות פתרון מתקדמות",
-          "מאות שאלות תרגול אינטראקטיביות, עם הסבר מלא על כל תשובה",
-          "סימולציות מלאות בתנאי אמת, עם טיימר לכל פרק",
-          "מבחן רמה חינמי עם ציון משוער בסולם 50–150",
-          "עוזר AI אישי בכל שיעור - רמזים, הסברים בעברית והמלצות המשך",
-        ],
-      },
-      {
-        heading: "עדכני לפורמט המבחן",
-        body: "התוכן נבנה על בסיס הפורמט העדכני של האמירנט - כולל רפורמת 2026 - ומתעדכן באופן שוטף כשהמבחן משתנה.",
-      },
-    ],
-    stats: true,
-    contactCard: true,
-  },
-
   contact: {
     eyebrow: "אנחנו כאן",
     lede: "נשמח לעזור בכל שאלה - טכנית, לימודית או בנושא רכישה.",

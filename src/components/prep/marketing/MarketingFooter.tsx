@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandWordmark } from "@/components/prep/marketing/BrandWordmark";
+import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { Container } from "@/components/ui";
 import { PREP_BRAND_LATIN, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -15,7 +15,7 @@ export function MarketingFooter() {
     <footer className="border-t border-line bg-paper">
       <Container className="flex flex-col gap-10 py-12 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
-          <BrandWordmark size="md" />
+          <PrepBrandLogo size="footer" />
           <p className="mt-4 text-sm leading-relaxed text-muted">{PREP_BRAND_TAGLINE_HE}</p>
         </div>
         <nav aria-label="תחתית האתר" className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted">

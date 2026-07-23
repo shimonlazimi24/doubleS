@@ -1,5 +1,4 @@
 export { AIValueSection } from "./AIValueSection";
-export { BrandWordmark } from "./BrandWordmark";
 export { CoursePreviewCard } from "./CoursePreviewCard";
 export { ProductDashboardPreview } from "./ProductDashboardPreview";
 export { TrustIndicators } from "./TrustIndicators";
