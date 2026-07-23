@@ -12,6 +12,7 @@ import { LessonKeyTakeawayClosing } from "../lesson/LessonKeyTakeawayClosing";
 import { LessonFooterCTA } from "../lesson/LessonFooterCTA";
 import { AmirantInlineQuestionsCard } from "../lesson/AmirantInlineQuestionsCard";
 import { VocabularyLessonExperience } from "../VocabularyLessonExperience";
+import { PremiumMarkdownBody } from "../premium/PremiumMarkdownBody";
 import type { VocabParseResult } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { lessonSaaS } from "../lesson/ui/lesson-saas-tokens";
 import { LessonHeader } from "../lesson/ui/LessonHeader";
@@ -75,6 +76,7 @@ export function PremiumLessonWorkspace({
   sidebarNextLesson,
 }: Props) {
   const [outlineOpen, setOutlineOpen] = useState(false);
+  const [passageOpen, setPassageOpen] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
   const stepBlockRef = useRef<HTMLDivElement>(null);
   const scrollPrevRef = useRef<{ lesson: string; step: number } | null>(null);
@@ -92,6 +94,20 @@ export function PremiumLessonWorkspace({
       document.body.style.overflow = prev;
     };
   }, [outlineOpen]);
+
+  useEffect(() => {
+    if (!passageOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPassageOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [passageOpen]);
   const steps = useMemo(
     () => buildLessonSteps(flow, { mode, lessonId, intro }),
     [flow, mode, lessonId, intro],
@@ -100,6 +116,32 @@ export function PremiumLessonWorkspace({
   const { activeIndex, completedIndices, next, prev, selectStep, progressPercent } = useWorkspaceState(lessonId, steps);
   const firstGateIndex = useMemo(() => flow.findIndex((f) => f.kind === "gate"), [flow]);
   const current: BuiltWorkspaceStep | undefined = steps[activeIndex];
+
+  // קטע קריאה מלא (הבנת הנקרא): כשיש בשיעור צעד שכותרתו מתחילה ב"הקטע", הוא נשאר
+  // זמין בכל הצעדים הבאים דרך כפתור צף + מגירה - עונים על השאלות בלי לדפדף אחורה.
+  const fullPassage = useMemo(() => {
+    if (mode !== "markdown") return null;
+    const isPassageStep = (s: BuiltWorkspaceStep): boolean =>
+      Boolean(s.card?.body?.trim()) && s.label.trim().startsWith("הקטע");
+    const first = steps.findIndex(isPassageStep);
+    if (first === -1) return null;
+    let last = first;
+    for (let i = first + 1; i < steps.length; i++) {
+      const s = steps[i];
+      if (!s || !isPassageStep(s)) break;
+      last = i;
+    }
+    const raw = steps
+      .slice(first, last + 1)
+      .map((s) => s.card?.body?.trim() ?? "")
+      .filter(Boolean)
+      .join("\n\n");
+    const label = steps[first]?.label ?? "";
+    const body = (stripLeadingDuplicateSectionHeading(raw, label) ?? raw).trim();
+    if (!body) return null;
+    return { lastStepIndex: last, body };
+  }, [mode, steps]);
+  const showPassagePill = fullPassage != null && activeIndex > fullPassage.lastStepIndex;
   const { markLessonCompleted } = useAmirantCourseProgress();
 
   // הגעה לשלב האחרון = השיעור הושלם. בלי זה ההתקדמות זזה רק בלחיצה ידנית על
@@ -202,6 +244,55 @@ export function PremiumLessonWorkspace({
                 onRequestClose={() => setOutlineOpen(false)}
                 className="h-full max-h-[100dvh]"
               />
+            </div>
+          </div>
+        ) : null}
+
+        {/* כפתור צף "הקטע המלא" - רק אחרי שעברו את צעד הקטע; מעל הניווט הדביק, מתחת למגירות */}
+        {showPassagePill ? (
+          <button
+            type="button"
+            onClick={() => setPassageOpen(true)}
+            className="fixed bottom-20 start-3 z-30 inline-flex min-h-10 items-center rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-md backdrop-blur-sm transition hover:border-[#0f2347]/25 sm:start-5"
+            aria-haspopup="dialog"
+            aria-expanded={passageOpen}
+          >
+            הקטע המלא
+          </button>
+        ) : null}
+
+        {passageOpen && fullPassage ? (
+          <div
+            className="fixed inset-0 z-40"
+            role="dialog"
+            aria-modal="true"
+            aria-label="הקטע המלא"
+            dir="rtl"
+            lang="he"
+          >
+            <button
+              type="button"
+              className="absolute inset-0 bg-black/50 backdrop-blur-[1px]"
+              aria-label="סגור"
+              onClick={() => setPassageOpen(false)}
+            />
+            <div className="absolute start-0 top-0 flex h-full w-[min(100%,30rem)] max-w-full flex-col bg-white shadow-2xl">
+              <div className="flex shrink-0 items-center justify-between border-b border-stone-200/80 bg-white/90 px-4 py-2.5 sm:px-5">
+                <h2 className="text-sm font-semibold text-[#0f2347]">הקטע המלא</h2>
+                <button
+                  type="button"
+                  onClick={() => setPassageOpen(false)}
+                  className="flex h-9 min-w-9 items-center justify-center rounded-lg text-slate-500 transition hover:bg-stone-100 hover:text-sky-900"
+                  aria-label="סגור"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 6L6 18M6 6l12 12" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 [-webkit-overflow-scrolling:touch] sm:px-5 sm:py-5">
+                <PremiumMarkdownBody body={fullPassage.body} variant="lesson" />
+              </div>
             </div>
           </div>
         ) : null}

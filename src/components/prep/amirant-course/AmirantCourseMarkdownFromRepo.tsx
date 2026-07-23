@@ -31,6 +31,17 @@ export function isHebrewDominantNode(children: unknown): boolean {
   return hebrew > 5 && hebrew > latin;
 }
 
+/**
+ * ההופכי: בלוק שרובו אנגלית (קטע קריאה של הבנת הנקרא) - חייב LTR ויישור שמאל.
+ * בירושת RTL מהעמוד סימני פיסוק "קופצים" לתחילת השורה (".social isolation").
+ */
+export function isLatinDominantNode(children: unknown): boolean {
+  const text = nodeToText(children);
+  const hebrew = (text.match(/[א-ת]/g) ?? []).length;
+  const latin = (text.match(/[A-Za-z]/g) ?? []).length;
+  return latin > 5 && latin > hebrew;
+}
+
 export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   h1: ({ children }) => (
     <h2 className="mb-3 mt-8 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
@@ -42,11 +53,17 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   ul: ({ children }) => <ul className="mb-3 list-disc space-y-1 pr-6 text-ink marker:text-primary/80">{children}</ul>,
   ol: ({ children }) => <ol className="mb-3 list-decimal space-y-1 pr-6 text-ink marker:font-medium">{children}</ol>,
   li: ({ children }) => <li className="leading-relaxed">{children}</li>,
-  blockquote: ({ children }) => (
-    <blockquote className="my-4 border-s-4 border-primary/35 bg-primary/[0.04] py-2 ps-4 pe-2 text-ink [&>p]:mb-0">
-      {children}
-    </blockquote>
-  ),
+  blockquote: ({ children }) =>
+    isLatinDominantNode(children) ? (
+      // קטע אנגלי (הבנת הנקרא): פאנל קריאה שקט - LTR, יישור שמאל, קו-שיער בצד שמאל
+      <blockquote className="my-4 max-w-none border-s border-stone-300/90 bg-white py-1 ps-4 pe-2 leading-[1.8] text-ink [direction:ltr] [text-align:left] [&>p:last-child]:mb-0">
+        {children}
+      </blockquote>
+    ) : (
+      <blockquote className="my-4 border-s-4 border-primary/35 bg-primary/[0.04] py-2 ps-4 pe-2 text-ink [&>p]:mb-0">
+        {children}
+      </blockquote>
+    ),
   hr: () => <hr className="my-6 border-line/80" />,
   a: ({ href, children }) => (
     <a href={href} className="font-medium text-primary underline-offset-2 hover:underline" target={href?.startsWith("http") ? "_blank" : undefined} rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}>

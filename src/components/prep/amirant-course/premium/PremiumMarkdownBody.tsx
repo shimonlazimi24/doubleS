@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import {
   AMIRANT_COURSE_MD_COMPONENTS,
   isHebrewDominantNode,
+  isLatinDominantNode,
 } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import type { Components } from "react-markdown";
 import { cn } from "@/lib/design-system/cn";
@@ -75,11 +76,17 @@ const cardCompact: Components = {
   h2: ({ children }) => <h3 className="mb-1.5 mt-3 text-sm font-semibold text-slate-900 first:mt-0">{children}</h3>,
   h3: ({ children }) => <h4 className="mb-1 mt-2 text-xs font-semibold text-slate-800">{children}</h4>,
   h4: AMIRANT_COURSE_MD_COMPONENTS.h4!,
-  blockquote: ({ children }) => (
-    <blockquote className="mb-2.5 border-s-2 border-slate-200/80 ps-3 text-sm leading-[1.5] text-slate-700 [overflow-wrap:anywhere]">
-      {children}
-    </blockquote>
-  ),
+  blockquote: ({ children }) =>
+    isLatinDominantNode(children) ? (
+      // ציטוט/קטע אנגלי: LTR ויישור שמאל - אחרת הפיסוק קופץ לתחילת השורה
+      <blockquote className="mb-2.5 max-w-none border-s border-slate-300/90 py-0.5 ps-3 pe-2 text-sm leading-[1.65] text-slate-700 [direction:ltr] [text-align:left] [overflow-wrap:anywhere]">
+        {children}
+      </blockquote>
+    ) : (
+      <blockquote className="mb-2.5 border-s-2 border-slate-200/80 ps-3 text-sm leading-[1.5] text-slate-700 [overflow-wrap:anywhere]">
+        {children}
+      </blockquote>
+    ),
   pre: ({ children }) =>
     isHebrewDominantNode(children) ? (
       <pre className="mb-2.5 min-w-0 max-w-full whitespace-pre-wrap rounded-md border border-slate-200/80 bg-slate-50/90 p-2.5 font-sans text-sm leading-relaxed text-slate-800 [direction:rtl] [text-align:right] [overflow-wrap:anywhere]">
@@ -132,11 +139,19 @@ const lessonProse: Components = {
     <h4 className="mb-1.5 mt-4 text-lg font-semibold text-[#0f2347] [text-wrap:balance]">{children}</h4>
   ),
   h4: AMIRANT_COURSE_MD_COMPONENTS.h4!,
-  blockquote: ({ children }) => (
-    <blockquote className="mb-3 max-w-[65ch] rounded-2xl border border-sky-100/90 bg-sky-50/35 px-4 py-3 text-lg leading-8 text-slate-800 sm:px-5">
-      {children}
-    </blockquote>
-  ),
+  blockquote: ({ children }) =>
+    isLatinDominantNode(children) ? (
+      // קטע קריאה אנגלי (הבנת הנקרא): פאנל קריאה רגוע במקום כרטיס צבעוני -
+      // LTR + יישור שמאל (הפיסוק נשבר בירושת RTL), רקע לבן-כמעט, קו-שיער שמאלי,
+      // ריווח שורות נדיב ורוחב מלא של העמודה.
+      <blockquote className="mb-3 max-w-none border-s border-stone-300/90 bg-stone-50/50 py-2 pe-3 ps-5 text-slate-800 [direction:ltr] [text-align:left] sm:ps-6 [&_li]:max-w-none [&_ol]:max-w-none [&_p]:max-w-none [&_p]:leading-[1.9] [&_ul]:max-w-none">
+        {children}
+      </blockquote>
+    ) : (
+      <blockquote className="mb-3 max-w-[65ch] rounded-2xl border border-sky-100/90 bg-sky-50/35 px-4 py-3 text-lg leading-8 text-slate-800 sm:px-5">
+        {children}
+      </blockquote>
+    ),
   pre: AMIRANT_COURSE_MD_COMPONENTS.pre!,
   code: AMIRANT_COURSE_MD_COMPONENTS.code!,
   table: ({ children }) => (
