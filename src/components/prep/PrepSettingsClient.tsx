@@ -3,9 +3,8 @@
 import { useRouter } from "next/navigation";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui";
 
+/** «ניהול חשבון» - פעולות שקטות בתחתית העמוד, בלי כפתורים מאיימים. */
 export function PrepSettingsClient() {
   const router = useRouter();
 
@@ -17,13 +16,16 @@ export function PrepSettingsClient() {
   }
 
   return (
-    <div className="space-y-4">
-      <Text as="p" variant="body">
-        ניהול חשבון: התנתקות מסיימת את הסשן במכשיר זה.
-      </Text>
-      <Button type="button" variant="secondary" onClick={() => void signOut()}>
+    <section className="border-t border-line/70 pt-6">
+      <h2 className="text-lg font-bold text-primary">ניהול חשבון</h2>
+      <p className="mt-2 text-sm text-muted">התנתקות מסיימת את הסשן במכשיר זה בלבד.</p>
+      <button
+        type="button"
+        onClick={() => void signOut()}
+        className="mt-3 inline-flex min-h-10 items-center text-sm font-medium text-muted underline-offset-4 transition hover:text-primary hover:underline"
+      >
         התנתקות
-      </Button>
-    </div>
+      </button>
+    </section>
   );
 }

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { PLAN_LABELS } from "@/lib/prep/pricing-plans";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { formatDateHe } from "@/lib/prep/format-date-he";
-import { Text } from "@/components/ui";
 
 export type SubscriptionInfo = {
   active: boolean;
@@ -32,61 +31,70 @@ const STATUS_LABEL_HE: Record<string, string> = {
   refunded: "זוכה",
 };
 
+/** שורת מנוי אחת רזה: סטטוס + תוקף + פעולה אחת, ותשלומים כשורות שקטות. */
 export function PrepSubscriptionCard({ subscription }: { subscription: SubscriptionInfo }) {
   const remaining = daysLeft(subscription.endsAt);
   return (
-    <div className="space-y-5" dir="rtl">
-      <div className="rounded-2xl border border-line/80 bg-paper p-6">
-        <Text as="p" variant="labelAccent" className="text-primary">
-          המנוי שלי
-        </Text>
+    <section dir="rtl">
+      <h2 className="text-lg font-bold text-primary">מנוי וגישה</h2>
+
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-md border border-line/80 bg-paper px-5 py-4">
         {subscription.active ? (
-          <div className="mt-3 space-y-1">
-            <p className="text-lg font-bold text-ink">
-              גישה פעילה{subscription.accessType === "admin" ? " (מנהל)" : ""}
-            </p>
-            <p className="text-sm text-muted">
-              בתוקף עד {formatDateHe(subscription.endsAt)}
-              {remaining != null ? ` · נותרו ${remaining} ימים` : ""}
-            </p>
-          </div>
+          <>
+            <div className="min-w-0">
+              <p className="flex items-center gap-2 text-sm font-semibold text-ink">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-score" aria-hidden="true" />
+                גישה פעילה{subscription.accessType === "admin" ? " (מנהל)" : ""}
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                בתוקף עד {formatDateHe(subscription.endsAt)}
+                {remaining != null ? ` · נותרו ${remaining} ימים` : ""}
+              </p>
+            </div>
+            <Link
+              href={`${PREP_BASE}/pricing`}
+              className="inline-flex min-h-10 shrink-0 items-center rounded-control border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:border-primary/35 hover:bg-surface-low"
+            >
+              הארכת גישה
+            </Link>
+          </>
         ) : (
-          <div className="mt-3 space-y-1">
-            <p className="text-lg font-bold text-ink">אין מנוי פעיל</p>
-            <p className="text-sm text-muted">רכשו גישה כדי לפתוח את כל הקורס, הסימולציות והעוזר האישי.</p>
-          </div>
+          <>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-ink">אין מנוי פעיל</p>
+              <p className="mt-1 text-sm text-muted">
+                רכשו גישה כדי לפתוח את כל הקורס, הסימולציות והעוזר האישי.
+              </p>
+            </div>
+            <Link
+              href={`${PREP_BASE}/pricing`}
+              className="inline-flex min-h-10 shrink-0 items-center rounded-control bg-primary px-4 text-sm font-semibold text-white transition hover:bg-primary-hover"
+            >
+              רכישת גישה
+            </Link>
+          </>
         )}
-        <div className="mt-4 flex flex-wrap gap-3">
-          <Link
-            href={`${PREP_BASE}/pricing`}
-            className="inline-flex min-h-10 items-center justify-center rounded-xl bg-primary px-5 text-sm font-semibold text-white"
-          >
-            {subscription.active ? "הארכת גישה" : "רכישת גישה"}
-          </Link>
-        </div>
       </div>
 
       {subscription.payments.length > 0 ? (
-        <div className="rounded-2xl border border-line/80 bg-paper p-6">
-          <Text as="p" variant="labelAccent" className="text-primary">
-            היסטוריית תשלומים
-          </Text>
-          <ul className="mt-3 divide-y divide-line/60">
+        <div className="mt-6">
+          <h3 className="text-sm font-semibold text-ink">היסטוריית תשלומים</h3>
+          <ul className="mt-1 divide-y divide-line/60">
             {subscription.payments.map((p) => (
-              <li key={p.orderRef} className="flex items-center justify-between py-3 text-sm">
-                <div>
+              <li key={p.orderRef} className="flex items-baseline justify-between gap-4 py-3 text-sm">
+                <div className="min-w-0">
                   <p className="font-medium text-ink">{PLAN_LABELS[p.planId] ?? p.planId}</p>
-                  <p className="text-xs text-muted">{formatDateHe(p.paidAt)}</p>
+                  <p className="mt-0.5 text-xs text-muted">{formatDateHe(p.paidAt)}</p>
                 </div>
-                <div className="text-left">
+                <div className="shrink-0 text-left">
                   <p className="font-semibold text-ink">₪{Number(p.amountNis).toFixed(0)}</p>
-                  <p className="text-xs text-muted">{STATUS_LABEL_HE[p.status] ?? p.status}</p>
+                  <p className="mt-0.5 text-xs text-muted">{STATUS_LABEL_HE[p.status] ?? p.status}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
       ) : null}
-    </div>
+    </section>
   );
 }

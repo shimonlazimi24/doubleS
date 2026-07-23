@@ -75,25 +75,25 @@ export default async function PrepSettingsPage() {
   const { account, subscription } = await loadAccountAndSubscription();
   return (
     <div className="min-h-[60vh] bg-canvas">
-      <Container max="measure" className="py-10 md:py-14">
+      <Container max="measure" className="py-8 md:py-12">
         <Heading level={1}>אזור אישי</Heading>
-        <Text as="p" variant="body" className="mt-2 text-muted">
+        <Text as="p" variant="bodySm" className="mt-2">
           הפרטים, המנוי וההתקדמות שלכם - במקום אחד.
         </Text>
 
-        <div className="mt-10 space-y-10">
-          {/* פרטים אישיים */}
+        <div className="mt-8 space-y-9">
+          {/* פרטים אישיים - שורות הגדרה עם קווי הפרדה דקים */}
           <section>
             <h2 className="text-lg font-bold text-primary">פרטים אישיים</h2>
             {account.email ? (
-              <dl className="mt-3">
+              <dl className="mt-2 divide-y divide-line/60">
                 {account.fullName ? (
-                  <div className="grid grid-cols-[6rem_1fr] items-baseline gap-3 border-b border-line/60 py-3">
+                  <div className="grid grid-cols-[6rem_1fr] items-baseline gap-3 py-3">
                     <dt className="text-sm text-muted">שם</dt>
                     <dd className="text-sm font-medium text-ink">{account.fullName}</dd>
                   </div>
                 ) : null}
-                <div className="grid grid-cols-[6rem_1fr] items-baseline gap-3 border-b border-line/60 py-3 last:border-0">
+                <div className="grid grid-cols-[6rem_1fr] items-baseline gap-3 py-3">
                   <dt className="text-sm text-muted">מייל</dt>
                   <dd className="text-sm font-medium text-ink" dir="ltr" style={{ textAlign: "left" }}>
                     {account.email}
@@ -101,34 +101,43 @@ export default async function PrepSettingsPage() {
                 </div>
               </dl>
             ) : (
-              <Text as="p" variant="bodySm" className="mt-3 text-muted">
-                לא זוהה חשבון מחובר.
-              </Text>
+              <div className="mt-3 space-y-2">
+                <Text as="p" variant="bodySm">
+                  לא זוהה חשבון מחובר.
+                </Text>
+                <Link
+                  href={`${PREP_BASE}/login?next=${encodeURIComponent(`${PREP_BASE}/settings`)}`}
+                  className="inline-flex text-sm font-semibold text-primary transition hover:text-primary-hover"
+                >
+                  התחברות ←
+                </Link>
+              </div>
             )}
           </section>
 
-          {/* מנוי ותשלומים */}
+          {/* מנוי - שורה רזה אחת */}
           <PrepSubscriptionCard subscription={subscription} />
 
-          {/* קיצורי דרך - בלי מבוי סתום */}
-          <section className="border-t border-line pt-6">
+          {/* קיצורי דרך - שני קישורים שקטים, בלי מבוי סתום */}
+          <section className="border-t border-line/70 pt-6">
             <h2 className="text-lg font-bold text-primary">קיצורי דרך</h2>
-            <div className="mt-3 flex flex-wrap gap-3">
+            <div className="mt-3 flex flex-wrap items-center gap-x-7 gap-y-2">
               <Link
                 href={`${PREP_BASE}/amirant/course`}
-                className="inline-flex min-h-11 items-center rounded-control bg-primary px-5 text-sm font-bold text-white transition hover:bg-primary-hover"
+                className="inline-flex min-h-10 items-center text-sm font-semibold text-primary transition hover:text-primary-hover"
               >
                 לקורס ←
               </Link>
               <Link
                 href={`${PREP_BASE}/amirant/course/analytics`}
-                className="inline-flex min-h-11 items-center rounded-control border border-line bg-paper px-5 text-sm font-semibold text-primary transition hover:border-primary/35"
+                className="inline-flex min-h-10 items-center text-sm font-semibold text-primary transition hover:text-primary-hover"
               >
-                ההתקדמות שלי
+                ההתקדמות שלי ←
               </Link>
             </div>
           </section>
 
+          {/* ניהול חשבון - פעולות שקטות */}
           <PrepSettingsClient />
         </div>
       </Container>
