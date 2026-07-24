@@ -304,7 +304,7 @@
 
 ### 2036. **throw away** (v.)
 - **Definition:** to discard
-- **תרגום:** לזרוק לפח
+- **תרגום:** לזרוק למלכודת
 - **Example 1:** **Throw away** the trash.
 - **Example 2:** Don't **throw away** your chances.
 - **Synonyms:** discard, dispose of
@@ -791,7 +791,7 @@
 
 ### 2095. **fall for** (v.)
 - **Definition:** to be deceived; to fall in love
-- **תרגום:** להיפול בפח; להתאהב
+- **תרגום:** להיפול במלכודת; להתאהב
 - **Example 1:** I **fell for** the trick.
 - **Example 2:** She **fell for** him hard.
 - **Synonyms:** be deceived; fall in love

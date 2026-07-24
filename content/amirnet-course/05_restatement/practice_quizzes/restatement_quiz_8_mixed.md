@@ -176,7 +176,7 @@
 `prefer X to Y` = `like X more than Y`. מבנה של העדפה.
 
 ### ✅ Q5 – Correct Answer: **(B)** 🟡
-**פח נפוץ!** יש הבדל בין:
+**מלכודת נפוצה!** יש הבדל בין:
 - `is used to V-ing` = רגיל ל-, עושה באופן קבוע
 - `used to V` = היה עושה (הרגל בעבר שהסתיים)
 
@@ -259,7 +259,7 @@ Rarely = seldom (נדיר).
 
 ---
 
-## 📋 Part 4: פחים חשובים שעסקנו בהם
+## 📋 Part 4: מלכודות חשובים שעסקנו בהם
 
 1. **"is used to" vs "used to"** - שאלה 5. זהו את ה-"is"!
 2. **Inversion** - שאלות 10, 11, 12, 14, 15. זיהוי מיידי של "Rarely", "Had", "Under no", "Only after", "Not only".
