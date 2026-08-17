@@ -4,7 +4,11 @@ import type { Components } from "react-markdown";
 import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { stripMasachNumberingForDisplay } from "@/lib/amirant-course/content-source/split-markdown-masach";
-import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import {
+  isolateFillInBlanks,
+  stripHtmlAnchorNoise,
+  stripTaskListCheckboxes,
+} from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 
 const MAX_CHARS = 120_000;
 
@@ -42,6 +46,16 @@ export function isLatinDominantNode(children: unknown): boolean {
   return latin > 5 && latin > hebrew;
 }
 
+/**
+ * פסקאות/פריטים שצריכים LTR: אנגלית דומיננטית, או משפטי השלמה עם קו (`_____`)
+ * גם כשיש תווית עברית קצרה לידם ("שאלה: She _____ …").
+ */
+export function needsLtrMarkdownProse(children: unknown): boolean {
+  if (isLatinDominantNode(children)) return true;
+  const text = nodeToText(children);
+  return /_{3,}/.test(text) && /[A-Za-z]/.test(text);
+}
+
 export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   h1: ({ children }) => (
     <h2 className="mb-3 mt-8 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
@@ -49,10 +63,24 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   h2: ({ children }) => <h3 className="mb-2 mt-6 text-xl font-semibold text-ink first:mt-0">{children}</h3>,
   h3: ({ children }) => <h4 className="mb-2 mt-4 text-lg font-semibold text-ink">{children}</h4>,
   h4: ({ children }) => <h5 className="mb-2 mt-3 text-base font-semibold text-ink">{children}</h5>,
-  p: ({ children }) => <p className="mb-3 text-base leading-relaxed text-ink last:mb-0">{children}</p>,
+  p: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <p className="mb-3 text-base leading-relaxed text-ink last:mb-0 [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </p>
+    ) : (
+      <p className="mb-3 text-base leading-relaxed text-ink last:mb-0">{children}</p>
+    ),
   ul: ({ children }) => <ul className="mb-3 list-disc space-y-1 pr-6 text-ink marker:text-primary/80">{children}</ul>,
   ol: ({ children }) => <ol className="mb-3 list-decimal space-y-1 pr-6 text-ink marker:font-medium">{children}</ol>,
-  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  li: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <li className="leading-relaxed [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </li>
+    ) : (
+      <li className="leading-relaxed">{children}</li>
+    ),
   blockquote: ({ children }) =>
     isLatinDominantNode(children) ? (
       // קטע אנגלי (הבנת הנקרא): פאנל קריאה שקט - LTR, יישור שמאל, קו-שיער בצד שמאל
@@ -148,7 +176,9 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
 export function AmirantCourseMarkdownFromRepo({ body }: Props) {
   const truncated = body.length > MAX_CHARS;
   const raw = truncated ? `${body.slice(0, MAX_CHARS)}\n\n… [נחתך - ${body.length.toLocaleString("he-IL")} תווים בקובץ]` : body;
-  const display = stripTaskListCheckboxes(stripHtmlAnchorNoise(stripMasachNumberingForDisplay(raw)));
+  const display = isolateFillInBlanks(
+    stripTaskListCheckboxes(stripHtmlAnchorNoise(stripMasachNumberingForDisplay(raw))),
+  );
 
   return (
     <div className="space-y-3">

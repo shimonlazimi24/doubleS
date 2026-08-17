@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "./strip-lesson-markdown-noise";
+import { isolateFillInBlanks, stripHtmlAnchorNoise, stripTaskListCheckboxes } from "./strip-lesson-markdown-noise";
 
 describe("stripHtmlAnchorNoise", () => {
   it("removes <a name> anchors", () => {
@@ -27,6 +27,26 @@ describe("stripHtmlAnchorNoise", () => {
   it("handles a summary split across a chunked slide (orphan tags)", () => {
     expect(stripHtmlAnchorNoise("טקסט <details> עוד")).toBe("טקסט  עוד");
     expect(stripHtmlAnchorNoise("סוף </details>")).toBe("סוף ");
+  });
+});
+
+describe("isolateFillInBlanks", () => {
+  it("wraps _____ with LTR marks so RTL does not reorder the blank", () => {
+    const out = isolateFillInBlanks("She _____ in this office since 2020.");
+    expect(out).toContain("\u200E_____\u200E");
+    expect(out.startsWith("She")).toBe(true);
+  });
+
+  it("leaves fenced code blanks alone", () => {
+    const md = "```\nfoo _____ bar\n```\nShe _____ outside.";
+    const out = isolateFillInBlanks(md);
+    expect(out).toMatch(/```\nfoo _____ bar\n```/);
+    expect(out).toContain("She \u200E_____\u200E outside.");
+  });
+
+  it("is idempotent when blanks are already isolated", () => {
+    const once = isolateFillInBlanks("filled with _____ joy");
+    expect(isolateFillInBlanks(once)).toBe(once);
   });
 });
 

@@ -15,28 +15,47 @@ const MAX_STEP_LABEL = 56;
 
 const FENCE_OPEN = /^\s*(`{3,}|~{3,})/;
 
+/** שורת אפשרות רב-ברירה: `(A)`…`(D)`, גם אחרי בולט / אימוג'י סימון. */
+const MC_OPTION_LINE =
+  /^\s*(?:[-*+•]\s+)?(?:[❌✅💡]?\s*)?\(([A-Da-d])\)(?:\s|$)/;
+
 function isFenceBlock(block: string): boolean {
   return FENCE_OPEN.test(block.trimStart());
+}
+
+export function isMcOptionLine(line: string): boolean {
+  return MC_OPTION_LINE.test(line);
+}
+
+/** בלוק שרובו שורות אפשרויות (A)–(D) – לא נחתך באמצע הסט. */
+export function isMcOptionsBlock(block: string): boolean {
+  const lines = block.split("\n").filter((l) => l.trim());
+  if (lines.length < 2) return false;
+  const optionLines = lines.filter(isMcOptionLine);
+  return optionLines.length >= 2 && optionLines.length >= Math.ceil(lines.length * 0.6);
 }
 
 /**
  * מפרק טקסט לבלוקים אטומיים: גדר קוד (```…```) היא בלוק אחד גם כשיש בתוכה
  * שורות ריקות - פיצול בתוכה השאיר ``` פתוח שהפך את שאר השקופית לקוד גולמי
- * (אפשרות D "קפצה" והניתוח הוצג עם ** מילולי - משוב הבודקת). שאר התוכן
- * מפוצל בשורות ריקות.
+ * (אפשרות D "קפצה" והניתוח הוצג עם ** מילולי - משוב הבודקת). רצף אפשרויות
+ * `(A)`/`(B)`/`(C)`/`(D)` (גם מחוץ לגדר, גם עם שורה ריקה ביניהן) נארז כיחידה
+ * אחת כדי ש־(D) לא תקפוץ לשקופית נפרדת. שאר התוכן מפוצל בשורות ריקות.
  */
 export function splitIntoAtomicBlocks(raw: string): string[] {
   const lines = raw.split("\n");
   const blocks: string[] = [];
   let buf: string[] = [];
   let inFence = false;
+  let inMcOptions = false;
   const flush = () => {
     const t = buf.join("\n").trim();
     if (t) blocks.push(t);
     buf = [];
   };
-  for (const line of lines) {
-    if (!inFence && FENCE_OPEN.test(line)) {
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]!;
+    if (!inFence && !inMcOptions && FENCE_OPEN.test(line)) {
       flush();
       inFence = true;
       buf.push(line);
@@ -48,6 +67,34 @@ export function splitIntoAtomicBlocks(raw: string): string[] {
         inFence = false;
         flush();
       }
+      continue;
+    }
+    if (!inMcOptions && isMcOptionLine(line)) {
+      flush();
+      inMcOptions = true;
+      buf.push(line);
+      continue;
+    }
+    if (inMcOptions) {
+      if (isMcOptionLine(line)) {
+        buf.push(line);
+        continue;
+      }
+      if (!line.trim()) {
+        // שורה ריקה בתוך סט אפשרויות – נשארים ברצף רק אם אחר כך מגיעה אפשרות נוספת
+        let j = i + 1;
+        while (j < lines.length && !lines[j]!.trim()) j++;
+        if (j < lines.length && isMcOptionLine(lines[j]!)) {
+          buf.push(line);
+          continue;
+        }
+        flush();
+        inMcOptions = false;
+        continue;
+      }
+      flush();
+      inMcOptions = false;
+      i--; // reprocess: may be fence / blank / prose
       continue;
     }
     if (!line.trim()) {
@@ -121,10 +168,11 @@ function isMarkdownList(block: string): boolean {
   return listLines.length >= Math.ceil(lines.length * 0.6);
 }
 
-/** בלוק שאסור לחתוך באמצעו: גדר קוד, טבלה, או רשימה בגודל סביר. */
+/** בלוק שאסור לחתוך באמצעו: גדר קוד, סט אפשרויות A–D, טבלה, או רשימה בגודל סביר. */
 function isAtomicBlock(block: string): boolean {
   return (
     isFenceBlock(block) ||
+    (isMcOptionsBlock(block) && block.length <= WHOLE_SUBSECTION_CHARS) ||
     isMarkdownTable(block) ||
     (isMarkdownList(block) && block.length <= WHOLE_SUBSECTION_CHARS)
   );

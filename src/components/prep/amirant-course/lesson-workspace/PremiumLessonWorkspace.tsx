@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { stripLeadingDuplicateSectionHeading } from "@/lib/amirant-course/lesson-content/strip-duplicate-section-heading";
 import { stripEdgeSeparatorNoise, stripTakeawayBlocksFromBody } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import { isReadingPassageCard } from "@/lib/amirant-course/lesson-content/reading-passage-step";
 import { markdownishToPlain } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import { LessonBlockCard } from "../lesson/LessonBlockCard";
 import { LessonHeroCard } from "../lesson/LessonHeroCard";
@@ -117,12 +118,12 @@ export function PremiumLessonWorkspace({
   const firstGateIndex = useMemo(() => flow.findIndex((f) => f.kind === "gate"), [flow]);
   const current: BuiltWorkspaceStep | undefined = steps[activeIndex];
 
-  // קטע קריאה מלא (הבנת הנקרא): כשיש בשיעור צעד שכותרתו מתחילה ב"הקטע", הוא נשאר
-  // זמין בכל הצעדים הבאים דרך כפתור צף + מגירה - עונים על השאלות בלי לדפדף אחורה.
+  // קטע קריאה מלא (הבנת הנקרא): כשיש בשיעור צעדי קטע, הם נשארים
+  // זמינים בכל הצעדים הבאים דרך פאנל side-by-side (lg+) / מגירה במובייל.
   const fullPassage = useMemo(() => {
     if (mode !== "markdown") return null;
     const isPassageStep = (s: BuiltWorkspaceStep): boolean =>
-      Boolean(s.card?.body?.trim()) && s.label.trim().startsWith("הקטע");
+      isReadingPassageCard({ label: s.label, body: s.card?.body });
     const first = steps.findIndex(isPassageStep);
     if (first === -1) return null;
     let last = first;
@@ -248,12 +249,12 @@ export function PremiumLessonWorkspace({
           </div>
         ) : null}
 
-        {/* כפתור צף "הקטע המלא" - רק אחרי שעברו את צעד הקטע; מעל הניווט הדביק, מתחת למגירות */}
+        {/* כפתור צף "הקטע המלא" - מובייל בלבד; ב־lg יש פאנל side-by-side */}
         {showPassagePill ? (
           <button
             type="button"
             onClick={() => setPassageOpen(true)}
-            className="fixed bottom-20 start-3 z-30 inline-flex min-h-10 items-center rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-md backdrop-blur-sm transition hover:border-[#0f2347]/25 sm:start-5"
+            className="fixed bottom-20 start-3 z-30 inline-flex min-h-10 items-center rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-md backdrop-blur-sm transition hover:border-[#0f2347]/25 lg:hidden sm:start-5"
             aria-haspopup="dialog"
             aria-expanded={passageOpen}
           >
@@ -338,33 +339,56 @@ export function PremiumLessonWorkspace({
                 activeIndex={activeIndex}
                 onSelect={selectStep}
               />
-              <div className="min-w-0 space-y-3 [direction:rtl] sm:space-y-3.5">
-                {/* גובה מינימלי לצעד: הבא/הקודם נשארים באותו אזור בין שקופית קצרה לארוכה */}
-                <div
-                  ref={stepBlockRef}
-                  id="amirant-step-viewport"
-                  className="min-w-0 scroll-mt-4 min-h-[46vh] sm:min-h-[52vh]"
-                >
-                  <div
-                    key={`${lessonId}-${activeIndex}`}
-                    className={cn(
-                      "min-w-0 will-change-transform",
-                      !prefersReducedMotion && "animate-lesson-step-in",
-                    )}
+              <div
+                className={cn(
+                  "min-w-0 [direction:rtl]",
+                  showPassagePill && fullPassage
+                    ? "lg:grid lg:grid-cols-2 lg:items-start lg:gap-6"
+                    : "space-y-3 sm:space-y-3.5",
+                )}
+              >
+                {showPassagePill && fullPassage ? (
+                  <aside
+                    className="sticky top-4 order-2 hidden max-h-[min(78vh,52rem)] min-w-0 overflow-y-auto rounded-2xl border border-stone-200/80 bg-white/90 p-4 shadow-sm lg:block sm:p-5"
+                    aria-label="הקטע המלא"
                   >
-                    {mainInner}
+                    <h2 className="mb-3 text-sm font-semibold text-[#0f2347]">הקטע המלא</h2>
+                    <PremiumMarkdownBody body={fullPassage.body} variant="lesson" />
+                  </aside>
+                ) : null}
+                <div
+                  className={cn(
+                    "min-w-0 space-y-3 sm:space-y-3.5",
+                    showPassagePill && fullPassage && "lg:order-1",
+                  )}
+                >
+                  {/* גובה מינימלי לצעד: הבא/הקודם נשארים באותו אזור בין שקופית קצרה לארוכה */}
+                  <div
+                    ref={stepBlockRef}
+                    id="amirant-step-viewport"
+                    className="min-w-0 scroll-mt-4 min-h-[46vh] sm:min-h-[52vh]"
+                  >
+                    <div
+                      key={`${lessonId}-${activeIndex}`}
+                      className={cn(
+                        "min-w-0 will-change-transform",
+                        !prefersReducedMotion && "animate-lesson-step-in",
+                      )}
+                    >
+                      {mainInner}
+                    </div>
                   </div>
-                </div>
-                {/* בשקופית ארוכה הפוטר נדבק לתחתית המסך - הכפתורים תמיד באותו מקום */}
-                <div className="sticky bottom-0 z-10 -mx-1 bg-gradient-to-t from-[#f8f8f7] via-[#f8f8f7]/95 to-transparent px-1 pb-2 pt-3">
-                  <LessonNavigationFooter
-                    canPrev={canPrev}
-                    canNext={canNext}
-                    isLast={isLast}
-                    onPrev={prev}
-                    onNext={next}
-                    practiceHref={practiceHref}
-                  />
+                  {/* בשקופית ארוכה הפוטר נדבק לתחתית המסך - הכפתורים תמיד באותו מקום */}
+                  <div className="sticky bottom-0 z-10 -mx-1 bg-gradient-to-t from-[#f8f8f7] via-[#f8f8f7]/95 to-transparent px-1 pb-2 pt-3">
+                    <LessonNavigationFooter
+                      canPrev={canPrev}
+                      canNext={canNext}
+                      isLast={isLast}
+                      onPrev={prev}
+                      onNext={next}
+                      practiceHref={practiceHref}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

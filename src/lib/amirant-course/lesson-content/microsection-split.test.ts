@@ -2,8 +2,11 @@ import { describe, expect, it } from "vitest";
 import {
   cleanLessonStepSectionTitle,
   expandSectionFlowToLessonCards,
+  isMcOptionLine,
+  isMcOptionsBlock,
   splitBodyIntoMicroParts,
   splitBodyIntoSemanticMicroParts,
+  splitIntoAtomicBlocks,
 } from "./microsection-split";
 
 describe("splitBodyIntoMicroParts", () => {
@@ -45,6 +48,40 @@ describe("splitBodyIntoMicroParts", () => {
     expect(withFence[0]).toContain("(D) She sometimes");
   });
 
+  it("keeps unfenced (A)–(D) options together even when longer than maxChars", () => {
+    const options = [
+      "(A) She never goes to bed before 10 PM and this line is intentionally long.",
+      "(B) She typically sleeps after 10 PM which also makes this option quite long.",
+      "(C) She generally goes to sleep at 10 PM as a habit every single weeknight.",
+      "(D) She sometimes goes to bed at 10 PM but not often enough to match usually.",
+    ].join("\n");
+    expect(options.length).toBeGreaterThan(200);
+    const parts = splitBodyIntoMicroParts(`פתיח קצר.\n\n${options}\n\nסיום.`, 80);
+    const withD = parts.filter((p) => /^\(D\)/m.test(p) || p.includes("\n(D)"));
+    expect(withD).toHaveLength(1);
+    expect(withD[0]).toContain("(A)");
+    expect(withD[0]).toContain("(B)");
+    expect(withD[0]).toContain("(C)");
+    expect(withD[0]).toContain("(D)");
+    expect(parts.some((p) => /^\(D\)/.test(p.trim()) && !p.includes("(A)"))).toBe(false);
+  });
+
+  it("packs (A)–(D) across blank lines into one atomic block", () => {
+    const raw = [
+      "(A) first option text here",
+      "",
+      "(B) second option text here",
+      "",
+      "(C) third option text here",
+      "",
+      "(D) fourth option text here",
+    ].join("\n");
+    const blocks = splitIntoAtomicBlocks(raw);
+    expect(blocks).toHaveLength(1);
+    expect(isMcOptionsBlock(blocks[0]!)).toBe(true);
+    expect(blocks[0]).toContain("(D)");
+  });
+
   it("prefers sentence-end cuts for long prose (no mid-sentence break)", () => {
     const sentence = "This is a complete English sentence about pocket parks. ";
     const long = sentence.repeat(20).trim();
@@ -68,6 +105,15 @@ describe("splitBodyIntoMicroParts", () => {
       const plain = part.replace(/^>\s?/gm, "").replace(/\s+/g, " ").trim();
       expect(plain.endsWith(".")).toBe(true);
     }
+  });
+});
+
+describe("MC option helpers", () => {
+  it("detects bare and bulleted option lines", () => {
+    expect(isMcOptionLine("(A) foo")).toBe(true);
+    expect(isMcOptionLine("- (B) bar")).toBe(true);
+    expect(isMcOptionLine("- ❌ (C) baz")).toBe(true);
+    expect(isMcOptionLine("not an option")).toBe(false);
   });
 });
 
@@ -110,6 +156,33 @@ describe("splitBodyIntoSemanticMicroParts", () => {
     expect(parts[0]!.body).toContain("תשובה נכונה");
   });
 
+  it("never leaves option (D) alone on a continuation slide", () => {
+    const body = [
+      "### דוגמה",
+      "```",
+      'Original: "Although the project was complicated, the team completed it on time."',
+      "",
+      "(A) The project was not complicated, so the team finished it easily.",
+      "(B) The team finished the project on time, despite its complexity.",
+      "(C) The project took longer than expected because it was complicated.",
+      "(D) The team could not complete the complicated project in time.",
+      "```",
+      "",
+      "**למה לא:**",
+      "- (A) סותר את המקור",
+      "- (B) ✅ despite = although",
+      "- (C) מוסיף מידע",
+      "- (D) סותר – הצוות כן סיים",
+    ].join("\n");
+    const parts = splitBodyIntoSemanticMicroParts(body, 300, "דוגמאות");
+    for (const p of parts) {
+      const b = p.body;
+      if (/^\(D\)/m.test(b) || /\n\(D\)/.test(b)) {
+        expect(b).toContain("(A)");
+      }
+    }
+  });
+
   it("uses each ## heading as step label (no Unit 1 · 1/3 style)", () => {
     const body = [
       "## ברוכים הבאים",
@@ -127,7 +200,9 @@ describe("splitBodyIntoSemanticMicroParts", () => {
   });
 
   it("cleans unit-style section titles for anonymous chunks", () => {
-    expect(cleanLessonStepSectionTitle("Unit 1: Welcome & Course Introduction")).toBe("Welcome & Course Introduction");
+    expect(cleanLessonStepSectionTitle("Unit 1: Welcome & Course Introduction")).toBe(
+      "Welcome & Course Introduction",
+    );
   });
 });
 

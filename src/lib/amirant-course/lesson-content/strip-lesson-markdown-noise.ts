@@ -40,6 +40,23 @@ export function stripTaskListCheckboxes(body: string): string {
   return body.replace(/^(\s*)[-*+]\s+\[[ xX]\]\s+/gm, "$1- ");
 }
 
+const LRM = "\u200E";
+
+/**
+ * עוטף קווי השלמה (`_____`) בסימני LTR כדי שבמסמך RTL הקו לא יקפוץ לתחילת/סוף השורה
+ * (משוב: "המילה במקום בכל שורה קפץ"). מדלג על גדרות קוד.
+ */
+export function isolateFillInBlanks(body: string): string {
+  if (!body.includes("_")) return body;
+  const parts = body.split(/(```[\s\S]*?```)/g);
+  return parts
+    .map((part, i) => {
+      if (i % 2 === 1 || part.startsWith("```")) return part;
+      return part.replace(/(?<![\u200E_])_{3,}(?![\u200E_])/g, (m) => `${LRM}${m}${LRM}`);
+    })
+    .join("");
+}
+
 /** Strips common markdown separator noise (horizontal rules, pipes-only lines) from edges only. */
 export function stripEdgeSeparatorNoise(body: string): string {
   const normalized = body.replace(/\r\n/g, "\n");

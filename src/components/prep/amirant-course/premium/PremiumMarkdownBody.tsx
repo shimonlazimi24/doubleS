@@ -4,10 +4,15 @@ import {
   AMIRANT_COURSE_MD_COMPONENTS,
   isHebrewDominantNode,
   isLatinDominantNode,
+  needsLtrMarkdownProse,
 } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import type { Components } from "react-markdown";
 import { cn } from "@/lib/design-system/cn";
-import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import {
+  isolateFillInBlanks,
+  stripHtmlAnchorNoise,
+  stripTaskListCheckboxes,
+} from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
 
 /**
@@ -34,7 +39,14 @@ function splitBodyOnVideoShortcodes(body: string): BodySegment[] {
 
 const baseCompact: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
-  p: ({ children }) => <p className="mb-2.5 text-sm leading-relaxed text-ink last:mb-0">{children}</p>,
+  p: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <p className="mb-2.5 text-sm leading-relaxed text-ink last:mb-0 [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </p>
+    ) : (
+      <p className="mb-2.5 text-sm leading-relaxed text-ink last:mb-0">{children}</p>
+    ),
   ul: ({ children }) => (
     <ul className="mb-2.5 list-disc space-y-1 pr-5 text-sm text-ink marker:text-primary/80">{children}</ul>
   ),
@@ -56,16 +68,31 @@ const baseCompact: Components = {
   a: AMIRANT_COURSE_MD_COMPONENTS.a!,
   strong: AMIRANT_COURSE_MD_COMPONENTS.strong!,
   img: AMIRANT_COURSE_MD_COMPONENTS.img!,
-  li: ({ children }) => <li className="text-sm leading-relaxed">{children}</li>,
+  li: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <li className="text-sm leading-relaxed [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </li>
+    ) : (
+      <li className="text-sm leading-relaxed">{children}</li>
+    ),
   hr: AMIRANT_COURSE_MD_COMPONENTS.hr!,
 };
 
 /** Lesson cards: tight prose; rich blocks get scroll/height so nothing turns into a full-page wall. */
 const cardCompact: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
-  p: ({ children }) => (
-    <p className="mb-2.5 text-sm leading-[1.55] text-slate-800 [overflow-wrap:anywhere] last:mb-0 sm:text-sm">{children}</p>
-  ),
+  p: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <p
+        className="mb-2.5 text-sm leading-[1.55] text-slate-800 [overflow-wrap:anywhere] last:mb-0 [direction:ltr] [text-align:left] sm:text-sm"
+        lang="en"
+      >
+        {children}
+      </p>
+    ) : (
+      <p className="mb-2.5 text-sm leading-[1.55] text-slate-800 [overflow-wrap:anywhere] last:mb-0 sm:text-sm">{children}</p>
+    ),
   ul: ({ children }) => (
     <ul className="mb-2.5 list-disc space-y-1 pr-4 text-sm text-slate-800 marker:text-slate-400 [overflow-wrap:anywhere]">{children}</ul>
   ),
@@ -111,16 +138,31 @@ const cardCompact: Components = {
   a: AMIRANT_COURSE_MD_COMPONENTS.a!,
   strong: AMIRANT_COURSE_MD_COMPONENTS.strong!,
   img: AMIRANT_COURSE_MD_COMPONENTS.img!,
-  li: ({ children }) => <li className="text-sm leading-[1.5] [overflow-wrap:anywhere]">{children}</li>,
+  li: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <li className="text-sm leading-[1.5] [overflow-wrap:anywhere] [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </li>
+    ) : (
+      <li className="text-sm leading-[1.5] [overflow-wrap:anywhere]">{children}</li>
+    ),
   hr: AMIRANT_COURSE_MD_COMPONENTS.hr!,
 };
 
 /** Premium guided lessons: 65ch body, calmer emphasis, clear hierarchy. */
 const lessonProse: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
-  p: ({ children }) => (
-    <p className="mb-3 max-w-[65ch] text-lg leading-8 text-slate-700 [text-wrap:pretty] last:mb-0">{children}</p>
-  ),
+  p: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <p
+        className="mb-3 max-w-[65ch] text-lg leading-8 text-slate-700 [text-wrap:pretty] last:mb-0 [direction:ltr] [text-align:left]"
+        lang="en"
+      >
+        {children}
+      </p>
+    ) : (
+      <p className="mb-3 max-w-[65ch] text-lg leading-8 text-slate-700 [text-wrap:pretty] last:mb-0">{children}</p>
+    ),
   ul: ({ children }) => (
     <ul className="mb-3 max-w-[65ch] list-disc space-y-1.5 pr-5 text-lg leading-8 text-slate-700 marker:text-sky-600/60">
       {children}
@@ -175,14 +217,21 @@ const lessonProse: Components = {
   ),
   strong: ({ children }) => <strong className="font-medium text-slate-800">{children}</strong>,
   img: AMIRANT_COURSE_MD_COMPONENTS.img!,
-  li: ({ children }) => <li className="text-lg leading-8 [text-wrap:pretty]">{children}</li>,
+  li: ({ children }) =>
+    needsLtrMarkdownProse(children) ? (
+      <li className="text-lg leading-8 [text-wrap:pretty] [direction:ltr] [text-align:left]" lang="en">
+        {children}
+      </li>
+    ) : (
+      <li className="text-lg leading-8 [text-wrap:pretty]">{children}</li>
+    ),
   hr: () => <hr className="mb-3 max-w-[65ch] border-0 border-t border-stone-200/80" />,
 };
 
 type Props = { body: string; className?: string; variant?: "default" | "card" | "lesson" };
 
 export function PremiumMarkdownBody({ body, className, variant = "default" }: Props) {
-  const cleanBody = stripTaskListCheckboxes(stripHtmlAnchorNoise(body));
+  const cleanBody = isolateFillInBlanks(stripTaskListCheckboxes(stripHtmlAnchorNoise(body)));
   if (!cleanBody.trim()) {
     return null;
   }

@@ -208,6 +208,6 @@ What does the author imply about the future of placebo research?
 
 2. **חפש ניגוד** – הקטע מלא במבני "X, but/however Y" (classical theories... While this explanation captures... not as replacements, but as...). זהה אותם – הם מסגירים את עמדת המחבר.
 
-3. **שים לב ל"yet"** – "Researchers have yet to fully explain" = "טרם הצליחו להסביר". זו מילה חשובה שמסגירה פער מחקרי.
+3. **שימו לב ל־"yet"** – "Researchers have yet to fully explain" = "טרם הצליחו להסביר". זו מילה חשובה שמסגירה פער מחקרי.
 
 בהצלחה! 🍀
