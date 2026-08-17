@@ -130,6 +130,63 @@ function isAtomicBlock(block: string): boolean {
   );
 }
 
+/** קטע קריאה ב־blockquote: רוב השורות מתחילות ב־`>`. */
+function isMostlyBlockquote(block: string): boolean {
+  const lines = block.split("\n").filter((l) => l.trim());
+  if (lines.length === 0) return false;
+  const quoted = lines.filter((l) => /^\s*>/.test(l)).length;
+  return quoted >= Math.ceil(lines.length * 0.7);
+}
+
+/**
+ * מפרק blockquote לפסקאות בגבולות `>` ריק בלבד (לא באמצע משפט).
+ * משוב הבודקת: קיטוע אחרי "companies are—" / "create a" בקטעי קריאה.
+ */
+function splitBlockquoteAtParagraphs(block: string): string[] {
+  const lines = block.split("\n");
+  const paras: string[] = [];
+  let buf: string[] = [];
+  const flush = () => {
+    const t = buf.join("\n").trim();
+    if (t) paras.push(t);
+    buf = [];
+  };
+  for (const line of lines) {
+    if (/^\s*>\s*$/.test(line)) {
+      flush();
+      continue;
+    }
+    buf.push(line);
+  }
+  flush();
+  return paras.length ? paras : [block.trim()];
+}
+
+/** אורז פסקאות quote לחבילות ≤ limit; פסקה בודדת ארוכה נשארת שלמה עד WHOLE_SUBSECTION. */
+function packBlockquoteParagraphs(paras: string[], limit: number): string[] {
+  const packs: string[] = [];
+  let cur = "";
+  for (const p of paras) {
+    if (!cur) {
+      cur = p;
+      continue;
+    }
+    const joined = `${cur}\n>\n${p}`;
+    if (joined.length <= limit) {
+      cur = joined;
+    } else {
+      packs.push(cur);
+      cur = p;
+    }
+  }
+  if (cur) packs.push(cur);
+  return packs.flatMap((pk) => {
+    if (pk.length <= WHOLE_SUBSECTION_CHARS) return [pk];
+    // פסקה בודדת ארוכה מדי: חיתוך בסוף משפט בלבד (לא באמצע מילה)
+    return chunkStringToMax(pk, Math.min(limit, DEFAULT_MICRO_CARD_CHARS * 2));
+  });
+}
+
 export function splitBodyIntoMicroParts(
   body: string,
   maxChars = DEFAULT_MICRO_CARD_CHARS,
@@ -140,9 +197,14 @@ export function splitBodyIntoMicroParts(
   }
   const blocks = splitIntoAtomicBlocks(raw);
   const source = blocks.length ? blocks : [raw];
-  const flat = source.flatMap((b) =>
-    isAtomicBlock(b) || b.length <= maxChars ? [b] : chunkStringToMax(b, maxChars),
-  );
+  const quotePackLimit = Math.max(maxChars * 3, 900);
+  const flat = source.flatMap((b) => {
+    if (isAtomicBlock(b) || b.length <= maxChars) return [b];
+    if (isMostlyBlockquote(b)) {
+      return packBlockquoteParagraphs(splitBlockquoteAtParagraphs(b), quotePackLimit);
+    }
+    return chunkStringToMax(b, maxChars);
+  });
   if (flat.length === 0) {
     return [raw];
   }
@@ -304,7 +366,7 @@ function splitAtHeadingLevels(
     const sub = splitBodyIntoMicroParts(rest, maxChars);
     sub.forEach((chunk, j) => {
       const pieceBody = j === 0 ? `${seg.headingLine}\n${chunk}` : chunk;
-      const lab = j === 0 ? headingPlain : shortenLabel(`${headingPlain} · המשך`);
+      const lab = j === 0 ? headingPlain : shortenLabel(`${headingPlain} (המשך)`);
       out.push({ body: pieceBody, stepLabel: lab });
     });
   }
@@ -332,11 +394,15 @@ function labelForFlatChunk(
   if (fromHeading && !titlesLooselyEqual(fromHeading, cleanedSection)) {
     return shortenLabel(fromHeading);
   }
+  // לקטעי קריאה: לא משתמשים ב־excerpt באנגלית ככותרת (נראה כמו קיטוע)
+  if (isMostlyBlockquote(body)) {
+    return shortenLabel(`${cleanedSection} (המשך)`);
+  }
   const snippet = excerptPlainOpening(body, 48);
   if (snippet && !titlesLooselyEqual(snippet, cleanedSection)) {
     return shortenLabel(snippet);
   }
-  return index === 0 ? shortenLabel(cleanedSection) : shortenLabel(`${cleanedSection} · המשך`);
+  return index === 0 ? shortenLabel(cleanedSection) : shortenLabel(`${cleanedSection} (המשך)`);
 }
 
 function listGroupStepLabel(

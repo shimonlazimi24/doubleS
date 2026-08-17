@@ -187,40 +187,51 @@ export function AmirantPracticeSetClient({
                   <Text as="p" variant="caption" className="text-muted">
                     שאלה {idx + 1}
                   </Text>
-                  <QuizPassagePanel passageId={q.passageId} />
-                  <p className="font-medium text-ink" dir="ltr" style={{ textAlign: "left" }}>{amirantExamQuestionPromptForDisplay(q.prompt)}</p>
-                  <ul className="space-y-2">
-                    {q.options.map((opt) => (
-                      <li key={opt.id}>
-                        <button
-                          type="button"
-                          disabled={submitted || submitting}
-                          onClick={() => setAnswers((p) => ({ ...p, [id]: opt.id }))}
-                          className={cn(
-                            "w-full rounded-control border px-4 py-3 text-right text-sm transition",
-                            answers[id] === opt.id
-                              ? "border-primary bg-primary/10 font-semibold text-primary"
-                              : "border-line/80 bg-paper hover:border-primary/40",
-                            submitted && correctOptionId != null && opt.id === correctOptionId && "ring-2 ring-emerald-500/50",
-                            submitted &&
-                              answers[id] === opt.id &&
-                              correctOptionId != null &&
-                              opt.id !== correctOptionId &&
-                              "ring-2 ring-amber-500/40",
-                          )}
-                        >
-                          {opt.label}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                  {submitted && graded?.explanation ? (
-                    // "הערת מורה" - עקבי עם התרגול בשיעורים
-                    <div className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4">
-                      <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
-                      <PremiumMarkdownBody body={graded.explanation} variant="card" />
+                  <div className={cn(q.passageId && "grid gap-6 lg:grid-cols-2 lg:items-start")}>
+                    {q.passageId ? (
+                      <QuizPassagePanel
+                        passageId={q.passageId}
+                        className="max-h-[min(70vh,32rem)] lg:sticky lg:top-24"
+                      />
+                    ) : null}
+                    <div className="space-y-4">
+                      <p className="font-medium text-ink" dir="ltr" style={{ textAlign: "left" }}>
+                        {amirantExamQuestionPromptForDisplay(q.prompt)}
+                      </p>
+                      <ul className="space-y-2">
+                        {q.options.map((opt) => (
+                          <li key={opt.id}>
+                            <button
+                              type="button"
+                              disabled={submitted || submitting}
+                              onClick={() => setAnswers((p) => ({ ...p, [id]: opt.id }))}
+                              className={cn(
+                                "w-full rounded-control border px-4 py-3 text-right text-sm transition",
+                                answers[id] === opt.id
+                                  ? "border-primary bg-primary/10 font-semibold text-primary"
+                                  : "border-line/80 bg-paper hover:border-primary/40",
+                                submitted && correctOptionId != null && opt.id === correctOptionId && "ring-2 ring-emerald-500/50",
+                                submitted &&
+                                  answers[id] === opt.id &&
+                                  correctOptionId != null &&
+                                  opt.id !== correctOptionId &&
+                                  "ring-2 ring-amber-500/40",
+                              )}
+                            >
+                              {opt.label}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                      {submitted && graded?.explanation ? (
+                        // "הערת מורה" - עקבי עם התרגול בשיעורים
+                        <div className="rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4">
+                          <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
+                          <PremiumMarkdownBody body={graded.explanation} variant="card" />
+                        </div>
+                      ) : null}
                     </div>
-                  ) : null}
+                  </div>
                 </CardBody>
               </Card>
             </li>

@@ -54,6 +54,21 @@ describe("splitBodyIntoMicroParts", () => {
       expect(p.trim().endsWith(".")).toBe(true);
     }
   });
+
+  it("keeps blockquote paragraphs whole (no mid-sentence cut inside a quote para)", () => {
+    const p1 =
+      "> Despite living in the most connected era, people feel lonely. Surveys show a sharp rise across age groups.";
+    const p2 =
+      "> In fact, some tech companies are experimenting with features designed to foster deeper social interactions.";
+    const body = `${p1}\n>\n${p2}`;
+    const parts = splitBodyIntoMicroParts(body, 80);
+    expect(parts.some((p) => /companies are—|companies are $/.test(p))).toBe(false);
+    expect(parts.some((p) => p.includes("companies are experimenting"))).toBe(true);
+    for (const part of parts) {
+      const plain = part.replace(/^>\s?/gm, "").replace(/\s+/g, " ").trim();
+      expect(plain.endsWith(".")).toBe(true);
+    }
+  });
 });
 
 describe("splitBodyIntoSemanticMicroParts", () => {
