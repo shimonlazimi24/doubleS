@@ -21,8 +21,9 @@ function normalizeQuery(q: string): string {
   return q.trim().toLowerCase();
 }
 
-const navButtonClass =
-  "inline-flex min-h-9 items-center gap-1.5 rounded-full border border-line/80 bg-white px-3.5 text-sm font-medium text-[#0f2347] transition hover:border-primary/40 hover:text-primary disabled:pointer-events-none disabled:opacity-40";
+/** ניווט מילים — קל ומשני, כדי שלא יתחרה ב«המשך השיעור» בפוטר */
+const wordNavButtonClass =
+  "inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-transparent bg-stone-100/90 px-3 text-sm font-medium text-slate-700 transition hover:bg-stone-200/90 hover:text-[#0f2347] disabled:pointer-events-none disabled:opacity-35";
 
 /**
  * Flashcard-first: מילה אחת במוקד, ניווט קומפקטי צמוד לכרטיס (נבדל מניווט
@@ -77,19 +78,27 @@ export function WordLearningDeck({ words, categoryFilter, query = "", onDeckMetr
     <div className={cn("space-y-3 [direction:rtl] [text-align:start]", className)}>
       <WordCard word={current} />
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        <button type="button" className={navButtonClass} onClick={goPrev} disabled={safeStart <= 0}>
-          <span aria-hidden>→</span>
-          הקודמת
-        </button>
-        <p className="min-w-[6.5rem] text-center text-sm tabular-nums text-slate-600">
-          {safeStart + 1} מתוך {total}
+      <nav
+        className="rounded-xl border border-stone-200/70 bg-stone-50/50 px-3 py-2.5"
+        aria-label="ניווט בין מילים ברשימה"
+      >
+        <p className="mb-2 text-center text-xs font-medium text-slate-500">
+          ברשימת המילים · {safeStart + 1} מתוך {total}
         </p>
-        <button type="button" className={navButtonClass} onClick={goNext} disabled={safeStart >= maxStart}>
-          המילה הבאה
-          <span aria-hidden>←</span>
-        </button>
-      </div>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <button type="button" className={wordNavButtonClass} onClick={goPrev} disabled={safeStart <= 0}>
+            <span aria-hidden>→</span>
+            המילה הקודמת
+          </button>
+          <button type="button" className={wordNavButtonClass} onClick={goNext} disabled={safeStart >= maxStart}>
+            המילה הבאה
+            <span aria-hidden>←</span>
+          </button>
+        </div>
+        <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">
+          להמשך השיעור (שקופית הבאה) — הכפתור הכחול למטה
+        </p>
+      </nav>
 
       <details className="text-center">
         <summary className="inline-flex cursor-pointer list-none items-center text-sm font-medium text-primary underline-offset-4 marker:content-none hover:underline [&::-webkit-details-marker]:hidden">
