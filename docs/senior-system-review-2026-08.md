@@ -18,6 +18,8 @@
 1. `supabase/migrations/20260817_cms_rls_app_metadata.sql`
 2. `supabase/migrations/20260817_restrict_course_chunks.sql`
 
+**Ops לפני פתיחה:** `docs/PROD_CHECKLIST.md` · `npm run prod:readiness` · e2e smoke ב-CI.
+
 **לא פוצל בכוונה (חודש / ניקיון גדול):** פיצול god-files מלא של quiz/lesson — סיכון רגרסיה גבוה בלי שינוי מוצר.
 
 ---

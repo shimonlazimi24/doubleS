@@ -66,22 +66,24 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
               </Link>
 
               {/* Right: course nav */}
-              <nav dir="rtl" className="flex items-center gap-0.5 py-2">
+              <nav dir="rtl" className="flex max-w-[55%] items-center justify-end gap-0.5 overflow-x-auto py-2 sm:max-w-none">
                 <Link
                   href={BASE}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
+                  className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:px-3 sm:text-sm"
                 >
-                  תוכנית הקורס
+                  תוכנית
+                  <span className="hidden sm:inline"> הקורס</span>
                 </Link>
                 <Link
                   href={`${BASE}/dashboard`}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
+                  className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:px-3 sm:text-sm"
                 >
-                  לוח תלמיד
+                  לוח
+                  <span className="hidden sm:inline"> תלמיד</span>
                 </Link>
                 <Link
                   href={`${PREP_BASE}/settings`}
-                  className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary"
+                  className="hidden shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:inline-flex"
                 >
                   אזור אישי
                 </Link>

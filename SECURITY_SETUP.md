@@ -44,3 +44,4 @@ This script checks local env files for obvious secret-like values and fails if f
 - Never set `PREP_AUTH_ADMIN_VERIFY=1` in production (account-takeover risk).
 - Apply `supabase/migrations/20260817_cms_rls_app_metadata.sql` so CMS admin uses `app_metadata.is_admin`.
 - Apply `supabase/migrations/20260817_restrict_course_chunks.sql` so course RAG chunks are not publicly readable / RPC not callable by authenticated clients without entitlement.
+- Before launch: follow `docs/PROD_CHECKLIST.md` and run `npm run prod:readiness`.

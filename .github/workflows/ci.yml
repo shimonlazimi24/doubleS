@@ -20,3 +20,21 @@ jobs:
       - run: npm run test:amirant
       - run: npm run qa:amirant-content
       - run: npm run security:preflight
+      - run: npm run prod:readiness
+
+  e2e-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npm run test:e2e:smoke
+        env:
+          CI: "1"
+          # Deterministic smoke — no live Supabase/OpenAI required for lock checks
+          NEXT_TELEMETRY_DISABLED: "1"
