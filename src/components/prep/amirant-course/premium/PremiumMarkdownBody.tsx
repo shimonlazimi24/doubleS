@@ -14,28 +14,8 @@ import {
   stripTaskListCheckboxes,
 } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
-
-/**
- * Shortcode להטמעת וידאו בתוך markdown (כולל תוכן CMS):
- * `{{video:https://youtu.be/XXXX|כותרת אופציונלית}}`
- */
-const VIDEO_SHORTCODE = /\{\{video:([^|}]+)(?:\|([^}]*))?\}\}/g;
-
-type BodySegment = { kind: "markdown"; value: string } | { kind: "video"; src: string; title: string };
-
-function splitBodyOnVideoShortcodes(body: string): BodySegment[] {
-  const segments: BodySegment[] = [];
-  let lastIndex = 0;
-  VIDEO_SHORTCODE.lastIndex = 0;
-  let match: RegExpExecArray | null;
-  while ((match = VIDEO_SHORTCODE.exec(body)) !== null) {
-    if (match.index > lastIndex) segments.push({ kind: "markdown", value: body.slice(lastIndex, match.index) });
-    segments.push({ kind: "video", src: match[1]!.trim(), title: match[2]?.trim() || "סרטון הסבר" });
-    lastIndex = match.index + match[0].length;
-  }
-  if (lastIndex < body.length) segments.push({ kind: "markdown", value: body.slice(lastIndex) });
-  return segments;
-}
+import { AmirantAudioPlayer } from "@/components/prep/amirant-course/lesson/AmirantAudioPlayer";
+import { splitBodyOnMediaShortcodes } from "@/lib/amirant-course/lesson-content/media-shortcodes";
 
 const baseCompact: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
@@ -236,7 +216,7 @@ export function PremiumMarkdownBody({ body, className, variant = "default" }: Pr
     return null;
   }
   const c = variant === "card" ? cardCompact : variant === "lesson" ? lessonProse : baseCompact;
-  const segments = splitBodyOnVideoShortcodes(cleanBody);
+  const segments = splitBodyOnMediaShortcodes(cleanBody);
   return (
     <div
       className={cn(
@@ -247,15 +227,26 @@ export function PremiumMarkdownBody({ body, className, variant = "default" }: Pr
       dir="rtl"
       lang="he"
     >
-      {segments.map((seg, i) =>
-        seg.kind === "video" ? (
-          <AmirantVideoEmbed key={`video-${i}`} src={seg.src} title={seg.title} className="my-4" />
-        ) : seg.value.trim() ? (
+      {segments.map((seg, i) => {
+        if (seg.kind === "video") {
+          return <AmirantVideoEmbed key={`video-${i}`} src={seg.src} title={seg.title} className="my-4" />;
+        }
+        if (seg.kind === "audio") {
+          return (
+            <AmirantAudioPlayer
+              key={`audio-${i}`}
+              audioRef={seg.ref}
+              title={seg.title}
+              className="my-4"
+            />
+          );
+        }
+        return seg.value.trim() ? (
           <ReactMarkdown key={`md-${i}`} remarkPlugins={[remarkGfm]} components={c}>
             {seg.value}
           </ReactMarkdown>
-        ) : null,
-      )}
+        ) : null;
+      })}
     </div>
   );
 }

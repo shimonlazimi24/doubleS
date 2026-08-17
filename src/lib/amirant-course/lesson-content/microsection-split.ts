@@ -1,4 +1,5 @@
 import { markdownishToPlain, type PremiumSectionVariant } from "./split-markdown-lesson";
+import { isMediaShortcodeBlock } from "./media-shortcodes";
 
 /** Tuned for ~3–4 short lines per card (avoids “document” walls). */
 export const DEFAULT_MICRO_CARD_CHARS = 300;
@@ -172,6 +173,7 @@ function isMarkdownList(block: string): boolean {
 function isAtomicBlock(block: string): boolean {
   return (
     isFenceBlock(block) ||
+    isMediaShortcodeBlock(block) ||
     (isMcOptionsBlock(block) && block.length <= WHOLE_SUBSECTION_CHARS) ||
     isMarkdownTable(block) ||
     (isMarkdownList(block) && block.length <= WHOLE_SUBSECTION_CHARS)

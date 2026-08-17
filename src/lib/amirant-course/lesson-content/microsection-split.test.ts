@@ -204,6 +204,22 @@ describe("splitBodyIntoSemanticMicroParts", () => {
       "Welcome & Course Introduction",
     );
   });
+
+  it("keeps audio shortcode intact (not mid-token split)", () => {
+    const body = [
+      "## קטע שמיעה",
+      "",
+      "{{audio:listening-7.3-t1-p1|קטע 1}}",
+      "",
+      "### תמליל",
+      "",
+      "Hello world transcript here.",
+    ].join("\n");
+    const parts = splitBodyIntoSemanticMicroParts(body, 300, "שמיעה");
+    const joined = parts.map((p) => p.body).join("\n");
+    expect(joined).toContain("{{audio:listening-7.3-t1-p1|קטע 1}}");
+    expect(joined).not.toMatch(/\{\{audio:[^}]*$/m);
+  });
 });
 
 describe("expandSectionFlowToLessonCards", () => {
