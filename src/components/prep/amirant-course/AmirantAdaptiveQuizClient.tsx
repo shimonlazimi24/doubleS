@@ -652,30 +652,39 @@ export function AmirantAdaptiveQuizClient({
             {AMIRANT_TOPIC_LABEL_HE[currentQ.topicSlug]}
           </CardTitle>
           <CardBody className="space-y-6 p-6">
-            <QuizPassagePanel passageId={currentQ.passageId} />
-            <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
-              {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
-            </p>
-            <ul className="space-y-2">
-              {currentQ.options.map((opt) => (
-                <li key={opt.id}>
-                  <button
-                    type="button"
-                    disabled={gradingIndex === currentIndex}
-                    onClick={() => setAnswerForIndex(currentIndex, opt.id)}
-                    className={cn(
-                      "w-full rounded-control border px-4 py-3 text-right text-sm transition",
-                      answers[currentIndex] === opt.id
-                        ? "border-primary bg-primary/10 font-semibold text-primary"
-                        : "border-line/80 bg-paper hover:border-primary/40",
-                      gradingIndex === currentIndex && "opacity-60",
-                    )}
-                  >
-                    {opt.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div className={cn(currentQ.passageId && "grid gap-6 lg:grid-cols-2 lg:items-start")}>
+              {currentQ.passageId ? (
+                <QuizPassagePanel
+                  passageId={currentQ.passageId}
+                  className="max-h-[min(70vh,32rem)] lg:sticky lg:top-24"
+                />
+              ) : null}
+              <div className="space-y-6">
+                <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
+                  {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
+                </p>
+                <ul className="space-y-2">
+                  {currentQ.options.map((opt) => (
+                    <li key={opt.id}>
+                      <button
+                        type="button"
+                        disabled={gradingIndex === currentIndex}
+                        onClick={() => setAnswerForIndex(currentIndex, opt.id)}
+                        className={cn(
+                          "w-full rounded-control border px-4 py-3 text-right text-sm transition",
+                          answers[currentIndex] === opt.id
+                            ? "border-primary bg-primary/10 font-semibold text-primary"
+                            : "border-line/80 bg-paper hover:border-primary/40",
+                          gradingIndex === currentIndex && "opacity-60",
+                        )}
+                      >
+                        {opt.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
             <div className="flex flex-wrap gap-3">
               <button
                 type="button"

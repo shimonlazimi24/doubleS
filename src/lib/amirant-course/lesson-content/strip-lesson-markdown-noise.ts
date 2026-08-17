@@ -35,6 +35,11 @@ export function stripHtmlAnchorNoise(body: string): string {
     .replace(/<\/?summary[^>]*>/gi, "");
 }
 
+/** GFM task-list boxes render as odd “ריבוע” glyphs in lesson slides — prefer plain bullets. */
+export function stripTaskListCheckboxes(body: string): string {
+  return body.replace(/^(\s*)[-*+]\s+\[[ xX]\]\s+/gm, "$1- ");
+}
+
 /** Strips common markdown separator noise (horizontal rules, pipes-only lines) from edges only. */
 export function stripEdgeSeparatorNoise(body: string): string {
   const normalized = body.replace(/\r\n/g, "\n");

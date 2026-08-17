@@ -4,7 +4,7 @@ import type { Components } from "react-markdown";
 import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { stripMasachNumberingForDisplay } from "@/lib/amirant-course/content-source/split-markdown-masach";
-import { stripHtmlAnchorNoise } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 
 const MAX_CHARS = 120_000;
 
@@ -148,7 +148,7 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
 export function AmirantCourseMarkdownFromRepo({ body }: Props) {
   const truncated = body.length > MAX_CHARS;
   const raw = truncated ? `${body.slice(0, MAX_CHARS)}\n\n… [נחתך - ${body.length.toLocaleString("he-IL")} תווים בקובץ]` : body;
-  const display = stripHtmlAnchorNoise(stripMasachNumberingForDisplay(raw));
+  const display = stripTaskListCheckboxes(stripHtmlAnchorNoise(stripMasachNumberingForDisplay(raw)));
 
   return (
     <div className="space-y-3">

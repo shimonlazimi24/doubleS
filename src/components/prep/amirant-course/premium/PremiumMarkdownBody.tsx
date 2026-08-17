@@ -7,7 +7,7 @@ import {
 } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import type { Components } from "react-markdown";
 import { cn } from "@/lib/design-system/cn";
-import { stripHtmlAnchorNoise } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
+import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "@/lib/amirant-course/lesson-content/strip-lesson-markdown-noise";
 import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
 
 /**
@@ -182,7 +182,7 @@ const lessonProse: Components = {
 type Props = { body: string; className?: string; variant?: "default" | "card" | "lesson" };
 
 export function PremiumMarkdownBody({ body, className, variant = "default" }: Props) {
-  const cleanBody = stripHtmlAnchorNoise(body);
+  const cleanBody = stripTaskListCheckboxes(stripHtmlAnchorNoise(body));
   if (!cleanBody.trim()) {
     return null;
   }

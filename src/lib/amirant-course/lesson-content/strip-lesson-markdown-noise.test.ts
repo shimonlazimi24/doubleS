@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { stripHtmlAnchorNoise } from "./strip-lesson-markdown-noise";
+import { stripHtmlAnchorNoise, stripTaskListCheckboxes } from "./strip-lesson-markdown-noise";
 
 describe("stripHtmlAnchorNoise", () => {
   it("removes <a name> anchors", () => {
@@ -27,5 +27,11 @@ describe("stripHtmlAnchorNoise", () => {
   it("handles a summary split across a chunked slide (orphan tags)", () => {
     expect(stripHtmlAnchorNoise("טקסט <details> עוד")).toBe("טקסט  עוד");
     expect(stripHtmlAnchorNoise("סוף </details>")).toBe("סוף ");
+  });
+});
+
+describe("stripTaskListCheckboxes", () => {
+  it("strips GFM task-list checkboxes to plain bullets", () => {
+    expect(stripTaskListCheckboxes("- [ ] ראשון\n- [x] שני")).toBe("- ראשון\n- שני");
   });
 });
