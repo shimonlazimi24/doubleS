@@ -67,6 +67,7 @@ export function PrepPricingPage() {
   const lockedModuleSlug = searchParams.get("module");
   const lockedModule = lockedModuleSlug ? MODULE_LABEL_HE[lockedModuleSlug] ?? lockedModuleSlug : null;
   const checkoutState = searchParams.get("checkout");
+  const nextAfterPay = searchParams.get("next");
 
   const [selected, setSelected] = useState<PlanId>("two_weeks");
   const [busy, setBusy] = useState(false);
@@ -74,7 +75,15 @@ export function PrepPricingPage() {
 
   useEffect(() => {
     trackEvent("view_pricing", {});
-  }, []);
+    // Remember intended destination for post-checkout (Hyp callback → success page).
+    if (nextAfterPay && nextAfterPay.startsWith("/") && !nextAfterPay.startsWith("//")) {
+      try {
+        sessionStorage.setItem("prep_checkout_next", nextAfterPay);
+      } catch {
+        /* ignore */
+      }
+    }
+  }, [nextAfterPay]);
 
   function selectPlan(planId: PlanId) {
     setSelected(planId);

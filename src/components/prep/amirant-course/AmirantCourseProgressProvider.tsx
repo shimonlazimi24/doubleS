@@ -84,24 +84,33 @@ export function AmirantCourseProgressProvider({ children }: { children: ReactNod
     (lessonId: string) => {
       setState((prev) => {
         const next = service.markLessonStarted(prev, lessonId);
-        if (next === prev) return prev;
-        service.save(next);
-        return next;
+        if (next !== prev) {
+          queueMicrotask(() => {
+            service.save(next);
+            // Keep guest-local cache warm while authenticated (offline / logout resume).
+            localService.save(next);
+          });
+        }
+        return next === prev ? prev : next;
       });
     },
-    [service],
+    [service, localService],
   );
 
   const markLessonCompleted = useCallback(
     (lessonId: string) => {
       setState((prev) => {
         const next = service.markLessonCompleted(prev, lessonId);
-        if (next === prev) return prev;
-        service.save(next);
-        return next;
+        if (next !== prev) {
+          queueMicrotask(() => {
+            service.save(next);
+            localService.save(next);
+          });
+        }
+        return next === prev ? prev : next;
       });
     },
-    [service],
+    [service, localService],
   );
 
   const value = useMemo((): AmirantCourseProgressApi => {

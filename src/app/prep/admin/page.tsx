@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
-import { AMIRANT_BANK_MODE, AMIRANT_BANK_QUESTIONS } from "@/lib/amirant-course";
+import { AMIRANT_BANK_MODE, AMIRANT_BANK_QUESTIONS } from "@/lib/amirant-course/question-bank";
 
 async function getStats() {
   const supabase = createPrepSupabaseServerClient();
@@ -49,8 +49,12 @@ export default async function AdminDashboard() {
         <Link href="/prep/admin/lessons/new" className="px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-zinc-200 transition">
           + שיעור חדש
         </Link>
-        <Link href="/prep/admin/questions/new" className="px-4 py-2 bg-zinc-700 text-white text-sm font-medium rounded-lg hover:bg-zinc-600 transition">
-          + שאלה חדשה
+        <Link
+          href="/prep/admin/questions"
+          className="px-4 py-2 bg-zinc-800 text-zinc-400 text-sm font-medium rounded-lg border border-zinc-700 hover:bg-zinc-700 transition"
+          title="CMS שאלות לא מחובר לחידונים החיים"
+        >
+          שאלות CMS (לא פעיל)
         </Link>
       </div>
     </div>

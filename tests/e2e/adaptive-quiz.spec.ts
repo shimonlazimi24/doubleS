@@ -18,10 +18,10 @@ test("adaptive quiz full demo flow ends in analytics/dashboard/review", async ({
 
   await page.getByRole("link", { name: "אנליטיקה" }).click();
   await expect(page).toHaveURL(/\/prep\/amirant\/course\/analytics/);
-  await page.getByRole("button", { name: "בקשת ניתוח" }).click();
-  // קריאת AI אמיתית - עד 30 שניות
+  await page.getByRole("button", { name: "מה כדאי לי לתרגל עכשיו?" }).click();
+  // קריאת AI אמיתית - עד 30 שניות (או שגיאת הרשאה בעברית אחרי נעילת המסלול)
   await expect(
-    page.getByText(/הסבר:|בקשה נדחתה.|שגיאת רשת.|fallback/i),
+    page.getByText(/הסבר:|בקשה נדחתה.|שגיאת רשת.|fallback|יש להתחבר|נדרשת גישה|יותר מדי/i),
   ).toBeVisible({ timeout: 30_000 });
 
   await page.goto("/prep/amirant/course/dashboard");

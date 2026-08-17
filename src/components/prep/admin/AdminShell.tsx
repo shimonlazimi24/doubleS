@@ -8,7 +8,7 @@ import { getPrepSupabasePublishableEnv } from "@/lib/prep/supabase/env";
 const NAV = [
   { href: "/prep/admin", label: "📊 Dashboard", exact: true },
   { href: "/prep/admin/lessons", label: "📖 שיעורים" },
-  { href: "/prep/admin/questions", label: "❓ שאלות" },
+  { href: "/prep/admin/questions", label: "❓ שאלות (לא פעיל)" },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {

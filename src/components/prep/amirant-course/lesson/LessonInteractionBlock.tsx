@@ -13,8 +13,7 @@ type Props = {
  * Short reflection between card groups - three clear options, not gamified.
  */
 export function LessonInteractionBlock({ onContinue, className, surface = "card" }: Props) {
-  const helpMsg =
-    "רקע: בדיקת הבנה אמצעית בשיעור. בקש/י: תמצית של שלושה משפטים **מבוססי מקור בלבד (RAG)** לליבת הנקודות, בלי מספרי בחינה או עובדות שאינן בחומר.";
+  const helpMsg = "תן לי סיכום קצר של שלוש נקודות מהחלק האחרון בשיעור";
 
   const shell =
     surface === "embed"

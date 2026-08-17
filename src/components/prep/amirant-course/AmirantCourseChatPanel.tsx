@@ -10,6 +10,7 @@ import {
   type AmirantCourseCoachEventDetail,
   type AmirantQuestionContextDetail,
 } from "@/lib/prep/amirant-lesson-coach-events";
+import { heApiError } from "@/lib/prep/he-api-error";
 
 type Msg = { role: "user" | "assistant"; text: string; id: string };
 
@@ -112,30 +113,43 @@ export function AmirantCourseChatPanel({
         if (!res.ok || !res.body) {
           const data = await res.json() as { error?: string };
           setMessages((m) => m.filter((msg) => msg.id !== assistantId));
-          setError(typeof data.error === "string" ? data.error : "הבקשה נכשלה.");
+          setError(heApiError(data.error, "הבקשה נכשלה."));
           return;
         }
 
-        // Read SSE stream
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
         let buffer = "";
+        let pendingTok = "";
+        let rafId: number | null = null;
+
+        const flushTok = () => {
+          rafId = null;
+          if (!pendingTok) return;
+          const chunk = pendingTok;
+          pendingTok = "";
+          setMessages((m) =>
+            m.map((msg) => (msg.id === assistantId ? { ...msg, text: msg.text + chunk } : msg)),
+          );
+        };
 
         const processLine = (line: string) => {
           if (!line.startsWith("data: ")) return;
           try {
             const event = JSON.parse(line.slice(6)) as { t: string; v?: string; d?: Record<string, unknown>; e?: string };
             if (event.t === "tok" && event.v) {
-              // Append streamed token to assistant message
-              setMessages((m) =>
-                m.map((msg) => msg.id === assistantId ? { ...msg, text: msg.text + event.v! } : msg),
-              );
+              pendingTok += event.v;
+              if (rafId == null) rafId = window.requestAnimationFrame(flushTok);
             } else if (event.t === "done" && event.d) {
+              if (rafId != null) {
+                window.cancelAnimationFrame(rafId);
+                rafId = null;
+              }
+              flushTok();
               const data = event.d;
               const suffix = data.safeFallback ? "\n\n(מצב זהיר - מידע מוגבל/חסר.)" : "";
               const rec = typeof data.recommendedAction === "string" && data.recommendedAction.trim()
                 ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
-              // Replace with final answer from done event (handles escaping edge cases)
               const finalAnswer = (typeof data.answer === "string" ? data.answer : "") + suffix + rec;
               setMessages((m) =>
                 m.map((msg) => msg.id === assistantId ? { ...msg, text: finalAnswer } : msg),
@@ -146,8 +160,9 @@ export function AmirantCourseChatPanel({
                 setHintSession(null);
               }
             } else if (event.t === "err") {
+              if (rafId != null) window.cancelAnimationFrame(rafId);
               setMessages((m) => m.filter((msg) => msg.id !== assistantId));
-              setError(event.e ?? "שגיאה.");
+              setError(heApiError(event.e, "שגיאה."));
             }
           } catch {
             // ignore malformed SSE line
@@ -163,6 +178,10 @@ export function AmirantCourseChatPanel({
           for (const line of lines) {
             if (line.trim()) processLine(line);
           }
+        }
+        if (rafId != null) {
+          window.cancelAnimationFrame(rafId);
+          flushTok();
         }
       } catch {
         setMessages((m) => m.filter((msg) => msg.id !== assistantId));

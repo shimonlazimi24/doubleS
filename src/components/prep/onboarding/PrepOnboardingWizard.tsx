@@ -11,47 +11,32 @@ import {
   DAILY_STUDY_OPTIONS,
   FIRST_TIME_LABELS,
   FIRST_TIME_OPTIONS,
-  HEARD_ABOUT_LABELS,
-  HEARD_ABOUT_OPTIONS,
   type OnboardingPayload,
 } from "@/lib/prep/onboarding/schema";
-import institutions from "../../../../content/onboarding/israeli-institutions.json";
-import fieldsOfStudy from "../../../../content/onboarding/fields-of-study.json";
 
-const TOTAL_STEPS = 6;
+const TOTAL_STEPS = 3;
 const FINISH_STEP = TOTAL_STEPS + 1;
-const INSTITUTIONS = institutions as string[];
-const FIELDS = fieldsOfStudy as string[];
 const DASHBOARD_PATH = `${PREP_BASE}/amirant/course/dashboard`;
 /** נשמר מקומית כשאין Supabase (פיתוח/דמו) וכטיוטה בין שלבים - best effort. */
 const LOCAL_KEY = "prep_onboarding_v1";
 
 type FirstTime = (typeof FIRST_TIME_OPTIONS)[number];
 type DailyStudy = (typeof DAILY_STUDY_OPTIONS)[number];
-type HeardAbout = (typeof HEARD_ABOUT_OPTIONS)[number];
 
 type WizardState = {
   sortingExamDate: string;
   sortingExamDateUnknown: boolean;
-  institutionName: string;
-  fieldOfStudy: string;
   firstTimeExam: FirstTime | "";
   firstTimeExamOther: string;
   dailyStudyTime: DailyStudy | "";
-  heardAbout: HeardAbout | "";
-  heardAboutOther: string;
 };
 
 const initialState: WizardState = {
   sortingExamDate: "",
   sortingExamDateUnknown: false,
-  institutionName: "",
-  fieldOfStudy: "",
   firstTimeExam: "",
   firstTimeExamOther: "",
   dailyStudyTime: "",
-  heardAbout: "",
-  heardAboutOther: "",
 };
 
 /* ── Local draft (best-effort) ────────────────────────────────── */
@@ -174,90 +159,6 @@ function OtherInput({
   );
 }
 
-/** קומבו-בוקס: טקסט חופשי + הצעות מסוננות תוך כדי הקלדה. */
-function ComboboxInput({
-  id,
-  label,
-  value,
-  onChange,
-  options,
-  placeholder,
-}: {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  options: string[];
-  placeholder: string;
-}) {
-  const [open, setOpen] = useState(false);
-  const filtered = useMemo(() => {
-    const q = value.trim();
-    if (!q) return options.slice(0, 8);
-    return options.filter((o) => o.includes(q)).slice(0, 8);
-  }, [value, options]);
-
-  return (
-    <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-semibold text-ink">
-        {label}
-      </label>
-      <div className="relative">
-        <input
-          id={id}
-          role="combobox"
-          aria-expanded={open && filtered.length > 0}
-          aria-controls={`${id}-listbox`}
-          aria-autocomplete="list"
-          value={value}
-          onChange={(e) => {
-            onChange(e.target.value);
-            setOpen(true);
-          }}
-          onFocus={() => setOpen(true)}
-          onBlur={() => setTimeout(() => setOpen(false), 150)}
-          onKeyDown={(e) => {
-            if (e.key === "Escape") setOpen(false);
-            if (e.key === "Enter") setOpen(false);
-          }}
-          placeholder={placeholder}
-          dir="rtl"
-          autoComplete="off"
-          className="w-full rounded-control border border-line bg-paper px-4 py-3.5 text-right text-[0.9375rem] text-ink outline-none transition placeholder:text-muted-2 focus:border-primary focus:ring-2 focus:ring-primary/10"
-        />
-        {open && filtered.length > 0 ? (
-          <ul
-            id={`${id}-listbox`}
-            role="listbox"
-            className="absolute z-20 mt-1.5 max-h-56 w-full overflow-auto rounded-md border border-line bg-paper py-1 shadow-card"
-          >
-            {filtered.map((opt) => (
-              <li key={opt} role="option" aria-selected={opt === value}>
-                <button
-                  type="button"
-                  tabIndex={-1}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    onChange(opt);
-                    setOpen(false);
-                  }}
-                  className={cn(
-                    "w-full px-4 py-2.5 text-right text-sm transition hover:bg-surface-low",
-                    opt === value ? "font-semibold text-primary" : "text-ink",
-                  )}
-                >
-                  {opt}
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-      <p className="text-xs text-muted-2">אפשר לבחור מהרשימה או לכתוב תשובה חופשית.</p>
-    </div>
-  );
-}
-
 /* ── Main Wizard ──────────────────────────────────────────────── */
 
 export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
@@ -283,19 +184,11 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
       case 1:
         return state.sortingExamDateUnknown || state.sortingExamDate.length > 0;
       case 2:
-        return state.institutionName.trim().length > 0;
-      case 3:
-        return state.fieldOfStudy.trim().length > 0;
-      case 4:
         if (!state.firstTimeExam) return false;
         if (state.firstTimeExam === "other") return state.firstTimeExamOther.trim().length > 0;
         return true;
-      case 5:
+      case 3:
         return state.dailyStudyTime !== "";
-      case 6:
-        if (!state.heardAbout) return false;
-        if (state.heardAbout === "other") return state.heardAboutOther.trim().length > 0;
-        return true;
       default:
         return true;
     }
@@ -305,14 +198,14 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
     (): OnboardingPayload => ({
       sortingExamDate: state.sortingExamDateUnknown ? null : state.sortingExamDate || null,
       sortingExamDateUnknown: state.sortingExamDateUnknown,
-      institutionName: state.institutionName.trim(),
-      fieldOfStudy: state.fieldOfStudy.trim(),
+      institutionName: "לא צוין",
+      fieldOfStudy: "לא צוין",
       firstTimeExam: state.firstTimeExam as FirstTime,
       firstTimeExamOther: state.firstTimeExam === "other" ? state.firstTimeExamOther.trim() : null,
       dailyStudyTime: state.dailyStudyTime as DailyStudy,
       dailyStudyTimeOther: null,
-      heardAbout: state.heardAbout ? [state.heardAbout] : [],
-      heardAboutOther: state.heardAbout === "other" ? state.heardAboutOther.trim() : null,
+      heardAbout: [],
+      heardAboutOther: null,
     }),
     [state],
   );
@@ -386,36 +279,41 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
         ? "תאריך המבחן עדיין לא נקבע"
         : `מבחן ב-${formatDateHe(state.sortingExamDate)}`,
     );
-    if (state.institutionName.trim()) parts.push(state.institutionName.trim());
-    if (state.fieldOfStudy.trim()) parts.push(state.fieldOfStudy.trim());
+    if (state.firstTimeExam) parts.push(FIRST_TIME_LABELS[state.firstTimeExam]);
     if (state.dailyStudyTime) parts.push(`${DAILY_STUDY_LABELS[state.dailyStudyTime]} ביום`);
     return parts.join(" · ");
   }, [state]);
 
   /* ── Finish screen ── */
   if (step === FINISH_STEP) {
+    const goesToPricing = nextPath.includes("/pricing");
     return (
       <div dir="rtl" className="mx-auto w-full max-w-md text-center">
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-score/40 bg-score/10 text-lg font-bold text-score" aria-hidden="true">
           ✓
         </span>
         <h1 className="mt-6 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-3xl">
-          הכל מוכן - קדימה לתרגול!
+          {goesToPricing ? "נשאר רק לבחור גישה" : "הכל מוכן - קדימה לתרגול!"}
         </h1>
-        <p className="mt-3 text-sm leading-body text-muted">{summaryLine}</p>
+        <p className="mt-3 text-sm leading-body text-muted">
+          {goesToPricing
+            ? "מילאתם את ההיכרות. מודול המבוא פתוח תמיד — לקורס המלא בוחרים תוכנית."
+            : summaryLine}
+        </p>
+        {!goesToPricing ? <p className="mt-2 text-sm leading-body text-muted">{summaryLine}</p> : null}
         <div className="mt-8 space-y-3">
           <button
             type="button"
             onClick={() => router.push(nextPath)}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-primary px-6 text-[0.9375rem] font-bold text-white shadow-cta transition hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50"
           >
-            קדימה לתרגול ←
+            {goesToPricing ? "למחירים ←" : "קדימה לתרגול ←"}
           </button>
           <Link
-            href={DASHBOARD_PATH}
+            href={goesToPricing ? `${PREP_BASE}/amirant/course` : DASHBOARD_PATH}
             className="inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-muted transition hover:text-primary"
           >
-            ללוח התלמיד שלי
+            {goesToPricing ? "קודם למודול המבוא החינמי" : "ללוח התלמיד שלי"}
           </Link>
         </div>
       </div>
@@ -477,38 +375,8 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
           </div>
         )}
 
-        {/* Step 2 - מוסד לימודים */}
+        {/* Step 2 - פעם ראשונה */}
         {step === 2 && (
-          <div className="space-y-6">
-            <StepHeading title="באיזה מוסד אתם לומדים?" subtitle="או המוסד שבכוונתכם להתקבל אליו" />
-            <ComboboxInput
-              id="institution"
-              label="מוסד לימודים"
-              value={state.institutionName}
-              onChange={(v) => patch({ institutionName: v })}
-              options={INSTITUTIONS}
-              placeholder="הקלידו שם מוסד..."
-            />
-          </div>
-        )}
-
-        {/* Step 3 - תחום לימודים */}
-        {step === 3 && (
-          <div className="space-y-6">
-            <StepHeading title="מה תחום הלימודים שלכם?" />
-            <ComboboxInput
-              id="field"
-              label="תחום לימודים"
-              value={state.fieldOfStudy}
-              onChange={(v) => patch({ fieldOfStudy: v })}
-              options={FIELDS}
-              placeholder="למשל: פסיכולוגיה..."
-            />
-          </div>
-        )}
-
-        {/* Step 4 - פעם ראשונה */}
-        {step === 4 && (
           <div className="space-y-6">
             <StepHeading title="האם זו הפעם הראשונה שאתם נבחנים?" />
             <div role="radiogroup" aria-label="האם זו הפעם הראשונה שאתם נבחנים?" className="flex flex-col gap-2.5">
@@ -532,8 +400,8 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
           </div>
         )}
 
-        {/* Step 5 - זמן לימוד יומי */}
-        {step === 5 && (
+        {/* Step 3 - זמן לימוד יומי */}
+        {step === 3 && (
           <div className="space-y-6">
             <StepHeading title="כמה זמן ביום מתכננים להקדיש ללמידה?" />
             <div role="radiogroup" aria-label="זמן לימוד יומי" className="flex flex-wrap justify-center gap-2.5">
@@ -546,30 +414,6 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
                 />
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Step 6 - איך שמעתם עלינו */}
-        {step === 6 && (
-          <div className="space-y-6">
-            <StepHeading title="איך שמעתם עלינו?" />
-            <div role="radiogroup" aria-label="איך שמעתם עלינו?" className="flex flex-wrap justify-center gap-2.5">
-              {HEARD_ABOUT_OPTIONS.map((opt) => (
-                <ChoiceChip
-                  key={opt}
-                  label={HEARD_ABOUT_LABELS[opt]}
-                  selected={state.heardAbout === opt}
-                  onClick={() => patch({ heardAbout: opt })}
-                />
-              ))}
-            </div>
-            {state.heardAbout === "other" && (
-              <OtherInput
-                value={state.heardAboutOther}
-                onChange={(v) => patch({ heardAboutOther: v })}
-                label="ספרו לנו איך הגעתם..."
-              />
-            )}
           </div>
         )}
 

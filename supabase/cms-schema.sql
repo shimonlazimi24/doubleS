@@ -65,15 +65,20 @@ ALTER TABLE cms_modules  ENABLE ROW LEVEL SECURITY;
 ALTER TABLE cms_lessons  ENABLE ROW LEVEL SECURITY;
 ALTER TABLE cms_questions ENABLE ROW LEVEL SECURITY;
 
--- Public SELECT on published rows
+-- Public SELECT on published modules/lessons only (not questions — answer keys)
 CREATE POLICY "cms_modules_public_read"   ON cms_modules   FOR SELECT USING (published = true);
 CREATE POLICY "cms_lessons_public_read"   ON cms_lessons   FOR SELECT USING (published = true);
-CREATE POLICY "cms_questions_public_read" ON cms_questions FOR SELECT USING (published = true);
 
--- Admin full access (is_admin = true in user_metadata)
-CREATE POLICY "cms_modules_admin_all"   ON cms_modules   FOR ALL USING ((auth.jwt() -> 'user_metadata' ->> 'is_admin')::boolean = true);
-CREATE POLICY "cms_lessons_admin_all"   ON cms_lessons   FOR ALL USING ((auth.jwt() -> 'user_metadata' ->> 'is_admin')::boolean = true);
-CREATE POLICY "cms_questions_admin_all" ON cms_questions FOR ALL USING ((auth.jwt() -> 'user_metadata' ->> 'is_admin')::boolean = true);
+-- Admin full access via app_metadata.is_admin (NOT user_metadata — that is client-writable)
+CREATE POLICY "cms_modules_admin_all"   ON cms_modules   FOR ALL
+  USING ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true)
+  WITH CHECK ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true);
+CREATE POLICY "cms_lessons_admin_all"   ON cms_lessons   FOR ALL
+  USING ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true)
+  WITH CHECK ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true);
+CREATE POLICY "cms_questions_admin_all" ON cms_questions FOR ALL
+  USING ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true)
+  WITH CHECK ((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean = true);
 
 -- ============================================================
 -- Indexes

@@ -43,24 +43,35 @@ const EMPTY: LessonFormData = {
 /** שיעורים עם חוויית צעדים "curated" - שינוי כותרות H2 עלול לשבור את סיווג הצעדים. */
 const CURATED_LESSON_IDS = new Set(["lesson.intro.welcome", "lesson.intro.roadmap"]);
 
-export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> }) {
+export function LessonEditor({
+  initial,
+  cmsExists = false,
+}: {
+  initial?: Partial<LessonFormData>;
+  /** True only when a cms_lessons row already exists (not just a manifest id prefill). */
+  cmsExists?: boolean;
+}) {
   const router = useRouter();
   const [form, setForm] = useState<LessonFormData>({ ...EMPTY, ...initial });
   const [preview, setPreview] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  const isNew = !initial?.id;
-  const isCurated = !isNew && CURATED_LESSON_IDS.has(form.id);
+  const isNew = !cmsExists;
+  const isCurated = Boolean(form.id) && CURATED_LESSON_IDS.has(form.id);
 
   function set<K extends keyof LessonFormData>(key: K, value: LessonFormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
   }
 
-  async function handleSave(publish?: boolean) {
+  async function handleSave(mode: "keep" | "publish" | "unpublish") {
     setError(null);
+    setSuccess(null);
     const payload = { ...form };
-    if (publish !== undefined) payload.published = publish;
+    if (mode === "publish") payload.published = true;
+    if (mode === "unpublish") payload.published = false;
+    // mode === "keep" → leave published as currently edited in form
 
     const url = isNew ? "/api/prep/admin/lessons" : `/api/prep/admin/lessons/${form.id}`;
     const method = isNew ? "POST" : "PATCH";
@@ -77,9 +88,11 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
           setError(msg ?? "שגיאה");
           return;
         }
-        const { id } = await res.json();
-        if (isNew && id) {
-          router.push(`/prep/admin/lessons/${id}`);
+        const data = await res.json();
+        setForm((f) => ({ ...f, published: payload.published }));
+        setSuccess(payload.published ? "נשמר ופורסם" : "נשמר");
+        if (isNew && data.id) {
+          router.push(`/prep/admin/lessons/${data.id}`);
         } else {
           router.refresh();
         }
@@ -92,7 +105,12 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
   async function handleDelete() {
     if (!confirm("למחוק את השיעור לצמיתות?")) return;
     startTransition(async () => {
-      await fetch(`/api/prep/admin/lessons/${form.id}`, { method: "DELETE" });
+      const res = await fetch(`/api/prep/admin/lessons/${form.id}`, { method: "DELETE" });
+      if (!res.ok) {
+        const { error: msg } = await res.json().catch(() => ({ error: "מחיקה נכשלה" }));
+        setError(msg ?? "מחיקה נכשלה");
+        return;
+      }
       router.push("/prep/admin/lessons");
     });
   }
@@ -124,14 +142,25 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
             </button>
           )}
           <button
-            onClick={() => handleSave(false)}
+            onClick={() => handleSave("keep")}
             disabled={isPending}
             className="px-4 py-2 text-sm bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 transition disabled:opacity-50"
           >
-            שמור טיוטה
+            שמור
           </button>
+          {form.published && (
+            <button
+              onClick={() => {
+                if (confirm("לבטל את הפרסום? השיעור יחזור לטיוטה.")) handleSave("unpublish");
+              }}
+              disabled={isPending}
+              className="px-4 py-2 text-sm border border-amber-700 text-amber-200 rounded-lg hover:bg-amber-950/40 transition disabled:opacity-50"
+            >
+              בטל פרסום
+            </button>
+          )}
           <button
-            onClick={() => handleSave(true)}
+            onClick={() => handleSave("publish")}
             disabled={isPending}
             className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 transition disabled:opacity-50"
           >
@@ -143,6 +172,11 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
       {error && (
         <div className="mb-4 px-4 py-3 bg-red-900/40 border border-red-700 rounded-lg text-sm text-red-300">
           {error}
+        </div>
+      )}
+      {success && (
+        <div className="mb-4 px-4 py-3 bg-emerald-900/40 border border-emerald-700 rounded-lg text-sm text-emerald-200">
+          {success}
         </div>
       )}
 
@@ -273,11 +307,20 @@ export function LessonEditor({ initial }: { initial?: Partial<LessonFormData> })
   );
 }
 
-// Simple markdown preview - renders as HTML
+// Safe markdown preview — escape HTML first, then apply limited markdown.
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function MarkdownPreview({ source }: { source: string }) {
   if (!source.trim()) return <p className="text-zinc-500 italic">אין תוכן להצגה</p>;
-  // Basic markdown rendering without external dependency
-  const html = source
+  const escaped = escapeHtml(source);
+  const html = escaped
     .replace(/^### (.+)$/gm, "<h3>$1</h3>")
     .replace(/^## (.+)$/gm, "<h2>$1</h2>")
     .replace(/^# (.+)$/gm, "<h1>$1</h1>")

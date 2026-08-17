@@ -54,9 +54,7 @@ export interface DemoQuestion {
   topicId: string;
   subtopicId: string;
   difficulty: 1 | 2 | 3 | 4 | 5 | 6;
-  explanation: string;
   options: DemoQuestionOption[];
-  correctOptionId: string;
 }
 
 export const AMIRANT_DEMO_COURSE = {
@@ -183,8 +181,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.academicVerbs,
     difficulty: 1,
-    explanation: 'Subject "study" is singular; present tense "demonstrates" agrees.',
-    correctOptionId: "20000001-0000-4000-8000-000000000201",
     options: [
       { id: "20000001-0000-4000-8000-000000000201", label: "demonstrates" },
       { id: "20000001-0000-4000-8000-000000000202", label: "demonstrate" },
@@ -200,8 +196,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.mainIdea,
     difficulty: 1,
-    explanation: "Main idea: allocate meaningful time blocks for English reading.",
-    correctOptionId: "20000001-0000-4000-8000-000000000206",
     options: [
       { id: "20000001-0000-4000-8000-000000000205", label: "Short fragments are always better than long sessions" },
       { id: "20000001-0000-4000-8000-000000000206", label: "Students should plan longer focused blocks for reading in English" },
@@ -216,8 +210,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.connectors,
     difficulty: 2,
-    explanation: '"However" introduces contrast with the previous clause (often implied).',
-    correctOptionId: "20000001-0000-4000-8000-000000000209",
     options: [
       { id: "20000001-0000-4000-8000-000000000209", label: "However" },
       { id: "20000001-0000-4000-8000-000000000210", label: "Although" },
@@ -232,8 +224,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.synonyms,
     difficulty: 2,
-    explanation: '"Substantial" matches formal nuance of "significant".',
-    correctOptionId: "20000001-0000-4000-8000-000000000214",
     options: [
       { id: "20000001-0000-4000-8000-000000000213", label: "tiny" },
       { id: "20000001-0000-4000-8000-000000000214", label: "substantial" },
@@ -249,8 +239,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.inference,
     difficulty: 3,
-    explanation: "Inference must follow evidence in the text, not outside knowledge.",
-    correctOptionId: "20000001-0000-4000-8000-000000000218",
     options: [
       { id: "20000001-0000-4000-8000-000000000217", label: "They are useless" },
       { id: "20000001-0000-4000-8000-000000000218", label: "They encourage deeper processing of the text" },
@@ -265,8 +253,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.collocations,
     difficulty: 3,
-    explanation: 'Collocation: "engage with" readings is natural academic English.',
-    correctOptionId: "20000001-0000-4000-8000-000000000222",
     options: [
       { id: "20000001-0000-4000-8000-000000000221", label: "argue against" },
       { id: "20000001-0000-4000-8000-000000000222", label: "engage with" },
@@ -281,8 +267,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.academicVerbs,
     difficulty: 3,
-    explanation: '"Challenge" fits academic reporting; check tense and agreement.',
-    correctOptionId: "20000001-0000-4000-8000-000000000226",
     options: [
       { id: "20000001-0000-4000-8000-000000000225", label: "ignores" },
       { id: "20000001-0000-4000-8000-000000000226", label: "challenges" },
@@ -297,8 +281,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.mainIdea,
     difficulty: 4,
-    explanation: "Identify tone from word choice, not your personal reaction.",
-    correctOptionId: "20000001-0000-4000-8000-000000000230",
     options: [
       { id: "20000001-0000-4000-8000-000000000229", label: "hostile" },
       { id: "20000001-0000-4000-8000-000000000230", label: "cautiously optimistic" },
@@ -313,8 +295,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.connectors,
     difficulty: 4,
-    explanation: '"Although" sets up concessive clause; comma separates clauses correctly.',
-    correctOptionId: "20000001-0000-4000-8000-000000000233",
     options: [
       { id: "20000001-0000-4000-8000-000000000233", label: "Although" },
       { id: "20000001-0000-4000-8000-000000000234", label: "Because" },
@@ -329,8 +309,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.synonyms,
     difficulty: 4,
-    explanation: '"Widespread" is a close formal synonym depending on context.',
-    correctOptionId: "20000001-0000-4000-8000-000000000238",
     options: [
       { id: "20000001-0000-4000-8000-000000000237", label: "rare" },
       { id: "20000001-0000-4000-8000-000000000238", label: "widespread" },
@@ -345,8 +323,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.inference,
     difficulty: 5,
-    explanation: "High difficulty: avoid over-inference beyond explicit support.",
-    correctOptionId: "20000001-0000-4000-8000-000000000242",
     options: [
       { id: "20000001-0000-4000-8000-000000000241", label: "The author dislikes universities" },
       { id: "20000001-0000-4000-8000-000000000242", label: "The passage supports structured practice over cramming" },
@@ -361,8 +337,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.collocations,
     difficulty: 5,
-    explanation: '"Expand access" is a standard academic collocation.',
-    correctOptionId: "20000001-0000-4000-8000-000000000246",
     options: [
       { id: "20000001-0000-4000-8000-000000000245", label: "reduce" },
       { id: "20000001-0000-4000-8000-000000000246", label: "expand" },
@@ -377,8 +351,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.collocations,
     difficulty: 3,
-    explanation: '"Consistent with" is a standard academic collocation.',
-    correctOptionId: "20000001-0000-4000-8000-000000000250",
     options: [
       { id: "20000001-0000-4000-8000-000000000249", label: "angry" },
       { id: "20000001-0000-4000-8000-000000000250", label: "consistent" },
@@ -393,8 +365,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.synonyms,
     difficulty: 4,
-    explanation: '"Mitigate" means to make something less severe - "alleviate" fits best here.',
-    correctOptionId: "20000001-0000-4000-8000-000000000254",
     options: [
       { id: "20000001-0000-4000-8000-000000000253", label: "worsen" },
       { id: "20000001-0000-4000-8000-000000000254", label: "alleviate" },
@@ -410,8 +380,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.mainIdea,
     difficulty: 5,
-    explanation: "The author acknowledges limits while defending a modest benefit - qualified support.",
-    correctOptionId: "20000001-0000-4000-8000-000000000258",
     options: [
       { id: "20000001-0000-4000-8000-000000000257", label: "Peer review is useless" },
       { id: "20000001-0000-4000-8000-000000000258", label: "Peer review is imperfect but still valuable" },
@@ -426,9 +394,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.connectors,
     difficulty: 5,
-    explanation:
-      "Despite + noun phrase introduces concession; Although would need a full clause in this slot.",
-    correctOptionId: "20000001-0000-4000-8000-000000000261",
     options: [
       { id: "20000001-0000-4000-8000-000000000261", label: "Despite" },
       { id: "20000001-0000-4000-8000-000000000262", label: "Although" },
@@ -443,8 +408,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.synonyms,
     difficulty: 6,
-    explanation: '"Pervasive" captures "present everywhere" in formal registers.',
-    correctOptionId: "20000001-0000-4000-8000-000000000266",
     options: [
       { id: "20000001-0000-4000-8000-000000000265", label: "rare" },
       { id: "20000001-0000-4000-8000-000000000266", label: "pervasive" },
@@ -460,8 +423,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.reading,
     subtopicId: S.inference,
     difficulty: 6,
-    explanation: "Without a control group, causal claims should be weakened to correlational language.",
-    correctOptionId: "20000001-0000-4000-8000-000000000270",
     options: [
       { id: "20000001-0000-4000-8000-000000000269", label: "The treatment definitely caused the outcome" },
       { id: "20000001-0000-4000-8000-000000000270", label: "Causal claims are harder to justify" },
@@ -476,8 +437,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.sentence,
     subtopicId: S.collocations,
     difficulty: 6,
-    explanation: '"Endorse" collocates with proposals in academic/policy contexts.',
-    correctOptionId: "20000001-0000-4000-8000-000000000274",
     options: [
       { id: "20000001-0000-4000-8000-000000000273", label: "borrow" },
       { id: "20000001-0000-4000-8000-000000000274", label: "endorse" },
@@ -492,8 +451,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.vocabulary,
     subtopicId: S.academicVerbs,
     difficulty: 5,
-    explanation: "Acknowledge is common hedging in academic discussion of limitations.",
-    correctOptionId: "20000001-0000-4000-8000-000000000278",
     options: [
       { id: "20000001-0000-4000-8000-000000000277", label: "deny" },
       { id: "20000001-0000-4000-8000-000000000278", label: "acknowledge" },
@@ -509,9 +466,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.rephrasing,
     subtopicId: S.restatement,
     difficulty: 3,
-    explanation:
-      'Same meaning: unlikely to change prior to the election = not expected to change before it.',
-    correctOptionId: "20000001-0000-4000-8000-000000000282",
     options: [
       { id: "20000001-0000-4000-8000-000000000281", label: "The policy will probably change immediately after the election" },
       { id: "20000001-0000-4000-8000-000000000282", label: "The policy is not expected to change prior to the election" },
@@ -526,8 +480,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.rephrasing,
     subtopicId: S.restatement,
     difficulty: 4,
-    explanation: '"Turned down" = declined; "clashed with" parallels "conflicted with" in this context.',
-    correctOptionId: "20000001-0000-4000-8000-000000000286",
     options: [
       { id: "20000001-0000-4000-8000-000000000285", label: "She accepted the offer because it matched her values" },
       { id: "20000001-0000-4000-8000-000000000286", label: "She turned down the offer as it clashed with her principles" },
@@ -542,8 +494,6 @@ export const AMIRANT_DEMO_QUESTIONS: DemoQuestion[] = [
     topicId: T.rephrasing,
     subtopicId: S.restatement,
     difficulty: 5,
-    explanation: '"Notwithstanding" = despite; "pushed ahead" = continued / proceeded.',
-    correctOptionId: "20000001-0000-4000-8000-000000000290",
     options: [
       { id: "20000001-0000-4000-8000-000000000289", label: "Because of the risks, the team cancelled the trial" },
       { id: "20000001-0000-4000-8000-000000000290", label: "Despite the risks, the team continued with the trial" },

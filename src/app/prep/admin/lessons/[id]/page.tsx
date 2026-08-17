@@ -48,6 +48,7 @@ export default async function EditLessonPage({ params }: { params: { id: string 
           sort_order: lesson.sort_order ?? 0,
           published: lesson.published ?? false,
         }}
+        cmsExists
       />
     );
   }
@@ -67,6 +68,7 @@ export default async function EditLessonPage({ params }: { params: { id: string 
         module_id: hit?.module.id ?? "",
         body_markdown: staticMarkdown,
       }}
+      cmsExists={false}
     />
   );
 }

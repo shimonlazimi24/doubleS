@@ -6,6 +6,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { formatDateHe } from "@/lib/prep/format-date-he";
 import { Container, Text } from "@/components/ui";
 import { PrepPurchaseTracker } from "@/components/prep/PrepPurchaseTracker";
+import { CheckoutSuccessContinueLink } from "@/components/prep/CheckoutSuccessContinueLink";
 
 export const metadata: Metadata = {
   title: "התשלום התקבל",
@@ -42,7 +43,6 @@ export default async function CheckoutSuccessPage({
     payment = (data as PaymentRow | null) ?? null;
   }
 
-  const courseHref = `${PREP_BASE}/amirant/course`;
   const stillPending = payment?.status === "pending";
 
   return (
@@ -98,12 +98,7 @@ export default async function CheckoutSuccessPage({
         ) : null}
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link
-            href={courseHref}
-            className="inline-flex min-h-12 flex-1 items-center justify-center rounded-xl bg-primary px-6 text-base font-bold text-white shadow-card transition hover:opacity-90"
-          >
-            כניסה לקורס ←
-          </Link>
+          <CheckoutSuccessContinueLink />
           <Link
             href={`${PREP_BASE}/settings`}
             className="inline-flex min-h-12 items-center justify-center rounded-xl border border-line px-6 text-sm font-semibold text-primary"

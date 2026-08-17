@@ -56,6 +56,25 @@ export function getBankQuestion(id: string): BankQuestion | undefined {
   return BY_ID.get(id);
 }
 
+export {
+  toPublicBankQuestion,
+  type BankQuestionPublic,
+} from "./public-bank";
+import { toPublicBankQuestion, type BankQuestionPublic } from "./public-bank";
+
+/** Client-safe bank — no correctOptionId / explanation. */
+export const AMIRANT_BANK_QUESTIONS_PUBLIC: BankQuestionPublic[] =
+  AMIRANT_BANK_QUESTIONS.map(toPublicBankQuestion);
+
+export const AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC: BankQuestionPublic[] =
+  AMIRANT_GENERAL_BANK_QUESTIONS.map(toPublicBankQuestion);
+
+const BY_ID_PUBLIC = new Map(AMIRANT_BANK_QUESTIONS_PUBLIC.map((q) => [q.id, q]));
+
+export function getPublicBankQuestion(id: string): BankQuestionPublic | undefined {
+  return BY_ID_PUBLIC.get(id);
+}
+
 /** קטע קריאה לפי מזהה (הבנת הנקרא). */
 export function getPassage(passageId: string) {
   return getResolvedAmirantPassages().get(passageId);

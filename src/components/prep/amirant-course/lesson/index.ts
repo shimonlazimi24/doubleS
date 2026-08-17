@@ -1,14 +1,13 @@
 export { PremiumLessonShell } from "./PremiumLessonShell";
 export { LessonProgressStepper, type StepperItem } from "./LessonProgressStepper";
-export { LessonPageHeader } from "./LessonPageHeader";
 export { LessonHeroCard } from "./LessonHeroCard";
 export { LessonInteractionBlock } from "./LessonInteractionBlock";
 export { LessonAiBlock } from "./LessonAiBlock";
 export { LessonFooter } from "./LessonFooter";
 export { LessonCard } from "./LessonCard";
 export { LessonBlockCard, type LessonBlockCardProps } from "./LessonBlockCard";
-export { LessonHeader } from "./LessonHeader";
-export { LessonHero } from "./LessonHero";
+// Old LessonHeader / LessonHero — use lesson/ui/LessonHeader
+export { LessonHeader } from "./ui/LessonHeader";
 export { LessonSection } from "./LessonSection";
 export { LessonInteraction } from "./LessonInteraction";
 export { LessonQuickCheck } from "./LessonQuickCheck";

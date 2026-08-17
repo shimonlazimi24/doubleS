@@ -21,6 +21,8 @@ export function buildAdaptiveQuizQuestionIds(params: {
   questionCount: number;
   startLevel: DifficultyLevel;
   answers: (string | null)[];
+  /** When set (from server grade), used instead of looking up correctOptionId in bankById. */
+  answerCorrect?: (boolean | null)[];
   tieBreakSalt: string;
   /** לא מורידים את רמת המסלול במבחן מתחת לערך (למשל רמה 3+). */
   minInTestLevel?: DifficultyLevel;
@@ -40,8 +42,6 @@ export function buildAdaptiveQuizQuestionIds(params: {
 
   for (let i = 0; i < params.questionCount; i++) {
     const topicId = topics[i % topics.length]!;
-    // `excludedInSession` = all ids already placed in this quiz; `recent` alone allowed repeats
-    // after 12+ steps when a question fell out of the window (user saw the same stem again).
     const sel =
       selectNextQuestion({
         pool: params.pool,
@@ -70,8 +70,13 @@ export function buildAdaptiveQuizQuestionIds(params: {
     const ans = params.answers[i];
     if (ans == null) break;
 
-    const row = params.bankById.get(id);
-    const isCorrect = row ? row.correctOptionId === ans : false;
+    let isCorrect = false;
+    if (params.answerCorrect && params.answerCorrect[i] != null) {
+      isCorrect = params.answerCorrect[i] === true;
+    } else {
+      const row = params.bankById.get(id);
+      isCorrect = row ? row.correctOptionId === ans : false;
+    }
     state = updateInTestLevelAfterAnswer(state, isCorrect, inTestOpt).state;
   }
 

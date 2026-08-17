@@ -1,5 +1,13 @@
+/**
+ * Client-safe barrel. Full question bank / production JSON live under
+ * `./question-bank` and `./content-source` — import those only from server code.
+ */
 export { AMIRANT_PREPARATION_COURSE_ID, AMIRANT_PREPARATION_SLUG, LS_ANALYTICS, LS_CROSS_TEST, LS_PROGRESS } from "./constants";
-export * from "./content-source";
+export {
+  getAmirantContentMode,
+  getAmirantContentQualityMode,
+  type AmirantContentQualityMode,
+} from "./content-source";
 export { AMIRANT_MIN_LEVEL, AMIRANT_MAX_LEVEL, clampDifficultyLevel } from "./difficulty-clamp";
 export { gradeAdaptiveQuizOutcomes } from "./session/grade-adaptive-quiz-outcomes";
 export type { AmirantLessonProgressEntry, AmirantProgressStateV1 } from "./progress/types";
@@ -30,22 +38,11 @@ export type { AmirantBankTopicSlug, BankQuestion } from "./types/bank-question";
 
 export { AMIRANT_PREPARATION_MANIFEST, getManifestLesson, getManifestPracticeSet, getManifestQuiz, getSimulation } from "./manifest";
 export { AMIRANT_LESSON_REGISTRY, getLessonContent } from "./lesson-registry";
-export {
-  AMIRANT_BANK_QUESTIONS,
-  AMIRANT_GENERAL_BANK_QUESTIONS,
-  AMIRANT_QUESTION_POOL,
-  AMIRANT_CONTENT_MODE,
-  AMIRANT_BANK_MODE,
-  getBankQuestion,
-  getBankQuestionsByTag,
-  getPassage,
-  bankQuestionsToPoolItems,
-  filterBankByTopics,
-  filterBankByTopicsAndVocabMode,
-  amirantExamQuestionPromptForDisplay,
-  type VocabQuizMode,
-  type AmirantPassage,
-} from "./question-bank";
+export { amirantExamQuestionPromptForDisplay } from "./question-bank/prompt-for-display";
+export { parseVocabQuizParam, isVocabQuizMode } from "./question-bank/vocab-quiz-mode";
+export type { VocabQuizMode } from "./question-bank/vocab-quiz-mode";
+export { gradeCheckAnswer, gradeBatchAnswers } from "./grade-client";
+export type { GradeBatchItem } from "./grade-client";
 export { buildPlacementQuizForm, placementNormalizedScore } from "./session/build-placement-quiz-form";
 export type { PlacementQuizForm } from "./session/build-placement-quiz-form";
 export {
@@ -53,7 +50,6 @@ export {
   rememberPlacementForm,
   recentPlacementExclusions,
 } from "./adaptive/placement-recent-storage";
-export { parseVocabQuizParam, isVocabQuizMode } from "./question-bank/vocab-quiz-mode";
 export { pickAdaptiveQuestionIds } from "./adaptive/pick-from-bank";
 export { initialInTestLevel, updateInTestLevelAfterAnswer } from "./adaptive/in-test-level";
 export { readCrossTestSnapshot, writeCrossTestSnapshot, nextStartLevelFromCrossTest } from "./adaptive/cross-test-storage";
@@ -91,16 +87,6 @@ export {
 } from "./syllabus-ui";
 export type { SyllabusModuleUi, SyllabusModuleKind } from "./syllabus-ui";
 export { getModulePrimaryLessonId, getModuleCtaLabel } from "./module-cta";
-export {
-  loadStudentDashboardData,
-  loadQuizReviewData,
-} from "./student-insights";
-export type {
-  StudentDashboardData,
-  QuizReviewData,
-  QuizMistakeRow,
-  DashboardSeriesPoint,
-} from "./student-insights";
 export type { NextBestAction, NextBestActionEnriched, NextBestActionKind, NextBestActionContext } from "./next-best-action";
 export {
   computeNextBestAction,

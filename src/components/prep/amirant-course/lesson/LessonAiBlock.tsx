@@ -4,8 +4,7 @@ import { cn } from "@/lib/design-system/cn";
 
 type Props = { className?: string };
 
-const MSG =
-  "צריך/ה הסבר נוסף - נא להשיב **בהתאם בלבד לרקע השיעור (RAG)** - בלי הזכייה בחומר.";
+const MSG = "צריך הסבר נוסף על החלק האחרון בשיעור";
 
 /**
  * Subtle, single row - not the full coach surface.
@@ -26,7 +25,7 @@ export function LessonAiBlock({ className }: Props) {
         className="h-9 w-full rounded-xl border-gray-200 text-xs sm:w-auto sm:shrink-0"
         onClick={() => dispatchAmirantCourseCoach({ userMessage: MSG, autoSend: true })}
       >
-        שאל את ה-AI
+        שאל את המאמן
       </Button>
     </div>
   );

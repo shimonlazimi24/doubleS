@@ -3,7 +3,14 @@
  * 3 הבנת הנקרא על קטע אחד. תמהיל קושי מאוזן, בחירה דטרמיניסטית לפי seed
  * (משתנה בין ניסיונות), עם החרגת שאלות/קטעים שנראו לאחרונה.
  */
-import type { BankQuestion } from "../types/bank-question";
+
+/** Minimal shape — works with public bank (no answer keys) or full bank. */
+export type PlacementBankQuestion = {
+  id: string;
+  topicSlug: string;
+  difficulty: number;
+  passageId?: string;
+};
 
 export type PlacementQuizForm = {
   /** 15 מזהי שאלות בסדר הצגה קבוע. */
@@ -55,14 +62,14 @@ function shuffled<T>(items: T[], rng: () => number): T[] {
 
 /** בוחר count שאלות בטווח קושי; אם אין מספיק אחרי החרגות - מרפה את ההחרגה ואז את הטווח. */
 function pickByDifficulty(params: {
-  pool: BankQuestion[];
+  pool: PlacementBankQuestion[];
   min: number;
   max: number;
   count: number;
   exclude: Set<string>;
   taken: Set<string>;
   rng: () => number;
-}): BankQuestion[] {
+}): PlacementBankQuestion[] {
   const { pool, min, max, count, exclude, taken, rng } = params;
   const inRange = pool.filter((q) => q.difficulty >= min && q.difficulty <= max && !taken.has(q.id));
   const fresh = inRange.filter((q) => !exclude.has(q.id));
@@ -86,7 +93,7 @@ function questionOrdinal(id: string): number {
 }
 
 export function buildPlacementQuizForm(params: {
-  bank: BankQuestion[];
+  bank: PlacementBankQuestion[];
   seed: string;
   excludeQuestionIds?: Set<string>;
   excludePassageIds?: Set<string>;
@@ -100,13 +107,13 @@ export function buildPlacementQuizForm(params: {
   const sc = bank.filter((q) => q.topicSlug === "sentence_completion");
   const rs = bank.filter((q) => q.topicSlug === "rephrasing");
 
-  const scPicked: BankQuestion[] = [];
+  const scPicked: PlacementBankQuestion[] = [];
   for (const bandMix of SENTENCE_COMPLETION_MIX) {
     scPicked.push(
       ...pickByDifficulty({ pool: sc, min: bandMix.min, max: bandMix.max, count: bandMix.count, exclude, taken, rng }),
     );
   }
-  const rsPicked: BankQuestion[] = [];
+  const rsPicked: PlacementBankQuestion[] = [];
   for (const bandMix of REPHRASING_MIX) {
     rsPicked.push(
       ...pickByDifficulty({ pool: rs, min: bandMix.min, max: bandMix.max, count: bandMix.count, exclude, taken, rng }),
@@ -114,7 +121,7 @@ export function buildPlacementQuizForm(params: {
   }
 
   // הבנת הנקרא: קטע אחד עם לפחות 3 שאלות
-  const rcByPassage = new Map<string, BankQuestion[]>();
+  const rcByPassage = new Map<string, PlacementBankQuestion[]>();
   for (const q of bank) {
     if (q.topicSlug !== "reading_comprehension" || !q.passageId) continue;
     const list = rcByPassage.get(q.passageId) ?? [];
@@ -126,7 +133,7 @@ export function buildPlacementQuizForm(params: {
   const passagePool = freshPassages.length > 0 ? freshPassages : eligible;
   const passageEntry = passagePool.length > 0 ? shuffled(passagePool, rng)[0]! : null;
 
-  let rcPicked: BankQuestion[] = [];
+  let rcPicked: PlacementBankQuestion[] = [];
   let passageId: string | null = null;
   if (passageEntry) {
     passageId = passageEntry[0];

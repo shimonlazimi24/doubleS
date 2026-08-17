@@ -264,5 +264,18 @@ drop policy if exists course_entitlements_own_select on course_entitlements;
 create policy course_entitlements_own_select on course_entitlements for select to authenticated using (user_id = auth.uid());
 
 drop policy if exists course_content_chunks_auth_read on course_content_chunks;
-create policy course_content_chunks_auth_read on course_content_chunks for select to authenticated using (true);
-grant execute on function match_course_content_chunks(vector, int, text, text, text) to authenticated;
+create policy course_content_chunks_entitled_read on course_content_chunks
+  for select to authenticated
+  using (
+    exists (
+      select 1 from course_entitlements e
+      where e.user_id = auth.uid()
+        and e.access_type in ('paid', 'admin')
+        and e.starts_at <= now()
+        and (e.ends_at is null or e.ends_at > now())
+    )
+  );
+-- match RPC: service_role only (app retrieval uses service client)
+revoke execute on function match_course_content_chunks(vector, int, text, text, text) from authenticated;
+revoke execute on function match_course_content_chunks(vector, int, text, text, text) from anon;
+grant execute on function match_course_content_chunks(vector, int, text, text, text) to service_role;

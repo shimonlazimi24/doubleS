@@ -13,9 +13,7 @@ type Props = {
  * Short interaction between micro-sections: light, professional, not scored.
  */
 export function LessonQuickCheck({ onContinue, onNeedHelpMessage, className }: Props) {
-  const needHelp =
-    onNeedHelpMessage ??
-    "רקע: מסיימים בדיקת הבנה אחרי כמה קטעים. אנא סייע/י: מהי נקודת הליבה שאסור לדלג עליה, בהתאם **רק** לחומר ב-RAG של שיעור זה? בלי מספרי מבחן או עובדות שאינן מופיעות במקור.";
+  const needHelp = onNeedHelpMessage ?? "צריך הסבר נוסף על החלק האחרון בשיעור";
 
   return (
     <div

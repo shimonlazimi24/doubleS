@@ -19,7 +19,7 @@ import {
 import { contentBlocksToPremiumFlow } from "@/lib/amirant-course/lesson-content/blocks-to-premium-flow";
 import { getLessonQuestionGroup, SIMULATION_LESSON_RUNTIME } from "@/lib/amirant-course/lesson-content/lesson-question-groups";
 import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
-import { getBankQuestionsByTag } from "@/lib/amirant-course";
+import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
 import { PREP_BASE } from "@/lib/prep/constants";

@@ -51,14 +51,14 @@ export const onboardingPayloadSchema = z
   .object({
     sortingExamDate: z.string().nullable(),
     sortingExamDateUnknown: z.boolean(),
-    institutionName: z.string().min(1),
-    fieldOfStudy: z.string().min(1),
+    /** Optional CRM fields — wizard focuses on 3 learner questions. */
+    institutionName: z.string().default("לא צוין"),
+    fieldOfStudy: z.string().default("לא צוין"),
     firstTimeExam: z.enum(FIRST_TIME_OPTIONS),
     firstTimeExamOther: z.string().nullable(),
     dailyStudyTime: z.enum(DAILY_STUDY_OPTIONS),
     dailyStudyTimeOther: z.string().nullable(),
-    /** בחירה יחידה ב-UI; נשמר כמערך לתאימות עם `heard_about text[]` בבסיס הנתונים. */
-    heardAbout: z.array(z.enum(HEARD_ABOUT_OPTIONS)).min(1),
+    heardAbout: z.array(z.enum(HEARD_ABOUT_OPTIONS)).default([]),
     heardAboutOther: z.string().nullable(),
   })
   .superRefine((data, ctx) => {

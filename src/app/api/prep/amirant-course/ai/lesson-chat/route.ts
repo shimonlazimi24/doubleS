@@ -36,6 +36,19 @@ export async function POST(req: Request) {
     );
   }
 
+  // Production: never allow anonymous AI spend even if a mis-set flag opened the assistant.
+  if (
+    !user &&
+    process.env.VERCEL_ENV === "production" &&
+    !getPrepHasFullAccess() &&
+    !getPrepShowCourseAssistant()
+  ) {
+    return new Response(JSON.stringify({ error: "יש להתחבר" }), {
+      status: 401,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
   if (user) {
     if (!(await checkAiUserAndIpRateLimit({ userId: user.id, ip: requestIp, route: "lesson-chat" }))) {
       return new Response(JSON.stringify({ error: "Rate limit exceeded" }), { status: 429, headers: { "Content-Type": "application/json" } });

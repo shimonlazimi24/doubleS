@@ -75,7 +75,14 @@ export async function GET(request: NextRequest) {
 
   let result = await verifyPrepAuthToken(supabase, verifyInput);
 
-  if (!result.ok) {
+  // Dev-only escape hatch. Never mint sessions from email alone in production —
+  // that path is account-takeover (any email + garbage token → logged in as victim).
+  const allowAdminVerify =
+    process.env.PREP_AUTH_ADMIN_VERIFY === "1" &&
+    process.env.VERCEL_ENV !== "production" &&
+    process.env.NODE_ENV !== "production";
+
+  if (!result.ok && allowAdminVerify) {
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
     if (serviceKey && email) {
       result = await verifyPrepAuthWithAdminLink(supabase, {

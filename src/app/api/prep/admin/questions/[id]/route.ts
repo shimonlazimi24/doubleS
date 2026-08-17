@@ -30,7 +30,15 @@ export async function DELETE(_req: Request, { params }: { params: { id: string }
   const supabase = await requireAdmin();
   if (!supabase) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
 
-  const { error } = await supabase.from("cms_questions").delete().eq("id", params.id);
+  const { data, error } = await supabase
+    .from("cms_questions")
+    .delete()
+    .eq("id", params.id)
+    .select("id");
+
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (!data?.length) {
+    return NextResponse.json({ error: "השאלה לא נמצאה או שאין הרשאה למחוק" }, { status: 404 });
+  }
   return NextResponse.json({ ok: true });
 }

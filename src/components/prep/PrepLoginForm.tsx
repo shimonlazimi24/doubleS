@@ -14,11 +14,13 @@ import { Text } from "@/components/ui";
 
 const ERROR_MESSAGES: Record<string, string> = {
   missing_code: "קישור ההתחברות לא תקין או שפג תוקפו. בקשו קוד חדש.",
-  missing_config: "המערכת לא מוגדרת (Supabase). פנו לתמיכה.",
+  missing_config: "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות, או פנו לתמיכה.",
   auth: "ההתחברות נכשלה. בקשו קוד חדש ונסו שוב (תוקף הקוד ~5 דק׳).",
   pkce_mismatch:
     "ההתחברות הסתיימה בדפדפן אחר מזה שבו התחילה (קורה למשל עם קישור מייל ישן). הכי פשוט: התחברו עם Google כאן למטה, או בקשו קוד חדש והקלידו את 6 הספרות - שניהם עובדים מכל מכשיר.",
 };
+
+const CONFIG_UNAVAILABLE_MSG = "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות, או פנו לתמיכה.";
 
 function safeReturnPath(raw: string | null): string {
   if (!raw || !raw.startsWith("/") || raw.startsWith("//")) {
@@ -71,7 +73,7 @@ export function PrepLoginForm() {
     setMessage(null);
     const client = createPrepSupabaseBrowserClient();
     if (!client) {
-      setMessage("חסרים משתני Supabase. הגדירו NEXT_PUBLIC_SUPABASE_URL ו־ANON_KEY.");
+      setMessage(CONFIG_UNAVAILABLE_MSG);
       return;
     }
     setBusy(true);
@@ -93,7 +95,7 @@ export function PrepLoginForm() {
     setMessage(null);
     const client = createPrepSupabaseBrowserClient();
     if (!client) {
-      setMessage("חסרים משתני Supabase. הגדירו NEXT_PUBLIC_SUPABASE_URL ו־ANON_KEY.");
+      setMessage(CONFIG_UNAVAILABLE_MSG);
       return;
     }
     const trimmed = email.trim();
@@ -123,7 +125,7 @@ export function PrepLoginForm() {
     setMessage(null);
     const client = createPrepSupabaseBrowserClient();
     if (!client) {
-      setMessage("חסרים משתני Supabase. הגדירו NEXT_PUBLIC_SUPABASE_URL ו־ANON_KEY.");
+      setMessage(CONFIG_UNAVAILABLE_MSG);
       return;
     }
     const token = code.replace(/\D/g, "");
@@ -153,9 +155,6 @@ export function PrepLoginForm() {
           {errorDetail?.includes("pkce_mismatch")
             ? ERROR_MESSAGES.pkce_mismatch
             : (ERROR_MESSAGES[errorKey] ?? "שגיאת התחברות.")}
-          {errorDetail ? (
-            <span className="mt-2 block font-mono text-xs opacity-80">{errorDetail}</span>
-          ) : null}
         </p>
       ) : null}
 
@@ -258,12 +257,12 @@ export function PrepLoginForm() {
       ) : null}
 
       <Text as="p" variant="caption" className="text-muted">
-        אחרי התחברות תועברו ל־{returnTo}. התקדמות מקומית תמוזג לחשבון שלכם.
+        אחרי התחברות ממשיכים משם שהתחלתם. התקדמות מקומית תמוזג לחשבון שלכם.
       </Text>
 
       {showGoogle && !supabaseReady ? (
         <Text as="p" variant="caption" className="text-amber-800">
-          להתחברות עם Google יש להגדיר Supabase בשרת (ראו docs/SUPABASE_AUTH_SETUP.md).
+          התחברות עם Google לא זמינה כרגע. נסו קוד למייל, או פנו לתמיכה.
         </Text>
       ) : null}
     </div>

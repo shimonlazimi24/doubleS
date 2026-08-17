@@ -32,13 +32,28 @@ export default async function QuestionsPage() {
 
   return (
     <div dir="rtl" className="max-w-4xl">
+      <div
+        className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
+        role="status"
+      >
+        <p className="font-medium text-amber-50">שאלות CMS לא מחוברות לחידונים החיים</p>
+        <p className="mt-1 text-amber-100/90">
+          החידונים והסימולציות משתמשים בבנק השאלות המיובא. עריכה כאן לא משפיעה על התרגול של
+          התלמידים — אפשר להשאיר לניסויים פנימיים בלבד.
+        </p>
+      </div>
+
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">בנק שאלות</h1>
-          <p className="text-zinc-400 text-sm mt-1">{questions.length} שאלות</p>
+          <h1 className="text-2xl font-bold">בנק שאלות (CMS)</h1>
+          <p className="text-zinc-400 text-sm mt-1">{questions.length} שאלות · לא פעיל בחידונים</p>
         </div>
-        <Link href="/prep/admin/questions/new" className="px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-zinc-200 transition">
-          + שאלה חדשה
+        <Link
+          href="/prep/admin/questions/new"
+          className="px-4 py-2 bg-zinc-700 text-zinc-200 text-sm font-medium rounded-lg hover:bg-zinc-600 transition"
+          title="לא משפיע על חידונים חיים"
+        >
+          + שאלה (ניסוי)
         </Link>
       </div>
 

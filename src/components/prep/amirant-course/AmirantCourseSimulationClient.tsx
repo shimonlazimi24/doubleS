@@ -6,8 +6,6 @@ import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 import {
   amirantExamQuestionPromptForDisplay,
   AMIRANT_PREPARATION_COURSE_ID,
-  AMIRANT_QUESTION_POOL,
-  getBankQuestion,
   getSimulation,
   loadAnalytics,
   nextSimulationSectionEnterLevel,
@@ -18,20 +16,24 @@ import {
   saveAnalytics,
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
+import {
+  AMIRANT_BANK_QUESTIONS_PUBLIC,
+  bankQuestionsPublicToPoolItems,
+  getPublicBankQuestion,
+} from "@/lib/amirant-course/question-bank/client-bank";
+import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { PREP_BASE } from "@/lib/prep/constants";
-import type { BankQuestion } from "@/lib/amirant-course/types/bank-question";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { AmirantVideoEmbed } from "./lesson/AmirantVideoEmbed";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
-import {
-  buildAdaptiveDecisionEvent,
-  computeStreakState,
-} from "@/lib/amirant-course/adaptive-telemetry";
+import { buildAdaptiveDecisionEvent } from "@/lib/amirant-course/adaptive-telemetry";
+import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
+const SIM_QUESTION_POOL = bankQuestionsPublicToPoolItems(AMIRANT_BANK_QUESTIONS_PUBLIC);
 
 type RunPhase = "intro" | "running" | "summary";
 
@@ -41,12 +43,55 @@ type RunState = {
   sectionEnterLevel: DifficultyLevel;
   questionIds: string[];
   answers: Record<string, string | null>;
+  answerCorrect: Record<string, boolean | null>;
   focusIndex: number;
   timeLeftSec: number;
   globalUsedIds: string[];
   scoredCorrect: number;
   scoredTotal: number;
 };
+
+function streakFromAnswerCorrectMap(
+  questionIds: string[],
+  answerCorrect: Record<string, boolean | null>,
+  upToIndexExclusive: number,
+): { correct: number; wrong: number; recentAccuracy?: number } {
+  let attempted = 0;
+  let correctTotal = 0;
+  let correctStreak = 0;
+  let wrongStreak = 0;
+
+  for (let i = 0; i < upToIndexExclusive; i++) {
+    const qid = questionIds[i];
+    if (!qid) continue;
+    const ok = answerCorrect[qid];
+    if (ok == null) continue;
+    attempted += 1;
+    if (ok) correctTotal += 1;
+  }
+
+  for (let i = upToIndexExclusive - 1; i >= 0; i--) {
+    const qid = questionIds[i];
+    if (!qid) continue;
+    const ok = answerCorrect[qid];
+    if (ok == null) break;
+    if (ok && wrongStreak === 0) {
+      correctStreak += 1;
+      continue;
+    }
+    if (!ok && correctStreak === 0) {
+      wrongStreak += 1;
+      continue;
+    }
+    break;
+  }
+
+  return {
+    correct: correctStreak,
+    wrong: wrongStreak,
+    recentAccuracy: attempted > 0 ? Number((correctTotal / attempted).toFixed(4)) : undefined,
+  };
+}
 
 export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   const { service } = useAmirantPersistence();
@@ -61,12 +106,14 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   const questionEnteredAtRef = useRef<number>(Date.now());
   const responseTimesRef = useRef<Record<string, number>>({});
   const telemetryLoggedRef = useRef<Set<string>>(new Set());
+  const gradeRequestSeqRef = useRef(0);
+  const finishingRef = useRef(false);
 
   const start = useCallback(() => {
     if (!sim) return;
     const startLevel = nextStartLevelFromCrossTest();
     const pilotIds = pickAdaptiveQuestionIds({
-      pool: AMIRANT_QUESTION_POOL,
+      pool: SIM_QUESTION_POOL,
       topicId: sim.pilot.topicSlug,
       targetLevel: startLevel,
       count: sim.pilot.questionCount,
@@ -91,6 +138,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
       sectionEnterLevel: startLevel,
       questionIds: pilotIds,
       answers: Object.fromEntries(pilotIds.map((id) => [id, null as string | null])),
+      answerCorrect: Object.fromEntries(pilotIds.map((id) => [id, null as boolean | null])),
       focusIndex: 0,
       timeLeftSec: sim.pilot.seconds,
       globalUsedIds: [...pilotIds],
@@ -101,175 +149,197 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
 
   const finishSection = useCallback(
     (opts?: { force?: boolean }) => {
-      if (!sim || !run) return;
+      if (!sim || !run || finishingRef.current) return;
       const key = `${run.kind}-${run.sectionIndex}-${run.timeLeftSec}`;
       if (opts?.force && zeroHandled.current === key) return;
       if (opts?.force) zeroHandled.current = key;
 
       const ids = run.questionIds;
-      const gradeInOrder = () => {
+      finishingRef.current = true;
+
+      const runFinish = async () => {
+        if (run.kind === "pilot") {
+          const first = sim.sections[0];
+          if (!first) return;
+          const scoredIds = pickAdaptiveQuestionIds({
+            pool: SIM_QUESTION_POOL,
+            topicId: first.topicSlug,
+            targetLevel: run.sectionEnterLevel,
+            count: first.questionCount,
+            excludeIds: Array.from(new Set(run.globalUsedIds)),
+            tieBreakSalt: `${tieBreakSalt}:s0`,
+          });
+          setRun({
+            kind: "scored",
+            sectionIndex: 0,
+            sectionEnterLevel: run.sectionEnterLevel,
+            questionIds: scoredIds,
+            answers: Object.fromEntries(scoredIds.map((id) => [id, null as string | null])),
+            answerCorrect: Object.fromEntries(scoredIds.map((id) => [id, null as boolean | null])),
+            focusIndex: 0,
+            timeLeftSec: first.seconds,
+            globalUsedIds: Array.from(new Set([...run.globalUsedIds, ...scoredIds])),
+            scoredCorrect: 0,
+            scoredTotal: 0,
+          });
+          return;
+        }
+
+        const batch = await gradeBatchAnswers(
+          ids.map((questionId) => ({
+            questionId,
+            selectedOptionId: run.answers[questionId] ?? null,
+          })),
+          true,
+        );
+        const gradedById = new Map(batch.items.map((item) => [item.questionId, item]));
         let c = 0;
         let t = 0;
         for (const qid of ids) {
-          const row = getBankQuestion(qid);
+          const ans = run.answers[qid];
+          if (ans == null) continue;
+          t += 1;
+          if (gradedById.get(qid)?.isCorrect) c += 1;
+        }
+
+        const sectionAnswers = ids.flatMap((qid) => {
+          const row = getPublicBankQuestion(qid);
+          if (!row) return [];
+          const selected = run.answers[qid] ?? null;
+          const graded = gradedById.get(qid);
+          return [
+            {
+              questionId: row.id,
+              topic: row.topicSlug,
+              subtopic: row.subtopicSlug,
+              difficulty: row.difficulty,
+              selectedOptionId: selected,
+              correctOptionId: graded?.correctOptionId ?? "",
+              isCorrect: graded?.isCorrect === true,
+              responseTimeMs: responseTimesRef.current[row.id] || undefined,
+            },
+          ];
+        });
+        const attemptId = simulationAttemptIdRef.current;
+        if (attemptId) {
+          const sectionLabelForPersist = sim.sections[run.sectionIndex]?.label ?? `section-${run.sectionIndex + 1}`;
+          void service
+            .submitSimulationSection({
+              attemptId,
+              sectionIndex: run.sectionIndex,
+              sectionKind: run.kind,
+              sectionLabel: sectionLabelForPersist,
+              topic: sim.sections[run.sectionIndex]?.topicSlug ?? "unknown",
+              enterLevel: run.sectionEnterLevel,
+              questionCount: ids.length,
+              correctCount: c,
+              timeLimitSec: sim.sections[run.sectionIndex]?.seconds ?? 0,
+              elapsedSec: (sim.sections[run.sectionIndex]?.seconds ?? 0) - run.timeLeftSec,
+              answers: sectionAnswers,
+            })
+            .catch(() => {
+              showPrepToast("התוצאה נשמרה במכשיר; הסנכרון לחשבון נכשל — נסו לרענן.", {
+                tone: "error",
+              });
+            });
+        }
+        let nextA = loadAnalytics();
+        for (const qid of ids) {
+          const row = getPublicBankQuestion(qid);
           const ans = run.answers[qid];
           if (!row || ans == null) continue;
-          t += 1;
-          if (ans === row.correctOptionId) c += 1;
+          const ok = gradedById.get(qid)?.isCorrect === true;
+          nextA = recordQuestionOutcome(nextA, {
+            topicSlug: row.topicSlug,
+            subtopicSlug: row.subtopicSlug,
+            difficulty: row.difficulty,
+            isCorrect: ok,
+          });
         }
-        return { c, t };
-      };
 
-      if (run.kind === "pilot") {
-        const first = sim.sections[0];
-        if (!first) return;
-        const scoredIds = pickAdaptiveQuestionIds({
-          pool: AMIRANT_QUESTION_POOL,
-          topicId: first.topicSlug,
-          targetLevel: run.sectionEnterLevel,
-          count: first.questionCount,
+        const nextIdx = run.sectionIndex + 1;
+        const nextLevel = nextSimulationSectionEnterLevel(run.sectionEnterLevel, c, t);
+        const scoredCorrect = run.scoredCorrect + c;
+        const scoredTotal = run.scoredTotal + t;
+
+        if (nextIdx >= sim.sections.length) {
+          const pct = scoredTotal > 0 ? Math.round((scoredCorrect / scoredTotal) * 100) : 0;
+          nextA = recordSessionEnd(nextA, {
+            kind: "simulation",
+            label: sim.title,
+            scorePct: pct,
+          });
+          saveAnalytics(nextA);
+          writeCrossTestSnapshot({
+            lastEndLevel: nextLevel,
+            lastScorePct: pct,
+            updatedAt: new Date().toISOString(),
+          });
+          if (attemptId) {
+            void Promise.all([
+              service.submitSimulationAttempt({
+                attemptId,
+                scorePct: pct,
+                scoredQuestionCount: scoredTotal,
+                scoredCorrectCount: scoredCorrect,
+                startLevel: run.sectionEnterLevel,
+                endLevel: nextLevel,
+              }),
+              service.upsertCrossTestState({
+                lastEndLevel: nextLevel,
+                lastScorePct: pct,
+              }),
+              service.appendLearningEvent({
+                eventType: "simulation_submitted",
+                simulationAttemptId: attemptId,
+                metadata: { simulationId: sim.id, scorePct: pct },
+              }),
+            ]).catch(() => {
+              showPrepToast("התוצאה נשמרה במכשיר; הסנכרון לחשבון נכשל — נסו לרענן.", {
+                tone: "error",
+              });
+            });
+          }
+          setSummary({ correct: scoredCorrect, total: scoredTotal });
+          setPhase("summary");
+          setRun(null);
+          return;
+        }
+
+        saveAnalytics(nextA);
+
+        const sec = sim.sections[nextIdx]!;
+        const nextIds = pickAdaptiveQuestionIds({
+          pool: SIM_QUESTION_POOL,
+          topicId: sec.topicSlug,
+          targetLevel: nextLevel,
+          count: sec.questionCount,
           excludeIds: Array.from(new Set(run.globalUsedIds)),
-          tieBreakSalt: `${tieBreakSalt}:s0`,
+          tieBreakSalt: `${tieBreakSalt}:s${nextIdx}`,
         });
+
         setRun({
           kind: "scored",
-          sectionIndex: 0,
-          sectionEnterLevel: run.sectionEnterLevel,
-          questionIds: scoredIds,
-          answers: Object.fromEntries(scoredIds.map((id) => [id, null as string | null])),
+          sectionIndex: nextIdx,
+          sectionEnterLevel: nextLevel,
+          questionIds: nextIds,
+          answers: Object.fromEntries(nextIds.map((id) => [id, null as string | null])),
+          answerCorrect: Object.fromEntries(nextIds.map((id) => [id, null as boolean | null])),
           focusIndex: 0,
-          timeLeftSec: first.seconds,
-          globalUsedIds: Array.from(new Set([...run.globalUsedIds, ...scoredIds])),
-          scoredCorrect: 0,
-          scoredTotal: 0,
+          timeLeftSec: sec.seconds,
+          globalUsedIds: Array.from(new Set([...run.globalUsedIds, ...nextIds])),
+          scoredCorrect,
+          scoredTotal,
         });
-        return;
-      }
+      };
 
-      const { c, t } = gradeInOrder();
-      const sectionAnswers = ids.flatMap((qid) => {
-        const row = getBankQuestion(qid);
-        if (!row) return [];
-        const selected = run.answers[qid] ?? null;
-        return [
-          {
-            questionId: row.id,
-            topic: row.topicSlug,
-            subtopic: row.subtopicSlug,
-            difficulty: row.difficulty,
-            selectedOptionId: selected,
-            correctOptionId: row.correctOptionId,
-            isCorrect: selected === row.correctOptionId,
-            responseTimeMs: responseTimesRef.current[row.id] || undefined,
-          },
-        ];
-      });
-      const attemptId = simulationAttemptIdRef.current;
-      if (attemptId) {
-        const sectionLabelForPersist = sim.sections[run.sectionIndex]?.label ?? `section-${run.sectionIndex + 1}`;
-        void service
-          .submitSimulationSection({
-            attemptId,
-            sectionIndex: run.sectionIndex,
-            sectionKind: run.kind,
-            sectionLabel: sectionLabelForPersist,
-            topic: sim.sections[run.sectionIndex]?.topicSlug ?? "unknown",
-            enterLevel: run.sectionEnterLevel,
-            questionCount: ids.length,
-            correctCount: c,
-            timeLimitSec: sim.sections[run.sectionIndex]?.seconds ?? 0,
-            elapsedSec: (sim.sections[run.sectionIndex]?.seconds ?? 0) - run.timeLeftSec,
-            answers: sectionAnswers,
-          })
-          .catch(() => {});
-      }
-      let nextA = loadAnalytics();
-      for (const qid of ids) {
-        const row = getBankQuestion(qid);
-        const ans = run.answers[qid];
-        if (!row || ans == null) continue;
-        const ok = ans === row.correctOptionId;
-        nextA = recordQuestionOutcome(nextA, {
-          topicSlug: row.topicSlug,
-          subtopicSlug: row.subtopicSlug,
-          difficulty: row.difficulty,
-          isCorrect: ok,
+      void runFinish()
+        .catch(() => {
+          showPrepToast("בדיקת הפרק נכשלה. נסו שוב.", { tone: "error" });
+        })
+        .finally(() => {
+          finishingRef.current = false;
         });
-      }
-
-      const nextIdx = run.sectionIndex + 1;
-      const nextLevel = nextSimulationSectionEnterLevel(run.sectionEnterLevel, c, t);
-      const scoredCorrect = run.scoredCorrect + c;
-      const scoredTotal = run.scoredTotal + t;
-
-      if (nextIdx >= sim.sections.length) {
-        const pct = scoredTotal > 0 ? Math.round((scoredCorrect / scoredTotal) * 100) : 0;
-        nextA = recordSessionEnd(nextA, {
-          kind: "simulation",
-          label: sim.title,
-          scorePct: pct,
-        });
-        saveAnalytics(nextA);
-        writeCrossTestSnapshot({
-          lastEndLevel: nextLevel,
-          lastScorePct: pct,
-          updatedAt: new Date().toISOString(),
-        });
-        if (attemptId) {
-          void service
-            .submitSimulationAttempt({
-              attemptId,
-              scorePct: pct,
-              scoredQuestionCount: scoredTotal,
-              scoredCorrectCount: scoredCorrect,
-              startLevel: run.sectionEnterLevel,
-              endLevel: nextLevel,
-            })
-            .catch(() => {});
-          void service
-            .upsertCrossTestState({
-              lastEndLevel: nextLevel,
-              lastScorePct: pct,
-            })
-            .catch(() => {});
-          void service
-            .appendLearningEvent({
-              eventType: "simulation_submitted",
-              simulationAttemptId: attemptId,
-              metadata: { simulationId: sim.id, scorePct: pct },
-            })
-            .catch(() => {});
-        }
-        setSummary({ correct: scoredCorrect, total: scoredTotal });
-        setPhase("summary");
-        setRun(null);
-        return;
-      }
-
-      saveAnalytics(nextA);
-
-      const sec = sim.sections[nextIdx]!;
-      const nextIds = pickAdaptiveQuestionIds({
-        pool: AMIRANT_QUESTION_POOL,
-        topicId: sec.topicSlug,
-        targetLevel: nextLevel,
-        count: sec.questionCount,
-        excludeIds: Array.from(new Set(run.globalUsedIds)),
-        tieBreakSalt: `${tieBreakSalt}:s${nextIdx}`,
-      });
-
-      setRun({
-        kind: "scored",
-        sectionIndex: nextIdx,
-        sectionEnterLevel: nextLevel,
-        questionIds: nextIds,
-        answers: Object.fromEntries(nextIds.map((id) => [id, null as string | null])),
-        focusIndex: 0,
-        timeLeftSec: sec.seconds,
-        globalUsedIds: Array.from(new Set([...run.globalUsedIds, ...nextIds])),
-        scoredCorrect,
-        scoredTotal,
-      });
     },
     [run, service, sim, tieBreakSalt],
   );
@@ -295,10 +365,22 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
     if (!responseTimesRef.current[qid]) {
       responseTimesRef.current[qid] = Math.max(1, Date.now() - questionEnteredAtRef.current);
     }
+    const seq = ++gradeRequestSeqRef.current;
     setRun((prev) => {
       if (!prev) return prev;
       return { ...prev, answers: { ...prev.answers, [qid]: opt } };
     });
+    void gradeCheckAnswer(qid, opt)
+      .then((ok) => {
+        if (seq !== gradeRequestSeqRef.current) return;
+        setRun((prev) => {
+          if (!prev || prev.answers[qid] !== opt) return prev;
+          return { ...prev, answerCorrect: { ...prev.answerCorrect, [qid]: ok } };
+        });
+      })
+      .catch(() => {
+        showPrepToast("בדיקת התשובה נכשלה. נסו שוב.", { tone: "error" });
+      });
   }, []);
 
   useEffect(() => {
@@ -308,26 +390,13 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   useEffect(() => {
     if (!run) return;
     const qid = run.questionIds[run.focusIndex];
-    const q = qid ? getBankQuestion(qid) : undefined;
+    const q = qid ? getPublicBankQuestion(qid) : undefined;
     if (!qid || !q) return;
     const sessionId = simulationAttemptIdRef.current ?? undefined;
     const key = `${sessionId ?? "local"}:${run.kind}:${run.sectionIndex}:${run.focusIndex}:${qid}`;
     if (telemetryLoggedRef.current.has(key)) return;
 
-    const answersMap = new Map<string, string | null>(
-      run.questionIds.map((id) => [id, run.answers[id] ?? null]),
-    );
-    const sectionBankById = new Map<string, BankQuestion>();
-    for (const id of run.questionIds) {
-      const row = getBankQuestion(id);
-      if (row) sectionBankById.set(id, row);
-    }
-    const streak = computeStreakState({
-      questionIds: run.questionIds,
-      answersByQuestionId: answersMap,
-      bankById: sectionBankById,
-      upToIndexExclusive: run.focusIndex,
-    });
+    const streak = streakFromAnswerCorrectMap(run.questionIds, run.answerCorrect, run.focusIndex);
     const event = buildAdaptiveDecisionEvent({
       topic: q.topicSlug,
       previousLevel: run.sectionEnterLevel,
@@ -412,7 +481,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
 
           {(() => {
             const qid = run.questionIds[run.focusIndex];
-            const q = qid ? getBankQuestion(qid) : null;
+            const q = qid ? getPublicBankQuestion(qid) : null;
             if (!q) return null;
             return (
               <Card className="overflow-hidden">

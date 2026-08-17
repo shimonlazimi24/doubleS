@@ -66,10 +66,11 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
     });
   }
 
-  async function handleSave(publish?: boolean) {
+  async function handleSave(mode: "keep" | "publish" | "unpublish") {
     setError(null);
     const payload = { ...form };
-    if (publish !== undefined) payload.published = publish;
+    if (mode === "publish") payload.published = true;
+    if (mode === "unpublish") payload.published = false;
 
     if (!payload.prompt.trim()) { setError("שאלה היא שדה חובה"); return; }
     if (payload.options.some((o) => !o.text.trim())) { setError("כל 4 אפשרויות התשובה חייבות להיות מלאות"); return; }
@@ -90,6 +91,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
           return;
         }
         const { id } = await res.json();
+        setForm((f) => ({ ...f, published: payload.published }));
         if (isNew && id) {
           router.push(`/prep/admin/questions/${id}`);
         } else {
@@ -104,16 +106,27 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
   async function handleDelete() {
     if (!confirm("למחוק את השאלה לצמיתות?")) return;
     startTransition(async () => {
-      await fetch(`/api/prep/admin/questions/${form.id}`, { method: "DELETE" });
+      const res = await fetch(`/api/prep/admin/questions/${form.id}`, { method: "DELETE" });
+      if (!res.ok) {
+        const { error: msg } = await res.json().catch(() => ({ error: "מחיקה נכשלה" }));
+        setError(msg ?? "מחיקה נכשלה");
+        return;
+      }
       router.push("/prep/admin/questions");
     });
   }
 
   return (
     <div className="max-w-2xl" dir="rtl">
+      <div
+        className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
+        role="status"
+      >
+        שאלות CMS לא מחוברות לחידונים החיים — השמירה כאן לא משפיעה על תרגול התלמידים.
+      </div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold">{isNew ? "שאלה חדשה" : "עריכת שאלה"}</h1>
+          <h1 className="text-2xl font-bold">{isNew ? "שאלה חדשה (ניסוי)" : "עריכת שאלה (ניסוי)"}</h1>
           {!isNew && <p className="text-zinc-500 text-xs mt-1 font-mono">{form.id}</p>}
         </div>
         <div className="flex gap-2">
@@ -122,10 +135,21 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
               מחק
             </button>
           )}
-          <button onClick={() => handleSave(false)} disabled={isPending} className="px-4 py-2 text-sm bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 disabled:opacity-50">
-            שמור טיוטה
+          <button onClick={() => handleSave("keep")} disabled={isPending} className="px-4 py-2 text-sm bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 disabled:opacity-50">
+            שמור
           </button>
-          <button onClick={() => handleSave(true)} disabled={isPending} className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 disabled:opacity-50">
+          {form.published && (
+            <button
+              onClick={() => {
+                if (confirm("לבטל את הפרסום?")) handleSave("unpublish");
+              }}
+              disabled={isPending}
+              className="px-4 py-2 text-sm border border-amber-700 text-amber-200 rounded-lg disabled:opacity-50"
+            >
+              בטל פרסום
+            </button>
+          )}
+          <button onClick={() => handleSave("publish")} disabled={isPending} className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 disabled:opacity-50">
             {form.published ? "עדכן ופרסם" : "פרסם"}
           </button>
         </div>

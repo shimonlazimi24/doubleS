@@ -9,7 +9,9 @@
 import Link from "next/link";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
+import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
+import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
 import type { ManifestLesson, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 
@@ -73,11 +75,13 @@ function ModuleCard({
   index,
   completedIds,
   currentLessonId,
+  locked,
 }: {
   mod: ManifestModule;
   index: number;
   completedIds: Set<string>;
   currentLessonId: string | null;
+  locked: boolean;
 }) {
   const doneInModule = mod.lessons.filter((l) => completedIds.has(l.id)).length;
   const total = mod.lessons.length;
@@ -92,24 +96,45 @@ function ModuleCard({
     mod.lessons.find((l) => l.id === currentLessonId) ??
     mod.lessons.find((l) => !completedIds.has(l.id)) ??
     mod.lessons[0];
-  const ctaLabel = allDone ? "חזרה על החומר" : doneInModule === 0 ? "התחל" : "המשך";
+  const href = locked
+    ? `${PREP_BASE}/pricing?module=${encodeURIComponent(mod.slug)}`
+    : target
+      ? lessonHref(target)
+      : BASE;
+  const ctaLabel = locked
+    ? "בגישה מלאה"
+    : allDone
+      ? "חזרה על החומר"
+      : doneInModule === 0
+        ? "התחל"
+        : "המשך";
 
   return (
     <Link
-      href={target ? lessonHref(target) : BASE}
+      href={href}
       dir="rtl"
       className={cn(
         "group relative flex flex-col rounded-2xl border bg-paper p-5 transition-all",
-        allDone
-          ? "border-emerald-300/70 hover:border-emerald-400/70"
-          : isCurrent
-            ? "border-score/50 ring-1 ring-score/25 hover:shadow-card"
-            : "border-line hover:border-primary/35 hover:shadow-card",
+        locked
+          ? "border-line/80 opacity-95 hover:border-primary/30"
+          : allDone
+            ? "border-emerald-300/70 hover:border-emerald-400/70"
+            : isCurrent
+              ? "border-score/50 ring-1 ring-score/25 hover:shadow-card"
+              : "border-line hover:border-primary/35 hover:shadow-card",
       )}
     >
-      {isCurrent && !allDone ? (
+      {locked ? (
+        <span className="absolute -top-2.5 right-4 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
+          בגישה מלאה
+        </span>
+      ) : isCurrent && !allDone ? (
         <span className="absolute -top-2.5 right-4 rounded-full bg-score px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
           ממשיכים כאן
+        </span>
+      ) : mod.slug === "introduction" ? (
+        <span className="absolute -top-2.5 right-4 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800">
+          מבוא חינם
         </span>
       ) : null}
 
@@ -159,7 +184,21 @@ function ModuleCard({
 
 export function AmirantCurriculumHub() {
   const progress = useAmirantCourseProgress();
+  const { hasFullAccess, loading: accessLoading } = useAmirantCourseAccess();
   const manifest = AMIRANT_PREPARATION_MANIFEST;
+
+  if (!progress.ready || accessLoading) {
+    return (
+      <div dir="rtl" className="mx-auto max-w-5xl animate-pulse space-y-6 py-8">
+        <div className="h-28 rounded-2xl bg-surface-low" />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="h-40 rounded-2xl bg-surface-low" />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const completedIds = new Set(
     manifest.modules
@@ -257,6 +296,7 @@ export function AmirantCurriculumHub() {
               index={mi}
               completedIds={completedIds}
               currentLessonId={currentLessonId}
+              locked={isAmirantModuleLocked(mod, hasFullAccess)}
             />
           ))}
         </div>

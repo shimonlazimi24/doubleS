@@ -1,19 +1,53 @@
 import { NextResponse } from "next/server";
+import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
-import { aiAnalysisResponseSchema } from "@/lib/amirant-course/ai/contract";
 import { runAiAnalysis } from "@/lib/amirant-course/ai/analysis";
+import { aiAnalysisResponseSchema } from "@/lib/amirant-course/ai/contract";
+import { getAiRequestMeta } from "@/lib/amirant-course/ai/ai-http";
+import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 
 export async function POST(req: Request) {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anon";
-  if (!(await checkAiRouteRateLimit({ key: ip, route: "ai-analysis", maxRequests: 30 }))) {
-    return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
+  const client = createPrepSupabaseServerClient();
+  if (!client) return NextResponse.json({ error: "השירות לא זמין" }, { status: 500 });
+
+  const { requestIp } = getAiRequestMeta(req);
+  const {
+    data: { user },
+  } = await client.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: "יש להתחבר" }, { status: 401 });
+  }
+
+  const entitled = getPrepHasFullAccess() || (await hasAmirantFullAccess(client, user.id));
+  if (!entitled) {
+    return NextResponse.json({ error: "נדרשת גישה מלאה לקורס" }, { status: 403 });
+  }
+
+  if (
+    !(await checkAiRouteRateLimit({
+      key: `u:${user.id}`,
+      route: "ai-analysis",
+      maxRequests: 15,
+    }))
+  ) {
+    return NextResponse.json({ error: "יותר מדי בקשות. המתינו רגע." }, { status: 429 });
+  }
+  if (
+    !(await checkAiRouteRateLimit({
+      key: `i:${requestIp}`,
+      route: "ai-analysis-ip",
+      maxRequests: 20,
+    }))
+  ) {
+    return NextResponse.json({ error: "יותר מדי בקשות. המתינו רגע." }, { status: 429 });
   }
 
   let json: unknown;
   try {
     json = await req.json();
   } catch {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    return NextResponse.json({ error: "JSON לא תקין" }, { status: 400 });
   }
 
   try {
@@ -21,7 +55,7 @@ export async function POST(req: Request) {
     const res = aiAnalysisResponseSchema.parse(result);
     return NextResponse.json(res);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Analysis failed";
+    const message = error instanceof Error ? error.message : "הניתוח נכשל";
     return NextResponse.json({ error: message }, { status: 400 });
   }
 }

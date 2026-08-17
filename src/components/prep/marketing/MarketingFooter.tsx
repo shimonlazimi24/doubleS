@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { Container } from "@/components/ui";
 import { PREP_BRAND_LATIN, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
@@ -11,6 +14,10 @@ const footerLinks = [
 ] as const;
 
 export function MarketingFooter() {
+  const pathname = usePathname() ?? "";
+  // Course shell has its own sticky chrome + FAB — marketing footer fights for space.
+  if (pathname.startsWith(`${PREP_BASE}/amirant/course`)) return null;
+
   return (
     <footer className="border-t border-line bg-paper">
       <Container className="flex flex-col gap-10 py-12 md:flex-row md:items-start md:justify-between">

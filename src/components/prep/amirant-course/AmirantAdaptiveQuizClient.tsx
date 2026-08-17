@@ -1,37 +1,39 @@
 "use client";
 
 import Link from "next/link";
+import { useQuizTimer } from "./useQuizTimer";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 import {
-  AMIRANT_BANK_QUESTIONS,
   AMIRANT_PREPARATION_COURSE_ID,
   amirantExamQuestionPromptForDisplay,
-  bankQuestionsToPoolItems,
   buildAdaptiveQuizQuestionIds,
   buildNextBestActionAfterQuiz,
-  filterBankByTopicsAndVocabMode,
-  getBankQuestion,
   getCourseProgressMeta,
   getFirstIncompleteLesson,
   initialInTestLevel,
   loadAmirantProgressState,
   loadAnalytics,
   nextStartLevelFromCrossTest,
+  recordQuestionOutcome,
+  recordSessionEnd,
   saveAnalytics,
   type NextBestActionEnriched,
   type VocabQuizMode,
   updateInTestLevelAfterAnswer,
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
-import { gradeAdaptiveQuizOutcomes } from "@/lib/amirant-course/session/grade-adaptive-quiz-outcomes";
+import type { BankQuestion } from "@/lib/amirant-course/types/bank-question";
+import {
+  bankQuestionsPublicToPoolItems,
+  filterPublicBankByTopicsAndVocabMode,
+  getPublicBankQuestion,
+} from "@/lib/amirant-course/question-bank/client-bank";
+import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
 import { normalizeQuizTopicSlugs, AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
 import type { TopicRollup } from "@/lib/amirant-course/analytics/types";
-import {
-  buildAdaptiveDecisionEvent,
-  computeStreakState,
-} from "@/lib/amirant-course/adaptive-telemetry";
+import { buildAdaptiveDecisionEvent } from "@/lib/amirant-course/adaptive-telemetry";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/AmirantNextBestActionCard";
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
@@ -40,8 +42,10 @@ import { formatClock } from "@/lib/amirant-course/format-clock";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
+import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
+const EMPTY_BANK_BY_ID = new Map<string, BankQuestion>();
 
 type Phase = "active" | "results";
 
@@ -81,6 +85,43 @@ function buildPersonalExplanation(params: {
   return `כדי להתקדם מהר, כדאי להתחיל בחיזוק היסודות בנושאים החלשים. רמת הלמידה המומלצת כרגע היא ${estimatedLevel}.`;
 }
 
+function streakFromAnswerCorrect(
+  answerCorrect: (boolean | null)[],
+  upToIndexExclusive: number,
+): { correct: number; wrong: number; recentAccuracy?: number } {
+  let attempted = 0;
+  let correctTotal = 0;
+  let correctStreak = 0;
+  let wrongStreak = 0;
+
+  for (let i = 0; i < upToIndexExclusive; i++) {
+    const ok = answerCorrect[i];
+    if (ok == null) continue;
+    attempted += 1;
+    if (ok) correctTotal += 1;
+  }
+
+  for (let i = upToIndexExclusive - 1; i >= 0; i--) {
+    const ok = answerCorrect[i];
+    if (ok == null) break;
+    if (ok && wrongStreak === 0) {
+      correctStreak += 1;
+      continue;
+    }
+    if (!ok && correctStreak === 0) {
+      wrongStreak += 1;
+      continue;
+    }
+    break;
+  }
+
+  return {
+    correct: correctStreak,
+    wrong: wrongStreak,
+    recentAccuracy: attempted > 0 ? Number((correctTotal / attempted).toFixed(4)) : undefined,
+  };
+}
+
 const VOCAB_MODE_LABEL_HE: Record<Exclude<VocabQuizMode, "mixed">, string> = {
   verbs: "פעלים",
   nouns: "שמות עצם",
@@ -100,10 +141,9 @@ export function AmirantAdaptiveQuizClient({
   const topics = useMemo(() => normalizeQuizTopicSlugs(manifestQuiz.topicSlugs), [manifestQuiz.topicSlugs]);
   const hasVocabTopic = topics.includes("vocabulary");
   const pool = useMemo(
-    () => bankQuestionsToPoolItems(filterBankByTopicsAndVocabMode(topics, vocabMode)),
+    () => bankQuestionsPublicToPoolItems(filterPublicBankByTopicsAndVocabMode(topics, vocabMode)),
     [topics, vocabMode],
   );
-  const bankById = useMemo(() => new Map(AMIRANT_BANK_QUESTIONS.map((q) => [q.id, q])), []);
   const tieBreakSalt = useMemo(() => `${AMIRANT_PREPARATION_COURSE_ID}:${manifestQuiz.id}`, [manifestQuiz.id]);
   const minInTestLevel = manifestQuiz.minInTestLevel;
   const inTestLevelOptions = useMemo(
@@ -116,16 +156,21 @@ export function AmirantAdaptiveQuizClient({
   const [answers, setAnswers] = useState<(string | null)[]>(() =>
     Array.from({ length: manifestQuiz.questionCount }, () => null),
   );
+  const [answerCorrect, setAnswerCorrect] = useState<(boolean | null)[]>(() =>
+    Array.from({ length: manifestQuiz.questionCount }, () => null),
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timeLeftSec, setTimeLeftSec] = useState(() => manifestQuiz.timeLimitSec ?? 39 * 60);
   const [resultsSummary, setResultsSummary] = useState<DemoResultsSummary | null>(null);
   const [nextAfterQuiz, setNextAfterQuiz] = useState<NextBestActionEnriched | null>(null);
+  const [gradingIndex, setGradingIndex] = useState<number | null>(null);
   const questionEnteredAt = useRef<number>(Date.now());
   const responseTimesRef = useRef<number[]>(Array.from({ length: manifestQuiz.questionCount }, () => 0));
   const questionIdsRef = useRef<string[]>([]);
   const finalizeOnceRef = useRef(false);
   const attemptIdRef = useRef<string | null>(null);
   const telemetryLoggedRef = useRef<Set<string>>(new Set());
+  const gradeRequestSeqRef = useRef(0);
 
   useEffect(() => {
     const cross = nextStartLevelFromCrossTest();
@@ -158,21 +203,22 @@ export function AmirantAdaptiveQuizClient({
     () =>
       buildAdaptiveQuizQuestionIds({
         pool,
-        bankById,
+        bankById: EMPTY_BANK_BY_ID,
         topicSlugs: topics,
         questionCount: manifestQuiz.questionCount,
         startLevel,
         answers,
+        answerCorrect,
         tieBreakSalt,
         minInTestLevel: minInTestLevel != null ? (minInTestLevel as DifficultyLevel) : undefined,
       }),
-    [pool, bankById, topics, manifestQuiz.questionCount, startLevel, answers, tieBreakSalt, minInTestLevel],
+    [pool, topics, manifestQuiz.questionCount, startLevel, answers, answerCorrect, tieBreakSalt, minInTestLevel],
   );
 
   questionIdsRef.current = questionIds;
 
   const currentId = questionIds[currentIndex];
-  const currentQ = currentId ? getBankQuestion(currentId) : undefined;
+  const currentQ = currentId ? getPublicBankQuestion(currentId) : undefined;
 
   useEffect(() => {
     if (!currentQ) return;
@@ -194,166 +240,201 @@ export function AmirantAdaptiveQuizClient({
       levels.push(state.currentLevel);
       const aid = questionIds[i];
       const ans = answers[i];
-      if (!aid || ans == null) break;
-      const row = bankById.get(aid);
-      const ok = row ? row.correctOptionId === ans : false;
+      const ok = answerCorrect[i];
+      if (!aid || ans == null || ok == null) break;
       state = updateInTestLevelAfterAnswer(state, ok, inTestLevelOptions).state;
     }
     return levels;
-  }, [questionIds, answers, startLevel, bankById, minInTestLevel, inTestLevelOptions]);
+  }, [questionIds, answers, answerCorrect, startLevel, minInTestLevel, inTestLevelOptions]);
 
   useEffect(() => {
     questionEnteredAt.current = Date.now();
   }, [currentIndex, currentId]);
 
-  useEffect(() => {
-    if (phase !== "active") return;
-    if (timeLeftSec <= 0) return;
-    const t = window.setInterval(() => {
-      setTimeLeftSec((s) => {
-        if (s <= 1) {
-          window.clearInterval(t);
-          return 0;
-        }
-        return s - 1;
-      });
-    }, 1000);
-    return () => window.clearInterval(t);
-  }, [phase, timeLeftSec]);
+  useQuizTimer(phase === "active", setTimeLeftSec);
 
   const finalize = useCallback(
     (reason: "manual" | "timeout") => {
       if (finalizeOnceRef.current) return;
       finalizeOnceRef.current = true;
-      const now = Date.now();
-      const graded = gradeAdaptiveQuizOutcomes({
-        questionIds: questionIdsRef.current,
-        answers,
-        bankById,
-        questionCount: manifestQuiz.questionCount,
-        startLevel,
-        currentIndex,
-        reason,
-        nowMs: now,
-        questionEnteredAtMs: questionEnteredAt.current,
-        prevAnalytics: loadAnalytics(),
-        sessionLabel: manifestQuiz.title,
-        minInTestLevel: minInTestLevel != null ? (minInTestLevel as DifficultyLevel) : undefined,
-      });
-      saveAnalytics(graded.nextAnalytics);
-      const progress = loadAmirantProgressState();
-      const simSessions = graded.nextAnalytics.sessions.filter((s) => s.kind === "simulation");
-      const quizSessions = graded.nextAnalytics.sessions.filter((s) => s.kind === "quiz");
-      setNextAfterQuiz(
-        buildNextBestActionAfterQuiz({
-          courseBase: COURSE_BASE,
-          nextAnalytics: graded.nextAnalytics,
-          attemptId: attemptIdRef.current,
-          questionCount: manifestQuiz.questionCount,
-          correctCount: graded.correct,
-          lessonProgressPercent: getCourseProgressMeta(progress).percent,
-          submittedSimulationCount: simSessions.length,
-          totalQuizAttempts: quizSessions.length,
-          firstIncompleteLesson: getFirstIncompleteLesson(progress, COURSE_BASE),
-        }),
-      );
-      writeCrossTestSnapshot({
-        lastEndLevel: graded.finalAdaptiveLevel,
-        lastScorePct: graded.scorePercent,
-        updatedAt: new Date().toISOString(),
-      });
-      const persistedRows = questionIdsRef.current.flatMap((questionId, i) => {
-        const q = bankById.get(questionId);
-        if (!q) return [];
-        const selected = answers[i] ?? null;
-        return [
-          {
-            questionId: q.id,
-            topic: q.topicSlug,
-            subtopic: q.subtopicSlug,
-            difficulty: q.difficulty,
-            selectedOptionId: selected,
-            correctOptionId: q.correctOptionId,
-            isCorrect: selected === q.correctOptionId,
-            responseTimeMs: responseTimesRef.current[i] || undefined,
-          },
-        ];
-      });
-      const currentAttemptId = attemptIdRef.current;
-      const persist = async () => {
-        const attemptId =
-          currentAttemptId ??
-          (await service.startQuizAttempt({
-            quizId: manifestQuiz.id,
-            sourceMode: "production",
-            startLevel,
-          }));
-        await service.submitQuizAttempt({
-          attemptId,
-          quizId: manifestQuiz.id,
-          scorePct: graded.scorePercent,
-          questionCount: manifestQuiz.questionCount,
-          correctCount: graded.correct,
-          startLevel,
-          endLevel: graded.finalAdaptiveLevel,
-          answers: persistedRows,
-        });
-        await service.appendLearningEvent({
-          eventType: "quiz_submitted",
-          quizAttemptId: attemptId,
-          metadata: {
-            quizId: manifestQuiz.id,
-            scorePct: graded.scorePercent,
-            questionCount: manifestQuiz.questionCount,
-          },
-        });
-        await service.upsertCrossTestState({
-          lastEndLevel: graded.finalAdaptiveLevel,
-          lastScorePct: graded.scorePercent,
-        });
-        await service.upsertAdaptiveState({
-          topic: "global",
-          currentLevel: graded.finalAdaptiveLevel,
-          correctStreak: 0,
-          wrongStreak: 0,
-          recentAccuracy: graded.scorePercent / 100,
-          lastQuestionId: questionIdsRef.current[manifestQuiz.questionCount - 1],
-        });
-        await Promise.all(
-          Object.entries(graded.nextAnalytics.byTopic).map(([topic, roll]) =>
-            service.upsertTopicRollup({
-              topic,
-              totalAnswered: roll.total,
-              totalCorrect: roll.correct,
-              avgResponseMs:
-                roll.responseTimeSamples && roll.responseTimeSamples > 0 && roll.responseTimeMsSum != null
-                  ? Math.round(roll.responseTimeMsSum / roll.responseTimeSamples)
-                  : undefined,
-              byDifficulty: roll.byDifficulty,
-            }),
-          ),
+
+      const run = async () => {
+        const now = Date.now();
+        const ids = questionIdsRef.current;
+        const batch = await gradeBatchAnswers(
+          ids.map((questionId, i) => ({
+            questionId,
+            selectedOptionId: answers[i] ?? null,
+          })),
+          true,
         );
+
+        const effectiveStart: DifficultyLevel =
+          minInTestLevel != null
+            ? (Math.max(startLevel, minInTestLevel) as DifficultyLevel)
+            : startLevel;
+        const inTestOpt = minInTestLevel != null ? { minInTestLevel } : undefined;
+        let state = initialInTestLevel(effectiveStart);
+        let nextA = loadAnalytics();
+        let correct = 0;
+
+        for (let i = 0; i < manifestQuiz.questionCount; i++) {
+          const qid = ids[i];
+          if (!qid) continue;
+          const row = getPublicBankQuestion(qid);
+          if (!row) continue;
+          const ans = answers[i];
+          const timedBlank = ans == null && reason === "timeout" && i === currentIndex;
+          if (ans == null && !timedBlank) continue;
+
+          const item = batch.items.find((x) => x.questionId === qid);
+          const isCorrect = item?.isCorrect === true;
+          if (isCorrect) correct += 1;
+
+          const timeMs = i === currentIndex ? Math.max(0, now - questionEnteredAt.current) : undefined;
+          nextA = recordQuestionOutcome(nextA, {
+            topicSlug: row.topicSlug,
+            subtopicSlug: row.subtopicSlug,
+            difficulty: row.difficulty,
+            isCorrect,
+            timeMs,
+          });
+          state = updateInTestLevelAfterAnswer(state, isCorrect, inTestOpt).state;
+        }
+
+        const scorePercent =
+          manifestQuiz.questionCount > 0 ? Math.round((correct / manifestQuiz.questionCount) * 100) : 0;
+        const nextAnalytics = recordSessionEnd(nextA, {
+          kind: "quiz",
+          label: manifestQuiz.title,
+          scorePct: scorePercent,
+        });
+        const finalAdaptiveLevel = state.currentLevel;
+
+        saveAnalytics(nextAnalytics);
+        const progress = loadAmirantProgressState();
+        const simSessions = nextAnalytics.sessions.filter((s) => s.kind === "simulation");
+        const quizSessions = nextAnalytics.sessions.filter((s) => s.kind === "quiz");
+        setNextAfterQuiz(
+          buildNextBestActionAfterQuiz({
+            courseBase: COURSE_BASE,
+            nextAnalytics,
+            attemptId: attemptIdRef.current,
+            questionCount: manifestQuiz.questionCount,
+            correctCount: correct,
+            lessonProgressPercent: getCourseProgressMeta(progress).percent,
+            submittedSimulationCount: simSessions.length,
+            totalQuizAttempts: quizSessions.length,
+            firstIncompleteLesson: getFirstIncompleteLesson(progress, COURSE_BASE),
+          }),
+        );
+        writeCrossTestSnapshot({
+          lastEndLevel: finalAdaptiveLevel,
+          lastScorePct: scorePercent,
+          updatedAt: new Date().toISOString(),
+        });
+
+        const gradedById = new Map(batch.items.map((item) => [item.questionId, item]));
+        const persistedRows = ids.flatMap((questionId, i) => {
+          const q = getPublicBankQuestion(questionId);
+          if (!q) return [];
+          const selected = answers[i] ?? null;
+          const graded = gradedById.get(questionId);
+          return [
+            {
+              questionId: q.id,
+              topic: q.topicSlug,
+              subtopic: q.subtopicSlug,
+              difficulty: q.difficulty,
+              selectedOptionId: selected,
+              correctOptionId: graded?.correctOptionId ?? "",
+              isCorrect: graded?.isCorrect === true,
+              responseTimeMs: responseTimesRef.current[i] || undefined,
+            },
+          ];
+        });
+
+        const currentAttemptId = attemptIdRef.current;
+        try {
+          const attemptId =
+            currentAttemptId ??
+            (await service.startQuizAttempt({
+              quizId: manifestQuiz.id,
+              sourceMode: "production",
+              startLevel,
+            }));
+          await service.submitQuizAttempt({
+            attemptId,
+            quizId: manifestQuiz.id,
+            scorePct: scorePercent,
+            questionCount: manifestQuiz.questionCount,
+            correctCount: correct,
+            startLevel,
+            endLevel: finalAdaptiveLevel,
+            answers: persistedRows,
+          });
+          await service.appendLearningEvent({
+            eventType: "quiz_submitted",
+            quizAttemptId: attemptId,
+            metadata: {
+              quizId: manifestQuiz.id,
+              scorePct: scorePercent,
+              questionCount: manifestQuiz.questionCount,
+            },
+          });
+          await service.upsertCrossTestState({
+            lastEndLevel: finalAdaptiveLevel,
+            lastScorePct: scorePercent,
+          });
+          await service.upsertAdaptiveState({
+            topic: "global",
+            currentLevel: finalAdaptiveLevel,
+            correctStreak: 0,
+            wrongStreak: 0,
+            recentAccuracy: scorePercent / 100,
+            lastQuestionId: ids[manifestQuiz.questionCount - 1],
+          });
+          await Promise.all(
+            Object.entries(nextAnalytics.byTopic).map(([topic, roll]) =>
+              service.upsertTopicRollup({
+                topic,
+                totalAnswered: roll.total,
+                totalCorrect: roll.correct,
+                avgResponseMs:
+                  roll.responseTimeSamples && roll.responseTimeSamples > 0 && roll.responseTimeMsSum != null
+                    ? Math.round(roll.responseTimeMsSum / roll.responseTimeSamples)
+                    : undefined,
+                byDifficulty: roll.byDifficulty,
+              }),
+            ),
+          );
+        } catch {
+          showPrepToast("התוצאה נשמרה במכשיר; הסנכרון לחשבון נכשל — נסו לרענן.", { tone: "error" });
+        }
+
+        const weakFromAnalytics = topWeakTopics(nextAnalytics.byTopic, 3);
+        const weakTopicSlugs = weakFromAnalytics.length > 0 ? weakFromAnalytics : topics.slice(0, 3);
+        setResultsSummary({
+          correct,
+          scorePct: scorePercent,
+          estimatedLevel: finalAdaptiveLevel,
+          weakTopicSlugs,
+          explanation: buildPersonalExplanation({
+            scorePct: scorePercent,
+            estimatedLevel: finalAdaptiveLevel,
+            weakTopicsCount: weakTopicSlugs.length,
+          }),
+        });
+        setPhase("results");
       };
-      void persist().catch(() => {});
-      const analyticsSnapshot = graded.nextAnalytics;
-      const weakFromAnalytics = topWeakTopics(analyticsSnapshot.byTopic, 3);
-      const weakTopicSlugs = weakFromAnalytics.length > 0 ? weakFromAnalytics : topics.slice(0, 3);
-      setResultsSummary({
-        correct: graded.correct,
-        scorePct: graded.scorePercent,
-        estimatedLevel: graded.finalAdaptiveLevel,
-        weakTopicSlugs,
-        explanation: buildPersonalExplanation({
-          scorePct: graded.scorePercent,
-          estimatedLevel: graded.finalAdaptiveLevel,
-          weakTopicsCount: weakTopicSlugs.length,
-        }),
+
+      void run().catch(() => {
+        finalizeOnceRef.current = false;
+        showPrepToast("לא הצלחנו לחשב את הציון. נסו שוב.", { tone: "error" });
       });
-      setPhase("results");
     },
     [
       answers,
-      bankById,
       currentIndex,
       manifestQuiz.id,
       manifestQuiz.questionCount,
@@ -371,37 +452,52 @@ export function AmirantAdaptiveQuizClient({
     finalize("timeout");
   }, [phase, timeLeftSec, finalize]);
 
-  const setAnswerForIndex = useCallback((i: number, optionId: string) => {
-    if (!responseTimesRef.current[i]) {
-      responseTimesRef.current[i] = Math.max(1, Date.now() - questionEnteredAt.current);
-    }
-    setAnswers((prev) => {
-      const next = [...prev];
-      next[i] = optionId;
-      for (let j = i + 1; j < next.length; j++) next[j] = null;
-      return next;
-    });
-  }, []);
-
+  const setAnswerForIndex = useCallback(
+    (i: number, optionId: string) => {
+      const qid = questionIdsRef.current[i];
+      if (!qid) return;
+      if (!responseTimesRef.current[i]) {
+        responseTimesRef.current[i] = Math.max(1, Date.now() - questionEnteredAt.current);
+      }
+      const seq = ++gradeRequestSeqRef.current;
+      setGradingIndex(i);
+      void gradeCheckAnswer(qid, optionId)
+        .then((ok) => {
+          if (seq !== gradeRequestSeqRef.current) return;
+          setAnswers((prev) => {
+            const next = [...prev];
+            next[i] = optionId;
+            for (let j = i + 1; j < next.length; j++) next[j] = null;
+            return next;
+          });
+          setAnswerCorrect((prev) => {
+            const next = [...prev];
+            next[i] = ok;
+            for (let j = i + 1; j < next.length; j++) next[j] = null;
+            return next;
+          });
+        })
+        .catch(() => {
+          if (seq !== gradeRequestSeqRef.current) return;
+          showPrepToast("בדיקת התשובה נכשלה. נסו שוב.", { tone: "error" });
+        })
+        .finally(() => {
+          if (seq === gradeRequestSeqRef.current) setGradingIndex(null);
+        });
+    },
+    [],
+  );
 
   useEffect(() => {
     const qid = questionIds[currentIndex];
-    const q = qid ? bankById.get(qid) : undefined;
+    const q = qid ? getPublicBankQuestion(qid) : undefined;
     if (!qid || !q) return;
     const prevLevel = currentIndex > 0 ? levelAtIndex[currentIndex - 1] ?? startLevel : startLevel;
     const sessionId = attemptIdRef.current ?? undefined;
     const telemetryKey = `${sessionId ?? "local"}:${currentIndex}:${qid}`;
     if (telemetryLoggedRef.current.has(telemetryKey)) return;
 
-    const answersMap = new Map<string, string | null>(
-      questionIds.map((id, idx) => [id, answers[idx] ?? null]),
-    );
-    const streak = computeStreakState({
-      questionIds,
-      answersByQuestionId: answersMap,
-      bankById,
-      upToIndexExclusive: currentIndex,
-    });
+    const streak = streakFromAnswerCorrect(answerCorrect, currentIndex);
     const event = buildAdaptiveDecisionEvent({
       topic: q.topicSlug,
       previousLevel: prevLevel,
@@ -414,32 +510,10 @@ export function AmirantAdaptiveQuizClient({
     });
     telemetryLoggedRef.current.add(telemetryKey);
     void service.recordAdaptiveDecision(event).catch(() => {});
-  }, [
-    answers,
-    bankById,
-    currentIndex,
-    levelAtIndex,
-    questionIds,
-    service,
-    startLevel,
-  ]);
+  }, [answerCorrect, currentIndex, levelAtIndex, questionIds, service, startLevel]);
 
   if (phase === "results") {
-    const fallbackIds = buildAdaptiveQuizQuestionIds({
-      pool,
-      bankById,
-      topicSlugs: topics,
-      questionCount: manifestQuiz.questionCount,
-      startLevel,
-      answers,
-      tieBreakSalt,
-    });
-    let fallbackCorrect = 0;
-    for (let i = 0; i < manifestQuiz.questionCount; i++) {
-      const row = fallbackIds[i] ? bankById.get(fallbackIds[i]!) : undefined;
-      const ans = answers[i];
-      if (row && ans != null && ans === row.correctOptionId) fallbackCorrect += 1;
-    }
+    const fallbackCorrect = answerCorrect.filter((x) => x === true).length;
     const fallbackPct = Math.round((fallbackCorrect / manifestQuiz.questionCount) * 100);
     const fallbackWeak = topics.slice(0, 3);
     const summary: DemoResultsSummary = resultsSummary ?? {
@@ -587,12 +661,14 @@ export function AmirantAdaptiveQuizClient({
                 <li key={opt.id}>
                   <button
                     type="button"
+                    disabled={gradingIndex === currentIndex}
                     onClick={() => setAnswerForIndex(currentIndex, opt.id)}
                     className={cn(
                       "w-full rounded-control border px-4 py-3 text-right text-sm transition",
                       answers[currentIndex] === opt.id
                         ? "border-primary bg-primary/10 font-semibold text-primary"
                         : "border-line/80 bg-paper hover:border-primary/40",
+                      gradingIndex === currentIndex && "opacity-60",
                     )}
                   >
                     {opt.label}

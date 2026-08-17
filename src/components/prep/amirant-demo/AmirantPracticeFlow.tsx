@@ -31,9 +31,11 @@ import {
   writeStoredExamOutcome,
 } from "@/lib/prep/amirant-demo/adaptive-exam-psychometrics";
 import { amirantExamQuestionPromptForDisplay } from "@/lib/amirant-course";
+import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { AMIRANT_SIMULATION_TECH } from "@/lib/prep/amirant-course-syllabus";
 import { AMIRANT_DEMO_IDS } from "@/lib/prep/amirant-demo/seed-constants";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { showPrepToast } from "@/lib/prep/show-prep-toast";
 import { cn } from "@/lib/design-system/cn";
 
 const DEMO_USER_ID = "20000001-0000-4000-8000-000000009998";
@@ -142,6 +144,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
   );
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [lastFeedback, setLastFeedback] = useState<{ correct: boolean; explanation: string } | null>(null);
+  const [gradingShort, setGradingShort] = useState(false);
   const [subtopicRows, setSubtopicRows] = useState<Record<string, LearnerSubtopicStatsRow>>({});
 
   const [fullExam, setFullExam] = useState<FullExamState | null>(null);
@@ -151,6 +154,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
     theta: number;
   } | null>(null);
   const zeroTimeHandledRef = useRef<string>("");
+  const finishingSectionRef = useRef(false);
 
   const tieBreakSalt = DEMO_TIE_SALT;
 
@@ -192,6 +196,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
     setSubtopicRows({});
     setLastFeedback(null);
     setSelectedOptionId(null);
+    setGradingShort(false);
     setFullExam(null);
     setFullScoredResults(null);
 
@@ -286,25 +291,43 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
   );
 
   const submitShortAnswer = useCallback(() => {
-    if (!currentQuestion || selectedOptionId === null) return;
-    const isCorrect = selectedOptionId === currentQuestion.correctOptionId;
+    if (!currentQuestion || selectedOptionId === null || gradingShort) return;
+    const question = currentQuestion;
+    const optionId = selectedOptionId;
+    setGradingShort(true);
+    void gradeCheckAnswer(question.id, optionId)
+      .then((isCorrect) => {
+        setLastFeedback({
+          correct: isCorrect,
+          explanation: isCorrect ? "תשובה נכונה." : "תשובה לא נכונה.",
+        });
 
-    setLastFeedback({ correct: isCorrect, explanation: currentQuestion.explanation });
+        const topicId = question.topicId;
+        setTopicLevels((prev) => {
+          const cur = prev[topicId] ?? initialShortDemoTopicState();
+          const t = applyStreakLevelTransition(cur, isCorrect);
+          return {
+            ...prev,
+            [topicId]: {
+              currentLevel: t.nextLevel,
+              correctStreak: t.correctStreak,
+              wrongStreak: t.wrongStreak,
+            },
+          };
+        });
 
-    const topicId = currentQuestion.topicId;
-    setTopicLevels((prev) => {
-      const cur = prev[topicId] ?? initialShortDemoTopicState();
-      const t = applyStreakLevelTransition(cur, isCorrect);
-      return { ...prev, [topicId]: { currentLevel: t.nextLevel, correctStreak: t.correctStreak, wrongStreak: t.wrongStreak } };
-    });
+        updateSubtopicRow(question, isCorrect);
 
-    updateSubtopicRow(currentQuestion, isCorrect);
-
-    setRecentQuestionIds((r) => {
-      const next = [...r, currentQuestion.id];
-      return next.length > RECENT_WINDOW + 2 ? next.slice(-(RECENT_WINDOW + 2)) : next;
-    });
-  }, [currentQuestion, selectedOptionId, updateSubtopicRow]);
+        setRecentQuestionIds((r) => {
+          const next = [...r, question.id];
+          return next.length > RECENT_WINDOW + 2 ? next.slice(-(RECENT_WINDOW + 2)) : next;
+        });
+      })
+      .catch(() => {
+        showPrepToast("בדיקת התשובה נכשלה. נסו שוב.", { tone: "error" });
+      })
+      .finally(() => setGradingShort(false));
+  }, [currentQuestion, gradingShort, selectedOptionId, updateSubtopicRow]);
 
   const continueAfterShortFeedback = useCallback(() => {
     if (!lastFeedback) return;
@@ -337,95 +360,115 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
 
   const finishFullSection = useCallback(
     (opts?: { force?: boolean }) => {
-      if (!fullExam) return;
-      const ids = fullExam.questionIds;
-      const unanswered = ids.filter((id) => fullExam.answers[id] == null);
+      if (!fullExam || finishingSectionRef.current) return;
+      const exam = fullExam;
+      const ids = exam.questionIds;
+      const unanswered = ids.filter((id) => exam.answers[id] == null);
       if (!opts?.force && unanswered.length > 0) {
         const ok = window.confirm(`נותרו ${unanswered.length} שאלות בלי תשובה. לסיים את הפרק בכל זאת?`);
         if (!ok) return;
       }
 
-      if (fullExam.kind === "pilot") {
-        const spec = SCORED_SECTION_SPEC[0];
+      finishingSectionRef.current = true;
+
+      const runFinish = async () => {
+        if (exam.kind === "pilot") {
+          const spec = SCORED_SECTION_SPEC[0];
+          const scoredIds = pickDistinctQuestionIds({
+            pool: AMIRANT_DEMO_QUESTION_POOL,
+            topicId: spec.topicId,
+            targetLevel: exam.adaptiveLevel,
+            count: AMIRANT_SIMULATION_TECH.scoredQuestionsPerExam / SCORED_SECTION_SPEC.length,
+            excludeIds: exam.globalUsedIds,
+            tieBreakSalt: `${tieBreakSalt}:scored:0`,
+          });
+          zeroTimeHandledRef.current = "";
+          setFullExam({
+            kind: "scored",
+            sectionIndex: 0,
+            adaptiveLevel: exam.adaptiveLevel,
+            thetaEstimate: exam.thetaEstimate,
+            questionIds: scoredIds,
+            answers: Object.fromEntries(scoredIds.map((id) => [id, null as string | null])),
+            focusIndex: 0,
+            timeLeftSec: spec.seconds,
+            globalUsedIds: [...exam.globalUsedIds, ...scoredIds],
+            scoredCorrectRunning: 0,
+            scoredTotalRunning: 0,
+          });
+          return;
+        }
+
+        const batch = await gradeBatchAnswers(
+          ids.map((questionId) => ({
+            questionId,
+            selectedOptionId: exam.answers[questionId] ?? null,
+          })),
+        );
+        const gradedById = new Map(batch.items.map((item) => [item.questionId, item]));
+
+        let correct = 0;
+        const sectionResponses: { isCorrect: boolean; difficulty: number }[] = [];
+        for (const id of ids) {
+          const q = QUESTIONS_BY_ID.get(id);
+          if (!q) continue;
+          const ok = gradedById.get(id)?.isCorrect === true;
+          if (ok) correct += 1;
+          sectionResponses.push({ isCorrect: ok, difficulty: q.difficulty });
+          updateSubtopicRow(q, ok);
+        }
+
+        const nextTheta = updateThetaFromSectionResponses(exam.thetaEstimate, sectionResponses);
+        const nextLevel = discreteLevelFromTheta(nextTheta);
+        const scoredCorrectRunning = exam.scoredCorrectRunning + correct;
+        const scoredTotalRunning = exam.scoredTotalRunning + ids.length;
+
+        if (exam.sectionIndex >= SCORED_SECTION_SPEC.length - 1) {
+          const scoredPct = scoredTotalRunning > 0 ? (scoredCorrectRunning / scoredTotalRunning) * 100 : 0;
+          writeStoredExamOutcome({
+            theta: nextTheta,
+            scoredPct,
+            endDiscreteLevel: discreteLevelFromTheta(nextTheta),
+          });
+          setFullScoredResults({ correct: scoredCorrectRunning, total: scoredTotalRunning, theta: nextTheta });
+          setFullExam(null);
+          setPhase("full-summary");
+          return;
+        }
+
+        const nextIdx = exam.sectionIndex + 1;
+        const spec = SCORED_SECTION_SPEC[nextIdx];
         const scoredIds = pickDistinctQuestionIds({
           pool: AMIRANT_DEMO_QUESTION_POOL,
           topicId: spec.topicId,
-          targetLevel: fullExam.adaptiveLevel,
+          targetLevel: nextLevel,
           count: AMIRANT_SIMULATION_TECH.scoredQuestionsPerExam / SCORED_SECTION_SPEC.length,
-          excludeIds: fullExam.globalUsedIds,
-          tieBreakSalt: `${tieBreakSalt}:scored:0`,
+          excludeIds: exam.globalUsedIds,
+          tieBreakSalt: `${tieBreakSalt}:scored:${nextIdx}`,
         });
         zeroTimeHandledRef.current = "";
         setFullExam({
           kind: "scored",
-          sectionIndex: 0,
-          adaptiveLevel: fullExam.adaptiveLevel,
-          thetaEstimate: fullExam.thetaEstimate,
+          sectionIndex: nextIdx,
+          adaptiveLevel: nextLevel,
+          thetaEstimate: nextTheta,
           questionIds: scoredIds,
           answers: Object.fromEntries(scoredIds.map((id) => [id, null as string | null])),
           focusIndex: 0,
           timeLeftSec: spec.seconds,
-          globalUsedIds: [...fullExam.globalUsedIds, ...scoredIds],
-          scoredCorrectRunning: 0,
-          scoredTotalRunning: 0,
+          globalUsedIds: [...exam.globalUsedIds, ...scoredIds],
+          scoredCorrectRunning,
+          scoredTotalRunning,
         });
-        return;
-      }
+      };
 
-      let correct = 0;
-      const sectionResponses: { isCorrect: boolean; difficulty: number }[] = [];
-      for (const id of fullExam.questionIds) {
-        const q = QUESTIONS_BY_ID.get(id);
-        if (!q) continue;
-        const picked = fullExam.answers[id];
-        const ok = picked != null && picked === q.correctOptionId;
-        if (ok) correct += 1;
-        sectionResponses.push({ isCorrect: ok, difficulty: q.difficulty });
-        updateSubtopicRow(q, ok);
-      }
-
-      const nextTheta = updateThetaFromSectionResponses(fullExam.thetaEstimate, sectionResponses);
-      const nextLevel = discreteLevelFromTheta(nextTheta);
-      const scoredCorrectRunning = fullExam.scoredCorrectRunning + correct;
-      const scoredTotalRunning = fullExam.scoredTotalRunning + fullExam.questionIds.length;
-
-      if (fullExam.sectionIndex >= SCORED_SECTION_SPEC.length - 1) {
-        const scoredPct = scoredTotalRunning > 0 ? (scoredCorrectRunning / scoredTotalRunning) * 100 : 0;
-        writeStoredExamOutcome({
-          theta: nextTheta,
-          scoredPct,
-          endDiscreteLevel: discreteLevelFromTheta(nextTheta),
+      void runFinish()
+        .catch(() => {
+          showPrepToast("בדיקת הפרק נכשלה. נסו שוב.", { tone: "error" });
+        })
+        .finally(() => {
+          finishingSectionRef.current = false;
         });
-        setFullScoredResults({ correct: scoredCorrectRunning, total: scoredTotalRunning, theta: nextTheta });
-        setFullExam(null);
-        setPhase("full-summary");
-        return;
-      }
-
-      const nextIdx = fullExam.sectionIndex + 1;
-      const spec = SCORED_SECTION_SPEC[nextIdx];
-      const scoredIds = pickDistinctQuestionIds({
-        pool: AMIRANT_DEMO_QUESTION_POOL,
-        topicId: spec.topicId,
-        targetLevel: nextLevel,
-        count: AMIRANT_SIMULATION_TECH.scoredQuestionsPerExam / SCORED_SECTION_SPEC.length,
-        excludeIds: fullExam.globalUsedIds,
-        tieBreakSalt: `${tieBreakSalt}:scored:${nextIdx}`,
-      });
-      zeroTimeHandledRef.current = "";
-      setFullExam({
-        kind: "scored",
-        sectionIndex: nextIdx,
-        adaptiveLevel: nextLevel,
-        thetaEstimate: nextTheta,
-        questionIds: scoredIds,
-        answers: Object.fromEntries(scoredIds.map((id) => [id, null as string | null])),
-        focusIndex: 0,
-        timeLeftSec: spec.seconds,
-        globalUsedIds: [...fullExam.globalUsedIds, ...scoredIds],
-        scoredCorrectRunning,
-        scoredTotalRunning,
-      });
     },
     [fullExam, tieBreakSalt, updateSubtopicRow],
   );
@@ -564,12 +607,14 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                     <li key={opt.id}>
                       <button
                         type="button"
+                        disabled={gradingShort}
                         onClick={() => setSelectedOptionId(opt.id)}
                         className={cn(
                           "w-full rounded-control border px-4 py-3 text-right text-sm transition",
                           selectedOptionId === opt.id
                             ? "border-primary bg-primary/10 font-semibold text-primary"
                             : "border-line/80 bg-paper hover:border-primary/40",
+                          gradingShort && "opacity-60",
                         )}
                       >
                         {opt.label}
@@ -579,11 +624,11 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                 </ul>
                 <button
                   type="button"
-                  disabled={selectedOptionId === null}
+                  disabled={selectedOptionId === null || gradingShort}
                   onClick={submitShortAnswer}
                   className="rounded-control bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-card disabled:cursor-not-allowed disabled:opacity-40"
                 >
-                  בדיקת תשובה
+                  {gradingShort ? "בודקים…" : "בדיקת תשובה"}
                 </button>
               </CardBody>
             </Card>

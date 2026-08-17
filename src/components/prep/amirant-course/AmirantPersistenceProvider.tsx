@@ -52,8 +52,10 @@ export function AmirantPersistenceProvider({
     };
   }, [localService]);
 
+  const value = useMemo(() => ({ service }), [service]);
+
   return (
-    <AmirantPersistenceContext.Provider value={{ service }}>
+    <AmirantPersistenceContext.Provider value={value}>
       {children}
     </AmirantPersistenceContext.Provider>
   );

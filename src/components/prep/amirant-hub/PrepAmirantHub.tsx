@@ -59,10 +59,10 @@ export function PrepAmirantHub() {
               מבחן רמה חינם ←
             </Link>
             <Link
-              href={COURSE}
+              href={`${PREP_BASE}/amirant/continue`}
               className="inline-flex items-center justify-center rounded-control border border-line bg-paper px-6 py-3.5 text-sm font-semibold text-primary transition hover:border-primary/35"
             >
-              כניסה לקורס המלא
+              המשך לקורס
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 pt-2 text-xs text-muted">
@@ -130,8 +130,8 @@ export function PrepAmirantHub() {
           </Suspense>
           <p className="mt-4 text-center text-xs text-muted">
             אחרי המבחן תראה תוצאות, רמה משוערת ונושאים לחיזוק.{" "}
-            <Link href={COURSE} className="font-semibold text-primary hover:underline">
-              להמשך לקורס המלא ←
+            <Link href={`${PREP_BASE}/amirant/continue`} className="font-semibold text-primary hover:underline">
+              להמשך המסלול ←
             </Link>
           </p>
         </div>

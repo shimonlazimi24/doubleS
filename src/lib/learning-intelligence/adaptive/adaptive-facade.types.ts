@@ -1,10 +1,8 @@
 /**
- * Service layer boundaries - implement with Supabase in a dedicated module later.
- * Keeps adaptive logic pure in sibling files; facade orchestrates DB + events.
+ * Service layer boundaries - adaptive logic stays pure; facade orchestrates DB.
  */
 
 import type { CourseId, QuestionId, TopicId, UserId } from "../domain";
-import type { ServiceResult } from "../learning-service.types";
 import type {
   LearnerAdaptiveTopicState,
   NextQuestionSelection,
@@ -12,6 +10,10 @@ import type {
   SubtopicMasteryView,
 } from "./adaptive-state.types";
 import type { AiTutorGrounding } from "./ai-tutor-contract";
+
+type ServiceResult<T> =
+  | { ok: true; data: T }
+  | { ok: false; error: { code: string; message: string } };
 
 export interface RecordAdaptivePracticeAnswerInput {
   userId: UserId;
@@ -37,8 +39,7 @@ export interface GetWeakAreasInput {
 
 /**
  * Facade - single entry for adaptive engines + tutor context assembly.
- * Implementation: load/save rows in `learner_adaptive_topic_state`, `learner_subtopic_stats`,
- * emit `learning_events` via `LearningService.emitEvent` where appropriate.
+ * Not wired in product yet; keep types for future orchestration.
  */
 export interface AdaptiveLearningFacade {
   recordPracticeAnswer(input: RecordAdaptivePracticeAnswerInput): Promise<ServiceResult<RecordAdaptivePracticeAnswerResult>>;

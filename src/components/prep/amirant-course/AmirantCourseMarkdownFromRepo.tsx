@@ -65,11 +65,42 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
       </blockquote>
     ),
   hr: () => <hr className="my-6 border-line/80" />,
-  a: ({ href, children }) => (
-    <a href={href} className="font-medium text-primary underline-offset-2 hover:underline" target={href?.startsWith("http") ? "_blank" : undefined} rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}>
-      {children}
-    </a>
-  ),
+  a: ({ href, children }) => {
+    const safe =
+      typeof href === "string" &&
+      (href.startsWith("/") ||
+        href.startsWith("https://") ||
+        href.startsWith("http://") ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:"));
+    if (!safe) {
+      return <span className="font-medium text-primary">{children}</span>;
+    }
+    return (
+      <a
+        href={href}
+        className="font-medium text-primary underline-offset-2 hover:underline"
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      >
+        {children}
+      </a>
+    );
+  },
+  img: ({ src, alt }) => {
+    const safe =
+      typeof src === "string" &&
+      (src.startsWith("/") || src.startsWith("https://") || src.startsWith("http://") || src.startsWith("data:image/"));
+    if (!safe) return null;
+    return (
+      <img
+        src={src}
+        alt={alt ?? ""}
+        className="my-3 h-auto max-w-full rounded-md border border-line/40"
+        loading="lazy"
+      />
+    );
+  },
   code: ({ className, children, ...props }) => {
     const isBlock = /language-/.test(className ?? "");
     if (isBlock) {
@@ -109,7 +140,6 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
   td: ({ children }) => <td className="border border-line/50 px-3 py-2 text-start align-top text-ink">{children}</td>,
   tr: ({ children }) => <tr className="odd:bg-paper even:bg-surface-low/30">{children}</tr>,
   strong: ({ children }) => <strong className="font-semibold text-ink">{children}</strong>,
-  img: ({ src, alt }) => <img src={src ?? ""} alt={alt ?? ""} className="my-3 h-auto max-w-full rounded-md border border-line/40" loading="lazy" />,
 };
 
 /**

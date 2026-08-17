@@ -3,21 +3,25 @@
 /**
  * שאלות אינטראקטיביות בתוך שיעור - מחליף את השאלות השטוחות שהודבקו מה-md:
  * שאלה, מתחתיה אפשרויות אחת מתחת לשנייה (לחיצות), טיימר אופציונלי שמתחיל
- * בלחיצה, בדיקת תשובות עם הסברים מהבנק.
+ * בלחיצה, בדיקת תשובות עם הסברים מהשרת.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   amirantExamQuestionPromptForDisplay,
-  getBankQuestion,
-  getPassage,
   loadAnalytics,
   recordQuestionOutcome,
   recordSessionEnd,
   saveAnalytics,
 } from "@/lib/amirant-course";
+import {
+  getClientPassage,
+  getPublicBankQuestion,
+} from "@/lib/amirant-course/question-bank/client-bank";
+import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/grade-client";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
 import { formatClock } from "@/lib/amirant-course/format-clock";
+import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 type Props = {
   title: string;
@@ -29,11 +33,14 @@ type Props = {
 
 export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, sessionLabel }: Props) {
   const questions = useMemo(
-    () => questionIds.map((id) => getBankQuestion(id)).filter((q): q is NonNullable<typeof q> => !!q),
+    () => questionIds.map((id) => getPublicBankQuestion(id)).filter((q): q is NonNullable<typeof q> => !!q),
     [questionIds],
   );
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [gradeById, setGradeById] = useState<Record<string, GradeBatchItem>>({});
+  const [correctCount, setCorrectCount] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [timeLeftSec, setTimeLeftSec] = useState(timeLimitSec ?? 0);
   const analyticsRecorded = useRef(false);
@@ -47,38 +54,56 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
   }, [timerRunning, checked]);
 
   const answeredCount = questions.filter((q) => answers[q.id]).length;
-  const correctCount = questions.filter((q) => answers[q.id] === q.correctOptionId).length;
 
   const check = useCallback(() => {
-    setChecked(true);
+    if (checking || questions.length === 0) return;
+    setChecking(true);
     setTimerRunning(false);
-    if (analyticsRecorded.current) return;
-    analyticsRecorded.current = true;
-    try {
-      let analytics = loadAnalytics();
-      let localCorrect = 0;
-      for (const q of questions) {
-        const selected = answers[q.id];
-        if (!selected) continue;
-        const isCorrect = selected === q.correctOptionId;
-        if (isCorrect) localCorrect += 1;
-        analytics = recordQuestionOutcome(analytics, {
-          topicSlug: q.topicSlug,
-          subtopicSlug: q.subtopicSlug,
-          difficulty: q.difficulty,
-          isCorrect,
-        });
-      }
-      analytics = recordSessionEnd(analytics, {
-        kind: "practice",
-        label: sessionLabel ?? title,
-        scorePct: Math.round((localCorrect / questions.length) * 100),
-      });
-      saveAnalytics(analytics);
-    } catch {
-      // אנליטיקס בלבד - לא חוסם את חוויית הבדיקה
-    }
-  }, [answers, questions, sessionLabel, title]);
+    void gradeBatchAnswers(
+      questions.map((q) => ({
+        questionId: q.id,
+        selectedOptionId: answers[q.id] ?? null,
+      })),
+      true,
+    )
+      .then((batch) => {
+        const byId = Object.fromEntries(batch.items.map((item) => [item.questionId, item]));
+        setGradeById(byId);
+        setCorrectCount(batch.correct);
+        setChecked(true);
+
+        if (analyticsRecorded.current) return;
+        analyticsRecorded.current = true;
+        try {
+          let analytics = loadAnalytics();
+          let localCorrect = 0;
+          for (const q of questions) {
+            const selected = answers[q.id];
+            if (!selected) continue;
+            const isCorrect = byId[q.id]?.isCorrect === true;
+            if (isCorrect) localCorrect += 1;
+            analytics = recordQuestionOutcome(analytics, {
+              topicSlug: q.topicSlug,
+              subtopicSlug: q.subtopicSlug,
+              difficulty: q.difficulty,
+              isCorrect,
+            });
+          }
+          analytics = recordSessionEnd(analytics, {
+            kind: "practice",
+            label: sessionLabel ?? title,
+            scorePct: Math.round((localCorrect / questions.length) * 100),
+          });
+          saveAnalytics(analytics);
+        } catch {
+          // אנליטיקס בלבד - לא חוסם את חוויית הבדיקה
+        }
+      })
+      .catch(() => {
+        showPrepToast("בדיקת התשובות נכשלה. נסו שוב.", { tone: "error" });
+      })
+      .finally(() => setChecking(false));
+  }, [answers, checking, questions, sessionLabel, title]);
 
   if (questions.length === 0) {
     return (
@@ -123,11 +148,13 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
 
       <ol className="space-y-6">
         {questions.map((q, qi) => {
-          const passage = q.passageId && q.passageId !== lastPassageId ? getPassage(q.passageId) : null;
+          const passage = q.passageId && q.passageId !== lastPassageId ? getClientPassage(q.passageId) : null;
           if (q.passageId) lastPassageId = q.passageId;
           const selected = answers[q.id];
-          const isCorrect = checked && selected === q.correctOptionId;
-          const isWrong = checked && selected != null && selected !== q.correctOptionId;
+          const graded = gradeById[q.id];
+          const correctOptionId = graded?.correctOptionId ?? null;
+          const isCorrect = checked && graded?.isCorrect === true;
+          const isWrong = checked && selected != null && graded?.isCorrect === false;
           return (
             <li key={q.id} className="space-y-3">
               {passage ? (
@@ -153,13 +180,14 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                 <ul className="mt-4 space-y-2">
                   {q.options.map((opt) => {
                     const chosen = selected === opt.id;
-                    const showAsCorrect = checked && opt.id === q.correctOptionId;
-                    const showAsWrong = checked && chosen && opt.id !== q.correctOptionId;
+                    const showAsCorrect = checked && correctOptionId != null && opt.id === correctOptionId;
+                    const showAsWrong =
+                      checked && chosen && correctOptionId != null && opt.id !== correctOptionId;
                     return (
                       <li key={opt.id}>
                         <button
                           type="button"
-                          disabled={checked}
+                          disabled={checked || checking}
                           onClick={() =>
                             setAnswers((prev) => ({ ...prev, [q.id]: opt.id }))
                           }
@@ -181,11 +209,11 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                     );
                   })}
                 </ul>
-                {checked && q.explanation ? (
+                {checked && graded?.explanation ? (
                   // "הערת מורה" - קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
                   <div className="mt-4 rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4 ps-4">
                     <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
-                    <PremiumMarkdownBody body={q.explanation} variant="card" />
+                    <PremiumMarkdownBody body={graded.explanation} variant="card" />
                   </div>
                 ) : null}
               </div>
@@ -198,10 +226,10 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
         <button
           type="button"
           onClick={check}
-          disabled={answeredCount === 0}
+          disabled={answeredCount === 0 || checking}
           className="inline-flex min-h-11 items-center justify-center rounded-xl bg-primary px-6 text-sm font-bold text-white shadow-card transition hover:opacity-90 disabled:opacity-40"
         >
-          בדיקת תשובות ({answeredCount}/{questions.length})
+          {checking ? "בודקים…" : `בדיקת תשובות (${answeredCount}/${questions.length})`}
         </button>
       ) : (
         <div className="flex flex-wrap items-center gap-4 rounded-xl border border-line/70 bg-surface-low px-5 py-4">
@@ -213,6 +241,8 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
             onClick={() => {
               setAnswers({});
               setChecked(false);
+              setGradeById({});
+              setCorrectCount(0);
               setTimeLeftSec(timeLimitSec ?? 0);
               setTimerRunning(false);
               analyticsRecorded.current = false;

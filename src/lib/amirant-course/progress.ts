@@ -156,17 +156,19 @@ export async function uploadAmirantProgressLessons(
   state: AmirantProgressStateV1,
   lessonIds: string[],
 ): Promise<void> {
-  for (const lessonId of lessonIds) {
-    const entry = state.lessons[lessonId];
-    if (!entry) continue;
-    const status: SupabaseLessonProgressStatus = entry.completedAt ? "completed" : "in_progress";
-    await upsertSupabaseLessonProgress(client, userId, {
-      lessonId,
-      status,
-      startedAt: entry.startedAt,
-      completedAt: entry.completedAt,
-    });
-  }
+  await Promise.all(
+    lessonIds.map(async (lessonId) => {
+      const entry = state.lessons[lessonId];
+      if (!entry) return;
+      const status: SupabaseLessonProgressStatus = entry.completedAt ? "completed" : "in_progress";
+      await upsertSupabaseLessonProgress(client, userId, {
+        lessonId,
+        status,
+        startedAt: entry.startedAt,
+        completedAt: entry.completedAt,
+      });
+    }),
+  );
 }
 
 export async function hydrateAmirantProgressForUser(
@@ -180,5 +182,7 @@ export async function hydrateAmirantProgressForUser(
   if (lessonsToUpload.length > 0) {
     await uploadAmirantProgressLessons(client, userId, merged, lessonsToUpload);
   }
+  // Dual-write: keep local cache aligned with merged account progress after login.
+  localService.save(merged);
   return merged;
 }

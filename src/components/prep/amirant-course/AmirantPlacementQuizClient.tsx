@@ -1,24 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 import {
-  AMIRANT_GENERAL_BANK_QUESTIONS,
   amirantExamQuestionPromptForDisplay,
   buildPlacementQuizForm,
-  getBankQuestion,
-  getPassage,
+  initialInTestLevel,
   loadAnalytics,
   placementNormalizedScore,
   recentPlacementExclusions,
   rememberPlacementForm,
+  recordQuestionOutcome,
+  recordSessionEnd,
   saveAnalytics,
+  updateInTestLevelAfterAnswer,
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
-import { gradeAdaptiveQuizOutcomes } from "@/lib/amirant-course/session/grade-adaptive-quiz-outcomes";
+import {
+  AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC,
+  getClientPassage,
+  getPublicBankQuestion,
+} from "@/lib/amirant-course/question-bank/client-bank";
+import { gradeBatchAnswers } from "@/lib/amirant-course/grade-client";
 import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { showPrepToast } from "@/lib/prep/show-prep-toast";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
@@ -68,7 +75,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
     const exclusions = recentPlacementExclusions();
     const built = buildPlacementQuizForm({
       // הבנק הכללי - בלי שאלות הסימולציות, כדי לא "לשרוף" אותן לפני שיעורי הסימולציה
-      bank: AMIRANT_GENERAL_BANK_QUESTIONS,
+      bank: AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC,
       seed: `placement:${Date.now()}:${Math.random()}`,
       excludeQuestionIds: exclusions.questionIds,
       excludePassageIds: exclusions.passageIds,
@@ -92,8 +99,8 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
   const questionIds = form?.questionIds ?? [];
   const effectiveCount = questionIds.length || questionCount;
   const currentId = questionIds[currentIndex];
-  const currentQ = currentId ? getBankQuestion(currentId) : undefined;
-  const passage = form?.passageId ? getPassage(form.passageId) : undefined;
+  const currentQ = currentId ? getPublicBankQuestion(currentId) : undefined;
+  const passage = form?.passageId ? getClientPassage(form.passageId) : undefined;
   const isReadingSection = currentQ?.topicSlug === "reading_comprehension";
 
   useEffect(() => {
@@ -121,92 +128,132 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
     (reason: "manual" | "timeout") => {
       if (finalizeOnceRef.current || !form) return;
       finalizeOnceRef.current = true;
-      const formCount = form.questionIds.length;
-      const bankById = new Map(
-        form.questionIds
-          .map((id) => getBankQuestion(id))
-          .filter((q): q is NonNullable<typeof q> => !!q)
-          .map((q) => [q.id, q]),
-      );
-      const graded = gradeAdaptiveQuizOutcomes({
-        questionIds: form.questionIds,
-        answers,
-        bankById,
-        questionCount: formCount,
-        startLevel: 3,
-        currentIndex,
-        reason,
-        nowMs: Date.now(),
-        questionEnteredAtMs: questionEnteredAt.current,
-        prevAnalytics: loadAnalytics(),
-        sessionLabel: manifestQuiz.title,
-      });
-      saveAnalytics(graded.nextAnalytics);
-      writeCrossTestSnapshot({
-        lastEndLevel: graded.finalAdaptiveLevel,
-        lastScorePct: graded.scorePercent,
-        updatedAt: new Date().toISOString(),
-      });
-      const persistedRows = form.questionIds.flatMap((questionId, i) => {
-        const q = bankById.get(questionId);
-        if (!q) return [];
-        const selected = answers[i] ?? null;
-        return [
-          {
-            questionId: q.id,
-            topic: q.topicSlug,
-            subtopic: q.subtopicSlug,
-            difficulty: q.difficulty,
-            selectedOptionId: selected,
-            correctOptionId: q.correctOptionId,
-            isCorrect: selected === q.correctOptionId,
-            responseTimeMs: responseTimesRef.current[i] || undefined,
-          },
-        ];
-      });
-      const currentAttemptId = attemptIdRef.current;
-      const persist = async () => {
-        const attemptId =
-          currentAttemptId ??
-          (await service.startQuizAttempt({
-            quizId: manifestQuiz.id,
-            sourceMode: "production",
-            startLevel: 3,
-          }));
-        await service.submitQuizAttempt({
-          attemptId,
-          quizId: manifestQuiz.id,
-          scorePct: graded.scorePercent,
-          questionCount: formCount,
-          correctCount: graded.correct,
-          startLevel: 3,
-          endLevel: graded.finalAdaptiveLevel,
-          answers: persistedRows,
+
+      const run = async () => {
+        const formCount = form.questionIds.length;
+        const now = Date.now();
+        const batch = await gradeBatchAnswers(
+          form.questionIds.map((questionId, i) => ({
+            questionId,
+            selectedOptionId: answers[i] ?? null,
+          })),
+          true,
+        );
+
+        let state = initialInTestLevel(3);
+        let nextA = loadAnalytics();
+        let correct = 0;
+        const gradedById = new Map(batch.items.map((item) => [item.questionId, item]));
+
+        for (let i = 0; i < formCount; i++) {
+          const qid = form.questionIds[i];
+          if (!qid) continue;
+          const row = getPublicBankQuestion(qid);
+          if (!row) continue;
+          const ans = answers[i];
+          const timedBlank = ans == null && reason === "timeout" && i === currentIndex;
+          if (ans == null && !timedBlank) continue;
+
+          const item = gradedById.get(qid);
+          const isCorrect = item?.isCorrect === true;
+          if (isCorrect) correct += 1;
+
+          const timeMs = i === currentIndex ? Math.max(0, now - questionEnteredAt.current) : undefined;
+          nextA = recordQuestionOutcome(nextA, {
+            topicSlug: row.topicSlug,
+            subtopicSlug: row.subtopicSlug,
+            difficulty: row.difficulty,
+            isCorrect,
+            timeMs,
+          });
+          state = updateInTestLevelAfterAnswer(state, isCorrect).state;
+        }
+
+        const scorePercent = formCount > 0 ? Math.round((correct / formCount) * 100) : 0;
+        const nextAnalytics = recordSessionEnd(nextA, {
+          kind: "quiz",
+          label: manifestQuiz.title,
+          scorePct: scorePercent,
         });
-        await service.appendLearningEvent({
-          eventType: "quiz_submitted",
-          quizAttemptId: attemptId,
-          metadata: {
+        const finalAdaptiveLevel = state.currentLevel;
+
+        saveAnalytics(nextAnalytics);
+        writeCrossTestSnapshot({
+          lastEndLevel: finalAdaptiveLevel,
+          lastScorePct: scorePercent,
+          updatedAt: new Date().toISOString(),
+        });
+
+        const persistedRows = form.questionIds.flatMap((questionId, i) => {
+          const q = getPublicBankQuestion(questionId);
+          if (!q) return [];
+          const selected = answers[i] ?? null;
+          const graded = gradedById.get(questionId);
+          return [
+            {
+              questionId: q.id,
+              topic: q.topicSlug,
+              subtopic: q.subtopicSlug,
+              difficulty: q.difficulty,
+              selectedOptionId: selected,
+              correctOptionId: graded?.correctOptionId ?? "",
+              isCorrect: graded?.isCorrect === true,
+              responseTimeMs: responseTimesRef.current[i] || undefined,
+            },
+          ];
+        });
+
+        const currentAttemptId = attemptIdRef.current;
+        try {
+          const attemptId =
+            currentAttemptId ??
+            (await service.startQuizAttempt({
+              quizId: manifestQuiz.id,
+              sourceMode: "production",
+              startLevel: 3,
+            }));
+          await service.submitQuizAttempt({
+            attemptId,
             quizId: manifestQuiz.id,
-            scorePct: graded.scorePercent,
+            scorePct: scorePercent,
             questionCount: formCount,
-            format: "fixed_placement",
-          },
+            correctCount: correct,
+            startLevel: 3,
+            endLevel: finalAdaptiveLevel,
+            answers: persistedRows,
+          });
+          await service.appendLearningEvent({
+            eventType: "quiz_submitted",
+            quizAttemptId: attemptId,
+            metadata: {
+              quizId: manifestQuiz.id,
+              scorePct: scorePercent,
+              questionCount: formCount,
+              format: "fixed_placement",
+            },
+          });
+          await service.upsertCrossTestState({
+            lastEndLevel: finalAdaptiveLevel,
+            lastScorePct: scorePercent,
+          });
+        } catch {
+          showPrepToast("התוצאה נשמרה במכשיר; הסנכרון לחשבון נכשל — נסו לרענן.", { tone: "error" });
+        }
+
+        setResults({
+          correct,
+          total: formCount,
+          scorePct: scorePercent,
+          normalizedScore: placementNormalizedScore(scorePercent),
+          estimatedLevel: finalAdaptiveLevel,
         });
-        await service.upsertCrossTestState({
-          lastEndLevel: graded.finalAdaptiveLevel,
-          lastScorePct: graded.scorePercent,
-        });
+        setPhase("results");
       };
-      void persist().catch(() => {});
-      setResults({
-        correct: graded.correct,
-        total: formCount,
-        scorePct: graded.scorePercent,
-        normalizedScore: placementNormalizedScore(graded.scorePercent),
-        estimatedLevel: graded.finalAdaptiveLevel,
+
+      void run().catch(() => {
+        finalizeOnceRef.current = false;
+        showPrepToast("לא הצלחנו לחשב את הציון. נסו שוב.", { tone: "error" });
       });
-      setPhase("results");
     },
     [answers, currentIndex, form, manifestQuiz.id, manifestQuiz.title, service],
   );
@@ -321,21 +368,15 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                 href={`${COURSE_BASE}/lesson/lesson.intro.personal-roadmap`}
                 className="inline-flex rounded-control bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-card"
               >
-                למפת דרכים אישית ←
-              </Link>
-              <Link
-                href="/prep/pricing"
-                className="inline-flex rounded-control border border-line px-5 py-2.5 text-sm font-semibold text-primary"
-              >
-                קבל תוכנית אישית
-              </Link>
-              <Link
-                href={COURSE_BASE}
-                className="inline-flex rounded-control border border-line px-5 py-2.5 text-sm font-semibold text-primary"
-              >
-                חזרה לקורס
+                המשך למפת דרכים ←
               </Link>
             </div>
+            <p className="text-center text-xs text-muted">
+              רוצים גישה מלאה?{" "}
+              <Link href="/prep/pricing" className="font-medium text-primary underline-offset-2 hover:underline">
+                למחירים
+              </Link>
+            </p>
           </CardBody>
         </Card>
       </div>

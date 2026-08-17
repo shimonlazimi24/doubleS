@@ -28,6 +28,7 @@ export default function NewLessonPage({
 
   return (
     <LessonEditor
+      cmsExists={false}
       initial={
         searchParams.id
           ? {

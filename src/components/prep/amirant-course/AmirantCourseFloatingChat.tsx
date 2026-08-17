@@ -43,9 +43,9 @@ export function AmirantCourseFloatingChat() {
   const activeLessonId = urlLesson ?? lastLesson;
 
   const contextHint = useMemo(() => {
-    if (urlLesson) return "מיקוד: שיעור בדף זה (הקשר מדויק).";
-    if (lastLesson) return "מיקוד: שיעור אחרון שנפתח.";
-    return "מיקוד: כלל הקורס.";
+    if (urlLesson) return "אפשר לשאול על השיעור הפתוח.";
+    if (lastLesson) return "אפשר לשאול על השיעור האחרון שנפתח.";
+    return "שאלו אותי על הקורס.";
   }, [urlLesson, lastLesson]);
 
   if (!isContextualPage) return null;
