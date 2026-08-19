@@ -109,15 +109,10 @@ export function AmirantAudioPlayer({ audioRef, title, className }: Props) {
           🎧 {displayTitle}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-muted">
-          קובץ השמע עדיין לא הועלה. בינתיים השתמשו בתמליל למטה —{" "}
+          השמע לא נטען. בינתיים השתמשו בתמליל למטה —{" "}
           <strong className="font-medium text-ink">קראו פעם אחת</strong> (או שתיים לכל
           היותר), ואז ענו בלי לחזור לתמליל.
         </p>
-        {clip?.suggestedFilename ? (
-          <p className="mt-2 font-mono text-xs text-muted" dir="ltr">
-            Drop file → public/amirant-listening/{clip.suggestedFilename}
-          </p>
-        ) : null}
       </div>
     );
   }
@@ -196,6 +191,9 @@ export function AmirantAudioPlayer({ audioRef, title, className }: Props) {
 
       <p className="mt-2 text-xs leading-relaxed text-muted">
         הכינו דף ועט לפני ההשמעה. אל תפתחו את התמליל לפני שניסיתם לענות.
+        {clip?.synthetic
+          ? " הקול כאן סינתטי לתרגול — במבחן האמיתי תשמעו דובר אנושי."
+          : null}
       </p>
     </div>
   );

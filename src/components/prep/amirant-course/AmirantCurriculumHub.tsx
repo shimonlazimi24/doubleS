@@ -13,6 +13,7 @@ import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
 import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
+import { CourseWeeklyGoalBanner } from "./CourseWeeklyGoalBanner";
 import type { ManifestLesson, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 
 const BASE = `${PREP_BASE}/amirant/course`;
@@ -28,33 +29,27 @@ const MODULE_META: Record<string, { icon: string; badge?: string; desc: string }
   },
   "mod-vocab": {
     icon: "📚",
-    badge: "קושי עולה",
-    desc: "חבילות מילים מדורגות עם כרטיסים, דוגמאות וטיפים לזכירה.",
+    desc: "חבילות מילים מדורגות עם כרטיסים, חזרה מרווחת (יודע/קשה/שוב) וטיפים לזכירה.",
   },
   "mod-sc": {
     icon: "✏️",
-    badge: "תרגול אדפטיבי",
     desc: "השלמת משפטים: זיהוי רמזים במשפט, פסילת מסיחים ותרגול ברמה שלכם.",
   },
   "mod-rephrase": {
     icon: "🔄",
-    badge: "תרגול אדפטיבי",
     desc: "ניסוח מחדש: לזהות את המשפט ששומר על אותה משמעות בדיוק.",
   },
   "mod-reading": {
     icon: "📖",
-    badge: "תרגול אדפטיבי",
     desc: "קטעי קריאה אקדמיים עם אסטרטגיות סקירה ושאלות בסגנון המבחן.",
   },
   "mod-reform": {
     icon: "🎧",
-    badge: "2026",
-    desc: "מה השתנה ברפורמה: הבנת הנשמע, מבנה מעודכן ומה זה אומר לציון.",
+    desc: "רפורמת 2026: שמיעה, תצורת מילים וכתיבה. בפיילוט הרשמי הפרקים האלה עדיין לא נספרים לציון — מתרגלים כדי להיות מוכנים.",
   },
   "mod-sims": {
     icon: "🎯",
-    badge: "סימולציות",
-    desc: "מבחנים מלאים בתנאי זמן אמיתיים, עם דוח אישי אחרי כל סימולציה.",
+    desc: "שישה מבחנים מלאים בתנאי זמן אמיתיים, עם דוח אישי אחרי כל סימולציה.",
   },
   "mod-tips": {
     icon: "💡",
@@ -88,7 +83,6 @@ function ModuleCard({
   const pct = total > 0 ? Math.round((doneInModule / total) * 100) : 0;
   const allDone = total > 0 && doneInModule === total;
   const isCurrent = mod.lessons.some((l) => l.id === currentLessonId);
-  const hasAdaptiveQuiz = mod.quizzes.some((q) => q.adaptive);
   const meta = MODULE_META[mod.id] ?? { icon: "📌", desc: `${total} שיעורים במודול הזה.` };
 
   // יעד הקליק: השיעור הנוכחי > הבא שטרם הושלם > הראשון
@@ -147,14 +141,6 @@ function ModuleCard({
           aria-hidden
         >
           {allDone ? "✅" : meta.icon}
-        </span>
-        <span className="flex flex-wrap justify-end gap-1">
-          {hasAdaptiveQuiz ? (
-            <span className="rounded-full bg-accent-muted px-2 py-0.5 text-[10px] font-bold text-accent">AI</span>
-          ) : null}
-          {meta.badge ? (
-            <span className="rounded-full bg-surface-low px-2 py-0.5 text-[10px] text-muted">{meta.badge}</span>
-          ) : null}
         </span>
       </div>
 
@@ -234,6 +220,9 @@ export function AmirantCurriculumHub() {
 
   return (
     <div dir="rtl" className="mx-auto w-full max-w-[60rem] px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
+      <div className="mb-6">
+        <CourseWeeklyGoalBanner />
+      </div>
       {/* ── המשך ללמוד - הפעולה הראשית ── */}
       <section className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
         {currentLesson ? (
@@ -302,15 +291,25 @@ export function AmirantCurriculumHub() {
         </div>
 
         {manifest.simulations.length > 0 ? (
-          <p className="mt-6 text-sm text-muted">
-            מוכנים לתרגול בתנאי אמת?{" "}
-            <Link
-              href={`${BASE}/simulation/${manifest.simulations[0].id}`}
-              className="font-semibold text-accent underline-offset-4 hover:underline"
-            >
-              סימולציה מלאה עם טיימר ←
-            </Link>
-          </p>
+          <div className="mt-10">
+            <h2 className="text-lg font-bold text-primary">סימולציות מלאות</h2>
+            <p className="mt-1 text-sm text-muted">שישה מבחנים עם טיימר — כמו ביום הבחינה. מומלץ אחרי היחידות העיקריות.</p>
+            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {manifest.simulations.map((sim, i) => (
+                <li key={sim.id}>
+                  <Link
+                    href={`${BASE}/simulation/${sim.id}`}
+                    className="flex min-h-14 items-center justify-between rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-primary transition hover:border-primary/35"
+                  >
+                    <span>
+                      {i + 1}. {sim.title}
+                    </span>
+                    <span aria-hidden>←</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         ) : null}
       </section>
     </div>

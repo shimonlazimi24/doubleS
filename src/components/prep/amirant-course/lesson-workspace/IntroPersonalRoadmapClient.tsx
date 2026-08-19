@@ -70,7 +70,7 @@ export function IntroPersonalRoadmapClient({
   const syllabus = getSyllabusUiForModule(module);
   const fallbackParagraph =
     syllabus?.howToHe?.[1] ??
-    "מבחן רמה: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא - כ־20 דק׳, ובסיום ציון משוער בסולם 50–150.";
+    "מבחן רמה: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא - כ־20 דק׳, ובסיום הערכת רמה משוערת (לא ציון רשמי).";
 
   const personalized = scorePct != null ? recommendationHeForDiagnosticScorePct(scorePct) : null;
 

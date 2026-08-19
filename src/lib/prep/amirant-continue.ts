@@ -1,6 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";
-import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { hasCompletedPrepOnboarding } from "@/lib/prep/onboarding/gate";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -18,13 +17,9 @@ function onboardingUrl(nextPath: string): string {
   return `${PREP_BASE}/onboarding?next=${encodeURIComponent(nextPath)}`;
 }
 
-function pricingUrl(courseAfterPay: string): string {
-  return `${PREP_BASE}/pricing?next=${encodeURIComponent(courseAfterPay)}`;
-}
-
 /**
- * Where «המשך לקורס המלא» should send the learner next.
- * Hub + sample stay public; this path enforces login → onboarding → payment.
+ * Where «המשך לקורס» should send the learner next.
+ * Login → onboarding → **course home** (free intro). Pricing is a separate CTA.
  */
 export async function resolveAmirantContinueDestination(
   client: SupabaseClient | null,
@@ -39,11 +34,6 @@ export async function resolveAmirantContinueDestination(
   const onboardingDone = await hasCompletedPrepOnboarding(client, userId);
   if (!onboardingDone) {
     return onboardingUrl(AMIRANT_CONTINUE_PATH);
-  }
-
-  const paid = await hasAmirantFullAccess(client, userId);
-  if (!paid) {
-    return pricingUrl(AMIRANT_COURSE_HOME_PATH);
   }
 
   return AMIRANT_COURSE_HOME_PATH;

@@ -4,15 +4,14 @@ import { AMIRANT_BANK_MODE, AMIRANT_BANK_QUESTIONS } from "@/lib/amirant-course/
 
 async function getStats() {
   const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return { lessons: 0, questions: 0, published: 0 };
+  if (!supabase) return { lessons: 0, published: 0 };
 
-  const [{ count: lessons }, { count: questions }, { count: published }] = await Promise.all([
+  const [{ count: lessons }, { count: published }] = await Promise.all([
     supabase.from("cms_lessons").select("*", { count: "exact", head: true }),
-    supabase.from("cms_questions").select("*", { count: "exact", head: true }),
     supabase.from("cms_lessons").select("*", { count: "exact", head: true }).eq("published", true),
   ]);
 
-  return { lessons: lessons ?? 0, questions: questions ?? 0, published: published ?? 0 };
+  return { lessons: lessons ?? 0, published: published ?? 0 };
 }
 
 export default async function AdminDashboard() {
@@ -20,13 +19,12 @@ export default async function AdminDashboard() {
 
   const cards = [
     { label: "שיעורים", value: stats.lessons, sub: `${stats.published} פורסמו`, href: "/prep/admin/lessons", color: "bg-blue-500/10 border-blue-500/30" },
-    { label: "שאלות (CMS)", value: stats.questions, sub: "⚠️ לא פעיל עדיין - החידונים משתמשים בבנק המיובא", href: "/prep/admin/questions", color: "bg-purple-500/10 border-purple-500/30" },
   ];
 
   return (
     <div dir="rtl" className="max-w-3xl">
       <h1 className="text-2xl font-bold mb-2">Dashboard</h1>
-      <p className="text-zinc-400 text-sm mb-4">ניהול תכנים - שיעורים, שאלות, סרטונים</p>
+      <p className="text-zinc-400 text-sm mb-4">ניהול שיעורים (CMS). החידונים החיים רצים על הבנק המיובא — לא על שאלות CMS.</p>
       <p className="mb-8 rounded-lg border border-line bg-paper px-4 py-2.5 text-xs text-muted">
         מקור תוכן: שיעורים מקבצי הקורס + דריסות CMS שפורסמו · בנק שאלות פעיל:{" "}
         <strong className="text-ink">
@@ -48,13 +46,6 @@ export default async function AdminDashboard() {
       <div className="flex gap-3 flex-wrap">
         <Link href="/prep/admin/lessons/new" className="px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-zinc-200 transition">
           + שיעור חדש
-        </Link>
-        <Link
-          href="/prep/admin/questions"
-          className="px-4 py-2 bg-zinc-800 text-zinc-400 text-sm font-medium rounded-lg border border-zinc-700 hover:bg-zinc-700 transition"
-          title="CMS שאלות לא מחובר לחידונים החיים"
-        >
-          שאלות CMS (לא פעיל)
         </Link>
       </div>
     </div>

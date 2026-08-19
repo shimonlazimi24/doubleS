@@ -4,12 +4,23 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { VocabularyWord } from "@/lib/amirant-course/vocabulary/vocabulary-word-model";
 import { cn } from "@/lib/design-system/cn";
 import { WordCard } from "./WordCard";
+import {
+  isVocabCardDue,
+  loadVocabSrsDeck,
+  rateVocabCard,
+  saveVocabSrsDeck,
+  type VocabSrsDeck,
+  type VocabSrsRating,
+} from "@/lib/amirant-course/vocabulary/srs-storage";
 
 export type DeckMetrics = { start: number; perView: number; filteredTotal: number };
 
 export type WordLearningDeckProps = {
   words: VocabularyWord[];
   categoryFilter: string | "all";
+  lessonId: string;
+  /** מצב חזרה: רק מילים שמועד החזרה שלהן הגיע */
+  dueOnly?: boolean;
   /** חיפוש חופשי - השדה עצמו יושב בשורת הפילטרים של ה-Shell */
   query?: string;
   /** Fired when navigation or filter changes - for lesson progress UI. */
@@ -29,13 +40,27 @@ const wordNavButtonClass =
  * Flashcard-first: מילה אחת במוקד, ניווט קומפקטי צמוד לכרטיס (נבדל מניווט
  * השיעור בפוטר הדביק), ורשימת כל המילים כקישור טקסט קטן.
  */
-export function WordLearningDeck({ words, categoryFilter, query = "", onDeckMetrics, className }: WordLearningDeckProps) {
+export function WordLearningDeck({
+  words,
+  categoryFilter,
+  lessonId,
+  dueOnly = false,
+  query = "",
+  onDeckMetrics,
+  className,
+}: WordLearningDeckProps) {
   const [start, setStart] = useState(0);
+  const [srs, setSrs] = useState<VocabSrsDeck>({});
+
+  useEffect(() => {
+    setSrs(loadVocabSrsDeck(lessonId));
+  }, [lessonId]);
 
   const filtered = useMemo(() => {
     const q = normalizeQuery(query);
     return words.filter((w) => {
       if (categoryFilter !== "all" && w.categoryId !== categoryFilter) return false;
+      if (dueOnly && !isVocabCardDue(srs[w.id])) return false;
       if (!q) return true;
       return (
         w.word.toLowerCase().includes(q) ||
@@ -43,7 +68,7 @@ export function WordLearningDeck({ words, categoryFilter, query = "", onDeckMetr
         w.definition.toLowerCase().includes(q)
       );
     });
-  }, [words, categoryFilter, query]);
+  }, [words, categoryFilter, query, dueOnly, srs]);
 
   const total = filtered.length;
   const maxStart = Math.max(0, total - 1);
@@ -66,10 +91,25 @@ export function WordLearningDeck({ words, categoryFilter, query = "", onDeckMetr
     setStart((s) => Math.min(maxStart, s + 1));
   }, [maxStart]);
 
+  const rateCurrent = useCallback(
+    (rating: VocabSrsRating) => {
+      if (!current) return;
+      const nextDeck = { ...srs, [current.id]: rateVocabCard(srs[current.id], rating) };
+      setSrs(nextDeck);
+      saveVocabSrsDeck(lessonId, nextDeck);
+      if (dueOnly) {
+        setStart((s) => Math.min(s, Math.max(0, total - 2)));
+      } else {
+        setStart((s) => Math.min(maxStart, s + 1));
+      }
+    },
+    [current, dueOnly, lessonId, maxStart, srs, total],
+  );
+
   if (total === 0 || !current) {
     return (
       <div className={cn("rounded-2xl border border-dashed border-slate-200/90 bg-stone-50/40 p-6 text-center text-slate-600 [direction:rtl]", className)}>
-        אין מילים תואמות לסינון / חיפוש.
+        {dueOnly ? "אין מילים לחזרה עכשיו. המשיכו בלמידה, או חזרו מחר." : "אין מילים תואמות לסינון / חיפוש."}
       </div>
     );
   }
@@ -77,6 +117,31 @@ export function WordLearningDeck({ words, categoryFilter, query = "", onDeckMetr
   return (
     <div className={cn("space-y-3 [direction:rtl] [text-align:start]", className)}>
       <WordCard word={current} />
+
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        <button
+          type="button"
+          className="min-h-10 rounded-lg bg-rose-50 px-3 text-sm font-medium text-rose-800 hover:bg-rose-100"
+          onClick={() => rateCurrent("again")}
+        >
+          שוב
+        </button>
+        <button
+          type="button"
+          className="min-h-10 rounded-lg bg-amber-50 px-3 text-sm font-medium text-amber-900 hover:bg-amber-100"
+          onClick={() => rateCurrent("hard")}
+        >
+          קשה
+        </button>
+        <button
+          type="button"
+          className="min-h-10 rounded-lg bg-emerald-50 px-3 text-sm font-medium text-emerald-800 hover:bg-emerald-100"
+          onClick={() => rateCurrent("good")}
+        >
+          יודע/ת
+        </button>
+      </div>
+      <p className="text-center text-[11px] text-slate-400">שוב = היום · קשה = בקרוב · יודע/ת = חזרה מרווחת</p>
 
       <nav
         className="rounded-xl border border-stone-200/70 bg-stone-50/50 px-3 py-2.5"

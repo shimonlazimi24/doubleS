@@ -1,59 +1,59 @@
 /**
  * מיפוי קטעי שמיעה לשיעורי AMIRNET.
- * שמים קובץ ב־`public/amirant-listening/<filename>` ומעדכנים כאן את `src`.
- * כל עוד `src` ריק / הקובץ חסר — הנגן מציג placeholder כנה.
+ * קבצי M4A ב־`public/amirant-listening/` (TTS לתרגול עד הקלטת אולפן).
  */
 
 export type ListeningAudioClip = {
   id: string;
-  /** כותרת לתצוגה בנגן */
   title: string;
-  /** נתיב ציבורי, למשל `/amirant-listening/7.3-t1-p1.mp3` — או URL מלא */
+  /** נתיב ציבורי או URL מלא */
   src: string | null;
-  /**
-   * כמה השמעות מותרות במצב מבחן (ברירת מחדל 1 — כמו הכנה לבחינה).
-   * במצב תרגול המשתמש יכול לבחור השמעות נוספות.
-   */
   examReplayLimit: number;
-  /** שם קובץ מומלץ להעלאה (תיעוד) */
   suggestedFilename: string;
+  /** true = קול סינתטי לתרגול, לא הקלטת מבחן */
+  synthetic: boolean;
 };
 
 export const LISTENING_AUDIO_CLIPS: ListeningAudioClip[] = [
   {
     id: "listening-7.2-sample-train",
     title: "טעימה – הודעת רכבת",
-    src: null,
+    src: "/amirant-listening/7.2-sample-train.m4a",
     examReplayLimit: 1,
-    suggestedFilename: "7.2-sample-train.mp3",
+    suggestedFilename: "7.2-sample-train.m4a",
+    synthetic: true,
   },
   {
     id: "listening-7.3-t1-p1",
     title: "מבחן 1 · קטע 1 – Academic Lecture",
-    src: null,
+    src: "/amirant-listening/7.3-t1-p1-social-media.m4a",
     examReplayLimit: 1,
-    suggestedFilename: "7.3-t1-p1-social-media.mp3",
+    suggestedFilename: "7.3-t1-p1-social-media.m4a",
+    synthetic: true,
   },
   {
     id: "listening-7.3-t1-p2",
     title: "מבחן 1 · קטע 2 – Conversation",
-    src: null,
+    src: "/amirant-listening/7.3-t1-p2-barcelona.m4a",
     examReplayLimit: 1,
-    suggestedFilename: "7.3-t1-p2-barcelona.mp3",
+    suggestedFilename: "7.3-t1-p2-barcelona.m4a",
+    synthetic: true,
   },
   {
     id: "listening-7.3-t2-p1",
     title: "מבחן 2 · Climate Change Lecture",
-    src: null,
+    src: "/amirant-listening/7.3-t2-p1-climate.m4a",
     examReplayLimit: 1,
-    suggestedFilename: "7.3-t2-p1-climate.mp3",
+    suggestedFilename: "7.3-t2-p1-climate.m4a",
+    synthetic: true,
   },
   {
     id: "listening-7.3-t3-p1",
     title: "מבחן 3 · Academic Panel",
-    src: null,
+    src: "/amirant-listening/7.3-t3-p1-panel.m4a",
     examReplayLimit: 1,
-    suggestedFilename: "7.3-t3-p1-panel.mp3",
+    suggestedFilename: "7.3-t3-p1-panel.m4a",
+    synthetic: true,
   },
 ];
 
@@ -63,7 +63,6 @@ export function getListeningAudioClip(id: string): ListeningAudioClip | null {
   return byId.get(id.trim()) ?? null;
 }
 
-/** נתיב מלא לקובץ אם הועלה לפי suggestedFilename */
 export function listeningPublicPath(filename: string): string {
   const clean = filename.replace(/^\/+/, "").replace(/^amirant-listening\//, "");
   return `/amirant-listening/${clean}`;

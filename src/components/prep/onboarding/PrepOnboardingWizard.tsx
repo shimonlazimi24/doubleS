@@ -16,7 +16,6 @@ import {
 
 const TOTAL_STEPS = 3;
 const FINISH_STEP = TOTAL_STEPS + 1;
-const DASHBOARD_PATH = `${PREP_BASE}/amirant/course/dashboard`;
 /** נשמר מקומית כשאין Supabase (פיתוח/דמו) וכטיוטה בין שלבים - best effort. */
 const LOCAL_KEY = "prep_onboarding_v1";
 
@@ -310,10 +309,10 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             {goesToPricing ? "למחירים ←" : "קדימה לתרגול ←"}
           </button>
           <Link
-            href={goesToPricing ? `${PREP_BASE}/amirant/course` : DASHBOARD_PATH}
+            href={`${PREP_BASE}/amirant/course`}
             className="inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-muted transition hover:text-primary"
           >
-            {goesToPricing ? "קודם למודול המבוא החינמי" : "ללוח התלמיד שלי"}
+            {goesToPricing ? "קודם למודול המבוא החינמי" : "לתוכנית הקורס"}
           </Link>
         </div>
       </div>

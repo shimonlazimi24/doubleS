@@ -293,7 +293,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
           <CardBody className="space-y-5 p-6 sm:p-8">
             <Text as="p" variant="body" className="leading-relaxed">
               מבחן קצר שממפה את רמת האנגלית הנוכחית שלך וקובע נקודת פתיחה מותאמת אישית לקורס.
-              בסיום מקבלים ציון משוער בסולם 50–150 - כמו במבחן האמיתי.
+              בסיום מקבלים הערכת רמה משוערת על סולם 50–150 (מיפוי לינארי מהאחוז — לא ציון רשמי).
             </Text>
             <div className="rounded-2xl border border-line/70 bg-surface-low p-5">
               <Text as="p" variant="labelAccent" className="text-primary">
@@ -344,7 +344,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
             {/* רגע הציון - זהב (חתימת "אקדמי מחודד") */}
             <div className="rounded-2xl bg-surface-low px-6 py-8 text-center">
               <Text as="p" variant="labelAccent" className="text-muted">
-                ציון משוער בסולם 50–150
+                הערכת רמה משוערת (50–150)
               </Text>
               <p className="mt-2 text-6xl font-extrabold tabular-nums text-score">{results.normalizedScore}</p>
               <Text as="p" variant="bodySm" className="mt-2 text-muted">
@@ -484,7 +484,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                   onClick={() => setCurrentIndex((i) => Math.min(effectiveCount - 1, i + 1))}
                   className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
                 >
-                  הבא
+                  שאלה הבאה
                 </button>
                 <button
                   type="button"

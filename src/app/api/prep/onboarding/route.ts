@@ -15,7 +15,17 @@ export async function GET() {
     return NextResponse.json({ completed: false }, { status: 401 });
   }
   const completed = await hasCompletedPrepOnboarding(client, user.id);
-  return NextResponse.json({ completed });
+  const { data } = await client
+    .from("prep_learner_onboarding")
+    .select("sorting_exam_date, sorting_exam_date_unknown, daily_study_time")
+    .eq("user_id", user.id)
+    .maybeSingle();
+  return NextResponse.json({
+    completed,
+    sortingExamDate: data?.sorting_exam_date ?? null,
+    sortingExamDateUnknown: data?.sorting_exam_date_unknown ?? true,
+    dailyStudyTime: data?.daily_study_time ?? null,
+  });
 }
 
 export async function POST(req: Request) {

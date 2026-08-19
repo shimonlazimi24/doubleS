@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardTitle, Heading, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { VocabularyLessonShell } from "./vocabulary-premium/VocabularyLessonShell";
+import { WordLearningDeck } from "./vocabulary-premium/WordLearningDeck";
 
-type TabId = "read" | "flash" | "memory";
+type TabId = "read" | "review" | "flash" | "memory";
 
 const LEVEL_HE: Record<VocabularyLevel, string> = {
   easy: "קל",
@@ -289,6 +290,7 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
           {(
             [
               { id: "read" as const, label: "למידה" },
+              { id: "review" as const, label: "חזרה" },
               { id: "flash" as const, label: "כרטיסיות" },
               { id: "memory" as const, label: "התאמות" },
             ] as const
@@ -310,7 +312,10 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
         <p className="text-sm text-slate-500">{metaLine}</p>
       </div>
 
-      {tab === "read" ? <VocabularyLessonShell model={model} /> : null}
+      {tab === "read" ? <VocabularyLessonShell lessonId={lessonId} model={model} /> : null}
+      {tab === "review" ? (
+        <WordLearningDeck lessonId={lessonId} words={model.words} categoryFilter="all" dueOnly />
+      ) : null}
       {tab === "flash" ? (
         <Card className="border-stone-200/85" padding="none">
           <CardBody className="space-y-2 p-4 sm:p-6">

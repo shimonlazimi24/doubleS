@@ -11,13 +11,14 @@ import { WordLearningDeck } from "./WordLearningDeck";
 export type VocabularyLessonShellProps = {
   model: VocabularyLessonModel;
   className?: string;
+  lessonId: string;
 };
 
 /**
  * משטח "למידה" flashcard-first: מבנה חבילה (אם קיים), שורת פילטרים + חיפוש רזה,
  * וכרטיס מילה אחד במוקד. המטא (רמה/מילים/זמן) מוצג ע"י ההורה מתחת לטאבים.
  */
-export function VocabularyLessonShell({ model, className }: VocabularyLessonShellProps) {
+export function VocabularyLessonShell({ model, className, lessonId }: VocabularyLessonShellProps) {
   const [categoryId, setCategoryId] = useState<string | "all">("all");
   const [query, setQuery] = useState("");
   const [, setDeckMetrics] = useState<DeckMetrics>({
@@ -63,6 +64,7 @@ export function VocabularyLessonShell({ model, className }: VocabularyLessonShel
 
       <section aria-label="לימוד מילים">
         <WordLearningDeck
+          lessonId={lessonId}
           words={model.words}
           categoryFilter={categoryId}
           query={query}

@@ -40,6 +40,7 @@ import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
+import { getAmirantTopicLinks } from "@/lib/amirant-course/next-best-action";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
@@ -532,6 +533,13 @@ export function AmirantAdaptiveQuizClient({
         ? summary.weakTopicSlugs.slice(0, 3).map((slug) => AMIRANT_TOPIC_LABEL_HE[slug as keyof typeof AMIRANT_TOPIC_LABEL_HE] ?? slug)
         : ["עדיין אין מספיק נתונים"];
 
+    const firstWrongTopic = questionIds
+      .map((id, i) => (answerCorrect[i] === false ? getPublicBankQuestion(id)?.topicSlug : null))
+      .find((slug): slug is NonNullable<typeof slug> => Boolean(slug));
+    const mistakeDrillHref = firstWrongTopic
+      ? getAmirantTopicLinks(firstWrongTopic, COURSE_BASE).practiceHref
+      : null;
+
     return (
       <div className="space-y-6">
         <Text as="h1" variant="titlePage">
@@ -566,11 +574,19 @@ export function AmirantAdaptiveQuizClient({
               {summary.explanation}
             </Text>
             <div className="flex flex-wrap gap-3 pt-1">
+              {mistakeDrillHref ? (
+                <Link
+                  href={mistakeDrillHref}
+                  className="inline-flex rounded-control bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-card"
+                >
+                  תרגול ממוקד על הטעויות ←
+                </Link>
+              ) : null}
               <Link
-                href="/prep/pricing"
-                className="inline-flex rounded-control bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-card"
+                href={COURSE_BASE}
+                className="inline-flex rounded-control border border-line px-5 py-2.5 text-sm font-semibold text-primary"
               >
-                קבל תוכנית אישית
+                חזרה לקורס
               </Link>
               <Link
                 href={`${COURSE_BASE}/analytics`}
@@ -578,10 +594,13 @@ export function AmirantAdaptiveQuizClient({
               >
                 אנליטיקה
               </Link>
-              <Link href={COURSE_BASE} className="inline-flex rounded-control border border-line px-5 py-2.5 text-sm font-semibold text-primary">
-                חזרה לקורס
-              </Link>
             </div>
+            <p className="text-xs text-muted">
+              רוצים גישה מלאה?{" "}
+              <Link href="/prep/pricing" className="font-medium text-primary underline-offset-2 hover:underline">
+                למחירים
+              </Link>
+            </p>
           </CardBody>
         </Card>
       </div>
@@ -700,7 +719,7 @@ export function AmirantAdaptiveQuizClient({
                 onClick={() => setCurrentIndex((i) => Math.min(manifestQuiz.questionCount - 1, i + 1))}
                 className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
               >
-                הבא
+                שאלה הבאה
               </button>
               <button
                 type="button"

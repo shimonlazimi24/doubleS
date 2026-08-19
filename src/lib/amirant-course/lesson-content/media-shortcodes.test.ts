@@ -26,7 +26,7 @@ describe("listening audio manifest", () => {
     }
   });
 
-  it("starts with src null until files are uploaded", () => {
-    expect(getListeningAudioClip("listening-7.3-t1-p1")?.src).toBeNull();
+  it("points practice clips at public audio files", () => {
+    expect(getListeningAudioClip("listening-7.3-t1-p1")?.src).toMatch(/amirant-listening/);
   });
 });

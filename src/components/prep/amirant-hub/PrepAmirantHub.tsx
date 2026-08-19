@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { PREP_BASE } from "@/lib/prep/constants";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
@@ -26,12 +24,6 @@ const FEATURES = [
   { title: "זיהוי חולשות", body: "בוחנים מותאמים לנקודות החלשות שלך במקום תרגול מיותר." },
   { title: "סימולציות אמיתיות", body: "תרחיש מבחן מלא עם לחץ זמן וניהול קצב כמו ביום הבחינה." },
 ] as const;
-
-const AmirantPracticeFlow = dynamic(
-  () =>
-    import("@/components/prep/amirant-demo/AmirantPracticeFlow").then((m) => m.AmirantPracticeFlow),
-  { ssr: false, loading: () => <p className="py-12 text-center text-sm text-muted">טוען מבחן…</p> },
-);
 
 export function PrepAmirantHub() {
   return (
@@ -59,16 +51,16 @@ export function PrepAmirantHub() {
               מבחן רמה חינם ←
             </Link>
             <Link
-              href={`${PREP_BASE}/amirant/continue`}
+              href={COURSE}
               className="inline-flex items-center justify-center rounded-control border border-line bg-paper px-6 py-3.5 text-sm font-semibold text-primary transition hover:border-primary/35"
             >
-              המשך לקורס
+              התחל במבוא החינם
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 pt-2 text-xs text-muted">
             <span>✓ ללא כרטיס אשראי</span>
-            <span>✓ 15 שאלות אמיתיות</span>
-            <span>✓ ציון מיידי בסולם 50–150</span>
+            <span>✓ 15 שאלות בסגנון המבחן</span>
+            <span>✓ הערכת רמה משוערת — לא ציון רשמי</span>
           </div>
         </div>
       </section>
@@ -112,28 +104,23 @@ export function PrepAmirantHub() {
         </div>
       </section>
 
-      {/* ── Demo ── */}
+      {/* ── Diagnostic (one path only) ── */}
       <section id="demo" className="scroll-mt-20 border-b border-line px-4 py-14">
-        <div className="mx-auto max-w-3xl">
-          <div className="mb-8 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">מבחן לדוגמה</p>
-            <h2 className="mt-2 font-display text-2xl font-bold text-primary md:text-3xl">
-              בדוק את הרמה שלך עכשיו
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              10 שאלות, כ-5 דקות. קבל משוב מיידי ותוכנית אישית.
-            </p>
-          </div>
-          {/* בלי עטיפה ממוסגרת - כרטיס השאלה של המבחן הוא המשטח היחיד (בלי קופסה בתוך קופסה) */}
-          <Suspense fallback={<p className="py-12 text-center text-sm text-muted">טוען מבחן…</p>}>
-            <AmirantPracticeFlow embedded shortQuizOnly />
-          </Suspense>
-          <p className="mt-4 text-center text-xs text-muted">
-            אחרי המבחן תראה תוצאות, רמה משוערת ונושאים לחיזוק.{" "}
-            <Link href={`${PREP_BASE}/amirant/continue`} className="font-semibold text-primary hover:underline">
-              להמשך המסלול ←
-            </Link>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">מבחן רמה</p>
+          <h2 className="mt-2 font-display text-2xl font-bold text-primary md:text-3xl">
+            בדיקת רמה אחת, 15 שאלות
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא. בסוף מקבלים הערכת רמה משוערת (מיפוי מאחוז —
+            לא ציון אמירנט רשמי) ומפת דרכים.
           </p>
+          <Link
+            href={`${COURSE}/quiz/quiz-entry-diagnostic`}
+            className="mt-6 inline-flex items-center justify-center rounded-control bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-cta transition hover:bg-primary-hover"
+          >
+            התחלת מבחן הרמה ←
+          </Link>
         </div>
       </section>
 
