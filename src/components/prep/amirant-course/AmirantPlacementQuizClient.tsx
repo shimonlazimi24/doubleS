@@ -433,7 +433,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                 href={`${COURSE_BASE}/lesson/lesson.intro.personal-roadmap`}
                 className="inline-flex rounded-control bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-card"
               >
-                המשך למפת דרכים ←
+                המשך למפת דרכים
               </Link>
             </div>
             <p className="text-center text-xs text-muted">

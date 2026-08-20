@@ -61,7 +61,7 @@ function StructuredMarketingPage({ title, content }: { title: string; content: M
             href={PREP_BASE}
             className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
           >
-            ← חזרה ל־{PREP_PRODUCT_NAME}
+            חזרה ל־{PREP_PRODUCT_NAME}
           </Link>
           <Text as="p" variant="labelAccent" className="mt-6 text-accent">
             {content.eyebrow}
@@ -147,7 +147,7 @@ export default function PrepMarketingPage({ params }: Props) {
             href={PREP_BASE}
             className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
           >
-            ← חזרה ל־{PREP_PRODUCT_NAME}
+            חזרה ל־{PREP_PRODUCT_NAME}
           </Link>
           <Heading level={1} className="mt-6">
             {title}

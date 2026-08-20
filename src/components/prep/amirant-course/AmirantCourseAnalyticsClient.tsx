@@ -107,7 +107,7 @@ export function AmirantCourseAnalyticsClient() {
             href={`${COURSE_BASE}/quiz/quiz-entry-diagnostic`}
             className="mt-5 inline-flex min-h-11 items-center justify-center rounded-control bg-primary px-6 text-sm font-bold text-white transition hover:bg-primary-hover"
           >
-            למבחן הרמה ←
+            למבחן הרמה
           </Link>
         </div>
       ) : (
@@ -192,7 +192,7 @@ export function AmirantCourseAnalyticsClient() {
       )}
 
       <Link href={COURSE_BASE} className="inline-block text-sm font-semibold text-primary">
-        ← חזרה לקורס
+        חזרה לקורס
       </Link>
     </div>
   );

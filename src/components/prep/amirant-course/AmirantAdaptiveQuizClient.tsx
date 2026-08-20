@@ -580,7 +580,7 @@ export function AmirantAdaptiveQuizClient({
                   href={mistakeDrillHref}
                   className="inline-flex rounded-control bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-card"
                 >
-                  תרגול ממוקד על הטעויות ←
+                  תרגול ממוקד על הטעויות
                 </Link>
               ) : null}
               <Link

@@ -19,7 +19,7 @@ export default function PrepLoginPage() {
           href={PREP_BASE}
           className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
         >
-          ← חזרה ל־{PREP_PRODUCT_NAME}
+          חזרה ל־{PREP_PRODUCT_NAME}
         </Link>
         <Heading level={1} className="mt-5">
           התחברות

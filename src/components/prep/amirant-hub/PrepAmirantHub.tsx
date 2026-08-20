@@ -50,7 +50,7 @@ export function PrepAmirantHub() {
               href={`${COURSE}/quiz/quiz-entry-diagnostic`}
               className="inline-flex items-center justify-center rounded-control bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-cta transition hover:bg-primary-hover"
             >
-              מבחן רמה חינם ←
+              מבחן רמה חינם
             </Link>
             <Link
               href={AMIRANT_CONTINUE_PATH}
@@ -121,7 +121,7 @@ export function PrepAmirantHub() {
             href={`${COURSE}/quiz/quiz-entry-diagnostic`}
             className="mt-6 inline-flex items-center justify-center rounded-control bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-cta transition hover:bg-primary-hover"
           >
-            התחלת מבחן הרמה ←
+            התחלת מבחן הרמה
           </Link>
         </div>
       </section>
@@ -185,7 +185,7 @@ export function PrepAmirantHub() {
               href={`${COURSE}/quiz/quiz-entry-diagnostic`}
               className="inline-flex items-center justify-center rounded-control bg-primary px-8 py-4 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
             >
-              מבחן רמה חינם ←
+              מבחן רמה חינם
             </Link>
             <Link
               href={`${PREP_BASE}/pricing`}

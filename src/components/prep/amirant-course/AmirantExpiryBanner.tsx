@@ -56,7 +56,7 @@ export function AmirantExpiryBanner({ expiresAt }: Props) {
               : "bg-amber-600 text-white hover:bg-amber-700"
           }`}
         >
-          הארך גישה ←
+          הארך גישה
         </Link>
       </div>
     </div>

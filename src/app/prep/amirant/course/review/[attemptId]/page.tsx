@@ -70,7 +70,7 @@ export default async function AmirantCourseReviewAttemptPage({
         title="סקירה מלאה זמינה אחרי התחברות"
         body="התחברו כדי לראות את פירוט הטעויות וההסברים לכל שאלה בניסיון הזה."
         ctaHref={`${PREP_BASE}/login?next=${COURSE_BASE}/review/${attemptId}`}
-        ctaLabel="התחברות ←"
+        ctaLabel="התחברות"
       />
     );
   }

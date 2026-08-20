@@ -161,7 +161,7 @@ function ModuleCard({
           <span className={cn("tabular-nums", allDone ? "font-medium text-emerald-700" : "text-muted")}>
             {allDone ? "✓ הושלם" : `${doneInModule}/${total} שיעורים`}
           </span>
-          <span className="font-semibold text-muted transition-colors group-hover:text-primary">{ctaLabel} ←</span>
+          <span className="font-semibold text-muted transition-colors group-hover:text-primary">{ctaLabel}</span>
         </div>
       </div>
     </Link>
@@ -241,7 +241,7 @@ export function AmirantCurriculumHub() {
                 href={lessonHref(currentLesson)}
                 className="inline-flex min-h-12 items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
               >
-                {completedCount === 0 ? "התחל את השיעור הראשון ←" : "המשך בשיעור ←"}
+                {completedCount === 0 ? "התחל את השיעור הראשון" : "המשך בשיעור"}
               </Link>
               {completedCount > 0 ? (
                 <div className="flex items-center gap-3 text-xs text-muted">
@@ -262,7 +262,7 @@ export function AmirantCurriculumHub() {
               href={`${BASE}/simulation/${manifest.simulations[0]?.id ?? ""}`}
               className="mt-5 inline-flex min-h-12 items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white transition hover:bg-primary-hover"
             >
-              לסימולציה מלאה ←
+              לסימולציה מלאה
             </Link>
           </>
         )}
@@ -304,7 +304,7 @@ export function AmirantCurriculumHub() {
                     <span>
                       {i + 1}. {sim.title}
                     </span>
-                    <span aria-hidden>←</span>
+
                   </Link>
                 </li>
               ))}

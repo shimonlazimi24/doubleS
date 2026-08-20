@@ -51,7 +51,7 @@ export function LessonNavigationFooter({
         disabled={!canPrev}
       >
         <span aria-hidden className="me-1.5">
-          →
+
         </span>
         {prevLabel}
       </Button>
@@ -64,7 +64,7 @@ export function LessonNavigationFooter({
         >
           {nextLabel}
           <span aria-hidden className="ms-1.5">
-            ←
+
           </span>
         </Button>
       ) : isLast && practiceHref ? (
@@ -74,7 +74,7 @@ export function LessonNavigationFooter({
         >
           עבור לתרגול
           <span aria-hidden className="ms-1.5">
-            ←
+
           </span>
         </Link>
       ) : null}
