@@ -42,7 +42,7 @@ export function HeroSection() {
             </div>
 
             <p className="mt-6 text-xs leading-relaxed text-muted-2">
-              מיועד לבוגרים לפני תואר · מבוא חינמי · גישה מלאה אחרי הרשמה
+              מיועד לבוגרים לפני תואר · מבוא ומבחן רמה חינם · הקורס המלא אחרי רכישה
             </p>
           </div>
 

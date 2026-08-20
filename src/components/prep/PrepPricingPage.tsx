@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { readUtmParams, trackEvent } from "@/lib/prep/analytics";
+import { PREP_BASE } from "@/lib/prep/constants";
 import { PLAN_DAYS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
 
 export type PlanId = "week" | "two_weeks" | "month";
@@ -10,7 +11,7 @@ export type PlanId = "week" | "two_weeks" | "month";
 const SHARED_FEATURES = [
   "כל המודולים + 6 סימולציות מלאות",
   "בוחנים אדפטיביים לפי הרמה שלך",
-  "עוזר AI אישי בכל שיעור",
+  "עוזר AI בגישה המלאה",
   "דשבורד התקדמות אישי",
 ];
 
@@ -188,7 +189,7 @@ export function PrepPricingPage() {
         >
           {busy ? "מעביר לתשלום…" : `רכישה - ₪${currentPlan.price} ל${currentPlan.label}`}
         </button>
-        <p className="text-xs text-muted-2">תשלום מאובטח · ביטול בכל עת</p>
+        <p className="text-xs text-muted-2">תשלום מאובטח ב-Hyp · גישה לזמן מוגבל לפי התוכנית</p>
         {error && (
           <p className="mt-1 rounded-lg border border-red-200 bg-red-50 px-4 py-2.5 text-center text-sm text-red-700" role="alert">
             {error}
@@ -216,8 +217,17 @@ export function PrepPricingPage() {
 
       {/* Fine print */}
       <div className="space-y-1 pt-2 text-center text-xs text-muted-2">
-        <p>הגישה ניתנת מיד לאחר אישור התשלום · מחירים בשקלים</p>
-        <p>שאלות? <a href="mailto:support@getprepared.academy" className="underline">support@getprepared.academy</a></p>
+        <p>הגישה ניתנת מיד לאחר אישור התשלום · מחירים בשקלים · אין הבטחת ציון או פטור</p>
+        <p>
+          <a href={`${PREP_BASE}/terms`} className="underline">
+            תקנון שימוש
+          </a>
+          {" · "}
+          שאלות?{" "}
+          <a href="mailto:support@getprepared.academy" className="underline">
+            support@getprepared.academy
+          </a>
+        </p>
       </div>
     </div>
   );

@@ -257,7 +257,7 @@ export function AmirantCurriculumHub() {
           <>
             <p className="text-xs font-semibold tracking-[0.12em] text-score">כל הכבוד!</p>
             <h1 className="mt-2 text-2xl font-bold text-primary sm:text-3xl">סיימתם את כל שיעורי הקורס</h1>
-            <p className="mt-1.5 text-sm text-muted">זה הזמן לחזק עם סימולציות בתנאי אמת.</p>
+            <p className="mt-1.5 text-sm text-muted">זה הזמן לחזק עם סימולציות מלאות בטיימר.</p>
             <Link
               href={`${BASE}/simulation/${manifest.simulations[0]?.id ?? ""}`}
               className="mt-5 inline-flex min-h-12 items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white transition hover:bg-primary-hover"

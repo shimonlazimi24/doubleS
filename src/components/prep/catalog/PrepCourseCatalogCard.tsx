@@ -22,7 +22,7 @@ export function PrepCourseCatalogCard({ course }: { course: PrepCourseCatalogIte
           comingSoon ? "text-muted" : "text-accent",
         )}
       >
-        {comingSoon ? "בקרוב" : "פתוח להרשמה"}
+        {comingSoon ? "בקרוב" : "מבוא חינם · רכישה לגישה מלאה"}
       </p>
       <h3 className="mt-2 text-lg font-bold text-ink">{course.title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{course.blurb}</p>

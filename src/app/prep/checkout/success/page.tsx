@@ -108,10 +108,14 @@ export default async function CheckoutSuccessPage({
         </div>
 
         <Text as="p" variant="bodySm" className="text-center text-muted">
-          קבלה נשלחת למייל. שאלות?{" "}
+          הגישה לזמן מוגבל לפי התוכנית שנרכשה — אין הבטחת ציון או פטור. קבלה נשלחת למייל. שאלות?{" "}
           <a href="mailto:support@getprepared.academy" className="underline">
             support@getprepared.academy
           </a>
+          {" · "}
+          <Link href={`${PREP_BASE}/terms`} className="underline">
+            תקנון
+          </Link>
         </Text>
       </div>
     </Container>

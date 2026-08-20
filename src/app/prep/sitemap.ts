@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${PREP}/courses`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${PREP}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${PREP}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${PREP}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${PREP}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

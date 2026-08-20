@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Heebo, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { PrepAnalyticsGate } from "@/components/prep/PrepAnalyticsGate";
+import { PrepCookieConsentBanner } from "@/components/prep/PrepCookieConsent";
 import "./globals.css";
 
 const heebo = Heebo({
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         {children}
         <Analytics />
-        {process.env.NEXT_PUBLIC_GA_ID ? <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> : null}
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <PrepAnalyticsGate gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
+        <PrepCookieConsentBanner />
       </body>
     </html>
   );

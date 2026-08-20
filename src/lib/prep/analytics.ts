@@ -3,8 +3,10 @@
 /**
  * מעקב המרות - עוטף GA4 (gtag) + Vercel Analytics בקריאה אחת.
  * אירועי המשפך: view_pricing → select_plan → begin_checkout → purchase / checkout_failed.
+ * GA נשלח רק אחרי הסכמת מדידה (`prep_cookie_consent=all`).
  */
 import { track as vercelTrack } from "@vercel/analytics";
+import { hasPrepMarketingConsent } from "@/lib/prep/cookie-consent";
 
 type EventParams = Record<string, string | number | boolean | null>;
 
@@ -20,6 +22,7 @@ export function trackEvent(name: string, params: EventParams = {}): void {
   } catch {
     /* analytics לא חוסם UX */
   }
+  if (!hasPrepMarketingConsent()) return;
   try {
     window.gtag?.("event", name, params);
   } catch {

@@ -52,13 +52,13 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ background: "#d4a843", borderRadius: 999, padding: "10px 28px", display: "flex" }}>
-            מבחן רמה 50–150
+            מבחן רמה משוער
           </div>
           <div style={{ background: "#ffffff", borderRadius: 999, padding: "10px 28px", display: "flex" }}>
-            עוזר AI אישי
+            עוזר AI בגישה מלאה
           </div>
           <div style={{ background: "#ffffff", borderRadius: 999, padding: "10px 28px", display: "flex" }}>
-            סימולציות אמת
+            סימולציות מלאות
           </div>
         </div>
       </div>

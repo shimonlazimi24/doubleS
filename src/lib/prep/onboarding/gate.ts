@@ -31,7 +31,13 @@ export function isPrepOnboardingGatedPath(pathname: string): boolean {
   if (pathname === PREP_BASE || pathname === `${PREP_BASE}/pricing`) return false;
   if (pathname === `${PREP_BASE}/blog` || pathname.startsWith(`${PREP_BASE}/blog/`)) return false;
   if (pathname === `${PREP_BASE}/toefl` || pathname === `${PREP_BASE}/about`) return false;
-  if (pathname === `${PREP_BASE}/contact` || pathname === `${PREP_BASE}/privacy`) return false;
+  if (
+    pathname === `${PREP_BASE}/contact` ||
+    pathname === `${PREP_BASE}/privacy` ||
+    pathname === `${PREP_BASE}/terms`
+  ) {
+    return false;
+  }
 
   if (pathname.startsWith(`${PREP_BASE}/amirant/course`)) return true;
   if (isPrepProtectedPathForOnboarding(pathname)) return true;

@@ -38,7 +38,7 @@ export const PREP_COURSES: readonly PrepCourseCatalogItem[] = [
     examSlug: "amirant",
     title: "אמירנט: ערכת הכנה אונליין",
     shortTitle: "אמירנט",
-    blurb: "קורס מלא לפטור מאנגלית: שיעורים, תרגול אדפטיבי, סימולציות וליווי AI. מבחן רמה חינם.",
+    blurb: "קורס הכנה לאמירנט: שיעורים, תרגול אדפטיבי, סימולציות וליווי AI. מבחן רמה חינם — לא ציון רשמי.",
     href: "/prep/amirant",
     status: "live",
     priceFromIls: 179,

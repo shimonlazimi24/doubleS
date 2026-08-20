@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "PREPARE - הכנה לאמירנט ומבחני אנגלית אקדמיים",
   description:
     "PREPARE: קורסי הכנה דיגיטליים לאמירנט ולמבחני אנגלית אקדמיים. " +
-    "תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות מלאות בתנאי אמת.",
+    "תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות מלאות. הציון הרשמי נקבע במבחן מאל״ו.",
   keywords: [
     "הכנה לאמירנט",
     "אמירנט",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/prep` },
   openGraph: {
     title: "PREPARE - הכנה לאמירנט",
-    description: "קורסי הכנה דיגיטליים לאמירנט. תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות.",
+    description: "קורסי הכנה דיגיטליים לאמירנט. תרגול אדפטיבי, שיעורים מובנים וסימולציות מלאות.",
     url: `${siteUrl}/prep`,
     locale: "he_IL",
     type: "website",

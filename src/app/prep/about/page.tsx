@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, Heading, Text } from "@/components/ui";
 import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
+import { AMIRANT_PREPARATION_MANIFEST, countManifestLessons } from "@/lib/amirant-course";
 import { MARKETING_HERO } from "@/lib/prep/marketing/content";
 import { SUPPORT_EMAIL } from "@/lib/prep/marketing-pages";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -11,23 +12,26 @@ const siteUrl = getPublicSiteUrl();
 export const metadata: Metadata = {
   title: "אודות",
   description:
-    "PREPARE היא פלטפורמת הכנה דיגיטלית לאמירנט: שיעורים מובנים, תרגול אדפטיבי, סימולציות בתנאי אמת ועוזר AI בעברית.",
+    "PREPARE היא פלטפורמת הכנה דיגיטלית לאמירנט: שיעורים מובנים, תרגול אדפטיבי, סימולציות מלאות ועוזר AI בעברית.",
   alternates: { canonical: `${siteUrl}/prep/about` },
 };
 
 /** מה בקורס - עובדות בלבד, מיושרות ל-llms.txt ולתוכן השיווקי. */
+const lessonCount = countManifestLessons(AMIRANT_PREPARATION_MANIFEST);
+const simCount = AMIRANT_PREPARATION_MANIFEST.simulations.length;
+
 const COURSE_FEATURES = [
   {
     lead: "שיעורים מובנים",
-    detail: "78 שיעורים מהיסודות ועד אסטרטגיות פתרון מתקדמות, בסדר לימוד מומלץ.",
+    detail: `${lessonCount} שיעורים מהיסודות ועד אסטרטגיות פתרון מתקדמות, בסדר לימוד מומלץ.`,
   },
   {
     lead: "תרגול אדפטיבי",
-    detail: "כ־300 שאלות עם הסבר מלא על כל תשובה - רמת הקושי מסתגלת לביצועים שלכם.",
+    detail: "יותר מ־500 שאלות עם הסבר על התשובה - רמת הקושי מסתגלת לביצועים שלכם.",
   },
   {
-    lead: "סימולציות בתנאי אמת",
-    detail: "מבחנים מלאים עם טיימר לכל פרק, בדיוק כמו באמירנט.",
+    lead: "סימולציות מלאות",
+    detail: `${simCount} מבחנים מלאים עם טיימר לכל פרק, לתרגול בסגנון אמירנט.`,
   },
   {
     lead: "מבחן רמה חינם",
@@ -52,8 +56,8 @@ const METHOD_PRINCIPLES = [
   },
   {
     step: "02",
-    title: "מתרגלים בתנאי אמת",
-    body: "עם שעון, עם לחץ, עם סימולציות מלאות - כמו ביום המבחן.",
+    title: "מתרגלים עם טיימר",
+    body: "עם שעון, עם לחץ, עם סימולציות מלאות - תרגול בסגנון יום המבחן.",
   },
   {
     step: "03",
@@ -75,7 +79,7 @@ export default function PrepAboutPage() {
           <Text as="p" variant="bodyLg" className="mt-4 max-w-[52ch]">
             PREPARE היא פלטפורמת הכנה דיגיטלית לאמירנט - מבחן האנגלית האקדמי הנדרש לקבלה
             למוסדות בישראל. במקום ערימת חומרים בנינו קורס אחד מובנה: שיעורים בסדר ברור,
-            תרגול אדפטיבי, סימולציות בתנאי אמת ועוזר AI בעברית. ממוקד, מדיד ובלי רעש.
+            תרגול אדפטיבי, סימולציות מלאות ועוזר AI בעברית. ממוקד, מדיד ובלי רעש.
           </Text>
           <TrustIndicators items={MARKETING_HERO.trust} className="mt-10" />
         </Container>

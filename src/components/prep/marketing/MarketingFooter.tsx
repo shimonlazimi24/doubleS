@@ -10,6 +10,8 @@ import { PREP_BASE } from "@/lib/prep/constants";
 const footerLinks = [
   { href: `${PREP_BASE}/about`, label: "אודות" },
   { href: `${PREP_BASE}/contact`, label: "יצירת קשר" },
+  { href: `${PREP_BASE}/pricing`, label: "מחירים" },
+  { href: `${PREP_BASE}/terms`, label: "תקנון שימוש" },
   { href: `${PREP_BASE}/privacy`, label: "מדיניות פרטיות" },
 ] as const;
 

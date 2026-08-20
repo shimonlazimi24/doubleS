@@ -28,6 +28,9 @@ Already required for this release:
 
 1. `supabase/migrations/20260817_cms_rls_app_metadata.sql` (safe no-op if CMS tables missing)
 2. `supabase/migrations/20260817_restrict_course_chunks.sql`
+3. `supabase/migrations/20260819_amirant_lesson_progress.sql` (signed-in lesson progress)
+
+PostgREST must be Healthy after restore/migration (or run `NOTIFY pgrst, 'reload schema';`).
 
 Admin user: `app_metadata.is_admin = true` (Dashboard → Auth → user → raw app_metadata).
 
@@ -41,6 +44,17 @@ Admin user: `app_metadata.is_admin = true` (Dashboard → Auth → user → raw 
 6. Hyp checkout → entitlement → course unlock
 7. AI chat only for entitled user
 8. `/prep/admin` only for admin
+9. `/prep/terms` and `/prep/privacy` load (footer + pricing)
+
+## 3b. Marketing claims (ads)
+
+- No guaranteed score / exemption; official result is MALO only
+- Placement described as estimate, not official AMIRNET
+- Paid access is time-boxed (not “cancel anytime subscription”)
+- Listening practice labeled synthetic
+- Fake testimonials stay off until real students exist
+- Cookie banner live; GA only after “מאשר/ת” (`NEXT_PUBLIC_GA_ID` optional)
+- `/prep/terms` + `/prep/privacy` linked from footer and pricing
 
 ## 4. Automations
 
