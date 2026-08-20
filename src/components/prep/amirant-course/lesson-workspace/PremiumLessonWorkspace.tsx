@@ -21,7 +21,6 @@ import { CourseOutlineSidebar } from "../course-outline/CourseOutlineSidebar";
 import { AmirantLessonTrackIsland } from "../AmirantLessonTrackIsland";
 import { LessonStepContent } from "./LessonStepContent";
 import { LessonNavigationFooter } from "../lesson/ui/LessonNavigationFooter";
-import { LessonMobileStepper } from "./LessonMobileStepper";
 import { LessonAiHelpBlock } from "./LessonAiHelpBlock";
 import { CURATED_ROADMAP_LESSON_ID, isCuratedRoadmapClosingStep } from "./curated-unit1-roadmap-steps";
 import { RoadmapWorkspaceBody } from "./roadmap-workspace-body";
@@ -315,9 +314,6 @@ export function PremiumLessonWorkspace({
                 >
                   <span aria-hidden>☰</span>
                   <span>תוכן הקורס</span>
-                  <span className="tabular-nums text-slate-500">
-                    {n > 0 ? `${activeIndex + 1}/${n}` : "-"}
-                  </span>
                 </button>
               </div>
               {/* הדר דחוס: כותרת + סימון-הושלם בשורה אחת - פחות כרום לפני התוכן */}
@@ -333,12 +329,6 @@ export function PremiumLessonWorkspace({
                 />
                 <AmirantLessonTrackIsland lessonId={lessonId} lessonTitle={title} className="mt-1.5 shrink-0" />
               </div>
-              <LessonMobileStepper
-                className="mb-1.5 max-lg:mt-0 lg:mb-2"
-                steps={steps}
-                activeIndex={activeIndex}
-                onSelect={selectStep}
-              />
               <div
                 className={cn(
                   "min-w-0 [direction:rtl]",

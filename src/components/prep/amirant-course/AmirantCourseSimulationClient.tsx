@@ -21,6 +21,7 @@ import {
   bankQuestionsPublicToPoolItems,
   getPublicBankQuestion,
 } from "@/lib/amirant-course/question-bank/client-bank";
+import { buildSimulationSectionQuestionIds } from "@/lib/amirant-course/session/build-simulation-section";
 import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
@@ -161,9 +162,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         if (run.kind === "pilot") {
           const first = sim.sections[0];
           if (!first) return;
-          const scoredIds = pickAdaptiveQuestionIds({
+          const scoredIds = buildSimulationSectionQuestionIds({
             pool: SIM_QUESTION_POOL,
-            topicId: first.topicSlug,
+            bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+            topicSlug: first.topicSlug,
             targetLevel: run.sectionEnterLevel,
             count: first.questionCount,
             excludeIds: Array.from(new Set(run.globalUsedIds)),
@@ -309,9 +311,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         saveAnalytics(nextA);
 
         const sec = sim.sections[nextIdx]!;
-        const nextIds = pickAdaptiveQuestionIds({
+        const nextIds = buildSimulationSectionQuestionIds({
           pool: SIM_QUESTION_POOL,
-          topicId: sec.topicSlug,
+          bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+          topicSlug: sec.topicSlug,
           targetLevel: nextLevel,
           count: sec.questionCount,
           excludeIds: Array.from(new Set(run.globalUsedIds)),

@@ -154,7 +154,72 @@ export function buildPlacementQuizForm(params: {
   };
 }
 
-/** ציון מנורמל בסולם 50–150 (נרמול לינארי פשוט מהאחוז, בסגנון מבחני אמיר״ם). */
-export function placementNormalizedScore(scorePct: number): number {
-  return Math.min(150, Math.max(50, 50 + Math.round(scorePct)));
+/**
+ * Placement estimate on the official 50-150 scale.
+ *
+ * Replaces a plain `50 + percentage`, which ignored item difficulty (while the
+ * course itself teaches that harder items carry more weight) and scored blind
+ * guessing at ~75 — a number a learner reads as a real result.
+ *
+ * The model is deliberately simple and stated as such to the learner:
+ *   1. weight each item by its difficulty (1-6), so a hard item earns more;
+ *   2. correct for guessing on four options, so chance performance lands at the
+ *      bottom of the scale rather than a third of the way up;
+ *   3. report a **range**, because 15 items cannot support a point estimate.
+ *
+ * This is not an IRT calibration and must not be presented as an official score.
+ */
+
+export type PlacementScoredItem = { difficulty: number; isCorrect: boolean };
+
+export type PlacementScoreEstimate = {
+  /** Mid-point of the range — for storage and trend comparison, not for display alone. */
+  score: number;
+  low: number;
+  high: number;
+};
+
+/** Four options per item, so a blind guess is right a quarter of the time. */
+const CHANCE_RATE = 0.25;
+const SCALE_MIN = 50;
+/** A 15-item placement form cannot evidence a top-of-scale result. */
+const SCALE_MAX_FOR_PLACEMENT = 145;
+const MIN_MARGIN = 6;
+const MAX_MARGIN = 18;
+
+function clampToScale(value: number): number {
+  return Math.min(150, Math.max(SCALE_MIN, Math.round(value)));
+}
+
+export function estimatePlacementScore(items: PlacementScoredItem[]): PlacementScoreEstimate {
+  const n = items.length;
+  if (n === 0) return { score: SCALE_MIN, low: SCALE_MIN, high: SCALE_MIN };
+
+  const weight = (difficulty: number) => Math.min(6, Math.max(1, difficulty));
+  const maxWeight = items.reduce((sum, item) => sum + weight(item.difficulty), 0);
+  const earned = items.reduce(
+    (sum, item) => sum + (item.isCorrect ? weight(item.difficulty) : 0),
+    0,
+  );
+  const rawRate = maxWeight > 0 ? earned / maxWeight : 0;
+
+  // Guessing correction: map [chance, 1] onto [0, 1].
+  const corrected = Math.min(1, Math.max(0, (rawRate - CHANCE_RATE) / (1 - CHANCE_RATE)));
+  const span = SCALE_MAX_FOR_PLACEMENT - SCALE_MIN;
+  const point = SCALE_MIN + corrected * span;
+
+  // Binomial standard error on the observed proportion, widened by the same
+  // guessing correction, expressed in scale points.
+  const observedRate = items.filter((item) => item.isCorrect).length / n;
+  const standardError = Math.sqrt(Math.max(observedRate * (1 - observedRate), 0.04) / n);
+  const margin = Math.min(
+    MAX_MARGIN,
+    Math.max(MIN_MARGIN, Math.round((standardError / (1 - CHANCE_RATE)) * span)),
+  );
+
+  return {
+    score: clampToScale(point),
+    low: clampToScale(point - margin),
+    high: clampToScale(point + margin),
+  };
 }

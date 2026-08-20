@@ -43,7 +43,8 @@ export { parseVocabQuizParam, isVocabQuizMode } from "./question-bank/vocab-quiz
 export type { VocabQuizMode } from "./question-bank/vocab-quiz-mode";
 export { gradeCheckAnswer, gradeBatchAnswers } from "./grade-client";
 export type { GradeBatchItem } from "./grade-client";
-export { buildPlacementQuizForm, placementNormalizedScore } from "./session/build-placement-quiz-form";
+export { buildPlacementQuizForm, estimatePlacementScore } from "./session/build-placement-quiz-form";
+export type { PlacementScoreEstimate, PlacementScoredItem } from "./session/build-placement-quiz-form";
 export type { PlacementQuizForm } from "./session/build-placement-quiz-form";
 export {
   loadRecentPlacementForms,

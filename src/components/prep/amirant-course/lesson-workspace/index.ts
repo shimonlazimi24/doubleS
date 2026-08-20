@@ -2,7 +2,6 @@ export { PremiumLessonWorkspace } from "./PremiumLessonWorkspace";
 export { LessonProgressHeader } from "./LessonProgressHeader";
 export { LessonStepContent } from "./LessonStepContent";
 export { LessonStepNavigation } from "./LessonStepNavigation";
-export { LessonMobileStepper } from "./LessonMobileStepper";
 export { LessonAiHelpBlock } from "./LessonAiHelpBlock";
 export {
   buildLessonSteps,

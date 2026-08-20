@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-07-06T17:09:46.441Z",
+  "generatedAt": "2026-08-20T11:14:04.423Z",
   "totalQuestions": 526,
   "counts": {
-    "pass": 526,
-    "needs_review": 0,
+    "pass": 520,
+    "needs_review": 6,
     "critical_issue": 0,
-    "flagged": 0
+    "flagged": 6
   },
   "summaryByTopic": {
     "sentence_completion": {
       "total": 141,
-      "pass": 141,
-      "needs_review": 0,
+      "pass": 140,
+      "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.91
     },
     "rephrasing": {
       "total": 124,
-      "pass": 124,
-      "needs_review": 0,
+      "pass": 120,
+      "needs_review": 4,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.61
     },
     "reading_comprehension": {
       "total": 71,
-      "pass": 71,
-      "needs_review": 0,
+      "pass": 70,
+      "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.83
     },
     "vocabulary": {
       "total": 190,
@@ -40,31 +40,31 @@
   "summaryByDifficulty": {
     "1": {
       "total": 59,
-      "pass": 59,
-      "needs_review": 0,
+      "pass": 58,
+      "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.8
     },
     "2": {
       "total": 56,
-      "pass": 56,
-      "needs_review": 0,
+      "pass": 53,
+      "needs_review": 3,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.36
     },
     "3": {
       "total": 135,
-      "pass": 135,
-      "needs_review": 0,
+      "pass": 134,
+      "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.91
     },
     "4": {
       "total": 119,
-      "pass": 119,
-      "needs_review": 0,
+      "pass": 118,
+      "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 100
+      "avgScore": 99.9
     },
     "5": {
       "total": 112,
@@ -81,7 +81,204 @@
       "avgScore": 100
     }
   },
-  "issueTypeCounts": {},
-  "flaggedQuestions": [],
-  "priorityFirst50": []
+  "issueTypeCounts": {
+    "too_easy_to_eliminate": 2,
+    "duplicate_or_similar_options": 4
+  },
+  "flaggedQuestions": [
+    {
+      "questionId": "sc-quiz-4-intermediate-q6",
+      "topic": "sentence_completion",
+      "subtopic": "sentence_completion-contrast-linkers",
+      "difficultyLevel": 4,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "too_easy_to_eliminate",
+          "severity": "needs_review",
+          "reason": "Option length distribution is extreme; elimination may be trivial.",
+          "suggestedFixDirection": "Balance option lengths and keep all options similarly plausible."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-2-easy-q6",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-2-easy-q10",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-4-intermediate-q7",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 3,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-8-mixed-q4",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "reading-comp-quiz-7-mixed-q1",
+      "topic": "reading_comprehension",
+      "subtopic": "reading_comprehension-main-idea",
+      "difficultyLevel": 1,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "too_easy_to_eliminate",
+          "severity": "needs_review",
+          "reason": "Option length distribution is extreme; elimination may be trivial.",
+          "suggestedFixDirection": "Balance option lengths and keep all options similarly plausible."
+        }
+      ]
+    }
+  ],
+  "priorityFirst50": [
+    {
+      "questionId": "sc-quiz-4-intermediate-q6",
+      "topic": "sentence_completion",
+      "subtopic": "sentence_completion-contrast-linkers",
+      "difficultyLevel": 4,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "too_easy_to_eliminate",
+          "severity": "needs_review",
+          "reason": "Option length distribution is extreme; elimination may be trivial.",
+          "suggestedFixDirection": "Balance option lengths and keep all options similarly plausible."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-2-easy-q6",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-2-easy-q10",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-4-intermediate-q7",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 3,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "restatement-quiz-8-mixed-q4",
+      "topic": "rephrasing",
+      "subtopic": "rephrasing-inversion-conditionals",
+      "difficultyLevel": 2,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "duplicate_or_similar_options",
+          "severity": "needs_review",
+          "reason": "Options are overly similar (similarity=1.00).",
+          "suggestedFixDirection": "Differentiate distractors with clearer semantic contrast."
+        }
+      ]
+    },
+    {
+      "questionId": "reading-comp-quiz-7-mixed-q1",
+      "topic": "reading_comprehension",
+      "subtopic": "reading_comprehension-main-idea",
+      "difficultyLevel": 1,
+      "qaStatus": "needs_review",
+      "score": 88,
+      "issues": [
+        {
+          "type": "too_easy_to_eliminate",
+          "severity": "needs_review",
+          "reason": "Option length distribution is extreme; elimination may be trivial.",
+          "suggestedFixDirection": "Balance option lengths and keep all options similarly plausible."
+        }
+      ]
+    }
+  ]
 }
