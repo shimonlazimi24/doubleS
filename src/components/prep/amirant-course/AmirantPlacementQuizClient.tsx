@@ -8,7 +8,7 @@ import {
   buildPlacementQuizForm,
   initialInTestLevel,
   loadAnalytics,
-  placementNormalizedScore,
+  estimatePlacementScore,
   recentPlacementExclusions,
   rememberPlacementForm,
   recordQuestionOutcome,
@@ -24,11 +24,14 @@ import {
 } from "@/lib/amirant-course/question-bank/client-bank";
 import { gradeBatchAnswers } from "@/lib/amirant-course/grade-client";
 import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
+import { AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
+import { examScoreBand } from "@/lib/amirant-course/exam-facts";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
@@ -37,12 +40,22 @@ const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
 type Phase = "intro" | "active" | "results";
 
+type TopicBreakdownRow = {
+  topic: string;
+  labelHe: string;
+  correct: number;
+  total: number;
+};
+
 type PlacementResults = {
   correct: number;
   total: number;
   scorePct: number;
-  normalizedScore: number;
+  /** Difficulty-weighted, guessing-corrected estimate reported as a range. */
+  estimate: { score: number; low: number; high: number };
   estimatedLevel: DifficultyLevel;
+  /** Per-skill result — the whole point of a diagnostic, and the learner's next step. */
+  breakdown: TopicBreakdownRow[];
 };
 
 const SECTION_LABELS = [
@@ -240,12 +253,32 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
           showPrepToast("התוצאה נשמרה במכשיר; הסנכרון לחשבון נכשל — נסו לרענן.", { tone: "error" });
         }
 
+        const answeredRows = persistedRows.filter((row) => row.selectedOptionId != null);
+        const breakdownMap = new Map<string, TopicBreakdownRow>();
+        for (const row of persistedRows) {
+          const entry = breakdownMap.get(row.topic) ?? {
+            topic: row.topic,
+            labelHe:
+              AMIRANT_TOPIC_LABEL_HE[row.topic as keyof typeof AMIRANT_TOPIC_LABEL_HE] ?? row.topic,
+            correct: 0,
+            total: 0,
+          };
+          entry.total += 1;
+          if (row.isCorrect) entry.correct += 1;
+          breakdownMap.set(row.topic, entry);
+        }
+
         setResults({
           correct,
           total: formCount,
           scorePct: scorePercent,
-          normalizedScore: placementNormalizedScore(scorePercent),
+          estimate: estimatePlacementScore(
+            answeredRows.map((row) => ({ difficulty: row.difficulty, isCorrect: row.isCorrect })),
+          ),
           estimatedLevel: finalAdaptiveLevel,
+          breakdown: Array.from(breakdownMap.values()).sort(
+            (a, b) => a.correct / a.total - b.correct / b.total,
+          ),
         });
         setPhase("results");
       };
@@ -293,7 +326,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
           <CardBody className="space-y-5 p-6 sm:p-8">
             <Text as="p" variant="body" className="leading-relaxed">
               מבחן קצר שממפה את רמת האנגלית הנוכחית שלך וקובע נקודת פתיחה מותאמת אישית לקורס.
-              בסיום מקבלים הערכת רמה משוערת על סולם 50–150 (מיפוי לינארי מהאחוז — לא ציון רשמי).
+              בסיום מקבלים טווח רמה משוער על סולם 50–150, משוקלל לפי רמת הקושי של השאלות, ופילוח לפי נושא. זו הערכה ללימוד — לא ציון רשמי.
             </Text>
             <div className="rounded-2xl border border-line/70 bg-surface-low p-5">
               <Text as="p" variant="labelAccent" className="text-primary">
@@ -341,28 +374,60 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
         </Text>
         <Card className="border-primary/25">
           <CardBody className="space-y-6 p-6 sm:p-8">
-            {/* רגע הציון - זהב (חתימת "אקדמי מחודד") */}
-            <div className="rounded-2xl bg-surface-low px-6 py-8 text-center">
+            {/* מסך שטוח: היררכיה טיפוגרפית וקווי הפרדה, בלי כרטיסים מקוננים */}
+            <div>
               <Text as="p" variant="labelAccent" className="text-muted">
-                הערכת רמה משוערת (50–150)
+                טווח הרמה המשוער שלך
               </Text>
-              <p className="mt-2 text-6xl font-extrabold tabular-nums text-score">{results.normalizedScore}</p>
+              <p className="mt-1 text-6xl font-extrabold tabular-nums text-score">
+                {results.estimate.low}–{results.estimate.high}
+              </p>
+              {examScoreBand(results.estimate.score) ? (
+                <Text as="p" variant="body" className="mt-1 font-semibold text-ink">
+                  רמת {examScoreBand(results.estimate.score)!.levelHe}
+                </Text>
+              ) : null}
               <Text as="p" variant="bodySm" className="mt-2 text-muted">
-                נרמול פשוט מהאחוז - אינדיקציה בלבד, לא ציון רשמי
+                {results.correct} מתוך {results.total} נכונות · משוקלל לפי רמת הקושי.
+                סימולציה מלאה תצמצם את הטווח.
               </Text>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-line/70 p-4 text-center">
-                <p className="text-2xl font-bold text-ink">
-                  {results.correct}/{results.total}
-                </p>
-                <p className="mt-1 text-xs text-muted">תשובות נכונות ({results.scorePct}%)</p>
+
+            {/* פילוח לפי נושא - החלש ביותר ראשון, כי זה הצעד הבא */}
+            <div className="border-t border-line/70 pt-5">
+              <Text as="p" variant="labelAccent" className="text-muted">
+                איפה אתה עומד בכל נושא
+              </Text>
+              <div className="mt-3 space-y-2.5">
+                {results.breakdown.map((row) => {
+                  const pct = row.total > 0 ? Math.round((row.correct / row.total) * 100) : 0;
+                  return (
+                    <div key={row.topic} className="flex items-center gap-3">
+                      <span className="w-32 shrink-0 text-sm text-ink">{row.labelHe}</span>
+                      <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-low">
+                        <span
+                          className={cn(
+                            "block h-full rounded-full",
+                            pct >= 70 ? "bg-emerald-600" : pct >= 40 ? "bg-amber-500" : "bg-red-600",
+                          )}
+                          style={{ width: `${Math.max(pct, 4)}%` }}
+                        />
+                      </span>
+                      <span className="w-14 shrink-0 text-end text-sm tabular-nums text-muted">
+                        {row.correct}/{row.total}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
-              <div className="rounded-xl border border-line/70 p-4 text-center">
-                <p className="text-2xl font-bold text-ink">{results.estimatedLevel}</p>
-                <p className="mt-1 text-xs text-muted">רמת לימוד מומלצת (1–6)</p>
-              </div>
+              {results.breakdown[0] ? (
+                <Text as="p" variant="bodySm" className="mt-3 text-muted">
+                  הנושא שהכי משתלם לחזק עכשיו:{" "}
+                  <span className="font-semibold text-ink">{results.breakdown[0].labelHe}</span>.
+                </Text>
+              ) : null}
             </div>
+
             <div className="flex flex-wrap gap-3 pt-1">
               <Link
                 href={`${COURSE_BASE}/lesson/lesson.intro.personal-roadmap`}
@@ -451,7 +516,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                 {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
               </p>
               <ul className="space-y-2">
-                {currentQ.options.map((opt) => (
+                {currentQ.options.map((opt, optIndex) => (
                   <li key={opt.id}>
                     <button
                       type="button"
@@ -464,7 +529,11 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                           : "border-line/80 bg-paper hover:border-primary/40",
                       )}
                     >
-                      {opt.label}
+                      <QuizOptionContent
+                        index={optIndex}
+                        label={opt.label}
+                        state={answers[currentIndex] === opt.id ? "selected" : "idle"}
+                      />
                     </button>
                   </li>
                 ))}

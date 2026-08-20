@@ -38,6 +38,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/AmirantNextBestActionCard";
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { getAmirantTopicLinks } from "@/lib/amirant-course/next-best-action";
@@ -683,21 +684,25 @@ export function AmirantAdaptiveQuizClient({
                   {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
                 </p>
                 <ul className="space-y-2">
-                  {currentQ.options.map((opt) => (
+                  {currentQ.options.map((opt, optIndex) => (
                     <li key={opt.id}>
                       <button
                         type="button"
                         disabled={gradingIndex === currentIndex}
                         onClick={() => setAnswerForIndex(currentIndex, opt.id)}
                         className={cn(
-                          "w-full rounded-control border px-4 py-3 text-right text-sm transition",
+                          "w-full rounded-control border px-4 py-3 text-start text-sm transition",
                           answers[currentIndex] === opt.id
                             ? "border-primary bg-primary/10 font-semibold text-primary"
                             : "border-line/80 bg-paper hover:border-primary/40",
                           gradingIndex === currentIndex && "opacity-60",
                         )}
                       >
-                        {opt.label}
+                        <QuizOptionContent
+                          index={optIndex}
+                          label={opt.label}
+                          state={answers[currentIndex] === opt.id ? "selected" : "idle"}
+                        />
                       </button>
                     </li>
                   ))}

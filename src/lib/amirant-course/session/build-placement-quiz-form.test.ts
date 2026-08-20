@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { AMIRANT_BANK_QUESTIONS, getBankQuestion } from "../question-bank";
-import { buildPlacementQuizForm, placementNormalizedScore } from "./build-placement-quiz-form";
+import { buildPlacementQuizForm, estimatePlacementScore } from "./build-placement-quiz-form";
 
 describe("buildPlacementQuizForm", () => {
   it("builds 15 questions in fixed order: 8 SC → 4 rephrasing → 3 RC on one passage", () => {
@@ -50,12 +50,45 @@ describe("buildPlacementQuizForm", () => {
   });
 });
 
-describe("placementNormalizedScore", () => {
-  it("maps percent linearly into 50–150", () => {
-    expect(placementNormalizedScore(0)).toBe(50);
-    expect(placementNormalizedScore(50)).toBe(100);
-    expect(placementNormalizedScore(100)).toBe(150);
-    expect(placementNormalizedScore(120)).toBe(150);
-    expect(placementNormalizedScore(-5)).toBe(50);
+describe("estimatePlacementScore", () => {
+  const items = (pattern: boolean[], difficulty = 3) =>
+    pattern.map((isCorrect) => ({ difficulty, isCorrect }));
+
+  it("puts blind guessing at the bottom of the scale, not a third of the way up", () => {
+    // 25% correct is chance performance on four options.
+    const result = estimatePlacementScore(items([true, false, false, false].flatMap((x) => [x, x, x])));
+    expect(result.score).toBeLessThanOrEqual(60);
+  });
+
+  it("weights harder items more than easy ones", () => {
+    const easyCorrect = estimatePlacementScore([
+      { difficulty: 1, isCorrect: true },
+      { difficulty: 6, isCorrect: false },
+    ]);
+    const hardCorrect = estimatePlacementScore([
+      { difficulty: 1, isCorrect: false },
+      { difficulty: 6, isCorrect: true },
+    ]);
+    expect(hardCorrect.score).toBeGreaterThan(easyCorrect.score);
+  });
+
+  it("always reports a range that contains the estimate and stays on scale", () => {
+    for (const correctCount of [0, 4, 8, 12, 15]) {
+      const pattern = Array.from({ length: 15 }, (_, i) => i < correctCount);
+      const result = estimatePlacementScore(items(pattern));
+      expect(result.low).toBeLessThanOrEqual(result.score);
+      expect(result.high).toBeGreaterThanOrEqual(result.score);
+      expect(result.low).toBeGreaterThanOrEqual(50);
+      expect(result.high).toBeLessThanOrEqual(150);
+    }
+  });
+
+  it("does not claim a top-of-scale result from a 15-item form", () => {
+    const perfect = estimatePlacementScore(items(Array.from({ length: 15 }, () => true), 6));
+    expect(perfect.score).toBeLessThanOrEqual(145);
+  });
+
+  it("handles an empty form", () => {
+    expect(estimatePlacementScore([])).toEqual({ score: 50, low: 50, high: 50 });
   });
 });

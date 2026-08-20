@@ -62,12 +62,13 @@ export function LessonHeroCard({
           {title}
         </h2>
       ) : null}
+      {/* משך משוער הוא מטא-דאטה, לא פעולה: שורת טקסט שקטה במקום תג ממוסגר */}
       {estimatedMinutes != null ? (
         <p
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-lg border border-gray-200/80 bg-stone-50/80 text-gray-600",
+            "inline-flex items-center gap-1.5 text-gray-500",
             omitTitle ? "mt-0" : "mt-2",
-            surface === "workspace" ? "px-3 py-1.5 text-sm" : "px-2.5 py-1.5 text-xs",
+            surface === "workspace" ? "text-sm" : "text-xs",
           )}
         >
           <ClockIcon className="h-3.5 w-3.5 shrink-0" />

@@ -21,10 +21,12 @@ import {
   bankQuestionsPublicToPoolItems,
   getPublicBankQuestion,
 } from "@/lib/amirant-course/question-bank/client-bank";
+import { buildSimulationSectionQuestionIds } from "@/lib/amirant-course/session/build-simulation-section";
 import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { AmirantVideoEmbed } from "./lesson/AmirantVideoEmbed";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
@@ -161,9 +163,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         if (run.kind === "pilot") {
           const first = sim.sections[0];
           if (!first) return;
-          const scoredIds = pickAdaptiveQuestionIds({
+          const scoredIds = buildSimulationSectionQuestionIds({
             pool: SIM_QUESTION_POOL,
-            topicId: first.topicSlug,
+            bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+            topicSlug: first.topicSlug,
             targetLevel: run.sectionEnterLevel,
             count: first.questionCount,
             excludeIds: Array.from(new Set(run.globalUsedIds)),
@@ -309,9 +312,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         saveAnalytics(nextA);
 
         const sec = sim.sections[nextIdx]!;
-        const nextIds = pickAdaptiveQuestionIds({
+        const nextIds = buildSimulationSectionQuestionIds({
           pool: SIM_QUESTION_POOL,
-          topicId: sec.topicSlug,
+          bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+          topicSlug: sec.topicSlug,
           targetLevel: nextLevel,
           count: sec.questionCount,
           excludeIds: Array.from(new Set(run.globalUsedIds)),
@@ -494,19 +498,23 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
                     {amirantExamQuestionPromptForDisplay(q.prompt)}
                   </p>
                   <ul className="space-y-2">
-                    {q.options.map((opt) => (
+                    {q.options.map((opt, optIndex) => (
                       <li key={opt.id}>
                         <button
                           type="button"
                           onClick={() => setAnswer(q.id, opt.id)}
                           className={cn(
-                            "w-full rounded-control border px-4 py-3 text-right text-sm transition",
+                            "w-full rounded-control border px-4 py-3 text-start text-sm transition",
                             run.answers[q.id] === opt.id
                               ? "border-primary bg-primary/10 font-semibold text-primary"
                               : "border-line/80 bg-paper hover:border-primary/40",
                           )}
                         >
-                          {opt.label}
+                          <QuizOptionContent
+                            index={optIndex}
+                            label={opt.label}
+                            state={run.answers[q.id] === opt.id ? "selected" : "idle"}
+                          />
                         </button>
                       </li>
                     ))}
