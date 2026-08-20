@@ -4,6 +4,8 @@ import { AMIRANT_PREPARATION_MANIFEST, displayModuleTitleHe, getManifestModuleBy
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Container } from "@/components/ui";
 import { AmirantModuleHub } from "@/components/prep/amirant-course/AmirantModuleHub";
+import { isAmirantModuleFree } from "@/lib/prep/course-access";
+import { requireAmirantFullAccess } from "@/lib/prep/amirant-course-access.server";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -15,7 +17,11 @@ export function generateMetadata({ params }: Props): Metadata {
   return { title: `${displayModuleTitleHe(mod)} | הכנה לאמירנט` };
 }
 
-export default function AmirantCourseModulePage({ params }: Props) {
+export default async function AmirantCourseModulePage({ params }: Props) {
+  const gateModule = getManifestModuleBySlug(params.moduleSlug);
+  if (gateModule && !isAmirantModuleFree(gateModule)) {
+    await requireAmirantFullAccess(gateModule.slug);
+  }
   const mod = getManifestModuleBySlug(params.moduleSlug);
   if (!mod) notFound();
   return (

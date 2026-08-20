@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getSimulation } from "@/lib/amirant-course";
 import { Container } from "@/components/ui";
 import { AmirantCourseSimulationClient } from "@/components/prep/amirant-course/AmirantCourseSimulationClient";
+import { requireAmirantFullAccess } from "@/lib/prep/amirant-course-access.server";
 
 type Props = { params: { simId: string } };
 
@@ -12,7 +13,8 @@ export function generateMetadata({ params }: Props): Metadata {
   return { title: `${s.title} | הכנה לאמירנט` };
 }
 
-export default function AmirantCourseSimulationPage({ params }: Props) {
+export default async function AmirantCourseSimulationPage({ params }: Props) {
+  await requireAmirantFullAccess("full-simulations");
   if (!getSimulation(params.simId)) notFound();
   return (
     <Container max="measureWide">

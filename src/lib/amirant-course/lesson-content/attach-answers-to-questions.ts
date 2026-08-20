@@ -17,8 +17,12 @@
  * to the top-level `#` section; an answer never crosses into another test.
  */
 
-/** `**Q1.**`, `**Q1**`, `Q1.` — the stem marker used across the practice files. */
-const QUESTION_LINE = /^\s*(?:\*\*)?Q\s*(\d+)\s*[.)]?(?:\*\*)?(?:\s|$)/;
+/**
+ * The stem marker, in every shape the practice files use: `**Q1.**` (listening),
+ * `### Q1.` (word formation, grammar), or a bare `Q1.`. Matching only the bold
+ * form left two of the three practice units untouched.
+ */
+const QUESTION_LINE = /^\s*(?:#{1,6}\s*)?(?:\*\*)?Q\s*(\d+)\s*[.)]?(?:\*\*)?(?:\s|$)/;
 
 /** `### Q1: **B** - …` — the solutions-section marker. */
 const ANSWER_HEADING = /^\s*#{2,6}\s*Q\s*(\d+)\s*[:.]/;
