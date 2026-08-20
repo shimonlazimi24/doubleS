@@ -89,3 +89,15 @@ export const PREP_LEARNING_NAV = PREP_COURSES.filter((c) => c.status === "live")
   href: c.href,
   label: c.shortTitle,
 })) as readonly { href: string; label: string }[];
+
+/**
+ * Surfaces that render their own header/footer: the course workspace and the
+ * admin. The marketing header used to render above the admin shell, so an
+ * administrator got the sales nav and a "כניסה לקורס" button over their tools.
+ */
+export function isPrepAppChromePath(pathname: string): boolean {
+  return (
+    pathname.startsWith(`${PREP_BASE}/amirant/course`) ||
+    pathname.startsWith(`${PREP_BASE}/admin`)
+  );
+}
