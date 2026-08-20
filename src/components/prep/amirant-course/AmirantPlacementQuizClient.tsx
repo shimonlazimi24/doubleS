@@ -31,6 +31,7 @@ import { showPrepToast } from "@/lib/prep/show-prep-toast";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
 import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
@@ -515,7 +516,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                 {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
               </p>
               <ul className="space-y-2">
-                {currentQ.options.map((opt) => (
+                {currentQ.options.map((opt, optIndex) => (
                   <li key={opt.id}>
                     <button
                       type="button"
@@ -528,7 +529,11 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
                           : "border-line/80 bg-paper hover:border-primary/40",
                       )}
                     >
-                      {opt.label}
+                      <QuizOptionContent
+                        index={optIndex}
+                        label={opt.label}
+                        state={answers[currentIndex] === opt.id ? "selected" : "idle"}
+                      />
                     </button>
                   </li>
                 ))}

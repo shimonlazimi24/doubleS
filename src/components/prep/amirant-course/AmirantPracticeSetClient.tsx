@@ -17,6 +17,7 @@ import type { AmirantBankTopicSlug } from "@/lib/amirant-course/types/bank-quest
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { PremiumMarkdownBody } from "./premium/PremiumMarkdownBody";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
@@ -199,14 +200,14 @@ export function AmirantPracticeSetClient({
                         {amirantExamQuestionPromptForDisplay(q.prompt)}
                       </p>
                       <ul className="space-y-2">
-                        {q.options.map((opt) => (
+                        {q.options.map((opt, optIndex) => (
                           <li key={opt.id}>
                             <button
                               type="button"
                               disabled={submitted || submitting}
                               onClick={() => setAnswers((p) => ({ ...p, [id]: opt.id }))}
                               className={cn(
-                                "w-full rounded-control border px-4 py-3 text-right text-sm transition",
+                                "w-full rounded-control border px-4 py-3 text-start text-sm transition",
                                 answers[id] === opt.id
                                   ? "border-primary bg-primary/10 font-semibold text-primary"
                                   : "border-line/80 bg-paper hover:border-primary/40",
@@ -218,7 +219,22 @@ export function AmirantPracticeSetClient({
                                   "ring-2 ring-amber-500/40",
                               )}
                             >
-                              {opt.label}
+                              <QuizOptionContent
+                                index={optIndex}
+                                label={opt.label}
+                                state={
+                                  submitted && correctOptionId != null && opt.id === correctOptionId
+                                    ? "correct"
+                                    : submitted &&
+                                        answers[id] === opt.id &&
+                                        correctOptionId != null &&
+                                        opt.id !== correctOptionId
+                                      ? "wrong"
+                                      : answers[id] === opt.id
+                                        ? "selected"
+                                        : "idle"
+                                }
+                              />
                             </button>
                           </li>
                         ))}

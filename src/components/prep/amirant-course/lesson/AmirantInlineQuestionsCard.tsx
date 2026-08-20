@@ -20,6 +20,7 @@ import {
 import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/grade-client";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
+import { QuizOptionContent } from "../quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
@@ -178,7 +179,7 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                   {amirantExamQuestionPromptForDisplay(q.prompt)}
                 </p>
                 <ul className="mt-4 space-y-2">
-                  {q.options.map((opt) => {
+                  {q.options.map((opt, optIndex) => {
                     const chosen = selected === opt.id;
                     const showAsCorrect = checked && correctOptionId != null && opt.id === correctOptionId;
                     const showAsWrong =
@@ -203,7 +204,19 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                                   : "border-line/80 bg-paper hover:border-primary/40",
                           )}
                         >
-                          {opt.label}
+                          <QuizOptionContent
+                            index={optIndex}
+                            label={opt.label}
+                            state={
+                              showAsCorrect
+                                ? "correct"
+                                : showAsWrong
+                                  ? "wrong"
+                                  : chosen
+                                    ? "selected"
+                                    : "idle"
+                            }
+                          />
                         </button>
                       </li>
                     );
@@ -211,8 +224,22 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                 </ul>
                 {checked && graded?.explanation ? (
                   // "הערת מורה" - קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
-                  <div className="mt-4 rounded-e-xl border-s-[3px] border-pen/70 bg-pen/[0.04] p-4 ps-4">
-                    <p className="mb-1.5 text-[11px] font-bold tracking-wide text-pen">הסבר</p>
+                  <div
+                    className={cn(
+                      "mt-4 rounded-e-xl border-s-[3px] p-4 ps-4",
+                      graded?.isCorrect
+                        ? "border-emerald-600/70 bg-emerald-600/[0.05]"
+                        : "border-amber-500/80 bg-amber-500/[0.06]",
+                    )}
+                  >
+                    <p
+                      className={cn(
+                        "mb-1.5 text-[11px] font-bold tracking-wide",
+                        graded?.isCorrect ? "text-emerald-700" : "text-amber-700",
+                      )}
+                    >
+                      הסבר
+                    </p>
                     <PremiumMarkdownBody body={graded.explanation} variant="card" />
                   </div>
                 ) : null}
