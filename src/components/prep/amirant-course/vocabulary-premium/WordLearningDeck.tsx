@@ -152,12 +152,12 @@ export function WordLearningDeck({
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2">
           <button type="button" className={wordNavButtonClass} onClick={goPrev} disabled={safeStart <= 0}>
-            <span aria-hidden>→</span>
+
             המילה הקודמת
           </button>
           <button type="button" className={wordNavButtonClass} onClick={goNext} disabled={safeStart >= maxStart}>
             המילה הבאה
-            <span aria-hidden>←</span>
+
           </button>
         </div>
         <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">

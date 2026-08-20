@@ -28,7 +28,6 @@ export function PrepCourseCatalogCard({ course }: { course: PrepCourseCatalogIte
       <p className="mt-2 text-sm leading-relaxed text-muted">{course.blurb}</p>
       <p className="mt-auto flex items-center justify-between pt-5 text-sm font-semibold text-primary">
         <span>{price}</span>
-        {!comingSoon && <span aria-hidden>←</span>}
       </p>
     </article>
   );

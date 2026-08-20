@@ -53,7 +53,7 @@ export default async function AmirantMaterialsPage({ params }: Props) {
         <div className="bg-canvas">
           <Container className="py-10" max="measureWide">
             <Link href={`${PREP_BASE}/amirant`} className="text-sm font-semibold text-primary hover:underline">
-              ← חזרה לאמירנט
+              חזרה לאמירנט
             </Link>
             <Heading level={1} className="mt-4 text-2xl">
               חומרי קורס ומידע
@@ -71,7 +71,7 @@ export default async function AmirantMaterialsPage({ params }: Props) {
       <div className="bg-canvas">
         <Container className="py-10" max="measureWide">
           <Link href={`${PREP_BASE}/amirant`} className="text-sm font-semibold text-primary hover:underline">
-            ← חזרה לאמירנט
+            חזרה לאמירנט
           </Link>
           <Heading level={1} className="mt-4 text-2xl md:text-3xl">
             חומרי קורס ומידע
@@ -140,7 +140,7 @@ export default async function AmirantMaterialsPage({ params }: Props) {
       <Container className="py-10" max="measureWide">
         <div className="flex flex-wrap items-center gap-3">
           <Link href={BASE} className="text-sm font-semibold text-primary hover:underline">
-            ← רשימת כל הקבצים
+            רשימת כל הקבצים
           </Link>
           <span className="text-line">|</span>
           <Link href={`${PREP_BASE}/amirant/course`} className="text-sm font-semibold text-primary hover:underline">

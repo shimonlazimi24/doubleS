@@ -82,7 +82,7 @@ export default function PrepBlogPostPage({ params }: { params: Params }) {
             href={`${PREP_BASE}/blog`}
             className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
           >
-            ← כל המאמרים
+            כל המאמרים
           </Link>
           <article dir="rtl" lang="he" className="mt-6">
             <header>
@@ -113,7 +113,7 @@ export default function PrepBlogPostPage({ params }: { params: Params }) {
               href={`${PREP_BASE}/amirant`}
               className="mt-4 inline-flex min-h-11 items-center rounded-control bg-primary px-6 text-sm font-bold text-white transition hover:bg-primary-hover"
             >
-              לקורס ההכנה לאמירנט ←
+              לקורס ההכנה לאמירנט
             </Link>
           </div>
         </Container>

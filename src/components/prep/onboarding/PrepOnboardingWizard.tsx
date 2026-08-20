@@ -306,7 +306,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             onClick={() => router.push(nextPath)}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-control bg-primary px-6 text-[0.9375rem] font-bold text-white shadow-cta transition hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50"
           >
-            {goesToPricing ? "למחירים ←" : "קדימה לתרגול ←"}
+            {goesToPricing ? "למחירים" : "קדימה לתרגול"}
           </button>
           <Link
             href={`${PREP_BASE}/amirant/course`}
@@ -435,7 +435,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
             step === 1 && "invisible",
           )}
         >
-          → הקודם
+          הקודם
         </button>
         <button
           type="button"
@@ -448,7 +448,7 @@ export function PrepOnboardingWizard({ nextPath }: { nextPath: string }) {
               : "cursor-not-allowed bg-line text-muted",
           )}
         >
-          {step === TOTAL_STEPS ? (submitting ? "שומר..." : "סיום") : "המשך ←"}
+          {step === TOTAL_STEPS ? (submitting ? "שומר..." : "סיום") : "המשך"}
         </button>
       </div>
       <p className="mt-3 text-center text-xs text-muted-2">אפשר גם ללחוץ Enter כדי להמשיך</p>

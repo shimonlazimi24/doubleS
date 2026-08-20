@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getManifestPracticeSet } from "@/lib/amirant-course";
 import { Container } from "@/components/ui";
 import { AmirantPracticeSetClient } from "@/components/prep/amirant-course/AmirantPracticeSetClient";
+import { requireAmirantFullAccess } from "@/lib/prep/amirant-course-access.server";
 
 type Props = { params: { setId: string } };
 
@@ -12,7 +13,8 @@ export function generateMetadata({ params }: Props): Metadata {
   return { title: `${hit.set.title} | הכנה לאמירנט` };
 }
 
-export default function AmirantCoursePracticePage({ params }: Props) {
+export default async function AmirantCoursePracticePage({ params }: Props) {
+  await requireAmirantFullAccess(getManifestPracticeSet(params.setId)?.module.slug);
   const hit = getManifestPracticeSet(params.setId);
   if (!hit) notFound();
   return (

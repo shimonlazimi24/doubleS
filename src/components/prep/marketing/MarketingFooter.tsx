@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { PrepBrandLogo } from "@/components/prep/PrepBrandLogo";
 import { Container } from "@/components/ui";
 import { PREP_BRAND_LATIN, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
-import { PREP_BASE } from "@/lib/prep/constants";
+import { PREP_BASE, isPrepAppChromePath } from "@/lib/prep/constants";
 
 const footerLinks = [
   { href: `${PREP_BASE}/about`, label: "אודות" },
@@ -18,7 +18,7 @@ const footerLinks = [
 export function MarketingFooter() {
   const pathname = usePathname() ?? "";
   // Course shell has its own sticky chrome + FAB — marketing footer fights for space.
-  if (pathname.startsWith(`${PREP_BASE}/amirant/course`)) return null;
+  if (isPrepAppChromePath(pathname)) return null;
 
   return (
     <footer className="border-t border-line bg-paper">

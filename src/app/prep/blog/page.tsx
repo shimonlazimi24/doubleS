@@ -37,7 +37,7 @@ export default function PrepBlogIndexPage() {
             href={PREP_BASE}
             className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
           >
-            ← חזרה לדף הבית
+            חזרה לדף הבית
           </Link>
           <Heading level={1} className="mt-ds-6">
             בלוג
@@ -65,7 +65,7 @@ export default function PrepBlogIndexPage() {
                   <Text as="p" variant="body" className="mt-2 max-w-readable text-muted">
                     {post.description}
                   </Text>
-                  <span className="mt-3 inline-block text-sm font-semibold text-primary">לקריאה ←</span>
+                  <span className="mt-3 inline-block text-sm font-semibold text-primary">לקריאה</span>
                 </Link>
               </li>
             ))}

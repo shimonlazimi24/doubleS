@@ -9,7 +9,15 @@ import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 
 export async function POST(req: Request) {
   const client = createPrepSupabaseServerClient();
-  if (!client) return NextResponse.json({ error: "השירות לא זמין" }, { status: 500 });
+  if (!client) {
+    // No Supabase client means the caller's identity cannot be established, so
+    // the honest answer is "unauthenticated", not "server error": a 500 here
+    // pages on ordinary anonymous traffic and hides the real cause. The
+    // misconfiguration is logged instead of being returned to the caller.
+    // eslint-disable-next-line no-console -- silent misconfiguration is how the checkout outage stayed hidden
+    console.error("[ai] Supabase is not configured — AI routes are locked to anonymous.");
+    return NextResponse.json({ error: "יש להתחבר" }, { status: 401 });
+  }
 
   const { requestIp } = getAiRequestMeta(req);
   const {

@@ -51,7 +51,7 @@ function buildTopicImprovementLines(params: {
       const d = Math.round((postA - preA) * 100);
       if (d !== 0) {
         lines.push(
-          `${label}: ${Math.round(preA * 100)}% ← ${Math.round(postA * 100)}% (${d > 0 ? "+" : ""}${d} נק׳ דיוק)`,
+          `${label}: מ-${Math.round(preA * 100)}% ל-${Math.round(postA * 100)}% (${d > 0 ? "+" : ""}${d} נק׳ דיוק)`,
         );
       } else {
         lines.push(`${label}: יציב סביב ${Math.round(postA * 100)}% - עקבו אחרי רצף הימים הבאים`);

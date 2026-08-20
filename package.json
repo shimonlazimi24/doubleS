@@ -20,7 +20,7 @@
     "ai:health": "node scripts/check-amirant-ai-health.mjs",
     "security:preflight": "node scripts/security-preflight.mjs",
     "prod:readiness": "node scripts/prod-readiness.mjs",
-    "test:e2e:smoke": "playwright test tests/e2e/prod-smoke.spec.ts tests/e2e/ai-endpoints.spec.ts",
+    "test:e2e:smoke": "playwright test tests/e2e/prod-smoke.spec.ts tests/e2e/ai-endpoints.spec.ts tests/e2e/paid-course-gate.spec.ts",
     "typecheck": "tsc --noEmit",
     "verify:amirant-rls": "node scripts/verify-amirant-rls.mjs",
     "prep:login-link": "node scripts/generate-prep-login-link.mjs",

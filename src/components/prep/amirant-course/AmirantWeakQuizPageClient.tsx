@@ -92,7 +92,7 @@ export function AmirantWeakQuizPageClient() {
     <div className="space-y-4">
       <div className="text-xs text-muted">
         <Link href={COURSE} className="font-semibold text-primary hover:underline">
-          ← קורס
+          קורס
         </Link>
         <span className="mx-2 text-line">/</span>
         <span>תרגול ממוקד</span>

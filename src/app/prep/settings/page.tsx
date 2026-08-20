@@ -109,7 +109,7 @@ export default async function PrepSettingsPage() {
                   href={`${PREP_BASE}/login?next=${encodeURIComponent(`${PREP_BASE}/settings`)}`}
                   className="inline-flex text-sm font-semibold text-primary transition hover:text-primary-hover"
                 >
-                  התחברות ←
+                  התחברות
                 </Link>
               </div>
             )}
@@ -126,13 +126,13 @@ export default async function PrepSettingsPage() {
                 href={`${PREP_BASE}/amirant/course`}
                 className="inline-flex min-h-10 items-center text-sm font-semibold text-primary transition hover:text-primary-hover"
               >
-                לקורס ←
+                לקורס
               </Link>
               <Link
                 href={`${PREP_BASE}/amirant/course/analytics`}
                 className="inline-flex min-h-10 items-center text-sm font-semibold text-primary transition hover:text-primary-hover"
               >
-                ההתקדמות שלי ←
+                ההתקדמות שלי
               </Link>
             </div>
           </section>

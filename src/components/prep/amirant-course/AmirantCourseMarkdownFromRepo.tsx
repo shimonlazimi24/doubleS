@@ -138,8 +138,22 @@ export const AMIRANT_COURSE_MD_COMPONENTS: Components = {
         </code>
       );
     }
+    // Course authors use backticks for grammar formulas ("Object + to be + V3"),
+    // not for code. Two things went wrong: the monospace chip made a lesson read
+    // like a config file, and an un-isolated LTR run inside an RTL paragraph got
+    // dragged to the far edge, leaving a gap between a label and its formula.
+    // Isolate the run and give it a quiet formula treatment instead.
     return (
-      <code className="rounded bg-surface-low px-1.5 py-0.5 font-mono text-sm text-ink" {...props}>
+      <code
+        dir="ltr"
+        className={cn(
+          // font-sans is explicit: Tailwind's preflight sets `code` to monospace,
+          // which is what made a grammar formula look like a code sample.
+          "mx-0.5 inline-block rounded bg-surface-low px-1.5 py-0.5 font-sans text-[0.95em] text-ink",
+          "[unicode-bidi:isolate] [text-align:start]",
+        )}
+        {...props}
+      >
         {children}
       </code>
     );

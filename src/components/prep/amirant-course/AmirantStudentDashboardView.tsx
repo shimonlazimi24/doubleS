@@ -57,7 +57,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
           href={data.recommendedNextAction.href ?? COURSE}
           className="mt-5 inline-flex items-center justify-center rounded-control bg-score px-5 py-2.5 text-sm font-bold text-primary transition hover:opacity-90"
         >
-          {data.recommendedNextAction.ctaLabel ?? "המשך ללמוד"} ←
+          {data.recommendedNextAction.ctaLabel ?? "המשך ללמוד"}
         </Link>
       </div>
 
@@ -199,7 +199,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
                       href={`${COURSE}/review/${attempt.attemptId}`}
                       className="text-xs font-semibold text-primary hover:underline"
                     >
-                      סקירה ←
+                      סקירה
                     </Link>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
             href={COURSE}
             className="mt-5 inline-flex items-center justify-center rounded-control bg-primary px-6 py-2.5 text-sm font-bold text-white transition hover:bg-primary-hover"
           >
-            התחל ללמוד ←
+            התחל ללמוד
           </Link>
         </div>
       )}

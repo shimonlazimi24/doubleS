@@ -4,6 +4,7 @@ import { getManifestQuiz, parseVocabQuizParam } from "@/lib/amirant-course";
 import { Container } from "@/components/ui";
 import { AmirantAdaptiveQuizClient } from "@/components/prep/amirant-course/AmirantAdaptiveQuizClient";
 import { AmirantPlacementQuizClient } from "@/components/prep/amirant-course/AmirantPlacementQuizClient";
+import { requireAmirantQuizAccess } from "@/lib/prep/amirant-course-access.server";
 
 type Props = {
   params: { quizId: string };
@@ -16,9 +17,10 @@ export function generateMetadata({ params }: Props): Metadata {
   return { title: `${q.title} | הכנה לאמירנט` };
 }
 
-export default function AmirantCourseQuizPage({ params, searchParams }: Props) {
+export default async function AmirantCourseQuizPage({ params, searchParams }: Props) {
   const q = getManifestQuiz(params.quizId);
   if (!q) notFound();
+  await requireAmirantQuizAccess(params.quizId);
   if (q.format === "fixed_placement") {
     return (
       <Container max="shell">

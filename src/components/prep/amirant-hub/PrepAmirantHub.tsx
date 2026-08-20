@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
 
@@ -42,20 +43,20 @@ export function PrepAmirantHub() {
           </h1>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted md:text-lg">
             שיעורים, תרגול אדפטיבי, סימולציות מלאות וליווי AI. הציון הרשמי נקבע רק במבחן מאל״ו —
-            אנחנו מכין אתכם אליו.
+            אנחנו מכינים אתכם אליו.
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <Link
               href={`${COURSE}/quiz/quiz-entry-diagnostic`}
               className="inline-flex items-center justify-center rounded-control bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-cta transition hover:bg-primary-hover"
             >
-              מבחן רמה חינם ←
+              מבחן רמה חינם
             </Link>
             <Link
-              href={COURSE}
+              href={AMIRANT_CONTINUE_PATH}
               className="inline-flex items-center justify-center rounded-control border border-line bg-paper px-6 py-3.5 text-sm font-semibold text-primary transition hover:border-primary/35"
             >
-              התחל במבוא החינם
+              התחל במבוא החינמי
             </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 pt-2 text-xs text-muted">
@@ -120,7 +121,7 @@ export function PrepAmirantHub() {
             href={`${COURSE}/quiz/quiz-entry-diagnostic`}
             className="mt-6 inline-flex items-center justify-center rounded-control bg-primary px-8 py-3.5 text-sm font-bold text-white shadow-cta transition hover:bg-primary-hover"
           >
-            התחלת מבחן הרמה ←
+            התחלת מבחן הרמה
           </Link>
         </div>
       </section>
@@ -184,7 +185,7 @@ export function PrepAmirantHub() {
               href={`${COURSE}/quiz/quiz-entry-diagnostic`}
               className="inline-flex items-center justify-center rounded-control bg-primary px-8 py-4 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
             >
-              מבחן רמה חינם ←
+              מבחן רמה חינם
             </Link>
             <Link
               href={`${PREP_BASE}/pricing`}

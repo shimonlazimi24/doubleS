@@ -22,6 +22,7 @@ import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip
 import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
+import { attachAnswersToQuestions } from "@/lib/amirant-course/lesson-content/attach-answers-to-questions";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { requireAmirantLessonAccess } from "@/lib/prep/amirant-lesson-access.server";
 import { AmirantCourseLessonScopeTracker } from "@/components/prep/amirant-course/AmirantCourseLessonScopeTracker";
@@ -134,9 +135,17 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   const hasBlocks = content.blocks.length > 0;
   if (!hasMd && !hasBlocks) notFound();
 
-  const md = isCmsOverride && cmsMarkdown
+  const rawMd = isCmsOverride && cmsMarkdown
     ? { ok: true as const, body: cmsMarkdown }
     : (hasMd && content.amirnetMarkdownRel ? readAmirantCourseMarkdownSource(content.amirnetMarkdownRel) : null);
+  // Practice files are written like a printed booklet — every question, then a
+  // solutions section — so an answer could land dozens of cards after its
+  // question ("עד שהגעתי לתשובות שכחתי מה הייתה השאלה"). Pair them before the
+  // body is split into slides. Display only: the source file is untouched, and
+  // the admin editor still loads the raw markdown.
+  const md = rawMd?.ok
+    ? { ...rawMd, body: attachAnswersToQuestions(rawMd.body) }
+    : rawMd;
   // שיעורי "מבחן תרגול": השאלות השטוחות נחתכות מה-md ומרונדרות כרכיב אינטראקטיבי מהבנק.
   // חותכים רק אם קבוצת השאלות באמת נמצאה בבנק - אחרת (תג הוסב / מאגר נכשל)
   // עדיף להשאיר את השאלות כטקסט מאשר שיעור בלי שאלות בכלל.

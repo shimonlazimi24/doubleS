@@ -12,6 +12,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
+import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
 import { PLAN_DAYS, PLAN_PRICES_NIS, PLAN_LABELS } from "@/lib/prep/pricing-plans";
 import { createHypPaymentUrl, isHypConfigured } from "@/lib/prep/hyp";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
@@ -81,7 +82,10 @@ export async function POST(req: Request) {
   }
 
   const service = getPrepSupabaseServiceClient();
-  if (!service) {
+  const keyStatus = assertServiceRoleKeyForWrites("checkout");
+  if (!service || !keyStatus.ok) {
+    // A key without service-role rights cannot write past RLS on prep_payments;
+    // every purchase would fail with Postgres 42501 and no trace in the app logs.
     return NextResponse.json({ error: "מערכת התשלום אינה זמינה כרגע." }, { status: 500 });
   }
 
@@ -95,6 +99,12 @@ export async function POST(req: Request) {
     utm: body.utm ?? null,
   });
   if (insertError) {
+    // Never swallow this: it is the difference between "the user retried" and
+    // "nobody can buy". 42501 = RLS rejected the write (see service-role-check).
+    // eslint-disable-next-line no-console -- surfaced to Sentry via console capture
+    console.error(
+      `[checkout] prep_payments insert failed (${insertError.code ?? "unknown"}): ${insertError.message}`,
+    );
     return NextResponse.json({ error: "שגיאה ביצירת התשלום. נסו שוב." }, { status: 500 });
   }
 
