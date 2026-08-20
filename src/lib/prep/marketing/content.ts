@@ -7,9 +7,11 @@ const SIM_COUNT = AMIRANT_PREPARATION_MANIFEST.simulations.length;
 export const MARKETING_HERO = {
   headline: "הכנה לאמירנט - כדי להגיע לפטור בלי קורסי השלמה מיותרים",
   subheadline:
-    "שיעורים, תרגול אדפטיבי, סימולציות מלאות וליווי AI. הציון הרשמי נקבע רק במבחן מאל״ו - אנחנו מכין אתכם אליו.",
+    "שיעורים, תרגול אדפטיבי, סימולציות מלאות וליווי AI. הציון הרשמי נקבע רק במבחן מאל״ו - אנחנו מכינים אתכם אליו.",
   ctaPrimary: { label: "מבחן רמה חינם", href: `${PREP_BASE}/amirant/course/quiz/quiz-entry-diagnostic` },
-  ctaSecondary: { label: "התחל במבוא החינם", href: `${PREP_BASE}/amirant/course` },
+  // Entry goes through /amirant/continue, which routes login → onboarding → course.
+  // Linking straight at the course skipped that and dropped people into the old flow.
+  ctaSecondary: { label: "התחל במבוא החינמי", href: `${PREP_BASE}/amirant/continue` },
   trust: [
     { value: String(LESSON_COUNT), label: "שיעורים בקורס" },
     { value: "500+", label: "שאלות תרגול עם הסברים" },

@@ -189,7 +189,7 @@ function insertAnswers(lines: Line[], answers: Map<number, Line[]>): Line[] {
   }
 
   // Any answer without a matching question stays visible rather than vanishing.
-  const leftovers = [...answers.entries()].sort((a, b) => a[0] - b[0]);
+  const leftovers = Array.from(answers.entries()).sort((a, b) => a[0] - b[0]);
   if (leftovers.length) {
     out.push("");
     for (const [number, body] of leftovers) {
