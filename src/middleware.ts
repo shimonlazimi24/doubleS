@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 import { isPrepAmirantCoursePublicPreviewPath } from "@/lib/prep/amirant-public-preview";
 import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";
-import { isPrepPublicPath } from "@/lib/prep/constants";
+import { isPrepCacheablePath, isPrepPublicPath } from "@/lib/prep/constants";
 import {
   hasCompletedPrepOnboarding,
   isPrepOnboardingGatedPath,
@@ -15,6 +15,22 @@ import { getPrepUserFromMiddleware } from "@/lib/prep/supabase/middleware";
 
 function setNoStore(res: NextResponse): void {
   res.headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate, max-age=0");
+}
+
+/**
+ * Public marketing pages are identical for every visitor, so they may be cached.
+ * They used to get `no-store` like everything under /prep, which also switches
+ * off the Next.js client router cache — every click in the top nav refetched the
+ * page from the server, and going back refetched it again. That is the delay.
+ *
+ * Anything that depends on a session keeps `no-store`: a cached authenticated
+ * page is a far worse bug than a slow one.
+ */
+function setPublicCache(res: NextResponse): void {
+  res.headers.set(
+    "Cache-Control",
+    "public, max-age=0, s-maxage=300, stale-while-revalidate=86400",
+  );
 }
 
 async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextResponse> {
@@ -83,7 +99,8 @@ export async function middleware(req: NextRequest) {
     }
     if (isPrepPublicPath(path)) {
       const res = NextResponse.next();
-      setNoStore(res);
+      if (isPrepCacheablePath(path)) setPublicCache(res);
+      else setNoStore(res);
       return res;
     }
     if (isPrepSessionRequiredPath(path)) {

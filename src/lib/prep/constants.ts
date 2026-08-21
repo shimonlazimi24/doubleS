@@ -70,6 +70,34 @@ export function isPrepPublicPath(pathname: string): boolean {
   return false;
 }
 
+/**
+ * Marketing pages that render the same bytes for every visitor, and may sit in
+ * a shared cache.
+ *
+ * Deliberately NOT derived from `PREP_PUBLIC_PATHS`: that set also contains
+ * `/prep/amirant/course` (per-user progress), `/prep/amirant/continue` (resolves
+ * a per-user destination) and `/prep/login`. "Public" there means "no session
+ * required to open it", which is not the same as "identical for everyone".
+ */
+const PREP_CACHEABLE_PATHS = new Set<string>([
+  `${PREP_BASE}`,
+  `${PREP_BASE}/toefl`,
+  `${PREP_BASE}/amirant`,
+  `${PREP_BASE}/amirant/info`,
+  `${PREP_BASE}/courses`,
+  `${PREP_BASE}/pricing`,
+  `${PREP_BASE}/blog`,
+  `${PREP_BASE}/about`,
+  `${PREP_BASE}/contact`,
+  `${PREP_BASE}/privacy`,
+  `${PREP_BASE}/terms`,
+]);
+
+export function isPrepCacheablePath(pathname: string): boolean {
+  if (PREP_CACHEABLE_PATHS.has(pathname)) return true;
+  return pathname.startsWith(`${PREP_BASE}/blog/`);
+}
+
 export function isPrepProtectedPath(pathname: string): boolean {
   return PREP_PROTECTED_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));
 }
