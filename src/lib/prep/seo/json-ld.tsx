@@ -1,5 +1,6 @@
 import { PREP_BRAND_LATIN, PREP_BRAND_NAV_HE, PREP_LOGO_PATH } from "@/lib/prep/brand";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
+import { PLAN_LABELS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
 
 export type JsonLdPrimitive = string | number | boolean | null;
 export type JsonLdValue = JsonLdPrimitive | JsonLdObject | JsonLdValue[];
@@ -47,11 +48,15 @@ export function amirantCourseJsonLd(baseUrl: string): JsonLdObject {
     inLanguage: "he",
     courseMode: "online",
     isAccessibleForFree: false,
-    offers: [
-      { "@type": "Offer", price: "179", priceCurrency: "ILS", name: "גישה לשבוע", category: "Paid" },
-      { "@type": "Offer", price: "229", priceCurrency: "ILS", name: "גישה לשבועיים", category: "Paid" },
-      { "@type": "Offer", price: "339", priceCurrency: "ILS", name: "גישה לחודש", category: "Paid" },
-    ],
+    // Derived from the same table the checkout charges by. These were written
+    // out again here, so a price change left a stale figure in Google's index.
+    offers: (["week", "two_weeks", "month"] as const).map((planId) => ({
+      "@type": "Offer",
+      price: String(PLAN_PRICES_NIS[planId]),
+      priceCurrency: "ILS",
+      name: PLAN_LABELS[planId] ?? planId,
+      category: "Paid",
+    })),
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "online",

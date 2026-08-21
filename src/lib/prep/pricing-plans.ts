@@ -10,7 +10,7 @@ export const PLAN_DAYS: Record<string, number> = {
 export const PLAN_PRICES_NIS: Record<string, number> = {
   week: 179,
   two_weeks: 229,
-  month: 339,
+  month: 299,
   ext_week: 20,
   ext_two_weeks: 50,
   ext_month: 70,
