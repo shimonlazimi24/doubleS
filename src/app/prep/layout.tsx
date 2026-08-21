@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     url: `${siteUrl}/prep`,
     // התמונה עצמה מגיעה מ-opengraph-image.tsx (1200×630, file convention)
   },
-  alternates: { canonical: `${siteUrl}/prep` },
+  // No canonical here on purpose: metadata in a layout is inherited by every
+  // page beneath it, so this used to declare /prep/pricing, /prep/courses,
+  // /prep/contact, /prep/terms and /prep/privacy as duplicates of /prep. Each
+  // page sets its own.
 };
 
 export default function PrepRootLayout({ children }: { children: React.ReactNode }) {

@@ -17,6 +17,7 @@ import {
   type MarketingPageContent,
 } from "@/lib/prep/marketing-pages";
 import { Container, Heading, Text } from "@/components/ui";
+import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 type Props = { params: { slug: string } };
 
@@ -26,7 +27,13 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: Props): Metadata {
   if (!isPrepMarketingSlug(params.slug)) return {};
-  return { title: PREP_MARKETING_TITLES[params.slug] };
+  return {
+    title: PREP_MARKETING_TITLES[params.slug],
+    // Without its own canonical this page inherited the layout's, which pointed
+    // at /prep — so contact, terms and privacy were submitted in the sitemap
+    // while telling Google they were duplicates of the home page.
+    alternates: { canonical: `${getPublicSiteUrl()}/prep/${params.slug}` },
+  };
 }
 
 function ContactCard() {

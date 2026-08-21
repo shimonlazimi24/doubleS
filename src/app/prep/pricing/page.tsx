@@ -4,8 +4,10 @@ import { Suspense } from "react";
 import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
 import { PrepPricingPage } from "@/components/prep/PrepPricingPage";
 import { Container, Heading, Text } from "@/components/ui";
+import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 export const metadata: Metadata = {
+  alternates: { canonical: `${getPublicSiteUrl()}/prep/pricing` },
   title: "מחירים",
   description: "רכישת גישה מלאה לקורס ההכנה לאמירנט לזמן מוגבל. אין הבטחת ציון או פטור.",
 };
