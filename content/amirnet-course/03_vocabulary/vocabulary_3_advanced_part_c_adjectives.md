@@ -164,8 +164,6 @@
 - **Antonyms:** theoretical
 - **💡 Memory tip:** ממה שרואים, לא ממה שחושבים.
 
-### 1368. **theoretical** - already covered at #948. Skipping.
-
 ### 1368. **quantitative** (adj.)
 - **Definition:** relating to quantity/numbers
 - **תרגום:** כמותי
@@ -186,9 +184,7 @@
 
 ### 1370. **subjective** - covered. 
 
-### 1370. **reliable** - already covered at #878. Skipping.
-
-### 1370. **valid** (adj.)
+### 1371. **valid** (adj.)
 - **Definition:** based on truth or logic
 - **תרגום:** תקף
 - **Example 1:** That's a **valid** point.
@@ -197,7 +193,7 @@
 - **Antonyms:** invalid
 - **💡 Memory tip:** `validity` (n).
 
-### 1371. **invalid** (adj.)
+### 1372. **invalid** (adj.)
 - **Definition:** not valid
 - **תרגום:** לא תקף
 - **Example 1:** The argument is **invalid**.
@@ -206,7 +202,7 @@
 - **Antonyms:** valid
 - **💡 Memory tip:** `in-` + `valid`.
 
-### 1372. **credible** (adj.)
+### 1373. **credible** (adj.)
 - **Definition:** believable
 - **תרגום:** אמין
 - **Example 1:** A **credible** source.
@@ -215,7 +211,7 @@
 - **Antonyms:** incredible
 - **💡 Memory tip:** מ-`credibility`.
 
-### 1373. **plausible** (adj.)
+### 1374. **plausible** (adj.)
 - **Definition:** seeming reasonable or probable
 - **תרגום:** סביר, מתקבל על הדעת
 - **Example 1:** A **plausible** explanation.
@@ -224,7 +220,7 @@
 - **Antonyms:** implausible
 - **💡 Memory tip:** יכול להיות נכון, אבל לא בטוח.
 
-### 1374. **coherent** (adj.)
+### 1375. **coherent** (adj.)
 - **Definition:** logical and consistent
 - **תרגום:** עקבי, הגיוני
 - **Example 1:** A **coherent** argument.
@@ -233,7 +229,7 @@
 - **Antonyms:** incoherent
 - **💡 Memory tip:** מ-`cohere` = להיצמד יחד.
 
-### 1375. **ambiguous** (adj.)
+### 1376. **ambiguous** (adj.)
 - **Definition:** having more than one meaning
 - **תרגום:** דו-משמעי
 - **Example 1:** The answer was **ambiguous**.
@@ -246,7 +242,7 @@
 
 # 👤 קטגוריה 2: תארי אופי מתקדמים (25 מילים)
 
-### 1376. **articulate** (adj.)
+### 1377. **articulate** (adj.)
 - **Definition:** able to express ideas clearly
 - **תרגום:** מתבטא היטב
 - **Example 1:** She's very **articulate**.
@@ -255,7 +251,7 @@
 - **Antonyms:** inarticulate
 - **💡 Memory tip:** גם פועל: לבטא.
 
-### 1377. **eloquent** (adj.)
+### 1378. **eloquent** (adj.)
 - **Definition:** fluent and persuasive
 - **תרגום:** רהוט
 - **Example 1:** An **eloquent** speech.
@@ -263,7 +259,7 @@
 - **Synonyms:** articulate, expressive
 - **💡 Memory tip:** `eloquence` (n).
 
-### 1378. **diligent** (adj.)
+### 1379. **diligent** (adj.)
 - **Definition:** showing care and effort
 - **תרגום:** חרוץ
 - **Example 1:** A **diligent** student.
@@ -272,7 +268,7 @@
 - **Antonyms:** lazy
 - **💡 Memory tip:** עבודה יסודית ומתמשכת.
 
-### 1379. **persistent** (adj.)
+### 1380. **persistent** (adj.)
 - **Definition:** continuing despite obstacles
 - **תרגום:** עקבי, מתמיד
 - **Example 1:** She's **persistent** in her efforts.
@@ -280,7 +276,7 @@
 - **Synonyms:** determined, tenacious
 - **💡 Memory tip:** מ-`persist`.
 
-### 1380. **tenacious** (adj.)
+### 1381. **tenacious** (adj.)
 - **Definition:** holding firmly
 - **תרגום:** עיקש
 - **Example 1:** A **tenacious** fighter.
@@ -288,7 +284,7 @@
 - **Synonyms:** persistent, stubborn
 - **💡 Memory tip:** לא מוותר לעולם.
 
-### 1381. **resilient** (adj.)
+### 1382. **resilient** (adj.)
 - **Definition:** able to recover quickly
 - **תרגום:** חסון
 - **Example 1:** Children are **resilient**.
@@ -297,7 +293,7 @@
 - **Antonyms:** fragile
 - **💡 Memory tip:** מתאושש ממכות.
 
-### 1382. **fragile** (adj.)
+### 1383. **fragile** (adj.)
 - **Definition:** easily broken
 - **תרגום:** שביר
 - **Example 1:** Handle with care - **fragile**!
@@ -306,7 +302,7 @@
 - **Antonyms:** strong, resilient
 - **💡 Memory tip:** פיזי או מטפורי.
 
-### 1383. **pragmatic** (adj.)
+### 1384. **pragmatic** (adj.)
 - **Definition:** practical and realistic
 - **תרגום:** פרגמטי
 - **Example 1:** Take a **pragmatic** approach.
@@ -315,7 +311,7 @@
 - **Antonyms:** idealistic
 - **💡 Memory tip:** מעשי וריאלי.
 
-### 1384. **idealistic** (adj.)
+### 1385. **idealistic** (adj.)
 - **Definition:** having high ideals
 - **תרגום:** אידאליסטי
 - **Example 1:** Young people are often **idealistic**.
@@ -324,7 +320,7 @@
 - **Antonyms:** pragmatic, realistic
 - **💡 Memory tip:** מ-`ideal`.
 
-### 1385. **cynical** (adj.)
+### 1386. **cynical** (adj.)
 - **Definition:** believing people are selfish
 - **תרגום:** ציני
 - **Example 1:** Don't be so **cynical**.
@@ -333,7 +329,7 @@
 - **Antonyms:** idealistic
 - **💡 Memory tip:** מפקפק בטוב שבאנשים.
 
-### 1386. **skeptical** (adj.)
+### 1387. **skeptical** (adj.)
 - **Definition:** doubting, questioning
 - **תרגום:** ספקני
 - **Example 1:** I'm **skeptical** about his claims.
@@ -342,7 +338,7 @@
 - **Antonyms:** trusting, convinced
 - **💡 Memory tip:** `skepticism` (n).
 
-### 1387. **compassionate** (adj.)
+### 1388. **compassionate** (adj.)
 - **Definition:** showing sympathy
 - **תרגום:** חומל
 - **Example 1:** A **compassionate** nurse.
@@ -351,7 +347,7 @@
 - **Antonyms:** cruel
 - **💡 Memory tip:** מ-`compassion`.
 
-### 1388. **arrogant** (adj.)
+### 1389. **arrogant** (adj.)
 - **Definition:** overly proud
 - **תרגום:** שחצן
 - **Example 1:** His **arrogant** attitude is annoying.
@@ -360,7 +356,7 @@
 - **Antonyms:** humble
 - **💡 Memory tip:** מידת גאווה יתר.
 
-### 1389. **humble** (adj.)
+### 1390. **humble** (adj.)
 - **Definition:** not proud
 - **תרגום:** צנוע
 - **Example 1:** A **humble** person despite success.
@@ -369,7 +365,7 @@
 - **Antonyms:** arrogant, proud
 - **💡 Memory tip:** `humility` (n).
 
-### 1390. **modest** (adj.)
+### 1391. **modest** (adj.)
 - **Definition:** not showing off; small
 - **תרגום:** צנוע
 - **Example 1:** She's **modest** about her skills.
@@ -378,7 +374,7 @@
 - **Antonyms:** boastful, excessive
 - **💡 Memory tip:** שני מובנים: צנוע או קטן.
 
-### 1391. **assertive** (adj.)
+### 1392. **assertive** (adj.)
 - **Definition:** confident and direct
 - **תרגום:** אסרטיבי
 - **Example 1:** Be **assertive**, not aggressive.
@@ -387,7 +383,7 @@
 - **Antonyms:** passive, timid
 - **💡 Memory tip:** מ-`assert`.
 
-### 1392. **passive** (adj.)
+### 1393. **passive** (adj.)
 - **Definition:** accepting without resistance
 - **תרגום:** פסיבי
 - **Example 1:** Don't be **passive** - act!
@@ -396,7 +392,7 @@
 - **Antonyms:** active, assertive
 - **💡 Memory tip:** גם דקדוק: passive voice.
 
-### 1393. **charismatic** (adj.)
+### 1394. **charismatic** (adj.)
 - **Definition:** having personal charm
 - **תרגום:** כריזמטי
 - **Example 1:** A **charismatic** leader.
@@ -404,7 +400,7 @@
 - **Synonyms:** charming, magnetic
 - **💡 Memory tip:** `charisma` (n).
 
-### 1394. **eccentric** (adj.)
+### 1395. **eccentric** (adj.)
 - **Definition:** unconventional; unusual
 - **תרגום:** אקסצנטרי
 - **Example 1:** An **eccentric** artist.
@@ -413,7 +409,7 @@
 - **Antonyms:** conventional
 - **💡 Memory tip:** חריג מהרגיל.
 
-### 1395. **conventional** (adj.)
+### 1396. **conventional** (adj.)
 - **Definition:** traditional; usual
 - **תרגום:** מקובל, קונבנציונלי
 - **Example 1:** **Conventional** wisdom says...
@@ -422,7 +418,7 @@
 - **Antonyms:** unconventional, unusual
 - **💡 Memory tip:** מ-`convention` (מוסכמה).
 
-### 1396. **innovative** (adj.)
+### 1397. **innovative** (adj.)
 - **Definition:** introducing new ideas
 - **תרגום:** חדשני
 - **Example 1:** An **innovative** design.
@@ -431,7 +427,7 @@
 - **Antonyms:** traditional
 - **💡 Memory tip:** מ-`innovate`.
 
-### 1397. **conservative** (adj.)
+### 1398. **conservative** (adj.)
 - **Definition:** cautious; traditional
 - **תרגום:** שמרני
 - **Example 1:** A **conservative** estimate.
@@ -440,7 +436,7 @@
 - **Antonyms:** liberal, progressive
 - **💡 Memory tip:** מ-`conserve`.
 
-### 1398. **progressive** (adj.)
+### 1399. **progressive** (adj.)
 - **Definition:** supporting modern reforms
 - **תרגום:** פרוגרסיבי
 - **Example 1:** **Progressive** politics.
@@ -449,7 +445,7 @@
 - **Antonyms:** conservative
 - **💡 Memory tip:** מ-`progress`.
 
-### 1399. **radical** (adj.)
+### 1400. **radical** (adj.)
 - **Definition:** extreme; fundamental
 - **תרגום:** רדיקלי, קיצוני
 - **Example 1:** A **radical** change is needed.
@@ -458,7 +454,7 @@
 - **Antonyms:** moderate
 - **💡 Memory tip:** מהשורש - שינוי מהיסוד.
 
-### 1400. **moderate** (adj.)
+### 1401. **moderate** (adj.)
 - **Definition:** not extreme
 - **תרגום:** מתון
 - **Example 1:** A **moderate** amount.
@@ -471,7 +467,7 @@
 
 # 📊 קטגוריה 3: תארי רמה ואיכות (25 מילים)
 
-### 1401. **sophisticated** (adj.)
+### 1402. **sophisticated** (adj.)
 - **Definition:** complex and refined
 - **תרגום:** מתוחכם
 - **Example 1:** **Sophisticated** technology.
@@ -480,7 +476,7 @@
 - **Antonyms:** simple, naive
 - **💡 Memory tip:** רמה גבוהה של תחכום.
 
-### 1402. **elaborate** (adj.)
+### 1403. **elaborate** (adj.)
 - **Definition:** complicated and detailed
 - **תרגום:** מורכב, מפורט
 - **Example 1:** An **elaborate** plan.
@@ -489,7 +485,7 @@
 - **Antonyms:** simple
 - **💡 Memory tip:** גם פועל: לפרט.
 
-### 1403. **intricate** (adj.)
+### 1404. **intricate** (adj.)
 - **Definition:** having many complex parts
 - **תרגום:** מורכב, מפותל
 - **Example 1:** **Intricate** details.
@@ -498,7 +494,7 @@
 - **Antonyms:** simple, plain
 - **💡 Memory tip:** מורכב עם הרבה פרטים.
 
-### 1404. **exquisite** (adj.)
+### 1405. **exquisite** (adj.)
 - **Definition:** extremely beautiful or delicate
 - **תרגום:** מושלם, עדין
 - **Example 1:** **Exquisite** jewelry.
@@ -506,9 +502,9 @@
 - **Synonyms:** beautiful, refined
 - **💡 Memory tip:** יופי מעודן.
 
-### 1405. **profound** - already covered at #1357. Skipping.
+### 1406. **profound** - already covered at #1357. Skipping.
 
-### 1405. **tremendous** (adj.)
+### 1407. **tremendous** (adj.)
 - **Definition:** very great
 - **תרגום:** אדיר
 - **Example 1:** **Tremendous** effort was made.
@@ -516,7 +512,7 @@
 - **Synonyms:** huge, massive
 - **💡 Memory tip:** מרשים בגודלו.
 
-### 1406. **immense** (adj.)
+### 1408. **immense** (adj.)
 - **Definition:** extremely large
 - **תרגום:** עצום
 - **Example 1:** **Immense** pressure.
@@ -524,7 +520,7 @@
 - **Synonyms:** huge, vast
 - **💡 Memory tip:** ענק מאוד.
 
-### 1407. **vast** (adj.)
+### 1409. **vast** (adj.)
 - **Definition:** of very great size
 - **תרגום:** עצום, נרחב
 - **Example 1:** **Vast** fields of wheat.
@@ -533,7 +529,7 @@
 - **Antonyms:** tiny, small
 - **💡 Memory tip:** גדלה של טריטוריה.
 
-### 1408. **miniscule** / **minuscule** (adj.)
+### 1410. **miniscule** / **minuscule** (adj.)
 - **Definition:** extremely small
 - **תרגום:** זעיר ביותר
 - **Example 1:** A **miniscule** amount.
@@ -542,7 +538,7 @@
 - **Antonyms:** massive, huge
 - **💡 Memory tip:** קטן במיוחד.
 
-### 1409. **paramount** (adj.)
+### 1411. **paramount** (adj.)
 - **Definition:** more important than anything else
 - **תרגום:** עליון, ראשון במעלה
 - **Example 1:** Safety is **paramount**.
@@ -550,7 +546,7 @@
 - **Synonyms:** supreme, foremost
 - **💡 Memory tip:** החשוב ביותר.
 
-### 1410. **pivotal** (adj.)
+### 1412. **pivotal** (adj.)
 - **Definition:** of crucial importance
 - **תרגום:** מכריע, ציר
 - **Example 1:** A **pivotal** moment in history.
@@ -558,7 +554,7 @@
 - **Synonyms:** crucial, critical
 - **💡 Memory tip:** כמו ציר מרכזי.
 
-### 1411. **imperative** (adj.)
+### 1413. **imperative** (adj.)
 - **Definition:** absolutely necessary
 - **תרגום:** הכרחי
 - **Example 1:** It's **imperative** that we act.
@@ -566,7 +562,7 @@
 - **Synonyms:** essential, vital
 - **💡 Memory tip:** דקדוקית: ציווי.
 
-### 1412. **indispensable** (adj.)
+### 1414. **indispensable** (adj.)
 - **Definition:** absolutely necessary
 - **תרגום:** חיוני, שאי אפשר בלעדיו
 - **Example 1:** Water is **indispensable** for life.
@@ -575,7 +571,7 @@
 - **Antonyms:** dispensable, optional
 - **💡 Memory tip:** `in-` + `dispensable` = לא ניתן להסתדר בלעדיו.
 
-### 1413. **optional** (adj.)
+### 1415. **optional** (adj.)
 - **Definition:** not required
 - **תרגום:** רשות, לא חובה
 - **Example 1:** Attendance is **optional**.
@@ -584,7 +580,7 @@
 - **Antonyms:** mandatory, required
 - **💡 Memory tip:** מ-`option`.
 
-### 1414. **mandatory** (adj.)
+### 1416. **mandatory** (adj.)
 - **Definition:** required by law or rules
 - **תרגום:** חובה
 - **Example 1:** Attendance is **mandatory**.
@@ -593,7 +589,7 @@
 - **Antonyms:** optional
 - **💡 Memory tip:** חייבים לעשות.
 
-### 1415. **compulsory** (adj.)
+### 1417. **compulsory** (adj.)
 - **Definition:** required
 - **תרגום:** חובה
 - **Example 1:** **Compulsory** education.
@@ -602,7 +598,7 @@
 - **Antonyms:** optional
 - **💡 Memory tip:** כמו `mandatory`.
 
-### 1416. **voluntary** (adj.)
+### 1418. **voluntary** (adj.)
 - **Definition:** done by choice
 - **תרגום:** התנדבותי
 - **Example 1:** **Voluntary** service.
@@ -611,7 +607,7 @@
 - **Antonyms:** forced, compulsory
 - **💡 Memory tip:** `volunteer` (v/n).
 
-### 1417. **inevitable** (adj.)
+### 1419. **inevitable** (adj.)
 - **Definition:** certain to happen
 - **תרגום:** בלתי נמנע
 - **Example 1:** Change is **inevitable**.
@@ -620,7 +616,7 @@
 - **Antonyms:** avoidable
 - **💡 Memory tip:** אי אפשר להימנע.
 
-### 1418. **unavoidable** (adj.)
+### 1420. **unavoidable** (adj.)
 - **Definition:** cannot be avoided
 - **תרגום:** בלתי נמנע
 - **Example 1:** Conflicts are **unavoidable**.
@@ -629,7 +625,7 @@
 - **Antonyms:** avoidable
 - **💡 Memory tip:** `un-` + `avoidable`.
 
-### 1419. **feasible** (adj.)
+### 1421. **feasible** (adj.)
 - **Definition:** possible to do
 - **תרגום:** בר-ביצוע
 - **Example 1:** Is the plan **feasible**?
@@ -638,7 +634,7 @@
 - **Antonyms:** impossible, infeasible
 - **💡 Memory tip:** פרקטי ואפשרי.
 
-### 1420. **viable** (adj.)
+### 1422. **viable** (adj.)
 - **Definition:** capable of working successfully
 - **תרגום:** בר-קיימא
 - **Example 1:** A **viable** option.
@@ -646,7 +642,7 @@
 - **Synonyms:** feasible, workable
 - **💡 Memory tip:** יכול להצליח.
 
-### 1421. **impeccable** (adj.)
+### 1423. **impeccable** (adj.)
 - **Definition:** without flaws
 - **תרגום:** ללא רבב
 - **Example 1:** **Impeccable** manners.
@@ -655,7 +651,7 @@
 - **Antonyms:** flawed
 - **💡 Memory tip:** `im-` + `peccable` (לא בר-חטא).
 
-### 1422. **flawless** (adj.)
+### 1424. **flawless** (adj.)
 - **Definition:** without any flaws
 - **תרגום:** מושלם
 - **Example 1:** A **flawless** diamond.
@@ -664,7 +660,7 @@
 - **Antonyms:** flawed, imperfect
 - **💡 Memory tip:** `flaw` + `-less`.
 
-### 1423. **defective** (adj.)
+### 1425. **defective** (adj.)
 - **Definition:** having a defect
 - **תרגום:** פגום
 - **Example 1:** A **defective** product.
@@ -673,7 +669,7 @@
 - **Antonyms:** perfect
 - **💡 Memory tip:** מ-`defect` (פגם).
 
-### 1424. **obsolete** (adj.)
+### 1426. **obsolete** (adj.)
 - **Definition:** out of date
 - **תרגום:** מיושן
 - **Example 1:** **Obsolete** technology.
@@ -682,7 +678,7 @@
 - **Antonyms:** modern, current
 - **💡 Memory tip:** מיושן, לא בשימוש.
 
-### 1425. **cutting-edge** (adj.)
+### 1427. **cutting-edge** (adj.)
 - **Definition:** most advanced
 - **תרגום:** חדיש ביותר
 - **Example 1:** **Cutting-edge** technology.
@@ -695,7 +691,7 @@
 
 # 📖 קטגוריה 4: תארים אקדמיים ספרותיים (25 מילים)
 
-### 1426. **pervasive** (adj.)
+### 1428. **pervasive** (adj.)
 - **Definition:** spreading widely
 - **תרגום:** מתפשט
 - **Example 1:** **Pervasive** corruption.
@@ -703,7 +699,7 @@
 - **Synonyms:** widespread, prevalent
 - **💡 Memory tip:** `pervade` = לחדור לכל פינה.
 
-### 1427. **prevalent** (adj.)
+### 1429. **prevalent** (adj.)
 - **Definition:** widespread; common
 - **תרגום:** נפוץ, שולט
 - **Example 1:** **Prevalent** beliefs.
@@ -712,7 +708,7 @@
 - **Antonyms:** rare
 - **💡 Memory tip:** פורמלי מ-`common`.
 
-### 1428. **widespread** (adj.)
+### 1430. **widespread** (adj.)
 - **Definition:** found over a large area
 - **תרגום:** נפוץ, נרחב
 - **Example 1:** **Widespread** support.
@@ -721,7 +717,7 @@
 - **Antonyms:** limited
 - **💡 Memory tip:** `wide` + `spread`.
 
-### 1429. **notable** (adj.)
+### 1431. **notable** (adj.)
 - **Definition:** worth noticing
 - **תרגום:** ראוי לציון
 - **Example 1:** A **notable** achievement.
@@ -729,7 +725,7 @@
 - **Synonyms:** remarkable, significant
 - **💡 Memory tip:** ראוי להערה (note).
 
-### 1430. **prominent** (adj.)
+### 1432. **prominent** (adj.)
 - **Definition:** important; easily noticed
 - **תרגום:** בולט
 - **Example 1:** A **prominent** scientist.
@@ -738,7 +734,7 @@
 - **Antonyms:** obscure
 - **💡 Memory tip:** בולט ומורגש.
 
-### 1431. **obscure** (adj.)
+### 1433. **obscure** (adj.)
 - **Definition:** not well-known; unclear
 - **תרגום:** לא ידוע, עמום
 - **Example 1:** An **obscure** poet.
@@ -747,7 +743,7 @@
 - **Antonyms:** well-known, clear
 - **💡 Memory tip:** שני מובנים.
 
-### 1432. **renowned** (adj.)
+### 1434. **renowned** (adj.)
 - **Definition:** famous
 - **תרגום:** מפורסם
 - **Example 1:** A **renowned** chef.
@@ -756,7 +752,7 @@
 - **Antonyms:** unknown, obscure
 - **💡 Memory tip:** `renown` (n) = פרסום.
 
-### 1433. **distinguished** (adj.)
+### 1435. **distinguished** (adj.)
 - **Definition:** successful and respected
 - **תרגום:** מכובד, נערץ
 - **Example 1:** A **distinguished** career.
@@ -764,7 +760,7 @@
 - **Synonyms:** eminent, notable
 - **💡 Memory tip:** מ-`distinguish`.
 
-### 1434. **eminent** (adj.)
+### 1436. **eminent** (adj.)
 - **Definition:** famous and respected
 - **תרגום:** נערץ
 - **Example 1:** An **eminent** scholar.
@@ -772,7 +768,7 @@
 - **Synonyms:** distinguished, renowned
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 1435. **illustrious** (adj.)
+### 1437. **illustrious** (adj.)
 - **Definition:** famous for admirable achievements
 - **תרגום:** מפואר
 - **Example 1:** An **illustrious** career.
@@ -780,7 +776,7 @@
 - **Synonyms:** distinguished, eminent
 - **💡 Memory tip:** פורמלי מאוד.
 
-### 1436. **notorious** (adj.)
+### 1438. **notorious** (adj.)
 - **Definition:** famous for something bad
 - **תרגום:** ידוע לשמצה
 - **Example 1:** A **notorious** criminal.
@@ -788,7 +784,7 @@
 - **Synonyms:** infamous
 - **💡 Memory tip:** `famous` חיובי, `notorious` שלילי.
 
-### 1437. **infamous** (adj.)
+### 1439. **infamous** (adj.)
 - **Definition:** well known for being bad
 - **תרגום:** ידוע לרעה
 - **Example 1:** The **infamous** Bermuda Triangle.
@@ -797,7 +793,7 @@
 - **Antonyms:** famous
 - **💡 Memory tip:** `in-` + `famous` (מפורסם בגלל משהו רע).
 
-### 1438. **controversial** (adj.)
+### 1440. **controversial** (adj.)
 - **Definition:** causing disagreement
 - **תרגום:** שנוי במחלוקת
 - **Example 1:** A **controversial** decision.
@@ -805,7 +801,7 @@
 - **Synonyms:** disputed, debatable
 - **💡 Memory tip:** מ-`controversy`.
 
-### 1439. **debatable** (adj.)
+### 1441. **debatable** (adj.)
 - **Definition:** open to discussion
 - **תרגום:** נתון לוויכוח
 - **Example 1:** That's **debatable**.
@@ -813,7 +809,7 @@
 - **Synonyms:** questionable, controversial
 - **💡 Memory tip:** מ-`debate`.
 
-### 1440. **questionable** (adj.)
+### 1442. **questionable** (adj.)
 - **Definition:** doubtful
 - **תרגום:** מוטל בספק
 - **Example 1:** His motives are **questionable**.
@@ -822,7 +818,7 @@
 - **Antonyms:** certain
 - **💡 Memory tip:** מ-`question`.
 
-### 1441. **dubious** (adj.)
+### 1443. **dubious** (adj.)
 - **Definition:** doubtful; suspicious
 - **תרגום:** מפוקפק
 - **Example 1:** A **dubious** reputation.
@@ -830,7 +826,7 @@
 - **Synonyms:** doubtful, questionable
 - **💡 Memory tip:** פורמלי - ספרותי.
 
-### 1442. **inconclusive** (adj.)
+### 1444. **inconclusive** (adj.)
 - **Definition:** not definite
 - **תרגום:** לא חד-משמעי
 - **Example 1:** **Inconclusive** results.
@@ -839,7 +835,7 @@
 - **Antonyms:** conclusive
 - **💡 Memory tip:** מ-`conclude`.
 
-### 1443. **decisive** (adj.)
+### 1445. **decisive** (adj.)
 - **Definition:** conclusive; firm
 - **תרגום:** מכריע, נחוש
 - **Example 1:** A **decisive** victory.
@@ -848,7 +844,7 @@
 - **Antonyms:** indecisive, hesitant
 - **💡 Memory tip:** מ-`decide`.
 
-### 1444. **subtle** (adj.)
+### 1446. **subtle** (adj.)
 - **Definition:** not obvious
 - **תרגום:** עדין, דק
 - **Example 1:** A **subtle** difference.
@@ -857,9 +853,9 @@
 - **Antonyms:** obvious
 - **💡 Memory tip:** "b" silent! /ˈsʌtəl/.
 
-### 1445. **explicit** - already covered at #1360. Skipping.
+### 1447. **explicit** - already covered at #1360. Skipping.
 
-### 1445. **overt** (adj.)
+### 1448. **overt** (adj.)
 - **Definition:** open and clear
 - **תרגום:** גלוי
 - **Example 1:** **Overt** criticism.
@@ -868,7 +864,7 @@
 - **Antonyms:** covert, hidden
 - **💡 Memory tip:** גלוי לעין.
 
-### 1446. **covert** (adj.)
+### 1449. **covert** (adj.)
 - **Definition:** hidden; secret
 - **תרגום:** חשאי
 - **Example 1:** **Covert** operations.
@@ -877,7 +873,7 @@
 - **Antonyms:** overt
 - **💡 Memory tip:** הפוך מ-`overt`.
 
-### 1447. **transparent** (adj.)
+### 1450. **transparent** (adj.)
 - **Definition:** open; easy to see through
 - **תרגום:** שקוף
 - **Example 1:** **Transparent** glass.
@@ -886,7 +882,7 @@
 - **Antonyms:** opaque
 - **💡 Memory tip:** פיזי ומטפורי.
 
-### 1448. **elusive** (adj.)
+### 1451. **elusive** (adj.)
 - **Definition:** difficult to find or understand
 - **תרגום:** חמקמק
 - **Example 1:** An **elusive** butterfly.
@@ -894,9 +890,9 @@
 - **Synonyms:** evasive
 - **💡 Memory tip:** מ-`elude` (להתחמק).
 
-### 1449. **inevitable** - already covered at #1417. Skipping.
+### 1452. **inevitable** - already covered at #1417. Skipping.
 
-### 1449. **unprecedented** (adj.)
+### 1453. **unprecedented** (adj.)
 - **Definition:** never done before
 - **תרגום:** חסר תקדים
 - **Example 1:** An **unprecedented** situation.
@@ -904,7 +900,7 @@
 - **Synonyms:** unique, historic
 - **💡 Memory tip:** `un-` + `precedent`.
 
-### 1450. **contemporary** (adj.)
+### 1454. **contemporary** (adj.)
 - **Definition:** belonging to the present time
 - **תרגום:** עכשווי
 - **Example 1:** **Contemporary** art.
@@ -929,19 +925,19 @@
 
 ## 🧠 לקחים חשובים:
 
-### 1. **תארי ניתוח אקדמיים**
+### 1455. **תארי ניתוח אקדמיים**
 - `rigorous`, `thorough`, `comprehensive` - יסודיים
 - `empirical`, `quantitative`, `qualitative` - מחקר
 - `explicit`, `implicit`, `subtle` - בהירות
 
-### 2. **זוגות מנוגדים חשובים**
+### 1456. **זוגות מנוגדים חשובים**
 - `objective` ↔ `subjective`
 - `explicit` ↔ `implicit`
 - `overt` ↔ `covert`
 - `intrinsic` ↔ `extrinsic`
 - `conservative` ↔ `progressive`
 
-### 3. **תארי חשיבות - מרמה בינונית עד גבוהה**
+### 1457. **תארי חשיבות - מרמה בינונית עד גבוהה**
 - `important` → `significant` → `crucial` → `paramount`
 - `essential` → `indispensable` → `imperative`
 

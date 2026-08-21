@@ -300,8 +300,6 @@
 - **Synonyms:** if, on condition that
 - **💡 Memory tip:** תנאי פורמלי.
 
-### 1986. **notwithstanding** - already covered at #1481. Skipping.
-
 ### 1986. **granted that** (conj.)
 - **Definition:** even if; although
 - **תרגום:** אף ש-, בהנחה ש-
@@ -372,7 +370,7 @@
 
 ### 1994. **status quo** - already covered at #1788. Skipping.
 
-### 1994. **bona fide** (adj.)
+### 1995. **bona fide** (adj.)
 - **Definition:** genuine; real
 - **תרגום:** אמיתי, כנה
 - **Example 1:** A **bona fide** offer.
@@ -380,7 +378,7 @@
 - **Synonyms:** genuine, authentic
 - **💡 Memory tip:** לטינית - "בתום לב".
 
-### 1995. **de facto** (adj./adv.)
+### 1996. **de facto** (adj./adv.)
 - **Definition:** in fact; actually
 - **תרגום:** למעשה
 - **Example 1:** **De facto** leader.
@@ -388,7 +386,7 @@
 - **Synonyms:** in reality, effectively
 - **💡 Memory tip:** לטינית - "מן המציאות".
 
-### 1996. **de jure** (adj./adv.)
+### 1997. **de jure** (adj./adv.)
 - **Definition:** by law; legally
 - **תרגום:** חוקית, לפי החוק
 - **Example 1:** **De jure** recognition.
@@ -397,7 +395,7 @@
 - **Antonyms:** de facto
 - **💡 Memory tip:** לטינית - "לפי חוק".
 
-### 1997. **modus operandi** (n.)
+### 1998. **modus operandi** (n.)
 - **Definition:** method of operation
 - **תרגום:** שיטת פעולה
 - **Example 1:** His **modus operandi** is clear.
@@ -405,7 +403,7 @@
 - **Synonyms:** method, way
 - **💡 Memory tip:** לטינית. קיצור: M.O.
 
-### 1998. **raison d'être** (n.)
+### 1999. **raison d'être** (n.)
 - **Definition:** reason for existence
 - **תרגום:** סיבה לקיום
 - **Example 1:** Work is his **raison d'être**.
@@ -413,7 +411,7 @@
 - **Synonyms:** purpose, justification
 - **💡 Memory tip:** צרפתית.
 
-### 1999. **carpe diem** (phrase)
+### 2000. **carpe diem** (phrase)
 - **Definition:** seize the day
 - **תרגום:** קפוץ על ההזדמנות
 - **Example 1:** **Carpe diem** - live fully!
@@ -421,7 +419,7 @@
 - **Synonyms:** seize the day
 - **💡 Memory tip:** לטינית קלאסית.
 
-### 2000. **verbatim** (adv./adj.)
+### 2001. **verbatim** (adv./adj.)
 - **Definition:** word for word
 - **תרגום:** מילה במילה
 - **Example 1:** Quoted **verbatim**.
@@ -449,18 +447,18 @@
 
 ## 🧠 מה למדת בחבילה 4?
 
-### 1. **המילים הנדירות ביותר של השפה**
+### 2002. **המילים הנדירות ביותר של השפה**
 - פעלים: `proclaim`, `elucidate`, `vanquish`, `succumb`
 - שמות עצם: `zenith`, `nadir`, `ubiquity`, `dichotomy`
 - תארים: `ubiquitous`, `ephemeral`, `perpetual`
 - תארי פועל: `invariably`, `irrevocably`, `vehemently`
 
-### 2. **ביטויים לאטיניים/צרפתיים מקובלים באקדמיה**
+### 2003. **ביטויים לאטיניים/צרפתיים מקובלים באקדמיה**
 - `per se`, `ad hoc`, `de facto`, `de jure`
 - `vice versa`, `bona fide`, `verbatim`
 - `modus operandi`, `raison d'être`
 
-### 3. **מילות קישור פורמליות מאוד**
+### 2004. **מילות קישור פורמליות מאוד**
 - `whereupon`, `therein`, `thereof`, `thereto`
 - `inasmuch as`, `insofar as`, `pursuant to`
 - `in lieu of`, `barring`, `save for`

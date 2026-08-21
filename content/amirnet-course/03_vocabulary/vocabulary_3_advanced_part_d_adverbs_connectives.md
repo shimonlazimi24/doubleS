@@ -126,17 +126,7 @@
 - **Synonyms:** completely, fully
 - **💡 Memory tip:** מ-`thorough`.
 
-### 1465. **hence** - already covered at #979. Skipping.
-
-### 1465. **hence** (adv.)
-- **Definition:** for this reason; from now
-- **תרגום:** ומכאן; מעתה
-- **Example 1:** He's sick, **hence** absent.
-- **Example 2:** Two weeks **hence**, I'll return.
-- **Synonyms:** therefore, thus
-- **💡 Memory tip:** פורמלי וספרותי מאוד.
-
-### 1466. **thereby** (adv.)
+### 1465. **thereby** (adv.)
 - **Definition:** by that means
 - **תרגום:** ובכך
 - **Example 1:** He studied hard, **thereby** succeeding.
@@ -144,7 +134,7 @@
 - **Synonyms:** thus, consequently
 - **💡 Memory tip:** `there-by` = על ידי זה.
 
-### 1467. **ultimately** (adv.)
+### 1466. **ultimately** (adv.)
 - **Definition:** in the end
 - **תרגום:** בסופו של דבר
 - **Example 1:** **Ultimately**, success is ours.
@@ -152,9 +142,7 @@
 - **Synonyms:** eventually, finally
 - **💡 Memory tip:** מ-`ultimate`.
 
-### 1468. **eventually** - already covered at #959. Skipping.
-
-### 1468. **gradually** (adv.)
+### 1467. **gradually** (adv.)
 - **Definition:** slowly, over time
 - **תרגום:** בהדרגה
 - **Example 1:** He **gradually** improved.
@@ -163,7 +151,7 @@
 - **Antonyms:** suddenly
 - **💡 Memory tip:** מ-`gradual`.
 
-### 1469. **instantly** (adv.)
+### 1468. **instantly** (adv.)
 - **Definition:** immediately
 - **תרגום:** מיד
 - **Example 1:** I recognized her **instantly**.
@@ -171,7 +159,7 @@
 - **Synonyms:** immediately, right away
 - **💡 Memory tip:** מ-`instant`.
 
-### 1470. **simultaneously** (adv.)
+### 1469. **simultaneously** (adv.)
 - **Definition:** at the same time
 - **תרגום:** בו-זמנית
 - **Example 1:** They spoke **simultaneously**.
@@ -183,7 +171,7 @@
 
 # 🔗 קטגוריה 2: מילות קישור אקדמיות גבוהות (15 מילים)
 
-### 1471. **likewise** (adv.)
+### 1470. **likewise** (adv.)
 - **Definition:** in the same way
 - **תרגום:** כמו כן, באותו אופן
 - **Example 1:** She left, and **likewise** did he.
@@ -191,7 +179,7 @@
 - **Synonyms:** similarly, also
 - **💡 Memory tip:** `like-wise` = כמו שנעשה.
 
-### 1472. **similarly** (adv.)
+### 1471. **similarly** (adv.)
 - **Definition:** in a similar way
 - **תרגום:** באופן דומה
 - **Example 1:** **Similarly**, we can apply this rule.
@@ -199,7 +187,7 @@
 - **Synonyms:** likewise
 - **💡 Memory tip:** מ-`similar`.
 
-### 1473. **conversely** (adv.)
+### 1472. **conversely** (adv.)
 - **Definition:** on the contrary
 - **תרגום:** לעומת זאת
 - **Example 1:** Poor planning leads to failure; **conversely**, good planning ensures success.
@@ -207,7 +195,7 @@
 - **Synonyms:** on the contrary, in contrast
 - **💡 Memory tip:** מ-`converse` (הפוך).
 
-### 1474. **alternatively** (adv.)
+### 1473. **alternatively** (adv.)
 - **Definition:** as another option
 - **תרגום:** כחלופה
 - **Example 1:** You can take the bus. **Alternatively**, walk.
@@ -215,7 +203,7 @@
 - **Synonyms:** instead
 - **💡 Memory tip:** מ-`alternative`.
 
-### 1475. **accordingly** (adv.)
+### 1474. **accordingly** (adv.)
 - **Definition:** in a corresponding way
 - **תרגום:** בהתאם לכך
 - **Example 1:** He's sick; **accordingly**, he's absent.
@@ -223,7 +211,7 @@
 - **Synonyms:** therefore, thus
 - **💡 Memory tip:** מ-`according`.
 
-### 1476. **subsequently** (adv.)
+### 1475. **subsequently** (adv.)
 - **Definition:** after that
 - **תרגום:** לאחר מכן
 - **Example 1:** She graduated and **subsequently** found a job.
@@ -231,7 +219,7 @@
 - **Synonyms:** later, afterward
 - **💡 Memory tip:** מ-`subsequent`.
 
-### 1477. **initially** (adv.)
+### 1476. **initially** (adv.)
 - **Definition:** at the start
 - **תרגום:** בתחילה
 - **Example 1:** **Initially**, I disagreed.
@@ -239,7 +227,7 @@
 - **Synonyms:** at first, originally
 - **💡 Memory tip:** מ-`initial`.
 
-### 1478. **henceforth** (adv.)
+### 1477. **henceforth** (adv.)
 - **Definition:** from now on
 - **תרגום:** מעתה ואילך
 - **Example 1:** **Henceforth**, this rule applies.
@@ -247,7 +235,7 @@
 - **Synonyms:** from now on
 - **💡 Memory tip:** פורמלי מאוד.
 
-### 1479. **hitherto** (adv.)
+### 1478. **hitherto** (adv.)
 - **Definition:** until now
 - **תרגום:** עד כה
 - **Example 1:** **Hitherto** unknown facts.
@@ -255,7 +243,7 @@
 - **Synonyms:** until now, so far
 - **💡 Memory tip:** ספרותי ופורמלי.
 
-### 1480. **whereby** (adv.)
+### 1479. **whereby** (adv.)
 - **Definition:** by which
 - **תרגום:** שבאמצעותו
 - **Example 1:** A system **whereby** everyone benefits.
@@ -263,7 +251,7 @@
 - **Synonyms:** by which
 - **💡 Memory tip:** `where` + `by`.
 
-### 1481. **notwithstanding** (prep./adv.)
+### 1480. **notwithstanding** (prep./adv.)
 - **Definition:** in spite of
 - **תרגום:** למרות זאת
 - **Example 1:** **Notwithstanding** the difficulties, we succeeded.
@@ -271,7 +259,7 @@
 - **Synonyms:** despite, in spite of
 - **💡 Memory tip:** `not + withstanding` = לא עומד בדרך.
 
-### 1482. **albeit** (conj.)
+### 1481. **albeit** (conj.)
 - **Definition:** although
 - **תרגום:** אף על פי
 - **Example 1:** An important, **albeit** expensive, decision.
@@ -279,7 +267,7 @@
 - **Synonyms:** although, though
 - **💡 Memory tip:** `al-` + `be-it` = "למרות שיהיה".
 
-### 1483. **wherein** (adv.)
+### 1482. **wherein** (adv.)
 - **Definition:** in which
 - **תרגום:** שבו
 - **Example 1:** A world **wherein** peace reigns.
@@ -287,7 +275,7 @@
 - **Synonyms:** in which
 - **💡 Memory tip:** `where` + `in`.
 
-### 1484. **heretofore** (adv.)
+### 1483. **heretofore** (adv.)
 - **Definition:** up until now
 - **תרגום:** עד כה
 - **Example 1:** **Heretofore** unmentioned facts.
@@ -295,7 +283,7 @@
 - **Synonyms:** hitherto, previously
 - **💡 Memory tip:** פורמלי - משפטי.
 
-### 1485. **vis-à-vis** (prep.)
+### 1484. **vis-à-vis** (prep.)
 - **Definition:** in relation to
 - **תרגום:** ביחס ל-
 - **Example 1:** Discussion **vis-à-vis** the new policy.
@@ -307,7 +295,7 @@
 
 # 💬 קטגוריה 3: ביטויי דעה וניתוח מקצועי (15 מילים)
 
-### 1486. **arguably** (adv.)
+### 1485. **arguably** (adv.)
 - **Definition:** possibly
 - **תרגום:** ייתכן, אולי
 - **Example 1:** He's **arguably** the best player.
@@ -315,7 +303,7 @@
 - **Synonyms:** possibly
 - **💡 Memory tip:** אפשר לטעון ש-.
 
-### 1487. **presumably** (adv.)
+### 1486. **presumably** (adv.)
 - **Definition:** supposedly
 - **תרגום:** יש להניח
 - **Example 1:** **Presumably**, she'll come.
@@ -323,7 +311,7 @@
 - **Synonyms:** probably, supposedly
 - **💡 Memory tip:** מ-`presume`.
 
-### 1488. **reportedly** (adv.)
+### 1487. **reportedly** (adv.)
 - **Definition:** according to reports
 - **תרגום:** על פי דיווחים
 - **Example 1:** He is **reportedly** ill.
@@ -331,7 +319,7 @@
 - **Synonyms:** allegedly
 - **💡 Memory tip:** מ-`report`.
 
-### 1489. **allegedly** (adv.)
+### 1488. **allegedly** (adv.)
 - **Definition:** according to claims not proven
 - **תרגום:** לכאורה
 - **Example 1:** He **allegedly** stole the money.
@@ -339,7 +327,7 @@
 - **Synonyms:** supposedly, reportedly
 - **💡 Memory tip:** מ-`allege` (להאשים).
 
-### 1490. **supposedly** (adv.)
+### 1489. **supposedly** (adv.)
 - **Definition:** according to what is believed
 - **תרגום:** כביכול
 - **Example 1:** He's **supposedly** the best.
@@ -347,7 +335,7 @@
 - **Synonyms:** allegedly, presumably
 - **💡 Memory tip:** מ-`suppose`.
 
-### 1491. **evidently** (adv.)
+### 1490. **evidently** (adv.)
 - **Definition:** clearly
 - **תרגום:** ברור, ניכר
 - **Example 1:** She was **evidently** upset.
@@ -355,7 +343,7 @@
 - **Synonyms:** clearly, obviously
 - **💡 Memory tip:** מ-`evident`.
 
-### 1492. **undoubtedly** (adv.)
+### 1491. **undoubtedly** (adv.)
 - **Definition:** without doubt
 - **תרגום:** ללא ספק
 - **Example 1:** **Undoubtedly**, she's talented.
@@ -363,7 +351,7 @@
 - **Synonyms:** certainly, definitely
 - **💡 Memory tip:** `un-` + `doubted`.
 
-### 1493. **doubtless** (adv.)
+### 1492. **doubtless** (adv.)
 - **Definition:** certainly
 - **תרגום:** בלי ספק
 - **Example 1:** She'll **doubtless** come.
@@ -371,7 +359,7 @@
 - **Synonyms:** undoubtedly, certainly
 - **💡 Memory tip:** `doubt` + `-less`.
 
-### 1494. **conclusively** (adv.)
+### 1493. **conclusively** (adv.)
 - **Definition:** in a way that shows something is certainly true
 - **תרגום:** באופן חותך
 - **Example 1:** The evidence **conclusively** proves it.
@@ -379,7 +367,7 @@
 - **Synonyms:** definitively, decisively
 - **💡 Memory tip:** מ-`conclusive`.
 
-### 1495. **ostensibly** (adv.)
+### 1494. **ostensibly** (adv.)
 - **Definition:** apparently, but not really
 - **תרגום:** למראית עין
 - **Example 1:** He came **ostensibly** to help.
@@ -387,7 +375,7 @@
 - **Synonyms:** apparently, seemingly
 - **💡 Memory tip:** רק למראה, לא באמת.
 
-### 1496. **inadvertently** (adv.)
+### 1495. **inadvertently** (adv.)
 - **Definition:** by accident; unintentionally
 - **תרגום:** בטעות
 - **Example 1:** I **inadvertently** deleted the file.
@@ -396,7 +384,7 @@
 - **Antonyms:** deliberately
 - **💡 Memory tip:** שלא בכוונה.
 
-### 1497. **deliberately** (adv.)
+### 1496. **deliberately** (adv.)
 - **Definition:** on purpose
 - **תרגום:** בכוונה תחילה
 - **Example 1:** She **deliberately** ignored me.
@@ -405,7 +393,7 @@
 - **Antonyms:** accidentally
 - **💡 Memory tip:** מ-`deliberate`.
 
-### 1498. **intentionally** (adv.)
+### 1497. **intentionally** (adv.)
 - **Definition:** on purpose
 - **תרגום:** בכוונה
 - **Example 1:** He didn't do it **intentionally**.
@@ -414,7 +402,7 @@
 - **Antonyms:** accidentally
 - **💡 Memory tip:** מ-`intention`.
 
-### 1499. **regarding** (prep.)
+### 1498. **regarding** (prep.)
 - **Definition:** concerning
 - **תרגום:** בנוגע ל-
 - **Example 1:** **Regarding** your question...
@@ -422,7 +410,7 @@
 - **Synonyms:** concerning, about
 - **💡 Memory tip:** פורמלי מ-`about`.
 
-### 1500. **concerning** (prep.)
+### 1499. **concerning** (prep.)
 - **Definition:** about
 - **תרגום:** בנוגע ל-
 - **Example 1:** A letter **concerning** the meeting.
@@ -450,7 +438,7 @@
 
 ## 🧠 לקחים מפתח מחבילה 3:
 
-### 1. **המילים האקדמיות החיוניות למבחן**
+### 1500. **המילים האקדמיות החיוניות למבחן**
 הפעלים הכי חשובים:
 - `assert`, `contend`, `maintain` - לטעון
 - `substantiate`, `corroborate`, `refute` - לבסס/להפריך
@@ -461,12 +449,12 @@
 - `implication`, `ramification`, `consequence`
 - `discrepancy`, `contradiction`, `anomaly`
 
-### 2. **מילות קישור פורמליות לכתיבה**
+### 1501. **מילות קישור פורמליות לכתיבה**
 - `notwithstanding`, `albeit`, `whereby`
 - `hence`, `thereby`, `henceforth`
 - `thus`, `consequently`, `accordingly`
 
-### 3. **תארים אקדמיים בעלי ערך**
+### 1502. **תארים אקדמיים בעלי ערך**
 - `profound`, `pervasive`, `prevalent`
 - `intrinsic`, `inherent`, `underlying`
 - `empirical`, `quantitative`, `qualitative`

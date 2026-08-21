@@ -34,7 +34,7 @@
 
 ### 1653. **discourse** - covered.
 
-### 1653. **dialogue** (n.)
+### 1654. **dialogue** (n.)
 - **Definition:** a conversation
 - **תרגום:** דיאלוג
 - **Example 1:** We need open **dialogue**.
@@ -42,7 +42,7 @@
 - **Synonyms:** conversation, discussion
 - **💡 Memory tip:** `di-` = שני + `-logue` = דיבור.
 
-### 1654. **monologue** (n.)
+### 1655. **monologue** (n.)
 - **Definition:** a long speech by one person
 - **תרגום:** מונולוג
 - **Example 1:** Hamlet's famous **monologue**.
@@ -50,7 +50,7 @@
 - **Synonyms:** soliloquy, speech
 - **💡 Memory tip:** `mono-` = אחד.
 
-### 1655. **soliloquy** (n.)
+### 1656. **soliloquy** (n.)
 - **Definition:** a dramatic speech alone
 - **תרגום:** מונולוג (בתיאטרון)
 - **Example 1:** The famous **soliloquy** in Hamlet.
@@ -58,7 +58,7 @@
 - **Synonyms:** monologue
 - **💡 Memory tip:** דרמטי - שיח עם עצמי.
 
-### 1656. **anecdote** (n.)
+### 1657. **anecdote** (n.)
 - **Definition:** a short story
 - **תרגום:** אנקדוטה
 - **Example 1:** He told amusing **anecdotes**.
@@ -66,7 +66,7 @@
 - **Synonyms:** story, tale
 - **💡 Memory tip:** סיפור אישי קצר.
 
-### 1657. **allegory** (n.)
+### 1658. **allegory** (n.)
 - **Definition:** a story with hidden meaning
 - **תרגום:** אלגוריה, משל
 - **Example 1:** Animal Farm is an **allegory**.
@@ -74,7 +74,7 @@
 - **Synonyms:** symbolism, parable
 - **💡 Memory tip:** סיפור עם פשר סמוי.
 
-### 1658. **parable** (n.)
+### 1659. **parable** (n.)
 - **Definition:** a simple story teaching a moral
 - **תרגום:** משל
 - **Example 1:** Jesus told **parables**.
@@ -82,7 +82,7 @@
 - **Synonyms:** allegory, fable
 - **💡 Memory tip:** סיפור עם לקח.
 
-### 1659. **irony** (n.)
+### 1660. **irony** (n.)
 - **Definition:** the opposite of expected
 - **תרגום:** אירוניה
 - **Example 1:** The **irony** is striking.
@@ -90,7 +90,7 @@
 - **Synonyms:** sarcasm, paradox
 - **💡 Memory tip:** `ironic` (adj).
 
-### 1660. **sarcasm** (n.)
+### 1661. **sarcasm** (n.)
 - **Definition:** mocking with irony
 - **תרגום:** סרקזם
 - **Example 1:** His **sarcasm** hurt her.
@@ -98,7 +98,7 @@
 - **Synonyms:** irony, mockery
 - **💡 Memory tip:** `sarcastic` (adj).
 
-### 1661. **satire** (n.)
+### 1662. **satire** (n.)
 - **Definition:** humor that criticizes
 - **תרגום:** סאטירה
 - **Example 1:** The show is a political **satire**.
@@ -106,7 +106,7 @@
 - **Synonyms:** parody, mockery
 - **💡 Memory tip:** `satirical` (adj).
 
-### 1662. **parody** (n.)
+### 1663. **parody** (n.)
 - **Definition:** a funny imitation
 - **תרגום:** פרודיה
 - **Example 1:** A hilarious **parody** of the film.
@@ -114,7 +114,7 @@
 - **Synonyms:** satire, spoof
 - **💡 Memory tip:** חיקוי מצחיק.
 
-### 1663. **caricature** (n.)
+### 1664. **caricature** (n.)
 - **Definition:** an exaggerated portrayal
 - **תרגום:** קריקטורה
 - **Example 1:** The **caricature** exaggerated his nose.
@@ -122,7 +122,7 @@
 - **Synonyms:** cartoon, parody
 - **💡 Memory tip:** הגזמה מכוונת.
 
-### 1664. **prose** (n.)
+### 1665. **prose** (n.)
 - **Definition:** ordinary written language (not poetry)
 - **תרגום:** פרוזה
 - **Example 1:** Beautiful **prose**.
@@ -130,7 +130,7 @@
 - **Synonyms:** writing
 - **💡 Memory tip:** הפוך מ-poetry.
 
-### 1665. **poetry** (n.)
+### 1666. **poetry** (n.)
 - **Definition:** literary work in verse
 - **תרגום:** שירה
 - **Example 1:** I love **poetry**.
@@ -138,7 +138,7 @@
 - **Synonyms:** verse, poems
 - **💡 Memory tip:** `poetic` (adj).
 
-### 1666. **verse** (n.)
+### 1667. **verse** (n.)
 - **Definition:** poetry; a section of a poem
 - **תרגום:** שירה, בית
 - **Example 1:** A verse from the Bible.
@@ -146,7 +146,7 @@
 - **Synonyms:** poem, stanza
 - **💡 Memory tip:** `versatile` מאותו שורש.
 
-### 1667. **stanza** (n.)
+### 1668. **stanza** (n.)
 - **Definition:** a group of lines in a poem
 - **תרגום:** בית (בשיר)
 - **Example 1:** The first **stanza** is powerful.
@@ -154,7 +154,7 @@
 - **Synonyms:** verse
 - **💡 Memory tip:** יחידה בשיר.
 
-### 1668. **narrative** (n.)
+### 1669. **narrative** (n.)
 - **Definition:** a spoken or written account
 - **תרגום:** נרטיב, סיפור
 - **Example 1:** The **narrative** is compelling.
@@ -162,7 +162,7 @@
 - **Synonyms:** story, account
 - **💡 Memory tip:** מ-`narrate`.
 
-### 1669. **plot** (n.)
+### 1670. **plot** (n.)
 - **Definition:** the main events of a story
 - **תרגום:** עלילה
 - **Example 1:** The **plot** is complex.
@@ -170,7 +170,7 @@
 - **Synonyms:** storyline, narrative
 - **💡 Memory tip:** גם: קונספירציה.
 
-### 1670. **protagonist** (n.)
+### 1671. **protagonist** (n.)
 - **Definition:** the main character
 - **תרגום:** גיבור (ראשי)
 - **Example 1:** The **protagonist** fights evil.
@@ -179,7 +179,7 @@
 - **Antonyms:** antagonist
 - **💡 Memory tip:** `pro-` = בעד.
 
-### 1671. **antagonist** (n.)
+### 1672. **antagonist** (n.)
 - **Definition:** the opponent
 - **תרגום:** יריב, אנטגוניסט
 - **Example 1:** The **antagonist** is ruthless.
@@ -188,7 +188,7 @@
 - **Antonyms:** protagonist
 - **💡 Memory tip:** `ant-` = נגד.
 
-### 1672. **climax** (n.)
+### 1673. **climax** (n.)
 - **Definition:** the most intense point
 - **תרגום:** שיא
 - **Example 1:** The **climax** was thrilling.
@@ -196,7 +196,7 @@
 - **Synonyms:** peak, high point
 - **💡 Memory tip:** Plural: **climaxes**.
 
-### 1673. **denouement** (n.)
+### 1674. **denouement** (n.)
 - **Definition:** the final part of a plot
 - **תרגום:** סיום
 - **Example 1:** The **denouement** surprised us.
@@ -204,7 +204,7 @@
 - **Synonyms:** conclusion, resolution
 - **💡 Memory tip:** מצרפתית - ספרותי מאוד.
 
-### 1674. **motif** (n.)
+### 1675. **motif** (n.)
 - **Definition:** a recurring theme or idea
 - **תרגום:** מוטיב
 - **Example 1:** Love is a common **motif**.
@@ -212,9 +212,7 @@
 - **Synonyms:** theme, pattern
 - **💡 Memory tip:** חוזר לאורך יצירה.
 
-### 1675. **theme** - already covered at #742. Skipping.
-
-### 1675. **imagery** (n.)
+### 1676. **imagery** (n.)
 - **Definition:** visual language in writing
 - **תרגום:** דימויים
 - **Example 1:** Rich **imagery** in the poem.
@@ -222,9 +220,7 @@
 - **Synonyms:** symbolism, metaphor
 - **💡 Memory tip:** מ-`image`.
 
-### 1676. **symbolism** - already covered at #1170. Skipping.
-
-### 1676. **tone** (n.)
+### 1677. **tone** (n.)
 - **Definition:** the mood or attitude
 - **תרגום:** גוון, טון
 - **Example 1:** Her **tone** was serious.
@@ -232,7 +228,7 @@
 - **Synonyms:** mood, attitude
 - **💡 Memory tip:** גם בקול וגם בטקסט.
 
-### 1677. **style** (n.)
+### 1678. **style** (n.)
 - **Definition:** a particular way of doing
 - **תרגום:** סגנון
 - **Example 1:** Her writing **style** is unique.
@@ -240,7 +236,7 @@
 - **Synonyms:** manner, approach
 - **💡 Memory tip:** `stylish` (adj).
 
-### 1678. **genre** (n.)
+### 1679. **genre** (n.)
 - **Definition:** a category of art
 - **תרגום:** סוגה
 - **Example 1:** Science fiction is my favorite **genre**.
@@ -248,7 +244,7 @@
 - **Synonyms:** category, type
 - **💡 Memory tip:** מצרפתית.
 
-### 1679. **manuscript** (n.)
+### 1680. **manuscript** (n.)
 - **Definition:** a written document
 - **תרגום:** כתב יד
 - **Example 1:** Submit your **manuscript**.
@@ -256,9 +252,7 @@
 - **Synonyms:** document, text
 - **💡 Memory tip:** `manu-` (יד) + `-script` (כתב).
 
-### 1680. **literature** - already covered at #836. Skipping.
-
-### 1680. **fiction** (n.)
+### 1681. **fiction** (n.)
 - **Definition:** invented stories
 - **תרגום:** בדיון
 - **Example 1:** **Fiction** allows imagination.
@@ -267,7 +261,7 @@
 - **Antonyms:** non-fiction
 - **💡 Memory tip:** `fictional` (adj).
 
-### 1681. **autobiography** (n.)
+### 1682. **autobiography** (n.)
 - **Definition:** self-written life story
 - **תרגום:** אוטוביוגרפיה
 - **Example 1:** She wrote her **autobiography**.
@@ -275,7 +269,7 @@
 - **Synonyms:** memoir
 - **💡 Memory tip:** `auto-` = עצמי + `bio-` = חיים.
 
-### 1682. **biography** (n.)
+### 1683. **biography** (n.)
 - **Definition:** life story by another
 - **תרגום:** ביוגרפיה
 - **Example 1:** A **biography** of Einstein.
@@ -283,7 +277,7 @@
 - **Synonyms:** life story
 - **💡 Memory tip:** `bio-` = חיים.
 
-### 1683. **memoir** (n.)
+### 1684. **memoir** (n.)
 - **Definition:** personal recollections
 - **תרגום:** זכרונות, ממואר
 - **Example 1:** Her **memoir** is touching.
@@ -291,9 +285,7 @@
 - **Synonyms:** autobiography
 - **💡 Memory tip:** מצרפתית.
 
-### 1684. **essay** - already covered at #755. Skipping.
-
-### 1684. **treatise** (n.)
+### 1685. **treatise** (n.)
 - **Definition:** a formal written work
 - **תרגום:** מסה
 - **Example 1:** A **treatise** on philosophy.
@@ -301,7 +293,7 @@
 - **Synonyms:** essay, paper
 - **💡 Memory tip:** פורמלי מאוד.
 
-### 1685. **dissertation** (n.)
+### 1686. **dissertation** (n.)
 - **Definition:** a long research paper
 - **תרגום:** דיסרטציה
 - **Example 1:** Her doctoral **dissertation**.
@@ -309,7 +301,7 @@
 - **Synonyms:** thesis
 - **💡 Memory tip:** דומה ל-`thesis`.
 
-### 1686. **critique** (n.)
+### 1687. **critique** (n.)
 - **Definition:** a detailed analysis
 - **תרגום:** ביקורת (מקצועית)
 - **Example 1:** She wrote a **critique**.
@@ -317,7 +309,7 @@
 - **Synonyms:** review, analysis
 - **💡 Memory tip:** ניתוח מקצועי, לא בהכרח שלילי.
 
-### 1687. **review** (n.)
+### 1688. **review** (n.)
 - **Definition:** a critical article
 - **תרגום:** סקירה, ביקורת
 - **Example 1:** A positive **review**.
@@ -325,7 +317,7 @@
 - **Synonyms:** critique, evaluation
 - **💡 Memory tip:** `re-view` = לראות שוב.
 
-### 1688. **commentary** (n.)
+### 1689. **commentary** (n.)
 - **Definition:** expression of opinions or explanations
 - **תרגום:** פרשנות
 - **Example 1:** Running **commentary** during the game.
@@ -333,7 +325,7 @@
 - **Synonyms:** analysis, remarks
 - **💡 Memory tip:** `comment` + `-ary`.
 
-### 1689. **analogy** (n.)
+### 1690. **analogy** (n.)
 - **Definition:** a comparison between similar things
 - **תרגום:** אנלוגיה
 - **Example 1:** Make an **analogy** to explain.
@@ -341,7 +333,7 @@
 - **Synonyms:** comparison, parallel
 - **💡 Memory tip:** Plural: **analogies**.
 
-### 1690. **simile** (n.)
+### 1691. **simile** (n.)
 - **Definition:** a comparison using "like" or "as"
 - **תרגום:** השוואה (פיגורטיבית)
 - **Example 1:** "Like a rose" is a **simile**.
@@ -353,7 +345,7 @@
 
 # 🧠 קטגוריה 2: מונחים אקדמיים פילוסופיים (40 מילים)
 
-### 1691. **epistemology** (n.)
+### 1692. **epistemology** (n.)
 - **Definition:** the theory of knowledge
 - **תרגום:** אפיסטמולוגיה
 - **Example 1:** **Epistemology** questions how we know.
@@ -361,7 +353,7 @@
 - **Synonyms:** theory of knowledge
 - **💡 Memory tip:** `epistem-` = ידע.
 
-### 1692. **metaphysics** (n.)
+### 1693. **metaphysics** (n.)
 - **Definition:** the branch of philosophy dealing with existence
 - **תרגום:** מטאפיזיקה
 - **Example 1:** **Metaphysics** explores reality.
@@ -369,7 +361,7 @@
 - **Synonyms:** (none direct)
 - **💡 Memory tip:** `meta-` = מעבר.
 
-### 1693. **ontology** (n.)
+### 1694. **ontology** (n.)
 - **Definition:** the study of being
 - **תרגום:** אונטולוגיה
 - **Example 1:** **Ontology** explores what exists.
@@ -377,9 +369,7 @@
 - **Synonyms:** (specialized)
 - **💡 Memory tip:** `onto-` = קיום.
 
-### 1694. **ideology** - already covered at #1152. Skipping.
-
-### 1694. **dogma** (n.)
+### 1695. **dogma** (n.)
 - **Definition:** an established belief accepted without question
 - **תרגום:** דוגמה
 - **Example 1:** Religious **dogma**.
@@ -387,7 +377,7 @@
 - **Synonyms:** doctrine, belief
 - **💡 Memory tip:** `dogmatic` (adj) - נוקשה.
 
-### 1695. **doctrine** (n.)
+### 1696. **doctrine** (n.)
 - **Definition:** a set of beliefs
 - **תרגום:** דוקטרינה
 - **Example 1:** Christian **doctrine**.
@@ -395,7 +385,7 @@
 - **Synonyms:** dogma, teaching
 - **💡 Memory tip:** מקצועי, רשמי.
 
-### 1696. **tenet** (n.)
+### 1697. **tenet** (n.)
 - **Definition:** a principle or belief
 - **תרגום:** עיקרון (של דת/אידיאולוגיה)
 - **Example 1:** A central **tenet** of Buddhism.
@@ -403,7 +393,7 @@
 - **Synonyms:** principle, doctrine
 - **💡 Memory tip:** עיקרון יסודי.
 
-### 1697. **axiom** (n.)
+### 1698. **axiom** (n.)
 - **Definition:** a self-evident truth
 - **תרגום:** אקסיומה
 - **Example 1:** A mathematical **axiom**.
@@ -411,7 +401,7 @@
 - **Synonyms:** principle, maxim
 - **💡 Memory tip:** אמת שאין לערער עליה.
 
-### 1698. **maxim** (n.)
+### 1699. **maxim** (n.)
 - **Definition:** a general truth or rule
 - **תרגום:** מימרה
 - **Example 1:** "Honesty is the best policy" is a **maxim**.
@@ -419,7 +409,7 @@
 - **Synonyms:** saying, proverb
 - **💡 Memory tip:** אמרת כנף.
 
-### 1699. **aphorism** (n.)
+### 1700. **aphorism** (n.)
 - **Definition:** a concise wise saying
 - **תרגום:** אמרה חכמה
 - **Example 1:** "Time is money" is an **aphorism**.
@@ -427,7 +417,7 @@
 - **Synonyms:** saying, maxim
 - **💡 Memory tip:** אמירה חכמה וקצרה.
 
-### 1700. **premise** (n.)
+### 1701. **premise** (n.)
 - **Definition:** the basis of an argument
 - **תרגום:** הנחת יסוד
 - **Example 1:** The **premise** is flawed.
@@ -435,7 +425,7 @@
 - **Synonyms:** assumption, basis
 - **💡 Memory tip:** `premises` = מקום.
 
-### 1701. **precedent** (n.)
+### 1702. **precedent** (n.)
 - **Definition:** an earlier example
 - **תרגום:** תקדים
 - **Example 1:** The ruling set a **precedent**.
@@ -443,9 +433,7 @@
 - **Synonyms:** example, model
 - **💡 Memory tip:** `precede` (v) = להקדים.
 
-### 1702. **paradigm** - already covered at #1183. Skipping.
-
-### 1702. **exemplar** (n.)
+### 1703. **exemplar** (n.)
 - **Definition:** a perfect example
 - **תרגום:** מופת, דוגמה
 - **Example 1:** She's an **exemplar** of kindness.
@@ -453,7 +441,7 @@
 - **Synonyms:** model, paragon
 - **💡 Memory tip:** מ-`example`.
 
-### 1703. **archetype** (n.)
+### 1704. **archetype** (n.)
 - **Definition:** a typical example
 - **תרגום:** ארכיטיפ
 - **Example 1:** The hero **archetype**.
@@ -461,7 +449,7 @@
 - **Synonyms:** prototype, model
 - **💡 Memory tip:** `arch-` = ראשי.
 
-### 1704. **prototype** (n.)
+### 1705. **prototype** (n.)
 - **Definition:** the first or original model
 - **תרגום:** אב-טיפוס
 - **Example 1:** The **prototype** works well.
@@ -469,7 +457,7 @@
 - **Synonyms:** model, original
 - **💡 Memory tip:** `proto-` = ראשון.
 
-### 1705. **paragon** (n.)
+### 1706. **paragon** (n.)
 - **Definition:** a model of excellence
 - **תרגום:** מופת
 - **Example 1:** A **paragon** of virtue.
@@ -477,7 +465,7 @@
 - **Synonyms:** exemplar, ideal
 - **💡 Memory tip:** ספרותי - דוגמה מושלמת.
 
-### 1706. **epitome** (n.)
+### 1707. **epitome** (n.)
 - **Definition:** a perfect example
 - **תרגום:** גילום, תמצית
 - **Example 1:** She's the **epitome** of grace.
@@ -485,7 +473,7 @@
 - **Synonyms:** embodiment, essence
 - **💡 Memory tip:** הגייה: /ɪˈpɪtəmi/.
 
-### 1707. **embodiment** (n.)
+### 1708. **embodiment** (n.)
 - **Definition:** a physical representation
 - **תרגום:** התגלמות
 - **Example 1:** He's the **embodiment** of kindness.
@@ -493,7 +481,7 @@
 - **Synonyms:** personification, epitome
 - **💡 Memory tip:** מ-`body`.
 
-### 1708. **manifestation** (n.)
+### 1709. **manifestation** (n.)
 - **Definition:** an outward sign
 - **תרגום:** ביטוי, הופעה
 - **Example 1:** A **manifestation** of stress.
@@ -501,7 +489,7 @@
 - **Synonyms:** sign, expression
 - **💡 Memory tip:** מ-`manifest`.
 
-### 1709. **conception** (n.)
+### 1710. **conception** (n.)
 - **Definition:** an idea; the forming of a fetus
 - **תרגום:** תפיסה, הריון
 - **Example 1:** His **conception** of justice.
@@ -509,7 +497,7 @@
 - **Synonyms:** idea, notion
 - **💡 Memory tip:** שני מובנים.
 
-### 1710. **preconception** (n.)
+### 1711. **preconception** (n.)
 - **Definition:** a prior idea, often biased
 - **תרגום:** דעה קדומה
 - **Example 1:** Check your **preconceptions**.
@@ -517,7 +505,7 @@
 - **Synonyms:** prejudice, bias
 - **💡 Memory tip:** `pre-` + `conception`.
 
-### 1711. **misconception** (n.)
+### 1712. **misconception** (n.)
 - **Definition:** a mistaken idea
 - **תרגום:** תפיסה מוטעית
 - **Example 1:** A common **misconception**.
@@ -525,7 +513,7 @@
 - **Synonyms:** misunderstanding
 - **💡 Memory tip:** `mis-` + `conception`.
 
-### 1712. **assertion** (n.)
+### 1713. **assertion** (n.)
 - **Definition:** a strong statement
 - **תרגום:** טענה
 - **Example 1:** Her **assertion** was bold.
@@ -533,7 +521,7 @@
 - **Synonyms:** claim, statement
 - **💡 Memory tip:** מ-`assert`.
 
-### 1713. **proposition** (n.)
+### 1714. **proposition** (n.)
 - **Definition:** a proposal or statement
 - **תרגום:** הצעה, טענה
 - **Example 1:** An interesting **proposition**.
@@ -541,7 +529,7 @@
 - **Synonyms:** proposal, statement
 - **💡 Memory tip:** גם פועל: `to proposition`.
 
-### 1714. **postulate** (n.)
+### 1715. **postulate** (n.)
 - **Definition:** a basic principle
 - **תרגום:** פוסטולט
 - **Example 1:** A mathematical **postulate**.
@@ -549,7 +537,7 @@
 - **Synonyms:** axiom, premise
 - **💡 Memory tip:** מדעי ופורמלי.
 
-### 1715. **corollary** (n.)
+### 1716. **corollary** (n.)
 - **Definition:** a natural consequence
 - **תרגום:** נגזרת, תוצאה ישירה
 - **Example 1:** As a **corollary**, prices rose.
@@ -557,7 +545,7 @@
 - **Synonyms:** consequence, result
 - **💡 Memory tip:** מתמטי ופילוסופי.
 
-### 1716. **inference** (n.)
+### 1717. **inference** (n.)
 - **Definition:** a conclusion based on reasoning
 - **תרגום:** הסקה
 - **Example 1:** Draw an **inference**.
@@ -565,7 +553,7 @@
 - **Synonyms:** deduction, conclusion
 - **💡 Memory tip:** מ-`infer`.
 
-### 1717. **deduction** (n.)
+### 1718. **deduction** (n.)
 - **Definition:** the process of reasoning
 - **תרגום:** הסקה, ניכוי
 - **Example 1:** Sherlock's **deductions** are brilliant.
@@ -573,7 +561,7 @@
 - **Synonyms:** conclusion, inference
 - **💡 Memory tip:** שני מובנים.
 
-### 1718. **induction** (n.)
+### 1719. **induction** (n.)
 - **Definition:** reasoning from specific to general
 - **תרגום:** אינדוקציה
 - **Example 1:** **Induction** builds general rules.
@@ -581,7 +569,7 @@
 - **Synonyms:** reasoning; initiation
 - **💡 Memory tip:** שני מובנים.
 
-### 1719. **rationale** (n.)
+### 1720. **rationale** (n.)
 - **Definition:** the reason behind
 - **תרגום:** רציונל, הגיון
 - **Example 1:** What's the **rationale**?
@@ -589,7 +577,7 @@
 - **Synonyms:** reasoning, logic
 - **💡 Memory tip:** `rational` (adj).
 
-### 1720. **logic** (n.)
+### 1721. **logic** (n.)
 - **Definition:** reasoning based on truth
 - **תרגום:** הגיון
 - **Example 1:** Use **logic**, not emotion.
@@ -597,7 +585,7 @@
 - **Synonyms:** reasoning, rationality
 - **💡 Memory tip:** `logical` (adj).
 
-### 1721. **fallacy** (n.)
+### 1722. **fallacy** (n.)
 - **Definition:** a false belief
 - **תרגום:** כשל לוגי
 - **Example 1:** That's a common **fallacy**.
@@ -605,9 +593,7 @@
 - **Synonyms:** misconception, error
 - **💡 Memory tip:** שגיאה בהגיון.
 
-### 1722. **contradiction** - already covered at #1172. Skipping.
-
-### 1722. **antithesis** (n.)
+### 1723. **antithesis** (n.)
 - **Definition:** the opposite
 - **תרגום:** אנטיתזה, ניגוד
 - **Example 1:** She's the **antithesis** of him.
@@ -615,7 +601,7 @@
 - **Synonyms:** opposite, reverse
 - **💡 Memory tip:** `anti-` = נגד.
 
-### 1723. **synthesis** (n.)
+### 1724. **synthesis** (n.)
 - **Definition:** a combination of ideas
 - **תרגום:** סינתזה
 - **Example 1:** A **synthesis** of both theories.
@@ -623,9 +609,7 @@
 - **Synonyms:** combination, fusion
 - **💡 Memory tip:** מ-`synthesize`.
 
-### 1724. **thesis** - already covered at #757. Skipping.
-
-### 1724. **juxtaposition** (n.)
+### 1725. **juxtaposition** (n.)
 - **Definition:** placing next to each other
 - **תרגום:** הצבה זה לצד זה
 - **Example 1:** The **juxtaposition** is striking.
@@ -633,7 +617,7 @@
 - **Synonyms:** comparison, contrast
 - **💡 Memory tip:** מ-`juxtapose`.
 
-### 1725. **dichotomy** (n.)
+### 1726. **dichotomy** (n.)
 - **Definition:** a contrast between two things
 - **תרגום:** דיכוטומיה
 - **Example 1:** A false **dichotomy**.
@@ -641,9 +625,7 @@
 - **Synonyms:** division, contrast
 - **💡 Memory tip:** `di-` = שני.
 
-### 1726. **distinction** - already covered at #1209. Skipping.
-
-### 1726. **nuance** (n.)
+### 1727. **nuance** (n.)
 - **Definition:** a subtle difference
 - **תרגום:** ניואנס
 - **Example 1:** Notice the **nuances**.
@@ -651,7 +633,7 @@
 - **Synonyms:** subtlety, shade
 - **💡 Memory tip:** הבדל עדין.
 
-### 1727. **subtlety** (n.)
+### 1728. **subtlety** (n.)
 - **Definition:** the quality of being subtle
 - **תרגום:** עדינות
 - **Example 1:** The **subtlety** of her message.
@@ -659,7 +641,7 @@
 - **Synonyms:** nuance, delicacy
 - **💡 Memory tip:** מ-`subtle`.
 
-### 1728. **complexity** (n.)
+### 1729. **complexity** (n.)
 - **Definition:** the state of being complex
 - **תרגום:** מורכבות
 - **Example 1:** The **complexity** of the problem.
@@ -668,7 +650,7 @@
 - **Antonyms:** simplicity
 - **💡 Memory tip:** מ-`complex`.
 
-### 1729. **abstraction** (n.)
+### 1730. **abstraction** (n.)
 - **Definition:** the process of thinking about ideas
 - **תרגום:** הפשטה
 - **Example 1:** **Abstraction** in art.
@@ -676,7 +658,7 @@
 - **Synonyms:** theorization, concept
 - **💡 Memory tip:** מ-`abstract`.
 
-### 1730. **conceptualization** (n.)
+### 1731. **conceptualization** (n.)
 - **Definition:** forming concepts
 - **תרגום:** המשגה
 - **Example 1:** The **conceptualization** is clear.
@@ -688,7 +670,7 @@
 
 # 🧘 קטגוריה 3: מונחים פסיכולוגיים מתקדמים (40 מילים)
 
-### 1731. **cognition** (n.)
+### 1732. **cognition** (n.)
 - **Definition:** the process of knowing
 - **תרגום:** קוגניציה
 - **Example 1:** **Cognition** involves thinking.
@@ -696,9 +678,7 @@
 - **Synonyms:** perception, thinking
 - **💡 Memory tip:** `cognitive` (adj).
 
-### 1732. **intuition** - already covered at #1165. Skipping.
-
-### 1732. **instinct** (n.)
+### 1733. **instinct** (n.)
 - **Definition:** a natural tendency
 - **תרגום:** אינסטינקט
 - **Example 1:** Mother's **instinct**.
@@ -706,7 +686,7 @@
 - **Synonyms:** intuition, natural tendency
 - **💡 Memory tip:** תגובה טבעית מובנית.
 
-### 1733. **subconscious** (n.)
+### 1734. **subconscious** (n.)
 - **Definition:** below normal awareness
 - **תרגום:** תת-מודע
 - **Example 1:** The **subconscious** mind.
@@ -714,7 +694,7 @@
 - **Synonyms:** unconscious
 - **💡 Memory tip:** `sub-` = מתחת.
 
-### 1734. **unconscious** (n.)
+### 1735. **unconscious** (n.)
 - **Definition:** the deep mind
 - **תרגום:** לא-מודע
 - **Example 1:** Freud's **unconscious**.
@@ -722,11 +702,7 @@
 - **Synonyms:** subconscious
 - **💡 Memory tip:** גם תואר: מחוסר הכרה.
 
-### 1735. **consciousness** - already covered at #1165. Skipping.
-
-### 1735. **perception** - already covered at #1272. Skipping.
-
-### 1735. **sensation** (n.)
+### 1736. **sensation** (n.)
 - **Definition:** a physical feeling
 - **תרגום:** תחושה, סנסציה
 - **Example 1:** A **sensation** of cold.
@@ -734,9 +710,7 @@
 - **Synonyms:** feeling; hit
 - **💡 Memory tip:** שני מובנים.
 
-### 1736. **stimulus** - already covered at #1225. Skipping.
-
-### 1736. **trigger** (n.)
+### 1737. **trigger** (n.)
 - **Definition:** something that causes a reaction
 - **תרגום:** טריגר, טריגר
 - **Example 1:** Stress is a common **trigger**.
@@ -744,7 +718,7 @@
 - **Synonyms:** stimulus, cause
 - **💡 Memory tip:** גם פועל.
 
-### 1737. **reflex** (n.)
+### 1738. **reflex** (n.)
 - **Definition:** an automatic reaction
 - **תרגום:** רפלקס
 - **Example 1:** Good **reflexes**.
@@ -752,7 +726,7 @@
 - **Synonyms:** reaction, response
 - **💡 Memory tip:** תגובה אוטומטית.
 
-### 1738. **impulse** (n.)
+### 1739. **impulse** (n.)
 - **Definition:** a sudden urge
 - **תרגום:** דחף
 - **Example 1:** Don't buy on **impulse**.
@@ -760,7 +734,7 @@
 - **Synonyms:** urge, whim
 - **💡 Memory tip:** `impulsive` (adj).
 
-### 1739. **urge** (n.)
+### 1740. **urge** (n.)
 - **Definition:** a strong desire
 - **תרגום:** דחף
 - **Example 1:** I had an **urge** to leave.
@@ -768,7 +742,7 @@
 - **Synonyms:** impulse, desire
 - **💡 Memory tip:** גם פועל.
 
-### 1740. **compulsion** (n.)
+### 1741. **compulsion** (n.)
 - **Definition:** an irresistible urge
 - **תרגום:** כפייה
 - **Example 1:** He felt a **compulsion** to wash.
@@ -776,7 +750,7 @@
 - **Synonyms:** obsession, urge
 - **💡 Memory tip:** `compulsive` (adj).
 
-### 1741. **obsession** (n.)
+### 1742. **obsession** (n.)
 - **Definition:** an unhealthy preoccupation
 - **תרגום:** אובססיה
 - **Example 1:** His **obsession** with her.
@@ -784,7 +758,7 @@
 - **Synonyms:** fixation, preoccupation
 - **💡 Memory tip:** `obsessive` (adj).
 
-### 1742. **phobia** (n.)
+### 1743. **phobia** (n.)
 - **Definition:** irrational fear
 - **תרגום:** פוביה
 - **Example 1:** A **phobia** of spiders.
@@ -792,7 +766,7 @@
 - **Synonyms:** fear
 - **💡 Memory tip:** `-phobia` = פחד.
 
-### 1743. **trauma** (n.)
+### 1744. **trauma** (n.)
 - **Definition:** severe emotional shock
 - **תרגום:** טראומה
 - **Example 1:** Childhood **trauma**.
@@ -800,7 +774,7 @@
 - **Synonyms:** shock, injury
 - **💡 Memory tip:** `traumatic` (adj).
 
-### 1744. **grief** (n.)
+### 1745. **grief** (n.)
 - **Definition:** deep sorrow
 - **תרגום:** אבל
 - **Example 1:** Overwhelming **grief**.
@@ -808,7 +782,7 @@
 - **Synonyms:** sorrow, sadness
 - **💡 Memory tip:** `grieve` (v).
 
-### 1745. **remorse** (n.)
+### 1746. **remorse** (n.)
 - **Definition:** deep regret
 - **תרגום:** חרטה
 - **Example 1:** She felt **remorse**.
@@ -816,7 +790,7 @@
 - **Synonyms:** regret, guilt
 - **💡 Memory tip:** חרטה עמוקה.
 
-### 1746. **guilt** (n.)
+### 1747. **guilt** (n.)
 - **Definition:** the feeling of having done wrong
 - **תרגום:** אשמה
 - **Example 1:** Overwhelming **guilt**.
@@ -824,7 +798,7 @@
 - **Synonyms:** remorse, shame
 - **💡 Memory tip:** `guilty` (adj).
 
-### 1747. **shame** (n.)
+### 1748. **shame** (n.)
 - **Definition:** a painful feeling of being wrong
 - **תרגום:** בושה
 - **Example 1:** She felt deep **shame**.
@@ -832,7 +806,7 @@
 - **Synonyms:** humiliation, embarrassment
 - **💡 Memory tip:** `shameful` (adj).
 
-### 1748. **embarrassment** (n.)
+### 1749. **embarrassment** (n.)
 - **Definition:** a feeling of self-consciousness
 - **תרגום:** מבוכה
 - **Example 1:** Blushing with **embarrassment**.
@@ -840,7 +814,7 @@
 - **Synonyms:** shame, humiliation
 - **💡 Memory tip:** `embarrass` (v).
 
-### 1749. **humiliation** (n.)
+### 1750. **humiliation** (n.)
 - **Definition:** a deep sense of shame
 - **תרגום:** השפלה
 - **Example 1:** The **humiliation** was public.
@@ -848,7 +822,7 @@
 - **Synonyms:** embarrassment, disgrace
 - **💡 Memory tip:** חזק יותר מ-`embarrassment`.
 
-### 1750. **dignity** (n.)
+### 1751. **dignity** (n.)
 - **Definition:** the state of being worthy of respect
 - **תרגום:** כבוד עצמי
 - **Example 1:** Treat everyone with **dignity**.
@@ -856,7 +830,7 @@
 - **Synonyms:** self-respect, honor
 - **💡 Memory tip:** `dignified` (adj).
 
-### 1751. **integrity** (n.)
+### 1752. **integrity** (n.)
 - **Definition:** moral uprightness
 - **תרגום:** יושרה
 - **Example 1:** A person of **integrity**.
@@ -864,7 +838,7 @@
 - **Synonyms:** honesty, honor
 - **💡 Memory tip:** מ-`integer` (שלם).
 
-### 1752. **morale** (n.)
+### 1753. **morale** (n.)
 - **Definition:** the confidence of a group
 - **תרגום:** מורל
 - **Example 1:** The team's **morale** is high.
@@ -872,7 +846,7 @@
 - **Synonyms:** spirits, confidence
 - **💡 Memory tip:** `moral` ≠ `morale`!
 
-### 1753. **resolve** (n.)
+### 1754. **resolve** (n.)
 - **Definition:** firm determination
 - **תרגום:** נחישות
 - **Example 1:** Her **resolve** is unshakeable.
@@ -880,7 +854,7 @@
 - **Synonyms:** determination, resolution
 - **💡 Memory tip:** גם פועל.
 
-### 1754. **determination** (n.)
+### 1755. **determination** (n.)
 - **Definition:** firmness of purpose
 - **תרגום:** נחישות
 - **Example 1:** Her **determination** impressed me.
@@ -888,7 +862,7 @@
 - **Synonyms:** resolve, persistence
 - **💡 Memory tip:** מ-`determine`.
 
-### 1755. **perseverance** (n.)
+### 1756. **perseverance** (n.)
 - **Definition:** continued effort
 - **תרגום:** התמדה
 - **Example 1:** **Perseverance** pays off.
@@ -896,7 +870,7 @@
 - **Synonyms:** persistence, determination
 - **💡 Memory tip:** מ-`persevere`.
 
-### 1756. **persistence** (n.)
+### 1757. **persistence** (n.)
 - **Definition:** continuing firmly
 - **תרגום:** התמדה, עקשנות
 - **Example 1:** Her **persistence** won the day.
@@ -904,7 +878,7 @@
 - **Synonyms:** perseverance, tenacity
 - **💡 Memory tip:** מ-`persist`.
 
-### 1757. **tenacity** (n.)
+### 1758. **tenacity** (n.)
 - **Definition:** persistent determination
 - **תרגום:** דבקות במטרה
 - **Example 1:** Her **tenacity** is admirable.
@@ -912,7 +886,7 @@
 - **Synonyms:** persistence, determination
 - **💡 Memory tip:** `tenacious` (adj).
 
-### 1758. **fortitude** (n.)
+### 1759. **fortitude** (n.)
 - **Definition:** strength in adversity
 - **תרגום:** אומץ נפש
 - **Example 1:** Show **fortitude** in hard times.
@@ -920,7 +894,7 @@
 - **Synonyms:** courage, strength
 - **💡 Memory tip:** ספרותי - חוזק מוסרי.
 
-### 1759. **resilience** (n.)
+### 1760. **resilience** (n.)
 - **Definition:** ability to recover
 - **תרגום:** חוסן
 - **Example 1:** Children's **resilience**.
@@ -928,7 +902,7 @@
 - **Synonyms:** toughness, elasticity
 - **💡 Memory tip:** מ-`resilient`.
 
-### 1760. **vulnerability** (n.)
+### 1761. **vulnerability** (n.)
 - **Definition:** the quality of being open to harm
 - **תרגום:** פגיעות
 - **Example 1:** Show your **vulnerability**.
@@ -936,7 +910,7 @@
 - **Synonyms:** weakness, susceptibility
 - **💡 Memory tip:** `vulnerable` (adj).
 
-### 1761. **sensitivity** (n.)
+### 1762. **sensitivity** (n.)
 - **Definition:** awareness of feelings
 - **תרגום:** רגישות
 - **Example 1:** Show **sensitivity** to others.
@@ -944,7 +918,7 @@
 - **Synonyms:** awareness, perception
 - **💡 Memory tip:** מ-`sensitive`.
 
-### 1762. **empathy** (n.)
+### 1763. **empathy** (n.)
 - **Definition:** understanding others' feelings
 - **תרגום:** אמפתיה
 - **Example 1:** **Empathy** is important.
@@ -952,7 +926,7 @@
 - **Synonyms:** compassion, understanding
 - **💡 Memory tip:** מ-`empathize`.
 
-### 1763. **sympathy** (n.)
+### 1764. **sympathy** (n.)
 - **Definition:** feeling compassion for others
 - **תרגום:** אהדה
 - **Example 1:** My **sympathy** for your loss.
@@ -960,7 +934,7 @@
 - **Synonyms:** compassion, pity
 - **💡 Memory tip:** מ-`sympathize`.
 
-### 1764. **compassion** (n.)
+### 1765. **compassion** (n.)
 - **Definition:** feelings of concern for others
 - **תרגום:** חמלה
 - **Example 1:** Show **compassion**.
@@ -968,7 +942,7 @@
 - **Synonyms:** empathy, sympathy
 - **💡 Memory tip:** `compassionate` (adj).
 
-### 1765. **altruism** (n.)
+### 1766. **altruism** (n.)
 - **Definition:** selfless concern for others
 - **תרגום:** אלטרואיזם
 - **Example 1:** An act of **altruism**.
@@ -977,7 +951,7 @@
 - **Antonyms:** selfishness
 - **💡 Memory tip:** `altruistic` (adj).
 
-### 1766. **narcissism** (n.)
+### 1767. **narcissism** (n.)
 - **Definition:** excessive self-love
 - **תרגום:** נרקיסיזם
 - **Example 1:** His **narcissism** is obvious.
@@ -985,7 +959,7 @@
 - **Synonyms:** vanity, self-love
 - **💡 Memory tip:** מהמיתולוגיה היוונית.
 
-### 1767. **ego** (n.)
+### 1768. **ego** (n.)
 - **Definition:** sense of self-importance
 - **תרגום:** אגו
 - **Example 1:** Don't let your **ego** get in the way.
@@ -993,7 +967,7 @@
 - **Synonyms:** self-esteem, pride
 - **💡 Memory tip:** מלטינית - "אני".
 
-### 1768. **alter ego** (n.)
+### 1769. **alter ego** (n.)
 - **Definition:** another side of oneself
 - **תרגום:** אלטר אגו
 - **Example 1:** Superman is Clark Kent's **alter ego**.
@@ -1001,7 +975,7 @@
 - **Synonyms:** second self
 - **💡 Memory tip:** `alter-` = אחר.
 
-### 1769. **persona** (n.)
+### 1770. **persona** (n.)
 - **Definition:** the version of self shown to others
 - **תרגום:** פרסונה
 - **Example 1:** His public **persona** differs from private.
@@ -1009,7 +983,7 @@
 - **Synonyms:** character, image
 - **💡 Memory tip:** דמות שמוצגת לעולם.
 
-### 1770. **psyche** (n.)
+### 1771. **psyche** (n.)
 - **Definition:** the human mind
 - **תרגום:** נפש, פסיכה
 - **Example 1:** The human **psyche**.
@@ -1021,7 +995,7 @@
 
 # 🌍 קטגוריה 4: מושגים היסטוריים וחברתיים (40 מילים)
 
-### 1771. **civilization** (n.)
+### 1772. **civilization** (n.)
 - **Definition:** an advanced culture
 - **תרגום:** ציויליזציה
 - **Example 1:** Ancient **civilizations** fascinate me.
@@ -1029,7 +1003,7 @@
 - **Synonyms:** culture, society
 - **💡 Memory tip:** `civilize` (v).
 
-### 1772. **empire** (n.)
+### 1773. **empire** (n.)
 - **Definition:** a group of countries under one ruler
 - **תרגום:** אימפריה
 - **Example 1:** The Roman **Empire**.
@@ -1037,7 +1011,7 @@
 - **Synonyms:** kingdom, realm
 - **💡 Memory tip:** שלטון רחב.
 
-### 1773. **era** (n.)
+### 1774. **era** (n.)
 - **Definition:** a historical period
 - **תרגום:** עידן
 - **Example 1:** The digital **era**.
@@ -1045,7 +1019,7 @@
 - **Synonyms:** period, age
 - **💡 Memory tip:** Plural: **eras**.
 
-### 1774. **epoch** (n.)
+### 1775. **epoch** (n.)
 - **Definition:** a distinct period
 - **תרגום:** תקופה, עידן
 - **Example 1:** The Victorian **epoch**.
@@ -1053,7 +1027,7 @@
 - **Synonyms:** era, age
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 1775. **antiquity** (n.)
+### 1776. **antiquity** (n.)
 - **Definition:** ancient times
 - **תרגום:** עת עתיקה
 - **Example 1:** Classical **antiquity**.
@@ -1061,7 +1035,7 @@
 - **Synonyms:** ancient times
 - **💡 Memory tip:** מ-`antique`.
 
-### 1776. **modernity** (n.)
+### 1777. **modernity** (n.)
 - **Definition:** the state of being modern
 - **תרגום:** מודרניות
 - **Example 1:** The challenges of **modernity**.
@@ -1069,7 +1043,7 @@
 - **Synonyms:** contemporary era
 - **💡 Memory tip:** מ-`modern`.
 
-### 1777. **posterity** (n.)
+### 1778. **posterity** (n.)
 - **Definition:** future generations
 - **תרגום:** דורות הבאים
 - **Example 1:** For **posterity**.
@@ -1077,9 +1051,7 @@
 - **Synonyms:** future generations
 - **💡 Memory tip:** ספרותי.
 
-### 1778. **legacy** - already covered at #1306. Skipping.
-
-### 1778. **inheritance** (n.)
+### 1779. **inheritance** (n.)
 - **Definition:** something passed down
 - **תרגום:** ירושה
 - **Example 1:** Her **inheritance** was large.
@@ -1087,7 +1059,7 @@
 - **Synonyms:** legacy, bequest
 - **💡 Memory tip:** מ-`inherit`.
 
-### 1779. **patrimony** (n.)
+### 1780. **patrimony** (n.)
 - **Definition:** inherited property or heritage
 - **תרגום:** מורשת
 - **Example 1:** Cultural **patrimony**.
@@ -1095,7 +1067,7 @@
 - **Synonyms:** heritage, inheritance
 - **💡 Memory tip:** `patri-` = אב.
 
-### 1780. **descendant** (n.)
+### 1781. **descendant** (n.)
 - **Definition:** a person coming from another
 - **תרגום:** צאצא
 - **Example 1:** My **descendants** will thank me.
@@ -1104,7 +1076,7 @@
 - **Antonyms:** ancestor
 - **💡 Memory tip:** מ-`descend`.
 
-### 1781. **ancestor** (n.)
+### 1782. **ancestor** (n.)
 - **Definition:** a person from whom one is descended
 - **תרגום:** אב קדמון
 - **Example 1:** My **ancestors** came from Russia.
@@ -1113,7 +1085,7 @@
 - **Antonyms:** descendant
 - **💡 Memory tip:** Plural: **ancestors**.
 
-### 1782. **dynasty** (n.)
+### 1783. **dynasty** (n.)
 - **Definition:** a line of rulers
 - **תרגום:** שושלת
 - **Example 1:** The Ming **dynasty**.
@@ -1121,9 +1093,7 @@
 - **Synonyms:** line, lineage
 - **💡 Memory tip:** Plural: **dynasties**.
 
-### 1783. **regime** - already covered at #1331. Skipping.
-
-### 1783. **oligarchy** (n.)
+### 1784. **oligarchy** (n.)
 - **Definition:** rule by a small group
 - **תרגום:** אוליגרכיה
 - **Example 1:** An **oligarchy** controls the country.
@@ -1131,7 +1101,7 @@
 - **Synonyms:** elite rule
 - **💡 Memory tip:** `oligo-` = מעטים.
 
-### 1784. **aristocracy** (n.)
+### 1785. **aristocracy** (n.)
 - **Definition:** the highest class
 - **תרגום:** אריסטוקרטיה
 - **Example 1:** The **aristocracy** lived in castles.
@@ -1139,7 +1109,7 @@
 - **Synonyms:** nobility, elite
 - **💡 Memory tip:** `aristo-` = הטובים.
 
-### 1785. **bourgeoisie** (n.)
+### 1786. **bourgeoisie** (n.)
 - **Definition:** the middle class
 - **תרגום:** בורגנות
 - **Example 1:** Marx criticized the **bourgeoisie**.
@@ -1147,7 +1117,7 @@
 - **Synonyms:** middle class
 - **💡 Memory tip:** מצרפתית.
 
-### 1786. **proletariat** (n.)
+### 1787. **proletariat** (n.)
 - **Definition:** the working class
 - **תרגום:** פרולטריון
 - **Example 1:** The **proletariat** struggled.
@@ -1155,7 +1125,7 @@
 - **Synonyms:** working class
 - **💡 Memory tip:** מונח מרקסיסטי.
 
-### 1787. **hierarchy** (n.)
+### 1788. **hierarchy** (n.)
 - **Definition:** a system of rank
 - **תרגום:** היררכיה
 - **Example 1:** Corporate **hierarchy**.
@@ -1163,7 +1133,7 @@
 - **Synonyms:** ranking, order
 - **💡 Memory tip:** Plural: **hierarchies**.
 
-### 1788. **status quo** (n.)
+### 1789. **status quo** (n.)
 - **Definition:** the existing state
 - **תרגום:** המצב הקיים
 - **Example 1:** Maintain the **status quo**.
@@ -1171,7 +1141,7 @@
 - **Synonyms:** current state
 - **💡 Memory tip:** מלטינית.
 
-### 1789. **consensus** (n.)
+### 1790. **consensus** (n.)
 - **Definition:** general agreement
 - **תרגום:** קונצנזוס
 - **Example 1:** Reach a **consensus**.
@@ -1179,7 +1149,7 @@
 - **Synonyms:** agreement, unanimity
 - **💡 Memory tip:** ההפך מ-`dissent`.
 
-### 1790. **polarization** (n.)
+### 1791. **polarization** (n.)
 - **Definition:** division into opposites
 - **תרגום:** קיטוב
 - **Example 1:** Political **polarization**.
@@ -1187,7 +1157,7 @@
 - **Synonyms:** division, split
 - **💡 Memory tip:** מ-`polar`.
 
-### 1791. **schism** (n.)
+### 1792. **schism** (n.)
 - **Definition:** a division within a group
 - **תרגום:** פילוג
 - **Example 1:** A **schism** in the church.
@@ -1195,7 +1165,7 @@
 - **Synonyms:** split, division
 - **💡 Memory tip:** הגייה: /ˈskɪzəm/.
 
-### 1792. **faction** (n.)
+### 1793. **faction** (n.)
 - **Definition:** a smaller group within a larger one
 - **תרגום:** פלג
 - **Example 1:** Opposing **factions** in the party.
@@ -1203,7 +1173,7 @@
 - **Synonyms:** group, side
 - **💡 Memory tip:** חלק של קבוצה גדולה.
 
-### 1793. **coalition** (n.)
+### 1794. **coalition** (n.)
 - **Definition:** a temporary alliance
 - **תרגום:** קואליציה
 - **Example 1:** Form a **coalition**.
@@ -1211,7 +1181,7 @@
 - **Synonyms:** alliance, union
 - **💡 Memory tip:** מ-`coal` = ליטוש יחד.
 
-### 1794. **alliance** (n.)
+### 1795. **alliance** (n.)
 - **Definition:** a union for mutual benefit
 - **תרגום:** ברית
 - **Example 1:** Strategic **alliance**.
@@ -1219,7 +1189,7 @@
 - **Synonyms:** union, partnership
 - **💡 Memory tip:** `allied` (adj).
 
-### 1795. **treaty** (n.)
+### 1796. **treaty** (n.)
 - **Definition:** a formal agreement
 - **תרגום:** הסכם, אמנה
 - **Example 1:** Sign the **treaty**.
@@ -1227,7 +1197,7 @@
 - **Synonyms:** agreement, pact
 - **💡 Memory tip:** בעיקר בינלאומי.
 
-### 1796. **accord** (n.)
+### 1797. **accord** (n.)
 - **Definition:** an agreement
 - **תרגום:** הסכמה, הסכם
 - **Example 1:** In **accord** with his wishes.
@@ -1235,7 +1205,7 @@
 - **Synonyms:** agreement, concord
 - **💡 Memory tip:** פורמלי.
 
-### 1797. **diplomacy** (n.)
+### 1798. **diplomacy** (n.)
 - **Definition:** managing international relations
 - **תרגום:** דיפלומטיה
 - **Example 1:** Skilled **diplomacy**.
@@ -1243,7 +1213,7 @@
 - **Synonyms:** negotiation, statecraft
 - **💡 Memory tip:** `diplomat` (n).
 
-### 1798. **sovereignty** (n.)
+### 1799. **sovereignty** (n.)
 - **Definition:** supreme power and authority
 - **תרגום:** ריבונות
 - **Example 1:** National **sovereignty**.
@@ -1251,7 +1221,7 @@
 - **Synonyms:** independence, self-rule
 - **💡 Memory tip:** `sovereign` (n) = ריבון.
 
-### 1799. **autonomy** (n.)
+### 1800. **autonomy** (n.)
 - **Definition:** self-governance
 - **תרגום:** אוטונומיה
 - **Example 1:** The region gained **autonomy**.
@@ -1259,7 +1229,7 @@
 - **Synonyms:** independence, self-rule
 - **💡 Memory tip:** `auto-` = עצמי.
 
-### 1800. **independence** (n.)
+### 1801. **independence** (n.)
 - **Definition:** freedom from control
 - **תרגום:** עצמאות
 - **Example 1:** Declare **independence**.
@@ -1267,7 +1237,7 @@
 - **Synonyms:** autonomy, freedom
 - **💡 Memory tip:** `independent` (adj).
 
-### 1801. **emancipation** (n.)
+### 1802. **emancipation** (n.)
 - **Definition:** the act of setting free
 - **תרגום:** שחרור
 - **Example 1:** The **Emancipation** Proclamation.
@@ -1275,7 +1245,7 @@
 - **Synonyms:** liberation, freedom
 - **💡 Memory tip:** שחרור מעבדות או ממגבלות.
 
-### 1802. **liberation** (n.)
+### 1803. **liberation** (n.)
 - **Definition:** the act of liberating
 - **תרגום:** שחרור
 - **Example 1:** The **liberation** of Europe.
@@ -1283,7 +1253,7 @@
 - **Synonyms:** freedom, emancipation
 - **💡 Memory tip:** מ-`liberty`.
 
-### 1803. **oppression** (n.)
+### 1804. **oppression** (n.)
 - **Definition:** cruel treatment
 - **תרגום:** דיכוי
 - **Example 1:** Fight against **oppression**.
@@ -1291,7 +1261,7 @@
 - **Synonyms:** tyranny, persecution
 - **💡 Memory tip:** `oppress` (v).
 
-### 1804. **tyranny** (n.)
+### 1805. **tyranny** (n.)
 - **Definition:** cruel rule
 - **תרגום:** עריצות
 - **Example 1:** Escape from **tyranny**.
@@ -1299,7 +1269,7 @@
 - **Synonyms:** oppression, dictatorship
 - **💡 Memory tip:** `tyrant` (n).
 
-### 1805. **despotism** (n.)
+### 1806. **despotism** (n.)
 - **Definition:** absolute power (cruel)
 - **תרגום:** רודנות
 - **Example 1:** End the **despotism**.
@@ -1307,7 +1277,7 @@
 - **Synonyms:** tyranny, autocracy
 - **💡 Memory tip:** `despot` = רודן.
 
-### 1806. **anarchy** (n.)
+### 1807. **anarchy** (n.)
 - **Definition:** absence of government
 - **תרגום:** אנרכיה
 - **Example 1:** After the revolution, **anarchy** reigned.
@@ -1315,7 +1285,7 @@
 - **Synonyms:** lawlessness, chaos
 - **💡 Memory tip:** `an-` + `archy` (שלטון).
 
-### 1807. **chaos** (n.)
+### 1808. **chaos** (n.)
 - **Definition:** complete disorder
 - **תרגום:** כאוס
 - **Example 1:** Complete **chaos** followed.
@@ -1324,7 +1294,7 @@
 - **Antonyms:** order
 - **💡 Memory tip:** `chaotic` (adj).
 
-### 1808. **upheaval** (n.)
+### 1809. **upheaval** (n.)
 - **Definition:** a violent change
 - **תרגום:** תהפוכה
 - **Example 1:** Political **upheaval**.
@@ -1332,7 +1302,7 @@
 - **Synonyms:** disruption, revolution
 - **💡 Memory tip:** `up-heave` = להרים למעלה.
 
-### 1809. **turmoil** (n.)
+### 1810. **turmoil** (n.)
 - **Definition:** great disturbance
 - **תרגום:** מהומה
 - **Example 1:** Emotional **turmoil**.
@@ -1340,7 +1310,7 @@
 - **Synonyms:** chaos, upheaval
 - **💡 Memory tip:** רגשי או חברתי.
 
-### 1810. **stability** (n.)
+### 1811. **stability** (n.)
 - **Definition:** the state of being stable
 - **תרגום:** יציבות
 - **Example 1:** Economic **stability**.
@@ -1353,9 +1323,9 @@
 
 # 📚 קטגוריה 5: מונחים פורמליים נדירים (40 מילים)
 
-### 1811. **juxtaposition** - already covered at #1724. Skipping.
+### 1812. **juxtaposition** - already covered at #1724. Skipping.
 
-### 1811. **magnitude** (n.)
+### 1813. **magnitude** (n.)
 - **Definition:** great size or importance
 - **תרגום:** גודל, עוצמה
 - **Example 1:** The **magnitude** of the problem.
@@ -1363,7 +1333,7 @@
 - **Synonyms:** size, extent
 - **💡 Memory tip:** מדעי וספרותי.
 
-### 1812. **facet** (n.)
+### 1814. **facet** (n.)
 - **Definition:** one side or aspect
 - **תרגום:** פן, צד
 - **Example 1:** Every **facet** of her life.
@@ -1371,9 +1341,7 @@
 - **Synonyms:** aspect, side
 - **💡 Memory tip:** גם: פאה של יהלום.
 
-### 1813. **scope** - already covered at #1179. Skipping.
-
-### 1813. **breadth** (n.)
+### 1815. **breadth** (n.)
 - **Definition:** range; width
 - **תרגום:** רוחב, היקף
 - **Example 1:** The **breadth** of her knowledge.
@@ -1381,7 +1349,7 @@
 - **Synonyms:** width, scope
 - **💡 Memory tip:** מ-`broad`.
 
-### 1814. **depth** (n.)
+### 1816. **depth** (n.)
 - **Definition:** the measurement from top to bottom
 - **תרגום:** עומק
 - **Example 1:** The **depth** of the ocean.
@@ -1389,7 +1357,7 @@
 - **Synonyms:** deepness, intensity
 - **💡 Memory tip:** מ-`deep`.
 
-### 1815. **height** (n.)
+### 1817. **height** (n.)
 - **Definition:** the measurement of tallness; peak
 - **תרגום:** גובה, שיא
 - **Example 1:** The **height** of the mountain.
@@ -1397,7 +1365,7 @@
 - **Synonyms:** elevation, peak
 - **💡 Memory tip:** מ-`high`.
 
-### 1816. **pinnacle** (n.)
+### 1818. **pinnacle** (n.)
 - **Definition:** the highest point
 - **תרגום:** פסגה
 - **Example 1:** The **pinnacle** of success.
@@ -1405,7 +1373,7 @@
 - **Synonyms:** peak, summit
 - **💡 Memory tip:** ספרותי.
 
-### 1817. **zenith** (n.)
+### 1819. **zenith** (n.)
 - **Definition:** the highest point
 - **תרגום:** שיא
 - **Example 1:** At the **zenith** of her career.
@@ -1414,7 +1382,7 @@
 - **Antonyms:** nadir
 - **💡 Memory tip:** ספרותי ואסטרונומי.
 
-### 1818. **apex** (n.)
+### 1820. **apex** (n.)
 - **Definition:** the top
 - **תרגום:** שיא
 - **Example 1:** The **apex** of the pyramid.
@@ -1422,7 +1390,7 @@
 - **Synonyms:** peak, summit
 - **💡 Memory tip:** גיאומטרי וספרותי.
 
-### 1819. **nadir** (n.)
+### 1821. **nadir** (n.)
 - **Definition:** the lowest point
 - **תרגום:** שפל
 - **Example 1:** The **nadir** of her life.
@@ -1431,7 +1399,7 @@
 - **Antonyms:** zenith
 - **💡 Memory tip:** ספרותי.
 
-### 1820. **crux** (n.)
+### 1822. **crux** (n.)
 - **Definition:** the most important part
 - **תרגום:** לב הבעיה
 - **Example 1:** The **crux** of the matter.
@@ -1439,7 +1407,7 @@
 - **Synonyms:** core, essence
 - **💡 Memory tip:** מלטינית - צלב, הצטלבות.
 
-### 1821. **gist** (n.)
+### 1823. **gist** (n.)
 - **Definition:** the main point
 - **תרגום:** תמצית
 - **Example 1:** Tell me the **gist**.
@@ -1447,7 +1415,7 @@
 - **Synonyms:** essence, substance
 - **💡 Memory tip:** נקודה עיקרית.
 
-### 1822. **nucleus** (n.)
+### 1824. **nucleus** (n.)
 - **Definition:** the central part
 - **תרגום:** גרעין
 - **Example 1:** The **nucleus** of the cell.
@@ -1455,7 +1423,7 @@
 - **Synonyms:** core, center
 - **💡 Memory tip:** Plural: **nuclei**.
 
-### 1823. **culmination** (n.)
+### 1825. **culmination** (n.)
 - **Definition:** the highest point reached
 - **תרגום:** שיא
 - **Example 1:** The **culmination** of years of work.
@@ -1463,7 +1431,7 @@
 - **Synonyms:** climax, peak
 - **💡 Memory tip:** מ-`culminate`.
 
-### 1824. **realm** (n.)
+### 1826. **realm** (n.)
 - **Definition:** a kingdom; a domain
 - **תרגום:** תחום, ממלכה
 - **Example 1:** In the **realm** of science.
@@ -1471,7 +1439,7 @@
 - **Synonyms:** domain, area
 - **💡 Memory tip:** ספרותי.
 
-### 1825. **domain** (n.)
+### 1827. **domain** (n.)
 - **Definition:** an area of activity
 - **תרגום:** תחום
 - **Example 1:** Her **domain** is medicine.
@@ -1479,7 +1447,7 @@
 - **Synonyms:** field, area
 - **💡 Memory tip:** גם: kingdom.
 
-### 1826. **sphere** (n.)
+### 1828. **sphere** (n.)
 - **Definition:** an area or range
 - **תרגום:** תחום, כדור
 - **Example 1:** In the **sphere** of politics.
@@ -1487,7 +1455,7 @@
 - **Synonyms:** area, field
 - **💡 Memory tip:** `spherical` (adj).
 
-### 1827. **arena** (n.)
+### 1829. **arena** (n.)
 - **Definition:** a place or scene of activity
 - **תרגום:** זירה
 - **Example 1:** The political **arena**.
@@ -1495,7 +1463,7 @@
 - **Synonyms:** stage, scene
 - **💡 Memory tip:** מהרומאים - זירת קרבות.
 
-### 1828. **periphery** (n.)
+### 1830. **periphery** (n.)
 - **Definition:** the outer boundary
 - **תרגום:** שוליים, פריפריה
 - **Example 1:** On the **periphery** of society.
@@ -1504,7 +1472,7 @@
 - **Antonyms:** center, core
 - **💡 Memory tip:** `peripheral` (adj).
 
-### 1829. **boundary** (n.)
+### 1831. **boundary** (n.)
 - **Definition:** a dividing line
 - **תרגום:** גבול
 - **Example 1:** Respect personal **boundaries**.
@@ -1512,7 +1480,7 @@
 - **Synonyms:** border, limit
 - **💡 Memory tip:** Plural: **boundaries**.
 
-### 1830. **threshold** (n.)
+### 1832. **threshold** (n.)
 - **Definition:** a starting point; doorway
 - **תרגום:** סף
 - **Example 1:** The **threshold** of a new era.
@@ -1520,7 +1488,7 @@
 - **Synonyms:** beginning, edge
 - **💡 Memory tip:** פיזי ומטפורי.
 
-### 1831. **juncture** (n.)
+### 1833. **juncture** (n.)
 - **Definition:** a point in time
 - **תרגום:** שלב, נקודה
 - **Example 1:** At this **juncture**, we must decide.
@@ -1528,7 +1496,7 @@
 - **Synonyms:** point, moment
 - **💡 Memory tip:** מ-`join`.
 
-### 1832. **interval** (n.)
+### 1834. **interval** (n.)
 - **Definition:** a period between events
 - **תרגום:** הפוגה, מרווח
 - **Example 1:** Rest **intervals**.
@@ -1536,7 +1504,7 @@
 - **Synonyms:** pause, break
 - **💡 Memory tip:** בין אירועים.
 
-### 1833. **hiatus** (n.)
+### 1835. **hiatus** (n.)
 - **Definition:** a break or pause
 - **תרגום:** הפסקה
 - **Example 1:** A brief **hiatus**.
@@ -1544,7 +1512,7 @@
 - **Synonyms:** pause, break
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 1834. **respite** (n.)
+### 1836. **respite** (n.)
 - **Definition:** a brief period of rest
 - **תרגום:** הפוגה
 - **Example 1:** A welcome **respite**.
@@ -1552,7 +1520,7 @@
 - **Synonyms:** rest, break
 - **💡 Memory tip:** ספרותי.
 
-### 1835. **lull** (n.)
+### 1837. **lull** (n.)
 - **Definition:** a period of quiet
 - **תרגום:** השקטה, הפוגה
 - **Example 1:** A **lull** in the conversation.
@@ -1560,7 +1528,7 @@
 - **Synonyms:** quiet, pause
 - **💡 Memory tip:** גם פועל: להרדים.
 
-### 1836. **commencement** (n.)
+### 1838. **commencement** (n.)
 - **Definition:** the beginning; graduation
 - **תרגום:** התחלה; טקס סיום
 - **Example 1:** The **commencement** of the project.
@@ -1568,7 +1536,7 @@
 - **Synonyms:** beginning, start
 - **💡 Memory tip:** מ-`commence`.
 
-### 1837. **inception** (n.)
+### 1839. **inception** (n.)
 - **Definition:** the beginning
 - **תרגום:** ראשית
 - **Example 1:** From its **inception**.
@@ -1576,7 +1544,7 @@
 - **Synonyms:** beginning, start
 - **💡 Memory tip:** התחלה מוחלטת.
 
-### 1838. **genesis** (n.)
+### 1840. **genesis** (n.)
 - **Definition:** the origin
 - **תרגום:** בראשית, מקור
 - **Example 1:** The **genesis** of the project.
@@ -1584,7 +1552,7 @@
 - **Synonyms:** origin, beginning
 - **💡 Memory tip:** מספר בראשית.
 
-### 1839. **origin** (n.)
+### 1841. **origin** (n.)
 - **Definition:** the point where something begins
 - **תרגום:** מקור
 - **Example 1:** The **origin** of the species.
@@ -1592,7 +1560,7 @@
 - **Synonyms:** source, beginning
 - **💡 Memory tip:** `original` (adj).
 
-### 1840. **advent** (n.)
+### 1842. **advent** (n.)
 - **Definition:** the arrival of something new
 - **תרגום:** הופעה, בוא
 - **Example 1:** The **advent** of the internet.
@@ -1600,7 +1568,7 @@
 - **Synonyms:** arrival, coming
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 1841. **outset** (n.)
+### 1843. **outset** (n.)
 - **Definition:** the beginning
 - **תרגום:** התחלה
 - **Example 1:** From the **outset**.
@@ -1608,9 +1576,9 @@
 - **Synonyms:** beginning, start
 - **💡 Memory tip:** `from the outset` = ביטוי נפוץ.
 
-### 1842. **onset** - already covered at #8 in Package 3. Skipping.
+### 1844. **onset** - already covered at #8 in Package 3. Skipping.
 
-### 1842. **outcome** (n.)
+### 1845. **outcome** (n.)
 - **Definition:** the result
 - **תרגום:** תוצאה
 - **Example 1:** The **outcome** was positive.
@@ -1618,7 +1586,7 @@
 - **Synonyms:** result, consequence
 - **💡 Memory tip:** `out-come` = מה שיוצא בסוף.
 
-### 1843. **aftermath** (n.)
+### 1846. **aftermath** (n.)
 - **Definition:** the consequences of an event
 - **תרגום:** תוצאות (לאחר)
 - **Example 1:** In the **aftermath** of the war.
@@ -1626,7 +1594,7 @@
 - **Synonyms:** consequences, results
 - **💡 Memory tip:** לרוב לאחר אירוע טראומטי.
 
-### 1844. **residue** (n.)
+### 1847. **residue** (n.)
 - **Definition:** what remains
 - **תרגום:** שארית
 - **Example 1:** Chemical **residue**.
@@ -1634,7 +1602,7 @@
 - **Synonyms:** remainder, remnant
 - **💡 Memory tip:** מה שנותר.
 
-### 1845. **remnant** (n.)
+### 1848. **remnant** (n.)
 - **Definition:** a remaining small part
 - **תרגום:** שריד
 - **Example 1:** **Remnants** of the past.
@@ -1642,7 +1610,7 @@
 - **Synonyms:** residue, remainder
 - **💡 Memory tip:** Plural: **remnants**.
 
-### 1846. **vestige** (n.)
+### 1849. **vestige** (n.)
 - **Definition:** a trace of something
 - **תרגום:** זכר, שריד
 - **Example 1:** **Vestiges** of the old city.
@@ -1650,7 +1618,7 @@
 - **Synonyms:** trace, remnant
 - **💡 Memory tip:** שריד קטן.
 
-### 1847. **relic** (n.)
+### 1850. **relic** (n.)
 - **Definition:** an object from the past
 - **תרגום:** שריד, מזכרת
 - **Example 1:** Ancient **relics**.
@@ -1658,7 +1626,7 @@
 - **Synonyms:** artifact, keepsake
 - **💡 Memory tip:** חפץ קדום.
 
-### 1848. **artifact** (n.)
+### 1851. **artifact** (n.)
 - **Definition:** an object from the past
 - **תרגום:** חפץ קדום
 - **Example 1:** Archaeological **artifacts**.
@@ -1666,7 +1634,7 @@
 - **Synonyms:** relic, object
 - **💡 Memory tip:** `art` + `fact`.
 
-### 1849. **monument** (n.)
+### 1852. **monument** (n.)
 - **Definition:** a memorial structure
 - **תרגום:** אנדרטה
 - **Example 1:** A **monument** to the fallen.
@@ -1674,7 +1642,7 @@
 - **Synonyms:** memorial, statue
 - **💡 Memory tip:** `monumental` (adj).
 
-### 1850. **testament** (n.)
+### 1853. **testament** (n.)
 - **Definition:** evidence of a fact
 - **תרגום:** עדות
 - **Example 1:** A **testament** to her skill.
@@ -1699,17 +1667,17 @@
 
 ## 🧠 לקחים חשובים:
 
-### 1. **מילים שמופיעות בטקסטים מורכבים**
+### 1854. **מילים שמופיעות בטקסטים מורכבים**
 - `rhetoric`, `discourse`, `narrative`
 - `paradigm`, `axiom`, `premise`
 - `hierarchy`, `dichotomy`, `juxtaposition`
 
-### 2. **שמות עצם מופשטים**
+### 1855. **שמות עצם מופשטים**
 - `nuance`, `subtlety`, `complexity`
 - `integrity`, `fortitude`, `tenacity`
 - `zenith`, `apex`, `nadir`
 
-### 3. **מילים של אירועים**
+### 1856. **מילים של אירועים**
 - `inception`, `genesis`, `advent`
 - `outcome`, `aftermath`, `residue`
 - `upheaval`, `turmoil`, `chaos`
