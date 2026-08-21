@@ -277,8 +277,6 @@
 - **Antonyms:** untrustworthy
 - **💡 Memory tip:** `trust` + `worthy`.
 
-### 880. **honest** - already covered at #382. Skipping.
-
 ### 880. **sincere** (adj.)
 - **Definition:** genuine, not false
 - **תרגום:** כנה
@@ -387,8 +385,6 @@
 - **Antonyms:** rigid, stubborn
 - **💡 Memory tip:** פיזי ומטפורי.
 
-### 892. **polite** - already covered at #384. Skipping.
-
 ### 892. **independent** (adj.)
 - **Definition:** not depending on others
 - **תרגום:** עצמאי
@@ -455,8 +451,6 @@
 - **Synonyms:** complex, difficult
 - **Antonyms:** simple
 - **💡 Memory tip:** שלילי יותר מ-`complex`.
-
-### 899. **simple** - already covered at #430. Skipping.
 
 ### 899. **straightforward** (adj.)
 - **Definition:** easy to understand; honest
@@ -950,17 +944,17 @@
 
 ## 🧠 לקחים חשובים:
 
-### 1. **התארים האקדמיים החשובים**
+### 951. **התארים האקדמיים החשובים**
 - `significant`, `crucial`, `essential`, `vital` - חשוב
 - `substantial`, `considerable`, `extensive` - נרחב
 - `relevant`, `accurate`, `precise` - מדויק
 
-### 2. **זוגות חשובים להבחנה**
+### 952. **זוגות חשובים להבחנה**
 - `effective` (משיג תוצאה) vs `efficient` (ללא בזבוז)
 - `previous` (קודם) vs `former` (לשעבר)
 - `current` (נוכחי) vs `recent` (אחרון)
 
-### 3. **Collocations חשובים**
+### 953. **Collocations חשובים**
 - `make significant progress`
 - `play a crucial role`
 - `provide adequate training`

@@ -41,15 +41,7 @@
 - **Synonyms:** argue, maintain
 - **💡 Memory tip:** שני מובנים: לטעון / להתמודד.
 
-### 1004. **maintain** (v.)
-- **Definition:** to keep asserting
-- **תרגום:** להחזיק בדעה, לטעון
-- **Example 1:** He **maintains** his innocence.
-- **Example 2:** She **maintains** that exercise is key.
-- **Synonyms:** assert, claim
-- **💡 Memory tip:** התמדה בטענה לאורך זמן.
-
-### 1005. **postulate** (v.)
+### 1004. **postulate** (v.)
 - **Definition:** to suggest a theory as true
 - **תרגום:** להציע כאקסיומה
 - **Example 1:** Einstein **postulated** the theory of relativity.
@@ -57,7 +49,7 @@
 - **Synonyms:** propose, theorize
 - **💡 Memory tip:** מדעי - הצעה לצורך בדיקה.
 
-### 1006. **hypothesize** (v.)
+### 1005. **hypothesize** (v.)
 - **Definition:** to make a hypothesis
 - **תרגום:** לשער, להציע היפותזה
 - **Example 1:** Scientists **hypothesize** that water existed on Mars.
@@ -65,7 +57,7 @@
 - **Synonyms:** theorize, speculate
 - **💡 Memory tip:** מ-`hypothesis` (השערה).
 
-### 1007. **speculate** (v.)
+### 1006. **speculate** (v.)
 - **Definition:** to think or guess without sure knowledge
 - **תרגום:** לשער, לנחש
 - **Example 1:** Don't **speculate** without evidence.
@@ -73,7 +65,7 @@
 - **Synonyms:** guess, theorize
 - **💡 Memory tip:** השערה ללא יסוד מוצק.
 
-### 1008. **deduce** (v.)
+### 1007. **deduce** (v.)
 - **Definition:** to conclude through logic
 - **תרגום:** להסיק
 - **Example 1:** From the clues, she **deduced** the answer.
@@ -81,7 +73,7 @@
 - **Synonyms:** conclude, infer
 - **💡 Memory tip:** מסקנה הגיונית.
 
-### 1009. **infer** (v.)
+### 1008. **infer** (v.)
 - **Definition:** to conclude from evidence
 - **תרגום:** להסיק
 - **Example 1:** What can we **infer** from the data?
@@ -89,15 +81,7 @@
 - **Synonyms:** deduce, conclude
 - **💡 Memory tip:** **infer** (הקורא מסיק) ≠ **imply** (הכותב רומז).
 
-### 1010. **conclude** (v.)
-- **Definition:** to reach a decision by reasoning
-- **תרגום:** להסיק
-- **Example 1:** We **conclude** that the hypothesis is correct.
-- **Example 2:** The article **concludes** with a warning.
-- **Synonyms:** deduce, determine
-- **💡 Memory tip:** גם: לסיים (conclude a meeting).
-
-### 1011. **substantiate** (v.)
+### 1009. **substantiate** (v.)
 - **Definition:** to support with evidence
 - **תרגום:** לבסס
 - **Example 1:** Can you **substantiate** your claim?
@@ -105,7 +89,7 @@
 - **Synonyms:** prove, support, verify
 - **💡 Memory tip:** מ-`substance` (מהות).
 
-### 1012. **corroborate** (v.)
+### 1010. **corroborate** (v.)
 - **Definition:** to confirm or give support to
 - **תרגום:** לאמת, לאשש
 - **Example 1:** The witness **corroborated** his story.
@@ -113,7 +97,7 @@
 - **Synonyms:** confirm, verify, support
 - **💡 Memory tip:** אישור חיצוני לטיעון.
 
-### 1013. **validate** (v.)
+### 1011. **validate** (v.)
 - **Definition:** to prove valid
 - **תרגום:** לאמת, לאשש
 - **Example 1:** The study **validates** our approach.
@@ -121,7 +105,7 @@
 - **Synonyms:** confirm, verify
 - **💡 Memory tip:** מ-`valid` (תקף).
 
-### 1014. **refute** (v.)
+### 1012. **refute** (v.)
 - **Definition:** to prove wrong
 - **תרגום:** להפריך
 - **Example 1:** Scientists **refuted** the old theory.
@@ -130,7 +114,7 @@
 - **Antonyms:** confirm, support
 - **💡 Memory tip:** הפרכה פורמלית.
 
-### 1015. **dispute** (v.)
+### 1013. **dispute** (v.)
 - **Definition:** to argue against
 - **תרגום:** לחלוק, לערער
 - **Example 1:** I don't **dispute** the facts.
@@ -138,7 +122,7 @@
 - **Synonyms:** contest, challenge
 - **💡 Memory tip:** גם שם עצם: מחלוקת.
 
-### 1016. **challenge** (v.)
+### 1014. **challenge** (v.)
 - **Definition:** to question; to invite to compete
 - **תרגום:** לערער, לאתגר
 - **Example 1:** She **challenged** his authority.
@@ -146,7 +130,7 @@
 - **Synonyms:** question, contest, dispute
 - **💡 Memory tip:** גם שם עצם.
 
-### 1017. **acknowledge** (v.)
+### 1015. **acknowledge** (v.)
 - **Definition:** to accept or admit
 - **תרגום:** להכיר, להודות
 - **Example 1:** He **acknowledged** his mistake.
@@ -155,15 +139,7 @@
 - **Antonyms:** deny
 - **💡 Memory tip:** פורמלי מ-`admit`.
 
-### 1018. **recognize** (v.)
-- **Definition:** to accept as valid
-- **תרגום:** להכיר, לזהות
-- **Example 1:** We **recognize** her contribution.
-- **Example 2:** The court **recognized** the agreement.
-- **Synonyms:** acknowledge, accept
-- **💡 Memory tip:** גם: לזהות ויזואלית.
-
-### 1019. **attribute** (v.)
+### 1016. **attribute** (v.)
 - **Definition:** to assign as belonging to
 - **תרגום:** לייחס
 - **Example 1:** They **attribute** the success to hard work.
@@ -171,7 +147,7 @@
 - **Synonyms:** credit, ascribe
 - **💡 Memory tip:** `attribute X to Y` = לייחס X ל-Y.
 
-### 1020. **ascribe** (v.)
+### 1017. **ascribe** (v.)
 - **Definition:** to attribute to
 - **תרגום:** לייחס
 - **Example 1:** He **ascribed** his success to luck.
@@ -179,15 +155,7 @@
 - **Synonyms:** attribute, credit
 - **💡 Memory tip:** פורמלי יותר מ-`attribute`.
 
-### 1021. **comprise** (v.)
-- **Definition:** to consist of
-- **תרגום:** מורכב מ-
-- **Example 1:** The team **comprises** ten members.
-- **Example 2:** The book **comprises** three parts.
-- **Synonyms:** consist of, include
-- **💡 Memory tip:** `comprise X` (ללא "of"!). `consist of X` (עם "of").
-
-### 1022. **encompass** (v.)
+### 1018. **encompass** (v.)
 - **Definition:** to include; to surround
 - **תרגום:** לכלול, להקיף
 - **Example 1:** The study **encompasses** many fields.
@@ -195,7 +163,7 @@
 - **Synonyms:** include, cover
 - **💡 Memory tip:** תופס באופן רחב.
 
-### 1023. **incorporate** (v.)
+### 1019. **incorporate** (v.)
 - **Definition:** to include as part of
 - **תרגום:** לשלב, לכלול
 - **Example 1:** The design **incorporates** new features.
@@ -203,7 +171,7 @@
 - **Synonyms:** include, integrate
 - **💡 Memory tip:** פורמלי להוספה.
 
-### 1024. **integrate** (v.)
+### 1020. **integrate** (v.)
 - **Definition:** to combine into a whole
 - **תרגום:** לשלב
 - **Example 1:** We need to **integrate** these systems.
@@ -212,7 +180,7 @@
 - **Antonyms:** separate
 - **💡 Memory tip:** שילוב לכדי שלם אחד.
 
-### 1025. **synthesize** (v.)
+### 1021. **synthesize** (v.)
 - **Definition:** to combine elements
 - **תרגום:** לסנתז, לצרף
 - **Example 1:** The chemist **synthesized** a new compound.
@@ -220,7 +188,7 @@
 - **Synonyms:** combine, integrate
 - **💡 Memory tip:** במדע: ליצור חומר. באקדמיה: לצרף מידע.
 
-### 1026. **construct** (v.)
+### 1022. **construct** (v.)
 - **Definition:** to build
 - **תרגום:** לבנות
 - **Example 1:** They're **constructing** a new bridge.
@@ -229,7 +197,7 @@
 - **Antonyms:** destroy, demolish
 - **💡 Memory tip:** פיזי ומטפורי.
 
-### 1027. **derive** (v.)
+### 1023. **derive** (v.)
 - **Definition:** to obtain from a source
 - **תרגום:** לגזור, להפיק
 - **Example 1:** Sugar is **derived** from sugarcane.
@@ -237,7 +205,7 @@
 - **Synonyms:** obtain, gain
 - **💡 Memory tip:** `derive X from Y` = להפיק X מ-Y.
 
-### 1028. **originate** (v.)
+### 1024. **originate** (v.)
 - **Definition:** to come from
 - **תרגום:** להיווצר, להתחיל
 - **Example 1:** The tradition **originated** in China.
@@ -245,16 +213,7 @@
 - **Synonyms:** begin, emerge
 - **💡 Memory tip:** מ-`origin` (מקור).
 
-### 1029. **emerge** (v.)
-- **Definition:** to appear; to become known
-- **תרגום:** להתגלות, לצוץ
-- **Example 1:** New evidence has **emerged**.
-- **Example 2:** She **emerged** as a leader.
-- **Synonyms:** appear, arise
-- **Antonyms:** disappear, vanish
-- **💡 Memory tip:** יציאה מתוך חשכה/אלמוניות.
-
-### 1030. **arise** (v.)
+### 1025. **arise** (v.)
 - **Definition:** to emerge; to result
 - **תרגום:** לקום, להתעורר
 - **Example 1:** Problems may **arise**.
@@ -266,16 +225,7 @@
 
 # 💬 קטגוריה 2: פעלי ביקורת ודיון (30 מילים)
 
-### 1031. **criticize** (v.)
-- **Definition:** to express disapproval
-- **תרגום:** לבקר
-- **Example 1:** The report was heavily **criticized**.
-- **Example 2:** Don't **criticize** without understanding.
-- **Synonyms:** disparage, condemn
-- **Antonyms:** praise, commend
-- **💡 Memory tip:** Also spelled `criticise` (British).
-
-### 1032. **condemn** (v.)
+### 1026. **condemn** (v.)
 - **Definition:** to strongly disapprove
 - **תרגום:** לגנות
 - **Example 1:** Leaders **condemned** the violence.
@@ -284,7 +234,7 @@
 - **Antonyms:** praise, approve
 - **💡 Memory tip:** חזק מאוד - גינוי רשמי.
 
-### 1033. **denounce** (v.)
+### 1027. **denounce** (v.)
 - **Definition:** to publicly condemn
 - **תרגום:** לגנות בפומבי
 - **Example 1:** The senator **denounced** the policy.
@@ -292,7 +242,7 @@
 - **Synonyms:** condemn, criticize
 - **💡 Memory tip:** גינוי פומבי/רשמי.
 
-### 1034. **critique** (v.)
+### 1028. **critique** (v.)
 - **Definition:** to review critically
 - **תרגום:** לבקר (באופן מנומק)
 - **Example 1:** Students will **critique** each other's papers.
@@ -300,7 +250,7 @@
 - **Synonyms:** review, analyze
 - **💡 Memory tip:** ביקורת מנומקת ומקצועית - לא בהכרח שלילית.
 
-### 1035. **dismiss** (v.)
+### 1029. **dismiss** (v.)
 - **Definition:** to reject; to send away
 - **תרגום:** לדחות, לפטר
 - **Example 1:** Don't **dismiss** my idea.
@@ -309,9 +259,7 @@
 - **Antonyms:** accept, hire
 - **💡 Memory tip:** שני מובנים: לדחות רעיון / לפטר מעבודה.
 
-### 1036. **reject** - already covered at #523. Skipping.
-
-### 1036. **decline** (v.)
+### 1030. **decline** (v.)
 - **Definition:** to politely refuse; to decrease
 - **תרגום:** לסרב (בנימוס); לרדת
 - **Example 1:** She **declined** the invitation.
@@ -320,7 +268,7 @@
 - **Antonyms:** accept; increase
 - **💡 Memory tip:** שני מובנים לגמרי שונים.
 
-### 1037. **object** (v.)
+### 1031. **object** (v.)
 - **Definition:** to oppose
 - **תרגום:** להתנגד
 - **Example 1:** I **object** to this proposal.
@@ -329,7 +277,7 @@
 - **Antonyms:** agree, approve
 - **💡 Memory tip:** גם שם עצם: חפץ. הגייה שונה!
 
-### 1038. **oppose** (v.)
+### 1032. **oppose** (v.)
 - **Definition:** to be against
 - **תרגום:** להתנגד
 - **Example 1:** Many **oppose** the new law.
@@ -338,7 +286,7 @@
 - **Antonyms:** support
 - **💡 Memory tip:** מ-`opposite` (הפוך).
 
-### 1039. **contradict** (v.)
+### 1033. **contradict** (v.)
 - **Definition:** to say the opposite
 - **תרגום:** לסתור
 - **Example 1:** His words **contradict** his actions.
@@ -347,7 +295,7 @@
 - **Antonyms:** confirm, agree
 - **💡 Memory tip:** `contra-` = נגד + `-dict` = לומר.
 
-### 1040. **protest** (v.)
+### 1034. **protest** (v.)
 - **Definition:** to express strong disapproval
 - **תרגום:** למחות
 - **Example 1:** They **protested** against the war.
@@ -355,7 +303,7 @@
 - **Synonyms:** object, complain
 - **💡 Memory tip:** גם שם עצם: הפגנה.
 
-### 1041. **advocate** (v.)
+### 1035. **advocate** (v.)
 - **Definition:** to publicly support
 - **תרגום:** לתמוך, להטיף בעד
 - **Example 1:** She **advocates** for women's rights.
@@ -364,7 +312,7 @@
 - **Antonyms:** oppose
 - **💡 Memory tip:** גם שם עצם: תומך מוצהר.
 
-### 1042. **endorse** (v.)
+### 1036. **endorse** (v.)
 - **Definition:** to publicly support
 - **תרגום:** לתמוך בפומבי, להמליץ
 - **Example 1:** The senator **endorsed** the candidate.
@@ -372,7 +320,7 @@
 - **Synonyms:** support, approve
 - **💡 Memory tip:** פומבי, רשמי.
 
-### 1043. **sanction** (v.)
+### 1037. **sanction** (v.)
 - **Definition:** to officially approve; to impose penalties
 - **תרגום:** לאשר; להטיל סנקציות
 - **Example 1:** The law **sanctions** the use of force.
@@ -380,9 +328,7 @@
 - **Synonyms:** approve, permit; penalize
 - **💡 Memory tip:** שני מובנים הפוכים!
 
-### 1044. **approve** - already covered at #524. Skipping.
-
-### 1044. **commend** (v.)
+### 1038. **commend** (v.)
 - **Definition:** to praise formally
 - **תרגום:** לשבח
 - **Example 1:** The teacher **commended** her work.
@@ -391,7 +337,7 @@
 - **Antonyms:** criticize
 - **💡 Memory tip:** פורמלי מ-`praise`.
 
-### 1045. **applaud** (v.)
+### 1039. **applaud** (v.)
 - **Definition:** to clap; to express approval
 - **תרגום:** למחוא כפיים, לשבח
 - **Example 1:** The audience **applauded**.
@@ -399,7 +345,7 @@
 - **Synonyms:** praise, commend
 - **💡 Memory tip:** גם ממש (מחיאת כפיים) וגם מטפורי.
 
-### 1046. **ridicule** (v.)
+### 1040. **ridicule** (v.)
 - **Definition:** to make fun of
 - **תרגום:** ללעוג, ללגלג
 - **Example 1:** Don't **ridicule** his ideas.
@@ -408,7 +354,7 @@
 - **Antonyms:** praise
 - **💡 Memory tip:** מ-`ridiculous` (מגוחך).
 
-### 1047. **mock** (v.)
+### 1041. **mock** (v.)
 - **Definition:** to make fun of
 - **תרגום:** ללעוג
 - **Example 1:** They **mocked** his accent.
@@ -416,7 +362,7 @@
 - **Synonyms:** ridicule, tease
 - **💡 Memory tip:** גם תואר: `mock exam` = מבחן דמה.
 
-### 1048. **scorn** (v.)
+### 1042. **scorn** (v.)
 - **Definition:** to feel contempt for
 - **תרגום:** לבוז
 - **Example 1:** She **scorned** his advice.
@@ -424,7 +370,7 @@
 - **Synonyms:** despise, disdain
 - **💡 Memory tip:** בוז חזק.
 
-### 1049. **despise** (v.)
+### 1043. **despise** (v.)
 - **Definition:** to feel strong dislike
 - **תרגום:** לבוז, לתעב
 - **Example 1:** I **despise** dishonesty.
@@ -433,7 +379,7 @@
 - **Antonyms:** admire, love
 - **💡 Memory tip:** חזק מאוד - גועל מוסרי.
 
-### 1050. **loathe** (v.)
+### 1044. **loathe** (v.)
 - **Definition:** to strongly dislike
 - **תרגום:** לתעב
 - **Example 1:** I **loathe** horror movies.
@@ -441,7 +387,7 @@
 - **Synonyms:** hate, detest
 - **💡 Memory tip:** חזק מאוד - שנאה.
 
-### 1051. **resent** (v.)
+### 1045. **resent** (v.)
 - **Definition:** to feel bitter about
 - **תרגום:** להיות טרוד/ממורמר
 - **Example 1:** She **resents** her sister's success.
@@ -449,7 +395,7 @@
 - **Synonyms:** begrudge, dislike
 - **💡 Memory tip:** רגש שלילי מתמשך.
 
-### 1052. **embrace** (v.)
+### 1046. **embrace** (v.)
 - **Definition:** to accept with enthusiasm; to hug
 - **תרגום:** לאמץ (בחום); לחבק
 - **Example 1:** We **embrace** diversity.
@@ -458,7 +404,7 @@
 - **Antonyms:** reject
 - **💡 Memory tip:** חיבור חם ונלהב.
 
-### 1053. **welcome** (v.)
+### 1047. **welcome** (v.)
 - **Definition:** to greet warmly
 - **תרגום:** לקבל בברכה
 - **Example 1:** We **welcome** new members.
@@ -466,7 +412,7 @@
 - **Synonyms:** greet, embrace
 - **💡 Memory tip:** גם שם עצם וגם תואר (`welcome guests`).
 
-### 1054. **disregard** (v.)
+### 1048. **disregard** (v.)
 - **Definition:** to ignore
 - **תרגום:** להתעלם, לא להתחשב
 - **Example 1:** Don't **disregard** the warning.
@@ -475,7 +421,7 @@
 - **Antonyms:** consider
 - **💡 Memory tip:** `dis-` + `regard` = לא לתת מקום.
 
-### 1055. **neglect** (v.)
+### 1049. **neglect** (v.)
 - **Definition:** to fail to care for
 - **תרגום:** להזניח
 - **Example 1:** Don't **neglect** your health.
@@ -484,7 +430,7 @@
 - **Antonyms:** attend to, care for
 - **💡 Memory tip:** חוסר טיפול או הזנחה.
 
-### 1056. **overlook** (v.)
+### 1050. **overlook** (v.)
 - **Definition:** to fail to notice; to look over (a place)
 - **תרגום:** לפספס; להשקיף על
 - **Example 1:** I **overlooked** that detail.
@@ -492,9 +438,7 @@
 - **Synonyms:** miss, ignore
 - **💡 Memory tip:** שני מובנים נפוצים!
 
-### 1057. **consider** - already covered at #541. Skipping.
-
-### 1057. **contemplate** (v.)
+### 1051. **contemplate** (v.)
 - **Definition:** to think carefully
 - **תרגום:** להרהר, לשקול
 - **Example 1:** She **contemplated** her next move.
@@ -502,7 +446,7 @@
 - **Synonyms:** consider, ponder
 - **💡 Memory tip:** מחשבה עמוקה.
 
-### 1058. **ponder** (v.)
+### 1052. **ponder** (v.)
 - **Definition:** to think deeply
 - **תרגום:** להרהר
 - **Example 1:** He **pondered** the question.
@@ -510,7 +454,7 @@
 - **Synonyms:** contemplate, reflect
 - **💡 Memory tip:** מחשבה בשקט ובעמקות.
 
-### 1059. **reflect** (v.)
+### 1053. **reflect** (v.)
 - **Definition:** to think about; to show back
 - **תרגום:** להרהר; להשתקף
 - **Example 1:** I often **reflect** on my past.
@@ -518,7 +462,7 @@
 - **Synonyms:** contemplate; mirror
 - **💡 Memory tip:** שני מובנים.
 
-### 1060. **dwell** (v.)
+### 1054. **dwell** (v.)
 - **Definition:** to live; to think about at length
 - **תרגום:** לגור; להתעכב על (בתודעה)
 - **Example 1:** They **dwell** in the countryside.
@@ -530,9 +474,7 @@
 
 # 🔨 קטגוריה 3: פעלי שינוי ועיצוב (30 מילים)
 
-### 1061. **alter** - already covered at #601. Skipping.
-
-### 1061. **amend** (v.)
+### 1055. **amend** (v.)
 - **Definition:** to change (a text or law)
 - **תרגום:** לתקן (חוק/טקסט)
 - **Example 1:** They **amended** the constitution.
@@ -540,7 +482,7 @@
 - **Synonyms:** modify, revise
 - **💡 Memory tip:** פורמלי; קשור ל-`amendment` (תיקון לחוק).
 
-### 1062. **revise** (v.)
+### 1056. **revise** (v.)
 - **Definition:** to change or improve
 - **תרגום:** לתקן, לערוך
 - **Example 1:** I need to **revise** my essay.
@@ -548,9 +490,7 @@
 - **Synonyms:** edit, amend
 - **💡 Memory tip:** פעולה על טקסט - לעבור ולתקן.
 
-### 1063. **modify** - already covered at #600. Skipping.
-
-### 1063. **refine** (v.)
+### 1057. **refine** (v.)
 - **Definition:** to improve by small changes
 - **תרגום:** לשכלל, לעדן
 - **Example 1:** She **refined** her technique.
@@ -558,7 +498,7 @@
 - **Synonyms:** improve, polish
 - **💡 Memory tip:** שיפור באמצעות פרטים קטנים.
 
-### 1064. **polish** (v.)
+### 1058. **polish** (v.)
 - **Definition:** to improve (metaphorically)
 - **תרגום:** לשכלל, ללטש
 - **Example 1:** **Polish** your presentation.
@@ -566,7 +506,7 @@
 - **Synonyms:** refine, perfect
 - **💡 Memory tip:** מטפורית - שיפור גמור.
 
-### 1065. **perfect** (v.)
+### 1059. **perfect** (v.)
 - **Definition:** to make perfect
 - **תרגום:** לשכלל, להגיע לשלמות
 - **Example 1:** She **perfected** her recipe.
@@ -574,9 +514,7 @@
 - **Synonyms:** refine, master
 - **💡 Memory tip:** הגייה: פועל /pəˈfekt/, תואר /ˈpɜːfekt/.
 
-### 1066. **enhance** - already covered at #515. Skipping.
-
-### 1066. **augment** (v.)
+### 1060. **augment** (v.)
 - **Definition:** to make greater
 - **תרגום:** להגדיל, להגביר
 - **Example 1:** **Augment** your income with a side job.
@@ -585,7 +523,7 @@
 - **Antonyms:** reduce
 - **💡 Memory tip:** פורמלי להגדלה.
 
-### 1067. **diminish** (v.)
+### 1061. **diminish** (v.)
 - **Definition:** to become smaller
 - **תרגום:** להפחית, להקטין
 - **Example 1:** His influence has **diminished**.
@@ -594,7 +532,7 @@
 - **Antonyms:** increase, enhance
 - **💡 Memory tip:** פורמלי להקטנה.
 
-### 1068. **minimize** (v.)
+### 1062. **minimize** (v.)
 - **Definition:** to reduce to a minimum
 - **תרגום:** למזער
 - **Example 1:** **Minimize** the risks.
@@ -603,7 +541,7 @@
 - **Antonyms:** maximize
 - **💡 Memory tip:** מ-`minimum`.
 
-### 1069. **maximize** (v.)
+### 1063. **maximize** (v.)
 - **Definition:** to make as large as possible
 - **תרגום:** למקסם
 - **Example 1:** **Maximize** your potential.
@@ -612,7 +550,7 @@
 - **Antonyms:** minimize
 - **💡 Memory tip:** מ-`maximum`.
 
-### 1070. **optimize** (v.)
+### 1064. **optimize** (v.)
 - **Definition:** to make the best of
 - **תרגום:** למטב, לייעל
 - **Example 1:** **Optimize** your time.
@@ -620,7 +558,7 @@
 - **Synonyms:** improve, maximize
 - **💡 Memory tip:** מ-`optimal` (מיטבי).
 
-### 1071. **streamline** (v.)
+### 1065. **streamline** (v.)
 - **Definition:** to make more efficient
 - **תרגום:** לייעל
 - **Example 1:** We need to **streamline** the process.
@@ -628,7 +566,7 @@
 - **Synonyms:** simplify, optimize
 - **💡 Memory tip:** מ-`stream` (זרם) - לגרום לזרימה חלקה.
 
-### 1072. **revamp** (v.)
+### 1066. **revamp** (v.)
 - **Definition:** to renovate; to improve significantly
 - **תרגום:** לחדש, לשפץ
 - **Example 1:** They **revamped** the website.
@@ -636,7 +574,7 @@
 - **Synonyms:** renovate, overhaul
 - **💡 Memory tip:** שינוי מקיף ומשמעותי.
 
-### 1073. **renovate** (v.)
+### 1067. **renovate** (v.)
 - **Definition:** to restore to good condition
 - **תרגום:** לשפץ
 - **Example 1:** They're **renovating** the house.
@@ -644,7 +582,7 @@
 - **Synonyms:** refurbish, restore
 - **💡 Memory tip:** בעיקר בבנייה.
 
-### 1074. **restore** (v.)
+### 1068. **restore** (v.)
 - **Definition:** to bring back to original state
 - **תרגום:** לשחזר, להחזיר
 - **Example 1:** They **restored** the old painting.
@@ -652,7 +590,7 @@
 - **Synonyms:** repair, renew
 - **💡 Memory tip:** `re-store` = להחזיר להיות.
 
-### 1075. **repair** (v.)
+### 1069. **repair** (v.)
 - **Definition:** to fix
 - **תרגום:** לתקן
 - **Example 1:** Can you **repair** my phone?
@@ -661,9 +599,7 @@
 - **Antonyms:** damage, break
 - **💡 Memory tip:** פורמלי מ-`fix`.
 
-### 1076. **destroy** - already covered at #118. Skipping.
-
-### 1076. **demolish** (v.)
+### 1070. **demolish** (v.)
 - **Definition:** to pull down; to destroy
 - **תרגום:** להרוס (מבנה)
 - **Example 1:** They **demolished** the old building.
@@ -671,7 +607,7 @@
 - **Synonyms:** destroy, tear down
 - **💡 Memory tip:** בעיקר לבניינים, אבל גם מטפורי.
 
-### 1077. **eliminate** (v.)
+### 1071. **eliminate** (v.)
 - **Definition:** to completely remove
 - **תרגום:** לבטל, לחסל
 - **Example 1:** **Eliminate** all distractions.
@@ -679,7 +615,7 @@
 - **Synonyms:** remove, eradicate
 - **💡 Memory tip:** הוצאה מוחלטת.
 
-### 1078. **eradicate** (v.)
+### 1072. **eradicate** (v.)
 - **Definition:** to destroy completely
 - **תרגום:** לעקור מן השורש
 - **Example 1:** **Eradicate** poverty.
@@ -687,7 +623,7 @@
 - **Synonyms:** eliminate, wipe out
 - **💡 Memory tip:** מ-`radicals` (שורש) - לעקור מהשורש.
 
-### 1079. **abolish** (v.)
+### 1073. **abolish** (v.)
 - **Definition:** to formally end (a law/practice)
 - **תרגום:** לבטל
 - **Example 1:** Slavery was **abolished**.
@@ -695,7 +631,7 @@
 - **Synonyms:** end, eliminate
 - **💡 Memory tip:** פורמלי - ביטול חוקי.
 
-### 1080. **revoke** (v.)
+### 1074. **revoke** (v.)
 - **Definition:** to officially cancel
 - **תרגום:** לבטל (רשמית)
 - **Example 1:** They **revoked** his license.
@@ -703,7 +639,7 @@
 - **Synonyms:** cancel, withdraw
 - **💡 Memory tip:** ביטול של הרשאה/זכות.
 
-### 1081. **suspend** (v.)
+### 1075. **suspend** (v.)
 - **Definition:** to temporarily stop
 - **תרגום:** להשעות
 - **Example 1:** The student was **suspended**.
@@ -711,7 +647,7 @@
 - **Synonyms:** postpone, halt
 - **💡 Memory tip:** גם פיזי: לתלות.
 
-### 1082. **postpone** (v.)
+### 1076. **postpone** (v.)
 - **Definition:** to delay
 - **תרגום:** לדחות
 - **Example 1:** Let's **postpone** the meeting.
@@ -719,7 +655,7 @@
 - **Synonyms:** delay, put off
 - **💡 Memory tip:** `post-` = אחרי.
 
-### 1083. **delay** (v.)
+### 1077. **delay** (v.)
 - **Definition:** to make late
 - **תרגום:** לעכב, לדחות
 - **Example 1:** The flight was **delayed**.
@@ -727,7 +663,7 @@
 - **Synonyms:** postpone, defer
 - **💡 Memory tip:** גם שם עצם.
 
-### 1084. **defer** (v.)
+### 1078. **defer** (v.)
 - **Definition:** to postpone
 - **תרגום:** לדחות
 - **Example 1:** Let's **defer** the discussion.
@@ -735,7 +671,7 @@
 - **Synonyms:** postpone, delay
 - **💡 Memory tip:** פורמלי מ-`postpone`.
 
-### 1085. **hasten** (v.)
+### 1079. **hasten** (v.)
 - **Definition:** to hurry
 - **תרגום:** למהר, להחיש
 - **Example 1:** She **hastened** to her friend.
@@ -744,7 +680,7 @@
 - **Antonyms:** delay
 - **💡 Memory tip:** מ-`haste` (חיפזון).
 
-### 1086. **accelerate** (v.)
+### 1080. **accelerate** (v.)
 - **Definition:** to speed up
 - **תרגום:** להאיץ
 - **Example 1:** The car **accelerated**.
@@ -753,7 +689,7 @@
 - **Antonyms:** slow down
 - **💡 Memory tip:** פיזי (רכב) ומטפורי.
 
-### 1087. **decelerate** (v.)
+### 1081. **decelerate** (v.)
 - **Definition:** to slow down
 - **תרגום:** להאט
 - **Example 1:** The economy is **decelerating**.
@@ -762,9 +698,7 @@
 - **Antonyms:** accelerate
 - **💡 Memory tip:** `de-` + `accelerate`.
 
-### 1088. **conclude** - already covered at #1010. Skipping.
-
-### 1088. **terminate** (v.)
+### 1082. **terminate** (v.)
 - **Definition:** to bring to an end
 - **תרגום:** לסיים, להפסיק
 - **Example 1:** The contract was **terminated**.
@@ -773,7 +707,7 @@
 - **Antonyms:** start
 - **💡 Memory tip:** פורמלי לסיום.
 
-### 1089. **finalize** (v.)
+### 1083. **finalize** (v.)
 - **Definition:** to complete
 - **תרגום:** לסיים, לסגור
 - **Example 1:** We need to **finalize** the deal.
@@ -781,7 +715,7 @@
 - **Synonyms:** complete, conclude
 - **💡 Memory tip:** מ-`final`.
 
-### 1090. **consolidate** (v.)
+### 1084. **consolidate** (v.)
 - **Definition:** to combine into one
 - **תרגום:** לגבש, לאחד
 - **Example 1:** **Consolidate** your loans.
@@ -793,7 +727,7 @@
 
 # 🤝 קטגוריה 4: פעלי יחסים והשפעה (30 מילים)
 
-### 1091. **influence** (v.)
+### 1085. **influence** (v.)
 - **Definition:** to have an effect on
 - **תרגום:** להשפיע
 - **Example 1:** Parents **influence** their children.
@@ -801,7 +735,7 @@
 - **Synonyms:** affect, impact, sway
 - **💡 Memory tip:** גם שם עצם.
 
-### 1092. **impact** (v.)
+### 1086. **impact** (v.)
 - **Definition:** to have a strong effect
 - **תרגום:** להשפיע (חזק)
 - **Example 1:** Social media **impacts** our lives.
@@ -809,9 +743,7 @@
 - **Synonyms:** affect, influence
 - **💡 Memory tip:** השפעה חזקה ומשמעותית.
 
-### 1093. **alter** the course - פרזה.
-
-### 1093. **shape** (v.)
+### 1087. **shape** (v.)
 - **Definition:** to determine the form of
 - **תרגום:** לעצב
 - **Example 1:** Experiences **shape** our character.
@@ -819,7 +751,7 @@
 - **Synonyms:** form, mold
 - **💡 Memory tip:** גם פיזי וגם מטפורי.
 
-### 1094. **mold** (v.) / **mould** (British)
+### 1088. **mold** (v.) / **mould** (British)
 - **Definition:** to shape
 - **תרגום:** לעצב, לפסל
 - **Example 1:** Teachers **mold** young minds.
@@ -827,7 +759,7 @@
 - **Synonyms:** shape, form
 - **💡 Memory tip:** American: mold. British: mould.
 
-### 1095. **inspire** (v.)
+### 1089. **inspire** (v.)
 - **Definition:** to fill with the urge to do
 - **תרגום:** לעורר השראה
 - **Example 1:** Her story **inspires** me.
@@ -835,7 +767,7 @@
 - **Synonyms:** motivate, encourage
 - **💡 Memory tip:** `inspiration` (noun).
 
-### 1096. **motivate** (v.)
+### 1090. **motivate** (v.)
 - **Definition:** to give a reason to act
 - **תרגום:** להניע, לעורר מוטיבציה
 - **Example 1:** Money **motivates** him.
@@ -843,7 +775,7 @@
 - **Synonyms:** inspire, encourage
 - **💡 Memory tip:** מ-`motive` (מניע).
 
-### 1097. **persuade** (v.)
+### 1091. **persuade** (v.)
 - **Definition:** to convince
 - **תרגום:** לשכנע
 - **Example 1:** I'll **persuade** him to come.
@@ -851,7 +783,7 @@
 - **Synonyms:** convince, influence
 - **💡 Memory tip:** `persuade X to V` = לשכנע X לעשות.
 
-### 1098. **convince** (v.)
+### 1092. **convince** (v.)
 - **Definition:** to cause to believe
 - **תרגום:** לשכנע
 - **Example 1:** He **convinced** me he was right.
@@ -859,7 +791,7 @@
 - **Synonyms:** persuade
 - **💡 Memory tip:** שכנוע מחשבתי.
 
-### 1099. **dissuade** (v.)
+### 1093. **dissuade** (v.)
 - **Definition:** to persuade against
 - **תרגום:** לשכנע נגד
 - **Example 1:** I **dissuaded** her from leaving.
@@ -868,9 +800,7 @@
 - **Antonyms:** persuade
 - **💡 Memory tip:** `dis-` + `persuade` - ההפך.
 
-### 1100. **discourage** - already covered at #517. Skipping.
-
-### 1100. **manipulate** (v.)
+### 1094. **manipulate** (v.)
 - **Definition:** to control unfairly; to operate
 - **תרגום:** לתמרן
 - **Example 1:** She **manipulates** people.
@@ -878,7 +808,7 @@
 - **Synonyms:** control, influence
 - **💡 Memory tip:** לרוב שלילי במצב חברתי.
 
-### 1101. **exploit** (v.)
+### 1095. **exploit** (v.)
 - **Definition:** to take advantage of
 - **תרגום:** לנצל
 - **Example 1:** They **exploit** workers.
@@ -886,7 +816,7 @@
 - **Synonyms:** use, utilize
 - **💡 Memory tip:** שלילי עם אנשים, ניטרלי עם הזדמנויות.
 
-### 1102. **utilize** (v.)
+### 1096. **utilize** (v.)
 - **Definition:** to make use of
 - **תרגום:** לנצל, להשתמש
 - **Example 1:** **Utilize** your skills.
@@ -894,7 +824,7 @@
 - **Synonyms:** use, employ
 - **💡 Memory tip:** פורמלי מ-`use`.
 
-### 1103. **employ** (v.)
+### 1097. **employ** (v.)
 - **Definition:** to hire; to use
 - **תרגום:** להעסיק; להפעיל
 - **Example 1:** The company **employs** 500 people.
@@ -902,7 +832,7 @@
 - **Synonyms:** hire; use
 - **💡 Memory tip:** שני מובנים.
 
-### 1104. **engage** (v.)
+### 1098. **engage** (v.)
 - **Definition:** to occupy; to participate
 - **תרגום:** לעסוק, לערב
 - **Example 1:** The speech **engaged** the audience.
@@ -910,7 +840,7 @@
 - **Synonyms:** involve, occupy
 - **💡 Memory tip:** `engagement` - התארסות או מעורבות.
 
-### 1105. **collaborate** (v.)
+### 1099. **collaborate** (v.)
 - **Definition:** to work together
 - **תרגום:** לשתף פעולה
 - **Example 1:** We **collaborated** on the project.
@@ -918,7 +848,7 @@
 - **Synonyms:** cooperate, work together
 - **💡 Memory tip:** `co-` + `labor` = לעבוד יחד.
 
-### 1106. **cooperate** (v.)
+### 1100. **cooperate** (v.)
 - **Definition:** to work together willingly
 - **תרגום:** לשתף פעולה
 - **Example 1:** Please **cooperate** with us.
@@ -926,7 +856,7 @@
 - **Synonyms:** collaborate
 - **💡 Memory tip:** `co-` + `operate`.
 
-### 1107. **compete** (v.)
+### 1101. **compete** (v.)
 - **Definition:** to contend with others
 - **תרגום:** להתחרות
 - **Example 1:** We **compete** with other companies.
@@ -934,7 +864,7 @@
 - **Synonyms:** contend, challenge
 - **💡 Memory tip:** `competition` (noun).
 
-### 1108. **dominate** (v.)
+### 1102. **dominate** (v.)
 - **Definition:** to have control over
 - **תרגום:** לשלוט, להשתלט
 - **Example 1:** The team **dominated** the game.
@@ -942,7 +872,7 @@
 - **Synonyms:** rule, control
 - **💡 Memory tip:** מ-`dominant`.
 
-### 1109. **confront** (v.)
+### 1103. **confront** (v.)
 - **Definition:** to face directly
 - **תרגום:** להתעמת, להתמודד
 - **Example 1:** She **confronted** her fears.
@@ -950,7 +880,7 @@
 - **Synonyms:** face, challenge
 - **💡 Memory tip:** התמודדות ישירה.
 
-### 1110. **resolve** (v.)
+### 1104. **resolve** (v.)
 - **Definition:** to find a solution; to decide
 - **תרגום:** לפתור; להחליט
 - **Example 1:** We **resolved** the conflict.
@@ -958,7 +888,7 @@
 - **Synonyms:** solve, decide
 - **💡 Memory tip:** `resolution` - החלטה או רזולוציה.
 
-### 1111. **mediate** (v.)
+### 1105. **mediate** (v.)
 - **Definition:** to help settle disputes
 - **תרגום:** לתווך
 - **Example 1:** She **mediated** between the parties.
@@ -966,7 +896,7 @@
 - **Synonyms:** negotiate, intervene
 - **💡 Memory tip:** `media` - אמצע, ביניים.
 
-### 1112. **negotiate** (v.)
+### 1106. **negotiate** (v.)
 - **Definition:** to discuss for an agreement
 - **תרגום:** לנהל משא ומתן
 - **Example 1:** Let's **negotiate** the price.
@@ -974,7 +904,7 @@
 - **Synonyms:** bargain, discuss
 - **💡 Memory tip:** `negotiation` (noun).
 
-### 1113. **compromise** (v.)
+### 1107. **compromise** (v.)
 - **Definition:** to reach an agreement by concessions
 - **תרגום:** להתפשר
 - **Example 1:** We had to **compromise**.
@@ -982,7 +912,7 @@
 - **Synonyms:** settle, negotiate
 - **💡 Memory tip:** שני מובנים: להתפשר / לסכן.
 
-### 1114. **concede** (v.)
+### 1108. **concede** (v.)
 - **Definition:** to admit; to give up
 - **תרגום:** להודות; לוותר
 - **Example 1:** I **concede** your point.
@@ -990,7 +920,7 @@
 - **Synonyms:** admit, yield
 - **💡 Memory tip:** ויתור מתוך הבנה שטעה.
 
-### 1115. **yield** (v.)
+### 1109. **yield** (v.)
 - **Definition:** to produce; to surrender
 - **תרגום:** להניב; להיכנע
 - **Example 1:** The trees **yield** fruit.
@@ -998,7 +928,7 @@
 - **Synonyms:** produce; surrender
 - **💡 Memory tip:** שני מובנים.
 
-### 1116. **surrender** (v.)
+### 1110. **surrender** (v.)
 - **Definition:** to give up
 - **תרגום:** להיכנע
 - **Example 1:** The soldiers **surrendered**.
@@ -1007,7 +937,7 @@
 - **Antonyms:** resist
 - **💡 Memory tip:** צבאי או מטפורי.
 
-### 1117. **resist** (v.)
+### 1111. **resist** (v.)
 - **Definition:** to fight against
 - **תרגום:** להתנגד
 - **Example 1:** **Resist** the temptation.
@@ -1016,7 +946,7 @@
 - **Antonyms:** surrender
 - **💡 Memory tip:** `resistance` (noun).
 
-### 1118. **protect** (v.)
+### 1112. **protect** (v.)
 - **Definition:** to keep safe
 - **תרגום:** להגן
 - **Example 1:** **Protect** the environment.
@@ -1025,7 +955,7 @@
 - **Antonyms:** attack, harm
 - **💡 Memory tip:** `protection` (noun).
 
-### 1119. **defend** (v.)
+### 1113. **defend** (v.)
 - **Definition:** to protect; to support
 - **תרגום:** להגן
 - **Example 1:** Soldiers **defend** the country.
@@ -1034,7 +964,7 @@
 - **Antonyms:** attack
 - **💡 Memory tip:** גם פיזי וגם מילולי (defend an argument).
 
-### 1120. **attack** (v.)
+### 1114. **attack** (v.)
 - **Definition:** to act aggressively
 - **תרגום:** לתקוף
 - **Example 1:** The enemy **attacked** at dawn.
@@ -1047,7 +977,7 @@
 
 # 📜 קטגוריה 5: פעלים פורמליים מתקדמים (30 מילים)
 
-### 1121. **pursue** (v.)
+### 1115. **pursue** (v.)
 - **Definition:** to follow; to seek
 - **תרגום:** לרדוף, לשאוף ל-
 - **Example 1:** She **pursues** her dreams.
@@ -1055,7 +985,7 @@
 - **Synonyms:** chase, seek
 - **💡 Memory tip:** `pursue a career/dream/goal`.
 
-### 1122. **seek** (v.)
+### 1116. **seek** (v.)
 - **Definition:** to search for
 - **תרגום:** לחפש (פורמלי)
 - **Example 1:** We **seek** the truth.
@@ -1063,7 +993,7 @@
 - **Synonyms:** search, look for
 - **💡 Memory tip:** Forms: seek/seeks/sought/sought.
 
-### 1123. **undertake** (v.)
+### 1117. **undertake** (v.)
 - **Definition:** to take on; to commit to do
 - **תרגום:** לקחת על עצמו
 - **Example 1:** She **undertook** a huge project.
@@ -1071,7 +1001,7 @@
 - **Synonyms:** take on, commit
 - **💡 Memory tip:** פורמלי - התחייבות לבצע.
 
-### 1124. **conduct** (v.)
+### 1118. **conduct** (v.)
 - **Definition:** to carry out
 - **תרגום:** לנהל, לבצע
 - **Example 1:** **Conduct** an experiment.
@@ -1079,7 +1009,7 @@
 - **Synonyms:** carry out, perform
 - **💡 Memory tip:** הגייה: פועל /kənˈdʌkt/, שם עצם /ˈkɒndʌkt/.
 
-### 1125. **implement** (v.)
+### 1119. **implement** (v.)
 - **Definition:** to put into effect
 - **תרגום:** ליישם
 - **Example 1:** **Implement** the new policy.
@@ -1087,7 +1017,7 @@
 - **Synonyms:** execute, apply
 - **💡 Memory tip:** הוצאה לפועל של תוכנית.
 
-### 1126. **execute** (v.)
+### 1120. **execute** (v.)
 - **Definition:** to carry out; to kill formally
 - **תרגום:** לבצע; להוציא להורג
 - **Example 1:** **Execute** the plan perfectly.
@@ -1095,7 +1025,7 @@
 - **Synonyms:** perform, carry out
 - **💡 Memory tip:** שני מובנים שונים לגמרי!
 
-### 1127. **proceed** (v.)
+### 1121. **proceed** (v.)
 - **Definition:** to continue; to go on
 - **תרגום:** להמשיך, להתקדם
 - **Example 1:** Please **proceed** to the next step.
@@ -1104,7 +1034,7 @@
 - **Antonyms:** stop
 - **💡 Memory tip:** פורמלי מ-`continue`.
 
-### 1128. **facilitate** (v.)
+### 1122. **facilitate** (v.)
 - **Definition:** to make easier
 - **תרגום:** להקל, לעזור
 - **Example 1:** Technology **facilitates** communication.
@@ -1113,7 +1043,7 @@
 - **Antonyms:** hinder
 - **💡 Memory tip:** מ-`facile` (קל).
 
-### 1129. **hinder** (v.)
+### 1123. **hinder** (v.)
 - **Definition:** to make difficult
 - **תרגום:** להפריע, לעכב
 - **Example 1:** Don't **hinder** progress.
@@ -1122,7 +1052,7 @@
 - **Antonyms:** facilitate, help
 - **💡 Memory tip:** ההפך מ-`facilitate`.
 
-### 1130. **impede** (v.)
+### 1124. **impede** (v.)
 - **Definition:** to delay or prevent
 - **תרגום:** לעכב, להפריע
 - **Example 1:** Traffic **impeded** our progress.
@@ -1130,7 +1060,7 @@
 - **Synonyms:** hinder, obstruct
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 1131. **obstruct** (v.)
+### 1125. **obstruct** (v.)
 - **Definition:** to block
 - **תרגום:** לחסום
 - **Example 1:** Don't **obstruct** the view.
@@ -1138,7 +1068,7 @@
 - **Synonyms:** block, hinder
 - **💡 Memory tip:** חסימה פיזית או מטפורית.
 
-### 1132. **deteriorate** (v.)
+### 1126. **deteriorate** (v.)
 - **Definition:** to become worse
 - **תרגום:** להידרדר
 - **Example 1:** Her health is **deteriorating**.
@@ -1147,7 +1077,7 @@
 - **Antonyms:** improve
 - **💡 Memory tip:** פורמלי להרעה.
 
-### 1133. **worsen** (v.)
+### 1127. **worsen** (v.)
 - **Definition:** to become worse
 - **תרגום:** להחמיר
 - **Example 1:** The situation **worsened**.
@@ -1156,7 +1086,7 @@
 - **Antonyms:** improve
 - **💡 Memory tip:** מ-`worse`.
 
-### 1134. **flourish** (v.)
+### 1128. **flourish** (v.)
 - **Definition:** to grow or develop successfully
 - **תרגום:** לשגשג, לפרוח
 - **Example 1:** The business is **flourishing**.
@@ -1165,7 +1095,7 @@
 - **Antonyms:** wither, decline
 - **💡 Memory tip:** פריחה וצמיחה.
 
-### 1135. **thrive** (v.)
+### 1129. **thrive** (v.)
 - **Definition:** to grow strongly
 - **תרגום:** לשגשג
 - **Example 1:** Children **thrive** with love.
@@ -1173,7 +1103,7 @@
 - **Synonyms:** flourish, prosper
 - **💡 Memory tip:** חוזק וצמיחה.
 
-### 1136. **prosper** (v.)
+### 1130. **prosper** (v.)
 - **Definition:** to succeed financially
 - **תרגום:** לשגשג, לפרוח כלכלית
 - **Example 1:** The economy is **prospering**.
@@ -1181,7 +1111,7 @@
 - **Synonyms:** thrive, flourish
 - **💡 Memory tip:** בעיקר כלכלי.
 
-### 1137. **perish** (v.)
+### 1131. **perish** (v.)
 - **Definition:** to die, especially by violence
 - **תרגום:** למות, להיכחד
 - **Example 1:** Many **perished** in the fire.
@@ -1189,7 +1119,7 @@
 - **Synonyms:** die, expire
 - **💡 Memory tip:** ספרותי ופורמלי.
 
-### 1138. **endure** (v.)
+### 1132. **endure** (v.)
 - **Definition:** to suffer; to last
 - **תרגום:** לסבול; להישרד
 - **Example 1:** I can't **endure** this pain.
@@ -1197,7 +1127,7 @@
 - **Synonyms:** bear, last
 - **💡 Memory tip:** שני מובנים.
 
-### 1139. **persist** (v.)
+### 1133. **persist** (v.)
 - **Definition:** to continue firmly
 - **תרגום:** להתמיד
 - **Example 1:** If symptoms **persist**, see a doctor.
@@ -1205,7 +1135,7 @@
 - **Synonyms:** continue, endure
 - **💡 Memory tip:** התמדה למרות קשיים.
 
-### 1140. **persevere** (v.)
+### 1134. **persevere** (v.)
 - **Definition:** to continue trying
 - **תרגום:** להתמיד, לא לוותר
 - **Example 1:** **Persevere** and you'll succeed.
@@ -1213,7 +1143,7 @@
 - **Synonyms:** persist, endure
 - **💡 Memory tip:** התמדה מול מכשולים.
 
-### 1141. **strive** (v.)
+### 1135. **strive** (v.)
 - **Definition:** to try very hard
 - **תרגום:** לשאוף, להתאמץ
 - **Example 1:** We **strive** for excellence.
@@ -1221,7 +1151,7 @@
 - **Synonyms:** struggle, aim
 - **💡 Memory tip:** `strive for X` = לשאוף ל-X.
 
-### 1142. **attain** (v.)
+### 1136. **attain** (v.)
 - **Definition:** to achieve
 - **תרגום:** להשיג
 - **Example 1:** He **attained** great success.
@@ -1229,7 +1159,7 @@
 - **Synonyms:** achieve, reach
 - **💡 Memory tip:** פורמלי מ-`achieve`.
 
-### 1143. **aspire** (v.)
+### 1137. **aspire** (v.)
 - **Definition:** to have a strong ambition
 - **תרגום:** לשאוף
 - **Example 1:** She **aspires** to be a doctor.
@@ -1237,7 +1167,7 @@
 - **Synonyms:** aim, desire
 - **💡 Memory tip:** `aspire to + noun/V` = שאיפה גבוהה.
 
-### 1144. **elevate** (v.)
+### 1138. **elevate** (v.)
 - **Definition:** to raise
 - **תרגום:** להעלות, לרומם
 - **Example 1:** **Elevate** your standards.
@@ -1246,7 +1176,7 @@
 - **Antonyms:** lower
 - **💡 Memory tip:** `elevator` = מעלית.
 
-### 1145. **exemplify** (v.)
+### 1139. **exemplify** (v.)
 - **Definition:** to serve as an example
 - **תרגום:** להיות דוגמה ל-
 - **Example 1:** She **exemplifies** kindness.
@@ -1254,7 +1184,7 @@
 - **Synonyms:** illustrate, represent
 - **💡 Memory tip:** מ-`example`.
 
-### 1146. **constitute** (v.)
+### 1140. **constitute** (v.)
 - **Definition:** to form; to be
 - **תרגום:** להוות
 - **Example 1:** Women **constitute** half the team.
@@ -1262,7 +1192,7 @@
 - **Synonyms:** form, make up
 - **💡 Memory tip:** פורמלי - "להיות", "להוות".
 
-### 1147. **encounter** (v.)
+### 1141. **encounter** (v.)
 - **Definition:** to meet unexpectedly
 - **תרגום:** להיתקל
 - **Example 1:** I **encountered** an old friend.
@@ -1270,9 +1200,9 @@
 - **Synonyms:** meet, face
 - **💡 Memory tip:** גם שם עצם.
 
-### 1148. **confront** - already covered. Skipping.
+### 1142. **confront** - already covered. Skipping.
 
-### 1148. **grapple** (v.)
+### 1143. **grapple** (v.)
 - **Definition:** to struggle with
 - **תרגום:** להיאבק
 - **Example 1:** She **grappled** with the problem.
@@ -1280,7 +1210,7 @@
 - **Synonyms:** struggle, wrestle
 - **💡 Memory tip:** `grapple with X` = להיאבק עם X.
 
-### 1149. **tackle** (v.)
+### 1144. **tackle** (v.)
 - **Definition:** to deal with
 - **תרגום:** להתמודד עם
 - **Example 1:** Let's **tackle** this problem.
@@ -1288,7 +1218,7 @@
 - **Synonyms:** handle, address
 - **💡 Memory tip:** גם בספורט: לחסום שחקן.
 
-### 1150. **withstand** (v.)
+### 1145. **withstand** (v.)
 - **Definition:** to resist; to endure
 - **תרגום:** לעמוד מול, לעמוד ב-
 - **Example 1:** The bridge can **withstand** earthquakes.
@@ -1313,21 +1243,21 @@
 
 ## 🧠 לקחים חשובים:
 
-### 1. **פעלים חיוניים לאקדמיה**
+### 1146. **פעלים חיוניים לאקדמיה**
 - `assert`, `contend`, `maintain` - לטעון
 - `substantiate`, `corroborate`, `validate` - לבסס
 - `refute`, `contradict`, `dispute` - להפריך
 - `infer`, `deduce`, `conclude` - להסיק
 - `encompass`, `incorporate`, `integrate` - לכלול
 
-### 2. **זוגות מנוגדים חשובים**
+### 1147. **זוגות מנוגדים חשובים**
 - `facilitate` ↔ `hinder`
 - `flourish` ↔ `deteriorate`
 - `persuade` ↔ `dissuade`
 - `acknowledge` ↔ `deny`
 - `embrace` ↔ `reject`
 
-### 3. **הבדלים דקים**
+### 1148. **הבדלים דקים**
 - `imply` (הדובר רומז) vs `infer` (השומע מסיק)
 - `attain` (פורמלי) vs `achieve` (רגיל)
 - `pursue` (לרדוף) vs `seek` (לחפש)

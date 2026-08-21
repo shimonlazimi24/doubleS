@@ -187,15 +187,7 @@
 - **Synonyms:** thus, hence
 - **💡 Memory tip:** פורמלי מ-`so`. חשוב במבחנים!
 
-### 972. **however** (adv.)
-- **Definition:** on the other hand
-- **תרגום:** עם זאת, אולם
-- **Example 1:** It's cold. **However**, I love it.
-- **Example 2:** **However**, there are problems.
-- **Synonyms:** nevertheless, but
-- **💡 Memory tip:** פורמלי מ-`but`.
-
-### 973. **moreover** (adv.)
+### 972. **moreover** (adv.)
 - **Definition:** in addition
 - **תרגום:** יתר על כן
 - **Example 1:** The plan is good. **Moreover**, it's cheap.
@@ -203,7 +195,7 @@
 - **Synonyms:** furthermore, also
 - **💡 Memory tip:** פורמלי להוספה חזקה.
 
-### 974. **furthermore** (adv.)
+### 973. **furthermore** (adv.)
 - **Definition:** in addition to what was said
 - **תרגום:** בנוסף, יתר על כן
 - **Example 1:** She's talented. **Furthermore**, she's hardworking.
@@ -211,7 +203,7 @@
 - **Synonyms:** moreover, also
 - **💡 Memory tip:** פורמלי מאוד - כתיבה אקדמית.
 
-### 975. **nevertheless** (adv.)
+### 974. **nevertheless** (adv.)
 - **Definition:** in spite of that
 - **תרגום:** אף על פי כן
 - **Example 1:** It was raining. **Nevertheless**, we went out.
@@ -219,7 +211,7 @@
 - **Synonyms:** however, nonetheless
 - **💡 Memory tip:** `never + the + less` - ובכל זאת.
 
-### 976. **nonetheless** (adv.)
+### 975. **nonetheless** (adv.)
 - **Definition:** nevertheless
 - **תרגום:** עם זאת
 - **Example 1:** The plan failed. **Nonetheless**, we learned much.
@@ -227,7 +219,7 @@
 - **Synonyms:** nevertheless, however
 - **💡 Memory tip:** זהה ל-`nevertheless`.
 
-### 977. **consequently** (adv.)
+### 976. **consequently** (adv.)
 - **Definition:** as a result
 - **תרגום:** כתוצאה מכך
 - **Example 1:** He didn't study; **consequently**, he failed.
@@ -235,7 +227,7 @@
 - **Synonyms:** therefore, thus
 - **💡 Memory tip:** מ-`consequence`.
 
-### 978. **thus** (adv.)
+### 977. **thus** (adv.)
 - **Definition:** therefore; in this way
 - **תרגום:** וכך, לכן
 - **Example 1:** The experiment failed; **thus**, we started over.
@@ -243,7 +235,7 @@
 - **Synonyms:** therefore, hence
 - **💡 Memory tip:** פורמלי מאוד; כתיבה אקדמית.
 
-### 979. **hence** (adv.)
+### 978. **hence** (adv.)
 - **Definition:** for this reason
 - **תרגום:** ומכאן, לכן
 - **Example 1:** There's no evidence; **hence**, no conviction.
@@ -251,9 +243,7 @@
 - **Synonyms:** therefore, thus
 - **💡 Memory tip:** פורמלי וספרותי.
 
-### 980. **although** (conj.) - already covered. Skipping.
-
-### 980. **whereas** (conj.)
+### 979. **whereas** (conj.)
 - **Definition:** while; in contrast
 - **תרגום:** בעוד, בניגוד
 - **Example 1:** He's rich, **whereas** she's poor.
@@ -261,7 +251,7 @@
 - **Synonyms:** while
 - **💡 Memory tip:** חיבור של ניגוד פורמלי.
 
-### 981. **unless** (conj.)
+### 980. **unless** (conj.)
 - **Definition:** except if
 - **תרגום:** אלא אם כן
 - **Example 1:** I won't go **unless** you come.
@@ -269,7 +259,7 @@
 - **Synonyms:** except if
 - **💡 Memory tip:** `if not` = `unless`.
 
-### 982. **besides** (prep./adv.)
+### 981. **besides** (prep./adv.)
 - **Definition:** in addition to
 - **תרגום:** בנוסף ל-
 - **Example 1:** **Besides** English, she speaks French.
@@ -277,7 +267,7 @@
 - **Synonyms:** apart from, additionally
 - **💡 Memory tip:** להבדיל מ-`beside` (ליד) - `besides` = בנוסף.
 
-### 983. **instead** (adv.)
+### 982. **instead** (adv.)
 - **Definition:** as an alternative
 - **תרגום:** במקום זאת
 - **Example 1:** Let's stay home **instead**.
@@ -285,7 +275,7 @@
 - **Synonyms:** alternatively, rather
 - **💡 Memory tip:** `instead of X` = במקום X.
 
-### 984. **according to** (prep.)
+### 983. **according to** (prep.)
 - **Definition:** as stated by
 - **תרגום:** לפי, על פי
 - **Example 1:** **According to** the report, sales are up.
@@ -293,7 +283,7 @@
 - **Synonyms:** based on
 - **💡 Memory tip:** תמיד `according to X`, לא "according X".
 
-### 985. **whereas** - already covered. Skipping.
+### 984. **whereas** - already covered. Skipping.
 
 ### 985. **despite** (prep.)
 - **Definition:** in spite of
@@ -421,7 +411,7 @@
 
 ### 1000. **indeed** - already covered. 
 
-### 1000. **regardless** (adv.)
+### 1001. **regardless** (adv.)
 - **Definition:** in spite of everything
 - **תרגום:** ללא תלות, למרות הכל
 - **Example 1:** **Regardless** of the weather, we'll go.
@@ -449,7 +439,7 @@
 
 ## 🧠 לקחים חשובים מחבילה 2:
 
-### 1. **מילות קישור אקדמיות**
+### 1002. **מילות קישור אקדמיות**
 חשובות מאוד למבחן ולכתיבה:
 - **סיבה:** because, since, due to
 - **תוצאה:** therefore, thus, consequently, hence
@@ -457,7 +447,7 @@
 - **הוספה:** moreover, furthermore, in addition
 - **דוגמה:** for example, for instance, such as
 
-### 2. **הגבהה של רמת כתיבה**
+### 1003. **הגבהה של רמת כתיבה**
 החלף מילים בסיסיות בגרסה האקדמית:
 - `get` → `obtain`, `acquire`
 - `so` → `therefore`, `thus`
@@ -465,7 +455,7 @@
 - `about` → `regarding`, `concerning`
 - `because` → `since`, `as`
 
-### 3. **Collocations חיוניים**
+### 1004. **Collocations חיוניים**
 - `make progress`, `make a decision`
 - `play a role`, `play a part`
 - `reach a conclusion`, `reach an agreement`
