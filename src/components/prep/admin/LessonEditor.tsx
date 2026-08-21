@@ -2,6 +2,16 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course/manifest";
+import {
+  AdminButton,
+  AdminField,
+  AdminInput,
+  AdminNotice,
+  AdminSection,
+  AdminSelect,
+  AdminTextarea,
+} from "./admin-ui";
 
 export type LessonFormData = {
   id: string;
@@ -15,17 +25,14 @@ export type LessonFormData = {
   published: boolean;
 };
 
+/**
+ * Modules come from the manifest, not a hand-written list. The old list used
+ * values like "vocabulary" while the course modules are "mod-vocab", so a lesson
+ * saved from here was attached to a module that does not exist.
+ */
 const TOPICS = [
   { value: "", label: "- בחר מודול -" },
-  { value: "intro", label: "מבוא" },
-  { value: "vocabulary", label: "אוצר מילים (Vocabulary)" },
-  { value: "sentence_completion", label: "Sentence Completion" },
-  { value: "rephrasing", label: "Restatement / Rephrasing" },
-  { value: "reading_comprehension", label: "Reading Comprehension" },
-  { value: "listening", label: "Listening (2026)" },
-  { value: "simulations", label: "סימולציות" },
-  { value: "tips", label: "טיפים ואסטרטגיות" },
-  { value: "summary", label: "סיכום הקורס" },
+  ...AMIRANT_PREPARATION_MANIFEST.modules.map((m) => ({ value: m.id, label: m.title })),
 ];
 
 const EMPTY: LessonFormData = {
@@ -121,7 +128,7 @@ export function LessonEditor({
         <div>
           <h1 className="text-2xl font-bold">{isNew ? "שיעור חדש" : "עריכת שיעור"}</h1>
           {!isNew && (
-            <p className="text-zinc-500 text-xs mt-1 font-mono">
+            <p className="mt-1 font-mono text-xs text-muted">
               {form.id}
               {" · "}
               <a
@@ -130,21 +137,21 @@ export function LessonEditor({
                 rel="noopener noreferrer"
                 className="text-primary underline-offset-2 hover:underline"
               >
-                צפה באתר ↗
+                צפה באתר
               </a>
             </p>
           )}
         </div>
         <div className="flex gap-2 items-center">
           {!isNew && (
-            <button onClick={handleDelete} className="text-xs text-red-400 hover:text-red-300 px-3 py-1.5 border border-red-900 rounded-lg">
+            <button onClick={handleDelete} className="rounded-control border border-red-300 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-50">
               מחק
             </button>
           )}
           <button
             onClick={() => handleSave("keep")}
             disabled={isPending}
-            className="px-4 py-2 text-sm bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 transition disabled:opacity-50"
+            className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary disabled:opacity-50"
           >
             שמור
           </button>
@@ -154,7 +161,7 @@ export function LessonEditor({
                 if (confirm("לבטל את הפרסום? השיעור יחזור לטיוטה.")) handleSave("unpublish");
               }}
               disabled={isPending}
-              className="px-4 py-2 text-sm border border-amber-700 text-amber-200 rounded-lg hover:bg-amber-950/40 transition disabled:opacity-50"
+              className="rounded-control border border-amber-400 px-4 py-2 text-sm font-semibold text-amber-800 transition hover:bg-amber-50 disabled:opacity-50"
             >
               בטל פרסום
             </button>
@@ -162,7 +169,7 @@ export function LessonEditor({
           <button
             onClick={() => handleSave("publish")}
             disabled={isPending}
-            className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 transition disabled:opacity-50"
+            className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
           >
             {form.published ? "עדכן ופרסם" : "פרסם"}
           </button>
@@ -170,19 +177,19 @@ export function LessonEditor({
       </div>
 
       {error && (
-        <div className="mb-4 px-4 py-3 bg-red-900/40 border border-red-700 rounded-lg text-sm text-red-300">
+        <div className="mb-4 rounded-surface border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
           {error}
         </div>
       )}
       {success && (
-        <div className="mb-4 px-4 py-3 bg-emerald-900/40 border border-emerald-700 rounded-lg text-sm text-emerald-200">
+        <div className="mb-4 rounded-surface border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
           {success}
         </div>
       )}
 
       {isCurated && (
-        <div className="mb-4 px-4 py-3 bg-amber-500/10 border border-amber-500/40 rounded-lg text-sm text-amber-900">
-          ⚠️ לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים - עדיף לערוך את
+        <div className="mb-4 rounded-surface border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים - עדיף לערוך את
           הטקסט בתוך הסעיפים בלי לשנות כותרות. אפשר גם לפרסם רק «וידאו לשיעור» ולהשאיר את התוכן ריק.
         </div>
       )}
@@ -190,32 +197,32 @@ export function LessonEditor({
       {/* Metadata row */}
       <div className="grid grid-cols-4 gap-4 mb-6">
         <div className="col-span-2">
-          <label className="block text-xs text-zinc-400 mb-1">כותרת השיעור *</label>
+          <label className="mb-1 block text-xs font-medium text-muted">כותרת השיעור *</label>
           <input
             value={form.title}
             onChange={(e) => set("title", e.target.value)}
             placeholder="למשל: מילים שכיחות - פעלים"
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           />
         </div>
         {isNew && (
           <div>
-            <label className="block text-xs text-zinc-400 mb-1">מזהה (ID) *</label>
+            <label className="mb-1 block text-xs font-medium text-muted">מזהה (ID) *</label>
             <input
               value={form.id}
               onChange={(e) => set("id", e.target.value)}
               placeholder="lesson.vocab.10"
               dir="ltr"
-              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500"
+              className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
             />
           </div>
         )}
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">מודול</label>
+          <label className="mb-1 block text-xs font-medium text-muted">מודול</label>
           <select
             value={form.module_id}
             onChange={(e) => set("module_id", e.target.value)}
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           >
             {TOPICS.map((t) => (
               <option key={t.value} value={t.value}>{t.label}</option>
@@ -226,46 +233,46 @@ export function LessonEditor({
 
       <div className="grid grid-cols-3 gap-4 mb-6">
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">סוג שיעור</label>
+          <label className="mb-1 block text-xs font-medium text-muted">סוג שיעור</label>
           <select
             value={form.kind}
             onChange={(e) => set("kind", e.target.value as LessonFormData["kind"])}
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           >
-            <option value="text">📝 טקסט בלבד</option>
-            <option value="video">🎬 סרטון בלבד</option>
-            <option value="mixed">📝🎬 טקסט + סרטון</option>
+            <option value="text">טקסט בלבד</option>
+            <option value="video">סרטון בלבד</option>
+            <option value="mixed">טקסט + סרטון</option>
           </select>
         </div>
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">זמן משוער (דקות)</label>
+          <label className="mb-1 block text-xs font-medium text-muted">זמן משוער (דקות)</label>
           <input
             type="number"
             value={form.estimated_minutes}
             onChange={(e) => set("estimated_minutes", parseInt(e.target.value) || 10)}
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           />
         </div>
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">סדר תצוגה</label>
+          <label className="mb-1 block text-xs font-medium text-muted">סדר תצוגה</label>
           <input
             type="number"
             value={form.sort_order}
             onChange={(e) => set("sort_order", parseInt(e.target.value) || 0)}
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           />
         </div>
       </div>
 
       {(form.kind === "video" || form.kind === "mixed") && (
         <div className="mb-6">
-          <label className="block text-xs text-zinc-400 mb-1">קישור סרטון (YouTube / URL)</label>
+          <label className="mb-1 block text-xs font-medium text-muted">קישור סרטון (YouTube / URL)</label>
           <input
             value={form.video_url}
             onChange={(e) => set("video_url", e.target.value)}
             placeholder="https://www.youtube.com/watch?v=..."
             dir="ltr"
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500"
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           />
         </div>
       )}
@@ -274,18 +281,18 @@ export function LessonEditor({
       {(form.kind === "text" || form.kind === "mixed") && (
         <div>
           <div className="flex items-center gap-4 mb-2">
-            <label className="text-xs text-zinc-400">תוכן השיעור (Markdown)</label>
+            <label className="text-xs font-medium text-muted">תוכן השיעור (Markdown)</label>
             <button
               type="button"
               onClick={() => setPreview((p) => !p)}
-              className="text-xs text-blue-400 hover:underline"
+              className="text-xs font-medium text-primary hover:underline"
             >
               {preview ? "עריכה" : "תצוגה מקדימה"}
             </button>
           </div>
 
           {preview ? (
-            <div className="min-h-96 bg-zinc-900 border border-zinc-700 rounded-xl p-5 prose prose-invert prose-sm max-w-none overflow-auto">
+            <div className="prose prose-sm min-h-96 max-w-none overflow-auto rounded-surface border border-line bg-paper p-5 text-ink">
               <MarkdownPreview source={form.body_markdown} />
             </div>
           ) : (
@@ -293,12 +300,15 @@ export function LessonEditor({
               value={form.body_markdown}
               onChange={(e) => set("body_markdown", e.target.value)}
               placeholder={"# כותרת השיעור\n\nתוכן בפורמט Markdown...\n\n## תת-כותרת\n\n- נקודה ראשונה\n- נקודה שנייה\n\n**טקסט מודגש** ו-*טקסט נטוי*"}
-              dir="ltr"
+              // Course content is Hebrew with English examples inside it. A hard
+              // LTR box scrambled every Hebrew line; "auto" lets each line take
+              // its own direction from its first strong character.
+              dir="auto"
               rows={28}
-              className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-4 text-sm text-white placeholder-zinc-600 font-mono focus:outline-none focus:border-blue-500 resize-y leading-relaxed"
+              className="w-full resize-y rounded-surface border border-line bg-paper px-4 py-4 font-mono text-sm leading-relaxed text-ink placeholder:text-muted focus:border-primary focus:outline-none"
             />
           )}
-          <p className="text-xs text-zinc-600 mt-2">
+          <p className="mt-2 text-xs text-muted">
             תומך ב-Markdown מלא: כותרות, **מודגש**, *נטוי*, רשימות, טבלאות, קוד, ציטוטים
           </p>
         </div>
@@ -318,7 +328,7 @@ function escapeHtml(s: string): string {
 }
 
 function MarkdownPreview({ source }: { source: string }) {
-  if (!source.trim()) return <p className="text-zinc-500 italic">אין תוכן להצגה</p>;
+  if (!source.trim()) return <p className="italic text-muted">אין תוכן להצגה</p>;
   const escaped = escapeHtml(source);
   const html = escaped
     .replace(/^### (.+)$/gm, "<h3>$1</h3>")

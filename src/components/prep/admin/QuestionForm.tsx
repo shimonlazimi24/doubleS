@@ -127,7 +127,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">{isNew ? "שאלה חדשה (ניסוי)" : "עריכת שאלה (ניסוי)"}</h1>
-          {!isNew && <p className="text-zinc-500 text-xs mt-1 font-mono">{form.id}</p>}
+          {!isNew && <p className="text-muted text-xs mt-1 font-mono">{form.id}</p>}
         </div>
         <div className="flex gap-2">
           {!isNew && (
@@ -135,7 +135,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
               מחק
             </button>
           )}
-          <button onClick={() => handleSave("keep")} disabled={isPending} className="px-4 py-2 text-sm bg-zinc-700 text-white rounded-lg hover:bg-zinc-600 disabled:opacity-50">
+          <button onClick={() => handleSave("keep")} disabled={isPending} className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary disabled:opacity-50">
             שמור
           </button>
           {form.published && (
@@ -149,7 +149,7 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
               בטל פרסום
             </button>
           )}
-          <button onClick={() => handleSave("publish")} disabled={isPending} className="px-4 py-2 text-sm bg-white text-black font-medium rounded-lg hover:bg-zinc-200 disabled:opacity-50">
+          <button onClick={() => handleSave("publish")} disabled={isPending} className="px-4 py-2 text-sm bg-primary text-white font-medium rounded-lg hover:opacity-90 disabled:opacity-50">
             {form.published ? "עדכן ופרסם" : "פרסם"}
           </button>
         </div>
@@ -161,26 +161,26 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
 
       {isNew && (
         <div className="mb-4">
-          <label className="block text-xs text-zinc-400 mb-1">מזהה (ID) *</label>
+          <label className="block text-xs text-muted mb-1">מזהה (ID) *</label>
           <input value={form.id} onChange={(e) => setField("id", e.target.value)} placeholder="q.vocab.101" dir="ltr"
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none" />
         </div>
       )}
 
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">נושא *</label>
+          <label className="block text-xs text-muted mb-1">נושא *</label>
           <select value={form.topic_slug} onChange={(e) => setField("topic_slug", e.target.value)}
-            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none">
             {TOPICS.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
           </select>
         </div>
         <div>
-          <label className="block text-xs text-zinc-400 mb-1">רמת קושי (1=קל, 6=קשה)</label>
+          <label className="block text-xs text-muted mb-1">רמת קושי (1=קל, 6=קשה)</label>
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5, 6].map((d) => (
               <button key={d} type="button" onClick={() => setField("difficulty", d)}
-                className={`flex-1 py-2 rounded-lg text-sm font-medium transition ${form.difficulty === d ? "bg-blue-600 text-white" : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"}`}>
+                className={`flex-1 py-2 rounded-lg text-sm font-medium transition ${form.difficulty === d ? "bg-blue-600 text-white" : "bg-surface-low text-muted hover:bg-surface-low"}`}>
                 {d}
               </button>
             ))}
@@ -189,41 +189,41 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
       </div>
 
       <div className="mb-4">
-        <label className="block text-xs text-zinc-400 mb-1">תת-נושא (אופציונלי)</label>
+        <label className="block text-xs text-muted mb-1">תת-נושא (אופציונלי)</label>
         <input value={form.subtopic_slug} onChange={(e) => setField("subtopic_slug", e.target.value)} placeholder="verbs, adjectives, ..."
-          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
+          className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none" />
       </div>
 
       <div className="mb-4">
-        <label className="block text-xs text-zinc-400 mb-1">השאלה / המשפט *</label>
+        <label className="block text-xs text-muted mb-1">השאלה / המשפט *</label>
         <textarea value={form.prompt} onChange={(e) => setField("prompt", e.target.value)} rows={4}
           placeholder="The scientist was known for her _______ approach to problem-solving, often finding creative solutions where others saw only obstacles."
           dir="ltr"
-          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-3 text-sm text-white placeholder-zinc-500 font-mono focus:outline-none focus:border-blue-500 resize-y" />
+          className="w-full bg-surface-low border border-line rounded-lg px-3 py-3 text-sm text-white placeholder:text-muted font-mono focus:outline-none focus:border-blue-500 resize-y" />
       </div>
 
       <div className="mb-4">
-        <label className="block text-xs text-zinc-400 mb-2">אפשרויות תשובה - לחץ על הנכונה</label>
+        <label className="block text-xs text-muted mb-2">אפשרויות תשובה - לחץ על הנכונה</label>
         <div className="space-y-2">
           {form.options.map((opt, idx) => (
             <div key={opt.id} className="flex gap-3 items-center">
               <button type="button" onClick={() => setField("correct_option_id", opt.id)}
-                className={`w-8 h-8 shrink-0 rounded-full text-xs font-bold border-2 transition ${form.correct_option_id === opt.id ? "bg-green-500 border-green-500 text-white" : "border-zinc-600 text-zinc-400 hover:border-zinc-400"}`}>
+                className={`w-8 h-8 shrink-0 rounded-full text-xs font-bold border-2 transition ${form.correct_option_id === opt.id ? "bg-green-500 border-green-500 text-white" : "border-line text-muted hover:border-line"}`}>
                 {opt.id.toUpperCase()}
               </button>
               <input value={opt.text} onChange={(e) => setOption(idx, e.target.value)} placeholder={`אפשרות ${opt.id.toUpperCase()}`} dir="ltr"
-                className="flex-1 bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
+                className="flex-1 bg-surface-low border border-line rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted focus:outline-none focus:border-blue-500" />
             </div>
           ))}
         </div>
-        <p className="text-xs text-zinc-500 mt-2">לחץ על הכפתור העגול לסמן את התשובה הנכונה (ירוק)</p>
+        <p className="text-xs text-muted mt-2">לחץ על הכפתור העגול לסמן את התשובה הנכונה (ירוק)</p>
       </div>
 
       <div>
-        <label className="block text-xs text-zinc-400 mb-1">הסבר לתשובה (יוצג אחרי מענה)</label>
+        <label className="block text-xs text-muted mb-1">הסבר לתשובה (יוצג אחרי מענה)</label>
         <textarea value={form.explanation} onChange={(e) => setField("explanation", e.target.value)} rows={3} dir="ltr"
           placeholder="The word 'innovative' means..."
-          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 resize-y" />
+          className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none resize-y" />
       </div>
     </div>
   );

@@ -46,11 +46,11 @@ export default async function QuestionsPage() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">בנק שאלות (CMS)</h1>
-          <p className="text-zinc-400 text-sm mt-1">{questions.length} שאלות · לא פעיל בחידונים</p>
+          <p className="text-muted text-sm mt-1">{questions.length} שאלות · לא פעיל בחידונים</p>
         </div>
         <Link
           href="/prep/admin/questions/new"
-          className="px-4 py-2 bg-zinc-700 text-zinc-200 text-sm font-medium rounded-lg hover:bg-zinc-600 transition"
+          className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary"
           title="לא משפיע על חידונים חיים"
         >
           + שאלה (ניסוי)
@@ -58,7 +58,7 @@ export default async function QuestionsPage() {
       </div>
 
       {questions.length === 0 ? (
-        <div className="text-center py-20 text-zinc-500">
+        <div className="text-center py-20 text-muted">
           <div className="text-4xl mb-4">❓</div>
           <p>אין שאלות עדיין</p>
           <Link href="/prep/admin/questions/new" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
@@ -66,25 +66,25 @@ export default async function QuestionsPage() {
           </Link>
         </div>
       ) : (
-        <div className="border border-zinc-800 rounded-xl overflow-hidden">
+        <div className="border border-line rounded-xl overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-zinc-800 bg-zinc-900">
-                <th className="text-right px-4 py-3 font-medium text-zinc-400">שאלה</th>
-                <th className="text-right px-4 py-3 font-medium text-zinc-400">נושא</th>
-                <th className="text-right px-4 py-3 font-medium text-zinc-400">קושי</th>
-                <th className="text-right px-4 py-3 font-medium text-zinc-400">סטטוס</th>
+              <tr className="border-b border-line bg-paper">
+                <th className="text-right px-4 py-3 font-medium text-muted">שאלה</th>
+                <th className="text-right px-4 py-3 font-medium text-muted">נושא</th>
+                <th className="text-right px-4 py-3 font-medium text-muted">קושי</th>
+                <th className="text-right px-4 py-3 font-medium text-muted">סטטוס</th>
                 <th className="px-4 py-3"></th>
               </tr>
             </thead>
             <tbody>
               {questions.map((q) => (
-                <tr key={q.id} className="border-b border-zinc-800/50 hover:bg-zinc-900/50 transition">
+                <tr key={q.id} className="border-b border-line/50 hover:bg-paper/50 transition">
                   <td className="px-4 py-3 max-w-xs">
-                    <p className="truncate text-xs text-zinc-300" dir="ltr">{q.prompt}</p>
+                    <p className="truncate text-xs text-muted" dir="ltr">{q.prompt}</p>
                   </td>
                   <td className="px-4 py-3">
-                    <span className="text-xs bg-zinc-800 px-2 py-0.5 rounded">{TOPIC_LABELS[q.topic_slug] ?? q.topic_slug}</span>
+                    <span className="text-xs bg-surface-low px-2 py-0.5 rounded">{TOPIC_LABELS[q.topic_slug] ?? q.topic_slug}</span>
                   </td>
                   <td className="px-4 py-3">
                     <span className={`text-xs font-mono px-2 py-0.5 rounded ${q.difficulty <= 2 ? "bg-green-900/40 text-green-400" : q.difficulty <= 4 ? "bg-yellow-900/40 text-yellow-400" : "bg-red-900/40 text-red-400"}`}>
@@ -92,7 +92,7 @@ export default async function QuestionsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${q.published ? "bg-green-500/20 text-green-400" : "bg-zinc-700 text-zinc-400"}`}>
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${q.published ? "bg-green-500/20 text-green-400" : "bg-surface-low text-muted"}`}>
                       {q.published ? "פורסם" : "טיוטה"}
                     </span>
                   </td>
