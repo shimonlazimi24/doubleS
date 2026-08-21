@@ -1,3 +1,4 @@
+import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { isPrepAdminUser } from "@/lib/prep/admin-auth";
@@ -73,6 +74,10 @@ export async function PUT(req: Request) {
     console.error(`[admin/settings] save failed (${error.code ?? "unknown"}): ${error.message}`);
     return NextResponse.json({ error: "השמירה נכשלה. נסו שוב." }, { status: 500 });
   }
+
+  // The public pages read this through a 60s cache so they stay on the CDN;
+  // without this an admin would save and then not see the change for a minute.
+  revalidateTag("prep-site-videos");
 
   return NextResponse.json({ ok: true, videos: parsed });
 }
