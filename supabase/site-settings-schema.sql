@@ -24,3 +24,54 @@ create policy prep_site_settings_public_read on prep_site_settings
 insert into prep_site_settings (key, value)
 values ('videos', '{}'::jsonb)
 on conflict (key) do nothing;
+
+-- ============================================================
+-- אחסון סרטונים שמועלים מהאדמין
+-- ============================================================
+-- הקובץ עולה מהדפדפן ישירות ל-Storage ולא דרך השרת: לפריסה ב-Vercel יש
+-- תקרת גוף בקשה של ~4.5MB, שכל סרטון סביר חורג ממנה.
+
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values (
+  'site-media',
+  'site-media',
+  true,
+  524288000, -- 500MB
+  array['video/mp4','video/webm','video/quicktime','video/x-m4v']
+)
+on conflict (id) do update
+  set public = true,
+      file_size_limit = excluded.file_size_limit,
+      allowed_mime_types = excluded.allowed_mime_types;
+
+-- קריאה: ציבורית (הסרטון מוצג לכל מבקר).
+drop policy if exists site_media_public_read on storage.objects;
+create policy site_media_public_read on storage.objects
+  for select to anon, authenticated
+  using (bucket_id = 'site-media');
+
+-- כתיבה/מחיקה: אדמין בלבד, לפי app_metadata (לא user_metadata - אותו נימוק
+-- כמו בכל שאר השערים: משתמש יכול לכתוב לעצמו user_metadata).
+drop policy if exists site_media_admin_write on storage.objects;
+create policy site_media_admin_write on storage.objects
+  for insert to authenticated
+  with check (
+    bucket_id = 'site-media'
+    and coalesce((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean, false)
+  );
+
+drop policy if exists site_media_admin_update on storage.objects;
+create policy site_media_admin_update on storage.objects
+  for update to authenticated
+  using (
+    bucket_id = 'site-media'
+    and coalesce((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean, false)
+  );
+
+drop policy if exists site_media_admin_delete on storage.objects;
+create policy site_media_admin_delete on storage.objects
+  for delete to authenticated
+  using (
+    bucket_id = 'site-media'
+    and coalesce((auth.jwt() -> 'app_metadata' ->> 'is_admin')::boolean, false)
+  );

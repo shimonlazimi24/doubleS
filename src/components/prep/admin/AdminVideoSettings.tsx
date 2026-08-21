@@ -2,6 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
+import { AdminVideoUpload } from "./AdminVideoUpload";
 import {
   AdminButton,
   AdminField,
@@ -53,7 +54,18 @@ export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
 
       {SLOTS.map(([slot, meta]) => (
         <AdminSection key={slot} title={meta.label} description={meta.hint}>
-          <AdminField label="כתובת הסרטון" hint="YouTube, Vimeo, או קישור ישיר לקובץ וידאו.">
+          <AdminVideoUpload
+            slot={slot}
+            onUploaded={(url) => {
+              setSaved(false);
+              setVideos((v) => ({ ...v, [slot]: url }));
+            }}
+          />
+
+          <AdminField
+            label="או הדבקת קישור"
+            hint="YouTube, Vimeo, או כתובת ישירה לקובץ. העלאה ממלאת את השדה הזה אוטומטית."
+          >
             <AdminInput
               value={videos[slot]}
               onChange={(e) => {
@@ -80,7 +92,9 @@ export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
         <AdminButton tone="primary" onClick={save} disabled={isPending || !dirty}>
           {isPending ? "שומר…" : "שמור"}
         </AdminButton>
-        {dirty ? <span className="text-xs text-muted">יש שינויים שלא נשמרו</span> : null}
+        {dirty ? (
+          <span className="text-xs text-muted">יש שינויים שלא נשמרו — גם קובץ שהועלה מופיע באתר רק אחרי שמירה</span>
+        ) : null}
       </div>
     </div>
   );
