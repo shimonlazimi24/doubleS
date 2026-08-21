@@ -15,6 +15,7 @@ import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
 import { CourseWeeklyGoalBanner } from "./CourseWeeklyGoalBanner";
 import type { ManifestLesson, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
+import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
 
 const BASE = `${PREP_BASE}/amirant/course`;
 
@@ -168,7 +169,7 @@ function ModuleCard({
   );
 }
 
-export function AmirantCurriculumHub() {
+export function AmirantCurriculumHub({ introVideoUrl }: { introVideoUrl?: string }) {
   const progress = useAmirantCourseProgress();
   const { hasFullAccess, loading: accessLoading } = useAmirantCourseAccess();
   const manifest = AMIRANT_PREPARATION_MANIFEST;
@@ -220,6 +221,11 @@ export function AmirantCurriculumHub() {
 
   return (
     <div dir="rtl" className="mx-auto w-full max-w-[60rem] px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
+      {introVideoUrl?.trim() ? (
+        <div className="mb-6">
+          <AmirantVideoEmbed src={introVideoUrl} title="סרטון פתיחה לקורס" />
+        </div>
+      ) : null}
       <div className="mb-6">
         <CourseWeeklyGoalBanner />
       </div>

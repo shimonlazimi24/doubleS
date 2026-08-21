@@ -1,4 +1,6 @@
 import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
+import { SiteVideoSlot } from "@/components/prep/SiteVideoSlot";
+import { getSiteVideos } from "@/lib/prep/site-settings.server";
 import { CTASection } from "@/components/prep/marketing/CTASection";
 import { ExamStructureTable } from "@/components/prep/marketing/ExamStructureCards";
 import { HeroSection } from "@/components/prep/marketing/HeroSection";
@@ -15,10 +17,16 @@ import {
  * דף הבית בשפה עריכתית: לכל סקשן צורה משלו (טבלת מפרט, מסלול ממוספר,
  * רשימות קו-שיער) - בלי גריד כרטיסיות אחיד שחוזר על עצמו ובלי רווחי ענק.
  */
-export function PrepMarketingHome() {
+export async function PrepMarketingHome() {
+  const videos = await getSiteVideos();
   return (
     <>
       <HeroSection />
+      <SiteVideoSlot
+        src={videos.home}
+        title="סרטון היכרות"
+        className="border-t border-line/70 bg-paper py-10 md:py-12"
+      />
 
       {/* למה זה חשוב - כותרת בצד, שלוש נקודות כרשימה שטוחה */}
       <section id="why" className="border-t border-line/70 bg-paper py-10 md:py-14">

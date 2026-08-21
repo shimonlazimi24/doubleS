@@ -14,6 +14,7 @@ const NAV = [
   { href: "/prep/admin", label: "סקירה", exact: true },
   { href: "/prep/admin/lessons", label: "שיעורים" },
   { href: "/prep/admin/learners", label: "נרשמים" },
+  { href: "/prep/admin/settings", label: "סרטונים" },
 ];
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
