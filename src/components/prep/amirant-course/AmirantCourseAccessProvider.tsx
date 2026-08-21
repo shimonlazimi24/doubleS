@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
+import { getBrowserUserId } from "@/lib/prep/supabase/browser-identity";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 
@@ -39,17 +40,15 @@ export function AmirantCourseAccessProvider({ children }: { children: ReactNode 
       setLoading(false);
       return;
     }
-    const {
-      data: { user },
-    } = await client.auth.getUser();
-    if (!user) {
+    const uid = await getBrowserUserId(client);
+    if (!uid) {
       setUserId(null);
       setHasFullAccess(false);
       setLoading(false);
       return;
     }
-    const access = await hasAmirantFullAccess(client, user.id);
-    setUserId(user.id);
+    const access = await hasAmirantFullAccess(client, uid);
+    setUserId(uid);
     setHasFullAccess(access);
     setLoading(false);
   }, [envFull]);

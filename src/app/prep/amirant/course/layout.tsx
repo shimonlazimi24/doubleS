@@ -69,6 +69,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
               <nav dir="rtl" className="flex max-w-[55%] items-center justify-end gap-0.5 overflow-x-auto py-2 sm:max-w-none">
                 <Link
                   href={BASE}
+                  prefetch={false}
                   className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:px-3 sm:text-sm"
                 >
                   תוכנית
@@ -76,6 +77,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
                 </Link>
                 <Link
                   href={`${BASE}/dashboard`}
+                  prefetch={false}
                   className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:px-3 sm:text-sm"
                 >
                   לוח
@@ -83,6 +85,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
                 </Link>
                 <Link
                   href={`${PREP_BASE}/settings`}
+                  prefetch={false}
                   className="hidden shrink-0 rounded-lg px-3 py-1.5 text-sm font-medium text-muted transition hover:bg-surface-low hover:text-primary sm:inline-flex"
                 >
                   אזור אישי

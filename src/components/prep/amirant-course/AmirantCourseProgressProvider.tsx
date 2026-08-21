@@ -20,6 +20,7 @@ import {
 import type { ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 import type { AmirantProgressStateV1 } from "@/lib/amirant-course/progress/types";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
+import { getBrowserUserId } from "@/lib/prep/supabase/browser-identity";
 
 export type AmirantCourseProgressApi = {
   state: AmirantProgressStateV1;
@@ -53,10 +54,8 @@ export function AmirantCourseProgressProvider({ children }: { children: ReactNod
         }
         return;
       }
-      const {
-        data: { user },
-      } = await client.auth.getUser();
-      if (!user) {
+      const uid = await getBrowserUserId(client);
+      if (!uid) {
         if (!cancelled) {
           setService(localService);
           setState(localService.load());
@@ -64,10 +63,10 @@ export function AmirantCourseProgressProvider({ children }: { children: ReactNod
         }
         return;
       }
-      const merged = await hydrateAmirantProgressForUser(client, user.id, localService).catch(() =>
+      const merged = await hydrateAmirantProgressForUser(client, uid, localService).catch(() =>
         localService.load(),
       );
-      const supabaseService = createSupabaseAmirantProgressService(client, user.id);
+      const supabaseService = createSupabaseAmirantProgressService(client, uid);
       if (!cancelled) {
         setService(supabaseService);
         setState(merged);

@@ -14,12 +14,14 @@ import type {
   TopicRollupInput,
 } from "./types";
 import { clampDifficultyLevel } from "../difficulty-clamp";
+import { getBrowserUserId } from "@/lib/prep/supabase/browser-identity";
 
+/**
+ * Shared with the access and progress providers so one page load makes one auth
+ * read, not three. See browser-identity for why the local session is enough.
+ */
 async function getAuthedUserId(client: SupabaseClient): Promise<string | null> {
-  const {
-    data: { user },
-  } = await client.auth.getUser();
-  return user?.id ?? null;
+  return getBrowserUserId(client);
 }
 
 export async function createSupabasePersistenceService(
