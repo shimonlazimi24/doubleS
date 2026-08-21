@@ -2,7 +2,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "Maria loves animals, so she decided to ______ a puppy from the shelter.",
     "options": [
@@ -38,7 +38,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "The library is usually very ______; people go there to read and study quietly.",
     "options": [
@@ -74,7 +74,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "I forgot my umbrella, so I got completely ______ when it started raining.",
     "options": [
@@ -110,7 +110,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "Tom studies hard every day ______ he wants to pass the final exam.",
     "options": [
@@ -146,7 +146,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "The children were very ______ when they saw the surprise birthday cake.",
     "options": [
@@ -182,7 +182,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "This math problem is too difficult. Can you please ______ me?",
     "options": [
@@ -218,7 +218,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "She speaks three languages ______: English, Spanish, and French.",
     "options": [
@@ -254,7 +254,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "Don't forget to ______ the lights before you leave the room.",
     "options": [
@@ -290,7 +290,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "The doctor told me to ______ more water and exercise regularly.",
     "options": [
@@ -326,7 +326,7 @@
   {
     "questionId": "sample-sc-quiz-1-easy-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "My brother is ______ than me; he is 185 cm, and I am only 170 cm.",
     "options": [
@@ -362,7 +362,7 @@
   {
     "questionId": "sc-quiz-2-easy-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "The teacher asked the students to ______ their homework before class ends.",
     "options": [
@@ -398,7 +398,7 @@
   {
     "questionId": "sc-quiz-2-easy-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "I don't like coffee, ______ I prefer tea in the morning.",
     "options": [
@@ -434,7 +434,7 @@
   {
     "questionId": "sc-quiz-2-easy-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "My grandfather is very ______; he is 85 years old.",
     "options": [
@@ -470,7 +470,7 @@
   {
     "questionId": "sc-quiz-2-easy-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "Please ______ the door when you leave the room.",
     "options": [
@@ -506,7 +506,7 @@
   {
     "questionId": "sc-quiz-2-easy-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "The students were ______ to hear that school was cancelled for the day.",
     "options": [
@@ -542,7 +542,7 @@
   {
     "questionId": "sc-quiz-2-easy-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "We need to ______ money to buy a new car.",
     "options": [
@@ -578,7 +578,7 @@
   {
     "questionId": "sc-quiz-2-easy-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "It's very hot today, so I need to drink a lot of ______.",
     "options": [
@@ -614,7 +614,7 @@
   {
     "questionId": "sc-quiz-2-easy-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "She can't come to the party ______ she is sick.",
     "options": [
@@ -650,7 +650,7 @@
   {
     "questionId": "sc-quiz-2-easy-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "The little boy was ______ of the dark, so his mother left a light on.",
     "options": [
@@ -686,7 +686,7 @@
   {
     "questionId": "sc-quiz-2-easy-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
     "questionText": "I usually ______ my teeth twice a day, in the morning and at night.",
     "options": [
@@ -722,7 +722,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The government announced new ______ to reduce traffic congestion in the city.",
     "options": [
@@ -758,7 +758,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 4,
     "questionText": "Although the company faced financial difficulties, it managed to ______ its employees.",
     "options": [
@@ -794,7 +794,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The scientist's discovery was so ______ that it changed our understanding of biology.",
     "options": [
@@ -830,7 +830,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 4,
     "questionText": "She speaks English ______, even though she only started learning two years ago.",
     "options": [
@@ -866,7 +866,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The new policy will ______ next month, so employees should prepare accordingly.",
     "options": [
@@ -902,7 +902,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 4,
     "questionText": "Despite the heavy rain, the team ______ to complete the project on time.",
     "options": [
@@ -938,7 +938,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The museum has a ______ collection of ancient artifacts from around the world.",
     "options": [
@@ -974,7 +974,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "We need more evidence ______ we can make a final decision.",
     "options": [
@@ -1010,7 +1010,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The doctor recommended that she ______ more rest to recover fully.",
     "options": [
@@ -1046,7 +1046,7 @@
   {
     "questionId": "sc-quiz-3-intermediate-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The restaurant is known for its ______ service and delicious food.",
     "options": [
@@ -1082,7 +1082,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-cause-linker",
     "difficultyLevel": 3,
     "questionText": "The conference was ______ because several key speakers were unable to attend.",
     "options": [
@@ -1118,7 +1118,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "Many students find it difficult to ______ between similar-sounding words in English.",
     "options": [
@@ -1154,7 +1154,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The report ______ three main problems facing the industry today.",
     "options": [
@@ -1190,7 +1190,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "She has a ______ interest in ancient history, which she has studied for years.",
     "options": [
@@ -1226,7 +1226,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-cause-linker",
     "difficultyLevel": 3,
     "questionText": "The negotiations failed because the two sides could not reach a ______.",
     "options": [
@@ -1262,7 +1262,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "______ the difficult conditions, the rescue team continued their search.",
     "options": [
@@ -1298,7 +1298,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The new software is designed to ______ the process of data analysis.",
     "options": [
@@ -1334,7 +1334,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "Scientists are ______ optimistic about finding a cure for the disease within the next decade.",
     "options": [
@@ -1370,7 +1370,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The old factory was ______ into a modern museum last year.",
     "options": [
@@ -1406,7 +1406,7 @@
   {
     "questionId": "sc-quiz-4-intermediate-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "If you have any questions, please feel free to ______ me by email.",
     "options": [
@@ -1442,7 +1442,7 @@
   {
     "questionId": "sc-quiz-5-hard-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The CEO's statement was so ______ that journalists had trouble determining the company's actual position.",
     "options": [
@@ -1478,7 +1478,7 @@
   {
     "questionId": "sc-quiz-5-hard-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "Her groundbreaking research has ______ the field of molecular biology for the past decade.",
     "options": [
@@ -1514,7 +1514,7 @@
   {
     "questionId": "sc-quiz-5-hard-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The ______ of evidence suggests that climate change is accelerating faster than previously predicted.",
     "options": [
@@ -1550,7 +1550,7 @@
   {
     "questionId": "sc-quiz-5-hard-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The committee members were ______ in their opposition to the proposed amendment.",
     "options": [
@@ -1586,7 +1586,7 @@
   {
     "questionId": "sc-quiz-5-hard-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 5,
     "questionText": "Despite his ______ efforts to convince the board, the proposal was ultimately rejected.",
     "options": [
@@ -1622,7 +1622,7 @@
   {
     "questionId": "sc-quiz-5-hard-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The novel's plot is so ______ that readers often need to consult supplementary materials to understand it.",
     "options": [
@@ -1658,7 +1658,7 @@
   {
     "questionId": "sc-quiz-5-hard-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "Had the warning been issued earlier, the damage ______ significantly less severe.",
     "options": [
@@ -1694,7 +1694,7 @@
   {
     "questionId": "sc-quiz-5-hard-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The ancient manuscript provides ______ evidence of trade between the two civilizations.",
     "options": [
@@ -1730,7 +1730,7 @@
   {
     "questionId": "sc-quiz-5-hard-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The politician's remarks were widely ______ as insensitive and tone-deaf to the current crisis.",
     "options": [
@@ -1766,7 +1766,7 @@
   {
     "questionId": "sc-quiz-5-hard-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "Scholars have long ______ over the exact date when the treaty was signed.",
     "options": [
@@ -1802,7 +1802,7 @@
   {
     "questionId": "sc-quiz-6-hard-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The professor's lecture was so ______ that even his most dedicated students struggled to stay focused.",
     "options": [
@@ -1838,7 +1838,7 @@
   {
     "questionId": "sc-quiz-6-hard-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The treaty was signed only after months of ______ negotiations between the two nations.",
     "options": [
@@ -1874,7 +1874,7 @@
   {
     "questionId": "sc-quiz-6-hard-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The critic's review was ______ praise for the young novelist's debut work.",
     "options": [
@@ -1910,7 +1910,7 @@
   {
     "questionId": "sc-quiz-6-hard-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 6,
     "questionText": "Despite the initial optimism, the plan's flaws gradually became ______.",
     "options": [
@@ -1946,7 +1946,7 @@
   {
     "questionId": "sc-quiz-6-hard-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The witness's testimony was ______ with inconsistencies that undermined its credibility.",
     "options": [
@@ -1982,7 +1982,7 @@
   {
     "questionId": "sc-quiz-6-hard-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The ancient ruins offer a ______ glimpse into a civilization lost to time.",
     "options": [
@@ -2018,7 +2018,7 @@
   {
     "questionId": "sc-quiz-6-hard-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "Not until the final chapter ______ the truth about the protagonist's past.",
     "options": [
@@ -2054,7 +2054,7 @@
   {
     "questionId": "sc-quiz-6-hard-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
     "questionText": "The committee's decision was a ______ blow to the proposed legislation, effectively killing it.",
     "options": [
@@ -2090,7 +2090,7 @@
   {
     "questionId": "sc-quiz-6-hard-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The historian's work draws on a ______ array of primary and secondary sources.",
     "options": [
@@ -2126,7 +2126,7 @@
   {
     "questionId": "sc-quiz-6-hard-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 6,
     "questionText": "His apology, while sincere, did little to ______ the hurt feelings of those he had offended.",
     "options": [
@@ -2162,9 +2162,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
-    "questionText": "🟢 (Easy) She opened the window to let in some ______ air.",
+    "questionText": "She opened the window to let in some ______ air.",
     "options": [
       {
         "id": "a",
@@ -2198,9 +2198,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
-    "questionText": "🟡 (Intermediate) The witness was asked to describe the events ______ had happened that night.",
+    "questionText": "The witness was asked to describe the events ______ had happened that night.",
     "options": [
       {
         "id": "a",
@@ -2234,9 +2234,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
-    "questionText": "🔴 (Hard) The politician's response was marked by a notable ______ of specifics.",
+    "questionText": "The politician's response was marked by a notable ______ of specifics.",
     "options": [
       {
         "id": "a",
@@ -2270,9 +2270,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
-    "questionText": "🟢 (Easy) Don't forget to ______ the lights before leaving the house.",
+    "questionText": "Don't forget to ______ the lights before leaving the house.",
     "options": [
       {
         "id": "a",
@@ -2306,9 +2306,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
-    "questionText": "🟡 (Intermediate) The scientist proposed a ______ theory that challenged existing beliefs.",
+    "questionText": "The scientist proposed a ______ theory that challenged existing beliefs.",
     "options": [
       {
         "id": "a",
@@ -2342,9 +2342,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 6,
-    "questionText": "🔴 (Hard) The judge's ruling was ______ precedent, surprising legal scholars across the country.",
+    "questionText": "The judge's ruling was ______ precedent, surprising legal scholars across the country.",
     "options": [
       {
         "id": "a",
@@ -2378,9 +2378,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
-    "questionText": "🟡 (Intermediate) ______ his hard work, he failed to achieve the expected results.",
+    "questionText": "______ his hard work, he failed to achieve the expected results.",
     "options": [
       {
         "id": "a",
@@ -2414,9 +2414,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
-    "questionText": "🟢 (Easy) The children were playing ______ in the garden.",
+    "questionText": "The children were playing ______ in the garden.",
     "options": [
       {
         "id": "a",
@@ -2450,9 +2450,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
-    "questionText": "🟡 (Intermediate) The teacher ______ the importance of regular practice for language learning.",
+    "questionText": "The teacher ______ the importance of regular practice for language learning.",
     "options": [
       {
         "id": "a",
@@ -2486,9 +2486,9 @@
   {
     "questionId": "sc-quiz-7-mixed-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
-    "questionText": "🔴 (Hard) The research findings ______ the prevailing view that the disease is purely genetic.",
+    "questionText": "The research findings ______ the prevailing view that the disease is purely genetic.",
     "options": [
       {
         "id": "a",
@@ -2522,9 +2522,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
-    "questionText": "🟢 The weather was beautiful, so we decided to have a ______ in the park.",
+    "questionText": "The weather was beautiful, so we decided to have a ______ in the park.",
     "options": [
       {
         "id": "a",
@@ -2558,9 +2558,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
-    "questionText": "🔴 The candidate's response to the question was ______, revealing neither her true opinion nor her plans.",
+    "questionText": "The candidate's response to the question was ______, revealing neither her true opinion nor her plans.",
     "options": [
       {
         "id": "a",
@@ -2594,9 +2594,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
-    "questionText": "🟡 The professor asked her students to ______ the essay carefully before submitting it.",
+    "questionText": "The professor asked her students to ______ the essay carefully before submitting it.",
     "options": [
       {
         "id": "a",
@@ -2630,9 +2630,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
-    "questionText": "🟢 My father always ______ coffee in the morning before going to work.",
+    "questionText": "My father always ______ coffee in the morning before going to work.",
     "options": [
       {
         "id": "a",
@@ -2666,9 +2666,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
-    "questionText": "🟡 The new tax policy will primarily ______ wealthy individuals and large corporations.",
+    "questionText": "The new tax policy will primarily ______ wealthy individuals and large corporations.",
     "options": [
       {
         "id": "a",
@@ -2702,9 +2702,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 6,
-    "questionText": "🔴 Critics of the plan argue that its benefits have been ______ overstated by its supporters.",
+    "questionText": "Critics of the plan argue that its benefits have been ______ overstated by its supporters.",
     "options": [
       {
         "id": "a",
@@ -2738,9 +2738,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
-    "questionText": "🟡 Scientists have discovered a new species of fish that ______ in extremely cold water.",
+    "questionText": "Scientists have discovered a new species of fish that ______ in extremely cold water.",
     "options": [
       {
         "id": "a",
@@ -2774,9 +2774,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
-    "questionText": "🟢 Please close the window; it is very ______ in here.",
+    "questionText": "Please close the window; it is very ______ in here.",
     "options": [
       {
         "id": "a",
@@ -2810,9 +2810,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q9",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
-    "questionText": "🔴 The senator's statement was ______ with contradictions, undermining his credibility.",
+    "questionText": "The senator's statement was ______ with contradictions, undermining his credibility.",
     "options": [
       {
         "id": "a",
@@ -2846,9 +2846,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q10",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
-    "questionText": "🟡 The committee will ______ the proposal at next week's meeting.",
+    "questionText": "The committee will ______ the proposal at next week's meeting.",
     "options": [
       {
         "id": "a",
@@ -2882,9 +2882,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q11",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 2,
-    "questionText": "🟢 She always ______ her keys on the table by the door.",
+    "questionText": "She always ______ her keys on the table by the door.",
     "options": [
       {
         "id": "a",
@@ -2918,9 +2918,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q12",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 6,
-    "questionText": "🔴 The historian's research sheds new light on a period that had been largely ______ by previous scholars.",
+    "questionText": "The historian's research sheds new light on a period that had been largely ______ by previous scholars.",
     "options": [
       {
         "id": "a",
@@ -2954,9 +2954,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q13",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
-    "questionText": "🟡 The software was designed to ______ the company's accounting procedures.",
+    "questionText": "The software was designed to ______ the company's accounting procedures.",
     "options": [
       {
         "id": "a",
@@ -2990,9 +2990,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q14",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
-    "questionText": "🔴 ______ the economic downturn, the company managed to increase its profits last year.",
+    "questionText": "______ the economic downturn, the company managed to increase its profits last year.",
     "options": [
       {
         "id": "a",
@@ -3026,9 +3026,9 @@
   {
     "questionId": "sc-quiz-8-mixed-q15",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 1,
-    "questionText": "🟢 The children were ______ happy to see their grandmother again.",
+    "questionText": "The children were ______ happy to see their grandmother again.",
     "options": [
       {
         "id": "a",
@@ -3062,7 +3062,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 3,
     "questionText": "Original: Despite the heavy rain, the outdoor concert was not cancelled.",
     "options": [
@@ -3098,7 +3098,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 4,
     "questionText": "Original: Sarah rarely arrives at work on time.",
     "options": [
@@ -3134,7 +3134,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 3,
     "questionText": "Original: The new manager is expected to announce major changes next week.",
     "options": [
@@ -3170,7 +3170,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-conditional",
     "difficultyLevel": 4,
     "questionText": "Original: If he had studied harder, he would have passed the exam.",
     "options": [
@@ -3206,7 +3206,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 3,
     "questionText": "Original: The company's profits have increased significantly since the new CEO took over.",
     "options": [
@@ -3242,7 +3242,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 4,
     "questionText": "Original: Children under the age of 12 must be accompanied by an adult.",
     "options": [
@@ -3278,7 +3278,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: The research suggests that regular exercise can reduce the risk of heart disease.",
     "options": [
@@ -3314,7 +3314,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 4,
     "questionText": "Original: She would rather stay home than go to the party.",
     "options": [
@@ -3350,7 +3350,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 3,
     "questionText": "Original: The meeting was postponed due to unforeseen circumstances.",
     "options": [
@@ -3386,7 +3386,7 @@
   {
     "questionId": "sample-restatement-quiz-intermediate-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: Hardly had I finished my coffee when the phone rang.",
     "options": [
@@ -3422,7 +3422,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: Tom is a very tall boy.",
     "options": [
@@ -3458,7 +3458,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 2,
     "questionText": "Original: Maria always arrives on time.",
     "options": [
@@ -3494,7 +3494,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: The movie was really boring.",
     "options": [
@@ -3530,7 +3530,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 2,
     "questionText": "Original: She bought a new car yesterday.",
     "options": [
@@ -3566,7 +3566,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: The children are playing in the garden.",
     "options": [
@@ -3602,7 +3602,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 2,
     "questionText": "Original: I can't speak French.",
     "options": [
@@ -3638,7 +3638,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: The weather is cold today.",
     "options": [
@@ -3674,7 +3674,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 2,
     "questionText": "Original: David enjoys reading books.",
     "options": [
@@ -3710,7 +3710,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: The restaurant opens at 8 AM.",
     "options": [
@@ -3746,7 +3746,7 @@
   {
     "questionId": "restatement-quiz-1-easy-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 2,
     "questionText": "Original: My sister is older than me.",
     "options": [
@@ -3782,7 +3782,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: I have lived in Tel Aviv for five years.",
     "options": [
@@ -3818,7 +3818,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 2,
     "questionText": "Original: My brother can drive, but I cannot.",
     "options": [
@@ -3854,7 +3854,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 1,
     "questionText": "Original: She never eats breakfast.",
     "options": [
@@ -3890,7 +3890,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 2,
     "questionText": "Original: Mark is the tallest boy in his class.",
     "options": [
@@ -3926,7 +3926,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 1,
     "questionText": "Original: I do not have any money.",
     "options": [
@@ -3962,7 +3962,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 2,
     "questionText": "Original: She is not as old as her sister.",
     "options": [
@@ -3998,7 +3998,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: The train leaves at 8 PM.",
     "options": [
@@ -4034,7 +4034,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 2,
     "questionText": "Original: I want to learn Spanish.",
     "options": [
@@ -4070,7 +4070,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
     "questionText": "Original: It is raining heavily outside.",
     "options": [
@@ -4106,7 +4106,7 @@
   {
     "questionId": "restatement-quiz-2-easy-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 2,
     "questionText": "Original: This book is more interesting than that one.",
     "options": [
@@ -4142,7 +4142,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 3,
     "questionText": "Original: The meeting was cancelled by the manager.",
     "options": [
@@ -4178,7 +4178,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: She left the room without saying goodbye.",
     "options": [
@@ -4214,7 +4214,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: He told me that he was tired.",
     "options": [
@@ -4250,7 +4250,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-conditional",
     "difficultyLevel": 4,
     "questionText": "Original: If I had more time, I would visit my grandmother.",
     "options": [
@@ -4286,7 +4286,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 3,
     "questionText": "Original: You must wear a seatbelt while driving.",
     "options": [
@@ -4322,7 +4322,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 4,
     "questionText": "Original: The book, which was written by a famous author, became a bestseller.",
     "options": [
@@ -4358,7 +4358,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 3,
     "questionText": "Original: I used up all the milk this morning.",
     "options": [
@@ -4394,7 +4394,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 4,
     "questionText": "Original: Few students attended the lecture.",
     "options": [
@@ -4430,7 +4430,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 3,
     "questionText": "Original: Because of the traffic, we arrived late.",
     "options": [
@@ -4466,7 +4466,7 @@
   {
     "questionId": "restatement-quiz-3-intermediate-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: She is looking forward to her vacation.",
     "options": [
@@ -4502,7 +4502,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 3,
     "questionText": "Original: She promised to call me as soon as she arrived.",
     "options": [
@@ -4538,7 +4538,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: The workers refused to accept the new contract.",
     "options": [
@@ -4574,7 +4574,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-conditional",
     "difficultyLevel": 3,
     "questionText": "Original: Unless the weather improves, the outdoor event will be cancelled.",
     "options": [
@@ -4610,7 +4610,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: Tom is too young to drive a car.",
     "options": [
@@ -4646,7 +4646,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 3,
     "questionText": "Original: The library has been closed for renovations since last month.",
     "options": [
@@ -4682,7 +4682,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: The company owes its success to its talented employees.",
     "options": [
@@ -4718,7 +4718,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: She has neither the time nor the money to travel abroad.",
     "options": [
@@ -4754,7 +4754,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: By the time the ambulance arrived, the patient had already recovered.",
     "options": [
@@ -4790,7 +4790,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 3,
     "questionText": "Original: Despite his young age, he demonstrated remarkable maturity.",
     "options": [
@@ -4826,7 +4826,7 @@
   {
     "questionId": "restatement-quiz-4-intermediate-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: It is likely that the meeting will be postponed.",
     "options": [
@@ -4862,7 +4862,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 5,
     "questionText": "Original: Had the researchers anticipated the complications, they might have revised their methodology earlier.",
     "options": [
@@ -4898,7 +4898,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
     "questionText": "Original: Not only was the new regulation ineffective, but it also imposed significant burdens on small businesses.",
     "options": [
@@ -4934,7 +4934,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: The proposal, while innovative in principle, proved impractical when subjected to real-world conditions.",
     "options": [
@@ -4970,7 +4970,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
     "questionText": "Original: Scarcely had the meeting begun when an urgent call forced the CEO to leave.",
     "options": [
@@ -5006,7 +5006,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: The findings contradict the widely held belief that remote work reduces productivity.",
     "options": [
@@ -5042,7 +5042,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
     "questionText": "Original: No sooner had the law been passed than public opposition began to mount.",
     "options": [
@@ -5078,7 +5078,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: The company's success is largely attributable to its willingness to adapt to changing market conditions.",
     "options": [
@@ -5114,7 +5114,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 6,
     "questionText": "Original: Under no circumstances should the confidential documents be shared with unauthorized personnel.",
     "options": [
@@ -5150,7 +5150,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: Critics have argued that the policy, far from alleviating the crisis, has in fact deepened it.",
     "options": [
@@ -5186,7 +5186,7 @@
   {
     "questionId": "restatement-quiz-5-hard-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
     "questionText": "Original: Were it not for her intervention, the project would have failed entirely.",
     "options": [
@@ -5222,7 +5222,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: It was Maria who discovered the error in the report.",
     "options": [
@@ -5258,7 +5258,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 6,
     "questionText": "Original: I wish I had studied medicine instead of law.",
     "options": [
@@ -5294,7 +5294,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: Having finished his homework, he went out to play.",
     "options": [
@@ -5330,7 +5330,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
     "questionText": "Original: Not only did he win the gold medal, but he also broke the world record.",
     "options": [
@@ -5366,7 +5366,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
     "questionText": "Original: Under no circumstances should you reveal this information.",
     "options": [
@@ -5402,7 +5402,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 6,
     "questionText": "Original: The problem, complex as it may seem, has a simple solution.",
     "options": [
@@ -5438,7 +5438,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 5,
     "questionText": "Original: She speaks English more fluently than her older sister does.",
     "options": [
@@ -5474,7 +5474,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 6,
     "questionText": "Original: It is essential that every student submit the assignment by Friday.",
     "options": [
@@ -5510,7 +5510,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 5,
     "questionText": "Original: Seldom have I encountered such a difficult problem.",
     "options": [
@@ -5546,7 +5546,7 @@
   {
     "questionId": "restatement-quiz-6-hard-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 6,
     "questionText": "Original: Rising costs notwithstanding, the company continued to invest in research.",
     "options": [
@@ -5582,9 +5582,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
-    "questionText": "🟢 Original: The store will open at 9 AM tomorrow.",
+    "questionText": "Original: The store will open at 9 AM tomorrow.",
     "options": [
       {
         "id": "a",
@@ -5618,9 +5618,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 2,
-    "questionText": "🟢 Original: She is good at playing the piano.",
+    "questionText": "Original: She is good at playing the piano.",
     "options": [
       {
         "id": "a",
@@ -5654,9 +5654,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 1,
-    "questionText": "🟢 Original: I do not like coffee.",
+    "questionText": "Original: I do not like coffee.",
     "options": [
       {
         "id": "a",
@@ -5690,9 +5690,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: The children gave up trying to solve the puzzle.",
+    "questionText": "Original: The children gave up trying to solve the puzzle.",
     "options": [
       {
         "id": "a",
@@ -5726,9 +5726,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
-    "questionText": "🟡 Original: She told me that she would call me the next day.",
+    "questionText": "Original: She told me that she would call me the next day.",
     "options": [
       {
         "id": "a",
@@ -5762,9 +5762,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: You should take an umbrella; it might rain.",
+    "questionText": "Original: You should take an umbrella; it might rain.",
     "options": [
       {
         "id": "a",
@@ -5798,9 +5798,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-conditional",
     "difficultyLevel": 4,
-    "questionText": "🟡 Original: If I were you, I would apologize.",
+    "questionText": "Original: If I were you, I would apologize.",
     "options": [
       {
         "id": "a",
@@ -5834,9 +5834,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 2,
-    "questionText": "🟢 Original: The letter was written by the manager.",
+    "questionText": "Original: The letter was written by the manager.",
     "options": [
       {
         "id": "a",
@@ -5870,9 +5870,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: It was John's proposal that changed everything.",
+    "questionText": "Original: It was John's proposal that changed everything.",
     "options": [
       {
         "id": "a",
@@ -5906,9 +5906,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: Not only was she late, but she also forgot her notes.",
+    "questionText": "Original: Not only was she late, but she also forgot her notes.",
     "options": [
       {
         "id": "a",
@@ -5942,9 +5942,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q11",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: It is crucial that the team finish the project by Monday.",
+    "questionText": "Original: It is crucial that the team finish the project by Monday.",
     "options": [
       {
         "id": "a",
@@ -5978,9 +5978,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q12",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: The increase in prices has led to decreased sales.",
+    "questionText": "Original: The increase in prices has led to decreased sales.",
     "options": [
       {
         "id": "a",
@@ -6014,9 +6014,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q13",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: She is more intelligent than any of her classmates.",
+    "questionText": "Original: She is more intelligent than any of her classmates.",
     "options": [
       {
         "id": "a",
@@ -6050,9 +6050,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: Owing to the heavy traffic, the bus was delayed by an hour.",
+    "questionText": "Original: Owing to the heavy traffic, the bus was delayed by an hour.",
     "options": [
       {
         "id": "a",
@@ -6086,9 +6086,9 @@
   {
     "questionId": "restatement-quiz-7-mixed-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: The proposal was rejected unanimously by the committee.",
+    "questionText": "Original: The proposal was rejected unanimously by the committee.",
     "options": [
       {
         "id": "a",
@@ -6122,9 +6122,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q1",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 1,
-    "questionText": "🟢 Original: The coffee is too hot to drink.",
+    "questionText": "Original: The coffee is too hot to drink.",
     "options": [
       {
         "id": "a",
@@ -6158,9 +6158,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q2",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 2,
-    "questionText": "🟢 Original: Mary is happy because she passed the test.",
+    "questionText": "Original: Mary is happy because she passed the test.",
     "options": [
       {
         "id": "a",
@@ -6194,9 +6194,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q3",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-negation",
     "difficultyLevel": 1,
-    "questionText": "🟢 Original: I have never been to London.",
+    "questionText": "Original: I have never been to London.",
     "options": [
       {
         "id": "a",
@@ -6230,9 +6230,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q4",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 2,
-    "questionText": "🟢 Original: I prefer tea to coffee.",
+    "questionText": "Original: I prefer tea to coffee.",
     "options": [
       {
         "id": "a",
@@ -6266,9 +6266,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q5",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: She is used to working late at the office.",
+    "questionText": "Original: She is used to working late at the office.",
     "options": [
       {
         "id": "a",
@@ -6302,9 +6302,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q6",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 4,
-    "questionText": "🟡 Original: The book was borrowed by my brother.",
+    "questionText": "Original: The book was borrowed by my brother.",
     "options": [
       {
         "id": "a",
@@ -6338,9 +6338,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q7",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-comparison",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: He runs faster than anyone else on the team.",
+    "questionText": "Original: He runs faster than anyone else on the team.",
     "options": [
       {
         "id": "a",
@@ -6374,9 +6374,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q8",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 4,
-    "questionText": "🟡 Original: Despite being tired, she continued working.",
+    "questionText": "Original: Despite being tired, she continued working.",
     "options": [
       {
         "id": "a",
@@ -6410,9 +6410,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q9",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
-    "questionText": "🟡 Original: The movie, which was based on a true story, became a huge success.",
+    "questionText": "Original: The movie, which was based on a true story, became a huge success.",
     "options": [
       {
         "id": "a",
@@ -6446,9 +6446,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q10",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: Rarely have I seen such a beautiful sunset.",
+    "questionText": "Original: Rarely have I seen such a beautiful sunset.",
     "options": [
       {
         "id": "a",
@@ -6482,9 +6482,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q11",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: Had the evidence been examined more carefully, the mistake could have been avoided.",
+    "questionText": "Original: Had the evidence been examined more carefully, the mistake could have been avoided.",
     "options": [
       {
         "id": "a",
@@ -6518,9 +6518,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q12",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: Under no circumstances should this confidential information be shared.",
+    "questionText": "Original: Under no circumstances should this confidential information be shared.",
     "options": [
       {
         "id": "a",
@@ -6554,9 +6554,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q13",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: The implementation of the new system was met with considerable resistance from employees.",
+    "questionText": "Original: The implementation of the new system was met with considerable resistance from employees.",
     "options": [
       {
         "id": "a",
@@ -6590,9 +6590,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 5,
-    "questionText": "🔴 Original: Only after the investigation was complete did the truth emerge.",
+    "questionText": "Original: Only after the investigation was complete did the truth emerge.",
     "options": [
       {
         "id": "a",
@@ -6626,9 +6626,9 @@
   {
     "questionId": "restatement-quiz-8-mixed-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-inversion-conditionals",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 6,
-    "questionText": "🔴 Original: Not only did the policy fail to reduce costs, but it also damaged employee morale.",
+    "questionText": "Original: Not only did the policy fail to reduce costs, but it also damaged employee morale.",
     "options": [
       {
         "id": "a",
@@ -6699,7 +6699,7 @@
   {
     "questionId": "reading-comp-quiz-1-easy-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "According to the passage, which of the following is NOT mentioned as a benefit of walking?",
     "options": [
@@ -6736,7 +6736,7 @@
   {
     "questionId": "reading-comp-quiz-1-easy-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-vocabulary-in-context",
     "difficultyLevel": 1,
     "questionText": "In the passage, the phrase \"no specific skills\" (paragraph 1) suggests that walking:",
     "options": [
@@ -6773,7 +6773,7 @@
   {
     "questionId": "reading-comp-quiz-1-easy-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "Where did chocolate originally come from?",
     "options": [
@@ -6810,7 +6810,7 @@
   {
     "questionId": "reading-comp-quiz-1-easy-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 1,
     "questionText": "According to the passage, how was ancient Mayan chocolate different from modern chocolate?",
     "options": [
@@ -6847,7 +6847,7 @@
   {
     "questionId": "reading-comp-quiz-1-easy-q6",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "When did chocolate become available to ordinary people?",
     "options": [
@@ -6884,7 +6884,7 @@
   {
     "questionId": "reading-comp-quiz-2-easy-q1",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 1,
     "questionText": "Where and when did the modern pizza begin?",
     "options": [
@@ -6921,7 +6921,7 @@
   {
     "questionId": "reading-comp-quiz-2-easy-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "According to the passage, how did pizza come to the United States?",
     "options": [
@@ -6958,7 +6958,7 @@
   {
     "questionId": "reading-comp-quiz-2-easy-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 1,
     "questionText": "What happened to pizza in America after World War II?",
     "options": [
@@ -6995,7 +6995,7 @@
   {
     "questionId": "reading-comp-quiz-2-easy-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "Which statement about pizza today is supported by the passage?",
     "options": [
@@ -7106,7 +7106,7 @@
   {
     "questionId": "reading-comp-quiz-3-intermediate-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "According to the passage, what development in the early 2000s helped make modern electric cars more practical?",
     "options": [
@@ -7143,7 +7143,7 @@
   {
     "questionId": "reading-comp-quiz-3-intermediate-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "Which of the following is mentioned as a challenge to the transition to electric vehicles?",
     "options": [
@@ -7180,7 +7180,7 @@
   {
     "questionId": "reading-comp-quiz-3-intermediate-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "In the final paragraph, the phrase \"is drawing to a close\" is closest in meaning to:",
     "options": [
@@ -7217,7 +7217,7 @@
   {
     "questionId": "reading-comp-quiz-3-intermediate-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 3,
     "questionText": "What can be inferred about the author's view of the future of transportation?",
     "options": [
@@ -7291,7 +7291,7 @@
   {
     "questionId": "reading-comp-quiz-4-intermediate-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "According to the passage, what are the three parts of a habit loop?",
     "options": [
@@ -7328,7 +7328,7 @@
   {
     "questionId": "reading-comp-quiz-4-intermediate-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "What does the passage suggest is the most effective way to change a habit?",
     "options": [
@@ -7365,7 +7365,7 @@
   {
     "questionId": "reading-comp-quiz-4-intermediate-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "In paragraph 4, the word \"consistency\" is closest in meaning to:",
     "options": [
@@ -7402,7 +7402,7 @@
   {
     "questionId": "reading-comp-quiz-4-intermediate-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 3,
     "questionText": "What can be inferred from the passage about the popular \"21 days\" claim?",
     "options": [
@@ -7439,7 +7439,7 @@
   {
     "questionId": "reading-comp-quiz-5-hard-q1",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "What is the author's main purpose in this passage?",
     "options": [
@@ -7476,7 +7476,7 @@
   {
     "questionId": "reading-comp-quiz-5-hard-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 6,
     "questionText": "According to paragraph 3, critics of purely technical approaches argue that:",
     "options": [
@@ -7513,7 +7513,7 @@
   {
     "questionId": "reading-comp-quiz-5-hard-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "In paragraph 4, the word \"rigor\" is closest in meaning to:",
     "options": [
@@ -7550,7 +7550,7 @@
   {
     "questionId": "reading-comp-quiz-5-hard-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 6,
     "questionText": "What can be inferred about the author's view of \"participatory design\"?",
     "options": [
@@ -7587,7 +7587,7 @@
   {
     "questionId": "reading-comp-quiz-5-hard-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "The author's overall position on AI ethics could best be described as:",
     "options": [
@@ -7661,7 +7661,7 @@
   {
     "questionId": "reading-comp-quiz-6-hard-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 6,
     "questionText": "According to the passage, which of the following conditions generally does NOT show a strong placebo response?",
     "options": [
@@ -7698,7 +7698,7 @@
   {
     "questionId": "reading-comp-quiz-6-hard-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "What does the passage suggest about the \"open-label\" placebo effect?",
     "options": [
@@ -7735,7 +7735,7 @@
   {
     "questionId": "reading-comp-quiz-6-hard-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 6,
     "questionText": "In paragraph 2, the phrase \"cannot account for all the evidence\" is closest in meaning to:",
     "options": [
@@ -7772,7 +7772,7 @@
   {
     "questionId": "reading-comp-quiz-6-hard-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "What does the author imply about the future of placebo research?",
     "options": [
@@ -7846,7 +7846,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "According to the passage, which hormone is released during severe stress and affects memory?",
     "options": [
@@ -7883,7 +7883,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "What does the passage say about short-term, moderate stress?",
     "options": [
@@ -7920,7 +7920,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 4,
     "questionText": "What can be inferred about chronic stress based on the passage?",
     "options": [
@@ -7957,7 +7957,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "Which of the following is NOT mentioned in the passage as a strategy to protect memory during stressful periods?",
     "options": [
@@ -7994,7 +7994,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q6",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 6,
     "questionText": "According to the passage, what is motivating cities to become greener?",
     "options": [
@@ -8031,7 +8031,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q7",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 1,
     "questionText": "What benefits of \"green roofs\" are mentioned in the passage?",
     "options": [
@@ -8068,7 +8068,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q8",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "According to the passage, what policy has Copenhagen adopted regarding green roofs?",
     "options": [
@@ -8105,7 +8105,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "What concern do critics of urban greening projects raise?",
     "options": [
@@ -8142,7 +8142,7 @@
   {
     "questionId": "reading-comp-quiz-7-mixed-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "What does the phrase \"shows no sign of slowing down\" at the end of the passage suggest?",
     "options": [
@@ -8216,7 +8216,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q2",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "According to the passage, what is one major health-related reason that people choose plant-based diets?",
     "options": [
@@ -8253,7 +8253,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q3",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "What environmental fact about meat production is mentioned in the passage?",
     "options": [
@@ -8290,7 +8290,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q4",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "Which of the following is mentioned as a challenge of plant-based eating?",
     "options": [
@@ -8327,7 +8327,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q5",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "What does the author conclude in the final paragraph?",
     "options": [
@@ -8401,7 +8401,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q7",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 1,
     "questionText": "According to the passage, when is a language considered \"extinct\"?",
     "options": [
@@ -8438,7 +8438,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q8",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 2,
     "questionText": "How does globalization contribute to language loss, according to the passage?",
     "options": [
@@ -8475,7 +8475,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "What argument do most linguists make against those who dismiss language loss?",
     "options": [
@@ -8512,7 +8512,7 @@
   {
     "questionId": "reading-comp-quiz-8-mixed-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-main-idea",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "Based on the final paragraph, what is the author's view on efforts to preserve endangered languages?",
     "options": [
@@ -8549,7 +8549,7 @@
   {
     "questionId": "simulation-1-baseline-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-cause-linker",
     "difficultyLevel": 3,
     "questionText": "The meeting was delayed because the manager was ______ in traffic.",
     "options": [
@@ -8585,7 +8585,7 @@
   {
     "questionId": "simulation-1-baseline-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "Every morning, my father ______ the newspaper before going to work.",
     "options": [
@@ -8621,7 +8621,7 @@
   {
     "questionId": "simulation-1-baseline-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The teacher asked the students to ______ their essays carefully before submitting them.",
     "options": [
@@ -8657,7 +8657,7 @@
   {
     "questionId": "simulation-1-baseline-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 4,
     "questionText": "Despite the cold weather, the children ______ to play outside.",
     "options": [
@@ -8693,7 +8693,7 @@
   {
     "questionId": "simulation-1-baseline-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The museum is closed on Mondays, ______ visitors should plan accordingly.",
     "options": [
@@ -8729,7 +8729,7 @@
   {
     "questionId": "simulation-1-baseline-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 4,
     "questionText": "She has been studying French ______ three years and can now speak it fluently.",
     "options": [
@@ -8765,7 +8765,7 @@
   {
     "questionId": "simulation-1-baseline-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The scientist's new theory ______ many long-held assumptions in the field.",
     "options": [
@@ -8801,7 +8801,7 @@
   {
     "questionId": "simulation-1-baseline-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The company's profits have increased ______ over the past five years.",
     "options": [
@@ -8837,7 +8837,7 @@
   {
     "questionId": "simulation-1-baseline-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 3,
     "questionText": "What is the main idea of the passage?",
     "options": [
@@ -8874,7 +8874,7 @@
   {
     "questionId": "simulation-1-baseline-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "According to the passage, what percentage of global carbon emissions does the fashion industry produce?",
     "options": [
@@ -8911,7 +8911,7 @@
   {
     "questionId": "simulation-1-baseline-q11",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "Which of the following is mentioned as a human cost of fast fashion?",
     "options": [
@@ -8948,7 +8948,7 @@
   {
     "questionId": "simulation-1-baseline-q12",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "In paragraph 3, the phrase \"uneven and difficult to verify\" most likely means:",
     "options": [
@@ -8985,7 +8985,7 @@
   {
     "questionId": "simulation-1-baseline-q13",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 3,
     "questionText": "What can be inferred about the author's attitude toward fast fashion?",
     "options": [
@@ -9022,7 +9022,7 @@
   {
     "questionId": "simulation-1-baseline-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 4,
     "questionText": "Original: The concert was cancelled due to the heavy rain.",
     "options": [
@@ -9058,7 +9058,7 @@
   {
     "questionId": "simulation-1-baseline-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-quantifier-scope",
     "difficultyLevel": 3,
     "questionText": "Original: Only after the report was reviewed did the committee reach a decision.",
     "options": [
@@ -9094,7 +9094,7 @@
   {
     "questionId": "simulation-1-baseline-q16",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: She would have attended the wedding had she not been sick.",
     "options": [
@@ -9130,7 +9130,7 @@
   {
     "questionId": "simulation-1-baseline-q17",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: The findings suggest that the treatment may be effective.",
     "options": [
@@ -9166,7 +9166,7 @@
   {
     "questionId": "simulation-1-baseline-q18",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: Neither the manager nor the employees were informed about the decision.",
     "options": [
@@ -9202,7 +9202,7 @@
   {
     "questionId": "simulation-1-baseline-q19",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: The new software allows users to complete tasks more efficiently.",
     "options": [
@@ -9238,7 +9238,7 @@
   {
     "questionId": "simulation-1-baseline-q20",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The detective carefully ______ all the evidence before drawing a conclusion.",
     "options": [
@@ -9274,7 +9274,7 @@
   {
     "questionId": "simulation-1-baseline-q21",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The hotel offers ______ views of the mountains from every room.",
     "options": [
@@ -9310,7 +9310,7 @@
   {
     "questionId": "simulation-1-baseline-q22",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "______ the rising costs, the company managed to increase its profits this year.",
     "options": [
@@ -9346,7 +9346,7 @@
   {
     "questionId": "simulation-1-baseline-q23",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The findings of the study were ______ with those of previous research on the topic.",
     "options": [
@@ -9526,7 +9526,7 @@
   {
     "questionId": "simulation-1-baseline-q28",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "If I ______ you, I would accept the offer immediately.",
     "options": [
@@ -9562,7 +9562,7 @@
   {
     "questionId": "simulation-1-baseline-q29",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The book ______ I borrowed from the library was fascinating.",
     "options": [
@@ -9598,7 +9598,7 @@
   {
     "questionId": "simulation-1-baseline-q30",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 4,
     "questionText": "By the time we arrived at the theater, the play ______.",
     "options": [
@@ -9634,7 +9634,7 @@
   {
     "questionId": "simulation-1-baseline-q31",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-contrast-linkers",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 3,
     "questionText": "She is one of the most talented musicians ______ I have ever heard.",
     "options": [
@@ -9670,7 +9670,7 @@
   {
     "questionId": "simulation-2-warmup-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 3,
     "questionText": "The company's ______ expansion into new markets has been remarkably successful.",
     "options": [
@@ -9706,7 +9706,7 @@
   {
     "questionId": "simulation-2-warmup-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-cause-linker",
     "difficultyLevel": 3,
     "questionText": "She couldn't attend the lecture because of a ______ conflict with her work schedule.",
     "options": [
@@ -9742,7 +9742,7 @@
   {
     "questionId": "simulation-2-warmup-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The evidence presented in court was ______; it left no room for doubt.",
     "options": [
@@ -9778,7 +9778,7 @@
   {
     "questionId": "simulation-2-warmup-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "Many parents struggle to ______ their work responsibilities with family time.",
     "options": [
@@ -9814,7 +9814,7 @@
   {
     "questionId": "simulation-2-warmup-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The professor's explanation was so ______ that even the most confused students finally understood the concept.",
     "options": [
@@ -9850,7 +9850,7 @@
   {
     "questionId": "simulation-2-warmup-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "______ his limited budget, he managed to travel to five countries in a single year.",
     "options": [
@@ -9886,7 +9886,7 @@
   {
     "questionId": "simulation-2-warmup-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The research findings ______ light on the long-standing mystery of ancient migration patterns.",
     "options": [
@@ -9922,7 +9922,7 @@
   {
     "questionId": "simulation-2-warmup-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The politician's speech was criticized for being ______ on specific policy details.",
     "options": [
@@ -9958,7 +9958,7 @@
   {
     "questionId": "simulation-2-warmup-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 3,
     "questionText": "What is the main idea of the passage?",
     "options": [
@@ -9995,7 +9995,7 @@
   {
     "questionId": "simulation-2-warmup-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "According to the 2011 study of Israeli parole judges, when were prisoners most likely to receive favorable rulings?",
     "options": [
@@ -10032,7 +10032,7 @@
   {
     "questionId": "simulation-2-warmup-q11",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "Which of the following is specifically mentioned as an effect of decision fatigue?",
     "options": [
@@ -10069,7 +10069,7 @@
   {
     "questionId": "simulation-2-warmup-q12",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 3,
     "questionText": "In paragraph 4, the word \"trivial\" is closest in meaning to:",
     "options": [
@@ -10106,7 +10106,7 @@
   {
     "questionId": "simulation-2-warmup-q13",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 3,
     "questionText": "What can be inferred about the author's view of decision fatigue?",
     "options": [
@@ -10143,7 +10143,7 @@
   {
     "questionId": "simulation-2-warmup-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-cause-effect",
     "difficultyLevel": 3,
     "questionText": "Original: The proposal was rejected on the grounds that it was too expensive.",
     "options": [
@@ -10179,7 +10179,7 @@
   {
     "questionId": "simulation-2-warmup-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 3,
     "questionText": "Original: Rarely have scientists encountered such compelling evidence for a new theory.",
     "options": [
@@ -10215,7 +10215,7 @@
   {
     "questionId": "simulation-2-warmup-q16",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 3,
     "questionText": "Original: The company attributed its success to the dedication of its employees.",
     "options": [
@@ -10251,7 +10251,7 @@
   {
     "questionId": "simulation-2-warmup-q17",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 3,
     "questionText": "Original: No sooner had the announcement been made than protests broke out across the city.",
     "options": [
@@ -10287,7 +10287,7 @@
   {
     "questionId": "simulation-2-warmup-q18",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-passive",
     "difficultyLevel": 3,
     "questionText": "Original: It is widely believed that regular exercise improves mental health.",
     "options": [
@@ -10323,7 +10323,7 @@
   {
     "questionId": "simulation-2-warmup-q19",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 3,
     "questionText": "Original: Contrary to popular opinion, the new law will likely reduce rather than increase taxes.",
     "options": [
@@ -10359,7 +10359,7 @@
   {
     "questionId": "simulation-2-warmup-q20",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The experiment's results were ______ with the team's initial hypothesis, requiring them to reconsider their approach.",
     "options": [
@@ -10395,7 +10395,7 @@
   {
     "questionId": "simulation-2-warmup-q21",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "She is known for her ability to ______ complex problems into manageable parts.",
     "options": [
@@ -10431,7 +10431,7 @@
   {
     "questionId": "simulation-2-warmup-q22",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The archaeologist's discovery ______ important questions about ancient civilizations.",
     "options": [
@@ -10467,7 +10467,7 @@
   {
     "questionId": "simulation-2-warmup-q23",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 3,
     "questionText": "The author's style is known for being ______; she uses few words but conveys deep meaning.",
     "options": [
@@ -10503,7 +10503,7 @@
   {
     "questionId": "simulation-4-final-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The minister's attempts to justify the policy were widely regarded as ______, failing to address the core concerns raised by critics.",
     "options": [
@@ -10539,7 +10539,7 @@
   {
     "questionId": "simulation-4-final-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "Few issues in modern medicine have generated as much ______ as the question of genetic testing for adult-onset diseases.",
     "options": [
@@ -10575,7 +10575,7 @@
   {
     "questionId": "simulation-4-final-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 5,
     "questionText": "The director's latest film has been praised for its ______ portrayal of complex moral dilemmas.",
     "options": [
@@ -10611,7 +10611,7 @@
   {
     "questionId": "simulation-4-final-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The newly appointed CEO is expected to ______ a cultural shift within the organization over the coming years.",
     "options": [
@@ -10647,7 +10647,7 @@
   {
     "questionId": "simulation-4-final-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 5,
     "questionText": "Her arguments, while ______ sound, overlooked several practical difficulties that would arise during implementation.",
     "options": [
@@ -10683,7 +10683,7 @@
   {
     "questionId": "simulation-4-final-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The economic crisis ______ a fundamental reassessment of the banking sector's regulatory framework.",
     "options": [
@@ -10719,7 +10719,7 @@
   {
     "questionId": "simulation-4-final-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "Scholars remain ______ about the authorship of several letters attributed to the ancient philosopher.",
     "options": [
@@ -10755,7 +10755,7 @@
   {
     "questionId": "simulation-4-final-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The treaty's provisions were deliberately ______, allowing each party to interpret them according to its own interests.",
     "options": [
@@ -10791,7 +10791,7 @@
   {
     "questionId": "simulation-4-final-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "What is the main argument of the passage?",
     "options": [
@@ -10828,7 +10828,7 @@
   {
     "questionId": "simulation-4-final-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "According to the passage, why can large language models produce fluent text without genuine understanding?",
     "options": [
@@ -10865,7 +10865,7 @@
   {
     "questionId": "simulation-4-final-q11",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "Which of the following does the passage identify as a concern about deploying AI in high-stakes decisions?",
     "options": [
@@ -10902,7 +10902,7 @@
   {
     "questionId": "simulation-4-final-q12",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "In paragraph 4, the phrase \"statistical mimicry\" is closest in meaning to:",
     "options": [
@@ -10939,7 +10939,7 @@
   {
     "questionId": "simulation-4-final-q13",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 5,
     "questionText": "Which statement best captures the author's overall stance?",
     "options": [
@@ -10976,7 +10976,7 @@
   {
     "questionId": "simulation-4-final-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 5,
     "questionText": "Original: Contrary to what the report might suggest, the evidence does not definitively establish a causal link between the two phenomena.",
     "options": [
@@ -11012,7 +11012,7 @@
   {
     "questionId": "simulation-4-final-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 5,
     "questionText": "Original: Little did the organizers realize that their decision would have far-reaching consequences.",
     "options": [
@@ -11048,7 +11048,7 @@
   {
     "questionId": "simulation-4-final-q16",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 5,
     "questionText": "Original: Had the authorities acted sooner, the outbreak might well have been contained before it spread internationally.",
     "options": [
@@ -11084,7 +11084,7 @@
   {
     "questionId": "simulation-4-final-q17",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 5,
     "questionText": "Original: No amount of additional funding, however generous, would have salvaged a project so fundamentally flawed in its design.",
     "options": [
@@ -11120,7 +11120,7 @@
   {
     "questionId": "simulation-4-final-q18",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 5,
     "questionText": "Original: So rapid was the technology's adoption that regulators struggled to keep pace with its implications.",
     "options": [
@@ -11156,7 +11156,7 @@
   {
     "questionId": "simulation-4-final-q19",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-concession",
     "difficultyLevel": 5,
     "questionText": "Original: The proposal, however well-intentioned, fails to take into account the practical constraints facing small businesses.",
     "options": [
@@ -11192,7 +11192,7 @@
   {
     "questionId": "simulation-4-final-q20",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The historian's book presents a ______ challenge to the conventional narrative of the war's origins.",
     "options": [
@@ -11228,7 +11228,7 @@
   {
     "questionId": "simulation-4-final-q21",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The committee's recommendations were largely ______ by the administration, which proceeded with its original plan unchanged.",
     "options": [
@@ -11264,7 +11264,7 @@
   {
     "questionId": "simulation-4-final-q22",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 5,
     "questionText": "The author's prose is remarkable for its ability to ______ complex ideas in accessible language.",
     "options": [
@@ -11300,7 +11300,7 @@
   {
     "questionId": "simulation-4-final-q23",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 5,
     "questionText": "Despite ______ opposition from industry groups, the regulation was eventually passed into law.",
     "options": [
@@ -11336,7 +11336,7 @@
   {
     "questionId": "simulation-3-challenge-q1",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 4,
     "questionText": "The researcher's findings have been met with considerable ______ from the scientific community.",
     "options": [
@@ -11372,7 +11372,7 @@
   {
     "questionId": "simulation-3-challenge-q2",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The politician was forced to ______ his earlier statement after new evidence emerged.",
     "options": [
@@ -11408,7 +11408,7 @@
   {
     "questionId": "simulation-3-challenge-q3",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The committee reached a ______ decision after hours of heated debate.",
     "options": [
@@ -11444,7 +11444,7 @@
   {
     "questionId": "simulation-3-challenge-q4",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The government introduced new measures to ______ the rising cost of housing.",
     "options": [
@@ -11480,7 +11480,7 @@
   {
     "questionId": "simulation-3-challenge-q5",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "Her research ______ light on the previously unexplored connections between diet and sleep.",
     "options": [
@@ -11516,7 +11516,7 @@
   {
     "questionId": "simulation-3-challenge-q6",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The company's decision to lower prices ______ from its competitors.",
     "options": [
@@ -11552,7 +11552,7 @@
   {
     "questionId": "simulation-3-challenge-q7",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-contrast-linker",
     "difficultyLevel": 4,
     "questionText": "Despite ______ criticism, the author refused to revise her controversial book.",
     "options": [
@@ -11588,7 +11588,7 @@
   {
     "questionId": "simulation-3-challenge-q8",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-grammar-in-context",
     "difficultyLevel": 4,
     "questionText": "The ______ of the disease has been linked to both environmental and genetic factors.",
     "options": [
@@ -11624,7 +11624,7 @@
   {
     "questionId": "simulation-3-challenge-q9",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-main-idea",
     "difficultyLevel": 4,
     "questionText": "What is the main idea of the passage?",
     "options": [
@@ -11661,7 +11661,7 @@
   {
     "questionId": "simulation-3-challenge-q10",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "According to the passage, approximately what percentage of the world's population is projected to live in urban areas by 2050?",
     "options": [
@@ -11698,7 +11698,7 @@
   {
     "questionId": "simulation-3-challenge-q11",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-detail",
     "difficultyLevel": 4,
     "questionText": "Which of the following is mentioned as a factor now weakening urban growth?",
     "options": [
@@ -11735,7 +11735,7 @@
   {
     "questionId": "simulation-3-challenge-q12",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "In paragraph 4, the word \"polycentric\" most likely refers to:",
     "options": [
@@ -11772,7 +11772,7 @@
   {
     "questionId": "simulation-3-challenge-q13",
     "topic": "reading_comprehension",
-    "subtopic": "reading_comprehension-simulation-mixed",
+    "subtopic": "reading_comprehension-inference",
     "difficultyLevel": 4,
     "questionText": "What can be inferred about the author's overall view of the future of cities?",
     "options": [
@@ -11809,7 +11809,7 @@
   {
     "questionId": "simulation-3-challenge-q14",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: Not only did the initiative fail to reduce emissions, but it also strained relations between allied nations.",
     "options": [
@@ -11845,7 +11845,7 @@
   {
     "questionId": "simulation-3-challenge-q15",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: Hardly had the contract been signed when the economic crisis began.",
     "options": [
@@ -11881,7 +11881,7 @@
   {
     "questionId": "simulation-3-challenge-q16",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: Were it not for the generosity of anonymous donors, the charity would have closed years ago.",
     "options": [
@@ -11917,7 +11917,7 @@
   {
     "questionId": "simulation-3-challenge-q17",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: The evidence is far from conclusive, and further research is clearly warranted.",
     "options": [
@@ -11953,7 +11953,7 @@
   {
     "questionId": "simulation-3-challenge-q18",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-paraphrase",
     "difficultyLevel": 4,
     "questionText": "Original: The study's findings are consistent with those of earlier research in the field.",
     "options": [
@@ -11989,7 +11989,7 @@
   {
     "questionId": "simulation-3-challenge-q19",
     "topic": "rephrasing",
-    "subtopic": "rephrasing-simulation-restatement",
+    "subtopic": "rephrasing-inversion",
     "difficultyLevel": 4,
     "questionText": "Original: Had the warning signs been heeded, the disaster might well have been prevented.",
     "options": [
@@ -12025,7 +12025,7 @@
   {
     "questionId": "simulation-3-challenge-q20",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The senator's remarks were widely ______ as insensitive and out of touch.",
     "options": [
@@ -12061,7 +12061,7 @@
   {
     "questionId": "simulation-3-challenge-q21",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The report's findings were ______ with the government's official position, leading to a public dispute.",
     "options": [
@@ -12097,7 +12097,7 @@
   {
     "questionId": "simulation-3-challenge-q22",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "Modern technology has ______ our ability to access information instantly.",
     "options": [
@@ -12133,7 +12133,7 @@
   {
     "questionId": "simulation-3-challenge-q23",
     "topic": "sentence_completion",
-    "subtopic": "sentence_completion-simulation",
+    "subtopic": "sentence_completion-vocabulary-in-context",
     "difficultyLevel": 4,
     "questionText": "The senator's response was ______, revealing neither her true opinion nor her voting intentions.",
     "options": [

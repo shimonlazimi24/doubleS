@@ -82,6 +82,12 @@ function cleanStem(raw) {
   }
 
   return text
+    // Difficulty markers from the source quiz ("🟢 (Easy)", "🔴 (Hard)") leaked
+    // into the stem. Beyond looking unfinished, they tell the learner how hard
+    // an item is before they answer — which is the one thing a mixed set must
+    // not do. The level already lives in `difficultyLevel`.
+    .replace(/^\s*[\u{1F534}\u{1F7E1}\u{1F7E2}\u{1F535}\u{1F7E0}\u{26AA}\u{26AB}]\s*\((?:Easy|Intermediate|Hard|Medium)\)\s*/giu, "")
+    .replace(/^\s*[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]\s+/gu, "")
     .replace(/\*\*\s*Original:\s*\*\*/gi, "Original:") // bold marker from the source table
     .replace(/\s*-{3,}\s*$/g, "") // trailing horizontal rule
     .replace(/[ \t]*\n[ \t]*/g, " ") // stems are single-line by contract

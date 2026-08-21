@@ -48,7 +48,8 @@ const OPTION_IDS = ["a", "b", "c", "d"];
 function stemContamination(text) {
   const s = String(text ?? "");
   if (/(?:^|\s)#{1,6}\s/.test(s)) return "markdown_heading";
-  if (/[🔹🛑📖📘🧪]/u.test(s)) return "emoji_marker";
+  if (/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(s)) return "emoji_marker";
+  if (/\((?:Easy|Intermediate|Hard|Medium)\)/i.test(s)) return "difficulty_leak";
   if (/\*\*/.test(s)) return "bold_marker";
   if (/\n/.test(s)) return "line_break";
   return null;
