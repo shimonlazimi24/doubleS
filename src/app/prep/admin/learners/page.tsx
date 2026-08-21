@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
 import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
+import {
+  DAILY_STUDY_LABELS,
+  FIRST_TIME_LABELS,
+  HEARD_ABOUT_LABELS,
+} from "@/lib/prep/onboarding/schema";
 import { AdminLearnerTable, type AdminLearnerRow } from "@/components/prep/admin/AdminLearnerTable";
 
 export const metadata: Metadata = { title: "נרשמים | PREPARE admin" };
@@ -28,12 +33,11 @@ type EntitlementRow = {
   ends_at: string | null;
 };
 
-const FIRST_TIME_LABEL: Record<string, string> = {
-  yes: "פעם ראשונה",
-  no: "נבחן בעבר",
-  other: "אחר",
-};
-
+/**
+ * The wizard's own label maps. The admin used to print the stored enum values,
+ * so a row read "3h_1" — the raw "1_3h" with its digits reordered by the RTL
+ * cell. Anything a person reads here goes through the same map the learner saw.
+ */
 /**
  * The onboarding answers, for the whole cohort.
  *
@@ -101,9 +105,19 @@ async function loadLearners(): Promise<{ rows: AdminLearnerRow[]; error: string 
         firstTime:
           row.first_time_exam === "other" && row.first_time_exam_other
             ? row.first_time_exam_other
-            : (FIRST_TIME_LABEL[row.first_time_exam] ?? row.first_time_exam),
-        dailyStudyTime: row.daily_study_time_other || row.daily_study_time,
-        heardAbout: [...(row.heard_about ?? []), row.heard_about_other]
+            : (FIRST_TIME_LABELS[row.first_time_exam as keyof typeof FIRST_TIME_LABELS] ??
+              row.first_time_exam),
+        dailyStudyTime:
+          row.daily_study_time_other ||
+          (DAILY_STUDY_LABELS[row.daily_study_time as keyof typeof DAILY_STUDY_LABELS] ??
+            row.daily_study_time),
+        heardAbout: [
+          ...(row.heard_about ?? []).map(
+            (source) =>
+              HEARD_ABOUT_LABELS[source as keyof typeof HEARD_ABOUT_LABELS] ?? source,
+          ),
+          row.heard_about_other,
+        ]
           .filter((x): x is string => Boolean(x && x.trim()))
           .join(", "),
         completedAt: row.completed_at.slice(0, 10),
