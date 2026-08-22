@@ -25,7 +25,8 @@
     "verify:amirant-rls": "node scripts/verify-amirant-rls.mjs",
     "prep:login-link": "node scripts/generate-prep-login-link.mjs",
     "coverage:amirant-content": "node scripts/amirant-content-coverage.mjs",
-    "seed:amirant": "node -e \"console.log('Run against your DB: psql \\\"$DATABASE_URL\\\" -f supabase/seeds/amirant-demo.sql'); console.log('Docs: supabase/seeds/README-amirant-demo.md')\""
+    "seed:amirant": "node -e \"console.log('Run against your DB: psql \\\"$DATABASE_URL\\\" -f supabase/seeds/amirant-demo.sql'); console.log('Docs: supabase/seeds/README-amirant-demo.md')\"",
+    "verify:new-project": "node scripts/verify-new-project.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
