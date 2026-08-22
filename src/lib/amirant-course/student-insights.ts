@@ -146,8 +146,16 @@ export async function loadStudentDashboardData(
   userId: string,
 ): Promise<StudentDashboardData> {
   const COURSE_HREF = `${PREP_BASE}/amirant/course`;
-  const [{ data: rollups }, { data: adaptive }, { data: attempts }, { count: simCount, error: simErr }, progress] =
-    await Promise.all([
+  // One batch, not a chain. Every query below depends only on the user id, so
+  // running them in sequence multiplied the round trip to the database by five.
+  const [
+    { data: rollups },
+    { data: adaptive },
+    { data: attempts },
+    { count: simCount, error: simErr },
+    progress,
+    hasFullAccess,
+  ] = await Promise.all([
       client
         .from("amirant_topic_rollups")
         .select("topic,total_answered,total_correct")
@@ -167,6 +175,7 @@ export async function loadStudentDashboardData(
         .select("id", { count: "exact", head: true })
         .eq("user_id", userId),
       loadSupabaseAmirantProgressState(client, userId),
+      hasAmirantFullAccess(client, userId),
     ]);
 
   const topicScores: TopicScore[] = TOPICS.map((topic) => {
@@ -203,13 +212,27 @@ export async function loadStudentDashboardData(
 
   const attemptRows = (attempts ?? []) as QuizAttemptRow[];
   const attemptIds = attemptRows.map((row) => row.id);
-  const { data: answerRows } = attemptIds.length
-    ? await client
-        .from("amirant_quiz_answers")
-        .select("attempt_id,response_time_ms,is_correct")
-        .eq("user_id", userId)
-        .in("attempt_id", attemptIds)
-    : { data: [] as QuizAnswerRow[] };
+  const latestAttemptRow = attemptRows[attemptRows.length - 1] ?? null;
+
+  // Both of these need only the attempt list, so they go together rather than
+  // one after the other.
+  const [{ data: answerRows }, mistakeCountResult] = await Promise.all([
+    attemptIds.length
+      ? client
+          .from("amirant_quiz_answers")
+          .select("attempt_id,response_time_ms,is_correct")
+          .eq("user_id", userId)
+          .in("attempt_id", attemptIds)
+      : Promise.resolve({ data: [] as QuizAnswerRow[] }),
+    latestAttemptRow
+      ? client
+          .from("amirant_quiz_answers")
+          .select("id", { count: "exact", head: true })
+          .eq("user_id", userId)
+          .eq("attempt_id", latestAttemptRow.id)
+          .eq("is_correct", false)
+      : Promise.resolve({ count: 0, error: null }),
+  ]);
 
   const answersByAttempt = new Map<
     string,
@@ -247,17 +270,8 @@ export async function loadStudentDashboardData(
 
   const timePerQuestionTrend = [...accuracyOverTime];
 
-  const latestAttempt = attemptRows[attemptRows.length - 1] ?? null;
-  let lastQuizMistakes = 0;
-  if (latestAttempt) {
-    const { count, error: mistErr } = await client
-      .from("amirant_quiz_answers")
-      .select("id", { count: "exact", head: true })
-      .eq("user_id", userId)
-      .eq("attempt_id", latestAttempt.id)
-      .eq("is_correct", false);
-    if (!mistErr) lastQuizMistakes = count ?? 0;
-  }
+  const latestAttempt = latestAttemptRow;
+  const lastQuizMistakes = mistakeCountResult.error ? 0 : (mistakeCountResult.count ?? 0);
 
   const nbaRows = topicScores.map((r) => ({
     topic: r.topic,
@@ -291,7 +305,7 @@ export async function loadStudentDashboardData(
     weakestTopicPractice: buildWeakestTopicPractice(weakNba.length ? weakNba : nbaRows, COURSE_HREF),
   };
   // הזכאות האמיתית (course_entitlements) - לא דגל env: משלם לא יקבל CTA לתשלום.
-  const hasFullAccess = await hasAmirantFullAccess(client, userId);
+  // נטענה למעלה יחד עם שאר הקריאות.
   const recommendedNextAction: NextBestActionEnriched = withNextBestActionEnrichment(
     computeNextBestAction(nbaContext),
     nbaContext,
