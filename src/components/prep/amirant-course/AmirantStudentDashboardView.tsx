@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import type { StudentDashboardData } from "@/lib/amirant-course/student-insights";
 import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/AmirantNextBestActionCard";
 import { PREP_BASE } from "@/lib/prep/constants";

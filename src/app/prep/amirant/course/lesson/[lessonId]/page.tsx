@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { notFound, redirect } from "next/navigation";
 import {
   displayModuleTitleHe,

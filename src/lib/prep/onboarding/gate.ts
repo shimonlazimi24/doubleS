@@ -3,6 +3,28 @@ import { PREP_BASE } from "@/lib/prep/constants";
 
 const TABLE = "prep_learner_onboarding";
 
+/**
+ * Marks that this account already finished onboarding, so the middleware can
+ * skip a database query on every navigation.
+ *
+ * Safe to trust: the cookie only decides whether to *redirect someone to the
+ * onboarding form*. It grants nothing. Forging it skips a questionnaire, which
+ * is not a privilege. Everything that matters — course access, payments — is
+ * checked against the database and row-level security.
+ *
+ * Scoped to the user id so a shared device cannot carry one person's answer to
+ * another's session.
+ */
+export const PREP_ONBOARDING_COOKIE = "prep_onboarded";
+
+export function onboardingCookieValue(userId: string): string {
+  return userId;
+}
+
+export function hasOnboardingCookie(cookieValue: string | undefined, userId: string): boolean {
+  return Boolean(cookieValue) && cookieValue === userId;
+}
+
 export async function hasCompletedPrepOnboarding(
   client: SupabaseClient,
   userId: string,

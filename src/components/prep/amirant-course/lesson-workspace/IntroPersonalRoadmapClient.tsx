@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { useEffect, useState } from "react";
 import { getManifestQuiz } from "@/lib/amirant-course";
 import { loadAnalytics } from "@/lib/amirant-course/analytics/storage";

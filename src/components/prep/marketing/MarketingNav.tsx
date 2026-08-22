@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { usePathname } from "next/navigation";
 import { ButtonLink } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";

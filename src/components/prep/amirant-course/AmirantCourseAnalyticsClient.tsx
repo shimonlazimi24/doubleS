@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { useMemo, useState } from "react";
 import {
   loadAnalytics,

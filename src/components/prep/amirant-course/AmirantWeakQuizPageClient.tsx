@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { Card, CardBody, Text } from "@/components/ui";
 import { buildWeakQuizRequestFromLocalAnalytics } from "@/lib/amirant-course/weak-quiz-build-local";
 import { generateWeakTopicsQuiz } from "@/lib/amirant-course/weak-quiz";

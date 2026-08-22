@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import type { CourseManifest, ManifestModule } from "@/lib/amirant-course/types/course-manifest";
 import { displayModuleTitleHe, getSyllabusUiForModule } from "@/lib/amirant-course";
 import { isStructuredPracticeModule } from "@/lib/amirant-course/practice-module-structure";

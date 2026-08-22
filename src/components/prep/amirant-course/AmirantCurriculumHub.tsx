@@ -6,7 +6,7 @@
  * 2) "תוכנית הקורס" - קוביות מודולים עם אימוג'י והסבר קצר (העדפת בעל המוצר),
  *    על טוקנים של מערכת העיצוב: התקדמות, מודול נוכחי מסומן, CTA ברור.
  */
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { isAmirantModuleLocked } from "@/lib/prep/course-access";

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import type { Metadata } from "next";
 import { Container, Text } from "@/components/ui";
 import { getManifestQuiz } from "@/lib/amirant-course/manifest";

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { loadAnalytics } from "@/lib/amirant-course";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Text } from "@/components/ui";

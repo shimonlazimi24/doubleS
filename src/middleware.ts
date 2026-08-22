@@ -7,6 +7,9 @@ import { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";
 import { isPrepCacheablePath, isPrepPublicPath } from "@/lib/prep/constants";
 import {
   hasCompletedPrepOnboarding,
+  hasOnboardingCookie,
+  onboardingCookieValue,
+  PREP_ONBOARDING_COOKIE,
   isPrepOnboardingGatedPath,
   isPrepSessionRequiredPath,
   prepOnboardingRedirectUrl,
@@ -54,7 +57,23 @@ async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextRes
   }
 
   if (isPrepOnboardingGatedPath(req.nextUrl.pathname) && supabase) {
-    const completed = await hasCompletedPrepOnboarding(supabase, user.id);
+    // Skip the database round trip when this account is already known to have
+    // finished. With the database in Tokyo that query alone costs ~250ms on
+    // every navigation, before the page starts rendering.
+    const cookieSaysDone = hasOnboardingCookie(
+      req.cookies.get(PREP_ONBOARDING_COOKIE)?.value,
+      user.id,
+    );
+    const completed = cookieSaysDone || (await hasCompletedPrepOnboarding(supabase, user.id));
+    if (completed && !cookieSaysDone) {
+      response.cookies.set(PREP_ONBOARDING_COOKIE, onboardingCookieValue(user.id), {
+        path: "/",
+        sameSite: "lax",
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        maxAge: 60 * 60 * 24 * 180,
+      });
+    }
     if (!completed) {
       const onboarding = prepOnboardingRedirectUrl(
         req.url,

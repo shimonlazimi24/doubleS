@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { Container, Heading, Text } from "@/components/ui";
 import { PrepSettingsClient } from "@/components/prep/PrepSettingsClient";
 import { PrepSubscriptionCard, type SubscriptionInfo } from "@/components/prep/PrepSubscriptionCard";
