@@ -3,7 +3,7 @@ import { AMIRANT_PREPARATION_MANIFEST } from "./manifest";
 import { getAmirantCourseFlatLessons } from "./navigation";
 import { courseProgressPercent, isLessonComplete } from "./progress/compute";
 import type { AmirantProgressStateV1 } from "./progress/types";
-import { AMIRANT_SIMULATIONS } from "./simulations/definitions";
+import { AMIRANT_SIMULATIONS } from "./manifest";
 import type { AmirantBankTopicSlug } from "./types/bank-question";
 import { AMIRANT_TOPIC_LABEL_HE } from "./topic-labels";
 import { PREP_BASE } from "@/lib/prep/constants";

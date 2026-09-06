@@ -38,3 +38,7 @@ jobs:
           CI: "1"
           # Deterministic smoke — no live Supabase/OpenAI required for lock checks
           NEXT_TELEMETRY_DISABLED: "1"
+      # Playwright's webServer has just run `next build`, so the chunks are on
+      # disk. Fails if answer keys or the lesson registry reach the browser bundle
+      # again, or any single chunk goes over 600KB.
+      - run: npm run check:client-chunks

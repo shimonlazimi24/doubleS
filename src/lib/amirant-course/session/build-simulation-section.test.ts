@@ -5,7 +5,7 @@ import {
   bankQuestionsPublicToPoolItems,
   getPublicBankQuestion,
 } from "../question-bank/client-bank";
-import { AMIRANT_SIMULATIONS } from "../simulations/definitions";
+import { AMIRANT_SIMULATIONS } from "../manifest";
 import {
   EXAM_SCORED_MINUTES,
   EXAM_SCORED_QUESTION_COUNT,

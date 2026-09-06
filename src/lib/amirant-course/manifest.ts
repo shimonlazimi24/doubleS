@@ -1,93 +1,31 @@
 /**
- * Course manifest (modules, lessons, quizzes, simulations) - **MVP: authored in TypeScript**.
- * For production CMS/Supabase: load rows with the same stable `id` values so routes and
- * `getManifest*` helpers stay unchanged; this file becomes a thin loader over HTTP/DB.
+ * Course manifest (modules, lessons, quizzes, simulations).
+ *
+ * Reads the structure generated at build time by
+ * `scripts/generate-course-manifest.mjs`. The manifest is 31KB of ids and
+ * titles, but it used to be *derived* here from the authoring source — which
+ * meant importing `content-source/production-source` and, with it, 2.8MB of
+ * lesson, question and retrieval JSON. Every client component that touches the
+ * manifest is a browser component, so that whole payload (answer keys included)
+ * shipped in a page chunk.
+ *
+ * `manifest-source.ts` still holds the authoring logic; `manifest-drift.test.ts`
+ * asserts the generated file still matches it.
+ *
+ * For a production CMS: keep the same stable `id` values and this becomes a thin
+ * loader over HTTP/DB, exactly as it is over JSON today.
  */
-import { AMIRANT_PREPARATION_COURSE_ID, AMIRANT_PREPARATION_SLUG } from "./constants";
 import type { CourseManifest, ManifestQuiz } from "./types/course-manifest";
-import { AMIRANT_SIMULATIONS } from "./simulations/definitions";
-import { getResolvedAmirantProductionContent } from "./content-source/resolved-content";
-import { AMIRNET_CONTENT_MODULES } from "./amirnet-content-sync";
+import generated from "./generated/course-manifest.json";
 
-const DEMO_MANIFEST: CourseManifest = {
-  id: AMIRANT_PREPARATION_COURSE_ID,
-  slug: AMIRANT_PREPARATION_SLUG,
-  title: "הכנה לאמירנט",
-  description:
-    "הכנה מלאה לאמירנט: שיעורים, תרגול, בוחנים אדפטיביים, סימולציות מלאות, ניתוח AI.",
-  modules: [
-    {
-      id: "mod-intro",
-      slug: "introduction",
-      title: "מבוא לקורס",
-      sortOrder: 0,
-      /** יחידה 1 - מבוא: קבצי `01_welcome_and_intro/` + אבחון; לוגיסטיקה בקובץ נפרד. */
-      lessons: [
-        {
-          id: "lesson.intro.welcome",
-          videoSlot: true,
-          title: "ברוכים הבאים לקורס",
-          kind: "text",
-          estimatedMinutes: 25,
-        },
-        {
-          id: "lesson.intro.roadmap",
-          title: "מפת הדרכים של הקורס",
-          kind: "text",
-          estimatedMinutes: 20,
-        },
-        {
-          id: "lesson.intro.diagnostic",
-          title: "מבחן רמה",
-          kind: "text",
-          estimatedMinutes: 25,
-          quizId: "quiz-entry-diagnostic",
-        },
-        {
-          id: "lesson.intro.personal-roadmap",
-          title: "מפת דרכים אישית",
-          kind: "text",
-          estimatedMinutes: 15,
-        },
-      ],
-      practiceSets: [],
-      quizzes: [
-        {
-          id: "quiz-entry-diagnostic",
-          title: "מבחן רמה (15 שאלות)",
-          adaptive: false,
-          format: "fixed_placement",
-          questionCount: 15,
-          timeLimitSec: 20 * 60,
-          topicSlugs: ["sentence_completion", "rephrasing", "reading_comprehension"],
-        },
-      ],
-    },
-    ...AMIRNET_CONTENT_MODULES,
-    /** מחוץ למסלול הלמידה הראשי - נגיש מעמוד הקורס / קישור ישיר; אחרי סיכום הקורס בסדר מיון. */
-    {
-      id: "mod-logistics",
-      slug: "logistics-bureaucracy",
-      title: "לוגיסטיקה והרשמה",
-      sortOrder: 9,
-      lessons: [
-        {
-          id: "lesson.intro.logistics",
-          title: "לוגיסטיקה, הרשמה וביורוקרטיה",
-          kind: "text",
-          estimatedMinutes: 55,
-        },
-      ],
-      practiceSets: [],
-      quizzes: [],
-    },
-  ],
-  simulations: AMIRANT_SIMULATIONS,
-};
+export const AMIRANT_PREPARATION_MANIFEST = generated as CourseManifest;
 
-const imported = getResolvedAmirantProductionContent();
-export const AMIRANT_PREPARATION_MANIFEST: CourseManifest =
-  imported?.courseManifest ?? DEMO_MANIFEST;
+/**
+ * The resolved simulations, as baked into the manifest. Runtime code reads them
+ * here; `simulations/definitions.ts` is the build-time source and reaches the
+ * 2.8MB authoring package.
+ */
+export const AMIRANT_SIMULATIONS = AMIRANT_PREPARATION_MANIFEST.simulations;
 
 export function getManifestQuiz(quizId: string): ManifestQuiz | undefined {
   for (const m of AMIRANT_PREPARATION_MANIFEST.modules) {

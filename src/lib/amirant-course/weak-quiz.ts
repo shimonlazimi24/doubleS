@@ -1,7 +1,8 @@
 import { z } from "zod";
-import { AMIRANT_GENERAL_BANK_QUESTIONS } from "@/lib/amirant-course/question-bank";
-import type { AmirantBankTopicSlug, BankQuestion } from "@/lib/amirant-course/types/bank-question";
+import { AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC } from "@/lib/amirant-course/question-bank/client-bank";
+import type { AmirantBankTopicSlug } from "@/lib/amirant-course/types/bank-question";
 import { clampDifficultyLevel } from "@/lib/amirant-course/difficulty-clamp";
+import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
 import { wilsonLowerBound } from "@/lib/learning-intelligence/analytics";
 
 const TOPIC_SLUGS: AmirantBankTopicSlug[] = [
@@ -130,8 +131,11 @@ function allocateCounts(topics: AmirantBankTopicSlug[]): Record<AmirantBankTopic
   } as Record<AmirantBankTopicSlug, number>;
 }
 
+/** What the picker needs from a question — none of it is the answer. */
+type PickableQuestion = Pick<BankQuestionPublic, "id" | "topicSlug" | "difficulty">;
+
 function pickByLevel(
-  questions: BankQuestion[],
+  questions: PickableQuestion[],
   targetLevel: number,
   needed: number,
   recentlySeen: Set<string>,
@@ -193,7 +197,10 @@ export function generateWeakTopicsQuiz(params: {
   const used = new Set<string>();
   const questionIds: string[] = [];
 
-  const availableBank = AMIRANT_GENERAL_BANK_QUESTIONS;
+  // The public bank: same items in the same order as the full bank, minus the
+  // answer keys. This runs in the browser as a fallback, so it must not import
+  // `question-bank/index`, which would ship every answer to every learner.
+  const availableBank = AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC;
 
   for (const topic of topics) {
     const topicQuestions = availableBank.filter((q) => q.topicSlug === topic);

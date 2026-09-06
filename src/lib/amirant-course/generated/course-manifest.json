@@ -1,0 +1,1185 @@
+{
+  "id": "amirant-preparation-v1",
+  "slug": "amirant-preparation",
+  "title": "הכנה לאמירנט",
+  "description": "הכנה מלאה לאמירנט: שיעורים, תרגול, בוחנים אדפטיביים, סימולציות מלאות, ניתוח AI.",
+  "modules": [
+    {
+      "id": "mod-intro",
+      "slug": "introduction",
+      "title": "מבוא לקורס",
+      "sortOrder": 0,
+      "lessons": [
+        {
+          "id": "lesson.intro.welcome",
+          "videoSlot": true,
+          "title": "ברוכים הבאים לקורס",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.intro.roadmap",
+          "title": "מפת הדרכים של הקורס",
+          "kind": "text",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "lesson.intro.diagnostic",
+          "title": "מבחן רמה",
+          "kind": "text",
+          "estimatedMinutes": 25,
+          "quizId": "quiz-entry-diagnostic"
+        },
+        {
+          "id": "lesson.intro.personal-roadmap",
+          "title": "מפת דרכים אישית",
+          "kind": "text",
+          "estimatedMinutes": 15
+        }
+      ],
+      "practiceSets": [],
+      "quizzes": [
+        {
+          "id": "quiz-entry-diagnostic",
+          "title": "מבחן רמה (15 שאלות)",
+          "adaptive": false,
+          "format": "fixed_placement",
+          "questionCount": 15,
+          "timeLimitSec": 1200,
+          "topicSlugs": [
+            "sentence_completion",
+            "rephrasing",
+            "reading_comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-vocab",
+      "slug": "vocabulary",
+      "title": "מילון מושגים",
+      "sortOrder": 1,
+      "lessons": [
+        {
+          "id": "lesson.vocab.01",
+          "title": "אוצר מילים · קל - פעלים",
+          "kind": "mixed",
+          "estimatedMinutes": 35,
+          "videoSlot": true,
+          "practiceSetId": "pr-vocab-1",
+          "quizId": "quiz-vocab"
+        },
+        {
+          "id": "lesson.vocab.02",
+          "title": "אוצר מילים · קל - שמות עצם",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.03",
+          "title": "אוצר מילים · קל - תוארים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.04",
+          "title": "אוצר מילים · קל - תוארי־מעוף/קישור",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.05",
+          "title": "אוצר מילים · בינוני - פעלים",
+          "kind": "text",
+          "estimatedMinutes": 30,
+          "quizId": "quiz-vocab-2"
+        },
+        {
+          "id": "lesson.vocab.06",
+          "title": "אוצר מילים · בינוני - שמות עצם",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.07",
+          "title": "אוצר מילים · בינוני - תוארים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.08",
+          "title": "אוצר מילים · בינוני - תוארי־מעוף/קישור",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.09",
+          "title": "אוצר מילים · מתקדמים - פעלים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.10",
+          "title": "אוצר מילים · מתקדמים - שמות עצם",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.11",
+          "title": "אוצר מילים · מתקדמים - תוארים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.12",
+          "title": "אוצר מילים · מתקדמים - תוארי־מעוף/קישור",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.13",
+          "title": "אוצר מילים · מומחה - פעלים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.14",
+          "title": "אוצר מילים · מומחה - שמות עצם",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.15",
+          "title": "אוצר מילים · מומחה - תוארים",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.16",
+          "title": "אוצר מילים · מומחה - תוארי־מעוף/קישור",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.vocab.17",
+          "title": "פעלים מורכבים (Phrasal Verbs)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.vocab.18",
+          "title": "מילות קישור (מתקדמים)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.vocab.19",
+          "title": "רמת שליטה מלאה",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.vocab.20",
+          "title": "דוגמה: חבילה 100 מילים",
+          "kind": "text",
+          "estimatedMinutes": 20
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-vocab-1",
+          "title": "מילים בשכיחות גבוהה",
+          "questionIds": [
+            "vocab-vocabulary-1-easy-part-a-verbs-q1",
+            "vocab-vocabulary-1-easy-part-a-verbs-q2",
+            "vocab-vocabulary-1-easy-part-a-verbs-q3",
+            "vocab-vocabulary-1-easy-part-a-verbs-q4",
+            "vocab-vocabulary-1-easy-part-a-verbs-q5",
+            "vocab-vocabulary-1-easy-part-a-verbs-q6",
+            "vocab-vocabulary-1-easy-part-a-verbs-q7",
+            "vocab-vocabulary-1-easy-part-a-verbs-q8",
+            "vocab-vocabulary-1-easy-part-a-verbs-q9",
+            "vocab-vocabulary-1-easy-part-a-verbs-q10"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-landing-taste",
+          "title": "מבחן היכרות קצר (דוגמה)",
+          "adaptive": true,
+          "questionCount": 10,
+          "timeLimitSec": 1200,
+          "topicSlugs": [
+            "reading_comprehension",
+            "sentence_completion"
+          ],
+          "minInTestLevel": 3
+        },
+        {
+          "id": "quiz-vocab",
+          "title": "תרגול אוצר מילים",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "vocabulary"
+          ]
+        },
+        {
+          "id": "quiz-vocab-2",
+          "title": "אוצר מילים והשלמת משפטים",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "vocabulary",
+            "sentence_completion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-sc",
+      "slug": "sentence-completion",
+      "title": "השלמת משפטים",
+      "sortOrder": 2,
+      "lessons": [
+        {
+          "id": "lesson.sc.01",
+          "title": "מדריך השיטות המלא (4.2)",
+          "kind": "text",
+          "estimatedMinutes": 40,
+          "videoSlot": true,
+          "practiceSetId": "pr-sc-mid",
+          "quizId": "quiz-sc"
+        },
+        {
+          "id": "lesson.sc.02",
+          "title": "4.3 - מלכודות נפוצות",
+          "kind": "text",
+          "estimatedMinutes": 25,
+          "quizId": "quiz-sc-2"
+        },
+        {
+          "id": "lesson.sc.03",
+          "title": "סרטון הדרכה - 5 שיטות (תסריט / וידאו)",
+          "kind": "video",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.sc.04",
+          "title": "מבחן תרגול - דוגמה (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.05",
+          "title": "מבחן תרגול 2 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.06",
+          "title": "מבחן תרגול 3 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.07",
+          "title": "מבחן תרגול 4 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.08",
+          "title": "מבחן תרגול 5 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.09",
+          "title": "מבחן תרגול 6 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.10",
+          "title": "מבחן תרגול 7 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.sc.11",
+          "title": "מבחן תרגול 8 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-sc-easy",
+          "title": "השלמת משפטים - מקבץ קל (רמות 1–2)",
+          "questionIds": [
+            "sample-sc-quiz-1-easy-q1",
+            "sample-sc-quiz-1-easy-q2",
+            "sample-sc-quiz-1-easy-q3",
+            "sample-sc-quiz-1-easy-q4",
+            "sample-sc-quiz-1-easy-q5",
+            "sample-sc-quiz-1-easy-q6",
+            "sample-sc-quiz-1-easy-q7",
+            "sample-sc-quiz-1-easy-q8",
+            "sample-sc-quiz-1-easy-q9",
+            "sample-sc-quiz-1-easy-q10"
+          ]
+        },
+        {
+          "id": "pr-sc-mid",
+          "title": "השלמת משפטים - מקבץ בינוני (רמות 3–4)",
+          "questionIds": [
+            "sc-quiz-3-intermediate-q1",
+            "sc-quiz-3-intermediate-q2",
+            "sc-quiz-3-intermediate-q3",
+            "sc-quiz-3-intermediate-q4",
+            "sc-quiz-3-intermediate-q5",
+            "sc-quiz-3-intermediate-q6",
+            "sc-quiz-3-intermediate-q7",
+            "sc-quiz-3-intermediate-q8",
+            "sc-quiz-3-intermediate-q9",
+            "sc-quiz-3-intermediate-q10"
+          ]
+        },
+        {
+          "id": "pr-sc-hard",
+          "title": "השלמת משפטים - מקבץ גבוה (רמות 5–6)",
+          "questionIds": [
+            "sc-quiz-5-hard-q1",
+            "sc-quiz-5-hard-q2",
+            "sc-quiz-5-hard-q3",
+            "sc-quiz-5-hard-q4",
+            "sc-quiz-5-hard-q5",
+            "sc-quiz-5-hard-q6",
+            "sc-quiz-5-hard-q7",
+            "sc-quiz-5-hard-q8",
+            "sc-quiz-5-hard-q9",
+            "sc-quiz-5-hard-q10"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-sc",
+          "title": "תרגול השלמת משפטים",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "sentence_completion"
+          ]
+        },
+        {
+          "id": "quiz-sc-2",
+          "title": "השלמת משפטים ואוצר מילים",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "sentence_completion",
+            "vocabulary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-rephrase",
+      "slug": "sentence-rephrasing",
+      "title": "ניסוח מחדש",
+      "sortOrder": 3,
+      "lessons": [
+        {
+          "id": "lesson.rephrase.01",
+          "title": "ניסוח מחדש - שיטות (5.2)",
+          "kind": "mixed",
+          "estimatedMinutes": 35,
+          "videoSlot": true,
+          "practiceSetId": "pr-rephrase",
+          "quizId": "quiz-rephrase"
+        },
+        {
+          "id": "lesson.rephrase.02",
+          "title": "ניסוח מחדש - מבני משפט (5.3)",
+          "kind": "text",
+          "estimatedMinutes": 30,
+          "quizId": "quiz-rephrase-2"
+        },
+        {
+          "id": "lesson.rephrase.03",
+          "title": "ניסוח מחדש - מלכודות (5.4)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.04",
+          "title": "מבחן תרגול - דוגמה (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.05",
+          "title": "מבחן תרגול 1 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.06",
+          "title": "מבחן תרגול 2 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.07",
+          "title": "מבחן תרגול 3 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.08",
+          "title": "מבחן תרגול 4 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.09",
+          "title": "מבחן תרגול 5 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.10",
+          "title": "מבחן תרגול 6 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.11",
+          "title": "מבחן תרגול 7 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.rephrase.12",
+          "title": "מבחן תרגול 8 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-rephrase",
+          "title": "סט ניסוח מחדש",
+          "questionIds": [
+            "sample-restatement-quiz-intermediate-q1",
+            "sample-restatement-quiz-intermediate-q2",
+            "sample-restatement-quiz-intermediate-q3",
+            "sample-restatement-quiz-intermediate-q4",
+            "sample-restatement-quiz-intermediate-q5",
+            "sample-restatement-quiz-intermediate-q6",
+            "sample-restatement-quiz-intermediate-q7",
+            "sample-restatement-quiz-intermediate-q8",
+            "sample-restatement-quiz-intermediate-q9",
+            "sample-restatement-quiz-intermediate-q10"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-rephrase",
+          "title": "תרגול ניסוח מחדש",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "rephrasing"
+          ]
+        },
+        {
+          "id": "quiz-rephrase-2",
+          "title": "ניסוח מחדש והבנת הנקרא",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "rephrasing",
+            "reading_comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-reading",
+      "slug": "reading-comprehension",
+      "title": "קטעי קריאה",
+      "sortOrder": 4,
+      "lessons": [
+        {
+          "id": "lesson.reading.01",
+          "title": "קריאה - שיטות (6.2)",
+          "kind": "mixed",
+          "estimatedMinutes": 40,
+          "videoSlot": true,
+          "practiceSetId": "pr-reading",
+          "quizId": "quiz-reading"
+        },
+        {
+          "id": "lesson.reading.02",
+          "title": "קריאה - מבנה פסקה (6.3)",
+          "kind": "text",
+          "estimatedMinutes": 25,
+          "quizId": "quiz-reading-2"
+        },
+        {
+          "id": "lesson.reading.03",
+          "title": "קריאה - מלכודות (6.6)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.04",
+          "title": "מבחן תרגול - דוגמה (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.05",
+          "title": "מבחן תרגול 1 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.06",
+          "title": "מבחן תרגול 2 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.07",
+          "title": "מבחן תרגול 3 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.08",
+          "title": "מבחן תרגול 4 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.09",
+          "title": "מבחן תרגול 5 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.10",
+          "title": "מבחן תרגול 6 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.11",
+          "title": "מבחן תרגול 7 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        },
+        {
+          "id": "lesson.reading.12",
+          "title": "מבחן תרגול 8 (מעורב)",
+          "kind": "text",
+          "estimatedMinutes": 25
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-reading",
+          "title": "סט הבנת הנקרא",
+          "questionIds": [
+            "reading-comp-quiz-1-easy-q1",
+            "reading-comp-quiz-1-easy-q2",
+            "reading-comp-quiz-1-easy-q3",
+            "reading-comp-quiz-1-easy-q4",
+            "reading-comp-quiz-1-easy-q5",
+            "reading-comp-quiz-1-easy-q6",
+            "reading-comp-quiz-2-easy-q1",
+            "reading-comp-quiz-2-easy-q2",
+            "reading-comp-quiz-2-easy-q3",
+            "reading-comp-quiz-2-easy-q4"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-reading",
+          "title": "תרגול הבנת הנקרא",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "reading_comprehension"
+          ]
+        },
+        {
+          "id": "quiz-reading-2",
+          "title": "הבנת הנקרא וניסוח מחדש",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "reading_comprehension",
+            "rephrasing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-reform",
+      "slug": "new-exam-format-2026",
+      "title": "רפורמה 2026",
+      "sortOrder": 5,
+      "lessons": [
+        {
+          "id": "lesson.reform.01",
+          "title": "רפורמה - סקירה (7.1)",
+          "kind": "mixed",
+          "estimatedMinutes": 30,
+          "videoSlot": true,
+          "practiceSetId": "pr-reform",
+          "quizId": "quiz-reform"
+        },
+        {
+          "id": "lesson.reform.02",
+          "title": "הבנת הנשמע (7.2)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.03",
+          "title": "מבחני שמיעה (7.3)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.04",
+          "title": "תצורת מילים (7.4)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.05",
+          "title": "תרגול word formation (7.5)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.06",
+          "title": "דקדוק בהקשר (7.6)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.07",
+          "title": "תרגול grammar (7.7)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        },
+        {
+          "id": "lesson.reform.08",
+          "title": "כתיבה (7.8)",
+          "kind": "text",
+          "estimatedMinutes": 35,
+          "quizId": "quiz-reform-2"
+        },
+        {
+          "id": "lesson.reform.09",
+          "title": "דוגמאות וכתיבה (7.9)",
+          "kind": "text",
+          "estimatedMinutes": 30
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-reform",
+          "title": "תרגול משולב",
+          "questionIds": [
+            "vocab-vocabulary-1-easy-part-a-verbs-q1",
+            "vocab-vocabulary-1-easy-part-a-verbs-q2",
+            "vocab-vocabulary-1-easy-part-a-verbs-q3",
+            "vocab-vocabulary-1-easy-part-a-verbs-q4",
+            "sample-sc-quiz-1-easy-q1",
+            "sample-sc-quiz-1-easy-q2",
+            "sample-sc-quiz-1-easy-q3",
+            "sample-sc-quiz-1-easy-q4"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-reform",
+          "title": "תרגול משולב (רפורמת 2026)",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "vocabulary",
+            "sentence_completion",
+            "rephrasing"
+          ]
+        },
+        {
+          "id": "quiz-reform-2",
+          "title": "תרגול כל הנושאים",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "vocabulary",
+            "sentence_completion",
+            "rephrasing",
+            "reading_comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-sims",
+      "slug": "full-simulations",
+      "title": "סימולציות מלאות",
+      "sortOrder": 6,
+      "lessons": [
+        {
+          "id": "lesson.sim.01",
+          "title": "איך להריץ סימולציה (8.1)",
+          "kind": "text",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "lesson.sim.02",
+          "title": "קריאת דוח סימולציה (8.2)",
+          "kind": "text",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "lesson.sim.03",
+          "title": "גיליון מעקב (8.3)",
+          "kind": "text",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "lesson.sim.04",
+          "title": "סימולציה 1 - מדידת פתיחה",
+          "kind": "text",
+          "estimatedMinutes": 45,
+          "videoSlot": true
+        },
+        {
+          "id": "lesson.sim.05",
+          "title": "סימולציה 2 - חימום",
+          "kind": "text",
+          "estimatedMinutes": 45,
+          "videoSlot": true
+        },
+        {
+          "id": "lesson.sim.06",
+          "title": "סימולציה 3 - אתגר",
+          "kind": "text",
+          "estimatedMinutes": 45,
+          "videoSlot": true
+        },
+        {
+          "id": "lesson.sim.07",
+          "title": "סימולציה 4 - תנאי אמת",
+          "kind": "text",
+          "estimatedMinutes": 45,
+          "videoSlot": true
+        }
+      ],
+      "practiceSets": [],
+      "quizzes": []
+    },
+    {
+      "id": "mod-tips",
+      "slug": "tips-strategies",
+      "title": "טיפים ואסטרטגיות",
+      "sortOrder": 7,
+      "lessons": [
+        {
+          "id": "lesson.tips.01",
+          "title": "טיפים מנצחים (יחידה 9)",
+          "kind": "mixed",
+          "estimatedMinutes": 25,
+          "practiceSetId": "pr-tips",
+          "quizId": "quiz-tips"
+        }
+      ],
+      "practiceSets": [
+        {
+          "id": "pr-tips",
+          "title": "תרגול מהיר משולב",
+          "questionIds": [
+            "sample-sc-quiz-1-easy-q1",
+            "sample-sc-quiz-1-easy-q2",
+            "sample-sc-quiz-1-easy-q3",
+            "sample-sc-quiz-1-easy-q4",
+            "sample-sc-quiz-1-easy-q5",
+            "sample-sc-quiz-1-easy-q6",
+            "sample-sc-quiz-1-easy-q7",
+            "sample-sc-quiz-1-easy-q8"
+          ]
+        }
+      ],
+      "quizzes": [
+        {
+          "id": "quiz-tips",
+          "title": "בדיקת אסטרטגיות",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "sentence_completion",
+            "reading_comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-summary",
+      "slug": "course-summary",
+      "title": "סיכום הקורס",
+      "sortOrder": 8,
+      "lessons": [
+        {
+          "id": "lesson.summary.01",
+          "title": "סיכום הקורס ומשוב (יחידה 10)",
+          "kind": "text",
+          "estimatedMinutes": 20,
+          "quizId": "quiz-final"
+        }
+      ],
+      "practiceSets": [],
+      "quizzes": [
+        {
+          "id": "quiz-final",
+          "title": "חזרה מסכמת",
+          "adaptive": true,
+          "questionCount": 16,
+          "timeLimitSec": 2340,
+          "topicSlugs": [
+            "vocabulary",
+            "sentence_completion",
+            "rephrasing",
+            "reading_comprehension"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mod-logistics",
+      "slug": "logistics-bureaucracy",
+      "title": "לוגיסטיקה והרשמה",
+      "sortOrder": 9,
+      "lessons": [
+        {
+          "id": "lesson.intro.logistics",
+          "title": "לוגיסטיקה, הרשמה וביורוקרטיה",
+          "kind": "text",
+          "estimatedMinutes": 55
+        }
+      ],
+      "practiceSets": [],
+      "quizzes": []
+    }
+  ],
+  "simulations": [
+    {
+      "id": "sim-01",
+      "title": "סימולציה 1 · מדידת פתיחה",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    },
+    {
+      "id": "sim-02",
+      "title": "סימולציה 2 · חימום",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    },
+    {
+      "id": "sim-03",
+      "title": "סימולציה 3 · אתגר",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    },
+    {
+      "id": "sim-04",
+      "title": "סימולציה 4 · תנאי מבחן",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    },
+    {
+      "id": "sim-05",
+      "title": "סימולציה 5 · חזרה גנרלית א׳",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    },
+    {
+      "id": "sim-06",
+      "title": "סימולציה 6 · חזרה גנרלית ב׳",
+      "pilot": {
+        "seconds": 300,
+        "questionCount": 2,
+        "topicSlug": "vocabulary"
+      },
+      "sections": [
+        {
+          "label": "השלמת משפטים · חלק א׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "השלמת משפטים · חלק ב׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        },
+        {
+          "label": "הבנת הנקרא",
+          "seconds": 900,
+          "topicSlug": "reading_comprehension",
+          "questionCount": 5
+        },
+        {
+          "label": "ניסוח מחדש · חלק א׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "ניסוח מחדש · חלק ב׳",
+          "seconds": 360,
+          "topicSlug": "rephrasing",
+          "questionCount": 3
+        },
+        {
+          "label": "השלמת משפטים · חלק ג׳",
+          "seconds": 240,
+          "topicSlug": "sentence_completion",
+          "questionCount": 4
+        }
+      ]
+    }
+  ]
+}

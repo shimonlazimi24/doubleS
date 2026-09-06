@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { LessonEditor } from "@/components/prep/admin/LessonEditor";
-import { getLessonContent } from "@/lib/amirant-course";
+import { getLessonContent } from "@/lib/amirant-course/lesson-registry";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
 import { splitMarkdownByMasachH1 } from "@/lib/amirant-course/content-source/split-markdown-masach";
 

@@ -1,13 +1,16 @@
 /**
- * Client-safe barrel. Full question bank / production JSON live under
- * `./question-bank` and `./content-source` — import those only from server code.
+ * Client-safe barrel.
+ *
+ * Nothing exported here may reach `./content-source/production-source`,
+ * `./question-bank` (the full bank) or `./lesson-registry`. Those import 2.8MB
+ * of authoring JSON including all 526 answer keys, and this barrel is imported
+ * by 18 browser components — so anything that leaks in is downloaded, parsed and
+ * readable by every visitor. `client-chunks.test.ts` fails the build if it
+ * happens again.
+ *
+ * Server code imports those modules directly by path.
  */
 export { AMIRANT_PREPARATION_COURSE_ID, AMIRANT_PREPARATION_SLUG, LS_ANALYTICS, LS_CROSS_TEST, LS_PROGRESS } from "./constants";
-export {
-  getAmirantContentMode,
-  getAmirantContentQualityMode,
-  type AmirantContentQualityMode,
-} from "./content-source";
 export { AMIRANT_MIN_LEVEL, AMIRANT_MAX_LEVEL, clampDifficultyLevel } from "./difficulty-clamp";
 export { gradeAdaptiveQuizOutcomes } from "./session/grade-adaptive-quiz-outcomes";
 export type { AmirantLessonProgressEntry, AmirantProgressStateV1 } from "./progress/types";
@@ -37,7 +40,6 @@ export type { CourseManifest, ManifestLesson, ManifestModule, ManifestQuiz, Mani
 export type { AmirantBankTopicSlug, BankQuestion } from "./types/bank-question";
 
 export { AMIRANT_PREPARATION_MANIFEST, getManifestLesson, getManifestPracticeSet, getManifestQuiz, getSimulation } from "./manifest";
-export { AMIRANT_LESSON_REGISTRY, getLessonContent } from "./lesson-registry";
 export { amirantExamQuestionPromptForDisplay } from "./question-bank/prompt-for-display";
 export { parseVocabQuizParam, isVocabQuizMode } from "./question-bank/vocab-quiz-mode";
 export type { VocabQuizMode } from "./question-bank/vocab-quiz-mode";
@@ -58,7 +60,7 @@ export type { AmirantCourseAnalytics } from "./analytics/types";
 export { emptyAnalytics } from "./analytics/types";
 export { recordQuestionOutcome, recordSessionEnd, weakTopics, strongTopics } from "./analytics/merge";
 export { loadAnalytics, saveAnalytics } from "./analytics/storage";
-export { AMIRANT_SIMULATIONS } from "./simulations/definitions";
+export { AMIRANT_SIMULATIONS } from "./manifest";
 export { buildAdaptiveQuizQuestionIds } from "./session/build-adaptive-quiz-question-ids";
 export { nextSimulationSectionEnterLevel } from "./session/section-level";
 export {
