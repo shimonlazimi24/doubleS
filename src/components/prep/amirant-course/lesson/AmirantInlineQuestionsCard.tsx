@@ -21,6 +21,7 @@ import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/gra
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "../quiz/QuizOptionContent";
+import { displayOptions, newAttemptSeed } from "@/lib/amirant-course/question-bank/display-order";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
@@ -33,6 +34,9 @@ type Props = {
 };
 
 export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, sessionLabel }: Props) {
+  // One seed per attempt: options of shuffle-safe questions keep a stable order
+  // while the learner works, and come up in a new order next time.
+  const [attemptSeed] = useState(() => newAttemptSeed());
   const questions = useMemo(
     () => questionIds.map((id) => getPublicBankQuestion(id)).filter((q): q is NonNullable<typeof q> => !!q),
     [questionIds],
@@ -179,7 +183,7 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
                   {amirantExamQuestionPromptForDisplay(q.prompt)}
                 </p>
                 <ul className="mt-4 space-y-2">
-                  {q.options.map((opt, optIndex) => {
+                  {displayOptions(q, attemptSeed).map((opt, optIndex) => {
                     const chosen = selected === opt.id;
                     const showAsCorrect = checked && correctOptionId != null && opt.id === correctOptionId;
                     const showAsWrong =
