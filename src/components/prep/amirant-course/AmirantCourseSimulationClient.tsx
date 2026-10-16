@@ -17,7 +17,7 @@ import {
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
 import {
-  AMIRANT_BANK_QUESTIONS_PUBLIC,
+  AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
   bankQuestionsPublicToPoolItems,
   getPublicBankQuestion,
 } from "@/lib/amirant-course/question-bank/client-bank";
@@ -35,7 +35,7 @@ import { buildAdaptiveDecisionEvent } from "@/lib/amirant-course/adaptive-teleme
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
-const SIM_QUESTION_POOL = bankQuestionsPublicToPoolItems(AMIRANT_BANK_QUESTIONS_PUBLIC);
+const SIM_QUESTION_POOL = bankQuestionsPublicToPoolItems(AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC);
 
 type RunPhase = "intro" | "running" | "summary";
 
@@ -165,7 +165,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
           if (!first) return;
           const scoredIds = buildSimulationSectionQuestionIds({
             pool: SIM_QUESTION_POOL,
-            bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+            bank: AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
             topicSlug: first.topicSlug,
             targetLevel: run.sectionEnterLevel,
             count: first.questionCount,
@@ -314,7 +314,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         const sec = sim.sections[nextIdx]!;
         const nextIds = buildSimulationSectionQuestionIds({
           pool: SIM_QUESTION_POOL,
-          bank: AMIRANT_BANK_QUESTIONS_PUBLIC,
+          bank: AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
           topicSlug: sec.topicSlug,
           targetLevel: nextLevel,
           count: sec.questionCount,

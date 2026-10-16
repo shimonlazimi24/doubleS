@@ -419,58 +419,88 @@
           "estimatedMinutes": 25
         },
         {
-          "id": "lesson.rephrase.04",
-          "title": "מבחן תרגול - דוגמה (בינוני)",
+          "id": "lesson.rephrase.set-01",
+          "title": "מקבץ תרגול 1 (קל)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.05",
-          "title": "מבחן תרגול 1 (קל)",
+          "id": "lesson.rephrase.set-02",
+          "title": "מקבץ תרגול 2 (קל)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.06",
-          "title": "מבחן תרגול 2 (קל)",
+          "id": "lesson.rephrase.set-03",
+          "title": "מקבץ תרגול 3 (קל-בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.07",
-          "title": "מבחן תרגול 3 (בינוני)",
+          "id": "lesson.rephrase.set-04",
+          "title": "מקבץ תרגול 4 (בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.08",
-          "title": "מבחן תרגול 4 (בינוני)",
+          "id": "lesson.rephrase.set-05",
+          "title": "מקבץ תרגול 5 (בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.09",
-          "title": "מבחן תרגול 5 (קשה)",
+          "id": "lesson.rephrase.set-06",
+          "title": "מקבץ תרגול 6 (בינוני-קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.10",
-          "title": "מבחן תרגול 6 (קשה)",
+          "id": "lesson.rephrase.set-07",
+          "title": "מקבץ תרגול 7 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.11",
-          "title": "מבחן תרגול 7 (מעורב)",
+          "id": "lesson.rephrase.set-08",
+          "title": "מקבץ תרגול 8 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.rephrase.12",
-          "title": "מבחן תרגול 8 (מעורב)",
+          "id": "lesson.rephrase.set-09",
+          "title": "מקבץ תרגול 9 (קשה מאוד)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.rephrase.set-10",
+          "title": "מקבץ תרגול 10 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.rephrase.set-11",
+          "title": "מקבץ תרגול 11 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.rephrase.set-12",
+          "title": "מקבץ תרגול 12 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.rephrase.set-13",
+          "title": "מקבץ תרגול 13 (רמת פסגה)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.rephrase.set-14",
+          "title": "מקבץ תרגול 14 (רמת פסגה)",
+          "kind": "text",
+          "estimatedMinutes": 10
         }
       ],
       "practiceSets": [

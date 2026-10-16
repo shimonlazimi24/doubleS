@@ -16,6 +16,7 @@
     "generate:questions-public": "node scripts/generate-questions-public.mjs",
     "generate:course-manifest": "node scripts/generate-course-manifest.mjs",
     "ingest:owner-sc": "node scripts/ingest-owner-sc-tests.mjs",
+    "ingest:owner-rs": "node scripts/ingest-owner-rs-tests.mjs",
     "check:client-chunks": "node scripts/check-client-chunks.mjs",
     "qa:amirant-content": "node scripts/qa-amirant-content.mjs",
     "embeddings:amirant-sync": "node scripts/sync-amirant-content-embeddings.mjs",

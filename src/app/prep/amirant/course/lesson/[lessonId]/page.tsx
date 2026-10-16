@@ -39,6 +39,17 @@ const LEGACY_LESSON_REDIRECT: Record<string, string> = {
   "lesson.intro.doc-1-1": "lesson.intro.welcome",
   "lesson.intro.doc-1-2": "lesson.intro.roadmap",
   "lesson.intro.doc-1-3": "lesson.intro.personal-roadmap",
+  // The nine markdown restatement quizzes were replaced by the owner's 14 sets.
+  // Bookmarks and "continue where you left off" may still hold the old ids.
+  "lesson.rephrase.04": "lesson.rephrase.set-01",
+  "lesson.rephrase.05": "lesson.rephrase.set-02",
+  "lesson.rephrase.06": "lesson.rephrase.set-03",
+  "lesson.rephrase.07": "lesson.rephrase.set-04",
+  "lesson.rephrase.08": "lesson.rephrase.set-05",
+  "lesson.rephrase.09": "lesson.rephrase.set-06",
+  "lesson.rephrase.10": "lesson.rephrase.set-07",
+  "lesson.rephrase.11": "lesson.rephrase.set-08",
+  "lesson.rephrase.12": "lesson.rephrase.set-09",
 };
 
 function unifiedSectionsToFlow(sections: PremiumMarkdownSection[]): UnifiedFlowItem[] {
@@ -201,7 +212,11 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       flow = sectionItems;
     } else if (questionGroup || simulationRuntimeId) {
       // שיעורי תרגול/סימולציה: בלי gates - הסבר ואז שאלות אינטראקטיביות
-      flow = sectionItems;
+      // A set whose markdown is only a short introduction (no `##` sections) is
+      // already shown in full by the intro step; the single synthetic section
+      // would repeat the same text as a second slide before the questions.
+      const introOnly = !/^##\s+/m.test(lessonBody) && !inIntro.endsWith("…");
+      flow = introOnly ? [] : sectionItems;
     } else {
       flow = interleaveMarkdownGates(sections).map((x): UnifiedFlowItem => {
         if ("kind" in x && x.kind === "gate") {

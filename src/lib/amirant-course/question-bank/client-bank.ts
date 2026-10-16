@@ -6,6 +6,7 @@ import type { QuestionPoolItem } from "@/lib/learning-intelligence/adaptive";
 import type { AmirantBankTopicSlug } from "../types/bank-question";
 import type { DifficultyLevel } from "@/lib/learning-intelligence/adaptive";
 import type { BankQuestionPublic } from "./public-bank";
+import { isOwnerSetQuestion, isReservedForItsUnit } from "./reserved-tags";
 import type { VocabQuizMode } from "./vocab-quiz-mode";
 import questionsPublicJson from "../../../../content/amirant-import/source/questions.public.json";
 import passagesJson from "../../../../content/amirant-import/source/passages.json";
@@ -39,7 +40,12 @@ const ALL = mapPublic(questionsPublicJson as SourceQ[]);
 export const AMIRANT_BANK_QUESTIONS_PUBLIC: BankQuestionPublic[] = ALL;
 
 export const AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC: BankQuestionPublic[] = ALL.filter(
-  (q) => !q.tags?.includes("simulation"),
+  (q) => !isReservedForItsUnit(q.tags),
+);
+
+/** What the interactive simulation may draw from: everything but the owner's sets. */
+export const AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC: BankQuestionPublic[] = ALL.filter(
+  (q) => !isOwnerSetQuestion(q.tags),
 );
 
 const BY_ID = new Map(ALL.map((q) => [q.id, q]));

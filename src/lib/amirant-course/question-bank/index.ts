@@ -5,6 +5,7 @@
 import type { QuestionPoolItem } from "@/lib/learning-intelligence/adaptive";
 import type { AmirantBankTopicSlug, BankQuestion } from "../types/bank-question";
 import { buildAmirantQuestionBank } from "./build-bank";
+import { isReservedForItsUnit } from "./reserved-tags";
 import type { VocabQuizMode } from "./vocab-quiz-mode";
 export type { VocabQuizMode } from "./vocab-quiz-mode";
 export { amirantExamQuestionPromptForDisplay } from "./prompt-for-display";
@@ -42,12 +43,13 @@ export const AMIRANT_BANK_MODE: "production" | "demo" = merged.mode;
 export const AMIRANT_BANK_QUESTIONS: BankQuestion[] = merged.bank;
 
 /**
- * הבנק לחידונים/תרגולים רגילים - בלי שאלות הסימולציות: הן שמורות לשיעורי
- * הסימולציה (getBankQuestionsByTag), ואם יופיעו בחידון רגיל הן "ישרפו" את
- * הסימולציה שהתלמיד יפגוש אחר כך.
+ * The bank for ordinary quizzes and practice: everything except questions
+ * reserved for one timed unit (simulations, the owner's graded sets). Those are
+ * reached only through their own lesson (getBankQuestionsByTag); see
+ * `reserved-tags.ts` for why.
  */
 export const AMIRANT_GENERAL_BANK_QUESTIONS: BankQuestion[] = AMIRANT_BANK_QUESTIONS.filter(
-  (q) => !q.tags?.includes("simulation"),
+  (q) => !isReservedForItsUnit(q.tags),
 );
 
 const BY_ID = new Map(AMIRANT_BANK_QUESTIONS.map((q) => [q.id, q]));

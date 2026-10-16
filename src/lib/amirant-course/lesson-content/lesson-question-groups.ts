@@ -13,6 +13,8 @@ export type LessonQuestionGroup = {
 };
 
 const PRACTICE_QUIZ_TIME_SEC = 15 * 60;
+/** Four restatement questions at the real exam pace of two minutes each. */
+const OWNER_RS_SET_TIME_SEC = 4 * 2 * 60;
 
 export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   // -- השלמת משפטים --
@@ -24,16 +26,21 @@ export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   "lesson.sc.09": { tag: "sc-quiz-6-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
   "lesson.sc.10": { tag: "sc-quiz-7-mixed", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
   "lesson.sc.11": { tag: "sc-quiz-8-mixed", timeLimitSec: 20 * 60 },
-  // -- ניסוח מחדש --
-  "lesson.rephrase.04": { tag: "sample-restatement-quiz-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.05": { tag: "restatement-quiz-1-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.06": { tag: "restatement-quiz-2-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.07": { tag: "restatement-quiz-3-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.08": { tag: "restatement-quiz-4-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.09": { tag: "restatement-quiz-5-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.10": { tag: "restatement-quiz-6-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.rephrase.11": { tag: "restatement-quiz-7-mixed", timeLimitSec: 20 * 60 },
-  "lesson.rephrase.12": { tag: "restatement-quiz-8-mixed", timeLimitSec: 20 * 60 },
+  // -- Restatement: the content owner's sets (4 questions, 2 minutes each) --
+  "lesson.rephrase.set-01": { tag: "owner-rs-set-1", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-02": { tag: "owner-rs-set-2", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-03": { tag: "owner-rs-set-3", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-04": { tag: "owner-rs-set-4", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-05": { tag: "owner-rs-set-5", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-06": { tag: "owner-rs-set-6", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-07": { tag: "owner-rs-set-7", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-08": { tag: "owner-rs-set-8", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-09": { tag: "owner-rs-set-9", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-10": { tag: "owner-rs-set-10", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-11": { tag: "owner-rs-set-11", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-12": { tag: "owner-rs-set-12", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-13": { tag: "owner-rs-set-13", timeLimitSec: OWNER_RS_SET_TIME_SEC },
+  "lesson.rephrase.set-14": { tag: "owner-rs-set-14", timeLimitSec: OWNER_RS_SET_TIME_SEC },
   // -- הבנת הנקרא -- (lesson.reading.04 = קובץ SAMPLE ללא שורות בנק - נשאר קריאה)
   "lesson.reading.05": { tag: "reading-comp-quiz-1-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
   "lesson.reading.06": { tag: "reading-comp-quiz-2-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
