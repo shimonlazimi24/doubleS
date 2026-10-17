@@ -13,6 +13,7 @@ import {
   withNextBestActionEnrichment,
 } from "./next-best-action";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { decideGradeAccess } from "./grade-access";
 import { loadSupabaseAmirantProgressState } from "./progress";
 import type { NextBestActionEnriched } from "./next-best-action";
 
@@ -63,8 +64,9 @@ export type QuizMistakeRow = {
   topicLabel: string;
   prompt: string;
   selectedOptionLabel: string;
-  correctOptionLabel: string;
-  explanation: string;
+  /** Null when the learner has no full access to this question (see `grade-access.ts`). */
+  correctOptionLabel: string | null;
+  explanation: string | null;
   lessonHref: string | null;
   practiceHref: string | null;
 };
@@ -357,6 +359,10 @@ export async function loadQuizReviewData(
 
   const byTopic = new Map<AmirantBankTopicSlug, QuizMistakeRow[]>();
   const bankById = new Map(AMIRANT_BANK_QUESTIONS.map((q) => [q.id, q]));
+  // Answer rows are written by the browser, so the question ids here are whatever
+  // the client sent. The answer and explanation follow the same rule as the grade
+  // route, or this page would hand out what the route withholds.
+  const hasFullAccess = await hasAmirantFullAccess(client, userId);
 
   for (const row of (answers ?? []) as QuizAnswerRow[]) {
     if (row.is_correct) continue;
@@ -367,9 +373,15 @@ export async function loadQuizReviewData(
     const selectedOptionLabel =
       q.options.find((opt) => opt.id === row.selected_option_id)?.label ??
       "לא נבחרה תשובה";
-    const correctOptionLabel =
-      q.options.find((opt) => opt.id === row.correct_option_id)?.label ??
-      row.correct_option_id;
+    const reveal = decideGradeAccess({
+      source: { kind: "bank", tags: q.tags },
+      mode: "batch",
+      hasFullAccess,
+    }).reveal;
+    // The bank, not the stored row, says which option is correct.
+    const correctOptionLabel = reveal
+      ? (q.options.find((opt) => opt.id === q.correctOptionId)?.label ?? null)
+      : null;
     const links = topicDeepLinks(topic);
     const list = byTopic.get(topic) ?? [];
     list.push({
@@ -379,7 +391,7 @@ export async function loadQuizReviewData(
       prompt: q.prompt,
       selectedOptionLabel,
       correctOptionLabel,
-      explanation: q.explanation,
+      explanation: reveal ? q.explanation : null,
       lessonHref: links.lessonHref,
       practiceHref: links.practiceHref,
     });

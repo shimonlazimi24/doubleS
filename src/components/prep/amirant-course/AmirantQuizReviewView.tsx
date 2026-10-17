@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { amirantExamQuestionPromptForDisplay } from "@/lib/amirant-course";
 import type { QuizReviewData } from "@/lib/amirant-course/student-insights";
+import { getPrepPricingPath } from "@/lib/prep/prep-full-access";
 
 export function AmirantQuizReviewView({ review }: { review: QuizReviewData }) {
   return (
@@ -38,12 +39,23 @@ export function AmirantQuizReviewView({ review }: { review: QuizReviewData }) {
                 <Text as="p" variant="bodySm" className="mt-2">
                   תשובתך: <span className="font-semibold text-ink">{m.selectedOptionLabel}</span>
                 </Text>
-                <Text as="p" variant="bodySm">
-                  תשובה נכונה: <span className="font-semibold text-ink">{m.correctOptionLabel}</span>
-                </Text>
-                <Text as="p" variant="bodySm" className="mt-2 text-ink">
-                  הסבר: {m.explanation}
-                </Text>
+                {m.correctOptionLabel != null ? (
+                  <Text as="p" variant="bodySm">
+                    תשובה נכונה: <span className="font-semibold text-ink">{m.correctOptionLabel}</span>
+                  </Text>
+                ) : null}
+                {m.explanation != null ? (
+                  <Text as="p" variant="bodySm" className="mt-2 text-ink">
+                    הסבר: {m.explanation}
+                  </Text>
+                ) : (
+                  <Text as="p" variant="bodySm" className="mt-2 text-muted">
+                    התשובה הנכונה וההסבר המלא פתוחים למנויי הקורס.{" "}
+                    <Link href={getPrepPricingPath()} className="font-semibold text-primary">
+                      לפתיחת הקורס
+                    </Link>
+                  </Text>
+                )}
                 <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
                   {m.lessonHref ? (
                     <Link href={m.lessonHref} className="text-primary">
