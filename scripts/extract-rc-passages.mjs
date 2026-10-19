@@ -132,6 +132,12 @@ for (const q of questions) {
   }
 }
 
+// The owner's passages come from Word (ingest-owner-rc-passages.mjs), not from
+// this markdown corpus; rebuilding passages.json without them would orphan
+// their questions.
+const existingPassages = fs.existsSync(PASSAGES_JSON) ? JSON.parse(fs.readFileSync(PASSAGES_JSON, "utf8")) : [];
+allPassages.push(...existingPassages.filter((p) => p.sourceTag === "owner_rc"));
+
 // ולידציה: כל קטע משויך חייב גוף לא ריק
 const emptyBodies = allPassages.filter((p) => !p.bodyMarkdown);
 if (emptyBodies.length) {

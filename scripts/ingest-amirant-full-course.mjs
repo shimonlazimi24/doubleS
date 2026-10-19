@@ -655,10 +655,10 @@ function mergePreservedQuestions(newQuestions) {
   }
   if (!Array.isArray(existing)) return newQuestions;
 
-  // owner_sc / owner_rs: the content owner's sets come from Word through
-  // ingest-owner-*-tests.mjs, not from this markdown corpus, so a rebuild here
+  // owner_sc / owner_rs / owner_rc: the content owner's sets come from Word
+  // through ingest-owner-*.mjs, not from this markdown corpus, so a rebuild here
   // would otherwise delete them and leave their lessons without questions.
-  const PRESERVED_TAGS = ["simulation", "generated_from_course_vocab", "owner_sc", "owner_rs"];
+  const PRESERVED_TAGS = ["simulation", "generated_from_course_vocab", "owner_sc", "owner_rs", "owner_rc"];
   const isPreserved = (q) => Array.isArray(q.tags) && PRESERVED_TAGS.some((t) => q.tags.includes(t));
 
   const passageById = new Map(

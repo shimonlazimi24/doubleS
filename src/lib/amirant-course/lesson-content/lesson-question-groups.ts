@@ -15,17 +15,28 @@ export type LessonQuestionGroup = {
 const PRACTICE_QUIZ_TIME_SEC = 15 * 60;
 /** Four restatement questions at the real exam pace of two minutes each. */
 const OWNER_RS_SET_TIME_SEC = 4 * 2 * 60;
+/** Eight sentence-completion questions at one minute each. */
+const OWNER_SC_TEST_TIME_SEC = 8 * 60;
+/** Reading passages run three minutes per question, reading time included. */
+const OWNER_RC_SEC_PER_QUESTION = 3 * 60;
 
 export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   // -- השלמת משפטים --
-  "lesson.sc.04": { tag: "sample-sc-quiz-1-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.05": { tag: "sc-quiz-2-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.06": { tag: "sc-quiz-3-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.07": { tag: "sc-quiz-4-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.08": { tag: "sc-quiz-5-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.09": { tag: "sc-quiz-6-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.10": { tag: "sc-quiz-7-mixed", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.sc.11": { tag: "sc-quiz-8-mixed", timeLimitSec: 20 * 60 },
+  // -- Sentence completion: the content owner's tests (8 questions, 1 minute each) --
+  "lesson.sc.test-01": { tag: "owner-sc-test-1", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-02": { tag: "owner-sc-test-2", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-03": { tag: "owner-sc-test-3", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-04": { tag: "owner-sc-test-4", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-05": { tag: "owner-sc-test-5", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-06": { tag: "owner-sc-test-6", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-07": { tag: "owner-sc-test-7", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-08": { tag: "owner-sc-test-8", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-09": { tag: "owner-sc-test-9", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-10": { tag: "owner-sc-test-10", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-11": { tag: "owner-sc-test-11", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-12": { tag: "owner-sc-test-12", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-13": { tag: "owner-sc-test-13", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
+  "lesson.sc.test-14": { tag: "owner-sc-test-14", timeLimitSec: OWNER_SC_TEST_TIME_SEC },
   // -- Restatement: the content owner's sets (4 questions, 2 minutes each) --
   "lesson.rephrase.set-01": { tag: "owner-rs-set-1", timeLimitSec: OWNER_RS_SET_TIME_SEC },
   "lesson.rephrase.set-02": { tag: "owner-rs-set-2", timeLimitSec: OWNER_RS_SET_TIME_SEC },
@@ -41,15 +52,17 @@ export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   "lesson.rephrase.set-12": { tag: "owner-rs-set-12", timeLimitSec: OWNER_RS_SET_TIME_SEC },
   "lesson.rephrase.set-13": { tag: "owner-rs-set-13", timeLimitSec: OWNER_RS_SET_TIME_SEC },
   "lesson.rephrase.set-14": { tag: "owner-rs-set-14", timeLimitSec: OWNER_RS_SET_TIME_SEC },
-  // -- הבנת הנקרא -- (lesson.reading.04 = קובץ SAMPLE ללא שורות בנק - נשאר קריאה)
-  "lesson.reading.05": { tag: "reading-comp-quiz-1-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.06": { tag: "reading-comp-quiz-2-easy", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.07": { tag: "reading-comp-quiz-3-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.08": { tag: "reading-comp-quiz-4-intermediate", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.09": { tag: "reading-comp-quiz-5-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.10": { tag: "reading-comp-quiz-6-hard", timeLimitSec: PRACTICE_QUIZ_TIME_SEC },
-  "lesson.reading.11": { tag: "reading-comp-quiz-7-mixed", timeLimitSec: 25 * 60 },
-  "lesson.reading.12": { tag: "reading-comp-quiz-8-mixed", timeLimitSec: 25 * 60 },
+  // -- Reading: the content owner's passages (3 minutes per question, as in the exam) --
+  "lesson.reading.passage-01": { tag: "owner-rc-passage-1", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-02": { tag: "owner-rc-passage-2", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-03": { tag: "owner-rc-passage-3", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-04": { tag: "owner-rc-passage-4", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-05": { tag: "owner-rc-passage-5", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-06": { tag: "owner-rc-passage-6", timeLimitSec: 5 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-07": { tag: "owner-rc-passage-7", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-08": { tag: "owner-rc-passage-8", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-09": { tag: "owner-rc-passage-9", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
+  "lesson.reading.passage-10": { tag: "owner-rc-passage-10", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
   // -- סימולציות (שאלותיהן בבנק, כולל קטעי קריאה) --
   "lesson.sim.04": { tag: "simulation-1-baseline", timeLimitSec: 39 * 60 },
   "lesson.sim.05": { tag: "simulation-2-warmup", timeLimitSec: 39 * 60 },

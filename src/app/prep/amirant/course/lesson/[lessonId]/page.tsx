@@ -50,6 +50,24 @@ const LEGACY_LESSON_REDIRECT: Record<string, string> = {
   "lesson.rephrase.10": "lesson.rephrase.set-07",
   "lesson.rephrase.11": "lesson.rephrase.set-08",
   "lesson.rephrase.12": "lesson.rephrase.set-09",
+  // Likewise the eight sentence-completion quizzes and nine reading quizzes.
+  "lesson.sc.04": "lesson.sc.test-01",
+  "lesson.sc.05": "lesson.sc.test-02",
+  "lesson.sc.06": "lesson.sc.test-03",
+  "lesson.sc.07": "lesson.sc.test-04",
+  "lesson.sc.08": "lesson.sc.test-05",
+  "lesson.sc.09": "lesson.sc.test-06",
+  "lesson.sc.10": "lesson.sc.test-07",
+  "lesson.sc.11": "lesson.sc.test-08",
+  "lesson.reading.04": "lesson.reading.passage-01",
+  "lesson.reading.05": "lesson.reading.passage-02",
+  "lesson.reading.06": "lesson.reading.passage-03",
+  "lesson.reading.07": "lesson.reading.passage-04",
+  "lesson.reading.08": "lesson.reading.passage-05",
+  "lesson.reading.09": "lesson.reading.passage-06",
+  "lesson.reading.10": "lesson.reading.passage-07",
+  "lesson.reading.11": "lesson.reading.passage-08",
+  "lesson.reading.12": "lesson.reading.passage-09",
 };
 
 function unifiedSectionsToFlow(sections: PremiumMarkdownSection[]): UnifiedFlowItem[] {

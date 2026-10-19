@@ -1767,7 +1767,7 @@
     "questionId": "rs-l6-0013",
     "topic": "rephrasing",
     "subtopic": "rephrasing-cause-effect",
-    "difficultyLevel": 6,
+    "difficultyLevel": 4,
     "questionText": "Original: Whereas readers of printed books tend to recall the order of events in a story quite accurately, people who read the same story on a screen often struggle to remember what happened when.",
     "options": [
       {
@@ -1800,19 +1800,19 @@
       "shuffle-safe",
       "owner-rs-set-11",
       "quiz",
-      "difficulty_6",
+      "difficulty_4",
       "method:RS-M2",
       "method:RS-M1",
       "method:RS-M3",
-      "theme:language",
-      "owner-status:needs_owner_review"
+      "theme:technology",
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0014",
     "topic": "rephrasing",
     "subtopic": "rephrasing-passive",
-    "difficultyLevel": 6,
+    "difficultyLevel": 4,
     "questionText": "Original: Although the community garden was planned by local residents, most of its costs were covered by a grant from the city council rather than by donations from the neighborhood.",
     "options": [
       {
@@ -1845,18 +1845,19 @@
       "shuffle-safe",
       "owner-rs-set-11",
       "quiz",
-      "difficulty_6",
+      "difficulty_4",
       "method:RS-M5",
-      "method:RS-M2",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:society",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0015",
     "topic": "rephrasing",
     "subtopic": "rephrasing-negation",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: Not all of the vitamin supplements so ubiquitous on pharmacy shelves are worthless for healthy adults, but few of them provide any benefit that a balanced diet could not supply equally well.",
     "options": [
       {
@@ -1889,18 +1890,19 @@
       "shuffle-safe",
       "owner-rs-set-11",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M4",
+      "method:RS-M1",
       "method:RS-M3",
       "theme:health",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0016",
     "topic": "rephrasing",
     "subtopic": "rephrasing-paraphrase",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: Unless an online auction ends at a time when many potential buyers are awake, the final price is likely to fall short of what the item would otherwise fetch.",
     "options": [
       {
@@ -1933,18 +1935,19 @@
       "shuffle-safe",
       "owner-rs-set-11",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M3",
       "method:RS-M2",
+      "method:RS-M1",
       "theme:economics",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0017",
     "topic": "rephrasing",
     "subtopic": "rephrasing-paraphrase",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: Students who reviewed for an exam while listening to quiet instrumental music remembered slightly more of the material a week later than classmates who had reviewed in complete silence.",
     "options": [
       {
@@ -1977,18 +1980,19 @@
       "shuffle-safe",
       "owner-rs-set-12",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M1",
+      "method:RS-M2",
       "method:RS-M3",
       "theme:psychology",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0018",
     "topic": "rephrasing",
     "subtopic": "rephrasing-cause-effect",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: The gradual return of verdure to one semi-arid region over the past three decades has been attributed mainly to a recovery in rainfall rather than to large-scale tree-planting schemes.",
     "options": [
       {
@@ -2021,18 +2025,19 @@
       "shuffle-safe",
       "owner-rs-set-12",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M2",
-      "method:RS-M5",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:environment",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0019",
     "topic": "rephrasing",
     "subtopic": "rephrasing-passive",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: Records suggest that lighthouse keepers' wives, rather than the keepers themselves, often maintained the lamps, although the official reports were signed only by the men.",
     "options": [
       {
@@ -2065,11 +2070,12 @@
       "shuffle-safe",
       "owner-rs-set-12",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M5",
-      "method:RS-M2",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:history",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2112,16 +2118,17 @@
       "difficulty_6",
       "method:RS-M3",
       "method:RS-M2",
+      "method:RS-M4",
+      "method:RS-M1",
       "theme:science",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
     "questionId": "rs-l6-0021",
     "topic": "rephrasing",
     "subtopic": "rephrasing-negation",
-    "difficultyLevel": 6,
+    "difficultyLevel": 5,
     "questionText": "Original: Few of the teachers surveyed believed that long nightly assignments help even their most assiduous pupils, yet not all of them were prepared to assign less homework.",
     "options": [
       {
@@ -2154,12 +2161,12 @@
       "shuffle-safe",
       "owner-rs-set-13",
       "quiz",
-      "difficulty_6",
+      "difficulty_5",
       "method:RS-M4",
-      "method:RS-M2",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:education",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2204,8 +2211,7 @@
       "method:RS-M2",
       "method:RS-M3",
       "theme:arts",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2247,10 +2253,10 @@
       "quiz",
       "difficulty_6",
       "method:RS-M2",
-      "method:RS-M4",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:language",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2292,10 +2298,10 @@
       "quiz",
       "difficulty_6",
       "method:RS-M5",
-      "method:RS-M2",
+      "method:RS-M1",
+      "method:RS-M3",
       "theme:economics",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2337,10 +2343,10 @@
       "quiz",
       "difficulty_6",
       "method:RS-M4",
+      "method:RS-M1",
       "method:RS-M3",
       "theme:society",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2383,9 +2389,9 @@
       "difficulty_6",
       "method:RS-M3",
       "method:RS-M2",
+      "method:RS-M1",
       "theme:technology",
-      "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2431,7 +2437,7 @@
       "method:RS-M3",
       "theme:psychology",
       "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   },
   {
@@ -2473,11 +2479,11 @@
       "quiz",
       "difficulty_6",
       "method:RS-M1",
-      "method:RS-M3",
       "method:RS-M4",
+      "method:RS-M3",
       "theme:arts",
       "l6-top",
-      "owner-status:needs_owner_review"
+      "owner-status:qa_passed"
     ]
   }
 ]

@@ -71,7 +71,14 @@ function topicShapeMismatch(q) {
   return null;
 }
 
-function keyBalanceChiSquare(questions) {
+/**
+ * Answer-key position balance, over the questions whose position a learner
+ * actually sees. Options of `shuffle-safe` questions are reordered on every
+ * attempt (src/lib/amirant-course/question-bank/display-order.ts), so their
+ * stored key position never reaches anyone and is left out.
+ */
+function keyBalanceChiSquare(allQuestions) {
+  const questions = allQuestions.filter((q) => !(q.tags ?? []).includes("shuffle-safe"));
   const counts = Object.fromEntries(OPTION_IDS.map((id) => [id, 0]));
   for (const q of questions) {
     if (counts[q.correctOptionId] !== undefined) counts[q.correctOptionId] += 1;

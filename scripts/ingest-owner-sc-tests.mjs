@@ -22,13 +22,15 @@
  *
  * Usage:
  *   node scripts/ingest-owner-sc-tests.mjs <tests.docx> <index.docx>            # validate + write content/amirant-import/owner/sc-tests.json
- *   node scripts/ingest-owner-sc-tests.mjs <tests.docx> <index.docx> --merge    # also merge into questions.json (replaces earlier owner-sc items by id) and regenerate the public bank
+ *   node scripts/ingest-owner-sc-tests.mjs <tests.docx> <index.docx> --merge    # also merge into questions.json (replaces earlier owner-sc items) and regenerate the public bank
+ *   add --accept-pending-review to take rows the index still marks qa_passed / needs_owner_review
  *
  * Needs `unzip` on PATH (macOS and CI both have it).
  */
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { PENDING_STATUSES, assignStableIds } from "./lib/owner-docx.mjs";
 
 const root = process.cwd();
 const BANK = path.join(root, "content/amirant-import/source/questions.json");
@@ -36,6 +38,12 @@ const OUT = path.join(root, "content/amirant-import/owner/sc-tests.json");
 
 const [testsDocx, indexDocx] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const MERGE = process.argv.includes("--merge");
+/**
+ * Takes rows the index still marks qa_passed / needs_owner_review, for a delivery
+ * the owner has said is ready although the index predates his sign-off. Each such
+ * item is tagged `owner-status:<status>` so it can be found or pulled later.
+ */
+const ACCEPT_PENDING = process.argv.includes("--accept-pending-review");
 if (!testsDocx || !indexDocx) {
   console.error("Usage: node scripts/ingest-owner-sc-tests.mjs <tests.docx> <index.docx> [--merge]");
   process.exit(2);
@@ -164,7 +172,9 @@ function main() {
         if (it.key && ix.answer !== it.key.word) errors.push(`${at}: index answer "${ix.answer}" ≠ key "${it.key.word}"`);
         if (!(ix.level in LEVEL)) errors.push(`${at}: unknown level "${ix.level}"`);
         if (!(ix.primary in METHODS)) errors.push(`${at}: unknown method "${ix.primary}"`);
-        if (ix.status !== "owner_approved") errors.push(`${at}: status is "${ix.status}", not owner_approved`);
+        if (ix.status !== "owner_approved" && !(ACCEPT_PENDING && PENDING_STATUSES.includes(ix.status))) {
+          errors.push(`${at}: status is "${ix.status}", not owner_approved`);
+        }
       }
       if (!s) { errors.push(`${at}: no solution block`); continue; }
       if (it.key && s.final !== it.key.word) errors.push(`${at}: "תשובה סופית: ${s.final}" ≠ key "${it.key.word}"`);
@@ -194,7 +204,10 @@ function main() {
         `**הסבר קצר:** ${s.short[0]}`, `_${s.short[1]}_`,
         `**הסבר מלא:** ${s.full.join(" ")}`,
         s.method[0], s.method[1] ? `_${s.method[1]}_` : null,
-        `**למה לא האפשרויות האחרות**\n${s.whyNot.map(([he, en]) => `- ${he}${en ? `\n  _${en}_` : ""}`).join("\n")}`,
+        // One paragraph per language: a list item that carries a Hebrew explanation and
+        // its English line reads scrambled, since direction is set per paragraph.
+        `**למה לא האפשרויות האחרות**`,
+        ...s.whyNot.flatMap(([he, en]) => [he, en ? `_${en}_` : null]),
         s.summaryEn.length ? `_${s.summaryEn.join(" ")}_` : null,
         `**✓ תשובה סופית: ${s.final}**`,
         s.vocab ? `**מילים לשינון:** ${s.vocab}` : null,
@@ -218,14 +231,19 @@ function main() {
           "owner_sc", "shuffle-safe", `owner-sc-test-${tn}`, "quiz", `difficulty_${level}`,
           `method:${ix.primary}`, ...ix.methods.filter((m) => m !== ix.primary).map((m) => `method:${m}`),
           `theme:${ix.theme}`, ...(ix.level === "L6 top" ? ["l6-top"] : []),
+          ...(ix.status === "owner_approved" ? [] : [`owner-status:${ix.status}`]),
         ],
       });
     }
   }
 
   if (errors.length) fail(errors);
+  const bank = JSON.parse(fs.readFileSync(BANK, "utf8"));
+  for (const n of assignStableIds(items, bank.filter((q) => (q.tags ?? []).includes("owner_sc")))) console.log(`  id ${n}`);
   const ids = items.map((q) => q.questionId);
-  if (new Set(ids).size !== ids.length) fail(["duplicate question ids in the index"]);
+  if (new Set(ids).size !== ids.length) fail(["duplicate question ids after id assignment"]);
+  const foreign = bank.filter((q) => ids.includes(q.questionId) && !(q.tags ?? []).includes("owner_sc"));
+  if (foreign.length) fail(foreign.map((q) => `${q.questionId} is already used by a non-owner question`));
 
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, `${JSON.stringify(items, null, 2)}\n`);
@@ -233,9 +251,7 @@ function main() {
   console.log(`Validated ${items.length} items across ${tests.size} tests (${perTest}) → ${path.relative(root, OUT)}`);
 
   if (!MERGE) return;
-  const bank = JSON.parse(fs.readFileSync(BANK, "utf8"));
-  const owned = new Set(ids);
-  const kept = bank.filter((q) => !owned.has(q.questionId) && !(q.tags ?? []).includes("owner_sc"));
+  const kept = bank.filter((q) => !(q.tags ?? []).includes("owner_sc"));
   const replaced = bank.length - kept.length;
   fs.writeFileSync(BANK, `${JSON.stringify([...kept, ...items], null, 2)}\n`);
   console.log(`Merged into questions.json: ${bank.length} → ${kept.length + items.length} (${replaced} earlier owner items replaced).`);

@@ -12,7 +12,7 @@
  * browser bank (`client-bank.ts`) must apply the same rule, or the two pools
  * diverge and `public-bank-parity.test.ts` fails.
  */
-export const OWNER_SET_TAGS = ["owner_sc", "owner_rs"] as const;
+export const OWNER_SET_TAGS = ["owner_sc", "owner_rs", "owner_rc"] as const;
 export const RESERVED_UNIT_TAGS = ["simulation", ...OWNER_SET_TAGS] as const;
 
 export function isReservedForItsUnit(tags: readonly string[] | undefined): boolean {

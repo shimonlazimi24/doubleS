@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-13T21:58:53.537Z",
-  "totalQuestions": 582,
+  "generatedAt": "2026-10-19T06:00:53.636Z",
+  "totalQuestions": 748,
   "counts": {
-    "pass": 576,
+    "pass": 742,
     "needs_review": 6,
     "critical_issue": 0,
     "flagged": 6
   },
   "summaryByTopic": {
     "sentence_completion": {
-      "total": 141,
-      "pass": 140,
+      "total": 253,
+      "pass": 252,
       "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 99.91
+      "avgScore": 99.95
     },
     "rephrasing": {
       "total": 180,
@@ -23,11 +23,11 @@
       "avgScore": 99.73
     },
     "reading_comprehension": {
-      "total": 71,
-      "pass": 70,
+      "total": 125,
+      "pass": 124,
       "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 99.83
+      "avgScore": 99.9
     },
     "vocabulary": {
       "total": 190,
@@ -39,43 +39,43 @@
   },
   "summaryByDifficulty": {
     "1": {
-      "total": 62,
-      "pass": 61,
+      "total": 65,
+      "pass": 64,
       "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 99.81
+      "avgScore": 99.82
     },
     "2": {
-      "total": 61,
-      "pass": 58,
+      "total": 71,
+      "pass": 68,
       "needs_review": 3,
       "critical_issue": 0,
-      "avgScore": 99.41
+      "avgScore": 99.49
     },
     "3": {
-      "total": 141,
-      "pass": 140,
+      "total": 158,
+      "pass": 157,
       "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 99.91
+      "avgScore": 99.92
     },
     "4": {
-      "total": 126,
-      "pass": 125,
+      "total": 156,
+      "pass": 155,
       "needs_review": 1,
       "critical_issue": 0,
-      "avgScore": 99.9
+      "avgScore": 99.92
     },
     "5": {
-      "total": 120,
-      "pass": 120,
+      "total": 171,
+      "pass": 171,
       "needs_review": 0,
       "critical_issue": 0,
       "avgScore": 100
     },
     "6": {
-      "total": 72,
-      "pass": 72,
+      "total": 127,
+      "pass": 127,
       "needs_review": 0,
       "critical_issue": 0,
       "avgScore": 100

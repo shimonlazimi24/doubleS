@@ -268,52 +268,88 @@
           "estimatedMinutes": 15
         },
         {
-          "id": "lesson.sc.04",
-          "title": "מבחן תרגול - דוגמה (קל)",
+          "id": "lesson.sc.test-01",
+          "title": "מבחן תרגול 1 (קל)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.05",
-          "title": "מבחן תרגול 2 (קל)",
+          "id": "lesson.sc.test-02",
+          "title": "מבחן תרגול 2 (קל-בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.06",
+          "id": "lesson.sc.test-03",
           "title": "מבחן תרגול 3 (בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.07",
-          "title": "מבחן תרגול 4 (בינוני)",
+          "id": "lesson.sc.test-04",
+          "title": "מבחן תרגול 4 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.08",
-          "title": "מבחן תרגול 5 (קשה)",
+          "id": "lesson.sc.test-05",
+          "title": "מבחן תרגול 5 (קשה מאוד)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.09",
-          "title": "מבחן תרגול 6 (קשה)",
+          "id": "lesson.sc.test-06",
+          "title": "מבחן תרגול 6 (בינוני-קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.10",
-          "title": "מבחן תרגול 7 (מעורב)",
+          "id": "lesson.sc.test-07",
+          "title": "מבחן תרגול 7 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
         },
         {
-          "id": "lesson.sc.11",
-          "title": "מבחן תרגול 8 (מעורב)",
+          "id": "lesson.sc.test-08",
+          "title": "מבחן תרגול 8 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-09",
+          "title": "מבחן תרגול 9 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-10",
+          "title": "מבחן תרגול 10 (הקשה ביותר)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-11",
+          "title": "מבחן תרגול 11 (בינוני-קשה)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-12",
+          "title": "מבחן תרגול 12 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-13",
+          "title": "מבחן תרגול 13 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 10
+        },
+        {
+          "id": "lesson.sc.test-14",
+          "title": "מבחן תרגול 14 (הקשה ביותר)",
+          "kind": "text",
+          "estimatedMinutes": 10
         }
       ],
       "practiceSets": [
@@ -474,31 +510,31 @@
         },
         {
           "id": "lesson.rephrase.set-10",
-          "title": "מקבץ תרגול 10 (קשה מאוד)",
+          "title": "מקבץ תרגול 10 (הקשה ביותר)",
           "kind": "text",
           "estimatedMinutes": 10
         },
         {
           "id": "lesson.rephrase.set-11",
-          "title": "מקבץ תרגול 11 (קשה מאוד)",
+          "title": "מקבץ תרגול 11 (בינוני-קשה)",
           "kind": "text",
           "estimatedMinutes": 10
         },
         {
           "id": "lesson.rephrase.set-12",
-          "title": "מקבץ תרגול 12 (קשה מאוד)",
+          "title": "מקבץ תרגול 12 (קשה)",
           "kind": "text",
           "estimatedMinutes": 10
         },
         {
           "id": "lesson.rephrase.set-13",
-          "title": "מקבץ תרגול 13 (רמת פסגה)",
+          "title": "מקבץ תרגול 13 (קשה מאוד)",
           "kind": "text",
           "estimatedMinutes": 10
         },
         {
           "id": "lesson.rephrase.set-14",
-          "title": "מקבץ תרגול 14 (רמת פסגה)",
+          "title": "מקבץ תרגול 14 (הקשה ביותר)",
           "kind": "text",
           "estimatedMinutes": 10
         }
@@ -574,58 +610,64 @@
           "estimatedMinutes": 25
         },
         {
-          "id": "lesson.reading.04",
-          "title": "מבחן תרגול - דוגמה (בינוני)",
+          "id": "lesson.reading.passage-01",
+          "title": "קטע קריאה 1 (קל)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.05",
-          "title": "מבחן תרגול 1 (קל)",
+          "id": "lesson.reading.passage-02",
+          "title": "קטע קריאה 2 (קל-בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.06",
-          "title": "מבחן תרגול 2 (קל)",
+          "id": "lesson.reading.passage-03",
+          "title": "קטע קריאה 3 (קל-בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.07",
-          "title": "מבחן תרגול 3 (בינוני)",
+          "id": "lesson.reading.passage-04",
+          "title": "קטע קריאה 4 (בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.08",
-          "title": "מבחן תרגול 4 (בינוני)",
+          "id": "lesson.reading.passage-05",
+          "title": "קטע קריאה 5 (בינוני)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.09",
-          "title": "מבחן תרגול 5 (קשה)",
+          "id": "lesson.reading.passage-06",
+          "title": "קטע קריאה 6 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 17
         },
         {
-          "id": "lesson.reading.10",
-          "title": "מבחן תרגול 6 (קשה)",
+          "id": "lesson.reading.passage-07",
+          "title": "קטע קריאה 7 (קשה)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 20
         },
         {
-          "id": "lesson.reading.11",
-          "title": "מבחן תרגול 7 (מעורב)",
+          "id": "lesson.reading.passage-08",
+          "title": "קטע קריאה 8 (קשה מאוד)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 20
         },
         {
-          "id": "lesson.reading.12",
-          "title": "מבחן תרגול 8 (מעורב)",
+          "id": "lesson.reading.passage-09",
+          "title": "קטע קריאה 9 (קשה מאוד)",
           "kind": "text",
-          "estimatedMinutes": 25
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "lesson.reading.passage-10",
+          "title": "קטע קריאה 10 (הקשה ביותר)",
+          "kind": "text",
+          "estimatedMinutes": 20
         }
       ],
       "practiceSets": [

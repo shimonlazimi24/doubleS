@@ -260,6 +260,7 @@ function evaluateQuestion(q, stemFrequency) {
     "what is the main idea of the passage",
     "what is the main idea of this passage",
     "what is the main purpose of the passage",
+    "which of the following best expresses the main idea of the passage",
   ]);
   if (stemFrequency.get(stem) >= 3 && !CANONICAL_COMPREHENSION_STEMS.has(stem)) {
     const freq = stemFrequency.get(stem);

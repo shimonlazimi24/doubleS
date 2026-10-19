@@ -76,8 +76,11 @@ function lessonsByIds(lessons: ManifestLesson[], ids: readonly string[]): Manife
     .filter((l): l is ManifestLesson => l != null);
 }
 
+/** The content owner's practice tests, listed after the guides as the other modules list their sets. */
+const SC_OWNER_TEST_PREFIX = "lesson.sc.test-";
+
 export function getSentenceCompletionGuideLessons(lessons: ManifestLesson[]): ManifestLesson[] {
-  return lessonsByIds(lessons, SC_GUIDE_LESSON_IDS);
+  return [...lessonsByIds(lessons, SC_GUIDE_LESSON_IDS), ...lessons.filter((l) => l.id.startsWith(SC_OWNER_TEST_PREFIX))];
 }
 
 export function getSentenceCompletionVideoLessons(lessons: ManifestLesson[]): ManifestLesson[] {
