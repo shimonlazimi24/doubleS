@@ -17,7 +17,12 @@ import {
   type PremiumMarkdownSection,
 } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import { contentBlocksToPremiumFlow } from "@/lib/amirant-course/lesson-content/blocks-to-premium-flow";
-import { getLessonQuestionGroup, SIMULATION_LESSON_RUNTIME } from "@/lib/amirant-course/lesson-content/lesson-question-groups";
+import {
+  getLessonQuestionGroup,
+  SIMULATION_LESSON_RUNTIME,
+  WORD_FORMATION_LESSONS,
+} from "@/lib/amirant-course/lesson-content/lesson-question-groups";
+import { getWordFormationTest } from "@/lib/amirant-course/word-formation/word-formation.server";
 import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
 import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
@@ -50,6 +55,8 @@ const LEGACY_LESSON_REDIRECT: Record<string, string> = {
   "lesson.rephrase.10": "lesson.rephrase.set-07",
   "lesson.rephrase.11": "lesson.rephrase.set-08",
   "lesson.rephrase.12": "lesson.rephrase.set-09",
+  // The multiple-choice word-formation practice (7.5) was replaced by the owner's typed tests.
+  "lesson.reform.05": "lesson.reform.wf-01",
   // Likewise the eight sentence-completion quizzes and nine reading quizzes.
   "lesson.sc.04": "lesson.sc.test-01",
   "lesson.sc.05": "lesson.sc.test-02",
@@ -182,6 +189,8 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   const groupQuestions = questionGroup ? getBankQuestionsByTag(questionGroup.tag) : [];
   const hasInteractiveQuestions = groupQuestions.length > 0;
   const simulationRuntimeId = SIMULATION_LESSON_RUNTIME[params.lessonId] ?? null;
+  const wordFormation = WORD_FORMATION_LESSONS[params.lessonId] ?? null;
+  const wordFormationItems = wordFormation ? getWordFormationTest(wordFormation.test) : [];
   const rawLessonBody = md?.ok
     ? stripMasachNumberingForDisplay(markdownBodyForLesson(md.body, content))
     : null;
@@ -228,7 +237,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       flow = [...sectionItems, { kind: "gate" }];
     } else if (hit.lesson.id === "lesson.intro.roadmap") {
       flow = sectionItems;
-    } else if (questionGroup || simulationRuntimeId) {
+    } else if (questionGroup || simulationRuntimeId || wordFormation) {
       // שיעורי תרגול/סימולציה: בלי gates - הסבר ואז שאלות אינטראקטיביות
       // A set whose markdown is only a short introduction (no `##` sections) is
       // already shown in full by the intro step; the single synthetic section
@@ -261,6 +270,19 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         title: "תרגול אינטראקטיבי",
         questionIds: groupQuestions.map((q) => q.id),
         timeLimitSec: questionGroup.timeLimitSec,
+      },
+    ];
+  }
+  if (wordFormation && wordFormationItems.length > 0) {
+    flow = [
+      ...flow,
+      {
+        kind: "questions",
+        id: `word-formation-${wordFormation.test}`,
+        title: "יצירת מילה",
+        questionIds: [],
+        timeLimitSec: wordFormation.timeLimitSec,
+        wordFormation: wordFormationItems,
       },
     ];
   }

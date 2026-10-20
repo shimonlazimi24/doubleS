@@ -37,6 +37,10 @@ const FORBIDDEN = [
     why: "the lesson registry (lessons.json)",
   },
   {
+    pattern: /"?accepted"?\s*:\s*\["[A-Za-z]/g,
+    why: "word-formation answer keys (owner/wf-tests.json)",
+  },
+  {
     pattern: /SUPABASE_SERVICE_ROLE_KEY/g,
     why: "the service-role key name",
   },

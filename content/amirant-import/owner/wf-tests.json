@@ -1,0 +1,644 @@
+[
+  {
+    "id": "wf-t01-q1",
+    "test": 1,
+    "n": 1,
+    "sentence": "The sign near the river says the water is ________, so nobody should swim there.",
+    "baseWord": "danger",
+    "accepted": [
+      "dangerous"
+    ],
+    "mistakes": {
+      "danger": "הצורה danger (סכנה) היא מילת הבסיס, וקל להשאיר אותה כי המשפט עוסק בסכנה (nobody should swim there), אבל אחרי הצירוף the water is צריך שם תואר ולא שם עצם.\n\n_danger is a noun, but after the water is we need an adjective._",
+      "dangerously": "הצורה dangerously מתאימה לרעיון של סכנה (nobody should swim there), אבל אחרי הצירוף the water is בא שם תואר שמתאר את המים, ולא תואר פועל.\n\n_dangerously is an adverb, but the water is needs an adjective._",
+      "dangerus": "הצורה dangerus נראית נכונה כי היא מתאימה למים שאסור לשחות בהם (nobody should swim there), אבל באיות הנכון משתמשים בסיומת -ous, ולכן אחרי הצירוף the water is כותבים dangerous.\n\n_The meaning fits nobody should swim there, but the suffix is spelled -ous._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף the water is צריך שם תואר, והחלק nobody should swim there מראה שהמים מסוכנים, ולכן התשובה היא dangerous (מסוכן), עם הסיומת -ous.\n\n_After the water is we need an adjective, and nobody should swim there shows the water is dangerous, formed with -ous._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הצירוף the water is צריך שם תואר שמתאר את המים, ולא שם עצם. משם העצם danger (סכנה) יוצרים שם תואר בעזרת הסיומת -ous, ומקבלים dangerous (מסוכן). החלק nobody should swim there מראה שהמים אינם בטוחים, וזה בדיוק מה שהמילה dangerous אומרת. השורה התחתונה: אחרי הפועל is מחפשים שם תואר, והסיומת -ous יוצרת אותו משם עצם.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף the water is צריך שם תואר. אין צורך בשלילה, ובאיות מוסיפים את הסיומת -ous בלי שינוי, וכך מקבלים dangerous.\n\n_Part of speech from position: Part of speech: an adjective after the water is. Negative? No. Spelling: add -ous with no change._\n\n**טעויות נפוצות**\n\n✗ danger — הצורה danger (סכנה) היא מילת הבסיס, וקל להשאיר אותה כי המשפט עוסק בסכנה (nobody should swim there), אבל אחרי הצירוף the water is צריך שם תואר ולא שם עצם.\n\n_danger is a noun, but after the water is we need an adjective._\n\n✗ dangerously — הצורה dangerously מתאימה לרעיון של סכנה (nobody should swim there), אבל אחרי הצירוף the water is בא שם תואר שמתאר את המים, ולא תואר פועל.\n\n_dangerously is an adverb, but the water is needs an adjective._\n\n✗ dangerus — הצורה dangerus נראית נכונה כי היא מתאימה למים שאסור לשחות בהם (nobody should swim there), אבל באיות הנכון משתמשים בסיומת -ous, ולכן אחרי הצירוף the water is כותבים dangerous.\n\n_The meaning fits nobody should swim there, but the suffix is spelled -ous._\n\n_After the water is we need an adjective. Add -ous to danger: dangerous, which fits nobody should swim there._\n\n**✓ תשובה סופית:** dangerous\n\n**מילים לשינון:** dangerous – מסוכן"
+  },
+  {
+    "id": "wf-t01-q2",
+    "test": 1,
+    "n": 2,
+    "sentence": "My parents have four ________: my brother, my two sisters and me.",
+    "baseWord": "child",
+    "accepted": [
+      "children"
+    ],
+    "mistakes": {
+      "childs": "הצורה childs נשמעת כמו רבים רגיל אחרי המילה four, אבל הרבים של שם העצם child אינו מקבל את הסיומת -s, ולכן אחרי הצירוף have four כותבים children.\n\n_childs looks like a regular plural, but after have four we write children._",
+      "childrens": "הצורה childrens מפתה כי אחרי המילה four באמת צריך רבים, אבל הצורה children כבר מציינת רבים, ולכן אחרי הצירוף have four לא מוסיפים עוד את הסיומת -s.\n\n_children is already plural, so after have four no extra -s is added._",
+      "child": "הצורה child (ילד) היא מילת הבסיס, וקל לשכוח לשנות אותה במשפט על משפחה (My parents), אבל אחרי המילה four חייב לבוא שם עצם ברבים.\n\n_child is singular, but four needs a plural noun._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילה four צריך שם עצם ברבים, והרשימה my brother, my two sisters and me מונה כמה אנשים, ולכן שם העצם child הופך לצורת הרבים children (ילדים), בלי הסיומת -s.\n\n_After four, the list my brother, my two sisters and me needs a plural noun, and the plural of child is irregular: children._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי המילה four צריך שם עצם ברבים, והרשימה my brother, my two sisters and me מונה ארבעה אנשים. לשם העצם child (ילד) יש צורת רבים לא רגילה, הצורה children (ילדים), ולא מוסיפים לו את הסיומת -s. השורה התחתונה: כדאי לשנן צורות רבים לא רגילות, כמו הצורה children.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי המילה four צריך שם עצם ברבים. אין צורך בשלילה, ובאיות שם העצם child מקבל את צורת הרבים הלא רגילה children.\n\n_Part of speech from position: Part of speech: a plural noun after four. Negative? No. Spelling: the irregular plural children._\n\n**טעויות נפוצות**\n\n✗ childs — הצורה childs נשמעת כמו רבים רגיל אחרי המילה four, אבל הרבים של שם העצם child אינו מקבל את הסיומת -s, ולכן אחרי הצירוף have four כותבים children.\n\n_childs looks like a regular plural, but after have four we write children._\n\n✗ childrens — הצורה childrens מפתה כי אחרי המילה four באמת צריך רבים, אבל הצורה children כבר מציינת רבים, ולכן אחרי הצירוף have four לא מוסיפים עוד את הסיומת -s.\n\n_children is already plural, so after have four no extra -s is added._\n\n✗ child — הצורה child (ילד) היא מילת הבסיס, וקל לשכוח לשנות אותה במשפט על משפחה (My parents), אבל אחרי המילה four חייב לבוא שם עצם ברבים.\n\n_child is singular, but four needs a plural noun._\n\n_four needs a plural noun. The plural of child is irregular: children, with no -s._\n\n**✓ תשובה סופית:** children\n\n**מילים לשינון:** children – ילדים"
+  },
+  {
+    "id": "wf-t01-q3",
+    "test": 1,
+    "n": 3,
+    "sentence": "I asked the shop assistant where the shoes were, but she did not even look up, so I thought she was very ________.",
+    "baseWord": "help",
+    "accepted": [
+      "unhelpful"
+    ],
+    "mistakes": {
+      "helpful": "הצורה helpful (מועיל) היא שם התואר שמתאים אחרי הצירוף she was very, ולכן היא מפתה, אבל המילה but והחלק she did not even look up מראים שהמוכרת לא עזרה, ולכן חסרה התחילית un-.\n\n_helpful fits the slot, but but and she did not even look up show no help was given._",
+      "helpless": "הצורה helpless (חסר אונים) מוסיפה שלילה כמו שהמשפט דורש (but she did not even look up), אבל היא מתארת מי שאינו מסוגל לפעול, ואילו המוכרת פשוט בחרה לא להתייחס, ולכן הצירוף she was very מצריך את המילה unhelpful.\n\n_helpless means unable to act, but the assistant simply chose not to help: she did not even look up._",
+      "unhelpfull": "הצורה unhelpfull נראית נכונה כי היא מתאימה למוכרת שלא עזרה (she did not even look up), אבל הסיומת -ful נכתבת עם אות l אחת, ולכן אחרי הצירוף she was very כותבים unhelpful.\n\n_The meaning fits she did not even look up, but the suffix -ful has one l._"
+    },
+    "explanation": "**הסבר קצר:** המילה but והחלק she did not even look up מראים שהמוכרת לא עזרה, ולכן התשובה היא שם התואר unhelpful (לא עוזר, לא מוכן לעזור), עם התחילית un- לפני המילה helpful.\n\n_but and she did not even look up show she gave no help, so the adjective is unhelpful, with un- before helpful._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הצירוף she was very צריך שם תואר, ולכן מהפועל help יוצרים את שם התואר helpful (מועיל). ההחלטה השנייה היא המשמעות: המילה but והחלק she did not even look up מראים שהמוכרת התעלמה, ולכן צריך שלילה והמילה הנכונה היא unhelpful (לא מוכן לעזור). הסיומת -less נותנת את המילה helpless (חסר אונים), והמשמעות הזאת לא מתאימה למוכרת שפשוט לא התייחסה. השורה התחתונה: מילת ניגוד היא סימן לבדוק אם צריך תחילית שלילה.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף she was very צריך שם תואר, שהוא המילה helpful. אחר כך שלילה: המילה but מראה שהמוכרת לא עזרה, ולכן מוסיפים את התחילית un- בלי שינוי איות, וכך מקבלים unhelpful.\n\n_Part of speech from position: Part of speech: an adjective after she was very. Negative? Yes: but shows she gave no help. Spelling: add un-, no change._\n\n**טעויות נפוצות**\n\n✗ helpful — הצורה helpful (מועיל) היא שם התואר שמתאים אחרי הצירוף she was very, ולכן היא מפתה, אבל המילה but והחלק she did not even look up מראים שהמוכרת לא עזרה, ולכן חסרה התחילית un-.\n\n_helpful fits the slot, but but and she did not even look up show no help was given._\n\n✗ helpless — הצורה helpless (חסר אונים) מוסיפה שלילה כמו שהמשפט דורש (but she did not even look up), אבל היא מתארת מי שאינו מסוגל לפעול, ואילו המוכרת פשוט בחרה לא להתייחס, ולכן הצירוף she was very מצריך את המילה unhelpful.\n\n_helpless means unable to act, but the assistant simply chose not to help: she did not even look up._\n\n✗ unhelpfull — הצורה unhelpfull נראית נכונה כי היא מתאימה למוכרת שלא עזרה (she did not even look up), אבל הסיומת -ful נכתבת עם אות l אחת, ולכן אחרי הצירוף she was very כותבים unhelpful.\n\n_The meaning fits she did not even look up, but the suffix -ful has one l._\n\n_After she was very we need an adjective. but and she did not even look up point to a negative: unhelpful._\n\n**✓ תשובה סופית:** unhelpful\n\n**מילים לשינון:** unhelpful – לא מועיל, לא עוזר"
+  },
+  {
+    "id": "wf-t01-q4",
+    "test": 1,
+    "n": 4,
+    "sentence": "Because it snowed all night, the ________ time of our train was changed from noon to two o'clock.",
+    "baseWord": "arrive",
+    "accepted": [
+      "arrival"
+    ],
+    "mistakes": {
+      "arriving": "הצורה arriving (מגיע) מתאימה לרכבת שמגיעה (our train), אבל בין המילה the לבין שם העצם time צריך שם עצם, ולכן כותבים arrival ולא צורת -ing.\n\n_arriving is a verb form, but between the and time we need a noun: arrival._",
+      "arriveal": "הצורה arriveal מפתה כי לפני שם העצם time באמת צריך שם עצם עם הסיומת -al, אבל האות e של הפועל נשמטת לפני הסיומת, ולכן אחרי המילה the כותבים arrival.\n\n_The noun ending -al is right, but the e drops: arrival._",
+      "arrive": "הצורה arrive (להגיע) היא מילת הבסיס, והיא מתאימה להקשר של רכבת (our train), אבל לפני שם העצם time צריך שם עצם ולא פועל.\n\n_arrive is a verb, but before time we need a noun._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה the לשם העצם time צריך שם עצם נוסף, ולכן הפועל arrive הופך לשם העצם arrival (הגעה), כשהאות e נשמטת לפני הסיומת -al.\n\n_Between the and time we need a noun, so arrive becomes arrival, dropping the e before -al._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: בין המילה the לשם העצם time (זמן) צריך שם עצם נוסף, כמו בצירוף arrival time (שעת הגעה). מהפועל arrive (להגיע) יוצרים שם עצם בעזרת הסיומת -al, ומקבלים arrival (הגעה). ההחלטה השנייה היא האיות: האות e האחרונה של הפועל נשמטת לפני הסיומת, ולכן לא כותבים arriveal. השורה התחתונה: אות e שקטה בסוף פועל נשמטת לפני סיומת שמתחילה בתנועה.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: בין המילה the לשם העצם time צריך שם עצם נוסף. אין צורך בשלילה, ובאיות האות e של הפועל arrive נשמטת לפני הסיומת -al, וכך מקבלים arrival.\n\n_Part of speech from position: Part of speech: a noun between the and time. Negative? No. Spelling: the e of arrive drops before -al._\n\n**טעויות נפוצות**\n\n✗ arriving — הצורה arriving (מגיע) מתאימה לרכבת שמגיעה (our train), אבל בין המילה the לבין שם העצם time צריך שם עצם, ולכן כותבים arrival ולא צורת -ing.\n\n_arriving is a verb form, but between the and time we need a noun: arrival._\n\n✗ arriveal — הצורה arriveal מפתה כי לפני שם העצם time באמת צריך שם עצם עם הסיומת -al, אבל האות e של הפועל נשמטת לפני הסיומת, ולכן אחרי המילה the כותבים arrival.\n\n_The noun ending -al is right, but the e drops: arrival._\n\n✗ arrive — הצורה arrive (להגיע) היא מילת הבסיס, והיא מתאימה להקשר של רכבת (our train), אבל לפני שם העצם time צריך שם עצם ולא פועל.\n\n_arrive is a verb, but before time we need a noun._\n\n_Between the and time we need a noun. arrive loses its e before -al: arrival._\n\n**✓ תשובה סופית:** arrival\n\n**מילים לשינון:** arrival – הגעה"
+  },
+  {
+    "id": "wf-t02-q1",
+    "test": 2,
+    "n": 1,
+    "sentence": "It was sunny all morning, but the sky ________ turned dark and it began to rain.",
+    "baseWord": "sudden",
+    "accepted": [
+      "suddenly"
+    ],
+    "mistakes": {
+      "sudden": "הצורה sudden (פתאומי) היא מילת הבסיס, והיא מתאימה לרעיון של שינוי מהיר (It was sunny all morning, but), אבל שם תואר לא מתאר פועל, ולכן לפני הפועל turned צריך את המילה suddenly.\n\n_sudden is an adjective, but before turned we need the adverb suddenly._",
+      "suddenlly": "הצורה suddenlly נראית נכונה כי היא תואר פועל שמתאר את השינוי בשמיים (the sky), אבל לפני הפועל turned מוסיפים את הסיומת -ly עם אות l אחת בלבד, ולכן כותבים suddenly.\n\n_The adverb is right, but sudden + -ly has only one extra l: suddenly._"
+    },
+    "explanation": "**הסבר קצר:** בין הנושא the sky לפועל turned צריך תואר פועל, ולכן שם התואר sudden הופך לתואר הפועל suddenly (פתאום) בעזרת הסיומת -ly.\n\n_Between the sky and turned we need an adverb, so sudden becomes suddenly with -ly._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: המקום הריק נמצא בין הנושא the sky (השמיים) לבין הפועל turned (הפך), ולכן צריך תואר פועל שמתאר את אופן השינוי. משם התואר sudden (פתאומי) יוצרים תואר פועל בעזרת הסיומת -ly, ומקבלים suddenly (פתאום). המשפט מתאר מעבר מהיר מבוקר שמשי (sunny all morning) לגשם, והמילה suddenly מתאימה לכך. השורה התחתונה: תואר פועל שמתאר פועל מקבל בדרך כלל את הסיומת -ly.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: בין הנושא the sky לפועל turned צריך תואר פועל. אין צורך בשלילה, ובאיות מוסיפים את הסיומת -ly לשם התואר sudden בלי שינוי, וכך מקבלים suddenly.\n\n_Part of speech from position: Part of speech: an adverb between the sky and turned. Negative? No. Spelling: add -ly to sudden, no change._\n\n**טעויות נפוצות**\n\n✗ sudden — הצורה sudden (פתאומי) היא מילת הבסיס, והיא מתאימה לרעיון של שינוי מהיר (It was sunny all morning, but), אבל שם תואר לא מתאר פועל, ולכן לפני הפועל turned צריך את המילה suddenly.\n\n_sudden is an adjective, but before turned we need the adverb suddenly._\n\n✗ suddenlly — הצורה suddenlly נראית נכונה כי היא תואר פועל שמתאר את השינוי בשמיים (the sky), אבל לפני הפועל turned מוסיפים את הסיומת -ly עם אות l אחת בלבד, ולכן כותבים suddenly.\n\n_The adverb is right, but sudden + -ly has only one extra l: suddenly._\n\n_Between the sky and turned we need an adverb, so we add -ly to sudden: suddenly._\n\n**✓ תשובה סופית:** suddenly\n\n**מילים לשינון:** suddenly – פתאום"
+  },
+  {
+    "id": "wf-t02-q2",
+    "test": 2,
+    "n": 2,
+    "sentence": "The teacher was proud of her class because their excellent ________ on the school trip was praised by every parent.",
+    "baseWord": "behave",
+    "accepted": [
+      "behavior",
+      "behaviour"
+    ],
+    "mistakes": {
+      "behave": "הצורה behave (להתנהג) היא מילת הבסיס, והיא מתאימה לנושא של תלמידים בטיול (the school trip), אבל אחרי הצירוף their excellent צריך שם עצם ולא פועל.\n\n_behave is a verb, but after their excellent we need a noun._",
+      "behaving": "הצורה behaving נשמעת אפשרית כי היא מתארת מה שהתלמידים עשו בטיול (on the school trip), אבל אחרי שם התואר excellent צריך שם עצם רגיל ולא צורת -ing.\n\n_behaving is a verb form, but excellent needs a real noun: behavior._",
+      "behavor": "הצורה behavor היא שם עצם שמתאים אחרי הצירוף their excellent, אבל בסיומת חייבות להופיע האותיות ior, ולכן אחרי הצירוף their excellent כותבים behavior.\n\n_It is a noun, but the ending needs -ior: behavior._"
+    },
+    "explanation": "**הסבר קצר:** אחרי שם התואר excellent צריך שם עצם ביחיד (הצירוף was praised מחייב יחיד), ולכן הפועל behave הופך לשם העצם behavior (התנהגות).\n\n_After excellent we need a singular noun (was praised), so behave becomes behavior._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הצירוף their excellent צריך שם עצם, והצירוף was praised מראה שהוא ביחיד. מהפועל behave (להתנהג) יוצרים את שם העצם behavior (התנהגות), והסיומת -ave של הפועל מוחלפת בסיומת -avior. הצורה הבריטית behaviour מתקבלת גם היא. המילה because מסבירה שהמורה גאה בגלל התנהגות טובה, ולכן אין צורך בשלילה.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף their excellent צריך שם עצם ביחיד. אין צורך בשלילה, ובאיות הסיומת -ave של הפועל behave הופכת לסיומת -avior, וכך מקבלים behavior.\n\n_Part of speech from position: Part of speech: a singular noun after their excellent. Negative? No. Spelling: behave becomes behavior (the UK spelling has -our)._\n\n**טעויות נפוצות**\n\n✗ behave — הצורה behave (להתנהג) היא מילת הבסיס, והיא מתאימה לנושא של תלמידים בטיול (the school trip), אבל אחרי הצירוף their excellent צריך שם עצם ולא פועל.\n\n_behave is a verb, but after their excellent we need a noun._\n\n✗ behaving — הצורה behaving נשמעת אפשרית כי היא מתארת מה שהתלמידים עשו בטיול (on the school trip), אבל אחרי שם התואר excellent צריך שם עצם רגיל ולא צורת -ing.\n\n_behaving is a verb form, but excellent needs a real noun: behavior._\n\n✗ behavor — הצורה behavor היא שם עצם שמתאים אחרי הצירוף their excellent, אבל בסיומת חייבות להופיע האותיות ior, ולכן אחרי הצירוף their excellent כותבים behavior.\n\n_It is a noun, but the ending needs -ior: behavior._\n\n_After their excellent we need a singular noun (was praised): behavior (the UK spelling has -our)._\n\n**✓ תשובה סופית:** behavior\n\n**מתקבל גם:** behaviour\n\n**מילים לשינון:** behavior – התנהגות"
+  },
+  {
+    "id": "wf-t02-q3",
+    "test": 2,
+    "n": 3,
+    "sentence": "The ________ of the film was slow, but the ending was so exciting that nobody left their seat.",
+    "baseWord": "begin",
+    "accepted": [
+      "beginning"
+    ],
+    "mistakes": {
+      "begin": "הצורה begin (להתחיל) היא מילת הבסיס, והיא מתאימה לרעיון של תחילת הסרט (of the film), אבל אחרי המילה The צריך שם עצם ולא פועל.\n\n_begin is a verb, but after The we need a noun._",
+      "begining": "הצורה begining נראית נכונה כי היא שם עצם עם הסיומת -ing אחרי המילה The, אבל האות n מוכפלת לפני הסיומת, ולכן לפני הצירוף of the film כותבים beginning.\n\n_The noun form is right, but the n doubles before -ing: beginning._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה The לצירוף of the film צריך שם עצם, ולכן הפועל begin הופך לשם העצם beginning (התחלה), כשהאות n מוכפלת לפני הסיומת -ing.\n\n_Between The and of the film we need a noun, so begin becomes beginning, doubling the n._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: בין המילה The לבין הצירוף of the film צריך שם עצם, והמילה was מראה שהוא ביחיד. מהפועל begin (להתחיל) יוצרים אותו בעזרת הסיומת -ing, ומקבלים beginning (התחלה), בניגוד לשם העצם ending (סיום) שבהמשך המשפט. ההחלטה השנייה היא האיות: ההברה האחרונה של הפועל מוטעמת ונגמרת בעיצור יחיד אחרי תנועה אחת, ולכן האות n מוכפלת לפני הסיומת -ing. השורה התחתונה: פועל כזה מכפיל את העיצור האחרון לפני סיומת.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: בין המילה The לצירוף of the film צריך שם עצם. אין צורך בשלילה, ובאיות האות n של הפועל begin מוכפלת לפני הסיומת -ing, וכך מקבלים beginning.\n\n_Part of speech from position: Part of speech: a noun between The and of the film. Negative? No. Spelling: double the n before -ing._\n\n**טעויות נפוצות**\n\n✗ begin — הצורה begin (להתחיל) היא מילת הבסיס, והיא מתאימה לרעיון של תחילת הסרט (of the film), אבל אחרי המילה The צריך שם עצם ולא פועל.\n\n_begin is a verb, but after The we need a noun._\n\n✗ begining — הצורה begining נראית נכונה כי היא שם עצם עם הסיומת -ing אחרי המילה The, אבל האות n מוכפלת לפני הסיומת, ולכן לפני הצירוף of the film כותבים beginning.\n\n_The noun form is right, but the n doubles before -ing: beginning._\n\n_Between The and of the film we need a noun. begin doubles its n before -ing: beginning._\n\n**✓ תשובה סופית:** beginning\n\n**מילים לשינון:** beginning – התחלה"
+  },
+  {
+    "id": "wf-t02-q4",
+    "test": 2,
+    "n": 4,
+    "sentence": "The book was originally ________ by a famous poet when she was only twenty, and it is still read in schools today.",
+    "baseWord": "write",
+    "accepted": [
+      "written"
+    ],
+    "mistakes": {
+      "writen": "הצורה writen נראית נכונה כי היא בינוני סביל אחרי הצירוף The book was originally, אבל האות t מוכפלת לפני הסיומת -en, ולכן לפני הצירוף by a famous poet כותבים written.\n\n_It is the right form, but the t doubles before -en: written._",
+      "wrote": "הצורה wrote (כתב) היא עבר פשוט, והיא מתאימה לסיפור על משוררת (a famous poet), אבל אחרי הצירוף The book was originally צריך בינוני סביל ולא עבר פשוט.\n\n_wrote is the simple past, but after The book was originally we need a participle._",
+      "writed": "הצורה writed מנסה ליצור עבר בעזרת הסיומת -ed כמו בפעלים רגילים (when she was only twenty), אבל הפועל write אינו רגיל, ולכן אחרי הצירוף The book was originally כותבים written.\n\n_write is irregular and does not take -ed: written._"
+    },
+    "explanation": "**הסבר קצר:** בין הצירוף The book was originally לבין הצירוף by a famous poet צריך בינוני סביל, ולכן הפועל write הופך לבינוני הסביל written (נכתב), עם אות t כפולה.\n\n_Between The book was originally and by a famous poet we need a passive participle: written, with a double t._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: הצירוף The book was originally והצירוף by a famous poet מראים משפט סביל, ולכן צריך בינוני סביל. הבינוני הסביל של הפועל write (לכתוב) הוא הצורה written (נכתב), והוא אינו נוצר בעזרת -ed אלא בצורה לא רגילה. ההחלטה השנייה היא האיות: האות t מוכפלת לפני הסיומת -en. השורה התחתונה: אחרי הפועל was במשפט סביל כדאי לבדוק את הצורה השלישית של הפועל.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: בין הצירוף The book was originally לבין הצירוף by a famous poet צריך בינוני סביל. אין צורך בשלילה, ובאיות מוסיפים אות t שנייה לפני הסיומת -en, וכך מקבלים written.\n\n_Part of speech from position: Part of speech: a passive participle between The book was originally and by a famous poet. Negative? No. Spelling: double t before -en._\n\n**טעויות נפוצות**\n\n✗ writen — הצורה writen נראית נכונה כי היא בינוני סביל אחרי הצירוף The book was originally, אבל האות t מוכפלת לפני הסיומת -en, ולכן לפני הצירוף by a famous poet כותבים written.\n\n_It is the right form, but the t doubles before -en: written._\n\n✗ wrote — הצורה wrote (כתב) היא עבר פשוט, והיא מתאימה לסיפור על משוררת (a famous poet), אבל אחרי הצירוף The book was originally צריך בינוני סביל ולא עבר פשוט.\n\n_wrote is the simple past, but after The book was originally we need a participle._\n\n✗ writed — הצורה writed מנסה ליצור עבר בעזרת הסיומת -ed כמו בפעלים רגילים (when she was only twenty), אבל הפועל write אינו רגיל, ולכן אחרי הצירוף The book was originally כותבים written.\n\n_write is irregular and does not take -ed: written._\n\n_In a passive sentence (was ... by a famous poet) we need a participle: written, with a double t._\n\n**✓ תשובה סופית:** written\n\n**מילים לשינון:** written – נכתב"
+  },
+  {
+    "id": "wf-t03-q1",
+    "test": 3,
+    "n": 1,
+    "sentence": "The final match seemed ________ to win after our best player was injured, but the team played brilliantly and won.",
+    "baseWord": "possible",
+    "accepted": [
+      "impossible"
+    ],
+    "mistakes": {
+      "possible": "הצורה possible (אפשרי) היא שם התואר שמתאים אחרי הפועל seemed, ולכן היא מפתה, אבל המילה but מראה שהניצחון נראה בלתי אפשרי אחרי שהשחקן הטוב ביותר נפצע (our best player was injured), ולכן חסרה תחילית שלילה.\n\n_possible fits the slot, but but shows that after our best player was injured winning looked hopeless._",
+      "unpossible": "הצורה unpossible מוסיפה שלילה כמו שהמשפט דורש (but the team played brilliantly), אבל עם המילה possible לא משתמשים בתחילית un-, ולכן אחרי הפועל seemed כותבים impossible.\n\n_The negative idea fits but, yet possible does not take un-: impossible._",
+      "inpossible": "הצורה inpossible בוחרת בתחילית שלילה מסוג in- כמו שהמשפט דורש (our best player was injured), אבל לפני האות p התחילית in- הופכת לתחילית im-, ולכן אחרי הפועל seemed כותבים impossible.\n\n_The negative is right, but in- becomes im- before p: impossible._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הפועל seemed צריך שם תואר, והמילה but מראה שהניצחון נראה בלתי אפשרי, ולכן שם התואר possible מקבל את התחילית im- ומתקבל impossible (בלתי אפשרי).\n\n_After seemed we need an adjective, and but shows winning looked hopeless, so possible takes im-: impossible._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הפועל seemed צריך שם תואר, ולכן שם התואר possible (אפשרי) מתאים מבחינת הצורה. ההחלטה השנייה היא המשמעות: המילה but יוצרת ניגוד בין מה שנראה אחרי שהשחקן הטוב ביותר נפצע (our best player was injured) לבין מה שקרה בפועל (the team played brilliantly and won), ולכן הניצחון נראה בלתי אפשרי. ההחלטה השלישית היא האיות: לפני האות p התחילית in- הופכת לתחילית im-, ולכן כותבים impossible. השורה התחתונה: מילת ניגוד היא סימן לבדוק אם צריך שלילה.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הפועל seemed צריך שם תואר. אחר כך שלילה: המילה but מראה שהניצחון נראה בלתי אפשרי, ולכן מוסיפים תחילית שלילה, ובאיות לפני האות p כותבים את התחילית im-, וכך מקבלים impossible.\n\n_Part of speech from position: Part of speech: an adjective after seemed. Negative? Yes: but shows winning looked hopeless. Spelling: im- before p._\n\n**טעויות נפוצות**\n\n✗ possible — הצורה possible (אפשרי) היא שם התואר שמתאים אחרי הפועל seemed, ולכן היא מפתה, אבל המילה but מראה שהניצחון נראה בלתי אפשרי אחרי שהשחקן הטוב ביותר נפצע (our best player was injured), ולכן חסרה תחילית שלילה.\n\n_possible fits the slot, but but shows that after our best player was injured winning looked hopeless._\n\n✗ unpossible — הצורה unpossible מוסיפה שלילה כמו שהמשפט דורש (but the team played brilliantly), אבל עם המילה possible לא משתמשים בתחילית un-, ולכן אחרי הפועל seemed כותבים impossible.\n\n_The negative idea fits but, yet possible does not take un-: impossible._\n\n✗ inpossible — הצורה inpossible בוחרת בתחילית שלילה מסוג in- כמו שהמשפט דורש (our best player was injured), אבל לפני האות p התחילית in- הופכת לתחילית im-, ולכן אחרי הפועל seemed כותבים impossible.\n\n_The negative is right, but in- becomes im- before p: impossible._\n\n_After seemed we need an adjective. but shows winning looked hopeless, so we add im- before p: impossible._\n\n**✓ תשובה סופית:** impossible\n\n**מילים לשינון:** impossible – בלתי אפשרי"
+  },
+  {
+    "id": "wf-t03-q2",
+    "test": 3,
+    "n": 2,
+    "sentence": "Doctors now understand how germs spread because of several important new ________ made in the nineteenth century.",
+    "baseWord": "discover",
+    "accepted": [
+      "discoveries"
+    ],
+    "mistakes": {
+      "discoverys": "הצורה discoverys נראית כמו רבים רגיל אחרי הצירוף several important new, אבל אחרי עיצור האות y מוחלפת בסיומת -ies, ולכן לפני הצירוף made in the nineteenth century כותבים discoveries.\n\n_It looks like a regular plural, but y after a consonant changes to ies._",
+      "discovery": "הצורה discovery (תגלית) היא שם העצם שמתאים לרעיון של המשפט (how germs spread), אבל המילה several דורשת רבים, ולכן כותבים discoveries.\n\n_discovery is the right noun, but several needs a plural._",
+      "discovers": "הצורה discovers מסתיימת בסיומת -s ולכן נראית כמו רבים אחרי הצירוף several important new, אבל היא פועל ולא שם עצם, ולכן אחרי הצירוף several important new צריך את המילה discoveries.\n\n_discovers is a verb, but after several important new we need a noun._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף several important new צריך שם עצם ברבים, ולכן הפועל discover הופך לשם העצם ברבים discoveries (תגליות), עם סיומת -ies במקום האות y.\n\n_After several important new we need a plural noun, so discover becomes discoveries, with y changing to ies._\n\n**הסבר מלא:** אחרי הצירוף several important new צריך שם עצם ברבים, ומהפועל discover (לגלות) יוצרים את שם העצם discovery (תגלית) בעזרת הסיומת -y. כדי ליצור רבים מחליפים את האות y שאחרי עיצור בסיומת -ies, ולכן כותבים discoveries ולא הצורה discoverys. המילה important מראה שמדובר בתגליות חיוביות, ולכן אין צורך בשלילה. השורה התחתונה: שם עצם שנגמר בסיומת -y אחרי עיצור מקבל רבים בסיומת -ies.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף several important new צריך שם עצם ברבים. אין צורך בשלילה, ובאיות שם העצם discovery מחליף את האות y שאחרי עיצור בסיומת -ies, וכך מקבלים discoveries.\n\n_Part of speech from position: Part of speech: a plural noun after several important new. Negative? No. Spelling: discovery changes y to ies._\n\n**טעויות נפוצות**\n\n✗ discoverys — הצורה discoverys נראית כמו רבים רגיל אחרי הצירוף several important new, אבל אחרי עיצור האות y מוחלפת בסיומת -ies, ולכן לפני הצירוף made in the nineteenth century כותבים discoveries.\n\n_It looks like a regular plural, but y after a consonant changes to ies._\n\n✗ discovery — הצורה discovery (תגלית) היא שם העצם שמתאים לרעיון של המשפט (how germs spread), אבל המילה several דורשת רבים, ולכן כותבים discoveries.\n\n_discovery is the right noun, but several needs a plural._\n\n✗ discovers — הצורה discovers מסתיימת בסיומת -s ולכן נראית כמו רבים אחרי הצירוף several important new, אבל היא פועל ולא שם עצם, ולכן אחרי הצירוף several important new צריך את המילה discoveries.\n\n_discovers is a verb, but after several important new we need a noun._\n\n_After several important new we need a plural noun: discovery changes y to ies, so discoveries._\n\n**✓ תשובה סופית:** discoveries\n\n**מילים לשינון:** discoveries – תגליות"
+  },
+  {
+    "id": "wf-t03-q3",
+    "test": 3,
+    "n": 3,
+    "sentence": "Although many drivers think a quick stop does no harm, parking in front of a fire hydrant is ________ in most cities, where even a venial lapse can bring a steep fine.",
+    "baseWord": "legal",
+    "accepted": [
+      "illegal"
+    ],
+    "mistakes": {
+      "legal": "הצורה legal (חוקי) היא שם התואר שמתאים אחרי הצירוף a fire hydrant is, ולכן היא מפתה, אבל המילה Although והחלק a steep fine מראים שהחניה אסורה, ולכן חסרה תחילית שלילה.\n\n_legal fits the slot, but Although and a steep fine show that parking there is banned._",
+      "unlegal": "הצורה unlegal מוסיפה שלילה כמו שהמשפט דורש (a steep fine), אבל עם המילה legal לא משתמשים בתחילית un-, ולכן אחרי הצירוף a fire hydrant is כותבים illegal.\n\n_The negative idea fits a steep fine, but legal does not take un-: illegal._",
+      "inlegal": "הצורה inlegal בוחרת בתחילית שלילה מסוג in- כמו שהמשפט דורש (Although many drivers), אבל לפני האות l התחילית in- הופכת לתחילית il-, ולכן אחרי הצירוף a fire hydrant is כותבים illegal.\n\n_The negative is right, but in- becomes il- before l: illegal._",
+      "ilegal": "הצורה ilegal מפתה כי השלילה בתחילית il- נכונה (a steep fine), אבל התחילית מתחברת למילה legal בלי למחוק אות, ולכן אחרי הצירוף a fire hydrant is כותבים illegal עם האותיות ll.\n\n_The prefix il- is right, but no letter is dropped: il- + legal = illegal._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף a fire hydrant is צריך שם תואר, והמילה Although עם הקנס (a steep fine) מראים שהחניה אסורה, ולכן שם התואר legal מקבל את התחילית il- ומתקבל illegal (בלתי חוקי).\n\n_After a fire hydrant is we need an adjective, and Although with a steep fine shows parking there is banned, so legal takes il-: illegal._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הצירוף a fire hydrant is צריך שם תואר. ההחלטה השנייה היא המשמעות: המילה Although מציגה את מה שנהגים רבים חושבים (a quick stop does no harm), והקנס הגבוה (a steep fine) מראה שהחניה אסורה, ולכן צריך שלילה. ההחלטה השלישית היא האיות: לפני האות l התחילית in- הופכת לתחילית il-, ולכן כותבים illegal (בלתי חוקי) עם האותיות ll. השורה התחתונה: מילת ויתור (Although) היא סימן לבדוק אם צריך שלילה.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף a fire hydrant is צריך שם תואר. אחר כך שלילה: המילה Although והקנס הגבוה (a steep fine) מראים שהחניה אסורה, ולכן מוסיפים תחילית שלילה, ובאיות לפני האות l כותבים את התחילית il-, וכך מקבלים illegal.\n\n_Part of speech from position: Part of speech: an adjective after a fire hydrant is. Negative? Yes: Although and a steep fine show it is banned. Spelling: il- before l._\n\n**טעויות נפוצות**\n\n✗ legal — הצורה legal (חוקי) היא שם התואר שמתאים אחרי הצירוף a fire hydrant is, ולכן היא מפתה, אבל המילה Although והחלק a steep fine מראים שהחניה אסורה, ולכן חסרה תחילית שלילה.\n\n_legal fits the slot, but Although and a steep fine show that parking there is banned._\n\n✗ unlegal — הצורה unlegal מוסיפה שלילה כמו שהמשפט דורש (a steep fine), אבל עם המילה legal לא משתמשים בתחילית un-, ולכן אחרי הצירוף a fire hydrant is כותבים illegal.\n\n_The negative idea fits a steep fine, but legal does not take un-: illegal._\n\n✗ inlegal — הצורה inlegal בוחרת בתחילית שלילה מסוג in- כמו שהמשפט דורש (Although many drivers), אבל לפני האות l התחילית in- הופכת לתחילית il-, ולכן אחרי הצירוף a fire hydrant is כותבים illegal.\n\n_The negative is right, but in- becomes il- before l: illegal._\n\n✗ ilegal — הצורה ilegal מפתה כי השלילה בתחילית il- נכונה (a steep fine), אבל התחילית מתחברת למילה legal בלי למחוק אות, ולכן אחרי הצירוף a fire hydrant is כותבים illegal עם האותיות ll.\n\n_The prefix il- is right, but no letter is dropped: il- + legal = illegal._\n\n_After a fire hydrant is we need an adjective. Although and a steep fine point to a negative, and il- goes before l: illegal._\n\n**✓ תשובה סופית:** illegal\n\n**מילים לשינון:** illegal – בלתי חוקי · venial [VEE-nee-ul /ˈviːniəl/] – קל, בר-סליחה"
+  },
+  {
+    "id": "wf-t03-q4",
+    "test": 3,
+    "n": 4,
+    "sentence": "Although the exam question looked simple, most students could not give a clear ________ of why their answer was correct.",
+    "baseWord": "explain",
+    "accepted": [
+      "explanation"
+    ],
+    "mistakes": {
+      "explaination": "הצורה explaination נראית נכונה כי היא שם עצם עם הסיומת -ation אחרי הצירוף a clear, אבל האותיות ai הופכות לאות a, ולכן לפני הצירוף of why כותבים explanation.\n\n_The noun ending is right, but ai becomes a: explanation._",
+      "explaining": "הצורה explaining (מסביר) נשמעת אפשרית כי היא מתארת את מה שהתלמידים לא הצליחו לעשות (could not give), אבל אחרי הצירוף a clear צריך שם עצם ולא צורת -ing.\n\n_explaining is a verb form, but after a clear we need a noun._",
+      "explanations": "הצורה explanations היא שם עצם שמתאים אחרי הצירוף give a clear, אבל הצירוף a clear מחייב שם עצם ביחיד, ולכן כותבים explanation בלי הסיומת -s.\n\n_explanations is plural, but a clear needs a singular noun._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף give a clear צריך שם עצם ביחיד, ולכן הפועל explain הופך לשם העצם explanation (הסבר), כשהאותיות ai הופכות לאות a.\n\n_After give a clear we need a singular noun, so explain becomes explanation, where ai changes to a._\n\n**הסבר מלא:** ההחלטה הראשונה היא חלק הדיבר: אחרי הצירוף a clear ולפני מילת היחס of צריך שם עצם ביחיד. מהפועל explain (להסביר) יוצרים את שם העצם explanation (הסבר) בעזרת הסיומת -ation. ההחלטה השנייה היא האיות: האותיות ai של הפועל הופכות לאות a לפני הסיומת, ולכן כותבים explanation ולא האיות explaination. השורה התחתונה: הפועל explain משנה את האיות שלו לפני הסיומת -ation.\n\n💡 שיטה: חלק דיבר לפי המיקום — קודם חלק הדיבר: אחרי הצירוף a clear צריך שם עצם ביחיד. אין צורך בשלילה, ובאיות האותיות ai של הפועל explain הופכות לאות a לפני הסיומת -ation, וכך מקבלים explanation.\n\n_Part of speech from position: Part of speech: a singular noun after a clear. Negative? No. Spelling: ai of explain becomes a before -ation._\n\n**טעויות נפוצות**\n\n✗ explaination — הצורה explaination נראית נכונה כי היא שם עצם עם הסיומת -ation אחרי הצירוף a clear, אבל האותיות ai הופכות לאות a, ולכן לפני הצירוף of why כותבים explanation.\n\n_The noun ending is right, but ai becomes a: explanation._\n\n✗ explaining — הצורה explaining (מסביר) נשמעת אפשרית כי היא מתארת את מה שהתלמידים לא הצליחו לעשות (could not give), אבל אחרי הצירוף a clear צריך שם עצם ולא צורת -ing.\n\n_explaining is a verb form, but after a clear we need a noun._\n\n✗ explanations — הצורה explanations היא שם עצם שמתאים אחרי הצירוף give a clear, אבל הצירוף a clear מחייב שם עצם ביחיד, ולכן כותבים explanation בלי הסיומת -s.\n\n_explanations is plural, but a clear needs a singular noun._\n\n_After give a clear we need a singular noun. explain changes ai to a before -ation: explanation._\n\n**✓ תשובה סופית:** explanation\n\n**מילים לשינון:** explanation – הסבר"
+  },
+  {
+    "id": "wf-t04-q1",
+    "test": 4,
+    "n": 1,
+    "sentence": "When the last bus left without us last night, my father ________ us home from the station in his old car.",
+    "baseWord": "drive",
+    "accepted": [
+      "drove"
+    ],
+    "mistakes": {
+      "drived": "הצורה drived מתאימה לעבר שהצירוף last night דורש, אבל הפועל drive חריג ולא מקבל את הסיומת -ed, ולכן אחרי הנושא my father כותבים את הצורה drove.\n\n_The past fits last night, but drive is irregular: drove._",
+      "driven": "הצורה driven קשורה לעבר, ולכן היא נראית מתאימה לצירוף last night, אבל זו הצורה השלישית של הפועל, שבאה רק אחרי פועל עזר כמו had, ואחרי הנושא my father אין פועל עזר.\n\n_driven needs a helping verb such as had, and there is none after my father._",
+      "drives": "הצורה drives מתאימה לנושא ביחיד כמו my father, אבל זו צורת הווה, והצירוף last night מחייב עבר.\n\n_drives is present tense, but last night requires the past._"
+    },
+    "explanation": "**הסבר קצר:** הצירוף last night והפועל left מראים שהסיפור קרה בעבר, ולכן צריך את צורת העבר החריגה של הפועל drive, כלומר את הצורה drove (הסיע).\n\n_last night and left put the sentence in the past, so we need the irregular past simple of drive: drove._\n\n**הסבר מלא:** המקום הריק בא אחרי הנושא my father ולפני המילה us, ולכן חסר כאן הפועל הראשי של המשפט. המילה When, הפועל left והצירוף last night מראים שהפעולה הסתיימה בעבר, ולכן צריך את הזמן past simple. הפועל drive חריג, וצורת העבר שלו היא drove (הסיע), בלי הסיומת -ed. כדאי לזכור את שלוש הצורות drive, drove, driven.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הנושא my father חסר פועל בעבר בגלל הצירוף last night, ואין צורך בשלילה. (2) הטיה: הפועל drive חריג, ולכן צורת העבר היא drove.\n\n_Part of speech from position: (1) A past verb is missing after my father (last night); no negative. (2) drive is irregular: drove._\n\n**טעויות נפוצות**\n\n✗ drived — הצורה drived מתאימה לעבר שהצירוף last night דורש, אבל הפועל drive חריג ולא מקבל את הסיומת -ed, ולכן אחרי הנושא my father כותבים את הצורה drove.\n\n_The past fits last night, but drive is irregular: drove._\n\n✗ driven — הצורה driven קשורה לעבר, ולכן היא נראית מתאימה לצירוף last night, אבל זו הצורה השלישית של הפועל, שבאה רק אחרי פועל עזר כמו had, ואחרי הנושא my father אין פועל עזר.\n\n_driven needs a helping verb such as had, and there is none after my father._\n\n✗ drives — הצורה drives מתאימה לנושא ביחיד כמו my father, אבל זו צורת הווה, והצירוף last night מחייב עבר.\n\n_drives is present tense, but last night requires the past._\n\n_A past verb is missing after my father; When, left and last night show the past, and drive is irregular: drove._\n\n**✓ תשובה סופית:** drove\n\n**מילים לשינון:** drove – נהג, הסיע (צורת העבר)"
+  },
+  {
+    "id": "wf-t04-q2",
+    "test": 4,
+    "n": 2,
+    "sentence": "Although the new office manager had seemed confident at her interview, she turned out to be so ________ that she kept losing important files and forgetting meetings.",
+    "baseWord": "organize",
+    "accepted": [
+      "disorganized",
+      "disorganised",
+      "unorganized",
+      "unorganised"
+    ],
+    "mistakes": {
+      "organized": "הצורה organized היא שם תואר שמתאים אחרי המילה so, אבל הצירוף kept losing important files מראה שהמנהלת לא הייתה מסודרת, ולכן חסרה תחילית שלילה.\n\n_Right part of speech, but kept losing important files needs a negative._",
+      "disorganizing": "הצורה disorganizing כוללת את השלילה שהצירוף kept losing important files דורש, אבל צורת -ing מתארת מי שגורם לבלגן אצל אחרים, ואילו הצירוף she turned out to be so מתאר את מצבה של המנהלת עצמה, ולכן צריך את הסיומת -ed.\n\n_The -ing form means causing disorder, but she turned out to be so describes her own state, so -ed is needed._",
+      "disorganization": "שם העצם disorganization נושא את המשמעות השלילית שהצירוף kept losing important files דורש, אבל אחרי המילים to be so צריך שם תואר ולא שם עצם.\n\n_It is a noun, but to be so needs an adjective._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילה so צריך שם תואר, והצירוף kept losing important files מראה שהמנהלת לא הייתה מסודרת, ולכן התשובה היא disorganized (מבולגן, לא מאורגן).\n\n_After so we need an adjective, and kept losing important files shows a negative meaning: disorganized._\n\n**הסבר מלא:** המקום הריק בא אחרי המילים to be so, ולכן צריך שם תואר שמתאר את המנהלת. המילה Although מסמנת ניגוד: בראיון היא נראתה בטוחה בעצמה, אבל בעבודה היא איבדה קבצים ושכחה פגישות (kept losing important files and forgetting meetings). לכן מוסיפים לשם התואר organized את התחילית dis- ומקבלים את הצורה disorganized (מבולגן). גם הצורה unorganized מתקבלת, אף שלתיאור אדם לא מסודר נהוג יותר disorganized, וכך גם האיות הבריטי עם האות s במקום האות z.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילה so צריך שם תואר. (2) שלילה: הצירוף kept losing important files מחייב משמעות שלילית, ולכן מוסיפים את התחילית dis- לצורה organized.\n\n_Part of speech from position: (1) After so: an adjective. (2) Negative? Yes, kept losing important files: add dis- to organized._\n\n**טעויות נפוצות**\n\n✗ organized — הצורה organized היא שם תואר שמתאים אחרי המילה so, אבל הצירוף kept losing important files מראה שהמנהלת לא הייתה מסודרת, ולכן חסרה תחילית שלילה.\n\n_Right part of speech, but kept losing important files needs a negative._\n\n✗ disorganizing — הצורה disorganizing כוללת את השלילה שהצירוף kept losing important files דורש, אבל צורת -ing מתארת מי שגורם לבלגן אצל אחרים, ואילו הצירוף she turned out to be so מתאר את מצבה של המנהלת עצמה, ולכן צריך את הסיומת -ed.\n\n_The -ing form means causing disorder, but she turned out to be so describes her own state, so -ed is needed._\n\n✗ disorganization — שם העצם disorganization נושא את המשמעות השלילית שהצירוף kept losing important files דורש, אבל אחרי המילים to be so צריך שם תואר ולא שם עצם.\n\n_It is a noun, but to be so needs an adjective._\n\n_so needs an adjective, and kept losing important files makes it negative: disorganized (unorganized is also accepted)._\n\n**✓ תשובה סופית:** disorganized\n\n**מתקבל גם:** disorganised / unorganized / unorganised\n\n**מילים לשינון:** disorganized – מבולגן, לא מאורגן"
+  },
+  {
+    "id": "wf-t04-q3",
+    "test": 4,
+    "n": 3,
+    "sentence": "Both research teams had meticulously checked exactly the same data, yet there was a sharp ________ between them over what the results actually showed.",
+    "baseWord": "agree",
+    "accepted": [
+      "disagreement"
+    ],
+    "mistakes": {
+      "agreement": "שם העצם agreement מתאים אחרי הצירוף a sharp, אבל המילה yet מראה שהתוצאה הפוכה למה שמצפים מנתונים זהים (the same data), כלומר הצוותים לא הסכימו.\n\n_Right part of speech, but yet shows the teams did not agree._",
+      "disagreeing": "הצורה disagreeing כוללת את השלילה שהמילה yet דורשת, אבל אחרי הצירוף a sharp לא באה צורת -ing, אלא שם העצם עם הסיומת -ment.\n\n_After a sharp English uses the noun with -ment, not the -ing form._",
+      "unagreement": "הצורה unagreement מוסיפה שלילה שמתאימה למילה yet, אבל המילה הזאת לא קיימת: שם העצם agreement מקבל את התחילית dis-, ולכן אחרי הצירוף a sharp כותבים את הצורה disagreement.\n\n_unagreement is not a word; agreement takes dis-._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף a sharp צריך שם עצם, והמילה yet מראה שלמרות הנתונים הזהים הצוותים לא הסכימו, ולכן התשובה היא disagreement (מחלוקת, אי הסכמה).\n\n_a sharp needs a noun, and yet signals that despite the same data the teams did not agree: disagreement._\n\n**הסבר מלא:** המקום הריק בא אחרי הצירוף a sharp, ולכן צריך שם עצם ביחיד. המילה yet מסמנת ניגוד: היה מצופה ששני צוותים שבדקו את אותם נתונים (the same data) יסכימו, ובכל זאת הם התווכחו על משמעות התוצאות. לכן מוסיפים לפועל agree את התחילית dis- ואת הסיומת -ment, ומקבלים את שם העצם disagreement (מחלוקת).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף a sharp צריך שם עצם ביחיד. (2) שלילה: המילה yet מראה שהציפייה להסכמה לא התממשה, ולכן מוסיפים את התחילית dis- לשם העצם agreement.\n\n_Part of speech from position: (1) After a sharp: a singular noun. (2) Negative? Yes, yet reverses the expected agreement: dis- + agreement._\n\n**טעויות נפוצות**\n\n✗ agreement — שם העצם agreement מתאים אחרי הצירוף a sharp, אבל המילה yet מראה שהתוצאה הפוכה למה שמצפים מנתונים זהים (the same data), כלומר הצוותים לא הסכימו.\n\n_Right part of speech, but yet shows the teams did not agree._\n\n✗ disagreeing — הצורה disagreeing כוללת את השלילה שהמילה yet דורשת, אבל אחרי הצירוף a sharp לא באה צורת -ing, אלא שם העצם עם הסיומת -ment.\n\n_After a sharp English uses the noun with -ment, not the -ing form._\n\n✗ unagreement — הצורה unagreement מוסיפה שלילה שמתאימה למילה yet, אבל המילה הזאת לא קיימת: שם העצם agreement מקבל את התחילית dis-, ולכן אחרי הצירוף a sharp כותבים את הצורה disagreement.\n\n_unagreement is not a word; agreement takes dis-._\n\n_a sharp needs a singular noun, and yet reverses the expected agreement: disagreement._\n\n**✓ תשובה סופית:** disagreement\n\n**מילים לשינון:** disagreement – מחלוקת, אי הסכמה · meticulously [muh-TIK-yuh-lus-lee /məˈtɪkjələsli/] – בקפדנות רבה, בדייקנות יתרה"
+  },
+  {
+    "id": "wf-t04-q4",
+    "test": 4,
+    "n": 4,
+    "sentence": "Although Dana's old car is slow and rather cramped, it is so ________ to run that she spends far less on gas than any of her friends.",
+    "baseWord": "economy",
+    "accepted": [
+      "economical"
+    ],
+    "mistakes": {
+      "economic": "הצורה economic היא שם תואר שמתאים אחרי המילה so, אבל פירושה קשור לכלכלה של מדינה או של עסק, ואילו הצירוף spends far less on gas מתאר מכונית חסכונית, ולכן צריך את שם התואר economical.\n\n_economic means related to the economy; spends far less on gas calls for economical (cheap to run)._",
+      "economically": "הצורה economically נושאת את רעיון החיסכון שהצירוף spends far less on gas מתאר, אבל זה תואר פועל, ואחרי המילים it is so צריך שם תואר.\n\n_It is an adverb, but it is so needs an adjective._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילה so צריך שם תואר, והצירוף spends far less on gas מראה שהמכונית חסכונית, ולכן התשובה היא economical (חסכוני), ולא הצורה economic (כלכלי).\n\n_After so we need an adjective meaning cheap to use, as spends far less on gas shows: economical, not economic._\n\n**הסבר מלא:** המקום הריק בא אחרי המילה so ולפני הצירוף to run, ולכן צריך שם תואר שמתאר את המכונית. המילה Although יוצרת ניגוד בין החסרונות (slow and rather cramped) לבין יתרון, והצירוף spends far less on gas מגלה שהיתרון הוא חיסכון בכסף. מהמילה economy נוצרים שני שמות תואר: שם התואר economic (קשור לכלכלה, כמו בצירוף economic growth) ושם התואר economical (חסכוני, שלא מבזבז כסף או דלק). כאן מתאים רק שם התואר economical.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילה so צריך שם תואר, ואין צורך בשלילה כי הצירוף spends far less on gas חיובי. (2) משמעות: מתוך שני שמות התואר של המילה economy, רק הצורה economical פירושה חסכוני.\n\n_Part of speech from position: (1) After so: an adjective; no negative, since spends far less on gas is positive. (2) Of the two adjectives, only economical means cheap to run._\n\n**טעויות נפוצות**\n\n✗ economic — הצורה economic היא שם תואר שמתאים אחרי המילה so, אבל פירושה קשור לכלכלה של מדינה או של עסק, ואילו הצירוף spends far less on gas מתאר מכונית חסכונית, ולכן צריך את שם התואר economical.\n\n_economic means related to the economy; spends far less on gas calls for economical (cheap to run)._\n\n✗ economically — הצורה economically נושאת את רעיון החיסכון שהצירוף spends far less on gas מתאר, אבל זה תואר פועל, ואחרי המילים it is so צריך שם תואר.\n\n_It is an adverb, but it is so needs an adjective._\n\n_so needs an adjective, and spends far less on gas means cheap to run: economical, not economic (related to the economy)._\n\n**✓ תשובה סופית:** economical\n\n**מילים לשינון:** economical – חסכוני · economic – כלכלי, של הכלכלה"
+  },
+  {
+    "id": "wf-t05-q1",
+    "test": 5,
+    "n": 1,
+    "sentence": "Despite the old bridge's solid appearance, engineers plan to ________ it with steel cables before heavier trucks are allowed to cross.",
+    "baseWord": "strong",
+    "accepted": [
+      "strengthen"
+    ],
+    "mistakes": {
+      "strongen": "הצורה strongen נראית סבירה, כי אחרי המילה to צריך פועל עם הסיומת -en, אבל המילה הזאת לא קיימת: הפועל נבנה משם העצם strength, ולכן לפני הצירוף it with steel cables כותבים את הצורה strengthen.\n\n_strongen is not a word; the verb is built on strength: strengthen._",
+      "strength": "שם העצם strength מתאים לרעיון של כבלי הפלדה (steel cables), אבל אחרי המילה to ולפני המילה it צריך פועל, ולכן חסרה הסיומת -en.\n\n_strength is a noun, but the slot after to needs a verb._",
+      "strenghten": "הצורה strenghten היא הפועל הנכון אחרי המילה to, אבל האיות שגוי: האות h באה אחרי האות t, ולכן לפני הצירוף it with steel cables כותבים את הצורה strengthen.\n\n_Right verb, wrong spelling: the letters are -gth-: strengthen._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה to לבין המילה it צריך פועל, ולכן הופכים את שם התואר strong לפועל strengthen (לחזק), עם שינוי האות o לאות e.\n\n_Between to and it we need a verb, so strong becomes strengthen (make stronger), with o changing to e._\n\n**הסבר מלא:** המקום הריק בא אחרי המילה to ולפני המילה it, ולכן צריך פועל בצורת המקור. המילה Despite מראה שלמרות המראה היציב של הגשר (solid appearance) המהנדסים רוצים להוסיף לו כבלי פלדה (steel cables), כלומר לחזק אותו. את הפועל בונים משם העצם strength (חוזק) ומהסיומת -en, ומקבלים את הפועל strengthen (לחזק). כדאי לשים לב לאיות: האות o שבמילה strong הופכת לאות e, והאותיות gth נשארות לפני הסיומת.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילה to ולפני המילה it צריך פועל, ואין צורך בשלילה. (2) איות: שם העצם strength ועוד הסיומת -en נותנים את הפועל strengthen.\n\n_Part of speech from position: (1) After to and before it: a verb; no negative. (2) Spelling: strength + -en = strengthen._\n\n**טעויות נפוצות**\n\n✗ strongen — הצורה strongen נראית סבירה, כי אחרי המילה to צריך פועל עם הסיומת -en, אבל המילה הזאת לא קיימת: הפועל נבנה משם העצם strength, ולכן לפני הצירוף it with steel cables כותבים את הצורה strengthen.\n\n_strongen is not a word; the verb is built on strength: strengthen._\n\n✗ strength — שם העצם strength מתאים לרעיון של כבלי הפלדה (steel cables), אבל אחרי המילה to ולפני המילה it צריך פועל, ולכן חסרה הסיומת -en.\n\n_strength is a noun, but the slot after to needs a verb._\n\n✗ strenghten — הצורה strenghten היא הפועל הנכון אחרי המילה to, אבל האיות שגוי: האות h באה אחרי האות t, ולכן לפני הצירוף it with steel cables כותבים את הצורה strengthen.\n\n_Right verb, wrong spelling: the letters are -gth-: strengthen._\n\n_to and it frame a verb: strong gives strength, and strength + -en = strengthen._\n\n**✓ תשובה סופית:** strengthen\n\n**מילים לשינון:** strengthen – לחזק"
+  },
+  {
+    "id": "wf-t05-q2",
+    "test": 5,
+    "n": 2,
+    "sentence": "Maya took full ________ for the mistake instead of blaming her colleagues, even though she was the newest member of the team.",
+    "baseWord": "responsible",
+    "accepted": [
+      "responsibility"
+    ],
+    "mistakes": {
+      "responsability": "הצורה responsability היא שם העצם הנכון אחרי הצירוף took full, אבל האיות שגוי: שם התואר responsible נכתב עם האות i, ולכן גם לפני הצירוף for the mistake כותבים את הסיומת -ibility.\n\n_Right noun, wrong spelling: responsible keeps its i: responsibility._",
+      "responsibleness": "הצורה responsibleness היא שם עצם, ולכן היא נראית מתאימה אחרי הצירוף took full, אבל זו מילה נדירה שמתארת תכונת אופי, ואילו קבלת האשמה על הטעות (for the mistake) מתבטאת רק בצירוף הקבוע take responsibility for.\n\n_responsibleness is a rare word for a character trait; accepting blame for the mistake is take responsibility for._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף took full צריך שם עצם, והצירוף instead of blaming her colleagues מראה שמאיה לקחה את האשמה על עצמה, ולכן התשובה היא responsibility (אחריות).\n\n_After took full we need a noun, and instead of blaming her colleagues shows she accepted the blame: responsibility._\n\n**הסבר מלא:** המקום הריק בא אחרי הצירוף took full, ולכן צריך שם עצם. הצירוף instead of blaming her colleagues מראה שמאיה לקחה את האשמה על עצמה, אף שהייתה החדשה בצוות (even though), ובאנגלית משתמשים לשם כך בצירוף הקבוע take responsibility for (לקחת אחריות על). משם התואר responsible בונים את שם העצם בעזרת הסיומת -ity: הסיומת -ible הופכת לסיומת -ibility, ומקבלים את הצורה responsibility. כדאי לשים לב שהאות i נשארת, ולא כותבים את האות a.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף took full צריך שם עצם, ואין צורך בשלילה. (2) איות: הסיומת -ible הופכת לסיומת -ibility, ולכן מקבלים את הצורה responsibility.\n\n_Part of speech from position: (1) After took full: a noun; no negative. (2) Spelling: -ible becomes -ibility: responsibility._\n\n**טעויות נפוצות**\n\n✗ responsability — הצורה responsability היא שם העצם הנכון אחרי הצירוף took full, אבל האיות שגוי: שם התואר responsible נכתב עם האות i, ולכן גם לפני הצירוף for the mistake כותבים את הסיומת -ibility.\n\n_Right noun, wrong spelling: responsible keeps its i: responsibility._\n\n✗ responsibleness — הצורה responsibleness היא שם עצם, ולכן היא נראית מתאימה אחרי הצירוף took full, אבל זו מילה נדירה שמתארת תכונת אופי, ואילו קבלת האשמה על הטעות (for the mistake) מתבטאת רק בצירוף הקבוע take responsibility for.\n\n_responsibleness is a rare word for a character trait; accepting blame for the mistake is take responsibility for._\n\n_took full needs a noun, and instead of blaming her colleagues points to take responsibility for; -ible becomes -ibility._\n\n**✓ תשובה סופית:** responsibility\n\n**מילים לשינון:** responsibility – אחריות"
+  },
+  {
+    "id": "wf-t05-q3",
+    "test": 5,
+    "n": 3,
+    "sentence": "Closed for two weeks of routine ________, the city's venerable tram line will reopen on Monday with new tracks and safer stations.",
+    "baseWord": "maintain",
+    "accepted": [
+      "maintenance"
+    ],
+    "mistakes": {
+      "maintainance": "הצורה maintainance שומרת על הפועל כמו שהוא ומתאימה כשם עצם אחרי המילה routine, אבל האיות שגוי: בשם העצם האותיות ai הופכות לאות e, ולכן אחרי המילים of routine כותבים את הצורה maintenance.\n\n_Right noun, wrong spelling: ai becomes e: maintenance._",
+      "maintenence": "הצורה maintenence כבר משנה את האותיות ai לאות e ומתאימה אחרי המילה routine, אבל הסיומת שגויה: הסיומת היא -ance עם האות a, ולכן אחרי הצירוף two weeks of routine כותבים את הצורה maintenance.\n\n_The e is right, but the ending is -ance: maintenance._",
+      "maintaining": "הצורה maintaining נושאת את רעיון התחזוקה שהצירוף new tracks and safer stations מתאר, אבל אחרי המילים of routine משתמשים בשם העצם הקיים maintenance, ולא בצורת -ing.\n\n_After of routine English uses the noun maintenance, not the -ing form._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילים of routine צריך שם עצם, והצירוף new tracks and safer stations מראה שהקו נסגר לעבודות תחזוקה, ולכן התשובה היא maintenance (תחזוקה).\n\n_After of routine we need a noun, and new tracks and safer stations point to upkeep work: maintenance._\n\n**הסבר מלא:** המשפט נפתח בפסוקית מקוצרת (Closed for two weeks of routine), והמקום הריק בא אחרי המילים of routine, ולכן צריך שם עצם. הקו נסגר לשבועיים ונפתח מחדש עם מסילות חדשות ותחנות בטוחות יותר (new tracks and safer stations), כלומר נעשו בו עבודות תחזוקה. שם העצם של הפועל maintain הוא maintenance (תחזוקה), והאיות משתנה: האותיות ai הופכות לאות e, והסיומת היא -ance.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילים of routine צריך שם עצם, ואין צורך בשלילה. (2) איות: האותיות ai שבפועל maintain הופכות לאות e, מוסיפים את הסיומת -ance, ומקבלים את הצורה maintenance.\n\n_Part of speech from position: (1) After of routine: a noun; no negative. (2) Spelling: ai becomes e, plus -ance: maintenance._\n\n**טעויות נפוצות**\n\n✗ maintainance — הצורה maintainance שומרת על הפועל כמו שהוא ומתאימה כשם עצם אחרי המילה routine, אבל האיות שגוי: בשם העצם האותיות ai הופכות לאות e, ולכן אחרי המילים of routine כותבים את הצורה maintenance.\n\n_Right noun, wrong spelling: ai becomes e: maintenance._\n\n✗ maintenence — הצורה maintenence כבר משנה את האותיות ai לאות e ומתאימה אחרי המילה routine, אבל הסיומת שגויה: הסיומת היא -ance עם האות a, ולכן אחרי הצירוף two weeks of routine כותבים את הצורה maintenance.\n\n_The e is right, but the ending is -ance: maintenance._\n\n✗ maintaining — הצורה maintaining נושאת את רעיון התחזוקה שהצירוף new tracks and safer stations מתאר, אבל אחרי המילים of routine משתמשים בשם העצם הקיים maintenance, ולא בצורת -ing.\n\n_After of routine English uses the noun maintenance, not the -ing form._\n\n_of routine needs a noun, and new tracks and safer stations show upkeep work: maintain becomes maintenance (ai to e, ending -ance)._\n\n**✓ תשובה סופית:** maintenance\n\n**מילים לשינון:** maintenance – תחזוקה · venerable [VEN-er-uh-bul /ˈvɛnərəbəl/] – ותיק ומכובד (בזכות גילו)"
+  },
+  {
+    "id": "wf-t05-q4",
+    "test": 5,
+    "n": 4,
+    "sentence": "Not until the company received hundreds of angry reviews did its managers realize how much ________ its vaunted new booking system had caused among loyal customers.",
+    "baseWord": "satisfy",
+    "accepted": [
+      "dissatisfaction"
+    ],
+    "mistakes": {
+      "unsatisfaction": "הצורה unsatisfaction מוסיפה את השלילה שהצירוף angry reviews דורש, אבל המילה הזאת לא קיימת: שם העצם satisfaction מקבל את התחילית dis-, ולכן אחרי המילים how much כותבים את הצורה dissatisfaction.\n\n_The negative fits angry reviews, but satisfaction takes dis-, not un-._",
+      "satisfaction": "שם העצם satisfaction מתאים אחרי המילים how much, אבל הצירוף hundreds of angry reviews מראה שהלקוחות לא היו מרוצים, ולכן חסרה תחילית שלילה.\n\n_Right part of speech, but hundreds of angry reviews requires a negative._",
+      "disatisfaction": "הצורה disatisfaction בוחרת נכון את התחילית dis- שהצירוף angry reviews דורש, אבל חסרה בה אות: התחילית dis- מסתיימת באות s ושם העצם satisfaction מתחיל באות s, ולכן אחרי המילים how much כותבים שתי אותיות s.\n\n_Right prefix, but dis- + satisfaction keeps both s letters: dissatisfaction._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילים how much צריך שם עצם שאינו בר־מנייה, והצירוף hundreds of angry reviews מראה שהלקוחות לא היו מרוצים, ולכן התשובה היא dissatisfaction (אי שביעות רצון).\n\n_how much needs an uncountable noun, and hundreds of angry reviews shows unhappy customers: dissatisfaction._\n\n**הסבר מלא:** המשפט נפתח בהיפוך Not until ... did, והמקום הריק בא אחרי המילים how much, ולכן צריך שם עצם שאינו בר־מנייה. הביקורות הזועמות (angry reviews) מראות שהמערכת גרמה ללקוחות אי שביעות רצון, ולכן צריך שלילה. השלילה כאן היא התחילית dis-, ולכן נוצרות שתי אותיות s ברצף, ובשם העצם הסוף -fy של הפועל satisfy הופך לסיומת -faction, ומקבלים את הצורה dissatisfaction.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילים how much צריך שם עצם, והצירוף angry reviews מחייב שלילה עם התחילית dis-. (2) איות: התחילית dis- ושם העצם satisfaction יוצרים שתי אותיות s ברצף, ומקבלים את הצורה dissatisfaction.\n\n_Part of speech from position: (1) After how much: a noun; angry reviews makes it negative with dis-. (2) Spelling: dis- + satisfaction keeps both s letters._\n\n**טעויות נפוצות**\n\n✗ unsatisfaction — הצורה unsatisfaction מוסיפה את השלילה שהצירוף angry reviews דורש, אבל המילה הזאת לא קיימת: שם העצם satisfaction מקבל את התחילית dis-, ולכן אחרי המילים how much כותבים את הצורה dissatisfaction.\n\n_The negative fits angry reviews, but satisfaction takes dis-, not un-._\n\n✗ satisfaction — שם העצם satisfaction מתאים אחרי המילים how much, אבל הצירוף hundreds of angry reviews מראה שהלקוחות לא היו מרוצים, ולכן חסרה תחילית שלילה.\n\n_Right part of speech, but hundreds of angry reviews requires a negative._\n\n✗ disatisfaction — הצורה disatisfaction בוחרת נכון את התחילית dis- שהצירוף angry reviews דורש, אבל חסרה בה אות: התחילית dis- מסתיימת באות s ושם העצם satisfaction מתחיל באות s, ולכן אחרי המילים how much כותבים שתי אותיות s.\n\n_Right prefix, but dis- + satisfaction keeps both s letters: dissatisfaction._\n\n_how much needs an uncountable noun, and angry reviews make it negative: dis- + satisfaction, with a double s._\n\n**✓ תשובה סופית:** dissatisfaction\n\n**מילים לשינון:** dissatisfaction – אי שביעות רצון · vaunted [VAWN-tid /ˈvɔːntɪd/] – שמשבחים אותו בגאווה רבה (לעיתים יותר מדי)"
+  },
+  {
+    "id": "wf-t06-q1",
+    "test": 6,
+    "n": 1,
+    "sentence": "________, although the airline had promised that the strike would end by Friday, all of its flights to Rome were canceled again over the weekend.",
+    "baseWord": "fortune",
+    "accepted": [
+      "Unfortunately"
+    ],
+    "mistakes": {
+      "unfortunately": "הצורה unfortunately נכונה במשמעות ובאיות ומתאימה לבשורה הרעה (were canceled again), אבל המילה פותחת את המשפט, לפני הצירוף although the airline had promised, ולכן צריך לכתוב אותה באות גדולה.\n\n_Right word, but it opens the sentence, so it needs a capital: Unfortunately._",
+      "Fortunately": "הצורה Fortunately מתאימה לתחילת המשפט ונראית קשורה להבטחה של חברת התעופה (the airline had promised), אבל הצירוף were canceled again מתאר בשורה רעה, ולכן חסרה התחילית un-.\n\n_were canceled again is bad news, so the negative prefix un- is needed._",
+      "Unfortunatly": "הצורה Unfortunatly בוחרת נכון את השלילה שהצירוף were canceled again דורש, אבל האיות שגוי: הסיומת -ly מתחברת לשם התואר fortunate בלי להשמיט את האות e, ולכן לפני הצירוף although the airline had promised כותבים את הצורה Unfortunately.\n\n_Right meaning, wrong spelling: fortunate keeps its e before -ly._"
+    },
+    "explanation": "**הסבר קצר:** בתחילת המשפט ולפני פסיק צריך תואר פועל באות גדולה, והצירוף were canceled again מראה שזו בשורה רעה, ולכן התשובה היא Unfortunately (למרבה הצער).\n\n_An adverb opens the sentence, and were canceled again is bad news: Unfortunately, with a capital U._\n\n**הסבר מלא:** המקום הריק בא בתחילת המשפט ואחריו פסיק, ולכן צריך תואר פועל שמביע את יחס הכותב לכל המשפט. המילה although יוצרת ניגוד בין ההבטחה של חברת התעופה לבין המציאות: כל הטיסות לרומא בוטלו שוב (were canceled again), וזו בשורה רעה, ולכן צריך שלילה. משם העצם fortune בונים את שם התואר fortunate, מוסיפים את התחילית un- ואת הסיומת -ly, ומקבלים את הצורה Unfortunately. מכיוון שהמילה פותחת את המשפט, כותבים אותה באות הגדולה U.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: בתחילת המשפט ולפני פסיק צריך תואר פועל, והצירוף were canceled again מחייב שלילה עם התחילית un-. (2) איות: שם התואר fortunate שומר על האות e לפני הסיומת -ly, והמילה הראשונה נכתבת באות גדולה, ולכן כותבים את הצורה Unfortunately.\n\n_Part of speech from position: (1) An opening adverb; were canceled again makes it negative: un-. (2) fortunate keeps its e before -ly, and the first word takes a capital: Unfortunately._\n\n**טעויות נפוצות**\n\n✗ unfortunately — הצורה unfortunately נכונה במשמעות ובאיות ומתאימה לבשורה הרעה (were canceled again), אבל המילה פותחת את המשפט, לפני הצירוף although the airline had promised, ולכן צריך לכתוב אותה באות גדולה.\n\n_Right word, but it opens the sentence, so it needs a capital: Unfortunately._\n\n✗ Fortunately — הצורה Fortunately מתאימה לתחילת המשפט ונראית קשורה להבטחה של חברת התעופה (the airline had promised), אבל הצירוף were canceled again מתאר בשורה רעה, ולכן חסרה התחילית un-.\n\n_were canceled again is bad news, so the negative prefix un- is needed._\n\n✗ Unfortunatly — הצורה Unfortunatly בוחרת נכון את השלילה שהצירוף were canceled again דורש, אבל האיות שגוי: הסיומת -ly מתחברת לשם התואר fortunate בלי להשמיט את האות e, ולכן לפני הצירוף although the airline had promised כותבים את הצורה Unfortunately.\n\n_Right meaning, wrong spelling: fortunate keeps its e before -ly._\n\n_An opening adverb is needed, and were canceled again is bad news: un- + fortunate + -ly, capitalized: Unfortunately._\n\n**✓ תשובה סופית:** Unfortunately\n\n**מילים לשינון:** unfortunately – למרבה הצער, לרוע המזל"
+  },
+  {
+    "id": "wf-t06-q2",
+    "test": 6,
+    "n": 2,
+    "sentence": "Finding the testimony of the defendant's erstwhile business partner ________ and full of contradictions, the jury rejected it within an hour.",
+    "baseWord": "convince",
+    "accepted": [
+      "unconvincing"
+    ],
+    "mistakes": {
+      "convincing": "הצורה convincing היא שם תואר שמתאים לעדות (the testimony), אבל הצירופים full of contradictions ו־rejected it מראים שהעדות לא שכנעה, ולכן חסרה התחילית un-.\n\n_Right part of speech, but full of contradictions and rejected it need a negative._",
+      "inconvincing": "הצורה inconvincing מוסיפה את השלילה שהצירוף rejected it דורש, אבל המילה הזאת לא קיימת: עם הצורה convincing תחילית השלילה היא un-, ולכן לפני הצירוף and full of contradictions כותבים את הצורה unconvincing.\n\n_convincing takes un-, not in-: unconvincing._",
+      "unconvinced": "הצורה unconvinced כוללת את השלילה שהצירוף rejected it דורש, אבל היא מתארת אדם שלא השתכנע, ואילו כאן המילה מתארת את העדות (the testimony) שלא שכנעה, ולכן צריך את הסיומת -ing.\n\n_unconvinced describes a person who is not persuaded; the testimony fails to persuade, so -ing is needed._"
+    },
+    "explanation": "**הסבר קצר:** העדות צריכה שם תואר, והצירופים full of contradictions ו־rejected it מראים שהיא לא שכנעה את המושבעים, ולכן התשובה היא unconvincing (לא משכנע).\n\n_The testimony needs an adjective, and full of contradictions and rejected it show it did not persuade: unconvincing._\n\n**הסבר מלא:** המשפט נפתח בפסוקית מקוצרת עם הפועל Finding, ואחרי המושא (the testimony) צריך שם תואר, בדיוק כמו שם התואר השני באותו מבנה (full of contradictions). העדות הייתה מלאה בסתירות, והמושבעים דחו אותה (rejected it), ולכן צריך שלילה. העדות היא מה שלא שכנע, ולכן מוסיפים לצורת -ing את התחילית un- ומקבלים את הצורה unconvincing (לא משכנע).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המושא the testimony צריך שם תואר, והצירוף rejected it מחייב שלילה עם התחילית un-. (2) צורה: העדות היא זו שלא משכנעת, ולכן צריך את הסיומת -ing ולא את הסיומת -ed.\n\n_Part of speech from position: (1) After the testimony: an adjective; rejected it makes it negative: un-. (2) The testimony is what fails to convince, so -ing, not -ed._\n\n**טעויות נפוצות**\n\n✗ convincing — הצורה convincing היא שם תואר שמתאים לעדות (the testimony), אבל הצירופים full of contradictions ו־rejected it מראים שהעדות לא שכנעה, ולכן חסרה התחילית un-.\n\n_Right part of speech, but full of contradictions and rejected it need a negative._\n\n✗ inconvincing — הצורה inconvincing מוסיפה את השלילה שהצירוף rejected it דורש, אבל המילה הזאת לא קיימת: עם הצורה convincing תחילית השלילה היא un-, ולכן לפני הצירוף and full of contradictions כותבים את הצורה unconvincing.\n\n_convincing takes un-, not in-: unconvincing._\n\n✗ unconvinced — הצורה unconvinced כוללת את השלילה שהצירוף rejected it דורש, אבל היא מתארת אדם שלא השתכנע, ואילו כאן המילה מתארת את העדות (the testimony) שלא שכנעה, ולכן צריך את הסיומת -ing.\n\n_unconvinced describes a person who is not persuaded; the testimony fails to persuade, so -ing is needed._\n\n_the testimony needs an adjective; full of contradictions and rejected it make it negative, and the testimony fails to convince: unconvincing._\n\n**✓ תשובה סופית:** unconvincing\n\n**מילים לשינון:** unconvincing – לא משכנע · erstwhile [URST-wile /ˈɝːstwaɪl/] – לשעבר, של פעם"
+  },
+  {
+    "id": "wf-t06-q3",
+    "test": 6,
+    "n": 3,
+    "sentence": "Of the nearly three hundred ________ competing for a single junior position at the fledgling startup, only twelve were invited to a second interview.",
+    "baseWord": "apply",
+    "accepted": [
+      "applicants"
+    ],
+    "mistakes": {
+      "appliers": "הצורה appliers היא שם עצם ברבים שמתאים למספר three hundred, אבל אדם שמתחרה על משרה (a single junior position) נקרא באנגלית בשם העצם applicant, ולא בשם עם הסיומת -er.\n\n_Someone competing for a single junior position is an applicant, not an -er form._",
+      "applicant": "שם העצם applicant הוא המילה הנכונה לאדם שמתחרה על המשרה (competing for a single junior position), אבל המספר three hundred מחייב רבים, ולכן חסרה האות s.\n\n_Right word, but three hundred needs the plural: applicants._",
+      "applicators": "הצורה applicators היא שם עצם ברבים אחרי המספר three hundred, אבל פירושה מכשירים למריחת חומר, ואילו מי שהוזמנו לראיון (invited to a second interview) הם אנשים.\n\n_applicators are tools for putting on a substance; only people are invited to a second interview._",
+      "applications": "הצורה applications (בקשות) קשורה להגשת מועמדות ומתאימה למספר three hundred, אבל רק אנשים מוזמנים לראיון (invited to a second interview), ולכן צריך את שם העצם applicants.\n\n_Applications are documents, but only people are invited to a second interview._"
+    },
+    "explanation": "**הסבר קצר:** המספר three hundred מחייב שם עצם ברבים, והצירוף invited to a second interview מראה שמדובר באנשים, ולכן התשובה היא applicants (מועמדים).\n\n_three hundred needs a plural noun, and invited to a second interview shows people: applicants._\n\n**הסבר מלא:** המקום הריק בא אחרי הצירוף three hundred, ולכן צריך שם עצם ברבים. הצירוף competing for a single junior position והצירוף invited to a second interview מראים שמדובר באנשים שהגישו מועמדות, ולא במסמכים. מהפועל apply בונים את שם העצם applicant (מועמד), שבו האות y הופכת לאותיות ic, ומוסיפים את האות s של הרבים, ומקבלים את הצורה applicants.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המספר three hundred צריך שם עצם ברבים שמתאר אנשים, ואין צורך בשלילה. (2) איות והטיה: האות y של הפועל apply הופכת לאותיות ic, מוסיפים את הסיומת -ant ואת האות s, ומקבלים את הצורה applicants.\n\n_Part of speech from position: (1) After three hundred: a plural noun for people; no negative. (2) y becomes ic, plus -ant and plural s: applicants._\n\n**טעויות נפוצות**\n\n✗ appliers — הצורה appliers היא שם עצם ברבים שמתאים למספר three hundred, אבל אדם שמתחרה על משרה (a single junior position) נקרא באנגלית בשם העצם applicant, ולא בשם עם הסיומת -er.\n\n_Someone competing for a single junior position is an applicant, not an -er form._\n\n✗ applicant — שם העצם applicant הוא המילה הנכונה לאדם שמתחרה על המשרה (competing for a single junior position), אבל המספר three hundred מחייב רבים, ולכן חסרה האות s.\n\n_Right word, but three hundred needs the plural: applicants._\n\n✗ applicators — הצורה applicators היא שם עצם ברבים אחרי המספר three hundred, אבל פירושה מכשירים למריחת חומר, ואילו מי שהוזמנו לראיון (invited to a second interview) הם אנשים.\n\n_applicators are tools for putting on a substance; only people are invited to a second interview._\n\n✗ applications — הצורה applications (בקשות) קשורה להגשת מועמדות ומתאימה למספר three hundred, אבל רק אנשים מוזמנים לראיון (invited to a second interview), ולכן צריך את שם העצם applicants.\n\n_Applications are documents, but only people are invited to a second interview._\n\n_three hundred needs a plural, and people are invited to a second interview: apply gives applicant, plural applicants._\n\n**✓ תשובה סופית:** applicants\n\n**מילים לשינון:** applicants – מועמדים (שהגישו בקשה) · fledgling [FLEJ-ling /ˈflɛdʒlɪŋ/] – חדש וחסר ניסיון, בתחילת דרכו"
+  },
+  {
+    "id": "wf-t06-q4",
+    "test": 6,
+    "n": 4,
+    "sentence": "Criticized by several patients for his ________ remarks about their weight, the harried young doctor apologized and enrolled in a course on discussing delicate topics with tact.",
+    "baseWord": "sense",
+    "accepted": [
+      "insensitive"
+    ],
+    "mistakes": {
+      "insensible": "הצורה insensible היא שם תואר שלילי שמתאים לפני שם העצם remarks, אבל פירושה מחוסר הכרה או אדיש, ואילו הצירוף discussing delicate topics with tact מראה שהבעיה הייתה חוסר רגישות לרגשות המטופלים.\n\n_insensible means unconscious or unaware; a course on delicate topics with tact shows the remarks lacked tact._",
+      "senseless": "הצורה senseless (חסר טעם, טיפשי) היא שם תואר שלילי שמתאים לביקורת (Criticized by several patients), אבל הקורס על דיבור בטקט (discussing delicate topics with tact) מראה שהבעיה בהערות הייתה חוסר רגישות ולא חוסר היגיון.\n\n_senseless means pointless or foolish, but a course on discussing delicate topics with tact shows the remarks lacked sensitivity._",
+      "sensitive": "שם התואר sensitive מתאים לפני שם העצם remarks, אבל הרופא ספג ביקורת (Criticized by several patients) והתנצל, ולכן ההערות היו פוגעניות וחסרה תחילית שלילה.\n\n_Right part of speech, but Criticized and apologized show the remarks hurt, so a negative is needed._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה his לבין שם העצם remarks צריך שם תואר, והמילים Criticized ו־apologized מראות שההערות פגעו, ולכן התשובה היא insensitive (חסר רגישות).\n\n_Between his and remarks we need an adjective, and Criticized and apologized show the remarks hurt: insensitive._\n\n**הסבר מלא:** המקום הריק בא בין המילה his לבין שם העצם remarks, ולכן צריך שם תואר. המשפט המקוצר (Criticized by several patients) והפועל apologized מראים שההערות על המשקל פגעו במטופלים, ולכן צריך שלילה. מהמילה sense בונים את שם התואר sensitive (רגיש), ועם התחילית in- מקבלים את הצורה insensitive (חסר רגישות, פוגעני). כדאי להיזהר מהצורה insensible, שפירושה מחוסר הכרה או אדיש.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם העצם remarks צריך שם תואר. (2) שלילה: המילים Criticized ו־apologized מחייבות את התחילית in-, ומתוך שמות התואר השליליים רק הצורה insensitive פירושה חסר רגישות לאחרים.\n\n_Part of speech from position: (1) Before remarks: an adjective. (2) Negative? Yes, Criticized and apologized: in-; only insensitive means lacking tact._\n\n**טעויות נפוצות**\n\n✗ insensible — הצורה insensible היא שם תואר שלילי שמתאים לפני שם העצם remarks, אבל פירושה מחוסר הכרה או אדיש, ואילו הצירוף discussing delicate topics with tact מראה שהבעיה הייתה חוסר רגישות לרגשות המטופלים.\n\n_insensible means unconscious or unaware; a course on delicate topics with tact shows the remarks lacked tact._\n\n✗ senseless — הצורה senseless (חסר טעם, טיפשי) היא שם תואר שלילי שמתאים לביקורת (Criticized by several patients), אבל הקורס על דיבור בטקט (discussing delicate topics with tact) מראה שהבעיה בהערות הייתה חוסר רגישות ולא חוסר היגיון.\n\n_senseless means pointless or foolish, but a course on discussing delicate topics with tact shows the remarks lacked sensitivity._\n\n✗ sensitive — שם התואר sensitive מתאים לפני שם העצם remarks, אבל הרופא ספג ביקורת (Criticized by several patients) והתנצל, ולכן ההערות היו פוגעניות וחסרה תחילית שלילה.\n\n_Right part of speech, but Criticized and apologized show the remarks hurt, so a negative is needed._\n\n_Before remarks we need an adjective; Criticized and apologized make it negative: insensitive (lacking tact), not insensible (unconscious, unaware)._\n\n**✓ תשובה סופית:** insensitive\n\n**מילים לשינון:** insensitive – חסר רגישות, פוגעני · harried [HAIR-eed /ˈhærid/] – לחוץ ומוטרד מעומס דרישות"
+  },
+  {
+    "id": "wf-t07-q1",
+    "test": 7,
+    "n": 1,
+    "sentence": "Once dismissed as a freak event, the flooding of the town's coastal road has become an almost yearly ________, and even residents long inured to winter storms now keep sandbags by their doors.",
+    "baseWord": "occur",
+    "accepted": [
+      "occurrence"
+    ],
+    "mistakes": {
+      "occurence": "הצורה occurence היא שם עצם שמתאים אחרי הצירוף an almost yearly, אבל חסרה בה האות r השנייה: הפועל occur מוטעם בסופו, ולכן במילה שאחרי הצירוף an almost yearly האות r מוכפלת.\n\n_A noun after an almost yearly, but occur doubles its r: occurrence._",
+      "ocurrence": "הצורה ocurrence נשמעת נכון ומתאימה כשם עצם אחרי הצירוף an almost yearly, אבל חסרה בה האות c השנייה: גם הפועל occur וגם שם העצם שמקביל לצירוף a freak event נכתבים עם שתי אותיות c.\n\n_It fits after an almost yearly, but occur has a double c too._",
+      "occurrance": "בצורה occurrance האות r מוכפלת כנדרש והיא מתאימה כשם עצם אחרי הצירוף an almost yearly, אבל הסיומת שגויה: הפועל occur מקבל את הסיומת -ence, ולכן שם העצם שמקביל לצירוף a freak event הוא occurrence.\n\n_The double r is right, but the ending is -ence, not -ance._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף an almost yearly צריך שם עצם ביחיד, בדומה לשם העצם event, ולכן התשובה היא occurrence (התרחשות, מקרה), עם הכפלה של האות r.\n\n_After an almost yearly we need a singular noun, like event: occurrence, with a double r._\n\n**הסבר מלא:** אחרי הצירוף an almost yearly בא שם עצם ביחיד, וההקבלה לצירוף a freak event בתחילת המשפט מראה ששם העצם מציין אירוע. מהפועל occur (להתרחש) בונים את שם העצם occurrence (התרחשות, מקרה). הפועל occur מוטעם בהברה האחרונה ומסתיים בעיצור אחד, ולכן האות r מוכפלת לפני הסיומת -ence, והסיומת היא -ence ולא -ance.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף an almost yearly צריך שם עצם ביחיד. (2) איות: הפועל occur מוטעם בסופו, ולכן האות r מוכפלת לפני הסיומת -ence.\n\n_Part of speech from position: (1) After an almost yearly: a singular noun. (2) Stressed last syllable, so double the r before -ence: occurrence._\n\n**טעויות נפוצות**\n\n✗ occurence — הצורה occurence היא שם עצם שמתאים אחרי הצירוף an almost yearly, אבל חסרה בה האות r השנייה: הפועל occur מוטעם בסופו, ולכן במילה שאחרי הצירוף an almost yearly האות r מוכפלת.\n\n_A noun after an almost yearly, but occur doubles its r: occurrence._\n\n✗ ocurrence — הצורה ocurrence נשמעת נכון ומתאימה כשם עצם אחרי הצירוף an almost yearly, אבל חסרה בה האות c השנייה: גם הפועל occur וגם שם העצם שמקביל לצירוף a freak event נכתבים עם שתי אותיות c.\n\n_It fits after an almost yearly, but occur has a double c too._\n\n✗ occurrance — בצורה occurrance האות r מוכפלת כנדרש והיא מתאימה כשם עצם אחרי הצירוף an almost yearly, אבל הסיומת שגויה: הפועל occur מקבל את הסיומת -ence, ולכן שם העצם שמקביל לצירוף a freak event הוא occurrence.\n\n_The double r is right, but the ending is -ence, not -ance._\n\n_After an almost yearly we need a singular noun, parallel to a freak event. occur is stressed at the end, so the r doubles before -ence: occurrence._\n\n**✓ תשובה סופית:** occurrence\n\n**מילים לשינון:** occurrence – התרחשות, מקרה · inured [ih-NYOORD /ɪˈnjʊrd/] – מחוסן ל..., רגיל לדבר לא נעים עד שכבר אינו מושפע ממנו"
+  },
+  {
+    "id": "wf-t07-q2",
+    "test": 7,
+    "n": 2,
+    "sentence": "Not until two independent ________ of the survey data, each conducted by a separate team, had reached the same conclusion did the journal's captious reviewers agree to publish the findings.",
+    "baseWord": "analyze",
+    "accepted": [
+      "analyses"
+    ],
+    "mistakes": {
+      "analysises": "הצורה analysises מראה הבנה נכונה שאחרי המילה two צריך רבים, אבל שם העצם analysis אינו מקבל סיומת נוספת: הסיומת -is עצמה מתחלפת, ולכן אחרי הצירוף two independent כותבים את הצורה analyses.\n\n_Plural is right after two, but -is changes to -es: analyses._",
+      "analysis": "שם העצם analysis מתאים לפני הצירוף of the survey data, אבל הוא ביחיד, ואילו המילה two והצירוף each conducted by a separate team מחייבים רבים.\n\n_A noun, but singular; two and each need the plural._",
+      "analyzes": "הצורה analyzes נבנית מהפועל ונראית כמו צורת רבים שמתאימה למילה two, אבל זו צורת פועל (הוא מנתח), ואחרי שם התואר independent צריך שם עצם.\n\n_It looks plural after two, but it is a verb; after independent we need a noun._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף two independent צריך שם עצם ברבים, והצירוף each conducted by a separate team מראה שמדובר בניתוחים ולא באנשים, ולכן התשובה היא analyses (ניתוחים).\n\n_After two independent we need a plural noun, and each conducted by a separate team shows these are studies, not people: analyses._\n\n**הסבר מלא:** המילה two ושם התואר independent לפני המקום הריק, יחד עם הצירוף of the survey data אחריו, מחייבים שם עצם ברבים. הצירוף each conducted by a separate team מראה שמדובר בפעולות שבוצעו ולא באנשים, ולכן הצורה analysts אינה מתאימה. שם העצם analysis (ניתוח) מגיע מהיוונית, ולכן ברבים הסיומת -is הופכת לסיומת -es, כמו במילים crisis ו־crises, וכך מקבלים את הצורה analyses.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף two independent צריך שם עצם ברבים. (2) נטייה: ברבים הסיומת -is של שם העצם analysis הופכת לסיומת -es.\n\n_Part of speech from position: (1) After two independent: a plural noun. (2) The plural of analysis changes -is to -es: analyses._\n\n**טעויות נפוצות**\n\n✗ analysises — הצורה analysises מראה הבנה נכונה שאחרי המילה two צריך רבים, אבל שם העצם analysis אינו מקבל סיומת נוספת: הסיומת -is עצמה מתחלפת, ולכן אחרי הצירוף two independent כותבים את הצורה analyses.\n\n_Plural is right after two, but -is changes to -es: analyses._\n\n✗ analysis — שם העצם analysis מתאים לפני הצירוף of the survey data, אבל הוא ביחיד, ואילו המילה two והצירוף each conducted by a separate team מחייבים רבים.\n\n_A noun, but singular; two and each need the plural._\n\n✗ analyzes — הצורה analyzes נבנית מהפועל ונראית כמו צורת רבים שמתאימה למילה two, אבל זו צורת פועל (הוא מנתח), ואחרי שם התואר independent צריך שם עצם.\n\n_It looks plural after two, but it is a verb; after independent we need a noun._\n\n_two independent and each conducted by a separate team call for a plural noun naming studies. The plural of analysis changes -is to -es: analyses._\n\n**✓ תשובה סופית:** analyses\n\n**מילים לשינון:** analyses – ניתוחים (צורת הרבים של ניתוח) · captious [KAP-shus /ˈkæpʃəs/] – קנטרני, נוטה למצוא פגמים קטנים"
+  },
+  {
+    "id": "wf-t07-q3",
+    "test": 7,
+    "n": 3,
+    "sentence": "No sooner had the envoy's maladroit toast at the state banquet ended than relations between the two kingdoms were ________ altered: the trade talks it soured were never resumed.",
+    "baseWord": "revoke",
+    "accepted": [
+      "irrevocably"
+    ],
+    "mistakes": {
+      "unrevokably": "הצורה unrevokably מוסיפה את השלילה שהצירוף were never resumed דורש, אבל לפני האות r התחילית היא ir- והאות k הופכת לאות c, ולכן לפני הפועל altered כותבים את הצורה irrevocably.\n\n_The negative fits were never resumed, but the prefix is ir- and k becomes c: irrevocably._",
+      "irrevocable": "שם התואר irrevocable (בלתי הפיך) נושא את המשמעות שמתאימה לצירוף were never resumed, אבל בין המילה were לבין הפועל altered צריך תואר פועל עם הסיומת -ably.\n\n_Right meaning, but between were and altered we need an adverb, not an adjective._",
+      "irrevokably": "בצורה irrevokably התחילית ir- נכונה ומתאימה לצירוף were never resumed, אבל האות k צריכה להפוך לאות c, כמו בשם העצם revocation, ולכן לפני הפועל altered כותבים את הצורה irrevocably.\n\n_The prefix fits were never resumed, but k becomes c, as in revocation._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה were לבין הפועל altered צריך תואר פועל, והצירוף were never resumed מראה שאת הנזק אי אפשר היה לבטל, ולכן התשובה היא irrevocably (באופן בלתי הפיך).\n\n_Between were and altered we need an adverb, and were never resumed shows the damage could not be undone: irrevocably._\n\n**הסבר מלא:** במבנה ההיפוך שפותח בצירוף No sooner had בא בין המילה were לבין הפועל altered תואר פועל שמתאר איך היחסים השתנו. הצירוף were never resumed מראה שאת הנזק אי אפשר היה לבטל, ולכן צריך שלילה. לפני האות r תחילית השלילה היא ir-, האות k של הפועל revoke הופכת לאות c (כמו בצמד revoke ו־revocation), והסיומת -ably יוצרת את תואר הפועל irrevocably (באופן בלתי הפיך).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני הפועל altered צריך תואר פועל. (2) שלילה ואיות: הצירוף were never resumed מחייב את התחילית ir-, והאות k הופכת לאות c לפני הסיומת -ably.\n\n_Part of speech from position: (1) Before altered: an adverb. (2) were never resumed needs a negative, ir-; k becomes c before -ably: irrevocably._\n\n**טעויות נפוצות**\n\n✗ unrevokably — הצורה unrevokably מוסיפה את השלילה שהצירוף were never resumed דורש, אבל לפני האות r התחילית היא ir- והאות k הופכת לאות c, ולכן לפני הפועל altered כותבים את הצורה irrevocably.\n\n_The negative fits were never resumed, but the prefix is ir- and k becomes c: irrevocably._\n\n✗ irrevocable — שם התואר irrevocable (בלתי הפיך) נושא את המשמעות שמתאימה לצירוף were never resumed, אבל בין המילה were לבין הפועל altered צריך תואר פועל עם הסיומת -ably.\n\n_Right meaning, but between were and altered we need an adverb, not an adjective._\n\n✗ irrevokably — בצורה irrevokably התחילית ir- נכונה ומתאימה לצירוף were never resumed, אבל האות k צריכה להפוך לאות c, כמו בשם העצם revocation, ולכן לפני הפועל altered כותבים את הצורה irrevocably.\n\n_The prefix fits were never resumed, but k becomes c, as in revocation._\n\n_Between were and altered we need an adverb, and were never resumed makes it negative. Add ir- before r, change k to c and add -ably: irrevocably._\n\n**✓ תשובה סופית:** irrevocably\n\n**מילים לשינון:** irrevocably – באופן בלתי הפיך, באופן שאי אפשר לבטל · maladroit [mal-uh-DROYT /ˌmæləˈdrɔɪt/] – מגושם, חסר טקט (במיוחד במצבים חברתיים)"
+  },
+  {
+    "id": "wf-t07-q4",
+    "test": 7,
+    "n": 4,
+    "sentence": "Far from restoring trust in the beleaguered brand, the chief executive's televised apology only deepened the public's anger, for its ________ was plain to anyone who noticed the well-rehearsed catch in his voice.",
+    "baseWord": "sincere",
+    "accepted": [
+      "insincerity"
+    ],
+    "mistakes": {
+      "unsincerity": "הצורה unsincerity מוסיפה שלילה שמתאימה לצירוף Far from restoring trust, אבל שם התואר sincere מקבל את התחילית in-, ולכן אחרי המילה its כותבים את הצורה insincerity.\n\n_The negative fits Far from restoring trust, but sincere takes in-: insincerity._",
+      "insincereity": "בצורה insincereity התחילית נכונה ומתאימה לצירוף Far from restoring trust, אבל לפני הסיומת -ity האות e נושרת, כמו בשם העצם sincerity, ולכן אחרי המילה its כותבים את הצורה insincerity.\n\n_The prefix is right, but the e drops before -ity: insincerity._",
+      "sincerity": "שם העצם sincerity מתאים בין המילה its לבין הפועל was, אבל פירושו כנות, וזה סותר את הצירוף Far from restoring trust ואת הרעד המתורגל בקול (well-rehearsed).\n\n_A noun, but Far from restoring trust and well-rehearsed show the apology was not sincere._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה its לבין הפועל was צריך שם עצם, והצירופים Far from restoring trust ו־well-rehearsed מראים שההתנצלות לא הייתה כנה, ולכן התשובה היא insincerity (חוסר כנות).\n\n_Between its and was we need a noun, and Far from restoring trust and well-rehearsed show the apology was not genuine: insincerity._\n\n**הסבר מלא:** בין המילה its לבין הפועל was חסר שם עצם, והפועל was מראה שהוא ביחיד. המבנה Far from restoring trust (במקום להחזיר את האמון) והרעד המתורגל בקולו של המנכ\"ל (the well-rehearsed catch in his voice) מראים שהציבור זיהה העמדת פנים, ולכן צריך שלילה. שם התואר sincere מקבל את התחילית in-, ולפני הסיומת -ity האות e נושרת, וכך מקבלים את הצורה insincerity (חוסר כנות).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: בין המילה its לבין הפועל was צריך שם עצם. (2) שלילה ואיות: הצירוף Far from restoring trust מחייב את התחילית in-, והאות e של שם התואר sincere נושרת לפני הסיומת -ity.\n\n_Part of speech from position: (1) Between its and was: a noun. (2) Far from restoring trust needs a negative, in-; drop the e before -ity: insincerity._\n\n**טעויות נפוצות**\n\n✗ unsincerity — הצורה unsincerity מוסיפה שלילה שמתאימה לצירוף Far from restoring trust, אבל שם התואר sincere מקבל את התחילית in-, ולכן אחרי המילה its כותבים את הצורה insincerity.\n\n_The negative fits Far from restoring trust, but sincere takes in-: insincerity._\n\n✗ insincereity — בצורה insincereity התחילית נכונה ומתאימה לצירוף Far from restoring trust, אבל לפני הסיומת -ity האות e נושרת, כמו בשם העצם sincerity, ולכן אחרי המילה its כותבים את הצורה insincerity.\n\n_The prefix is right, but the e drops before -ity: insincerity._\n\n✗ sincerity — שם העצם sincerity מתאים בין המילה its לבין הפועל was, אבל פירושו כנות, וזה סותר את הצירוף Far from restoring trust ואת הרעד המתורגל בקול (well-rehearsed).\n\n_A noun, but Far from restoring trust and well-rehearsed show the apology was not sincere._\n\n_Between its and was we need a singular noun. Far from restoring trust and well-rehearsed show the apology was fake, so add in- and drop the e before -ity: insincerity._\n\n**✓ תשובה סופית:** insincerity\n\n**מילים לשינון:** insincerity – חוסר כנות, העמדת פנים · beleaguered [bih-LEE-gurd /bɪˈliːɡərd/] – נתון בצרות, נתון תחת לחץ וביקורת מתמשכים"
+  },
+  {
+    "id": "wf-t08-q1",
+    "test": 8,
+    "n": 1,
+    "sentence": "Having learned to recognize the techniques of ________ hidden in everyday advertisements, the teenagers in one study were far less moved by the blandishments of online sellers than their untrained peers were.",
+    "baseWord": "persuade",
+    "accepted": [
+      "persuasion"
+    ],
+    "mistakes": {
+      "persuadion": "הצורה persuadion היא שם עצם שמתאים אחרי הצירוף the techniques of, אבל האותיות de צריכות להפוך לאות s, כמו בצמד decide ו־decision, ולכן אחרי הצירוף the techniques of כותבים את הצורה persuasion.\n\n_A noun after the techniques of, but de becomes s: persuasion._",
+      "persuasive": "שם התואר persuasive (משכנע) מתאר היטב את הפרסומות (everyday advertisements), אבל אחרי הצירוף the techniques of צריך שם עצם ולא שם תואר.\n\n_It describes advertisements well, but after the techniques of we need a noun._",
+      "persuation": "הצורה persuation היא שם עצם שמתאים אחרי הצירוף the techniques of, אבל הסיומת שגויה: הפועל persuade מקבל את הסיומת -sion ולא -tion, ולכן מה שמסתתר בפרסומות (hidden in everyday advertisements) הוא persuasion.\n\n_A noun, but the ending is -sion, not -tion: persuasion._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף the techniques of צריך שם עצם, ומהפועל persuade (לשכנע) בונים את שם העצם persuasion (שכנוע), שבו האותיות de הופכות לאות s.\n\n_After the techniques of we need a noun: persuade becomes persuasion, with de changing to s._\n\n**הסבר מלא:** אחרי מילת היחס of בצירוף the techniques of בא שם עצם, והצירוף hidden in everyday advertisements מראה שהוא מציין פעולה שמסתתרת בפרסומות. מהפועל persuade (לשכנע) בונים את שם העצם persuasion (שכנוע): האותיות de הופכות לאות s לפני הסיומת -ion, כמו בצמד decide ו־decision. כדאי לזכור שהסיומת כאן נכתבת -sion ולא -tion.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף the techniques of צריך שם עצם. (2) איות: האותיות de בסוף הפועל persuade הופכות לאות s לפני הסיומת -ion.\n\n_Part of speech from position: (1) After the techniques of: a noun. (2) de becomes s before -ion: persuasion._\n\n**טעויות נפוצות**\n\n✗ persuadion — הצורה persuadion היא שם עצם שמתאים אחרי הצירוף the techniques of, אבל האותיות de צריכות להפוך לאות s, כמו בצמד decide ו־decision, ולכן אחרי הצירוף the techniques of כותבים את הצורה persuasion.\n\n_A noun after the techniques of, but de becomes s: persuasion._\n\n✗ persuasive — שם התואר persuasive (משכנע) מתאר היטב את הפרסומות (everyday advertisements), אבל אחרי הצירוף the techniques of צריך שם עצם ולא שם תואר.\n\n_It describes advertisements well, but after the techniques of we need a noun._\n\n✗ persuation — הצורה persuation היא שם עצם שמתאים אחרי הצירוף the techniques of, אבל הסיומת שגויה: הפועל persuade מקבל את הסיומת -sion ולא -tion, ולכן מה שמסתתר בפרסומות (hidden in everyday advertisements) הוא persuasion.\n\n_A noun, but the ending is -sion, not -tion: persuasion._\n\n_After the techniques of we need a noun. persuade changes de to s and takes -ion: persuasion._\n\n**✓ תשובה סופית:** persuasion\n\n**מילים לשינון:** persuasion – שכנוע · blandishments [BLAN-dish-munts /ˈblændɪʃmənts/] – חנופה ודברי פיתוי שנועדו לשכנע"
+  },
+  {
+    "id": "wf-t08-q2",
+    "test": 8,
+    "n": 2,
+    "sentence": "Asked merely to join nine dots with four straight lines without lifting the pen, solvers of the avuncular editor's ________ simple puzzle spent entire weekends on it in vain.",
+    "baseWord": "deceive",
+    "accepted": [
+      "deceptively",
+      "deceivingly"
+    ],
+    "mistakes": {
+      "deceptive": "שם התואר deceptive (מטעה) נושא את המשמעות הנכונה, שמתאימה לצירוף in vain, אבל לפני שם התואר simple צריך תואר פועל עם הסיומת -ly.\n\n_Right meaning, but before simple we need an adverb: deceptively._",
+      "deceptivly": "בצורה deceptivly השינוי לאותיות cept נכון והיא מתאימה לפני שם התואר simple, אבל כשמוסיפים את הסיומת -ly לשם התואר deceptive, האות e נשארת, ולכן לפני שם התואר simple כותבים את הצורה deceptively.\n\n_cept is right, but deceptive keeps its e before -ly: deceptively._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם התואר simple צריך תואר פועל, והצירוף spent entire weekends on it in vain מראה שהחידה רק נראתה פשוטה, ולכן התשובה היא deceptively (באופן מטעה).\n\n_Before simple we need an adverb, and spent entire weekends on it in vain shows it only looked simple: deceptively._\n\n**הסבר מלא:** בין הצירוף the avuncular editor's לבין שם התואר simple בא תואר פועל שמתאר את שם התואר, כמו בצירוף surprisingly simple. המילה merely (רק) מציגה משימה שנראית קלה, אבל הפותרים ישבו על החידה סופי שבוע שלמים לשווא (in vain), ולכן הפשטות הייתה מטעה, כמו בצירוף deceptively simple (פשוט רק למראית עין). מהפועל deceive בונים את שם התואר deceptive: האותיות ceive הופכות לאותיות cept, ואז מוסיפים את הסיומת -ly בלי להשמיט את האות e. גם הצורה deceivingly מתקבלת, אבל הצירוף הנפוץ הוא deceptively simple.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם התואר simple צריך תואר פועל. (2) איות: האותיות ceive בפועל deceive הופכות לאותיות cept, ואחריהן באות הסיומות -ive ו־-ly.\n\n_Part of speech from position: (1) Before simple: an adverb. (2) ceive becomes cept, then -ive and -ly: deceptively._\n\n**טעויות נפוצות**\n\n✗ deceptive — שם התואר deceptive (מטעה) נושא את המשמעות הנכונה, שמתאימה לצירוף in vain, אבל לפני שם התואר simple צריך תואר פועל עם הסיומת -ly.\n\n_Right meaning, but before simple we need an adverb: deceptively._\n\n✗ deceptivly — בצורה deceptivly השינוי לאותיות cept נכון והיא מתאימה לפני שם התואר simple, אבל כשמוסיפים את הסיומת -ly לשם התואר deceptive, האות e נשארת, ולכן לפני שם התואר simple כותבים את הצורה deceptively.\n\n_cept is right, but deceptive keeps its e before -ly: deceptively._\n\n_Before simple we need an adverb. Whole weekends spent in vain show the puzzle only looked simple: deceptively, with ceive becoming cept. deceivingly is also accepted._\n\n**✓ תשובה סופית:** deceptively\n\n**מתקבל גם:** deceivingly\n\n**מילים לשינון:** deceptively – באופן מטעה, רק למראית עין · avuncular [uh-VUNG-kyuh-ler /əˈvʌŋkjələr/] – חביב וחם כמו דוד מבוגר"
+  },
+  {
+    "id": "wf-t08-q3",
+    "test": 8,
+    "n": 3,
+    "sentence": "Not only was the diffident young professor nothing like the careless grader of campus rumor, but she proved so ________ that she checked every citation in her students' theses.",
+    "baseWord": "conscience",
+    "accepted": [
+      "conscientious"
+    ],
+    "mistakes": {
+      "consciencious": "הצורה consciencious שומרת על הכתיב של שם העצם conscience, ולכן היא נראית טבעית במבנה so ________ that, אבל האותיות ce צריכות להתחלף באות t, ולכן אחרי המילה so כותבים את הצורה conscientious.\n\n_It keeps ce, but the adjective changes it to t: conscientious._",
+      "conscious": "המילה conscious דומה בכתיב ומתאימה כשם תואר במבנה so ________ that, אבל פירושה מודע או בהכרה, ואילו הצירוף checked every citation מתאר קפדנות ואחריות.\n\n_An adjective, but it means aware or awake; checked every citation describes great care._",
+      "conscientous": "בצורה conscientous ההחלפה לאות t נכונה והיא מתאימה במבנה so ________ that, אבל חסרה בה האות i: הסיומת היא -ious, ולכן אחרי הצירוף proved so כותבים את הצורה conscientious.\n\n_The t is right, but the ending is -ious: conscientious._"
+    },
+    "explanation": "**הסבר קצר:** במבנה so ________ that צריך שם תואר, והצירוף checked every citation מראה שהמרצה הייתה קפדנית ואחראית, ולכן התשובה היא conscientious (קפדן ואחראי).\n\n_so ________ that needs an adjective, and checked every citation shows great care: conscientious._\n\n**הסבר מלא:** המבנה so ________ that אחרי הפועל proved דורש שם תואר. הניגוד לצירוף nothing like the careless grader והבדיקה של כל מראה מקום (checked every citation) מראים שהמרצה הייתה קפדנית ואחראית, ולכן שם התואר המתאים הוא conscientious (קפדן ואחראי, ממלא את תפקידו בדקדקנות). מהמילה conscience (מצפון) בונים את שם התואר כך: האותיות ce מתחלפות באות t, ואחריה באה הסיומת -ious. כדאי להבחין בין שם התואר conscientious לבין המילה conscious (מודע, בהכרה), שאינה קשורה לקפדנות.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: במבנה so ________ that צריך שם תואר. (2) איות: האותיות ce של שם העצם conscience מתחלפות באות t לפני הסיומת -ious.\n\n_Part of speech from position: (1) In so ________ that: an adjective. (2) ce becomes t before -ious: conscientious._\n\n**טעויות נפוצות**\n\n✗ consciencious — הצורה consciencious שומרת על הכתיב של שם העצם conscience, ולכן היא נראית טבעית במבנה so ________ that, אבל האותיות ce צריכות להתחלף באות t, ולכן אחרי המילה so כותבים את הצורה conscientious.\n\n_It keeps ce, but the adjective changes it to t: conscientious._\n\n✗ conscious — המילה conscious דומה בכתיב ומתאימה כשם תואר במבנה so ________ that, אבל פירושה מודע או בהכרה, ואילו הצירוף checked every citation מתאר קפדנות ואחריות.\n\n_An adjective, but it means aware or awake; checked every citation describes great care._\n\n✗ conscientous — בצורה conscientous ההחלפה לאות t נכונה והיא מתאימה במבנה so ________ that, אבל חסרה בה האות i: הסיומת היא -ious, ולכן אחרי הצירוף proved so כותבים את הצורה conscientious.\n\n_The t is right, but the ending is -ious: conscientious._\n\n_so ________ that needs an adjective, and checked every citation shows great care. From conscience, change ce to t and add -ious: conscientious, not conscious (aware)._\n\n**✓ תשובה סופית:** conscientious\n\n**מילים לשינון:** conscientious – קפדן ואחראי, ממלא את תפקידו בדקדקנות · diffident [DIF-ih-dunt /ˈdɪfɪdənt/] – ביישן, חסר ביטחון עצמי"
+  },
+  {
+    "id": "wf-t08-q4",
+    "test": 8,
+    "n": 4,
+    "sentence": "It is at least partly a dearth of outdoor play, researchers suspect, that explains why the ________ of nearsightedness among the city's schoolchildren has nearly doubled within a decade.",
+    "baseWord": "prevail",
+    "accepted": [
+      "prevalence"
+    ],
+    "mistakes": {
+      "prevailance": "הצורה prevailance היא שם עצם שמתאים אחרי המילה the ולפני הצירוף of nearsightedness, אבל האותיות ai מתקצרות לאות a והסיומת היא -ence, ולכן לפני הצירוף has nearly doubled כותבים את הצורה prevalence.\n\n_A noun, but ai becomes a and the ending is -ence: prevalence._",
+      "prevalance": "בצורה prevalance האות a נכונה והיא מתאימה אחרי המילה the, אבל הסיומת היא -ence, כמו בשם התואר prevalent, ולכן לפני הצירוף of nearsightedness כותבים את הצורה prevalence.\n\n_The single a is right, but the ending is -ence, as in prevalent._",
+      "prevalent": "שם התואר prevalent (נפוץ) נושא את המשמעות שמתאימה לצירוף has nearly doubled, אבל אחרי המילה the ולפני הצירוף of nearsightedness צריך שם עצם.\n\n_Right meaning, but between the and of nearsightedness we need a noun, not an adjective._"
+    },
+    "explanation": "**הסבר קצר:** בין המילה the לבין הצירוף of nearsightedness צריך שם עצם ביחיד, ומהפועל prevail בונים את שם העצם prevalence (שכיחות), עם האות a בלבד והסיומת -ence.\n\n_Between the and of nearsightedness we need a singular noun: prevail becomes prevalence, with a single a and -ence._\n\n**הסבר מלא:** בין המילה the לבין הצירוף of nearsightedness חסר שם עצם, והפועל has מראה שהוא ביחיד. הצירוף has nearly doubled מראה ששם העצם מתאר עד כמה הליקוי נפוץ, ולכן התשובה היא שם העצם prevalence (שכיחות, היקף התפוצה). בבניית שם העצם האותיות ai של הפועל prevail מתקצרות לאות a, והסיומת היא -ence ולא -ance.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילה the ולפני הצירוף of nearsightedness צריך שם עצם, והפועל has מראה שהוא ביחיד. (2) איות: האותיות ai של הפועל prevail מתקצרות לאות a, והסיומת היא -ence.\n\n_Part of speech from position: (1) Between the and of nearsightedness, with has: a singular noun. (2) ai becomes a, and the ending is -ence: prevalence._\n\n**טעויות נפוצות**\n\n✗ prevailance — הצורה prevailance היא שם עצם שמתאים אחרי המילה the ולפני הצירוף of nearsightedness, אבל האותיות ai מתקצרות לאות a והסיומת היא -ence, ולכן לפני הצירוף has nearly doubled כותבים את הצורה prevalence.\n\n_A noun, but ai becomes a and the ending is -ence: prevalence._\n\n✗ prevalance — בצורה prevalance האות a נכונה והיא מתאימה אחרי המילה the, אבל הסיומת היא -ence, כמו בשם התואר prevalent, ולכן לפני הצירוף of nearsightedness כותבים את הצורה prevalence.\n\n_The single a is right, but the ending is -ence, as in prevalent._\n\n✗ prevalent — שם התואר prevalent (נפוץ) נושא את המשמעות שמתאימה לצירוף has nearly doubled, אבל אחרי המילה the ולפני הצירוף of nearsightedness צריך שם עצם.\n\n_Right meaning, but between the and of nearsightedness we need a noun, not an adjective._\n\n_Between the and of nearsightedness we need a singular noun meaning how widespread the condition is. prevail shortens ai to a and takes -ence: prevalence._\n\n**✓ תשובה סופית:** prevalence\n\n**מילים לשינון:** prevalence – שכיחות, היקף התפוצה · dearth [DURTH /dɜːrθ/] – מחסור, היעדר"
+  },
+  {
+    "id": "wf-t09-q1",
+    "test": 9,
+    "n": 1,
+    "sentence": "Seldom has the art market been shaken as badly as when one of its most respected dealers was exposed as utterly ________, having knowingly sold forged canvases to hapless collectors for years.",
+    "baseWord": "scruple",
+    "accepted": [
+      "unscrupulous"
+    ],
+    "mistakes": {
+      "scrupulous": "שם התואר scrupulous (בעל מצפון, קפדן) מתאים לצירוף most respected, אבל הסוחר מכר ביודעין זיופים (knowingly sold forged canvases), ולכן חסרה התחילית un-.\n\n_It suits most respected, but knowingly sold forged canvases needs the negative un-._",
+      "inscrupulous": "הצורה inscrupulous מוסיפה את השלילה שהצירוף knowingly sold forged canvases דורש, אבל שם התואר scrupulous מקבל את התחילית un-, ולכן אחרי הצירוף exposed as utterly כותבים את הצורה unscrupulous.\n\n_The negative is right, but scrupulous takes un-, not in-._",
+      "unscrupulos": "הצורה unscrupulos בנויה נכון ומתאימה אחרי הצירוף exposed as utterly, אבל חסרה בה האות u של הסיומת -ous, ולכן אחרי הצירוף exposed as utterly כותבים את הצורה unscrupulous.\n\n_The form fits after exposed as utterly, but the suffix is -ous: unscrupulous._"
+    },
+    "explanation": "**הסבר קצר:** אחרי הצירוף exposed as utterly צריך שם תואר, והצירוף knowingly sold forged canvases מחייב שלילה, ולכן התשובה היא unscrupulous (חסר מצפון).\n\n_After exposed as utterly we need an adjective, and knowingly sold forged canvases demands a negative: unscrupulous._\n\n**הסבר מלא:** המקום הריק בא אחרי הצירוף exposed as utterly ומתאר את הסוחר, ולכן צריך שם תואר. הצירוף most respected מושך לכיוון חיובי, אבל הסוחר מכר ביודעין ציורים מזויפים (knowingly sold forged canvases), ולכן צריך שלילה. הסיומת -le של שם העצם scruple (עכבה מוסרית) הופכת לסיומת -ulous, כמו שהמילה miracle הופכת לשם התואר miraculous, ועם התחילית un- מקבלים את שם התואר unscrupulous (חסר מצפון, חסר עכבות).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי הצירוף exposed as utterly צריך שם תואר; (2) שלילה: הצירוף knowingly sold forged canvases מחייב את התחילית un-. (3) איות: הסיומת -le של שם העצם scruple הופכת לסיומת -ulous.\n\n_Part of speech from position: (1) After exposed as utterly: an adjective. (2) Negative? Yes, knowingly sold forged canvases: un-. (3) -le becomes -ulous._\n\n**טעויות נפוצות**\n\n✗ scrupulous — שם התואר scrupulous (בעל מצפון, קפדן) מתאים לצירוף most respected, אבל הסוחר מכר ביודעין זיופים (knowingly sold forged canvases), ולכן חסרה התחילית un-.\n\n_It suits most respected, but knowingly sold forged canvases needs the negative un-._\n\n✗ inscrupulous — הצורה inscrupulous מוסיפה את השלילה שהצירוף knowingly sold forged canvases דורש, אבל שם התואר scrupulous מקבל את התחילית un-, ולכן אחרי הצירוף exposed as utterly כותבים את הצורה unscrupulous.\n\n_The negative is right, but scrupulous takes un-, not in-._\n\n✗ unscrupulos — הצורה unscrupulos בנויה נכון ומתאימה אחרי הצירוף exposed as utterly, אבל חסרה בה האות u של הסיומת -ous, ולכן אחרי הצירוף exposed as utterly כותבים את הצורה unscrupulous.\n\n_The form fits after exposed as utterly, but the suffix is -ous: unscrupulous._\n\n_After exposed as utterly we need an adjective; knowingly sold forged canvases makes it negative (un-), and -le becomes -ulous: unscrupulous._\n\n**✓ תשובה סופית:** unscrupulous\n\n**מילים לשינון:** unscrupulous – חסר מצפון, חסר עכבות מוסריות · hapless [HAP-liss /ˈhæpləs/] – אומלל, חסר מזל"
+  },
+  {
+    "id": "wf-t09-q2",
+    "test": 9,
+    "n": 2,
+    "sentence": "Hardly the profound meditation its publisher had promised, the novel was dismissed by critics as a ________ exercise, its obscure allusions serving only to flaunt the author's erudition.",
+    "baseWord": "pretend",
+    "accepted": [
+      "pretentious"
+    ],
+    "mistakes": {
+      "pretending": "הצורה pretending נראית כמו שם תואר לפני שם העצם exercise, אבל פירושה 'מעמיד פנים', ואילו הצירוף serving only to flaunt מתאר התהדרות, כלומר יומרנות.\n\n_pretending means 'acting as if'; serving only to flaunt describes showing off: pretentious._",
+      "pretensious": "הצורה pretensious נבנתה לפי שם העצם pretension, ולכן נראה שהיא מתאימה לפני שם העצם exercise, אבל בשם התואר כותבים את האות t, ולכן לפני שם העצם exercise כותבים את הצורה pretentious.\n\n_It copies pretension, but the adjective is spelled with t: pretentious._",
+      "pretendous": "הצורה pretendous שומרת על הפועל pretend ומוסיפה סיומת של שם תואר, ולכן נראה שהיא מתאימה לפני שם העצם exercise, אבל אין מילה כזאת: האות d הופכת לאות t והסיומת היא -ious, ולכן לפני שם העצם exercise כותבים את הצורה pretentious.\n\n_Not a word: d becomes t and the suffix is -ious._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם העצם exercise צריך שם תואר, והצירוף serving only to flaunt מראה ניסיון להרשים, ולכן התשובה היא pretentious (יומרני, מתיימר).\n\n_Before exercise we need an adjective, and serving only to flaunt shows showing off: pretentious._\n\n**הסבר מלא:** המקום הריק בא בין המילה a לבין שם העצם exercise, ולכן צריך שם תואר. הצירוף Hardly the profound meditation והצירוף serving only to flaunt (שנועדו רק להתהדר) מראים ספר שמנסה להיראות עמוק יותר ממה שהוא, וזו המשמעות של שם התואר pretentious (יומרני). באיות, האות d של הפועל pretend הופכת לאות t לפני הסיומת -ious, אף ששם העצם pretension נכתב באות s.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם העצם exercise צריך שם תואר, ולפי הצירוף serving only to flaunt המשמעות היא יומרה, בלי שלילה. (2) איות: האות d של הפועל pretend הופכת לאות t, ומוסיפים את הסיומת -ious.\n\n_Part of speech from position: (1) Before exercise: an adjective meaning 'showing off' (serving only to flaunt). (2) d becomes t, plus -ious._\n\n**טעויות נפוצות**\n\n✗ pretending — הצורה pretending נראית כמו שם תואר לפני שם העצם exercise, אבל פירושה 'מעמיד פנים', ואילו הצירוף serving only to flaunt מתאר התהדרות, כלומר יומרנות.\n\n_pretending means 'acting as if'; serving only to flaunt describes showing off: pretentious._\n\n✗ pretensious — הצורה pretensious נבנתה לפי שם העצם pretension, ולכן נראה שהיא מתאימה לפני שם העצם exercise, אבל בשם התואר כותבים את האות t, ולכן לפני שם העצם exercise כותבים את הצורה pretentious.\n\n_It copies pretension, but the adjective is spelled with t: pretentious._\n\n✗ pretendous — הצורה pretendous שומרת על הפועל pretend ומוסיפה סיומת של שם תואר, ולכן נראה שהיא מתאימה לפני שם העצם exercise, אבל אין מילה כזאת: האות d הופכת לאות t והסיומת היא -ious, ולכן לפני שם העצם exercise כותבים את הצורה pretentious.\n\n_Not a word: d becomes t and the suffix is -ious._\n\n_Before exercise we need an adjective; serving only to flaunt means showing off, so pretend becomes pretentious (d → t, -ious)._\n\n**✓ תשובה סופית:** pretentious\n\n**מילים לשינון:** pretentious – יומרני, מתיימר · erudition [air-yoo-DISH-un /ˌɛrjʊˈdɪʃən/] – למדנות, ידע רחב"
+  },
+  {
+    "id": "wf-t09-q3",
+    "test": 9,
+    "n": 3,
+    "sentence": "Such was the greed of the swindler who inveigled his way into Europe's grandest salons that history remembers him not with admiration but as one of its most ________ figures.",
+    "baseWord": "fame",
+    "accepted": [
+      "infamous"
+    ],
+    "mistakes": {
+      "famous": "שם התואר famous מתאים לפני שם העצם figures ולצירוף history remembers him, אבל הצירוף not with admiration but דורש את ההפך מתהילה חיובית, והחמדנות (the greed of the swindler) מראה פרסום רע.\n\n_Right part of speech, but not with admiration but and the greed of the swindler point to bad fame._",
+      "unfamous": "הצורה unfamous מוסיפה שלילה כמו שהצירוף not with admiration מרמז, אבל זו אינה מילה תקנית, ו'לא מפורסם' סותר את הצירוף history remembers him, ולכן כותבים את הצורה infamous.\n\n_Not a standard word, and 'not famous' contradicts history remembers him._",
+      "infamus": "הצורה infamus נשמעת כמו התשובה ומתאימה לפני שם העצם figures, אבל הסיומת היא -ous, ולכן לפני שם העצם figures כותבים את הצורה infamous.\n\n_It sounds right before figures, but the suffix is -ous: infamous._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם העצם figures צריך שם תואר, והצירופים not with admiration ו־the greed of the swindler מראים פרסום רע, ולכן התשובה היא infamous (ידוע לשמצה).\n\n_Before figures we need an adjective, and not with admiration and the greed of the swindler signal bad fame: infamous._\n\n**הסבר מלא:** המקום הריק בא בין המילים its most לבין שם העצם figures, ולכן צריך שם תואר. הצירוף not with admiration but אומר שההיסטוריה לא זוכרת את הנוכל בהערכה, והחמדנות שלו (the greed of the swindler) מראה שהוא נודע בגלל מעשים רעים. לכן צריך את שם התואר infamous (ידוע לשמצה): התחילית in-, בלי האות e של שם העצם fame, ועם הסיומת -ous. כדאי לשים לב: שם התואר infamous אינו ההפך של שם התואר famous, וההטעמה בו היא על ההברה הראשונה (IN-fuh-mus).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם העצם figures צריך שם תואר; (2) שלילה: הצירופים not with admiration ו־the greed of the swindler מחייבים פרסום רע, כלומר את התחילית in-. (3) איות: האות e של שם העצם fame נושרת לפני הסיומת -ous.\n\n_Part of speech from position: (1) Before figures: an adjective. (2) Bad fame (not with admiration): in-. (3) Drop the e, add -ous._\n\n**טעויות נפוצות**\n\n✗ famous — שם התואר famous מתאים לפני שם העצם figures ולצירוף history remembers him, אבל הצירוף not with admiration but דורש את ההפך מתהילה חיובית, והחמדנות (the greed of the swindler) מראה פרסום רע.\n\n_Right part of speech, but not with admiration but and the greed of the swindler point to bad fame._\n\n✗ unfamous — הצורה unfamous מוסיפה שלילה כמו שהצירוף not with admiration מרמז, אבל זו אינה מילה תקנית, ו'לא מפורסם' סותר את הצירוף history remembers him, ולכן כותבים את הצורה infamous.\n\n_Not a standard word, and 'not famous' contradicts history remembers him._\n\n✗ infamus — הצורה infamus נשמעת כמו התשובה ומתאימה לפני שם העצם figures, אבל הסיומת היא -ous, ולכן לפני שם העצם figures כותבים את הצורה infamous.\n\n_It sounds right before figures, but the suffix is -ous: infamous._\n\n_Before figures we need an adjective; not with admiration but and the greed of the swindler mean bad fame: infamous (well known for bad deeds), not 'not famous'._\n\n**✓ תשובה סופית:** infamous\n\n**מילים לשינון:** infamous – ידוע לשמצה · inveigled [in-VAY-guld /ɪnˈveɪɡəld/] – השתחל בתחבולות ובחנופה"
+  },
+  {
+    "id": "wf-t09-q4",
+    "test": 9,
+    "n": 4,
+    "sentence": "Hardly had the minister signaled her reluctant ________ to the union's demands when her own allies denounced it as a craven surrender to pressure.",
+    "baseWord": "acquiesce",
+    "accepted": [
+      "acquiescence"
+    ],
+    "mistakes": {
+      "acquiescing": "הצורה acquiescing נראית טבעית אחרי הצירוף signaled her, אבל לפועל acquiesce יש שם עצם משלו, ואחרי שם התואר reluctant משתמשים בו ולא בצורת -ing (כמו בצירוף her reluctant agreement), ולכן כותבים את הצורה acquiescence.\n\n_After the adjective reluctant, use the verb's own noun, not an -ing form (her reluctant agreement, not agreeing)._",
+      "acquiesance": "הצורה acquiesance נשמעת נכון ומתאימה אחרי הצירוף her reluctant, אבל הרצף sc של הפועל נשמר והסיומת היא -ence, ולכן אחרי הצירוף her reluctant כותבים את הצורה acquiescence.\n\n_It drops the c of acquiesce and uses -ance; the noun ends in -escence._",
+      "acquiescense": "הצורה acquiescense כמעט נכונה ומתאימה אחרי הצירוף her reluctant, אבל בסוף שם העצם באה האות c ולא האות s, כמו בשמות העצם presence ו־absence, ולכן אחרי הצירוף her reluctant כותבים את הצורה acquiescence.\n\n_Nearly right, but the noun ends in -ence with c, like presence._"
+    },
+    "explanation": "**הסבר קצר:** אחרי שם התואר reluctant צריך שם עצם, ולא צורת -ing, ולכן התשובה היא acquiescence (השלמה, היענות בלי התנגדות).\n\n_After the adjective reluctant we need a noun, not an -ing form: acquiescence (acceptance without protest)._\n\n**הסבר מלא:** המקום הריק בא אחרי הצירוף her reluctant, ושם תואר לפני המקום הריק מחייב שם עצם; גם המילה it, שמתייחסת למילה החסרה, מראה שמדובר בשם עצם ביחיד. הצירוף to the union's demands ושם העצם surrender מראים שהשרה נענתה לדרישות, כלומר השלמה והיענות בלי התנגדות (acquiescence). באיות, הפועל acquiesce נשמר בשלמותו, כולל הרצף sc, ומוסיפים לו את הרצף -nce, כמו שהפועל coalesce הופך לשם העצם coalescence.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי שם התואר reluctant צריך שם עצם, ולא צורת -ing. (2) איות: לפועל acquiesce מוסיפים את הרצף -nce, וכך הסיומת היא -escence.\n\n_Part of speech from position: (1) After reluctant: a noun. (2) Add -nce to acquiesce: -escence._\n\n**טעויות נפוצות**\n\n✗ acquiescing — הצורה acquiescing נראית טבעית אחרי הצירוף signaled her, אבל לפועל acquiesce יש שם עצם משלו, ואחרי שם התואר reluctant משתמשים בו ולא בצורת -ing (כמו בצירוף her reluctant agreement), ולכן כותבים את הצורה acquiescence.\n\n_After the adjective reluctant, use the verb's own noun, not an -ing form (her reluctant agreement, not agreeing)._\n\n✗ acquiesance — הצורה acquiesance נשמעת נכון ומתאימה אחרי הצירוף her reluctant, אבל הרצף sc של הפועל נשמר והסיומת היא -ence, ולכן אחרי הצירוף her reluctant כותבים את הצורה acquiescence.\n\n_It drops the c of acquiesce and uses -ance; the noun ends in -escence._\n\n✗ acquiescense — הצורה acquiescense כמעט נכונה ומתאימה אחרי הצירוף her reluctant, אבל בסוף שם העצם באה האות c ולא האות s, כמו בשמות העצם presence ו־absence, ולכן אחרי הצירוף her reluctant כותבים את הצורה acquiescence.\n\n_Nearly right, but the noun ends in -ence with c, like presence._\n\n_After her reluctant we need a singular noun (it refers back to it); add -nce to acquiesce: acquiescence._\n\n**✓ תשובה סופית:** acquiescence\n\n**מילים לשינון:** acquiescence – השלמה, היענות בלי התנגדות · craven [KRAY-vun /ˈkreɪvən/] – פחדני ובזוי"
+  },
+  {
+    "id": "wf-t10-q1",
+    "test": 10,
+    "n": 1,
+    "sentence": "Far from proving guilt beyond a reasonable doubt, the prosecutor's stentorian closing speech rested entirely on ________ evidence: a muddy footprint, a disputed sighting and a motive shared by half the village.",
+    "baseWord": "circumstance",
+    "accepted": [
+      "circumstantial"
+    ],
+    "mistakes": {
+      "circumstancial": "הצורה circumstancial שומרת על האות c של שם העצם circumstance, ולכן נראה שהיא מתאימה לפני שם העצם evidence, אבל לפני הסיומת -ial האות c הופכת לאות t, ולכן לפני שם העצם evidence כותבים את הצורה circumstantial.\n\n_It keeps the c, but before -ial it becomes t, as in substantial._",
+      "circumstanced": "הצורה circumstanced מסתיימת בסיומת -ed ונראית כמו שם תואר לפני שם העצם evidence, אבל פירושה 'נתון במצב מסוים', והיא אינה מתארת ראיות עקיפות כמו טביעת הרגל הבוצית (a muddy footprint).\n\n_It means 'placed in a situation'; it cannot describe clues like a muddy footprint._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם העצם evidence צריך שם תואר, והרשימה a muddy footprint, a disputed sighting מתארת ראיות עקיפות, ולכן התשובה היא circumstantial (נסיבתי).\n\n_Before evidence we need an adjective, and a muddy footprint, a disputed sighting are indirect clues: circumstantial._\n\n**הסבר מלא:** המקום הריק בא לפני שם העצם evidence, ולכן צריך שם תואר. הצירוף Far from proving guilt והרשימה שאחרי הנקודתיים (טביעת רגל בוצית, זיהוי שנוי במחלוקת ומניע שחצי מתושבי הכפר חולקים) מתארים ראיות עקיפות שאינן מוכיחות אשמה, כלומר ראיות נסיבתיות (circumstantial evidence). באיות, הרצף ce של שם העצם circumstance הופך לאות t לפני הסיומת -ial, כמו ששם העצם substance הופך לשם התואר substantial.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם העצם evidence צריך שם תואר. (2) איות: הרצף ce של שם העצם circumstance הופך לאות t, ומוסיפים את הסיומת -ial.\n\n_Part of speech from position: (1) Before evidence: an adjective. (2) ce becomes t, plus -ial._\n\n**טעויות נפוצות**\n\n✗ circumstancial — הצורה circumstancial שומרת על האות c של שם העצם circumstance, ולכן נראה שהיא מתאימה לפני שם העצם evidence, אבל לפני הסיומת -ial האות c הופכת לאות t, ולכן לפני שם העצם evidence כותבים את הצורה circumstantial.\n\n_It keeps the c, but before -ial it becomes t, as in substantial._\n\n✗ circumstanced — הצורה circumstanced מסתיימת בסיומת -ed ונראית כמו שם תואר לפני שם העצם evidence, אבל פירושה 'נתון במצב מסוים', והיא אינה מתארת ראיות עקיפות כמו טביעת הרגל הבוצית (a muddy footprint).\n\n_It means 'placed in a situation'; it cannot describe clues like a muddy footprint._\n\n_Before evidence we need an adjective; indirect clues such as a muddy footprint are circumstantial (ce becomes t, plus -ial)._\n\n**✓ תשובה סופית:** circumstantial\n\n**מילים לשינון:** circumstantial – נסיבתי, עקיף · stentorian [sten-TOR-ee-un /stɛnˈtɔːriən/] – רועם, בקול חזק ורם"
+  },
+  {
+    "id": "wf-t10-q2",
+    "test": 10,
+    "n": 2,
+    "sentence": "Seldom has a literature search been at once so effortless and so ________: using new software, a neophyte researcher found, within hours, every relevant clinical trial published in any language.",
+    "baseWord": "exhaust",
+    "accepted": [
+      "exhaustive"
+    ],
+    "mistakes": {
+      "exhausting": "שם התואר exhausting (מתיש) מתאים לחיפוש ספרות (a literature search), שנחשב בדרך כלל לעבודה מייגעת, אבל הצירוף at once so effortless שולל עייפות, והחיפוש מצא כל מחקר (every relevant clinical trial).\n\n_exhausting (tiring) contradicts so effortless; the search was thorough._",
+      "exhausted": "שם התואר exhausted (מותש) מתאים אחרי המילה so, אבל הוא מתאר אדם עייף ולא חיפוש, והצירוף at once so effortless שולל עייפות.\n\n_exhausted describes a tired person, not a search, and so effortless rules out tiredness._",
+      "exhaustful": "הצורה exhaustful נראית כמו שם תואר שמתאים אחרי המילה so, אבל אין מילה כזאת, ושם התואר שפירושו 'מקיף', כמו שהצירוף every relevant clinical trial דורש, מסתיים בסיומת -ive.\n\n_Not a word; the adjective meaning 'complete' ends in -ive._"
+    },
+    "explanation": "**הסבר קצר:** אחרי המילה so צריך שם תואר, והצירוף every relevant clinical trial published in any language מראה חיפוש מקיף, ולכן התשובה היא exhaustive (ממצה, מקיף).\n\n_After so we need an adjective, and every relevant clinical trial published in any language shows completeness: exhaustive._\n\n**הסבר מלא:** המקום הריק בא אחרי המילה so, במקביל לשם התואר effortless, ולכן צריך שם תואר. אחרי הנקודתיים מתברר שהחיפוש מצא כל מחקר רלוונטי (every relevant clinical trial), כלומר הוא היה ממצה ומקיף (exhaustive). שם התואר exhausting (מתיש) סותר את הצירוף so effortless, ולכן כדאי לזכור: הסיומת -ive נותנת כאן את המשמעות 'מקיף', והסיומת -ing נותנת את המשמעות 'מתיש'.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: אחרי המילה so, במקביל לשם התואר effortless, צריך שם תואר. (2) סיומת: חיפוש שמצא כל מחקר הוא מקיף, ולכן מוסיפים לפועל exhaust את הסיומת -ive.\n\n_Part of speech from position: (1) After so, parallel to effortless: an adjective. (2) Thorough, so add -ive._\n\n**טעויות נפוצות**\n\n✗ exhausting — שם התואר exhausting (מתיש) מתאים לחיפוש ספרות (a literature search), שנחשב בדרך כלל לעבודה מייגעת, אבל הצירוף at once so effortless שולל עייפות, והחיפוש מצא כל מחקר (every relevant clinical trial).\n\n_exhausting (tiring) contradicts so effortless; the search was thorough._\n\n✗ exhausted — שם התואר exhausted (מותש) מתאים אחרי המילה so, אבל הוא מתאר אדם עייף ולא חיפוש, והצירוף at once so effortless שולל עייפות.\n\n_exhausted describes a tired person, not a search, and so effortless rules out tiredness._\n\n✗ exhaustful — הצורה exhaustful נראית כמו שם תואר שמתאים אחרי המילה so, אבל אין מילה כזאת, ושם התואר שפירושו 'מקיף', כמו שהצירוף every relevant clinical trial דורש, מסתיים בסיומת -ive.\n\n_Not a word; the adjective meaning 'complete' ends in -ive._\n\n_After so, parallel to effortless, we need an adjective; finding every relevant clinical trial means thorough: exhaustive, not exhausting (tiring)._\n\n**✓ תשובה סופית:** exhaustive\n\n**מילים לשינון:** exhaustive – ממצה, מקיף · neophyte [NEE-uh-fite /ˈniːəfaɪt/] – טירון, מתחיל"
+  },
+  {
+    "id": "wf-t10-q3",
+    "test": 10,
+    "n": 3,
+    "sentence": "The redoubtable treasurer's ________ conduct over four decades, during which no audit ever turned up a single discrepancy, made her the obvious choice to chair the city's new ethics commission.",
+    "baseWord": "reproach",
+    "accepted": [
+      "irreproachable"
+    ],
+    "mistakes": {
+      "unreproachable": "הצורה unreproachable מוסיפה את השלילה שהצירוף no audit ever turned up a single discrepancy דורש, אבל זו אינה צורה תקנית: לפני האות r התחילית היא ir-, ולכן לפני שם העצם conduct כותבים את הצורה irreproachable.\n\n_The negative is right, but the standard prefix here is ir-: irreproachable._",
+      "reproachable": "שם התואר reproachable (ראוי לגינוי) מתאים לפני שם העצם conduct, אבל הוא אומר את ההפך מהצירוף no audit ever turned up a single discrepancy, ולכן חסרה התחילית ir-.\n\n_Right part of speech, but it means 'deserving blame', the opposite of no audit ever turned up a single discrepancy._",
+      "irreproachably": "הצורה irreproachably נושאת את המשמעות שהצירוף no audit ever turned up a single discrepancy דורש, אבל זה תואר פועל, ולפני שם העצם conduct צריך שם תואר בלי הסיומת -ly.\n\n_The meaning is right, but an adverb cannot modify the noun conduct._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם העצם conduct צריך שם תואר, והצירוף no audit ever turned up a single discrepancy מראה התנהלות ללא רבב, ולכן התשובה היא irreproachable (ללא דופי).\n\n_Before conduct we need an adjective, and no audit ever turned up a single discrepancy shows faultless conduct: irreproachable._\n\n**הסבר מלא:** המקום הריק בא בין המילה treasurer's לבין שם העצם conduct, ולכן צריך שם תואר. הצירוף no audit ever turned up a single discrepancy (אף ביקורת לא מצאה ולו אי־התאמה אחת) והצירוף the obvious choice to chair the city's new ethics commission מראים שאין במה לגנות את הגזברית, ולכן צריך שלילה. מהפועל reproach (לגנות, לנזוף) בונים את שם התואר reproachable עם הסיומת -able, ולפני האות r תחילית השלילה היא ir-, כמו בשם התואר irresponsible; כך מקבלים את שם התואר irreproachable (ללא דופי).\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם העצם conduct צריך שם תואר; (2) שלילה: הצירוף no audit ever turned up a single discrepancy מחייב שלילה. (3) איות: לפני האות r התחילית היא ir-, ולכן האות r מופיעה פעמיים, והסיומת היא -able.\n\n_Part of speech from position: (1) Before conduct: an adjective. (2) Negative? Yes (no audit ever turned up a single discrepancy). (3) Before r, use ir-, plus -able._\n\n**טעויות נפוצות**\n\n✗ unreproachable — הצורה unreproachable מוסיפה את השלילה שהצירוף no audit ever turned up a single discrepancy דורש, אבל זו אינה צורה תקנית: לפני האות r התחילית היא ir-, ולכן לפני שם העצם conduct כותבים את הצורה irreproachable.\n\n_The negative is right, but the standard prefix here is ir-: irreproachable._\n\n✗ reproachable — שם התואר reproachable (ראוי לגינוי) מתאים לפני שם העצם conduct, אבל הוא אומר את ההפך מהצירוף no audit ever turned up a single discrepancy, ולכן חסרה התחילית ir-.\n\n_Right part of speech, but it means 'deserving blame', the opposite of no audit ever turned up a single discrepancy._\n\n✗ irreproachably — הצורה irreproachably נושאת את המשמעות שהצירוף no audit ever turned up a single discrepancy דורש, אבל זה תואר פועל, ולפני שם העצם conduct צריך שם תואר בלי הסיומת -ly.\n\n_The meaning is right, but an adverb cannot modify the noun conduct._\n\n_Before conduct we need an adjective; no audit ever turned up a single discrepancy makes it negative, and before r the prefix is ir-: irreproachable._\n\n**✓ תשובה סופית:** irreproachable\n\n**מילים לשינון:** irreproachable – ללא דופי, שאין במה לגנותו · redoubtable [rih-DOW-tuh-bul /rɪˈdaʊtəbəl/] – מעורר כבוד ויראה, שקשה להתמודד מולו"
+  },
+  {
+    "id": "wf-t10-q4",
+    "test": 10,
+    "n": 4,
+    "sentence": "So unexpected was the 1998 discovery of the universe's accelerating expansion that it left even the most stolid cosmologists with an ________ stranger picture of the cosmos than the tidy one they had long taught.",
+    "baseWord": "measure",
+    "accepted": [
+      "immeasurably",
+      "unmeasurably"
+    ],
+    "mistakes": {
+      "immeasureably": "הצורה immeasureably שומרת על האות e של הפועל measure, ולכן נראה שהיא מתאימה לפני שם התואר stranger, אבל לפני הסיומת -ably האות e נושרת (כמו בשם התואר measurable), ולכן לפני שם התואר stranger כותבים את הצורה immeasurably.\n\n_It keeps the e of measure, but the e drops before -ably (as in measurable): immeasurably._",
+      "immeasurable": "שם התואר immeasurable נושא את המשמעות שהצירוף So unexpected דורש, אבל שם תואר לא יכול לתאר את שם התואר stranger, ולכן צריך תואר פועל עם הסיומת -ably.\n\n_Right meaning, but an adjective cannot modify stranger; an adverb is needed._",
+      "imeasurably": "הצורה imeasurably מתאימה לפני שם התואר stranger, אבל כשהתחילית im- באה לפני מילה שמתחילה באות m, האות m מופיעה פעמיים, ולכן לפני שם התואר stranger כותבים את הצורה immeasurably.\n\n_It fits before stranger, but im- + measure keeps both ms._"
+    },
+    "explanation": "**הסבר קצר:** לפני שם התואר stranger צריך תואר פועל, והצירוף So unexpected was the 1998 discovery מראה מידה עצומה, ולכן התשובה היא immeasurably (לאין שיעור).\n\n_Before the comparative stranger we need an adverb, and So unexpected was the 1998 discovery signals a vast degree: immeasurably._\n\n**הסבר מלא:** המקום הריק בא לפני שם התואר stranger, ומילה שמתארת שם תואר היא תואר פועל, ולכן צריך את הסיומת -ly. מבנה ההיפוך So unexpected was ... that מראה שהשינוי בתמונת היקום היה עצום, ולכן צריך את המשמעות 'לאין שיעור', כלומר גדול מכדי למדוד אותו; גם המילה an מרמזת שהמילה מתחילה בתנועה. לפני האות m תחילית השלילה היא im-, האות e של הפועל measure נושרת, והסיומת -able הופכת לסיומת -ably, וכך מקבלים את תואר הפועל immeasurably. גם הצורה הנדירה unmeasurably מתקבלת, אבל הצורה הנפוצה היא immeasurably.\n\n💡 שיטה: חלק דיבר לפי המיקום — (1) חלק הדיבר: לפני שם התואר stranger צריך תואר פועל; (2) שלילה: הצירוף So unexpected מחייב את המשמעות 'לאין שיעור'. (3) איות: התחילית im- עם האות m פעמיים, נשירת האות e והסיומת -ably.\n\n_Part of speech from position: (1) Before stranger: an adverb. (2) A vast degree (So unexpected): im-. (3) Double m, drop e, add -ably._\n\n**טעויות נפוצות**\n\n✗ immeasureably — הצורה immeasureably שומרת על האות e של הפועל measure, ולכן נראה שהיא מתאימה לפני שם התואר stranger, אבל לפני הסיומת -ably האות e נושרת (כמו בשם התואר measurable), ולכן לפני שם התואר stranger כותבים את הצורה immeasurably.\n\n_It keeps the e of measure, but the e drops before -ably (as in measurable): immeasurably._\n\n✗ immeasurable — שם התואר immeasurable נושא את המשמעות שהצירוף So unexpected דורש, אבל שם תואר לא יכול לתאר את שם התואר stranger, ולכן צריך תואר פועל עם הסיומת -ably.\n\n_Right meaning, but an adjective cannot modify stranger; an adverb is needed._\n\n✗ imeasurably — הצורה imeasurably מתאימה לפני שם התואר stranger, אבל כשהתחילית im- באה לפני מילה שמתחילה באות m, האות m מופיעה פעמיים, ולכן לפני שם התואר stranger כותבים את הצורה immeasurably.\n\n_It fits before stranger, but im- + measure keeps both ms._\n\n_An adverb must modify the comparative stranger; So unexpected signals a vast degree, so im- (double m), drop e, add -ably: immeasurably (the rare unmeasurably is also accepted)._\n\n**✓ תשובה סופית:** immeasurably\n\n**מתקבל גם:** unmeasurably\n\n**מילים לשינון:** immeasurably – לאין שיעור, במידה עצומה · stolid [STOL-id /ˈstɒlɪd/] – שקול ואדיש, שאינו מתרגש בקלות"
+  }
+]

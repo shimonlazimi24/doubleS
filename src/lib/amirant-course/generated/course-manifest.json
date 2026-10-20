@@ -746,10 +746,64 @@
           "estimatedMinutes": 30
         },
         {
-          "id": "lesson.reform.05",
-          "title": "תרגול word formation (7.5)",
+          "id": "lesson.reform.wf-01",
+          "title": "מבחן יצירת מילה 1",
           "kind": "text",
-          "estimatedMinutes": 30
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-02",
+          "title": "מבחן יצירת מילה 2",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-03",
+          "title": "מבחן יצירת מילה 3",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-04",
+          "title": "מבחן יצירת מילה 4",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-05",
+          "title": "מבחן יצירת מילה 5",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-06",
+          "title": "מבחן יצירת מילה 6",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-07",
+          "title": "מבחן יצירת מילה 7",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-08",
+          "title": "מבחן יצירת מילה 8",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-09",
+          "title": "מבחן יצירת מילה 9",
+          "kind": "text",
+          "estimatedMinutes": 5
+        },
+        {
+          "id": "lesson.reform.wf-10",
+          "title": "מבחן יצירת מילה 10",
+          "kind": "text",
+          "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.06",

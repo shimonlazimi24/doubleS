@@ -1,3 +1,4 @@
+import type { WordFormationPublicItem } from "@/lib/amirant-course/word-formation/types";
 import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import {
   cleanLessonStepSectionTitle,
@@ -29,6 +30,8 @@ export type UnifiedFlowItem =
       title: string;
       questionIds: string[];
       timeLimitSec?: number;
+      /** Word formation: typed answers instead of options (questionIds stays empty). */
+      wordFormation?: WordFormationPublicItem[];
     };
 
 /**
@@ -70,7 +73,7 @@ export type BuiltWorkspaceStep = {
   /** When true, render the flow gate interaction (בדיקה קצרה) inline after this step’s card - `flowIndex` must point at the gate. */
   embedQuickCheck?: boolean;
   /** שלב שאלות אינטראקטיביות - payload מ־UnifiedFlowItem kind "questions". */
-  questions?: { title: string; questionIds: string[]; timeLimitSec?: number };
+  questions?: { title: string; questionIds: string[]; timeLimitSec?: number; wordFormation?: WordFormationPublicItem[] };
 };
 
 const TRUNC = 40;
@@ -190,7 +193,12 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
         label: item.title || "תרגול אינטראקטיבי",
         flowIndex: i,
         ...nil,
-        questions: { title: item.title, questionIds: item.questionIds, timeLimitSec: item.timeLimitSec },
+        questions: {
+          title: item.title,
+          questionIds: item.questionIds,
+          timeLimitSec: item.timeLimitSec,
+          wordFormation: item.wordFormation,
+        },
       });
       return;
     }

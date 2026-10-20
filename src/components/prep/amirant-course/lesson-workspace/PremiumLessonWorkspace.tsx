@@ -12,6 +12,7 @@ import { LessonAiBlock } from "../lesson/LessonAiBlock";
 import { LessonKeyTakeawayClosing } from "../lesson/LessonKeyTakeawayClosing";
 import { LessonFooterCTA } from "../lesson/LessonFooterCTA";
 import { AmirantInlineQuestionsCard } from "../lesson/AmirantInlineQuestionsCard";
+import { AmirantWordFormationCard } from "../lesson/AmirantWordFormationCard";
 import { VocabularyLessonExperience } from "../VocabularyLessonExperience";
 import { PremiumMarkdownBody } from "../premium/PremiumMarkdownBody";
 import type { VocabParseResult } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
@@ -410,6 +411,17 @@ type RenderParams = {
 
 function renderStepBody(p: RenderParams) {
   const c = p.current;
+  if (c.kind === "inline_questions" && c.questions?.wordFormation) {
+    return (
+      <LessonStepContent kind="inline_questions" showTopLabel={false} className="!min-h-0">
+        <AmirantWordFormationCard
+          title={c.questions.title}
+          items={c.questions.wordFormation}
+          timeLimitSec={c.questions.timeLimitSec}
+        />
+      </LessonStepContent>
+    );
+  }
   if (c.kind === "inline_questions" && c.questions) {
     return (
       <LessonStepContent kind="inline_questions" showTopLabel={false} className="!min-h-0">

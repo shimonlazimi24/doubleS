@@ -81,3 +81,15 @@ export const SIMULATION_LESSON_RUNTIME: Record<string, string> = {
 export function getLessonQuestionGroup(lessonId: string): LessonQuestionGroup | null {
   return LESSON_QUESTION_GROUPS[lessonId] ?? null;
 }
+
+/**
+ * Word-formation lessons: the content owner's typed-answer tests (4 questions,
+ * 45 seconds each, as in the exam). Not bank questions; see
+ * `word-formation/word-formation.server.ts`.
+ */
+export const WORD_FORMATION_LESSONS: Record<string, { test: number; timeLimitSec: number }> = Object.fromEntries(
+  Array.from({ length: 10 }, (_, i) => [
+    `lesson.reform.wf-${String(i + 1).padStart(2, "0")}`,
+    { test: i + 1, timeLimitSec: 4 * 45 },
+  ]),
+);
