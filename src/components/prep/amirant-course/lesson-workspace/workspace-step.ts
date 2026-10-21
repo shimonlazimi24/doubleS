@@ -1,4 +1,6 @@
 import type { WordFormationPublicItem } from "@/lib/amirant-course/word-formation/types";
+import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
+import type { ClientPassage } from "@/lib/amirant-course/question-bank/client-types";
 import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import {
   cleanLessonStepSectionTitle,
@@ -28,9 +30,12 @@ export type UnifiedFlowItem =
       kind: "questions";
       id: string;
       title: string;
-      questionIds: string[];
+      /** Serialised by the server page for this lesson only — the browser holds no bank. */
+      questions: BankQuestionPublic[];
+      /** The reading passages those questions point at. */
+      passages: ClientPassage[];
       timeLimitSec?: number;
-      /** Word formation: typed answers instead of options (questionIds stays empty). */
+      /** Word formation: typed answers instead of options (questions stays empty). */
       wordFormation?: WordFormationPublicItem[];
     };
 
@@ -73,7 +78,13 @@ export type BuiltWorkspaceStep = {
   /** When true, render the flow gate interaction (בדיקה קצרה) inline after this step’s card - `flowIndex` must point at the gate. */
   embedQuickCheck?: boolean;
   /** שלב שאלות אינטראקטיביות - payload מ־UnifiedFlowItem kind "questions". */
-  questions?: { title: string; questionIds: string[]; timeLimitSec?: number; wordFormation?: WordFormationPublicItem[] };
+  questions?: {
+    title: string;
+    questions: BankQuestionPublic[];
+    passages: ClientPassage[];
+    timeLimitSec?: number;
+    wordFormation?: WordFormationPublicItem[];
+  };
 };
 
 const TRUNC = 40;
@@ -195,7 +206,8 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
         ...nil,
         questions: {
           title: item.title,
-          questionIds: item.questionIds,
+          questions: item.questions,
+          passages: item.passages,
           timeLimitSec: item.timeLimitSec,
           wordFormation: item.wordFormation,
         },

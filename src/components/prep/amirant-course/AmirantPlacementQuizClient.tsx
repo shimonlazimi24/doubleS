@@ -18,10 +18,10 @@ import {
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
 import {
-  AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC,
-  getClientPassage,
-  getPublicBankQuestion,
-} from "@/lib/amirant-course/question-bank/client-bank";
+  indexClientQuestionSet,
+  type ClientPoolQuestion,
+} from "@/lib/amirant-course/question-bank/client-types";
+import { fetchClientQuestionSet } from "@/lib/amirant-course/question-set-client";
 import { gradeBatchAnswers } from "@/lib/amirant-course/grade-client";
 import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
 import { AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
@@ -68,12 +68,23 @@ function sectionLabelForIndex(i: number): string {
   return SECTION_LABELS.find((s) => i >= s.from && i <= s.to)?.label ?? "";
 }
 
-export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: ManifestQuiz }) {
+export function AmirantPlacementQuizClient({
+  manifestQuiz,
+  pool,
+}: {
+  manifestQuiz: ManifestQuiz;
+  /** The general bank's ids, topics, levels and passage ids — what the form builder needs, no question text. */
+  pool: ClientPoolQuestion[];
+}) {
   const { service } = useAmirantPersistence();
   const questionCount = manifestQuiz.questionCount;
 
   const [phase, setPhase] = useState<Phase>("intro");
   const [form, setForm] = useState<{ questionIds: string[]; passageId: string | null } | null>(null);
+  // The 15 chosen questions and their passage, fetched by id when the test starts.
+  const [loaded, setLoaded] = useState<ReturnType<typeof indexClientQuestionSet> | null>(null);
+  const [starting, setStarting] = useState(false);
+  const questionsById = loaded?.questionsById;
   const [answers, setAnswers] = useState<(string | null)[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [timeLeftSec, setTimeLeftSec] = useState(() => manifestQuiz.timeLimitSec ?? 20 * 60);
@@ -85,35 +96,46 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
 
   /** התחלת המבחן: בונים טופס, פותחים attempt, ומתחילים את הטיימר - רק בלחיצה. */
   const startTest = useCallback(() => {
+    if (starting) return;
+    setStarting(true);
     const exclusions = recentPlacementExclusions();
     const built = buildPlacementQuizForm({
       // הבנק הכללי - בלי שאלות הסימולציות, כדי לא "לשרוף" אותן לפני שיעורי הסימולציה
-      bank: AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC,
+      bank: pool,
       seed: `placement:${Date.now()}:${Math.random()}`,
       excludeQuestionIds: exclusions.questionIds,
       excludePassageIds: exclusions.passageIds,
     });
-    rememberPlacementForm(built);
-    setForm(built);
-    // גודל מערכי המצב נגזר מהטופס שנבנה בפועל - לא מהמניפסט, כדי שטופס קצר
-    // (מאגר מדולדל) לא ישאיר משבצות שלעולם אי אפשר לענות עליהן ולסיים.
-    setAnswers(Array.from({ length: built.questionIds.length }, () => null));
-    responseTimesRef.current = Array.from({ length: built.questionIds.length }, () => 0);
-    setPhase("active");
-    questionEnteredAt.current = Date.now();
-    void service
-      .startQuizAttempt({ quizId: manifestQuiz.id, sourceMode: "production", startLevel: 3 })
-      .then((id) => {
-        attemptIdRef.current = id;
+    // The question text arrives only now, for these 15 ids; the timer starts once it is here.
+    void fetchClientQuestionSet(built.questionIds)
+      .then((set) => {
+        setLoaded(indexClientQuestionSet(set));
+        rememberPlacementForm(built);
+        setForm(built);
+        // גודל מערכי המצב נגזר מהטופס שנבנה בפועל - לא מהמניפסט, כדי שטופס קצר
+        // (מאגר מדולדל) לא ישאיר משבצות שלעולם אי אפשר לענות עליהן ולסיים.
+        setAnswers(Array.from({ length: built.questionIds.length }, () => null));
+        responseTimesRef.current = Array.from({ length: built.questionIds.length }, () => 0);
+        setPhase("active");
+        questionEnteredAt.current = Date.now();
+        void service
+          .startQuizAttempt({ quizId: manifestQuiz.id, sourceMode: "production", startLevel: 3 })
+          .then((id) => {
+            attemptIdRef.current = id;
+          })
+          .catch(() => {});
       })
-      .catch(() => {});
-  }, [manifestQuiz.id, service]);
+      .catch(() => {
+        showPrepToast("טעינת השאלות נכשלה. נסו שוב.", { tone: "error" });
+      })
+      .finally(() => setStarting(false));
+  }, [manifestQuiz.id, pool, service, starting]);
 
   const questionIds = form?.questionIds ?? [];
   const effectiveCount = questionIds.length || questionCount;
   const currentId = questionIds[currentIndex];
-  const currentQ = currentId ? getPublicBankQuestion(currentId) : undefined;
-  const passage = form?.passageId ? getClientPassage(form.passageId) : undefined;
+  const currentQ = currentId ? questionsById?.get(currentId) : undefined;
+  const passage = form?.passageId ? loaded?.passagesById.get(form.passageId) : undefined;
   const isReadingSection = currentQ?.topicSlug === "reading_comprehension";
 
   useEffect(() => {
@@ -139,7 +161,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
 
   const finalize = useCallback(
     (reason: "manual" | "timeout") => {
-      if (finalizeOnceRef.current || !form) return;
+      if (finalizeOnceRef.current || !form || !questionsById) return;
       finalizeOnceRef.current = true;
 
       const run = async () => {
@@ -161,7 +183,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
         for (let i = 0; i < formCount; i++) {
           const qid = form.questionIds[i];
           if (!qid) continue;
-          const row = getPublicBankQuestion(qid);
+          const row = questionsById.get(qid);
           if (!row) continue;
           const ans = answers[i];
           const timedBlank = ans == null && reason === "timeout" && i === currentIndex;
@@ -198,7 +220,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
         });
 
         const persistedRows = form.questionIds.flatMap((questionId, i) => {
-          const q = getPublicBankQuestion(questionId);
+          const q = questionsById.get(questionId);
           if (!q) return [];
           const selected = answers[i] ?? null;
           const graded = gradedById.get(questionId);
@@ -288,7 +310,7 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
         showPrepToast("לא הצלחנו לחשב את הציון. נסו שוב.", { tone: "error" });
       });
     },
-    [answers, currentIndex, form, manifestQuiz.id, manifestQuiz.title, service],
+    [answers, currentIndex, form, manifestQuiz.id, manifestQuiz.title, questionsById, service],
   );
 
   useEffect(() => {
@@ -355,9 +377,10 @@ export function AmirantPlacementQuizClient({ manifestQuiz }: { manifestQuiz: Man
             <button
               type="button"
               onClick={startTest}
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-card transition hover:opacity-90 sm:w-auto"
+              disabled={starting}
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-card transition hover:opacity-90 disabled:opacity-60 sm:w-auto"
             >
-              התחל מבחן
+              {starting ? "טוענים שאלות…" : "התחל מבחן"}
             </button>
           </CardBody>
         </Card>

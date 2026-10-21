@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { Card, CardBody, Text } from "@/components/ui";
 import { buildWeakQuizRequestFromLocalAnalytics } from "@/lib/amirant-course/weak-quiz-build-local";
-import { generateWeakTopicsQuiz } from "@/lib/amirant-course/weak-quiz";
+import { generateWeakTopicsQuiz, type PickableQuestion } from "@/lib/amirant-course/weak-quiz";
+import { fetchClientQuestionSet } from "@/lib/amirant-course/question-set-client";
+import type { ClientQuestionSet } from "@/lib/amirant-course/question-bank/client-types";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AmirantPracticeSetClient } from "./AmirantPracticeSetClient";
@@ -12,11 +14,13 @@ import { AmirantPracticeSetClient } from "./AmirantPracticeSetClient";
 const COURSE = `${PREP_BASE}/amirant/course`;
 
 /**
- * Fetches 16-question weak-topic set: API when signed in, else local generator.
+ * Fetches 16-question weak-topic set: API when signed in, else local generator
+ * over `pool` (the general bank's ids, topics and levels — no question text).
+ * The chosen questions are then fetched by id.
  */
-export function AmirantWeakQuizPageClient() {
+export function AmirantWeakQuizPageClient({ pool }: { pool: PickableQuestion[] }) {
   const [error, setError] = useState<string | null>(null);
-  const [questionIds, setQuestionIds] = useState<string[] | null>(null);
+  const [questionSet, setQuestionSet] = useState<ClientQuestionSet | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,6 +35,7 @@ export function AmirantWeakQuizPageClient() {
         const userId = user?.id ?? "local-anonymous";
         const input = buildWeakQuizRequestFromLocalAnalytics(userId);
 
+        let questionIds: string[] | null = null;
         if (user && client) {
           const res = await fetch("/api/prep/amirant-course/generate-weak-quiz", {
             method: "POST",
@@ -41,14 +46,16 @@ export function AmirantWeakQuizPageClient() {
           if (res.ok) {
             const data = (await res.json()) as { questionIds?: string[] };
             if (Array.isArray(data.questionIds) && data.questionIds.length === 16) {
-              if (!cancelled) setQuestionIds(data.questionIds);
-              return;
+              questionIds = data.questionIds;
             }
           }
         }
+        if (!questionIds) {
+          questionIds = generateWeakTopicsQuiz({ input, recentQuestionIds: [], bank: pool }).questionIds;
+        }
 
-        const out = generateWeakTopicsQuiz({ input, recentQuestionIds: [] });
-        if (!cancelled) setQuestionIds(out.questionIds);
+        const set = await fetchClientQuestionSet(questionIds);
+        if (!cancelled) setQuestionSet(set);
       } catch (e) {
         if (!cancelled) {
           setError(e instanceof Error ? e.message : "שגיאה");
@@ -58,7 +65,7 @@ export function AmirantWeakQuizPageClient() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [pool]);
 
   if (error) {
     return (
@@ -73,7 +80,7 @@ export function AmirantWeakQuizPageClient() {
     );
   }
 
-  if (!questionIds) {
+  if (!questionSet) {
     return (
       <Card className="border-primary/20 bg-surface-low/50">
         <CardBody className="space-y-2 p-4">
@@ -99,7 +106,7 @@ export function AmirantWeakQuizPageClient() {
       </div>
       <AmirantPracticeSetClient
         title="תרגול ממוקד - הנושאים שכדאי לחזק"
-        questionIds={questionIds}
+        questionSet={questionSet}
         variant="weak_quiz"
       />
     </div>

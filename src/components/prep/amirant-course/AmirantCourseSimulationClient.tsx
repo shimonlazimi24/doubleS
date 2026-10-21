@@ -17,10 +17,13 @@ import {
   writeCrossTestSnapshot,
 } from "@/lib/amirant-course";
 import {
-  AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
   bankQuestionsPublicToPoolItems,
-  getPublicBankQuestion,
-} from "@/lib/amirant-course/question-bank/client-bank";
+  type ClientPassage,
+  type ClientPoolQuestion,
+  type ClientQuestionSet,
+} from "@/lib/amirant-course/question-bank/client-types";
+import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
+import { fetchClientQuestionSet } from "@/lib/amirant-course/question-set-client";
 import { buildSimulationSectionQuestionIds } from "@/lib/amirant-course/session/build-simulation-section";
 import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -35,7 +38,6 @@ import { buildAdaptiveDecisionEvent } from "@/lib/amirant-course/adaptive-teleme
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
-const SIM_QUESTION_POOL = bankQuestionsPublicToPoolItems(AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC);
 
 type RunPhase = "intro" | "running" | "summary";
 
@@ -95,14 +97,31 @@ function streakFromAnswerCorrectMap(
   };
 }
 
-export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
+export function AmirantCourseSimulationClient({
+  simId,
+  pool,
+}: {
+  simId: string;
+  /** Everything but the owner's sets, as ids, topics, levels and passage ids — no question text. */
+  pool: ClientPoolQuestion[];
+}) {
   const { service } = useAmirantPersistence();
   const sim = useMemo(() => getSimulation(simId), [simId]);
   const tieBreakSalt = useMemo(() => `${AMIRANT_PREPARATION_COURSE_ID}:sim:${simId}`, [simId]);
+  const simQuestionPool = useMemo(() => bankQuestionsPublicToPoolItems(pool), [pool]);
 
   const [phase, setPhase] = useState<RunPhase>("intro");
   const [run, setRun] = useState<RunState | null>(null);
   const [summary, setSummary] = useState<{ correct: number; total: number } | null>(null);
+  const [starting, setStarting] = useState(false);
+  // The questions of the sections met so far, fetched by id when each section starts.
+  const questionsByIdRef = useRef<Map<string, BankQuestionPublic>>(new Map());
+  const passagesByIdRef = useRef<Map<string, ClientPassage>>(new Map());
+  const absorb = useCallback((set: ClientQuestionSet) => {
+    for (const q of set.questions) questionsByIdRef.current.set(q.id, q);
+    for (const p of set.passages) passagesByIdRef.current.set(p.id, p);
+  }, []);
+  const getQuestion = useCallback((id: string) => questionsByIdRef.current.get(id), []);
   const zeroHandled = useRef("");
   const simulationAttemptIdRef = useRef<string | null>(null);
   const questionEnteredAtRef = useRef<number>(Date.now());
@@ -112,42 +131,52 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   const finishingRef = useRef(false);
 
   const start = useCallback(() => {
-    if (!sim) return;
+    if (!sim || starting) return;
     const startLevel = nextStartLevelFromCrossTest();
     const pilotIds = pickAdaptiveQuestionIds({
-      pool: SIM_QUESTION_POOL,
+      pool: simQuestionPool,
       topicId: sim.pilot.topicSlug,
       targetLevel: startLevel,
       count: sim.pilot.questionCount,
       excludeIds: [],
       tieBreakSalt: `${tieBreakSalt}:pilot`,
     });
-    setSummary(null);
-    setPhase("running");
-    void service
-      .startSimulationAttempt({
-        simulationId: sim.id,
-        sourceMode: "production",
-        startLevel,
+    setStarting(true);
+    // The pilot's questions arrive now; the clock starts once they are here.
+    void fetchClientQuestionSet(pilotIds)
+      .then((set) => {
+        absorb(set);
+        setSummary(null);
+        setPhase("running");
+        void service
+          .startSimulationAttempt({
+            simulationId: sim.id,
+            sourceMode: "production",
+            startLevel,
+          })
+          .then((id) => {
+            simulationAttemptIdRef.current = id;
+          })
+          .catch(() => {});
+        setRun({
+          kind: "pilot",
+          sectionIndex: 0,
+          sectionEnterLevel: startLevel,
+          questionIds: pilotIds,
+          answers: Object.fromEntries(pilotIds.map((id) => [id, null as string | null])),
+          answerCorrect: Object.fromEntries(pilotIds.map((id) => [id, null as boolean | null])),
+          focusIndex: 0,
+          timeLeftSec: sim.pilot.seconds,
+          globalUsedIds: [...pilotIds],
+          scoredCorrect: 0,
+          scoredTotal: 0,
+        });
       })
-      .then((id) => {
-        simulationAttemptIdRef.current = id;
+      .catch(() => {
+        showPrepToast("טעינת השאלות נכשלה. נסו שוב.", { tone: "error" });
       })
-      .catch(() => {});
-    setRun({
-      kind: "pilot",
-      sectionIndex: 0,
-      sectionEnterLevel: startLevel,
-      questionIds: pilotIds,
-      answers: Object.fromEntries(pilotIds.map((id) => [id, null as string | null])),
-      answerCorrect: Object.fromEntries(pilotIds.map((id) => [id, null as boolean | null])),
-      focusIndex: 0,
-      timeLeftSec: sim.pilot.seconds,
-      globalUsedIds: [...pilotIds],
-      scoredCorrect: 0,
-      scoredTotal: 0,
-    });
-  }, [service, sim, tieBreakSalt]);
+      .finally(() => setStarting(false));
+  }, [absorb, service, sim, simQuestionPool, starting, tieBreakSalt]);
 
   const finishSection = useCallback(
     (opts?: { force?: boolean }) => {
@@ -164,14 +193,15 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
           const first = sim.sections[0];
           if (!first) return;
           const scoredIds = buildSimulationSectionQuestionIds({
-            pool: SIM_QUESTION_POOL,
-            bank: AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
+            pool: simQuestionPool,
+            bank: pool,
             topicSlug: first.topicSlug,
             targetLevel: run.sectionEnterLevel,
             count: first.questionCount,
             excludeIds: Array.from(new Set(run.globalUsedIds)),
             tieBreakSalt: `${tieBreakSalt}:s0`,
           });
+          absorb(await fetchClientQuestionSet(scoredIds));
           setRun({
             kind: "scored",
             sectionIndex: 0,
@@ -206,7 +236,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         }
 
         const sectionAnswers = ids.flatMap((qid) => {
-          const row = getPublicBankQuestion(qid);
+          const row = getQuestion(qid);
           if (!row) return [];
           const selected = run.answers[qid] ?? null;
           const graded = gradedById.get(qid);
@@ -248,7 +278,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
         }
         let nextA = loadAnalytics();
         for (const qid of ids) {
-          const row = getPublicBankQuestion(qid);
+          const row = getQuestion(qid);
           const ans = run.answers[qid];
           if (!row || ans == null) continue;
           const ok = gradedById.get(qid)?.isCorrect === true;
@@ -313,14 +343,15 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
 
         const sec = sim.sections[nextIdx]!;
         const nextIds = buildSimulationSectionQuestionIds({
-          pool: SIM_QUESTION_POOL,
-          bank: AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
+          pool: simQuestionPool,
+          bank: pool,
           topicSlug: sec.topicSlug,
           targetLevel: nextLevel,
           count: sec.questionCount,
           excludeIds: Array.from(new Set(run.globalUsedIds)),
           tieBreakSalt: `${tieBreakSalt}:s${nextIdx}`,
         });
+        absorb(await fetchClientQuestionSet(nextIds));
 
         setRun({
           kind: "scored",
@@ -345,7 +376,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
           finishingRef.current = false;
         });
     },
-    [run, service, sim, tieBreakSalt],
+    [absorb, getQuestion, pool, run, service, sim, simQuestionPool, tieBreakSalt],
   );
 
   useEffect(() => {
@@ -394,7 +425,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   useEffect(() => {
     if (!run) return;
     const qid = run.questionIds[run.focusIndex];
-    const q = qid ? getPublicBankQuestion(qid) : undefined;
+    const q = qid ? getQuestion(qid) : undefined;
     if (!qid || !q) return;
     const sessionId = simulationAttemptIdRef.current ?? undefined;
     const key = `${sessionId ?? "local"}:${run.kind}:${run.sectionIndex}:${run.focusIndex}:${qid}`;
@@ -413,7 +444,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
     });
     telemetryLoggedRef.current.add(key);
     void service.recordAdaptiveDecision(event).catch(() => {});
-  }, [run, service]);
+  }, [getQuestion, run, service]);
 
   if (!sim) {
     return (
@@ -449,9 +480,10 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
           <button
             type="button"
             onClick={start}
-            className="inline-flex min-h-12 items-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
+            disabled={starting}
+            className="inline-flex min-h-12 items-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover disabled:opacity-60"
           >
-            התחלת סימולציה
+            {starting ? "טוענים שאלות…" : "התחלת סימולציה"}
           </button>
           <p className="text-xs text-muted">הטיימר מתחיל רק אחרי הלחיצה.</p>
         </div>
@@ -485,7 +517,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
 
           {(() => {
             const qid = run.questionIds[run.focusIndex];
-            const q = qid ? getPublicBankQuestion(qid) : null;
+            const q = qid ? getQuestion(qid) : null;
             if (!q) return null;
             return (
               <Card className="overflow-hidden">
@@ -493,7 +525,7 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
                   <Text as="p" variant="caption" className="text-muted">
                     שאלה {run.focusIndex + 1} מתוך {run.questionIds.length} בפרק
                   </Text>
-                  <QuizPassagePanel passageId={q.passageId} />
+                  <QuizPassagePanel passage={q.passageId ? passagesByIdRef.current.get(q.passageId) : undefined} />
                   <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
                     {amirantExamQuestionPromptForDisplay(q.prompt)}
                   </p>

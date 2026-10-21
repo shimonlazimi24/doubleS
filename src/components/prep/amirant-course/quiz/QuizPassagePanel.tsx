@@ -5,13 +5,11 @@
  * כל שאלות ה-RC בבנק האמיתי תלויות-קטע (passageId); בלי הפאנל הזה השאלה
  * ("What is the main idea of the passage?") אינה ניתנת למענה.
  */
-import { getClientPassage } from "@/lib/amirant-course/question-bank/client-bank";
+import type { ClientPassage } from "@/lib/amirant-course/question-bank/client-types";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
 
-export function QuizPassagePanel({ passageId, className }: { passageId?: string; className?: string }) {
-  if (!passageId) return null;
-  const passage = getClientPassage(passageId);
+export function QuizPassagePanel({ passage, className }: { passage?: ClientPassage; className?: string }) {
   if (!passage) return null;
   return (
     <div

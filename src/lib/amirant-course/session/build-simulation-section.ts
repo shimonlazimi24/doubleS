@@ -2,6 +2,9 @@ import type { DifficultyLevel, QuestionPoolItem } from "@/lib/learning-intellige
 import type { BankQuestionPublic } from "../question-bank/public-bank";
 import { pickAdaptiveQuestionIds } from "../adaptive/pick-from-bank";
 
+/** What the reading path needs to know about a row — the pool shape the browser is given. */
+type ReadingBankRow = Pick<BankQuestionPublic, "id" | "topicSlug" | "passageId">;
+
 /**
  * Builds the question list for one simulation section.
  *
@@ -28,14 +31,14 @@ function questionOrdinal(id: string): number {
 }
 
 function pickReadingSection(params: {
-  bank: BankQuestionPublic[];
+  bank: readonly ReadingBankRow[];
   count: number;
   excludeIds: Set<string>;
   tieBreakSalt: string;
 }): string[] {
   const { bank, count, excludeIds, tieBreakSalt } = params;
 
-  const byPassage = new Map<string, BankQuestionPublic[]>();
+  const byPassage = new Map<string, ReadingBankRow[]>();
   for (const q of bank) {
     if (q.topicSlug !== READING_TOPIC || !q.passageId) continue;
     const list = byPassage.get(q.passageId) ?? [];
@@ -63,7 +66,7 @@ function pickReadingSection(params: {
 
 export function buildSimulationSectionQuestionIds(params: {
   pool: QuestionPoolItem[];
-  bank: BankQuestionPublic[];
+  bank: readonly ReadingBankRow[];
   topicSlug: string;
   targetLevel: DifficultyLevel;
   count: number;

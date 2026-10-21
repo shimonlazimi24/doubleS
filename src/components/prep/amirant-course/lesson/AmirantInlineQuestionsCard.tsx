@@ -13,10 +13,8 @@ import {
   recordSessionEnd,
   saveAnalytics,
 } from "@/lib/amirant-course";
-import {
-  getClientPassage,
-  getPublicBankQuestion,
-} from "@/lib/amirant-course/question-bank/client-bank";
+import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
+import type { ClientPassage } from "@/lib/amirant-course/question-bank/client-types";
 import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/grade-client";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
@@ -27,20 +25,19 @@ import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 type Props = {
   title: string;
-  questionIds: string[];
+  /** Serialised by the lesson page (server) — no bank in the browser. */
+  questions: BankQuestionPublic[];
+  passages: ClientPassage[];
   timeLimitSec?: number;
   /** תווית סשן לאנליטיקס (שם השיעור). */
   sessionLabel?: string;
 };
 
-export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, sessionLabel }: Props) {
+export function AmirantInlineQuestionsCard({ title, questions, passages, timeLimitSec, sessionLabel }: Props) {
   // One seed per attempt: options of shuffle-safe questions keep a stable order
   // while the learner works, and come up in a new order next time.
   const [attemptSeed] = useState(() => newAttemptSeed());
-  const questions = useMemo(
-    () => questionIds.map((id) => getPublicBankQuestion(id)).filter((q): q is NonNullable<typeof q> => !!q),
-    [questionIds],
-  );
+  const passagesById = useMemo(() => new Map(passages.map((p) => [p.id, p])), [passages]);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [checked, setChecked] = useState(false);
   const [checking, setChecking] = useState(false);
@@ -153,7 +150,7 @@ export function AmirantInlineQuestionsCard({ title, questionIds, timeLimitSec, s
 
       <ol className="space-y-6">
         {questions.map((q, qi) => {
-          const passage = q.passageId && q.passageId !== lastPassageId ? getClientPassage(q.passageId) : null;
+          const passage = q.passageId && q.passageId !== lastPassageId ? passagesById.get(q.passageId) : null;
           if (q.passageId) lastPassageId = q.passageId;
           const selected = answers[q.id];
           const graded = gradeById[q.id];

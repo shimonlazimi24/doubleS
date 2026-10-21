@@ -26,9 +26,9 @@ import {
 import type { BankQuestion } from "@/lib/amirant-course/types/bank-question";
 import {
   bankQuestionsPublicToPoolItems,
-  filterPublicBankByTopicsAndVocabMode,
-  getPublicBankQuestion,
-} from "@/lib/amirant-course/question-bank/client-bank";
+  indexClientQuestionSet,
+  type ClientQuestionSet,
+} from "@/lib/amirant-course/question-bank/client-types";
 import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
 import { normalizeQuizTopicSlugs, AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
@@ -135,17 +135,18 @@ const VOCAB_MODE_LABEL_HE: Record<Exclude<VocabQuizMode, "mixed">, string> = {
 export function AmirantAdaptiveQuizClient({
   manifestQuiz,
   vocabMode = "mixed",
+  questionSet,
 }: {
   manifestQuiz: ManifestQuiz;
   vocabMode?: VocabQuizMode;
+  /** The general bank filtered to this quiz's topics (and vocab mode) by the server page. */
+  questionSet: ClientQuestionSet;
 }) {
   const { service } = useAmirantPersistence();
   const topics = useMemo(() => normalizeQuizTopicSlugs(manifestQuiz.topicSlugs), [manifestQuiz.topicSlugs]);
   const hasVocabTopic = topics.includes("vocabulary");
-  const pool = useMemo(
-    () => bankQuestionsPublicToPoolItems(filterPublicBankByTopicsAndVocabMode(topics, vocabMode)),
-    [topics, vocabMode],
-  );
+  const { questionsById, passagesById } = useMemo(() => indexClientQuestionSet(questionSet), [questionSet]);
+  const pool = useMemo(() => bankQuestionsPublicToPoolItems(questionSet.questions), [questionSet]);
   const tieBreakSalt = useMemo(() => `${AMIRANT_PREPARATION_COURSE_ID}:${manifestQuiz.id}`, [manifestQuiz.id]);
   const minInTestLevel = manifestQuiz.minInTestLevel;
   const inTestLevelOptions = useMemo(
@@ -220,7 +221,7 @@ export function AmirantAdaptiveQuizClient({
   questionIdsRef.current = questionIds;
 
   const currentId = questionIds[currentIndex];
-  const currentQ = currentId ? getPublicBankQuestion(currentId) : undefined;
+  const currentQ = currentId ? questionsById.get(currentId) : undefined;
 
   useEffect(() => {
     if (!currentQ) return;
@@ -283,7 +284,7 @@ export function AmirantAdaptiveQuizClient({
         for (let i = 0; i < manifestQuiz.questionCount; i++) {
           const qid = ids[i];
           if (!qid) continue;
-          const row = getPublicBankQuestion(qid);
+          const row = questionsById.get(qid);
           if (!row) continue;
           const ans = answers[i];
           const timedBlank = ans == null && reason === "timeout" && i === currentIndex;
@@ -338,7 +339,7 @@ export function AmirantAdaptiveQuizClient({
 
         const gradedById = new Map(batch.items.map((item) => [item.questionId, item]));
         const persistedRows = ids.flatMap((questionId, i) => {
-          const q = getPublicBankQuestion(questionId);
+          const q = questionsById.get(questionId);
           if (!q) return [];
           const selected = answers[i] ?? null;
           const graded = gradedById.get(questionId);
@@ -441,6 +442,7 @@ export function AmirantAdaptiveQuizClient({
       manifestQuiz.id,
       manifestQuiz.questionCount,
       manifestQuiz.title,
+      questionsById,
       service,
       startLevel,
       topics,
@@ -492,7 +494,7 @@ export function AmirantAdaptiveQuizClient({
 
   useEffect(() => {
     const qid = questionIds[currentIndex];
-    const q = qid ? getPublicBankQuestion(qid) : undefined;
+    const q = qid ? questionsById.get(qid) : undefined;
     if (!qid || !q) return;
     const prevLevel = currentIndex > 0 ? levelAtIndex[currentIndex - 1] ?? startLevel : startLevel;
     const sessionId = attemptIdRef.current ?? undefined;
@@ -512,7 +514,7 @@ export function AmirantAdaptiveQuizClient({
     });
     telemetryLoggedRef.current.add(telemetryKey);
     void service.recordAdaptiveDecision(event).catch(() => {});
-  }, [answerCorrect, currentIndex, levelAtIndex, questionIds, service, startLevel]);
+  }, [answerCorrect, currentIndex, levelAtIndex, questionIds, questionsById, service, startLevel]);
 
   if (phase === "results") {
     const fallbackCorrect = answerCorrect.filter((x) => x === true).length;
@@ -535,7 +537,7 @@ export function AmirantAdaptiveQuizClient({
         : ["עדיין אין מספיק נתונים"];
 
     const firstWrongTopic = questionIds
-      .map((id, i) => (answerCorrect[i] === false ? getPublicBankQuestion(id)?.topicSlug : null))
+      .map((id, i) => (answerCorrect[i] === false ? questionsById.get(id)?.topicSlug : null))
       .find((slug): slug is NonNullable<typeof slug> => Boolean(slug));
     const mistakeDrillHref = firstWrongTopic
       ? getAmirantTopicLinks(firstWrongTopic, COURSE_BASE).practiceHref
@@ -675,7 +677,7 @@ export function AmirantAdaptiveQuizClient({
             <div className={cn(currentQ.passageId && "grid gap-6 lg:grid-cols-2 lg:items-start")}>
               {currentQ.passageId ? (
                 <QuizPassagePanel
-                  passageId={currentQ.passageId}
+                  passage={passagesById.get(currentQ.passageId)}
                   className="max-h-[min(70vh,32rem)] lg:sticky lg:top-24"
                 />
               ) : null}
