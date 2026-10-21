@@ -12,6 +12,9 @@ import type { User } from "@supabase/supabase-js";
  *   set raw_app_meta_data = coalesce(raw_app_meta_data, '{}'::jsonb) || '{"is_admin": true}'
  *   where email = 'you@example.com';
  */
-export function isPrepAdminUser(user: User | null | undefined): boolean {
+/** Accepts a full `User` or the middleware's claims-only user; both carry `app_metadata`. */
+export function isPrepAdminUser(
+  user: Pick<User, "app_metadata"> | { app_metadata: Record<string, unknown> } | null | undefined,
+): boolean {
   return user?.app_metadata?.is_admin === true;
 }

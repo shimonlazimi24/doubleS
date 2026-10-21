@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { getPrepShowCourseAssistant } from "@/lib/prep/prep-full-access";
-import { getPrepServerUser } from "@/lib/prep/supabase/server";
-import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
-import { ensureTesterEntitlement } from "@/lib/prep/ensure-tester-entitlement.server";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
-import { Container } from "@/components/ui";
-import { AmirantCourseFloatingChat } from "@/components/prep/amirant-course/AmirantCourseFloatingChat";
+import { AmirantCourseAssistantGate } from "@/components/prep/amirant-course/AmirantCourseAssistantGate";
 import { AmirantCourseProgressProvider } from "@/components/prep/amirant-course/AmirantCourseProgressProvider";
 import { AmirantPersistenceProvider } from "@/components/prep/amirant-course/AmirantPersistenceProvider";
 
@@ -19,18 +14,15 @@ export const metadata: Metadata = {
   description: AMIRANT_PREPARATION_MANIFEST.description,
 };
 
-export default async function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
-  // העוזר האישי - למנויים בלבד (תואם את הגייט ב-lesson-chat route); dev/preview דרך הדגל
-  let showCourseChat = getPrepShowCourseAssistant();
-  if (!showCourseChat) {
-    // Shared with the page below it: one auth call and one entitlement read per request.
-    const { client, user } = await getPrepServerUser();
-    if (client && user) {
-      // בודקים מ-PREP_TESTER_EMAILS מקבלים entitlement אוטומטית בביקור הראשון
-      await ensureTesterEntitlement(client, user);
-      showCourseChat = await hasAmirantFullAccess(client, user.id);
-    }
-  }
+/**
+ * The layout does no data fetching. It used to resolve the user and their
+ * entitlement here (two round trips to the database) just to decide whether
+ * to show the assistant, and because a layout renders before its page, every
+ * page under /course waited for that before its own loading state could show.
+ * The assistant is now gated in the browser (AmirantCourseAssistantGate); the
+ * tester entitlement moved to the lesson access gate.
+ */
+export default function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
   return (
     <AmirantPersistenceProvider>
       <AmirantCourseAccessProvider>
@@ -91,7 +83,7 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
           </header>
           {/* Full-bleed children (e.g. lesson workspace). Narrow pages wrap themselves in <Container max="measureWide">. */}
           <div className="w-full max-w-none py-6 pb-32 md:py-8 md:pb-40">{children}</div>
-          {showCourseChat ? <AmirantCourseFloatingChat /> : null}
+          <AmirantCourseAssistantGate />
         </div>
       </AmirantCourseProgressProvider>
       </AmirantCourseAccessProvider>

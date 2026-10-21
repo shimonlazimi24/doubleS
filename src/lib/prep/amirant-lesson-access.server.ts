@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getManifestLesson } from "@/lib/amirant-course/manifest";
 import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { ensureTesterEntitlement } from "@/lib/prep/ensure-tester-entitlement.server";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getPrepServerUser } from "@/lib/prep/supabase/server";
@@ -19,6 +20,8 @@ export async function requireAmirantLessonAccess(lessonId: string): Promise<void
   if (!fullAccess) {
     // Shared with the course layout: one auth call and one entitlement read per request.
     const { client, user } = await getPrepServerUser();
+    // Testers listed in PREP_TESTER_EMAILS get their entitlement on their first paid lesson.
+    if (client && user) await ensureTesterEntitlement(client, user);
     fullAccess = client ? await hasAmirantFullAccess(client, user?.id ?? null) : false;
   }
 
