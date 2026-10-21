@@ -25,17 +25,25 @@
  * unchanged, so a re-ordered or re-indexed delivery does not move learners'
  * answers onto another question.
  *
- * Usage: npm run ingest:owner-wf -- <tests.docx>
+ * With the owner's index (same table as the other owner imports: unit,
+ * question, id, level, primary, methods, topic, answer, difficulty, status),
+ * each item also carries its level, methods, topic and review status. Every
+ * question needs a row, and the row's answer must be one of the key's forms.
+ * Rows still under review ("needs_owner_review", "qa_passed") are rejected
+ * unless --accept-pending-review is given.
+ *
+ * Usage: npm run ingest:owner-wf -- <tests.docx> [<index.docx>] [--accept-pending-review]
  */
 import fs from "node:fs";
 import path from "node:path";
-import { paragraphs, HEB } from "./lib/owner-docx.mjs";
+import { paragraphs, HEB, LEVEL, PENDING_STATUSES, readOwnerIndex } from "./lib/owner-docx.mjs";
 
 const root = process.cwd();
 const OUT = path.join(root, "content/amirant-import/owner/wf-tests.json");
-const [docx] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const [docx, indexDocx] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const acceptPending = process.argv.includes("--accept-pending-review");
 if (!docx) {
-  console.error("Usage: node scripts/ingest-owner-wf-tests.mjs <tests.docx>");
+  console.error("Usage: node scripts/ingest-owner-wf-tests.mjs <tests.docx> [<index.docx>] [--accept-pending-review]");
   process.exit(2);
 }
 
@@ -124,6 +132,7 @@ function explanationOf(S) {
 
 function main() {
   const tests = read(docx);
+  const index = indexDocx ? readOwnerIndex(indexDocx) : null;
   const errors = [];
   const items = [];
   for (const [tn, T] of [...tests].sort((a, b) => a[0] - b[0])) {
@@ -153,6 +162,18 @@ function main() {
         if (capital !== opensSentence) errors.push(`${at}: "${f}" ${capital ? "is" : "is not"} capitalized but the blank ${opensSentence ? "opens" : "does not open"} the sentence`);
       }
       for (const m of S.mistakes) if (it.key.includes(m.form)) errors.push(`${at}: "${m.form}" is listed both as accepted and as a mistake`);
+      const ix = index?.get(`${tn}:${qn}`);
+      if (index) {
+        if (!ix) errors.push(`${at}: no row in the index`);
+        else {
+          if (!(ix.level in LEVEL)) errors.push(`${at}: unknown level "${ix.level}"`);
+          if (!it.key.includes(ix.answer)) errors.push(`${at}: index answer "${ix.answer}" is not in the key (${it.key.join(" / ")})`);
+          if (!/^WF-M\d$/.test(ix.primary) || !ix.methods.includes(ix.primary)) errors.push(`${at}: bad method "${ix.primary}" / "${ix.methods.join(", ")}"`);
+          if (ix.status !== "owner_approved" && !(acceptPending && PENDING_STATUSES.includes(ix.status))) {
+            errors.push(`${at}: status "${ix.status}" (pass --accept-pending-review to publish it)`);
+          }
+        }
+      }
       if (errors.some((e) => e.startsWith(`${at}:`))) continue;
       items.push({
         id: `wf-t${String(tn).padStart(2, "0")}-q${qn}`,
@@ -163,6 +184,14 @@ function main() {
         accepted: it.key,
         mistakes: Object.fromEntries(S.mistakes.map((m) => [m.form, m.he + (m.en ? `\n\n_${m.en}_` : "")])),
         explanation: explanationOf({ ...S, accepted: it.key }),
+        ...(ix && {
+          ownerId: ix.id,
+          level: LEVEL[ix.level],
+          l6Top: ix.level === "L6 top",
+          methods: ix.methods,
+          theme: ix.theme,
+          status: ix.status,
+        }),
       });
     }
   }

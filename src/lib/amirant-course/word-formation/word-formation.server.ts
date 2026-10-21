@@ -15,6 +15,13 @@ type WordFormationItem = WordFormationPublicItem & {
   accepted: string[];
   mistakes: Record<string, string>;
   explanation: string;
+  /** From the owner's index (server only): L1–L6, with "L6 top" as 6 + l6Top. */
+  ownerId?: string;
+  level?: number;
+  l6Top?: boolean;
+  methods?: string[];
+  theme?: string;
+  status?: string;
 };
 
 // The JSON is validated by ingest-owner-wf-tests.mjs; its inferred type is a union of 40 shapes.
@@ -30,6 +37,11 @@ export function getWordFormationTest(test: number): WordFormationPublicItem[] {
 export function getWordFormationItem(id: string): (WordFormationKey & { explanation: string }) | undefined {
   const x = BY_ID.get(id);
   return x ? { baseWord: x.baseWord, accepted: x.accepted, mistakes: x.mistakes, explanation: x.explanation } : undefined;
+}
+
+/** Owner index level of each question in a test; "L6 top" counts 6.5. */
+export function wordFormationTestLevels(test: number): number[] {
+  return ITEMS.filter((x) => x.test === test).map((x) => (x.l6Top ? 6.5 : (x.level ?? NaN)));
 }
 
 export function wordFormationTestCount(): number {

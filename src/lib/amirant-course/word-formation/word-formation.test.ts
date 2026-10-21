@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { WORD_FORMATION_LESSONS } from "../lesson-content/lesson-question-groups";
 import { AMIRNET_CONTENT_MODULES, AMIRNET_SYNC_LESSON_REGISTRY } from "../amirnet-content-sync";
-import { getWordFormationItem, getWordFormationTest, wordFormationTestCount } from "./word-formation.server";
+import { getWordFormationItem, getWordFormationTest, wordFormationTestCount, wordFormationTestLevels } from "./word-formation.server";
 import { gradeTypedWord } from "./grade-word";
 
 describe("word-formation lessons", () => {
@@ -16,6 +16,19 @@ describe("word-formation lessons", () => {
       const rel = AMIRNET_SYNC_LESSON_REGISTRY[lessonId]?.amirnetMarkdownRel;
       expect(rel && fs.existsSync(path.join(process.cwd(), "content/amirnet-course", rel)), lessonId).toBe(true);
       expect(getWordFormationTest(test), lessonId).toHaveLength(4);
+    }
+  });
+
+  it("each lesson title states the level of its test, from the owner's index", () => {
+    // Same scale as the other owner lessons (owner-sets.test.ts).
+    const scale: [number, string][] = [[2.5, "קל"], [3.5, "קל-בינוני"], [4.25, "בינוני"], [5, "בינוני-קשה"], [5.75, "קשה"], [6.2, "קשה מאוד"]];
+    const titles = new Map(AMIRNET_CONTENT_MODULES.flatMap((m) => m.lessons.map((l) => [l.id, l.title])));
+    for (const [lessonId, { test }] of Object.entries(WORD_FORMATION_LESSONS)) {
+      const levels = wordFormationTestLevels(test);
+      expect(levels.every(Number.isFinite), `${lessonId} has questions without an index level`).toBe(true);
+      const mean = levels.reduce((a, b) => a + b, 0) / levels.length;
+      const label = scale.find(([lim]) => mean < lim)?.[1] ?? "הקשה ביותר";
+      expect(titles.get(lessonId), lessonId).toBe(`מבחן יצירת מילה ${test} (${label})`);
     }
   });
 

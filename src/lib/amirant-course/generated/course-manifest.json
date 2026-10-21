@@ -747,61 +747,61 @@
         },
         {
           "id": "lesson.reform.wf-01",
-          "title": "מבחן יצירת מילה 1",
+          "title": "מבחן יצירת מילה 1 (קל-בינוני)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-02",
-          "title": "מבחן יצירת מילה 2",
+          "title": "מבחן יצירת מילה 2 (קל-בינוני)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-03",
-          "title": "מבחן יצירת מילה 3",
+          "title": "מבחן יצירת מילה 3 (בינוני)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-04",
-          "title": "מבחן יצירת מילה 4",
+          "title": "מבחן יצירת מילה 4 (בינוני)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-05",
-          "title": "מבחן יצירת מילה 5",
+          "title": "מבחן יצירת מילה 5 (בינוני-קשה)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-06",
-          "title": "מבחן יצירת מילה 6",
+          "title": "מבחן יצירת מילה 6 (בינוני-קשה)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-07",
-          "title": "מבחן יצירת מילה 7",
+          "title": "מבחן יצירת מילה 7 (קשה)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-08",
-          "title": "מבחן יצירת מילה 8",
+          "title": "מבחן יצירת מילה 8 (קשה מאוד)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-09",
-          "title": "מבחן יצירת מילה 9",
+          "title": "מבחן יצירת מילה 9 (קשה מאוד)",
           "kind": "text",
           "estimatedMinutes": 5
         },
         {
           "id": "lesson.reform.wf-10",
-          "title": "מבחן יצירת מילה 10",
+          "title": "מבחן יצירת מילה 10 (הקשה ביותר)",
           "kind": "text",
           "estimatedMinutes": 5
         },
