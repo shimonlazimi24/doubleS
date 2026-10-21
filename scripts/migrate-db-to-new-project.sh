@@ -7,6 +7,9 @@
 # from what Supabase creates by itself.
 set -euo pipefail
 
+# The standalone PostgreSQL binaries this Mac uses (no Homebrew here).
+[ -d "$HOME/fixTok/node-toolchain/pg/bin" ] && export PATH="$HOME/fixTok/node-toolchain/pg/bin:$PATH"
+
 : "${OLD_DB_URL:?set OLD_DB_URL to the old project's session-pooler connection string}"
 : "${NEW_DB_URL:?set NEW_DB_URL to the new project's session-pooler connection string}"
 command -v pg_dump >/dev/null || { echo "pg_dump not on PATH"; exit 2; }
@@ -44,7 +47,10 @@ TABLES=(
 )
 
 echo "== 1. schema on the new project (SETUP_NEW_PROJECT.md order)"
-for f in \
+# SKIP_SCHEMA=1 when the schema files were already run in the dashboard's SQL
+# editor: the first file is not idempotent for one policy and would stop here.
+[ "${SKIP_SCHEMA:-0}" = "1" ] && echo "   skipped (SKIP_SCHEMA=1)"
+[ "${SKIP_SCHEMA:-0}" = "1" ] || for f in \
   supabase/amirant-production-mvp-schema.sql \
   supabase/amirant-course-progress-schema.sql \
   supabase/migrations/20260819_amirant_lesson_progress.sql \
@@ -65,6 +71,10 @@ pg_dump "$OLD_DB_URL" --data-only --no-owner --no-privileges "${ARGS[@]}" -f "$O
 echo "   $(wc -c < "$OUT/data.sql") bytes → $OUT/data.sql"
 
 echo "== 3. restore into the new project"
+# Start from empty tables, so a re-run after a partial load does not hit
+# duplicate keys (the schema files seed one prep_site_settings row themselves).
+LIST=$(IFS=,; echo "${TABLES[*]}")
+psql "$NEW_DB_URL" -v ON_ERROR_STOP=1 -q -c "truncate table $LIST cascade;"
 psql "$NEW_DB_URL" -v ON_ERROR_STOP=1 -q -f "$OUT/data.sql"
 
 echo "== 4. row counts, old vs new"
