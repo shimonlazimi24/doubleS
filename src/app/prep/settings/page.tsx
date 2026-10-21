@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { Container, Heading, Text } from "@/components/ui";
 import { PrepSettingsClient } from "@/components/prep/PrepSettingsClient";
+import { CourseNav } from "@/components/prep/amirant-course/CourseNav";
 import { PrepSubscriptionCard, type SubscriptionInfo } from "@/components/prep/PrepSubscriptionCard";
 import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { getCourseEntitlement } from "@/lib/prep/entitlements";
@@ -70,7 +71,9 @@ async function loadAccountAndSubscription(): Promise<{
 export default async function PrepSettingsPage() {
   const { account, subscription } = await loadAccountAndSubscription();
   return (
-    <div className="min-h-[60vh] bg-canvas">
+    <div className="min-h-[60vh] bg-paper">
+      {/* The course's own top bar, so the account page is one of its three tabs rather than a different site. */}
+      <CourseNav />
       <Container max="measure" className="py-8 md:py-12">
         <Heading level={1}>אזור אישי</Heading>
         <Text as="p" variant="bodySm" className="mt-2">

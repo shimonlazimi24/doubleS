@@ -126,6 +126,7 @@ export const PREP_LEARNING_NAV = PREP_COURSES.filter((c) => c.status === "live")
 export function isPrepAppChromePath(pathname: string): boolean {
   return (
     pathname.startsWith(`${PREP_BASE}/amirant/course`) ||
+    pathname.startsWith(`${PREP_BASE}/settings`) ||
     pathname.startsWith(`${PREP_BASE}/admin`)
   );
 }

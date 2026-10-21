@@ -46,7 +46,7 @@ export function LessonNavigationFooter({
       <Button
         type="button"
         variant="secondary"
-        className="min-h-12 min-w-[7.5rem] rounded-xl border-stone-200 bg-white px-5 text-base text-slate-700 shadow-sm disabled:opacity-40"
+        className="min-h-11 min-w-[7.5rem] !rounded border-line bg-paper px-5 text-[15px] text-muted disabled:opacity-40"
         onClick={onPrev}
         disabled={!canPrev}
       >
@@ -59,7 +59,7 @@ export function LessonNavigationFooter({
         <Button
           type="button"
           variant="primary"
-          className="min-h-12 min-w-[9rem] rounded-xl px-6 text-base font-bold shadow-sm"
+          className="min-h-11 min-w-[9rem] !rounded px-6 text-[15px] font-bold"
           onClick={onNext}
         >
           {nextLabel}
@@ -70,7 +70,7 @@ export function LessonNavigationFooter({
       ) : isLast && practiceHref ? (
         <Link
           href={practiceHref}
-          className="inline-flex min-h-12 min-w-[9rem] items-center justify-center rounded-xl bg-primary px-8 text-base font-bold text-white shadow-sm transition hover:bg-primary-hover"
+          className="inline-flex min-h-11 min-w-[9rem] items-center justify-center rounded bg-primary px-8 text-[15px] font-bold text-white transition hover:bg-primary-hover"
         >
           עבור לתרגול
           <span aria-hidden className="ms-1.5">
