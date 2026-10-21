@@ -1,231 +1,175 @@
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import type { StudentDashboardData } from "@/lib/amirant-course/student-insights";
-import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/AmirantNextBestActionCard";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { cn } from "@/lib/design-system/cn";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
 
-function pct(n: number): string {
-  return `${Math.round(n * 100)}%`;
+function formatDate(value: string | null): string {
+  if (!value) return "";
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("he-IL", { day: "numeric", month: "numeric" });
 }
 
-function AccuracyBar({ accuracy }: { accuracy: number }) {
-  const p = Math.round(accuracy * 100);
-  const color =
-    p >= 75 ? "bg-emerald-500" : p >= 50 ? "bg-amber-400" : "bg-rose-500";
+/** Six segments, one per level, filled up to the learner's level. */
+function LevelScale({ level }: { level: number }) {
   return (
-    <div className="flex items-center gap-3">
-      <div className="h-2 flex-1 overflow-hidden rounded-full bg-surface-high">
-        <div className={`h-2 rounded-full ${color} transition-all duration-500`} style={{ width: `${p}%` }} />
-      </div>
-      <span className="w-10 text-right text-xs font-semibold tabular-nums text-primary">{p}%</span>
-    </div>
+    <span className="flex gap-[3px]" aria-hidden>
+      {Array.from({ length: 6 }, (_, i) => (
+        <span key={i} className={cn("h-1.5 flex-1", i < level ? "bg-primary" : "bg-surface-high")} />
+      ))}
+    </span>
   );
 }
 
-/** תא בתוך רצועת סטטים אחת - לא כרטיס נפרד לכל מספר (DESIGN_GUIDELINES: cards). */
-function StatChip({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="flex flex-col items-center px-4 py-3.5 text-center">
-      <p className="font-display text-2xl font-bold tabular-nums text-primary">{value}</p>
-      <p className="mt-0.5 text-xs leading-snug text-muted">{label}</p>
-    </div>
-  );
-}
+const th = "pb-2 text-start text-xs font-bold text-muted";
+const td = "border-t border-line/70 py-3 align-middle";
 
+/**
+ * The learner's progress page: one next step, a table of levels by topic, a
+ * table of recent quizzes, three figures. Everything flat; the data is the
+ * design.
+ */
 export function AmirantStudentDashboardView({ data }: { data: StudentDashboardData }) {
-  const hasTopicData = data.weakTopics.length > 0 || data.strongTopics.length > 0;
-  const hasLevelData = data.currentLevelByTopic.length > 0;
-  const hasAttempts = data.recentQuizAttempts.length > 0;
-  const hasAccuracy = data.accuracyOverTime.length > 0;
+  const attempts = data.recentQuizAttempts;
+  const hasAttempts = attempts.length > 0;
+  const accuracyByTopic = new Map([...data.strongTopics, ...data.weakTopics].map((t) => [t.topic, t]));
+  const avgAccuracy = data.accuracyOverTime.length
+    ? Math.round(data.accuracyOverTime.reduce((s, p) => s + p.accuracyPct, 0) / data.accuracyOverTime.length)
+    : null;
+  const avgResponse = data.timePerQuestionTrend.length
+    ? Math.round(data.timePerQuestionTrend.reduce((s, p) => s + p.avgResponseMs, 0) / data.timePerQuestionTrend.length / 1000)
+    : null;
+  const action = data.recommendedNextAction;
 
   return (
-    <div dir="rtl" className="space-y-8 pb-16">
-
-      {/* ── Header ── */}
-      <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary to-primary-container px-6 py-7 text-white">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-score">
-          לוח תלמיד
+    <div dir="rtl" className="mx-auto w-full max-w-[56rem] px-4 py-8 sm:px-6">
+      <div className="flex flex-col gap-1">
+        <h1 className="text-[1.75rem] font-extrabold leading-tight text-ink sm:text-3xl">ההתקדמות שלי</h1>
+        <p className="text-[15px] text-muted">
+          {[
+            action.progressLine,
+            hasAttempts ? `${attempts.length} בוחנים` : null,
+            avgAccuracy != null ? `דיוק ממוצע ${avgAccuracy}%` : null,
+          ]
+            .filter(Boolean)
+            .join(" · ")}
         </p>
-        <h1 className="mt-2 font-display text-2xl font-bold leading-snug md:text-3xl">
-          שלום - הנה התמונה שלך
-        </h1>
-        <p className="mt-1.5 text-sm text-white/65">
-          מעקב התקדמות, המלצות ונושאים לחיזוק - הכל במקום אחד.
-        </p>
-        <Link
-          href={data.recommendedNextAction.href ?? COURSE}
-          className="mt-5 inline-flex items-center justify-center rounded-control bg-score px-5 py-2.5 text-sm font-bold text-primary transition hover:opacity-90"
-        >
-          {data.recommendedNextAction.ctaLabel ?? "המשך ללמוד"}
-        </Link>
       </div>
 
-      {/* ── Next best action ── */}
-      <AmirantNextBestActionCard action={data.recommendedNextAction} />
-
-      {/* ── Stats ── */}
-      {hasAccuracy && (
-        <div>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-score">
-            ביצועים
-          </p>
-          <div className="grid grid-cols-3 divide-x divide-x-reverse divide-line rounded-2xl border border-line bg-paper shadow-sm [direction:rtl]">
-            <StatChip
-              value={`${data.accuracyOverTime.at(-1)?.accuracyPct ?? 0}%`}
-              label="דיוק אחרון"
-            />
-            <StatChip
-              value={String(data.recentQuizAttempts.length)}
-              label="בוחנים שהושלמו"
-            />
-            <StatChip
-              value={data.currentLevelByTopic[0] ? `${data.currentLevelByTopic[0].level}` : "-"}
-              label="רמה נוכחית"
-            />
-          </div>
+      {/* Next step: one row, one button */}
+      <section aria-label="הצעד הבא" className="mt-8 flex flex-col gap-4 border-y border-line py-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <p className="text-xs font-bold text-muted">הצעד הבא</p>
+          <p className="mt-1 text-lg font-bold leading-snug text-ink">{action.title}</p>
+          <p className="mt-1 text-sm leading-relaxed text-muted">{action.description}</p>
         </div>
-      )}
+        <Link
+          href={action.display.primaryHref}
+          className="inline-flex h-[42px] shrink-0 items-center justify-center rounded bg-primary px-5 text-sm font-bold text-white transition hover:bg-primary-hover"
+        >
+          {action.display.primaryLabel}
+        </Link>
+      </section>
 
-      {/* ── Topic performance ── */}
-      {hasTopicData && (
-        <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-score">
-            ביצועים לפי נושא
-          </p>
-          <div className="space-y-4">
-            {[...data.strongTopics, ...data.weakTopics]
-              .filter((v, i, arr) => arr.findIndex((x) => x.topic === v.topic) === i)
-              .slice(0, 6)
-              .map((row) => (
-                <div key={row.topic}>
-                  <div className="mb-1.5 flex items-center justify-between text-sm">
-                    <span className="font-medium text-primary">{row.topicLabel}</span>
-                    <span className="text-xs text-muted">
-                      {row.totalCorrect}/{row.totalAnswered}
-                    </span>
-                  </div>
-                  <AccuracyBar accuracy={row.accuracy} />
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
+      {data.currentLevelByTopic.length > 0 ? (
+        <section className="mt-10" aria-label="רמה לפי נושא">
+          <h2 className="pb-3 text-base font-bold text-ink">רמה לפי נושא</h2>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className={cn(th, "w-[40%]")}>נושא</th>
+                <th className={th}>רמה 1–6</th>
+                <th className={cn(th, "w-16")}>רמה</th>
+                <th className={cn(th, "w-20")}>דיוק</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.currentLevelByTopic.map((row) => {
+                const acc = accuracyByTopic.get(row.topic);
+                const accuracy = row.recentAccuracy ?? acc?.accuracy ?? null;
+                return (
+                  <tr key={row.topic}>
+                    <td className={cn(td, "text-[15px] font-semibold text-ink")}>{row.topicLabel}</td>
+                    <td className={cn(td, "pe-6")}>
+                      <LevelScale level={row.level} />
+                    </td>
+                    <td className={cn(td, "text-sm tabular-nums text-ink")}>{row.level}</td>
+                    <td className={cn(td, "text-sm tabular-nums text-muted")}>
+                      {accuracy != null ? `${Math.round(accuracy * 100)}%` : "טרם נבדק"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
+      ) : null}
 
-      {/* ── Level by topic ── */}
-      {hasLevelData && (
-        <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-score">
-            רמה לפי נושא
-          </p>
-          {/* שורות עם קו מפריד במקום קופסה-בתוך-כרטיס */}
-          <div className="divide-y divide-line">
-            {data.currentLevelByTopic.map((row) => (
-              <div
-                key={row.topic}
-                className="flex items-center justify-between px-1 py-3 first:pt-0 last:pb-0"
-              >
-                <span className="text-sm font-medium text-primary">{row.topicLabel}</span>
-                <div className="flex items-center gap-2">
-                  {row.recentAccuracy != null && (
-                    <span className="text-xs text-muted">
-                      {Math.round(row.recentAccuracy * 100)}%
-                    </span>
-                  )}
-                  <span className="rounded-full bg-primary px-2.5 py-0.5 text-xs font-bold text-white">
-                    רמה {row.level}
-                  </span>
-                </div>
-              </div>
-            ))}
+      {hasAttempts ? (
+        <section className="mt-10" aria-label="בוחנים אחרונים">
+          <div className="flex items-baseline justify-between pb-3">
+            <h2 className="text-base font-bold text-ink">בוחנים אחרונים</h2>
+            <Link href={`${COURSE}/review`} className="text-[13px] font-semibold text-primary underline-offset-4 hover:underline">
+              כל ההיסטוריה
+            </Link>
           </div>
-        </div>
-      )}
-
-      {/* ── Accuracy trend ── */}
-      {hasAccuracy && data.accuracyOverTime.length >= 3 && (
-        <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-score">
-            מגמת דיוק
-          </p>
-          <div className="flex h-20 items-end gap-1.5">
-            {data.accuracyOverTime.slice(-10).map((p, i) => (
-              <div key={i} className="group relative flex-1">
-                <div
-                  className="w-full rounded-t-sm bg-gradient-to-t from-primary to-accent opacity-80 transition-opacity group-hover:opacity-100"
-                  style={{ height: `${p.accuracyPct}%` }}
-                />
-                <p className="absolute -bottom-5 w-full text-center text-[0.6rem] text-muted">
-                  {p.label.slice(0, 3)}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 border-t border-line pt-4">
-            <p className="text-xs text-muted">
-              ממוצע: {Math.round(data.accuracyOverTime.reduce((s, p) => s + p.accuracyPct, 0) / data.accuracyOverTime.length)}%
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* ── Recent quizzes ── */}
-      {hasAttempts && (
-        <div className="rounded-2xl border border-line bg-paper p-6 shadow-sm">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-score">
-            בוחנים אחרונים
-          </p>
-          <div className="space-y-3">
-            {data.recentQuizAttempts.slice(0, 6).map((attempt) => {
-              const score = attempt.scorePct;
-              const scoreColor =
-                score == null ? "bg-surface-high text-muted"
-                : score >= 75 ? "bg-emerald-100 text-emerald-800"
-                : score >= 50 ? "bg-amber-100 text-amber-800"
-                : "bg-rose-100 text-rose-800";
-              return (
-                <div
-                  key={attempt.attemptId}
-                  className="flex items-center justify-between rounded-xl border border-line bg-surface-low px-4 py-3"
-                >
-                  <span className="text-sm text-primary">{attempt.quizTitle}</span>
-                  <div className="flex items-center gap-3">
-                    {score != null && (
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${scoreColor}`}>
-                        {score}%
-                      </span>
-                    )}
-                    <Link
-                      href={`${COURSE}/review/${attempt.attemptId}`}
-                      className="text-xs font-semibold text-primary hover:underline"
-                    >
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className={th}>בוחן</th>
+                <th className={cn(th, "w-20")}>תאריך</th>
+                <th className={cn(th, "w-16")}>ציון</th>
+                <th className={cn(th, "w-16")}></th>
+              </tr>
+            </thead>
+            <tbody>
+              {attempts.slice(0, 8).map((a) => (
+                <tr key={a.attemptId}>
+                  <td className={cn(td, "text-[15px] font-semibold text-ink")}>{a.quizTitle}</td>
+                  <td className={cn(td, "text-sm tabular-nums text-muted")}>{formatDate(a.submittedAt)}</td>
+                  <td className={cn(td, "text-[15px] font-bold tabular-nums text-ink")}>{a.scorePct != null ? `${a.scorePct}%` : "—"}</td>
+                  <td className={cn(td, "text-end")}>
+                    <Link href={`${COURSE}/review/${a.attemptId}`} className="text-sm font-semibold text-primary underline-offset-4 hover:underline">
                       סקירה
                     </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* ── Empty state ── */}
-      {!hasTopicData && !hasAttempts && (
-        <div className="rounded-2xl border border-dashed border-line bg-paper px-6 py-12 text-center">
-          <p className="text-2xl">◈</p>
-          <p className="mt-3 font-semibold text-primary">עדיין אין נתונים</p>
-          <p className="mt-1.5 text-sm text-muted">
-            השלם בוחן ראשון כדי לראות ביצועים, רמה והמלצות.
-          </p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      ) : (
+        <section className="mt-10 border-b border-line pb-8" aria-label="עוד אין נתונים">
+          <p className="text-base font-bold text-ink">עדיין אין בוחנים</p>
+          <p className="mt-1 text-sm text-muted">אחרי מבחן הרמה או בוחן ראשון יופיעו כאן הרמה לפי נושא והציונים.</p>
           <Link
-            href={COURSE}
-            className="mt-5 inline-flex items-center justify-center rounded-control bg-primary px-6 py-2.5 text-sm font-bold text-white transition hover:bg-primary-hover"
+            href={`${COURSE}/quiz/quiz-entry-diagnostic`}
+            className="mt-4 inline-flex h-[42px] items-center justify-center rounded bg-primary px-5 text-sm font-bold text-white"
           >
-            התחל ללמוד
+            למבחן הרמה
           </Link>
-        </div>
+        </section>
       )}
 
+      {hasAttempts ? (
+        <section className="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-6 sm:grid-cols-3" aria-label="מדדים">
+          <div>
+            <p className="text-xs text-muted">דיוק ממוצע</p>
+            <p className="mt-0.5 text-2xl font-extrabold tabular-nums text-ink">{avgAccuracy != null ? `${avgAccuracy}%` : "—"}</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted">זמן ממוצע לשאלה</p>
+            <p className="mt-0.5 text-2xl font-extrabold tabular-nums text-ink">{avgResponse ? `${avgResponse} שנ׳` : "—"}</p>
+            <p className="text-xs text-muted">היעד במבחן: 60</p>
+          </div>
+          <div>
+            <p className="text-xs text-muted">בוחנים שהושלמו</p>
+            <p className="mt-0.5 text-2xl font-extrabold tabular-nums text-ink">{attempts.length}</p>
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }

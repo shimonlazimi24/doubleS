@@ -22,6 +22,7 @@ import { CourseOutlineSidebar } from "../course-outline/CourseOutlineSidebar";
 import { AmirantLessonTrackIsland } from "../AmirantLessonTrackIsland";
 import { LessonStepContent } from "./LessonStepContent";
 import { LessonNavigationFooter } from "../lesson/ui/LessonNavigationFooter";
+import { LessonSyllabusRail } from "../lesson/LessonSyllabusRail";
 import { LessonAiHelpBlock } from "./LessonAiHelpBlock";
 import { CURATED_ROADMAP_LESSON_ID, isCuratedRoadmapClosingStep } from "./curated-unit1-roadmap-steps";
 import { RoadmapWorkspaceBody } from "./roadmap-workspace-body";
@@ -300,27 +301,32 @@ export function PremiumLessonWorkspace({
 
         <main
           id="amirant-lesson-pulse"
-          className="min-h-0 w-full min-w-0"
+          className="mx-auto min-h-0 w-full min-w-0 max-w-[75rem] lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-8 lg:px-6"
         >
-          <div className="h-full w-full min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
+          {/* The module's syllabus stays beside the lesson on wide screens; phones use the drawer. */}
+          <LessonSyllabusRail
+            lessonId={lessonId}
+            className="sticky top-14 hidden max-h-[calc(100vh-3.5rem)] self-start overflow-y-auto border-e border-line py-6 lg:flex"
+          />
+          <div className="h-full w-full min-w-0 px-4 py-4 sm:px-6 sm:py-5 lg:px-0 lg:py-6">
             <div className={cn(lessonSaaS.readingProse, "min-w-0")}>
-              {/* טריגר תפריט מינימלי - לא תופס מקום */}
-              <div className="sticky top-2 z-20 mb-4 flex justify-start">
+              {/* The steps drawer: phones and tablets, where there is no room for the syllabus rail */}
+              <div className="sticky top-16 z-20 mb-4 flex justify-start lg:hidden">
                 <button
                   type="button"
                   onClick={() => setOutlineOpen(true)}
-                  className="inline-flex min-h-10 items-center gap-2 rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-sm backdrop-blur-sm transition hover:border-[#0f2347]/25"
+                  className="inline-flex min-h-10 items-center gap-2 rounded border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:bg-surface-low"
                   aria-haspopup="dialog"
                   aria-expanded={outlineOpen}
                 >
-                  <span aria-hidden>☰</span>
-                  <span>תוכן הקורס</span>
+                  <span>תוכן השיעור</span>
                 </button>
               </div>
               {/* הדר דחוס: כותרת + סימון-הושלם בשורה אחת - פחות כרום לפני התוכן */}
               <div className="mb-1.5 flex items-start justify-between gap-3 sm:mb-2">
                 <LessonHeader
                   className="min-w-0 flex-1"
+                  lessonId={lessonId}
                   kindLabel={kindLabel}
                   title={title}
                   totalSteps={n}
@@ -357,7 +363,7 @@ export function PremiumLessonWorkspace({
                   <div
                     ref={stepBlockRef}
                     id="amirant-step-viewport"
-                    className="min-w-0 scroll-mt-4 min-h-[46vh] sm:min-h-[52vh]"
+                    className="min-w-0 scroll-mt-4 min-h-[32vh] sm:min-h-[36vh]"
                   >
                     <div
                       key={`${lessonId}-${activeIndex}`}

@@ -305,22 +305,14 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   const showPremiumWorkspace = hasBlocks || Boolean(md?.ok && lessonBody);
 
   return (
-    <div className="min-h-screen w-full max-w-none bg-slate-50/50 pb-16 [direction:rtl]">
+    <div className="min-h-screen w-full max-w-none bg-paper pb-16 [direction:rtl]">
       <AmirantCourseLessonScopeTracker lessonId={hit.lesson.id} />
-      <nav className="text-xs font-medium text-muted [direction:rtl]">
-        <Link href={BASE} className="transition hover:text-primary">
-          הכנה לאמירנט
-        </Link>
-        <span className="mx-2 text-line">/</span>
-        <Link href={`${BASE}/module/${hit.module.slug}`} className="text-ink transition hover:text-primary">
-          {displayModuleTitleHe(hit.module)}
-        </Link>
-      </nav>
+      {/* The place in the course is in the syllabus rail and the lesson header; no breadcrumb bar above the workspace. */}
 
       {/* וידאו רק כשהוא קיים באמת - פס "בקרוב" על כל שיעור הוא הבטחה ריקה,
           לא פרימיום (DESIGN_GUIDELINES: any element with no functional purpose) */}
       {cmsVideoUrl || hit.lesson.videoPath ? (
-        <div className="mt-6">
+        <div className="mx-auto mt-6 max-w-[54rem] px-4 sm:px-6">
           <AmirantVideoEmbed
             src={cmsVideoUrl ?? hit.lesson.videoPath ?? null}
             title={`סרטון הסבר - ${hit.lesson.title}`}
@@ -329,7 +321,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       ) : null}
 
       {md && !md.ok ? (
-        <Card className="mt-6 border-amber-500/35 bg-amber-500/[0.08]">
+        <Card className="mx-auto mt-6 max-w-[54rem] border-amber-500/35 bg-amber-500/[0.08]">
           <CardBody className="p-4 text-sm text-amber-950 [direction:rtl]">
             לא נמצא קובץ התוכן. בדקו: <code className="rounded bg-paper px-1">content/amirnet-course/{content.amirnetMarkdownRel}</code> או{" "}
             <code className="rounded bg-paper px-1">docs/amirnet-prep/</code> עם אותו שם קובץ.
@@ -338,7 +330,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       ) : null}
 
       {showPremiumWorkspace ? (
-        <div className="mt-8">
+        <div className="mt-2">
           <AmirantPremiumLessonView
             lessonId={hit.lesson.id}
             title={hit.lesson.title}

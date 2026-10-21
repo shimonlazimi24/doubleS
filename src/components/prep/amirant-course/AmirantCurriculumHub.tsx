@@ -1,15 +1,17 @@
 "use client";
 
 /**
- * עמוד הקורס = לחדש את המסע:
- * 1) "המשך ללמוד" - הפעולה הראשית היחידה, עם הקשר מלא.
- * 2) "תוכנית הקורס" - קוביות מודולים עם אימוג'י והסבר קצר (העדפת בעל המוצר),
- *    על טוקנים של מערכת העיצוב: התקדמות, מודול נוכחי מסומן, CTA ברור.
+ * The course page, laid out like a course platform rather than a landing page:
+ * a syllabus of modules on the side, the selected module open in the middle
+ * with its lessons grouped the way a learner works through them, and one
+ * primary action, "continue". No cards inside cards, no badges, no emoji.
  */
+import { useMemo, useState } from "react";
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { isAmirantModuleLocked } from "@/lib/prep/course-access";
+import { groupModuleLessons, splitLessonTitle, sumMinutes } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
 import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
@@ -19,153 +21,133 @@ import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/Amira
 
 const BASE = `${PREP_BASE}/amirant/course`;
 
-function lessonHref(lesson: ManifestLesson) {
+const MODULE_BLURB: Record<string, string> = {
+  "mod-intro": "איך המבחן בנוי, מה כל ציון שווה ואיך מתקדמים בקורס. כולל מבחן רמה.",
+  "mod-vocab": "חבילות מילים מדורגות עם כרטיסים וחזרה מרווחת.",
+  "mod-sc": "השלמת מילה חסרה במשפט: זיהוי הרמז, פסילת מסיחים, ואז תרגול לפי רמה.",
+  "mod-rephrase": "המשפט ששומר על אותה משמעות בדיוק: השיטה, המלכודות, ומקבצים לפי רמה.",
+  "mod-reading": "קטעים אקדמיים: שיטות קריאה, מבנה פסקה, מלכודות, וקטעים מדורגים.",
+  "mod-reform": "חלקי הרפורמה: הבנת הנשמע, יצירת מילה וכתיבה.",
+  "mod-sims": "מבחנים מלאים בתנאי זמן, עם דוח אחרי כל אחד.",
+  "mod-tips": "ניהול זמן, סדר פתירה, ומה עושים כשנתקעים.",
+  "mod-summary": "חזרה מרוכזת לפני המבחן.",
+  "mod-logistics": "הרשמה, מועדים, מחירים ומה מביאים ליום המבחן.",
+};
+
+type LessonState = "done" | "current" | "todo";
+
+function lessonHref(lesson: ManifestLesson): string {
   return `${BASE}/lesson/${lesson.id}`;
 }
 
-const MODULE_META: Record<string, { icon: string; badge?: string; desc: string }> = {
-  "mod-intro": {
-    icon: "🗺️",
-    desc: "איך המבחן בנוי, מה כל ציון שווה, ואיך מתקדמים בקורס - כולל מבחן רמה.",
-  },
-  "mod-vocab": {
-    icon: "📚",
-    desc: "חבילות מילים מדורגות עם כרטיסים, חזרה מרווחת (יודע/קשה/שוב) וטיפים לזכירה.",
-  },
-  "mod-sc": {
-    icon: "✏️",
-    desc: "השלמת משפטים: זיהוי רמזים במשפט, פסילת מסיחים ותרגול ברמה שלכם.",
-  },
-  "mod-rephrase": {
-    icon: "🔄",
-    desc: "ניסוח מחדש: לזהות את המשפט ששומר על אותה משמעות בדיוק.",
-  },
-  "mod-reading": {
-    icon: "📖",
-    desc: "קטעי קריאה אקדמיים עם אסטרטגיות סקירה ושאלות בסגנון המבחן.",
-  },
-  "mod-reform": {
-    icon: "🎧",
-    desc: "רפורמת 2026: שמיעה, תצורת מילים וכתיבה. בפיילוט הרשמי הפרקים האלה עדיין לא נספרים לציון — מתרגלים כדי להיות מוכנים.",
-  },
-  "mod-sims": {
-    icon: "🎯",
-    desc: "שישה מבחנים מלאים בתנאי זמן אמיתיים, עם דוח אישי אחרי כל סימולציה.",
-  },
-  "mod-tips": {
-    icon: "💡",
-    desc: "אסטרטגיות מבחן, ניהול זמן ומה עושים כשנתקעים על שאלה.",
-  },
-  "mod-summary": {
-    icon: "🏁",
-    desc: "חזרה מרוכזת על כל החומר ותוכנית לערב שלפני המבחן.",
-  },
-  "mod-logistics": {
-    icon: "📋",
-    desc: "הרשמה, מועדים, מחירים ומה מביאים ליום המבחן.",
-  },
-};
+function formatMinutes(min: number): string {
+  if (min >= 90) {
+    const h = Math.round((min / 60) * 2) / 2;
+    return `כ־${h} שעות`;
+  }
+  return `${min} דק׳`;
+}
 
-function ModuleCard({
-  mod,
-  index,
-  completedIds,
-  currentLessonId,
-  locked,
-}: {
-  mod: ManifestModule;
-  index: number;
-  completedIds: Set<string>;
-  currentLessonId: string | null;
-  locked: boolean;
-}) {
-  const doneInModule = mod.lessons.filter((l) => completedIds.has(l.id)).length;
-  const total = mod.lessons.length;
-  const pct = total > 0 ? Math.round((doneInModule / total) * 100) : 0;
-  const allDone = total > 0 && doneInModule === total;
-  const isCurrent = mod.lessons.some((l) => l.id === currentLessonId);
-  const meta = MODULE_META[mod.id] ?? { icon: "📌", desc: `${total} שיעורים במודול הזה.` };
+function StatusDot({ state }: { state: LessonState }) {
+  return (
+    <span
+      aria-hidden
+      className={cn(
+        "box-border inline-block h-3.5 w-3.5 shrink-0 rounded-full border-[1.5px]",
+        state === "done" && "border-primary bg-primary",
+        state === "current" && "border-primary bg-paper",
+        state === "todo" && "border-line bg-paper",
+      )}
+    />
+  );
+}
 
-  // יעד הקליק: השיעור הנוכחי > הבא שטרם הושלם > הראשון
-  const target =
-    mod.lessons.find((l) => l.id === currentLessonId) ??
-    mod.lessons.find((l) => !completedIds.has(l.id)) ??
-    mod.lessons[0];
-  const href = locked
-    ? `${PREP_BASE}/pricing?module=${encodeURIComponent(mod.slug)}`
-    : target
-      ? lessonHref(target)
-      : BASE;
-  const ctaLabel = locked
-    ? "בגישה מלאה"
-    : allDone
-      ? "חזרה על החומר"
-      : doneInModule === 0
-        ? "התחל"
-        : "המשך";
-
+function LessonRow({ lesson, state, locked, moduleSlug }: { lesson: ManifestLesson; state: LessonState; locked: boolean; moduleSlug: string }) {
+  const { name, level } = splitLessonTitle(lesson.title);
+  const href = locked ? `${PREP_BASE}/pricing?module=${encodeURIComponent(moduleSlug)}` : lessonHref(lesson);
   return (
     <Link
       href={href}
-      dir="rtl"
-      className={cn(
-        "group relative flex flex-col rounded-2xl border bg-paper p-5 transition-all",
-        locked
-          ? "border-line/80 opacity-95 hover:border-primary/30"
-          : allDone
-            ? "border-emerald-300/70 hover:border-emerald-400/70"
-            : isCurrent
-              ? "border-score/50 ring-1 ring-score/25 hover:shadow-card"
-              : "border-line hover:border-primary/35 hover:shadow-card",
-      )}
+      className="grid grid-cols-[1.125rem_minmax(0,1fr)_auto] items-center gap-3 border-b border-line/70 px-1 py-3 text-ink transition-colors hover:bg-surface-low sm:grid-cols-[1.125rem_minmax(0,1fr)_7rem_4.5rem]"
     >
-      {locked ? (
-        <span className="absolute -top-2.5 right-4 rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-          בגישה מלאה
-        </span>
-      ) : isCurrent && !allDone ? (
-        <span className="absolute -top-2.5 right-4 rounded-full bg-score px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-          ממשיכים כאן
-        </span>
-      ) : mod.slug === "introduction" ? (
-        <span className="absolute -top-2.5 right-4 rounded-full border border-emerald-300 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800">
-          מבוא חינם
-        </span>
-      ) : null}
-
-      <div className="flex items-start justify-between gap-2">
-        <span
-          className={cn(
-            "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl",
-            allDone ? "bg-emerald-500/10" : "bg-primary/[0.06]",
-          )}
-          aria-hidden
-        >
-          {allDone ? "✅" : meta.icon}
-        </span>
-      </div>
-
-      <p className="mt-3 font-bold leading-snug text-ink">
-        <span className="text-muted/70">{index + 1}. </span>
-        {mod.title}
-      </p>
-      <p className="mt-1 text-xs leading-relaxed text-muted">{meta.desc}</p>
-
-      <div className="mt-auto pt-4">
-        <div className="h-1 overflow-hidden rounded-full bg-surface-high">
-          <div
-            className={cn("h-1 rounded-full transition-all", allDone ? "bg-emerald-500" : "bg-primary")}
-            style={{ width: `${pct}%` }}
-          />
-        </div>
-        <div className="mt-1.5 flex items-center justify-between text-[11px]">
-          <span className={cn("tabular-nums", allDone ? "font-medium text-emerald-700" : "text-muted")}>
-            {allDone ? "✓ הושלם" : `${doneInModule}/${total} שיעורים`}
-          </span>
-          <span className="font-semibold text-muted transition-colors group-hover:text-primary">{ctaLabel}</span>
-        </div>
-      </div>
+      <StatusDot state={state} />
+      <span className={cn("min-w-0 truncate text-[15px]", state === "current" ? "font-bold" : "font-medium")}>{name}</span>
+      <span className="hidden text-xs text-muted sm:block">{level ?? (locked ? "בגישה מלאה" : "")}</span>
+      <span className="text-start text-xs tabular-nums text-muted sm:text-end">
+        {lesson.estimatedMinutes ? `${lesson.estimatedMinutes} דק׳` : ""}
+      </span>
     </Link>
+  );
+}
+
+function ModulePanel({
+  mod,
+  index,
+  total,
+  stateOf,
+  locked,
+  continueLesson,
+}: {
+  mod: ManifestModule;
+  index: number;
+  total: number;
+  stateOf: (id: string) => LessonState;
+  locked: boolean;
+  continueLesson: ManifestLesson | null;
+}) {
+  const groups = groupModuleLessons(mod);
+  const done = mod.lessons.filter((l) => stateOf(l.id) === "done").length;
+  const minutes = sumMinutes(mod.lessons);
+  const cta = continueLesson
+    ? { href: lessonHref(continueLesson), label: `${done === 0 ? "התחל" : "המשך"}: ${splitLessonTitle(continueLesson.title).name}` }
+    : null;
+
+  return (
+    <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-5 border-b border-line pb-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="min-w-0">
+          <p className="text-[13px] text-muted">
+            מודול {index + 1} מתוך {total}
+          </p>
+          <h1 className="mt-1 text-[1.75rem] font-extrabold leading-tight text-ink sm:text-3xl">{mod.title}</h1>
+          <p className="mt-2 max-w-[60ch] text-[15px] leading-relaxed text-muted">{MODULE_BLURB[mod.id] ?? ""}</p>
+          <p className="mt-2 text-[13px] text-muted">
+            {mod.lessons.length} שיעורים · {formatMinutes(minutes)} · {done} הושלמו
+          </p>
+        </div>
+        {locked ? (
+          <Link
+            href={`${PREP_BASE}/pricing?module=${encodeURIComponent(mod.slug)}`}
+            className="inline-flex h-[42px] shrink-0 items-center justify-center rounded border border-primary px-5 text-sm font-bold text-primary transition hover:bg-primary hover:text-white"
+          >
+            פתיחת המודול בגישה מלאה
+          </Link>
+        ) : cta ? (
+          <Link
+            href={cta.href}
+            className="inline-flex h-[42px] shrink-0 items-center justify-center rounded bg-primary px-5 text-sm font-bold text-white transition hover:bg-primary-hover"
+          >
+            {cta.label}
+          </Link>
+        ) : null}
+      </div>
+
+      {groups.map((g) => (
+        <section key={g.key}>
+          <div className="flex items-baseline justify-between pb-2">
+            <h2 className="text-base font-bold text-ink">{g.title}</h2>
+            <span className="text-[13px] text-muted">
+              {g.lessons.length} {g.key === "guide" ? "שיעורים" : g.key === "sims" ? "סימולציות" : "יחידות"} · {formatMinutes(sumMinutes(g.lessons))}
+            </span>
+          </div>
+          <div className="border-t border-line">
+            {g.lessons.map((l) => (
+              <LessonRow key={l.id} lesson={l} state={stateOf(l.id)} locked={locked} moduleSlug={mod.slug} />
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
   );
 }
 
@@ -173,151 +155,171 @@ export function AmirantCurriculumHub({ introVideoUrl }: { introVideoUrl?: string
   const progress = useAmirantCourseProgress();
   const { hasFullAccess, loading: accessLoading } = useAmirantCourseAccess();
   const manifest = AMIRANT_PREPARATION_MANIFEST;
+  const modules = manifest.modules;
+
+  const completedIds = useMemo(() => {
+    if (!progress.ready) return new Set<string>();
+    return new Set(
+      modules
+        .flatMap((m) => m.lessons)
+        .filter((l) => progress.getLessonStatus(l.id) === "completed")
+        .map((l) => l.id),
+    );
+  }, [modules, progress]);
+
+  // The current lesson is the first one not yet completed, in course order.
+  const currentLessonId = useMemo(() => {
+    for (const mod of modules) for (const l of mod.lessons) if (!completedIds.has(l.id)) return l.id;
+    return null;
+  }, [modules, completedIds]);
+  const currentModuleId = modules.find((m) => m.lessons.some((l) => l.id === currentLessonId))?.id ?? modules[0]?.id ?? null;
+
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [mobileOpenId, setMobileOpenId] = useState<string | null>(null);
+  const selected = modules.find((m) => m.id === (selectedId ?? currentModuleId)) ?? modules[0];
 
   if (!progress.ready || accessLoading) {
     return (
-      <div dir="rtl" className="mx-auto max-w-5xl animate-pulse space-y-6 py-8">
-        <div className="h-28 rounded-2xl bg-surface-low" />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div dir="rtl" className="mx-auto max-w-[75rem] animate-pulse px-4 py-8 sm:px-6 lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+        <div className="hidden space-y-3 lg:block">
+          {Array.from({ length: 9 }).map((_, i) => (
+            <div key={i} className="h-5 w-4/5 rounded bg-surface-low" />
+          ))}
+        </div>
+        <div className="space-y-4">
+          <div className="h-8 w-2/5 rounded bg-surface-low" />
+          <div className="h-4 w-3/5 rounded bg-surface-low" />
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="h-40 rounded-2xl bg-surface-low" />
+            <div key={i} className="h-11 rounded bg-surface-low" />
           ))}
         </div>
       </div>
     );
   }
 
-  const completedIds = new Set(
-    manifest.modules
-      .flatMap((m) => m.lessons)
-      .filter((l) => progress.getLessonStatus(l.id) === "completed")
-      .map((l) => l.id),
-  );
+  const stateOf = (id: string): LessonState => (completedIds.has(id) ? "done" : id === currentLessonId ? "current" : "todo");
+  const continueLessonIn = (mod: ManifestModule): ManifestLesson | null =>
+    mod.lessons.find((l) => l.id === currentLessonId) ?? mod.lessons.find((l) => !completedIds.has(l.id)) ?? mod.lessons[0] ?? null;
 
-  // השיעור הנוכחי = הראשון שטרם הושלם
-  let currentLessonId: string | null = null;
-  for (const mod of manifest.modules) {
-    for (const lesson of mod.lessons) {
-      if (!completedIds.has(lesson.id)) {
-        currentLessonId = lesson.id;
-        break;
-      }
-    }
-    if (currentLessonId) break;
-  }
-
-  const allLessons = manifest.modules.flatMap((m) => m.lessons);
-  const totalLessons = allLessons.length;
-  const completedCount = completedIds.size;
-  const pct = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
-
-  const currentLesson = currentLessonId ? allLessons.find((l) => l.id === currentLessonId) : null;
-  const currentModule = currentLesson
-    ? manifest.modules.find((m) => m.lessons.some((l) => l.id === currentLesson.id))
-    : null;
-  const currentLessonNumber = currentLesson
-    ? allLessons.findIndex((l) => l.id === currentLesson.id) + 1
-    : totalLessons;
+  const moduleRow = (mod: ManifestModule, i: number, active: boolean, onClick: () => void) => {
+    const done = mod.lessons.filter((l) => completedIds.has(l.id)).length;
+    const locked = isAmirantModuleLocked(mod, hasFullAccess);
+    return (
+      <button
+        key={mod.id}
+        type="button"
+        onClick={onClick}
+        aria-current={active ? "true" : undefined}
+        className={cn(
+          "grid w-full grid-cols-[1.375rem_minmax(0,1fr)_auto] items-baseline gap-2.5 border-e-2 py-2.5 pe-3 text-start transition-colors",
+          active ? "border-primary text-ink" : "border-transparent text-muted hover:text-ink",
+        )}
+      >
+        <span className="text-[13px] tabular-nums text-muted">{i + 1}</span>
+        <span className={cn("text-sm leading-snug", active ? "font-bold" : "font-medium")}>{mod.title}</span>
+        <span className="text-xs tabular-nums text-muted">{locked ? "נעול" : `${done}/${mod.lessons.length}`}</span>
+      </button>
+    );
+  };
 
   return (
-    <div dir="rtl" className="mx-auto w-full max-w-[60rem] px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
+    <div dir="rtl" className="mx-auto w-full max-w-[75rem] px-4 sm:px-6">
       {introVideoUrl?.trim() ? (
-        <div className="mb-6">
+        <div className="pt-6">
           <AmirantVideoEmbed src={introVideoUrl} title="סרטון פתיחה לקורס" />
         </div>
       ) : null}
-      <div className="mb-6">
-        <CourseWeeklyGoalBanner />
-      </div>
-      {/* ── המשך ללמוד - הפעולה הראשית ── */}
-      <section className="rounded-2xl border border-line bg-paper p-6 sm:p-8">
-        {currentLesson ? (
-          <>
-            <p className="text-xs font-semibold tracking-[0.12em] text-accent">
-              {completedCount === 0 ? "מתחילים כאן" : "המשך ללמוד"}
-            </p>
-            <h1 className="mt-2 text-2xl font-bold leading-snug text-primary sm:text-3xl">
-              {currentLesson.title}
-            </h1>
-            <p className="mt-1.5 text-sm text-muted">
-              {currentModule?.title} · שיעור {currentLessonNumber} מתוך {totalLessons} בקורס
-            </p>
-            <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <Link
-                href={lessonHref(currentLesson)}
-                className="inline-flex min-h-12 items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover"
-              >
-                {completedCount === 0 ? "התחל את השיעור הראשון" : "המשך בשיעור"}
-              </Link>
-              {completedCount > 0 ? (
-                <div className="flex items-center gap-3 text-xs text-muted">
-                  <div className="h-1.5 w-28 overflow-hidden rounded-full bg-surface-high">
-                    <div className="h-full rounded-full bg-accent transition-all" style={{ width: `${pct}%` }} />
-                  </div>
-                  <span className="tabular-nums">{pct}% מהקורס</span>
-                </div>
-              ) : null}
-            </div>
-          </>
-        ) : (
-          <>
-            <p className="text-xs font-semibold tracking-[0.12em] text-score">כל הכבוד!</p>
-            <h1 className="mt-2 text-2xl font-bold text-primary sm:text-3xl">סיימתם את כל שיעורי הקורס</h1>
-            <p className="mt-1.5 text-sm text-muted">זה הזמן לחזק עם סימולציות מלאות בטיימר.</p>
-            <Link
-              href={`${BASE}/simulation/${manifest.simulations[0]?.id ?? ""}`}
-              className="mt-5 inline-flex min-h-12 items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white transition hover:bg-primary-hover"
-            >
-              לסימולציה מלאה
-            </Link>
-          </>
-        )}
-      </section>
 
-      {/* ── תוכנית הקורס - קוביות מודולים ── */}
-      <section className="mt-10">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-lg font-bold text-primary">תוכנית הקורס</h2>
-          <span className="text-xs tabular-nums text-muted">
-            {completedCount}/{totalLessons} שיעורים הושלמו
-          </span>
-        </div>
+      <div className="lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+        {/* Syllabus: desktop sidebar */}
+        <aside className="sticky top-14 hidden max-h-[calc(100vh-3.5rem)] self-start overflow-y-auto border-e border-line py-7 pe-0 lg:block" aria-label="תוכנית הקורס">
+          <p className="pb-3 pe-3 text-xs font-bold tracking-[0.08em] text-muted">תוכנית הקורס</p>
+          <div className="-me-px flex flex-col">
+            {modules.map((mod, i) => moduleRow(mod, i, mod.id === selected?.id, () => setSelectedId(mod.id)))}
+          </div>
+          <div className="mt-6 pe-3">
+            <CourseWeeklyGoalBanner />
+          </div>
+        </aside>
 
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {manifest.modules.map((mod, mi) => (
-            <ModuleCard
-              key={mod.id}
-              mod={mod}
-              index={mi}
-              completedIds={completedIds}
-              currentLessonId={currentLessonId}
-              locked={isAmirantModuleLocked(mod, hasFullAccess)}
+        {/* Desktop: the selected module */}
+        <main className="hidden py-7 lg:block">
+          {selected ? (
+            <ModulePanel
+              mod={selected}
+              index={modules.indexOf(selected)}
+              total={modules.length}
+              stateOf={stateOf}
+              locked={isAmirantModuleLocked(selected, hasFullAccess)}
+              continueLesson={continueLessonIn(selected)}
             />
-          ))}
-        </div>
+          ) : null}
+        </main>
+      </div>
 
-        {manifest.simulations.length > 0 ? (
-          <div className="mt-10">
-            <h2 className="text-lg font-bold text-primary">סימולציות מלאות</h2>
-            <p className="mt-1 text-sm text-muted">שישה מבחנים עם טיימר — כמו ביום הבחינה. מומלץ אחרי היחידות העיקריות.</p>
-            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {manifest.simulations.map((sim, i) => (
-                <li key={sim.id}>
+      {/* Phone and tablet: continue, then the modules as an accordion */}
+      <div className="py-6 lg:hidden">
+        {selected ? (
+          <div className="flex flex-col gap-2 border-b border-line pb-5">
+            <p className="text-[13px] text-muted">
+              {selected.title} · {selected.lessons.filter((l) => completedIds.has(l.id)).length} מתוך {selected.lessons.length}
+            </p>
+            {(() => {
+              const next = continueLessonIn(selected);
+              const locked = isAmirantModuleLocked(selected, hasFullAccess);
+              if (!next) return null;
+              const { name, level } = splitLessonTitle(next.title);
+              return (
+                <>
+                  <p className="text-xl font-extrabold leading-tight text-ink">{name}</p>
+                  <p className="text-sm text-muted">
+                    {[level, next.estimatedMinutes ? `${next.estimatedMinutes} דק׳` : null].filter(Boolean).join(" · ")}
+                  </p>
                   <Link
-                    href={`${BASE}/simulation/${sim.id}`}
-                    className="flex min-h-14 items-center justify-between rounded-xl border border-line bg-paper px-4 py-3 text-sm font-semibold text-primary transition hover:border-primary/35"
+                    href={locked ? `${PREP_BASE}/pricing?module=${encodeURIComponent(selected.slug)}` : lessonHref(next)}
+                    className="mt-2 inline-flex h-11 items-center justify-center rounded bg-primary px-5 text-[15px] font-bold text-white"
                   >
-                    <span>
-                      {i + 1}. {sim.title}
-                    </span>
-
+                    {locked ? "פתיחה בגישה מלאה" : completedIds.size === 0 ? "התחל" : "המשך"}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                </>
+              );
+            })()}
+            <div className="pt-2">
+              <CourseWeeklyGoalBanner />
+            </div>
           </div>
         ) : null}
-      </section>
+
+        <div className="flex items-baseline justify-between pb-1 pt-6">
+          <h2 className="text-[15px] font-bold text-ink">תוכנית הקורס</h2>
+          <span className="text-[13px] tabular-nums text-muted">
+            {completedIds.size} מתוך {modules.flatMap((m) => m.lessons).length}
+          </span>
+        </div>
+        <div className="border-t border-line">
+          {modules.map((mod, i) => {
+            const open = mobileOpenId === mod.id;
+            const locked = isAmirantModuleLocked(mod, hasFullAccess);
+            return (
+              <div key={mod.id} className="border-b border-line/70">
+                {moduleRow(mod, i, mod.id === currentModuleId, () => setMobileOpenId(open ? null : mod.id))}
+                {open ? (
+                  <div className="pb-4 ps-7">
+                    {groupModuleLessons(mod).map((g) => (
+                      <div key={g.key} className="pt-2">
+                        <p className="pb-1 text-xs font-bold text-muted">{g.title}</p>
+                        {g.lessons.map((l) => (
+                          <LessonRow key={l.id} lesson={l} state={stateOf(l.id)} locked={locked} moduleSlug={mod.slug} />
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

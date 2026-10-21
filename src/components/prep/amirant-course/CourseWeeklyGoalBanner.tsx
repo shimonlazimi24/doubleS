@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { buildWeeklyGoalPlan, readLocalOnboardingPayload } from "@/lib/prep/onboarding/weekly-goal";
 import type { WeeklyGoalPlan } from "@/lib/prep/onboarding/weekly-goal";
 
+/** The learner's weekly target, as two quiet lines of text rather than a framed banner. */
 export function CourseWeeklyGoalBanner() {
   const [plan, setPlan] = useState<WeeklyGoalPlan | null>(null);
 
@@ -31,14 +32,10 @@ export function CourseWeeklyGoalBanner() {
   if (!plan) return null;
 
   return (
-    <aside
-      dir="rtl"
-      className="rounded-2xl border border-accent/20 bg-accent-muted/40 px-5 py-4"
-      aria-label="יעד השבוע"
-    >
-      <p className="text-xs font-semibold tracking-[0.12em] text-accent">יעד השבוע</p>
-      <p className="mt-1 text-base font-bold text-primary">{plan.headline}</p>
-      <p className="mt-1 text-sm leading-relaxed text-muted">{plan.detail}</p>
-    </aside>
+    <p dir="rtl" className="text-[13px] leading-relaxed text-muted" aria-label="יעד השבוע">
+      <span className="font-bold text-ink">היעד השבוע: </span>
+      {plan.headline.replace(/^יעד השבוע:\s*/, "")}
+      {plan.detail ? ` ${plan.detail}` : ""}
+    </p>
   );
 }

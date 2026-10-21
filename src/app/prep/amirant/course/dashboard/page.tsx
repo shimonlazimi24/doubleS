@@ -34,9 +34,5 @@ export default async function AmirantCourseDashboardPage() {
   }
 
   const data = await loadStudentDashboardData(client, user.id);
-  return (
-    <Container max="measureWide">
-      <AmirantStudentDashboardView data={data} />
-    </Container>
-  );
+  return <AmirantStudentDashboardView data={data} />;
 }
