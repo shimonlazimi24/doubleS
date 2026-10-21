@@ -9,7 +9,7 @@
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getModuleByLessonId } from "@/lib/amirant-course/navigation";
-import { groupModuleLessons, splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
+import { groupModuleLessons, lessonNameInModule } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { useAmirantCourseProgressOptional } from "../AmirantCourseProgressProvider";
 import { cn } from "@/lib/design-system/cn";
 
@@ -39,7 +39,7 @@ export function LessonSyllabusRail({ lessonId, className }: { lessonId: string; 
             {g.lessons.map((l) => {
               const active = l.id === lessonId;
               const completed = progress?.ready ? progress.getLessonStatus(l.id) === "completed" : false;
-              const { name } = splitLessonTitle(l.title);
+              const name = lessonNameInModule(l.title);
               return (
                 <Link
                   key={l.id}

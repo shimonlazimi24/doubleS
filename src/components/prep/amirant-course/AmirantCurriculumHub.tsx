@@ -11,7 +11,7 @@ import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { isAmirantModuleLocked } from "@/lib/prep/course-access";
-import { groupModuleLessons, splitLessonTitle, sumMinutes } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
+import { groupModuleLessons, lessonNameInModule, splitLessonTitle, sumMinutes } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
 import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
@@ -63,7 +63,8 @@ function StatusDot({ state }: { state: LessonState }) {
 }
 
 function LessonRow({ lesson, state, locked, moduleSlug }: { lesson: ManifestLesson; state: LessonState; locked: boolean; moduleSlug: string }) {
-  const { name, level } = splitLessonTitle(lesson.title);
+  const { level } = splitLessonTitle(lesson.title);
+  const name = lessonNameInModule(lesson.title);
   const href = locked ? `${PREP_BASE}/pricing?module=${encodeURIComponent(moduleSlug)}` : lessonHref(lesson);
   return (
     <Link

@@ -32,6 +32,14 @@ export function splitLessonTitle(title: string): LessonTitleParts {
   return { name: stripped.trim(), level: null };
 }
 
+/**
+ * The name as a list inside its module shows it: the vocabulary lessons all
+ * start with "אוצר מילים · ", which is the module's name, not the lesson's.
+ */
+export function lessonNameInModule(title: string): string {
+  return splitLessonTitle(title).name.replace(/^אוצר מילים\s*[·\-–]\s*/, "");
+}
+
 export type LessonGroup = {
   key: string;
   title: string;

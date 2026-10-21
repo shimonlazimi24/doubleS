@@ -24,6 +24,7 @@ import {
 } from "@/lib/amirant-course/lesson-content/lesson-question-groups";
 import { getWordFormationTest } from "@/lib/amirant-course/word-formation/word-formation.server";
 import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
+import { splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
@@ -100,7 +101,8 @@ type Props = { params: { lessonId: string } };
 export function generateMetadata({ params }: Props): Metadata {
   const hit = getManifestLesson(params.lessonId);
   if (!hit) return { title: "שיעור" };
-  return { title: `${hit.lesson.title} | הכנה לאמירנט` };
+  const { name, level } = splitLessonTitle(hit.lesson.title);
+  return { title: `${name}${level ? ` · ${level}` : ""} | ${hit.module.title}` };
 }
 
 function buildBlockIntro(blocks: ContentBlock[]): string {
