@@ -4,7 +4,7 @@ import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 
 /**
  * Server-side access gate for the paid parts of the course.
@@ -25,11 +25,9 @@ export const AMIRANT_FREE_QUIZ_IDS = new Set<string>(["quiz-entry-diagnostic"]);
 
 export async function getAmirantFullAccess(): Promise<boolean> {
   if (getPrepHasFullAccess()) return true;
-  const client = createPrepSupabaseServerClient();
+  // Shared with the course layout: one auth call and one entitlement read per request.
+  const { client, user } = await getPrepServerUser();
   if (!client) return false;
-  const {
-    data: { user },
-  } = await client.auth.getUser();
   return hasAmirantFullAccess(client, user?.id ?? null);
 }
 

@@ -1,6 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { AMIRANT_BANK_QUESTIONS } from "./question-bank";
-import { AMIRANT_PREPARATION_MANIFEST } from "./manifest";
+import { AMIRANT_PREPARATION_MANIFEST, getManifestQuiz } from "./manifest";
 import type { AmirantBankTopicSlug } from "./types/bank-question";
 import { AMIRANT_TOPIC_LABEL_HE } from "./topic-labels";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -53,6 +53,8 @@ export type StudentDashboardData = {
   recentQuizAttempts: Array<{
     attemptId: string;
     quizId: string;
+    /** The quiz's name as the course shows it; the id when the quiz is no longer in the manifest. */
+    quizTitle: string;
     submittedAt: string | null;
     scorePct: number | null;
   }>;
@@ -320,6 +322,7 @@ export async function loadStudentDashboardData(
     .map((row) => ({
       attemptId: row.id,
       quizId: row.quiz_id,
+      quizTitle: getManifestQuiz(row.quiz_id)?.title ?? row.quiz_id,
       submittedAt: row.submitted_at,
       scorePct: row.score_pct == null ? null : Number(row.score_pct),
     }));

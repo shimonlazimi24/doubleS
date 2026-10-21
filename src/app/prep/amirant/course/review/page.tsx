@@ -1,8 +1,7 @@
 import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import type { Metadata } from "next";
 import { Container, Text } from "@/components/ui";
-import { getManifestQuiz } from "@/lib/amirant-course/manifest";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { loadStudentDashboardData } from "@/lib/amirant-course/student-insights";
 import { AmirantReviewFallbackClient } from "@/components/prep/amirant-course/AmirantReviewFallbackClient";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -13,24 +12,9 @@ export const metadata: Metadata = {
   title: "סקירות בוחנים | הכנה לאמירנט",
 };
 
-function quizTitle(quizId: string): string {
-  return getManifestQuiz(quizId)?.title ?? quizId;
-}
-
 export default async function AmirantCourseReviewIndexPage() {
-  const client = createPrepSupabaseServerClient();
-  if (!client) {
-    return (
-      <Container max="measureWide">
-        <AmirantReviewFallbackClient />
-      </Container>
-    );
-  }
-
-  const {
-    data: { user },
-  } = await client.auth.getUser();
-  if (!user) {
+  const { client, user } = await getPrepServerUser();
+  if (!client || !user) {
     return (
       <Container max="measureWide">
         <AmirantReviewFallbackClient />
@@ -75,7 +59,7 @@ export default async function AmirantCourseReviewIndexPage() {
                 className="flex flex-wrap items-center justify-between gap-2 border-b border-line/60 py-3.5 last:border-0"
               >
                 <span className="text-sm font-medium text-ink">
-                  {quizTitle(attempt.quizId)}
+                  {attempt.quizTitle}
                   <span className="ms-2 tabular-nums text-muted">
                     {attempt.scorePct != null ? `${attempt.scorePct}%` : "ללא ציון"}
                   </span>

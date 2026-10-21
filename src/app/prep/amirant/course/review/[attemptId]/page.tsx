@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Container, Text } from "@/components/ui";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { loadQuizReviewData } from "@/lib/amirant-course/student-insights";
 import { AmirantQuizReviewView } from "@/components/prep/amirant-course/AmirantQuizReviewView";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -49,7 +49,7 @@ export default async function AmirantCourseReviewAttemptPage({
   params: Promise<{ attemptId: string }>;
 }) {
   const { attemptId } = await params;
-  const client = createPrepSupabaseServerClient();
+  const { client, user } = await getPrepServerUser();
   if (!client) {
     return (
       <StateNotice
@@ -61,9 +61,6 @@ export default async function AmirantCourseReviewAttemptPage({
     );
   }
 
-  const {
-    data: { user },
-  } = await client.auth.getUser();
   if (!user) {
     return (
       <StateNotice

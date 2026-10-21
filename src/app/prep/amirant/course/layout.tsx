@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getPrepShowCourseAssistant } from "@/lib/prep/prep-full-access";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { ensureTesterEntitlement } from "@/lib/prep/ensure-tester-entitlement.server";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
@@ -23,16 +23,12 @@ export default async function AmirantCourseLayout({ children }: { children: Reac
   // העוזר האישי - למנויים בלבד (תואם את הגייט ב-lesson-chat route); dev/preview דרך הדגל
   let showCourseChat = getPrepShowCourseAssistant();
   if (!showCourseChat) {
-    const client = createPrepSupabaseServerClient();
-    if (client) {
-      const {
-        data: { user },
-      } = await client.auth.getUser();
-      if (user) {
-        // בודקים מ-PREP_TESTER_EMAILS מקבלים entitlement אוטומטית בביקור הראשון
-        await ensureTesterEntitlement(client, user);
-        showCourseChat = await hasAmirantFullAccess(client, user.id);
-      }
+    // Shared with the page below it: one auth call and one entitlement read per request.
+    const { client, user } = await getPrepServerUser();
+    if (client && user) {
+      // בודקים מ-PREP_TESTER_EMAILS מקבלים entitlement אוטומטית בביקור הראשון
+      await ensureTesterEntitlement(client, user);
+      showCourseChat = await hasAmirantFullAccess(client, user.id);
     }
   }
   return (

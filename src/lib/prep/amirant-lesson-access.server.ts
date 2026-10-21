@@ -4,21 +4,22 @@ import { isAmirantModuleLocked } from "@/lib/prep/course-access";
 import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 
 /** Redirect to pricing when the lesson's module requires paid access. */
 export async function requireAmirantLessonAccess(lessonId: string): Promise<void> {
   const found = getManifestLesson(lessonId);
   if (!found) return;
 
+  // A free module needs no auth at all: decide that before touching the database.
+  if (!isAmirantModuleLocked(found.module, false)) return;
+
   // דגל ה-dev/preview תקף גם בלי Supabase מקומי (הדגל ממילא מנוטרל בפרודקשן)
   let fullAccess = getPrepHasFullAccess();
-  const client = fullAccess ? null : createPrepSupabaseServerClient();
-  if (client) {
-    const {
-      data: { user },
-    } = await client.auth.getUser();
-    fullAccess = await hasAmirantFullAccess(client, user?.id ?? null);
+  if (!fullAccess) {
+    // Shared with the course layout: one auth call and one entitlement read per request.
+    const { client, user } = await getPrepServerUser();
+    fullAccess = client ? await hasAmirantFullAccess(client, user?.id ?? null) : false;
   }
 
   if (isAmirantModuleLocked(found.module, fullAccess)) {

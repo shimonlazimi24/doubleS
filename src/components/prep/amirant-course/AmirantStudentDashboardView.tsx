@@ -188,7 +188,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
                   key={attempt.attemptId}
                   className="flex items-center justify-between rounded-xl border border-line bg-surface-low px-4 py-3"
                 >
-                  <span className="text-sm text-primary">{attempt.quizId}</span>
+                  <span className="text-sm text-primary">{attempt.quizTitle}</span>
                   <div className="flex items-center gap-3">
                     {score != null && (
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${scoreColor}`}>

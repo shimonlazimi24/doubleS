@@ -1,4 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { cache } from "react";
 import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
 import { getPrepHasFullAccess } from "./prep-full-access";
 
@@ -27,7 +28,15 @@ function isEntitlementActive(row: EntitlementRow, at = new Date()): boolean {
   return true;
 }
 
-export async function getCourseEntitlement(
+/**
+ * The learner's entitlement for a course.
+ *
+ * Memoized per request (React `cache`, keyed by the client instance, user and
+ * course): the course layout asks for it to decide on the assistant, and the
+ * page asks again for its own gating. One database round trip serves both.
+ * Outside a React request (route handlers, scripts) it simply runs each time.
+ */
+export const getCourseEntitlement = cache(async function getCourseEntitlement(
   client: SupabaseClient,
   userId: string,
   courseSlug: string,
@@ -45,7 +54,7 @@ export async function getCourseEntitlement(
     accessType: row.access_type,
     active: isEntitlementActive(row),
   };
-}
+});
 
 export async function hasAmirantFullAccess(
   client: SupabaseClient | null,

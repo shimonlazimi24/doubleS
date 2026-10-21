@@ -3,7 +3,7 @@ import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { Container, Heading, Text } from "@/components/ui";
 import { PrepSettingsClient } from "@/components/prep/PrepSettingsClient";
 import { PrepSubscriptionCard, type SubscriptionInfo } from "@/components/prep/PrepSubscriptionCard";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { getCourseEntitlement } from "@/lib/prep/entitlements";
 import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -23,12 +23,8 @@ async function loadAccountAndSubscription(): Promise<{
 }> {
   const empty: SubscriptionInfo = { active: false, accessType: null, endsAt: null, payments: [] };
   const noAccount: AccountInfo = { email: null, fullName: null };
-  const client = createPrepSupabaseServerClient();
-  if (!client) return { account: noAccount, subscription: empty };
-  const {
-    data: { user },
-  } = await client.auth.getUser();
-  if (!user) return { account: noAccount, subscription: empty };
+  const { client, user } = await getPrepServerUser();
+  if (!client || !user) return { account: noAccount, subscription: empty };
 
   const account: AccountInfo = {
     email: user.email ?? null,

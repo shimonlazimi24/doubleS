@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Card, CardBody, Container, Text } from "@/components/ui";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { getPrepServerUser } from "@/lib/prep/supabase/server";
 import { loadStudentDashboardData } from "@/lib/amirant-course/student-insights";
 import { AmirantStudentDashboardView } from "@/components/prep/amirant-course/AmirantStudentDashboardView";
 import { AmirantDashboardFallbackClient } from "@/components/prep/amirant-course/AmirantDashboardFallbackClient";
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AmirantCourseDashboardPage() {
-  const client = createPrepSupabaseServerClient();
+  const { client, user } = await getPrepServerUser();
   if (!client) {
     return (
       <Container max="measureWide">
@@ -25,9 +25,6 @@ export default async function AmirantCourseDashboardPage() {
     );
   }
 
-  const {
-    data: { user },
-  } = await client.auth.getUser();
   if (!user) {
     return (
       <Container max="measureWide">
