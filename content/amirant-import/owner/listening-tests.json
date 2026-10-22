@@ -1,0 +1,2271 @@
+[
+  {
+    "test": 1,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L3-0002",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 3,
+        "context": "An astronomy lecturer talks about the Moon as seen from Earth.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Have you ever noticed that we always see the same face of the Moon? It's a perennial question, one that people have asked for centuries. Here's the answer. The Moon does spin, but it turns exactly once in the time it takes to circle the Earth. Because those two motions match, the same side always points toward us. So the Moon isn't standing still. Its spin and its orbit simply keep time with each other."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L3-0003",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 3,
+        "context": "A student asks her geology professor a question during office hours.",
+        "speakers": "A: female student · B: male geology professor",
+        "transcript": [
+          "A:  Professor, I'm confused about something from yesterday's lecture. Why do we find fossils of sea creatures high up in the mountains?",
+          "B:  Good question. Many students assume the ocean once rose high enough to cover the peaks. But actually, sea level never rose anywhere near that far.",
+          "A:  Then how did the shells get up there?",
+          "B:  Well, the land itself moved. Millions of years ago, that area lay under shallow water, and shells settled in the mud and slowly hardened into rock. Then two huge plates of the Earth's crust collided in a slow, ponderous crash, and the crumpled land was pushed upward.",
+          "A:  So the shells were lifted along with the rock.",
+          "B:  Exactly. That's why a mountaintop can hold what used to be a seafloor.",
+          "A:  And is that still happening?",
+          "B:  In some places, yes. The Himalayas are still rising, though very slowly. Those mountains are, in a sense, still being built."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L4-0002",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 4,
+        "context": "An anthropology lecturer talks about the early history of dogs.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Dogs were probably the first animals that people domesticated, yet nobody knows exactly how that partnership began. So how might it have started? Researchers currently weigh two main explanations, and they differ mainly on who made the first move.",
+          "The first holds that people took the lead. On this view, hunters found wolf pups, raised them, and gradually bred the tamest ones. The second explanation reverses the roles: here, the wolves chose us. Some wolves were bolder than others, and these animals began scavenging around human camps, feeding on leftover scraps. Because the bold ones ate better, they survived and passed on their tolerance of people. Over many generations, the camp-side wolves became more tractable, that is, easier for people to live with, and eventually they became dogs.",
+          "Now, you might expect the matter to be settled by now, given how long people have studied it. It isn't. Ancient bones show that dogs and wolves diverged very long ago, but the evidence for any single date or place is tenuous, and different studies point in different directions. That's why many researchers suspect the truth combines both stories: wolves drifted toward camps, and people, in turn, welcomed the friendliest ones. So, in short, the origin of dogs remains unsettled, with one view stressing human initiative and the other stressing the wolves' own behavior."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "Why does the same side of the Moon always face the Earth?",
+        "options": [
+          "The Earth spins once during each orbit the Moon makes",
+          "The Moon moves around the Earth much faster than it spins",
+          "The Moon completes one spin per trip around the Earth",
+          "The Moon does not spin, so one side is always fixed toward us"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "לפי המשפט it turns exactly once in the time it takes to circle the Earth (הוא מסתובב פעם אחת בדיוק בזמן שלוקח לו להקיף את כדור הארץ), הסיבוב של הירח תואם את המסלול שלו, ולכן אותו צד תמיד פונה אלינו.",
+        "explanationEn": "The Moon turns exactly once in the time it takes to circle the Earth, so its spin and its orbit match and one side always faces us."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "Which common assumption does the professor correct?",
+        "options": [
+          "That mountaintops are made of the oldest rock on Earth",
+          "That shells can slowly harden into solid rock",
+          "That the ocean once climbed as high as the peaks",
+          "That huge waves once threw sea creatures onto high ground"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "אחרי הצירוף But actually מופיע המשפט sea level never rose anywhere near that far (מפלס הים מעולם לא עלה כל כך גבוה), ולכן הפרופסור מתקן את ההנחה שהאוקיינוס כיסה פעם את ההרים.",
+        "explanationEn": "After But actually, he says sea level never rose anywhere near that far, which corrects the idea that the ocean once covered the peaks."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "According to the professor, how did the shells end up high in the mountains?",
+        "options": [
+          "The land was thrust upward as two plates collided",
+          "The sea slowly dried up and left the shells on high ground",
+          "The shells hardened into rock in the mud of a shallow sea",
+          "Powerful floods carried the shells up to the peaks"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המשפט the land itself moved (הקרקע עצמה זזה) מוסבר בהמשך במשפט the crumpled land was pushed upward (האדמה המקומטת נדחפה כלפי מעלה), ולכן הצדפות עלו יחד עם הסלע.",
+        "explanationEn": "After the land itself moved, he explains that the crumpled land was pushed upward, so the shells rose together with the rock."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the lecture mainly about?",
+        "options": [
+          "Competing theories on how dogs and people became partners",
+          "Why early hunters raised wolf pups and bred the tamest ones",
+          "How ancient bones reveal exactly when dogs split from wolves",
+          "How people first learned to domesticate many wild animals"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "הצירוף two main explanations (שני הסברים עיקריים) והמשפט the origin of dogs remains unsettled (מקור הכלבים עדיין לא הוכרע) מראים שההרצאה עוסקת בהסברים מתחרים להתחלת הקשר בין האדם לכלב.",
+        "explanationEn": "The phrases two main explanations and the origin of dogs remains unsettled show that the lecture is about rival theories of how the partnership began."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What does the lecturer suggest about the two explanations?",
+        "options": [
+          "Ancient bones probably favor the first explanation over the second",
+          "The second explanation is now accepted by most researchers",
+          "Each may describe part of what really happened",
+          "The two explanations may be too different to be combined"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "לפי המשפט the truth combines both stories (האמת משלבת את שני הסיפורים), כל אחד משני ההסברים עשוי לתאר חלק ממה שקרה באמת.",
+        "explanationEn": "The lecturer says many researchers suspect that the truth combines both stories, so each explanation may describe part of what happened."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "perennial",
+        "pronunciation": "puh-REN-ee-ul",
+        "he": "שחוזר ונשאל שוב ושוב לאורך זמן רב",
+        "en": "lasting or returning again and again over a very long time"
+      },
+      {
+        "word": "ponderous",
+        "pronunciation": "PON-der-us",
+        "he": "כבד ואיטי, מסורבל בתנועתו",
+        "en": "slow and heavy, moving with great weight and effort"
+      },
+      {
+        "word": "tractable",
+        "pronunciation": "TRAK-tuh-bul",
+        "he": "קל להדרכה ולשליטה, נוח ומשתף פעולה",
+        "en": "easy to manage or guide; cooperative"
+      },
+      {
+        "word": "tenuous",
+        "pronunciation": "TEN-yoo-us",
+        "he": "חלש, דל, לא מבוסס היטב",
+        "en": "weak or slight; not firmly supported"
+      }
+    ]
+  },
+  {
+    "test": 2,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L3-0004",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 3,
+        "context": "A chemistry lecturer talks about what happens when water freezes.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Here's something odd about water. Most liquids get denser as they freeze, so the solid sinks. Water, rather perversely, does the opposite, and that is worth a moment of thought. Why? As water freezes, its molecules lock into an open, spread-out pattern, so ice takes up more room than the same amount of liquid. Because ice is therefore less dense, it floats. In short, ice floats on water simply because it is lighter for its size."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L4-0003",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 4,
+        "context": "An economics lecturer introduces a key idea about everyday choices.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Let's talk about what economists call opportunity cost. Suppose a friend gives you a concert ticket that is ostensibly free. Is it really free? Not quite. You could have spent that evening earning money at a part-time job or studying for an exam. The key point is that the true price of a choice is not just the money you pay. It is the value of the best alternative you give up.",
+          "Notice what that means. A student who skips a lecture to watch a movie has paid for more than the ticket; she has also given up what the lecture would have taught her. Now, some people object that this makes everything sound expensive. But economists reply that the idea is a tool for comparing choices, not a reason to avoid them. So, to restate: whenever you pick one thing, the real cost is the next best thing you didn't choose."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L4-0004",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 4,
+        "context": "Two biology students talk about a project for their lab course.",
+        "speakers": "A: male student · B: female student",
+        "transcript": [
+          "A:  So, for our growth experiment, I think we should test three fertilizers on three groups of bean plants. That way we can compare them all at once.",
+          "B:  That's a good start, but we also need a control group, plants that get no fertilizer. Otherwise we can't tell whether the fertilizers did anything.",
+          "A:  Hmm, but that's one more group to water and measure. Isn't it a waste?",
+          "B:  Not really. Suppose every plant grows tall. Without a control, we wouldn't know whether the fertilizer caused it or the sunny window did.",
+          "A:  Okay, so the control shows what happens by default. That makes sense. What else?",
+          "B:  We should change only one thing. If one group gets more light and a different fertilizer, we'll never know which factor mattered. Everything else has to stay equal, so that any difference we see comes from the fertilizer.",
+          "A:  Right. Same soil, same pots, same amount of water. Just the fertilizer changes. I was going to put the pots on the shelf in whatever order, though.",
+          "B:  That's actually risky. The pots near the window get more light. Let's assign each pot to a spot by drawing numbers from a hat. It's arduous, I admit, but it keeps the comparison fair.",
+          "A:  All right, I'm convinced. Control group, one variable, random placement."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "Why does ice float on liquid water?",
+        "options": [
+          "Air trapped inside the ice lifts it up above the surface",
+          "Water gets denser as it freezes, just like most liquids do",
+          "Ice holds less material in the same space than liquid does",
+          "Ice forms at the surface, so it has no chance to sink"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "לפי המשפט ice takes up more room than the same amount of liquid (קרח תופס יותר מקום מאותה כמות של נוזל), הקרח פחות צפוף מהמים הנוזליים, ולכן הוא צף.",
+        "explanationEn": "Since ice takes up more room than the same amount of liquid, it is less dense, so it floats."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "According to the lecturer, what is the true cost of a choice?",
+        "options": [
+          "What the single best rejected option was worth",
+          "The combined value of the options that were passed over",
+          "The money someone pays for the option they pick",
+          "The hours someone spends on the activity they pick"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המשפט It is the value of the best alternative you give up (זהו הערך של החלופה הטובה ביותר שמוותרים עליה) מגדיר את העלות האמיתית, והמשפט the real cost is the next best thing you didn't choose חוזר על כך בסיכום.",
+        "explanationEn": "The lecturer defines the true cost as the value of the best alternative you give up, and repeats it as the next best thing you didn't choose."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "How does the lecturer answer the objection that the idea makes everything sound expensive?",
+        "options": [
+          "By admitting that the idea works for money but not for time",
+          "By saying it helps people weigh choices, not avoid them",
+          "By agreeing that people should avoid choices that have a cost",
+          "By claiming that the cost of a choice is mostly its money price"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי המילה But מופיע המשפט the idea is a tool for comparing choices, not a reason to avoid them (הרעיון הוא כלי להשוואת בחירות ולא סיבה להימנע מהן), ולכן ההתנגדות נדחית.",
+        "explanationEn": "After But, the lecturer says the idea is a tool for comparing choices, not a reason to avoid them, which answers the objection."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What are the two students mainly doing?",
+        "options": [
+          "Planning how to run a fair plant experiment",
+          "Arguing about how many plants their lab can afford to grow",
+          "Deciding which fertilizer will help bean plants grow best",
+          "Reviewing the results of an experiment they already finished"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "הצירוף Control group, one variable, random placement (קבוצת ביקורת, משתנה אחד, שיבוץ אקראי) מסכם את מה שהם מתכננים: ניסוי הוגן.",
+        "explanationEn": "They are planning a fair test, as the summary Control group, one variable, random placement shows."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "How does the man respond to the idea of a control group?",
+        "options": [
+          "He supports it immediately and adds reasons of his own",
+          "He accepts it because their professor requires it",
+          "He rejects it throughout and keeps his own design",
+          "He objects at first but accepts it once she explains"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "המשפט Isn't it a waste? (האם זה לא בזבוז?) מראה התנגדות בתחילה, והמשפט I'm convinced (השתכנעתי) בסוף מראה שהוא קיבל את הרעיון אחרי ההסבר שלה.",
+        "explanationEn": "He first asks Isn't it a waste?, but after her explanation he says I'm convinced."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "perversely",
+        "pronunciation": "per-VER-slee",
+        "he": "באופן הפוך לציפיות, כאילו בכוונה להתנגד",
+        "en": "in a way that goes against what is expected or reasonable"
+      },
+      {
+        "word": "ostensibly",
+        "pronunciation": "oh-STEN-suh-blee",
+        "he": "לכאורה, לפי מה שנראה או נאמר כלפי חוץ",
+        "en": "apparently; according to how something seems or is presented"
+      },
+      {
+        "word": "arduous",
+        "pronunciation": "AR-joo-us",
+        "he": "מפרך, מייגע ותובעני",
+        "en": "needing a lot of hard, tiring effort"
+      }
+    ]
+  },
+  {
+    "test": 3,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L4-0005",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 4,
+        "context": "A teaching assistant and a student discuss the results of a class survey.",
+        "speakers": "A: female teaching assistant · B: male student",
+        "transcript": [
+          "A:  So why did the class survey say that nearly everyone loves the library?",
+          "B:  Well, lots of students answered. That's a big sample, isn't it?",
+          "A:  Size isn't the issue. The survey was online and voluntary, so mostly people who already use the library bothered to reply. It's an insidious problem, because nothing in the data looks wrong.",
+          "B:  So the sample is biased.",
+          "A:  Exactly. A big group of volunteers can still misrepresent everyone else."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L4-0006",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 4,
+        "context": "Two history students discuss the printing press in a seminar.",
+        "speakers": "A: male student · B: female student",
+        "transcript": [
+          "A:  I'd argue the printing press caused the social upheaval of the sixteenth century. Before it, new ideas spread slowly, mostly by hand-copied books. After it, pamphlets reached thousands of readers.",
+          "B:  Hmm, I'm not convinced it was the cause. Discontent with the authorities was already widespread, for many different reasons, so the press arrived in a tumultuous situation; it didn't create one.",
+          "A:  But without cheap pamphlets, reformers couldn't have reached ordinary readers so quickly.",
+          "B:  True. So I'd call the press a catalyst, not a cause. It sped things up, but the fuel was already there.",
+          "A:  Fair enough. But then maybe speed itself mattered, because authorities couldn't suppress ideas that spread that fast.",
+          "B:  Possibly. Still, speeding something up isn't the same as starting it.",
+          "A:  All right. I'll accept that the press amplified the upheaval, but I won't say it created it."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L4-0007",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 4,
+        "context": "An oceanography lecturer talks about the sea and the land around it.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Why is the sea salty? It seems like a simple question, but the answer begins far from the ocean, on dry land. Rain is slightly acidic, so as it falls on rocks, it slowly dissolves tiny amounts of minerals. Rivers then carry these dissolved minerals to the sea. Each river contributes only a little, but there are countless rivers, and they have been flowing for a very long time. Over millions of years, those small contributions add up to an enormous amount.",
+          "Here's the puzzle, though. If rivers keep delivering minerals, shouldn't the sea get saltier every year? Not necessarily. Some of the minerals are used by living things or settle to the seafloor, so the sea's saltiness stays roughly steady over long periods.",
+          "And there is a second part to the story. When the sun warms the ocean surface, copious amounts of water evaporate. But the salt cannot evaporate; it stays behind. So evaporation, in effect, concentrates the salt in the sea, while the pure water goes up into the sky and comes back down as rain.",
+          "So, to sum up: rivers deliver the minerals, and evaporation leaves the salt behind. This has been going on so imperceptibly that no single generation could ever have watched it happen."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "Why does the teaching assistant say the survey result is unreliable?",
+        "options": [
+          "Too few students answered the survey",
+          "Those who replied were not typical of all students",
+          "The questions were worded to push students toward praising the library",
+          "Going online made students answer quickly and without much care"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי המשפט Size isn't the issue (הגודל אינו הבעיה) בא המשפט mostly people who already use the library bothered to reply (בעיקר מי שכבר משתמשים בספרייה טרחו לענות), ולכן המשיבים אינם מייצגים את כל הסטודנטים.",
+        "explanationEn": "After Size isn't the issue, she explains that mostly people who already use the library bothered to reply, so the answers are biased."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "How does the woman's view differ from the man's opening claim?",
+        "options": [
+          "She thinks reformers used the press more cleverly than the authorities did",
+          "She sees the press as speeding up an upheaval that had other roots",
+          "She thinks the press had no influence on how ideas spread to readers",
+          "She thinks the pamphlets reached too few people to make a difference"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הצירוף a catalyst, not a cause (זרז ולא סיבה) והמשפט the fuel was already there (הדלק כבר היה שם) מראים שלדעתה הדפוס רק האיץ תסיסה שהיו לה שורשים אחרים.",
+        "explanationEn": "She calls the press a catalyst, not a cause and says the fuel was already there, so it only sped up an upheaval with other roots."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "Why does the man say that authorities could not suppress ideas that spread fast?",
+        "options": [
+          "To suggest that the authorities probably lost control before the press arrived",
+          "To admit that the press did not matter much in the end",
+          "To explain why pamphlets were cheap enough for ordinary readers",
+          "To suggest that fast spreading was significant in itself"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "אחרי הצירוף But then מופיע המשפט maybe speed itself mattered (אולי המהירות עצמה הייתה חשובה), כלומר הגבר טוען שההתפשטות המהירה הייתה משמעותית כשלעצמה.",
+        "explanationEn": "After But then, he says maybe speed itself mattered, which means he thinks the fast spread was important in its own right."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the lecturer mainly explaining?",
+        "options": [
+          "How water travels between the sea, the sky and the land",
+          "How rain slowly dissolves minerals out of the rocks on land",
+          "Why seawater keeps getting saltier as the years pass",
+          "How rivers and evaporation account for salty seawater"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "המשפט rivers deliver the minerals, and evaporation leaves the salt behind (נהרות מביאים את המינרלים וההתאדות משאירה את המלח) מסכם שההרצאה מסבירה את מליחות הים באמצעות נהרות והתאדות.",
+        "explanationEn": "The summary rivers deliver the minerals, and evaporation leaves the salt behind shows that the lecture explains the sea's saltiness through rivers and evaporation."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "According to the lecturer, why does the sea not simply get saltier year after year?",
+        "options": [
+          "Some minerals are removed by living things or by sinking",
+          "Each river carries so little that the sea hardly changes",
+          "Melting ice sends fresh water into the sea and dilutes it",
+          "Evaporation takes the salt out of the water"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "אחרי המילים Not necessarily (לא בהכרח) המשפט Some of the minerals are used by living things or settle to the seafloor (חלק מהמינרלים נצרכים על ידי יצורים חיים או שוקעים לקרקעית הים) מסביר למה המליחות נשארת יציבה.",
+        "explanationEn": "After Not necessarily, she says Some of the minerals are used by living things or settle to the seafloor, so the saltiness stays roughly steady."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "insidious",
+        "pronunciation": "in-SID-ee-us",
+        "he": "מסוכן בדרך נסתרת, שפועל בלי שמרגישים בו",
+        "en": "harmful in a hidden, gradual way that is hard to notice"
+      },
+      {
+        "word": "tumultuous",
+        "pronunciation": "too-MUL-choo-us",
+        "he": "סוער, רווי מהומה ותסיסה",
+        "en": "full of noisy disorder, excitement or upheaval"
+      },
+      {
+        "word": "copious",
+        "pronunciation": "KOH-pee-us",
+        "he": "רב מאוד, בשפע",
+        "en": "very large in amount; plentiful"
+      },
+      {
+        "word": "imperceptibly",
+        "pronunciation": "im-per-SEP-tuh-blee",
+        "he": "באופן שאי אפשר להבחין בו, לאט מכדי לשים לב",
+        "en": "so slowly or slightly that it cannot be noticed"
+      }
+    ]
+  },
+  {
+    "test": 4,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L4-0008",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 4,
+        "context": "A linguistics lecturer talks about two kinds of languages that form when groups meet.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Two terms students often mix up are pidgin and creole. Groups with no shared language often build a simple go-between language for trade. That's a pidgin. Its vocabulary is usually paltry, just enough for buying and selling, and it's rarely spoken at home. So what turns a pidgin into a creole? Children. Once a new generation grows up speaking it as a first language, it becomes a creole, and its grammar tends to grow richer. In short, a creole is a pidgin that has become someone's mother tongue."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L4-0009",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 4,
+        "context": "A lecturer in the history of medicine talks about the history of smallpox.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Today's story begins not in a laboratory but on a farm. For centuries, smallpox was one of humanity's worst scourges, a disease that killed or scarred huge numbers of people. Doctors already had one defense, but it was risky. They would infect a healthy person with a little material from a smallpox sore, hoping for a mild case. Sometimes, though, the patient became seriously ill. In the countryside, people had noticed something curious. Milkmaids who had caught cowpox, a mild illness passed on by cows, seemed to escape smallpox. So was this just a rural tale, or was it real? One country doctor decided to find out. He took material from a cowpox sore, put it into a cut on a healthy boy's arm, and later exposed the boy to smallpox. The boy stayed well. In other words, a mild cow disease could protect people against a deadly human one. That's where the word vaccine comes from: the Latin word for cow."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L5-0002",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 5,
+        "context": "Two psychology researchers discuss a large project that repeated earlier studies.",
+        "speakers": "A: female researcher · B: male researcher",
+        "transcript": [
+          "A:  Did you see the results of that big replication project? A lot of well-known findings in our field didn't hold up when other labs repeated them.",
+          "B:  I did. But honestly, I think it's mostly bad luck. Any single study can miss an effect that's really there.",
+          "A:  Bad luck can't explain a pattern that large. Think about how many of the original studies used tiny samples. With twenty or thirty people, a few unusual participants can create an effect that isn't real.",
+          "B:  A spurious result, you mean. Noise that just looks like a discovery.",
+          "A:  Exactly. And then there's publishing. Journals tend to accept studies that find something exciting, while studies that find nothing often stay in a drawer.",
+          "B:  So the published record leans toward positive results. Okay, I'll grant you both points. But let me push back a little. Some of the repeat studies were run in other countries, with different materials. An effect might be real and still depend on the setting.",
+          "A:  That's fair. A failed replication doesn't always mean the original was wrong.",
+          "B:  Still, a tantalizing result from thirty students shouldn't be treated as settled. So the lesson isn't that psychology is broken. It's that we need bigger samples, and we need to publish the studies that find nothing, too.",
+          "A:  On that, we agree."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the lecturer, what turns a pidgin into a creole?",
+        "options": [
+          "Children learn it from infancy as their home language",
+          "The traders who use it give it a richer grammar",
+          "Groups from different places adopt it for trade",
+          "Scholars write down its rules and teach them in schools"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המרצה עונה על השאלה what turns a pidgin into a creole? במילה Children ומסכמת שקריאולית היא פידג'ין שהפך לשפת אם (mother tongue).",
+        "explanationEn": "The lecturer answers what turns a pidgin into a creole? with Children and sums up that a creole has become someone's mother tongue."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the lecture mainly about?",
+        "options": [
+          "How something noticed among farm workers led to a way of preventing disease",
+          "Why doctors finally gave up the older and riskier method of fighting smallpox",
+          "How farmers in the countryside protected their cows from catching smallpox",
+          "Why milkmaids were more likely than other workers to catch cowpox from cows"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המרצה פותח בצירוף not in a laboratory but on a farm ומסכם שמחלת פרות קלה יכולה להגן מפני מחלה אנושית קטלנית (a mild cow disease could protect people against a deadly human one).",
+        "explanationEn": "The talk begins not in a laboratory but on a farm and ends with the point that a mild cow disease could protect people against a deadly human one."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "According to the lecturer, how was the country doctor's method different from the older defense?",
+        "options": [
+          "It took material from a person who had a mild case of smallpox",
+          "It used a mild disease caught from cows rather than smallpox itself",
+          "It was first tried out on a large group of milkmaids in the countryside",
+          "It could be given safely by farm workers without a doctor present"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "בשיטה הישנה השתמשו בחומר מפצע של אבעבועות שחורות (a smallpox sore), ואילו הרופא לקח חומר מפצע של אבעבועות הפרות (a cowpox sore), מחלה קלה שעוברת מפרות.",
+        "explanationEn": "The older defense used material from a smallpox sore, while the doctor took material from a cowpox sore, a mild illness passed on by cows."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "By the end of the conversation, what is the man's view of the woman's explanation?",
+        "options": [
+          "He rejects her arguments and still blames bad luck",
+          "He accepts her two arguments but adds that context can matter",
+          "He accepts her arguments and concludes that the field itself is broken",
+          "He agrees with her about journals but doubts what she says about samples"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הגבר מודה במשפט I'll grant you both points (אני מקבל את שתי הטענות), ומיד מסייג במשפט An effect might be real and still depend on the setting (אפקט יכול להיות אמיתי ועדיין להיות תלוי בהקשר).",
+        "explanationEn": "He says I'll grant you both points and then qualifies them: An effect might be real and still depend on the setting."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What conclusion do the two researchers reach?",
+        "options": [
+          "A failed replication shows that the original study was probably wrong",
+          "Psychology should stop relying on studies that were run in other countries",
+          "Samples should be larger, and studies finding no effect should be published",
+          "Journals should publish fewer of the studies that report exciting new effects"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "הגבר מסכם במשפט we need bigger samples, and we need to publish the studies that find nothing, too (מדגמים גדולים יותר ופרסום גם של מחקרים שלא מצאו דבר), והאישה מסכימה.",
+        "explanationEn": "He concludes we need bigger samples, and we need to publish the studies that find nothing, too, and she replies On that, we agree."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "paltry",
+        "pronunciation": "PAWL-tree",
+        "he": "דל, זעום, קטן עד כדי כך שאינו מספיק",
+        "en": "very small in amount; barely enough"
+      },
+      {
+        "word": "scourge",
+        "pronunciation": "SKURJ",
+        "he": "מכה, פגע קשה שגורם סבל רב ונרחב",
+        "en": "something that causes great suffering to many people"
+      },
+      {
+        "word": "spurious",
+        "pronunciation": "SPYOOR-ee-us",
+        "he": "מדומה, כוזב, שנראה אמיתי אבל אינו",
+        "en": "false, though it looks genuine"
+      },
+      {
+        "word": "tantalizing",
+        "pronunciation": "TAN-tuh-ly-zing",
+        "he": "מגרה, מפתה, מעורר ציפייה שאינה בהכרח מתממשת",
+        "en": "exciting and tempting, but not yet within reach"
+      }
+    ]
+  },
+  {
+    "test": 5,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L4-0010",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 4,
+        "context": "An art history lecturer talks about a drawing method used by Renaissance painters.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Why did Renaissance painters care so much about straight lines? Earlier artists often showed importance through size, painting an important person larger than everyone else. Renaissance painters wanted something different: a flat panel that looked like a window onto real space. Linear perspective gave them a method. Parallel lines meet at one point on the horizon, so objects shrink as they move back. The effect could be uncanny, like stepping into the scene. In short, perspective let them create depth on a flat surface."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L5-0003",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 5,
+        "context": "A student visits a philosophy professor during office hours to ask about a puzzle from class.",
+        "speakers": "A: male student · B: female professor",
+        "transcript": [
+          "A:  Professor, about the ship puzzle from class. If every plank has been replaced, it's simply not the same ship anymore. Nothing original is left.",
+          "B:  A common first reaction. But think about yourself. Many of the cells in your body have been replaced over the years. Are you a different person from the child you once were?",
+          "A:  Well, no. But that's different. I changed gradually, and I kept my memories.",
+          "B:  And the ship changed gradually too, one plank at a time, keeping its shape.",
+          "A:  Hmm. So maybe what matters is the continuity, not the material. Okay, I'll admit it could still be the same ship.",
+          "B:  Here's the real quandary, though. Suppose someone saved all the old planks and rebuilt the original. Now there are two ships. Which one is the real one?",
+          "A:  I don't know.",
+          "B:  Neither do philosophers, which is why it remains such an abiding puzzle; it keeps coming back. The point isn't to settle it. It's to ask what we really mean when we call something the same."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L5-0004",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 5,
+        "context": "An ecology lecturer talks about an idea in the study of food webs.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Okay, let's go back to food webs. Today I want to introduce the idea of a keystone species. The name comes from building. In a stone arch, the keystone is the stone at the top that holds the others in place. Take it out, and the arch falls. So which animals play that role in nature? A classic example comes from the kelp forests along the Pacific coast. Kelp is a giant seaweed, and its forests shelter many kinds of fish. Sea urchins are voracious grazers of kelp; left alone, they can strip a forest down to bare rock. What keeps them in check? Sea otters, which eat urchins. When otters were hunted almost to extinction for their fur, urchin numbers exploded in many areas, and the kelp largely disappeared. Without the kelp, many of the fish that had lived there declined as well. Where otters returned, the forests tended to come back. Now, here's the part students often miss. Otters are not especially numerous. Their importance comes from their effect, not their numbers. That said, they're probably not the only factor; water temperature and storms matter too. So, to put it simply, a keystone species is the linchpin of its community: an animal whose influence is far larger than its numbers would suggest."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the lecturer, why did Renaissance painters adopt linear perspective?",
+        "options": [
+          "To make clear which people in a scene were the most important",
+          "To make a painted surface look like a view into real space",
+          "To make the buildings in their scenes look larger and grander",
+          "To work faster by following one fixed rule in each painting"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי המשפט Renaissance painters wanted something different המרצה מתאר חלון אל מרחב אמיתי (a window onto real space) ומסכם במשפט perspective let them create depth on a flat surface.",
+        "explanationEn": "After wanted something different, the lecturer says they wanted a window onto real space and sums up that perspective let them create depth on a flat surface."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "Why does the professor mention the cells in the student's body?",
+        "options": [
+          "To challenge his claim that new parts make a new thing",
+          "To show that his memories matter more than his body",
+          "To argue that he is no longer the person he was as a child",
+          "To explain why ships and living bodies change in different ways"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "הפרופסורית שואלת את השאלה Are you a different person from the child you once were? כדי לערער על הטענה it's simply not the same ship anymore (זו כבר לא אותה ספינה).",
+        "explanationEn": "She asks Are you a different person from the child you once were? to challenge his claim that it's simply not the same ship anymore."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "What does the professor suggest about the ship puzzle at the end?",
+        "options": [
+          "Philosophers now agree that the rebuilt ship is the real one",
+          "Since it has no clear answer, it is not really worth discussing",
+          "It can be settled once we know which of the planks are the oldest",
+          "Its value lies in making people ask what being the same means"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "הפרופסורית אומרת במשפט The point isn't to settle it ומוסיפה שהמטרה היא לשאול מה פירוש להיות אותו דבר (what we really mean when we call something the same).",
+        "explanationEn": "She says The point isn't to settle it but to ask what we really mean when we call something the same."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the main point of the lecture?",
+        "options": [
+          "Sea otters became rare in many areas because they were hunted for fur",
+          "An animal that is not plentiful can still hold its community together",
+          "Kelp forests depend more on water temperature than on any animal",
+          "The most numerous species in a habitat usually has the most influence"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המרצה מדגישה את המשפט Otters are not especially numerous ומסכמת שלמין מפתח יש השפעה גדולה בהרבה ממספרו (whose influence is far larger than its numbers would suggest).",
+        "explanationEn": "She stresses that Otters are not especially numerous and sums up a keystone species as an animal whose influence is far larger than its numbers would suggest."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "According to the lecturer, why did kelp largely disappear in some areas?",
+        "options": [
+          "Storms and warm water killed off the otters, letting urchins spread",
+          "With fewer otters to eat them, urchins multiplied and grazed it away",
+          "Hunters took the urchins as well, leaving the kelp with no defenders",
+          "Returning otters disturbed the kelp while diving for urchins"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המרצה מסבירה שהלוטרות אוכלות קיפודי ים, ולפי המשפט When otters were hunted almost to extinction for their fur, urchin numbers exploded הקיפודים התרבו ויער האצות נעלם.",
+        "explanationEn": "Otters eat urchins, so When otters were hunted almost to extinction for their fur, urchin numbers exploded, and the urchins stripped the kelp."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "uncanny",
+        "pronunciation": "un-KAN-ee",
+        "he": "מוזר באופן מטריד, כמעט על-טבעי",
+        "en": "strange in a way that is hard to explain"
+      },
+      {
+        "word": "quandary",
+        "pronunciation": "KWON-dree",
+        "he": "מבוכה, דילמה שקשה להכריע בה",
+        "en": "a state of not knowing what to decide or believe"
+      },
+      {
+        "word": "abiding",
+        "pronunciation": "uh-BY-ding",
+        "he": "מתמשך, עמיד לאורך זמן, שאינו חולף",
+        "en": "lasting for a long time; not fading"
+      },
+      {
+        "word": "voracious",
+        "pronunciation": "vaw-RAY-shus",
+        "he": "רעבתני, שאוכל כמויות גדולות בתאווה",
+        "en": "eating, or wanting, very large amounts"
+      },
+      {
+        "word": "linchpin",
+        "pronunciation": "LINCH-pin",
+        "he": "אבן יסוד, הגורם שהכול נשען עליו",
+        "en": "the one part that holds everything else together"
+      }
+    ]
+  },
+  {
+    "test": 6,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L5-0005",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 5,
+        "context": "A neuroscience lecturer talks about studies of drivers in a large city.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "For a long time, many scientists assumed that the adult brain was more or less fixed. But consider drivers in one large, maze-like city, who must memorize thousands of streets before they can get a license. Brain scans suggest that a region linked to memory for places grows larger in these drivers, and the change seems to appear during training itself, not before. So were they simply born with prodigious memories? Probably not. In other words, the adult brain is less fixed than we thought: practice can physically reshape it."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L5-0006",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 5,
+        "context": "A social psychology lecturer talks about how people react when someone needs help in public.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Here's a puzzle. If someone faints on a crowded street, you might expect help to come faster than on an empty one. More people, more helpers, right? Yet studies often find the opposite: the more people present, the less likely any one of them is to step in. This is called the bystander effect. Now, it's not that people in crowds are callous. Each person tends to assume that someone else will act, and each looks around to see whether the others seem worried. If nobody moves, everyone concludes there's no emergency. However, the effect isn't fixed. It appears weaker when the danger is obvious, and when the bystanders know one another. And one simple step seems to help a lot: pointing at a single person and asking them directly to call for help. Being singled out can impel someone to act. So the key point is this: a crowd doesn't remove our concern; it spreads our sense of responsibility thin."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L5-0007",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 5,
+        "context": "Two urban-planning students discuss a proposal in a seminar.",
+        "speakers": "A: female student · B: male student",
+        "transcript": [
+          "A:  So your proposal is to widen the main highway into the city. I'm not convinced it would cut traffic.",
+          "B:  Why not? The road is jammed every morning. More lanes means more room for the same cars.",
+          "A:  But it won't stay the same cars. That's the problem. When a road gets faster, people change their behavior. Some who used to take the train start driving. Others make trips they used to skip.",
+          "B:  So the extra space just fills up again.",
+          "A:  Right. Studies in many regions have found that traffic tends to grow roughly in step with new road capacity. Within a few years, the jams are back. Planners call it induced demand.",
+          "B:  Okay, but surely that's not true everywhere. If a region's population is growing fast, you'll need more roads anyway.",
+          "A:  Fair point. In a fast-growing area, extra capacity may be necessary. But as a cure for congestion on its own, it largely fails. In some cases, it can even exacerbate the problem by pulling more cars into the city center.",
+          "B:  Hmm. So the relief I was counting on is illusory. Then maybe I've been asking the wrong question. Instead of how much road we build, the real issue is how we manage it, say, by charging drivers at peak hours or running more buses.",
+          "A:  Exactly. You can't build your way out of traffic, but you can manage the demand."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "What does the lecturer suggest about the drivers' brains?",
+        "options": [
+          "They were probably born with an unusual gift for remembering places",
+          "Learning the streets seems to have physically altered their brains",
+          "Their brains stayed fixed, but they learned to use them more efficiently",
+          "Their memory for places grew at the cost of other kinds of memory"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "לפי המרצה השינוי מופיע במהלך האימון עצמו (during training itself, not before), על השאלה אם נולדו כך הוא עונה בצירוף Probably not, ומסכם במשפט practice can physically reshape it (אימון יכול לשנות אותו פיזית).",
+        "explanationEn": "The change appears during training itself, not before, inborn talent gets a Probably not, and the lecturer concludes that practice can physically reshape it."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the main point of the lecture?",
+        "options": [
+          "People in a crowd simply care less about strangers than people alone do",
+          "Each person in a crowd feels less responsible, not less concerned",
+          "A larger crowd usually means that help arrives more quickly",
+          "Pointing at one person is the main way to get a crowd to help"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המרצה מסכמת במשפט a crowd doesn't remove our concern; it spreads our sense of responsibility thin (הקהל לא מבטל את הדאגה אלא מפזר את תחושת האחריות).",
+        "explanationEn": "The lecturer sums up: a crowd doesn't remove our concern; it spreads our sense of responsibility thin."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "According to the lecturer, which situation is likely to weaken the bystander effect?",
+        "options": [
+          "The crowd is very large and is made up mostly of strangers",
+          "One onlooker is picked out and personally asked to get help",
+          "The person who fainted looks as if they are only slightly unwell",
+          "Each onlooker waits to see how worried the other people seem"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "לפי המרצה צעד אחד עוזר במיוחד: להצביע על אדם אחד ולבקש ממנו ישירות לקרוא לעזרה (pointing at a single person and asking them directly to call for help).",
+        "explanationEn": "One step seems to help a lot: pointing at a single person and asking them directly to call for help."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "According to the woman, why does widening a road often fail to reduce traffic?",
+        "options": [
+          "Faster trips lead people to drive more than they used to",
+          "Construction closes lanes for years and causes new jams",
+          "A growing population fills the extra lanes with new residents",
+          "Drivers avoid the new lanes because they must pay to use them"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "האישה מסבירה במשפט When a road gets faster, people change their behavior (כשהנסיעה בכביש מתקצרת, אנשים משנים את התנהגותם), ולמשל מי שנסע ברכבת מתחיל לנהוג (start driving).",
+        "explanationEn": "She explains that When a road gets faster, people change their behavior: train riders start driving and others make trips they used to skip."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "How has the man's view changed by the end of the discussion?",
+        "options": [
+          "He still thinks widening the highway would cut the morning jams",
+          "He now regards managing road use as more important than adding lanes",
+          "He now believes new roads cannot be justified even in growing regions",
+          "He now thinks buses alone can end the city's morning traffic problem"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הגבר מודה במשפט Then maybe I've been asking the wrong question ומסיק שהשאלה האמיתית היא איך מנהלים את הכביש (the real issue is how we manage it).",
+        "explanationEn": "He admits maybe I've been asking the wrong question and concludes that the real issue is how we manage it, not how much road we build."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "prodigious",
+        "pronunciation": "pruh-DIJ-us",
+        "he": "עצום, מרשים במיוחד ביכולתו או בגודלו",
+        "en": "remarkably great in size, ability or amount"
+      },
+      {
+        "word": "callous",
+        "pronunciation": "KAL-us",
+        "he": "קשוח, אדיש לסבלם של אחרים",
+        "en": "not caring about other people's suffering"
+      },
+      {
+        "word": "impel",
+        "pronunciation": "im-PEL",
+        "he": "לדחוף, להניע מישהו לפעול",
+        "en": "to push or drive someone to do something"
+      },
+      {
+        "word": "illusory",
+        "pronunciation": "ih-LOO-suh-ree",
+        "he": "מדומה, שנראה אמיתי אבל אינו קיים באמת",
+        "en": "seeming real or true but not actually so"
+      },
+      {
+        "word": "exacerbate",
+        "pronunciation": "ig-ZAS-er-bayt",
+        "he": "להחמיר, להגביר בעיה קיימת",
+        "en": "to make a problem or bad situation worse"
+      }
+    ]
+  },
+  {
+    "test": 7,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L5-0008",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 5,
+        "context": "Two chemistry students discuss the result of a lab experiment.",
+        "speakers": "A: male chemistry student · B: female chemistry student",
+        "transcript": [
+          "A:  The warm flask finished in half the time. I guess heat makes the particles move faster, so they collide more often.",
+          "B:  That's part of it, but it can't be the whole story. Warming it a little adds only a few extra collisions, yet the rate jumped far more than that.",
+          "A:  So what else changed?",
+          "B:  More of the collisions are energetic enough to actually break bonds. In the cold flask, most hits were languid little taps that just bounced off."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L5-0009",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 5,
+        "context": "Two astronomy graduate students discuss a research paper at a journal club.",
+        "speakers": "A: female astronomy graduate student · B: male astronomy graduate student",
+        "transcript": [
+          "A:  So this paper reports a new planet around a distant star. The method is simple: when a planet passes in front of its star, the starlight dims a little.",
+          "B:  A little is generous. For a planet the size of Earth, the dip is diminutive, far less than one percent. Honestly, I'm not convinced a signal that small means anything.",
+          "A:  That's fair. A dark spot on the star, or a second star behind it, can produce a misleading dip. But look at what the authors did. They saw the same dip again and again, at perfectly regular intervals, each time with the same depth and shape.",
+          "B:  Hmm. A starspot wouldn't repeat that neatly. All right, a regular repeat does make a planet the likeliest explanation. I'd still want an independent check, though, like the star's wobble.",
+          "A:  Agreed. The key point is that one dip proves very little. It's the repetition that makes the case."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L5-0010",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 5,
+        "context": "A music lecturer talks about how Western instruments came to be tuned.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Here's a question that sounds simple. Why does a piano have twelve notes in each octave, all spaced equally? Let's start with what sounds good. Two notes blend most smoothly when their frequencies form simple ratios. An octave doubles the frequency, and a fifth multiplies it by one and a half. So, naturally, early tuners built their scales from these pure intervals. Here's the problem, though. If you stack pure fifths, one on top of another, you never land exactly on an octave. You overshoot by a tiny amount. As a result, an instrument tuned perfectly for one key sounds sour, sometimes painfully so, in distant keys. A singer or a violinist can adjust each note slightly while performing. A keyboard can't; its pitches are fixed. The solution that eventually won out was to divide the octave into twelve equal steps. Now, notice what this costs. Apart from the octave, not a single interval is perfectly pure anymore. Every fifth is a hair too narrow, and the thirds are noticeably wide. To some musicians of the time, this deliberate impurity was anathema. But the gain was enormous: a player could move freely through every key, and each sounded equally acceptable. In other words, equal tuning wasn't chosen because it's perfect. It was an expedient compromise, spreading a small error evenly so that no key would sound badly wrong."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "What point does the woman add to the man's explanation?",
+        "options": [
+          "The warm particles meet one another more often than cold ones",
+          "A larger share of the collisions carry enough energy to react",
+          "How often particles collide matters more than how hard they hit",
+          "Heating may loosen the bonds before the particles even meet"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי הצירוף it can't be the whole story (זה לא כל ההסבר) היא אומרת את המשפט More of the collisions are energetic enough to actually break bonds, כלומר יותר התנגשויות חזקות מספיק כדי לשבור קשרים.",
+        "explanationEn": "After it can't be the whole story, she adds that More of the collisions are energetic enough to actually break bonds."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "How does the man's view change during the discussion?",
+        "options": [
+          "He drops his doubts and treats the planet as firmly established",
+          "He keeps arguing that a dip this small may be meaningless",
+          "He now favors a planet but still wants another test",
+          "He comes to think a dark spot on the star probably caused the dip"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "המשפט a regular repeat does make a planet the likeliest explanation (ההסבר הסביר ביותר) והמשפט I'd still want an independent check מראים שהוא משתכנע, אבל רק בחלקו.",
+        "explanationEn": "He concedes that a regular repeat does make a planet the likeliest explanation, yet adds I'd still want an independent check."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "According to the woman, what makes the planet explanation convincing?",
+        "options": [
+          "The dip was deeper than a dark spot on a star could produce",
+          "The star was also seen to wobble as the planet circled it",
+          "A single dip is enough when the star is otherwise steady",
+          "The dip recurred on a steady schedule, the same each time"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "אחרי הצירוף But look at what the authors did היא מתארת ירידה באור הכוכב שחוזרת במרווחים סדירים לגמרי (at perfectly regular intervals), ומסכמת במשפט It's the repetition that makes the case.",
+        "explanationEn": "She stresses a dip seen at perfectly regular intervals with the same depth and shape, and sums up: It's the repetition that makes the case."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the main point of the lecture?",
+        "options": [
+          "Equal steps trade pure intervals for the freedom to play in any key",
+          "Pure fifths work well as long as the player stays in one key",
+          "Equal steps won out because they make the intervals sound pure",
+          "Over time, listeners learned to hear slightly sour intervals as pure"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המשפט equal tuning wasn't chosen because it's perfect והצירוף spreading a small error evenly (פיזור טעות קטנה באופן שווה) מראים שזו פשרה: מוותרים על טוהר המרווחים כדי לנגן בכל סולם.",
+        "explanationEn": "The lecturer says equal tuning wasn't chosen because it's perfect; it works by spreading a small error evenly so every key is usable."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "Why does the lecturer mention singers and violinists?",
+        "options": [
+          "To show that string players were the first to accept equal steps",
+          "To point out that keyboards, unlike them, cannot correct pitch",
+          "To suggest that pure intervals are easier to sing than to play",
+          "To explain why some musicians objected to the new tuning"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "מיד אחרי הזמר והכנר, שיכולים לתקן כל צליל, בא המשפט A keyboard can't; its pitches are fixed (הצלילים קבועים), ולכן הם מוזכרים כניגוד לקלידים.",
+        "explanationEn": "Right after singers and violinists comes A keyboard can't; its pitches are fixed, so they are mentioned as a contrast to keyboards."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "languid",
+        "pronunciation": "LANG-gwid",
+        "he": "חלש ואיטי, חסר מרץ",
+        "en": "slow and weak, without energy or force"
+      },
+      {
+        "word": "diminutive",
+        "pronunciation": "dih-MIN-yuh-tiv",
+        "he": "זעיר, קטן מאוד",
+        "en": "very small"
+      },
+      {
+        "word": "anathema",
+        "pronunciation": "uh-NATH-uh-muh",
+        "he": "דבר שמתעבים ופוסלים לחלוטין",
+        "en": "something that a person strongly dislikes or rejects"
+      },
+      {
+        "word": "expedient",
+        "pronunciation": "ik-SPEE-dee-unt",
+        "he": "מעשי ונוח לצורך העניין (גם אם אינו אידיאלי)",
+        "en": "practical and convenient, though not ideal"
+      }
+    ]
+  },
+  {
+    "test": 8,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L5-0011",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 5,
+        "context": "An archaeology lecturer talks about one way of dating objects made of wood.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "How can an archaeologist tell when a wooden beam was cut? The answer lies in its rings. A tree adds one ring a year, usually wider in wet years and narrower in dry ones. So a run of years leaves an indelible pattern, rather like a barcode. Researchers match that pattern against a long master record, often to the exact year. In short, it's the sequence of wide and narrow rings, not simply their number, that dates the wood."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L5-0012",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 5,
+        "context": "A political science lecturer talks about voting systems and political parties.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Why do some democracies end up with just two big parties, while others have five or six? One well-known explanation points to the voting rules. In many countries, each district elects a single winner: whoever gets the most votes takes the seat, and everyone else gets nothing. Now, think about what that does. A small party might win a respectable share of votes nationwide and still win almost no seats. Voters notice this. Rather than spend their vote on a forlorn hope, many switch to whichever large party is closest to their views. So support tends to coalesce around two main options. By contrast, systems that hand out seats in proportion to votes give small parties a real chance. Now, this is a tendency, not an iron law. Regional parties, for instance, can survive where their voters are concentrated. But the basic point stands: the rules of counting shape the number of parties."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0001",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "A graduate student discusses her reading on the early industrial period with her professor.",
+        "speakers": "A: female graduate student · B: male economic history professor",
+        "transcript": [
+          "A:  I've been reading the wage data for the early factory decades, and honestly it looks fairly clear to me. Average wages went up, so ordinary families must have been better off.",
+          "B:  Must they? Look at what those wages had to buy. Once you adjust for food prices, the gains in the first few decades look rather thin. And wages, remember, are only one measure.",
+          "A:  What else would you use?",
+          "B:  Height, for one. Adult height is a rough record of childhood nutrition and illness, so it captures things a paycheck misses. In several places, the average height of young men seems to have dipped during early industrialization, even as wages crept upward. Add the squalid, crowded housing in the new mill towns, where disease spread quickly, and the picture gets murkier.",
+          "A:  Hmm. So wages and health may have been moving in opposite directions. I suppose I was treating income as if it were the whole story.",
+          "B:  That's the heart of the debate. The optimists point to income, the pessimists to health and working hours, and each side can be a little tendentious in choosing its evidence.",
+          "A:  But surely nobody disputes that, over the longer run, living standards rose enormously?",
+          "B:  No, hardly anyone does. The real argument is about the first generation or two, the people who paid the price before the gains arrived."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the lecturer, what allows researchers to date a wooden beam?",
+        "options": [
+          "Counting how many rings the beam contains from its center outward",
+          "Matching its order of thick and thin rings to a record",
+          "Comparing how wet or dry the wood itself has become",
+          "Measuring the beam's width against trees growing today"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי הצירוף In short בא המשפט it's the sequence of wide and narrow rings, not simply their number, that dates the wood (הרצף של טבעות רחבות וצרות, ולא רק מספרן, הוא שמאפשר לתארך את העץ).",
+        "explanationEn": "After In short, she says it's the sequence of wide and narrow rings, not simply their number, that dates the wood."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the lecturer's main point?",
+        "options": [
+          "Proportional voting tends to produce weak, short-lived governments",
+          "Voters prefer the large party closest to their own views",
+          "Counting rules can steer a country toward two main parties",
+          "Regional parties manage to win seats despite the voting rules"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "המשפט המסכם the rules of counting shape the number of parties (כללי הספירה קובעים את מספר המפלגות) מראה שהנושא הוא איך שיטת הבחירה דוחפת לשתי מפלגות גדולות.",
+        "explanationEn": "He sums up with the rules of counting shape the number of parties, after showing how support drifts to two large parties."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "Why does the lecturer mention regional parties?",
+        "options": [
+          "To give the clearest case of small parties losing out",
+          "To admit that the pattern he describes has exceptions",
+          "To suggest that proportional systems favor regional voters",
+          "To explain why voters desert small national parties"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט this is a tendency, not an iron law (זו נטייה, לא חוק ברזל) בא רגע לפני המפלגות האזוריות, ולכן הן מוזכרות כחריג לדפוס.",
+        "explanationEn": "He first says this is a tendency, not an iron law, then offers Regional parties, for instance as the exception."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "How does the student's view change during the conversation?",
+        "options": [
+          "She decides that early factory work may have left families poorer",
+          "She concludes that the wage figures she relied on were inaccurate",
+          "She sees that higher pay alone may not prove people lived better",
+          "She starts to doubt that living standards rose even in the long run"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "המשפט I suppose I was treating income as if it were the whole story (התייחסתי להכנסה כאילו היא כל הסיפור) מראה שהיא מבינה ששכר גבוה יותר לבדו אינו מוכיח רווחה.",
+        "explanationEn": "She admits I suppose I was treating income as if it were the whole story, so higher wages alone no longer settle the question for her."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What can be inferred about the professor's position?",
+        "options": [
+          "He holds that ordinary families plainly grew poorer in those decades",
+          "He suspects the early gains were smaller than wages suggest",
+          "He considers height a more reliable guide than wages to well-being",
+          "He believes the long-run rise in living standards is still uncertain"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "השאלה Must they? והמשפט the gains in the first few decades look rather thin (הרווחים בעשורים הראשונים נראים דלים) מרמזים שהוא מפקפק בגודל השיפור המוקדם.",
+        "explanationEn": "His Must they? and the gains in the first few decades look rather thin imply doubt about the size of the early improvement."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "indelible",
+        "pronunciation": "in-DEL-uh-bul",
+        "he": "שאי אפשר למחוק, שנשאר לתמיד",
+        "en": "impossible to remove or erase; lasting"
+      },
+      {
+        "word": "forlorn",
+        "pronunciation": "fer-LORN",
+        "he": "חסר סיכוי, אבוד (forlorn hope = תקווה שאין לה סיכוי)",
+        "en": "having almost no chance of success; hopeless"
+      },
+      {
+        "word": "coalesce",
+        "pronunciation": "koh-uh-LESS",
+        "he": "להתאחד, להתלכד לגוף אחד",
+        "en": "to come together and form one group or mass"
+      },
+      {
+        "word": "squalid",
+        "pronunciation": "SKWOL-id",
+        "he": "מוזנח, מלוכלך ועלוב",
+        "en": "very dirty and unpleasant, because of poverty or neglect"
+      },
+      {
+        "word": "tendentious",
+        "pronunciation": "ten-DEN-shus",
+        "he": "מגמתי, מוטה לטובת עמדה מסוימת",
+        "en": "slanted to support one particular view"
+      }
+    ]
+  },
+  {
+    "test": 9,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L5-0013",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 5,
+        "context": "A physics lecturer talks about the color of the sky.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Why is the daytime sky blue rather than, say, white? Sunlight contains every color. As it passes through the air, tiny gas molecules scatter some of it in all directions, and they scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones. So wherever you look, scattered blue light reaches your eyes. Put simply, the cerulean sky isn't blue air; it's sunlight sorted by wavelength."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0002",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "Two cognitive scientists discuss research on people who speak two languages.",
+        "speakers": "A: female cognitive scientist · B: male cognitive scientist",
+        "transcript": [
+          "A:  I keep seeing the claim that bilingual people have sharper mental control, that they're better at switching tasks and ignoring distractions. And it makes sense: they're constantly holding back one language while using the other.",
+          "B:  It makes sense, sure. The evidence is another matter. The early studies were small, and when larger samples were tested, the much-touted advantage often shrank or disappeared.",
+          "A:  Couldn't that be because the tasks were too easy? Or because bilinguals differ so much from one another?",
+          "B:  Possibly. But there's also a publishing problem. Studies that find no difference are less likely to get published. So the record we see may flatter the hypothesis.",
+          "A:  Fair enough. Let me put it this way, then. Speaking two languages clearly has value, culturally and practically. Whether it trains some general thinking muscle is still open, and the support for a large effect is scant.",
+          "B:  That I can agree with."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0003",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "A lecturer in the history of science talks about how doctors once responded to a new medical idea.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Here's a question that puzzles many students. If germs cause disease, why did so many physicians resist the idea for so long? It's tempting to blame plain stubbornness. But that, I'd argue, is too easy. Let me offer three reasons that were, at the time, fairly sensible. First, the older view, that illness rose from foul air and rotting matter, seemed to work, at least on the surface. Disease clustered in filthy, crowded districts, and cleaning those districts up really did reduce illness, though for reasons the theory got wrong. Second, the culprits were invisible. Microscopes could show tiny living things, but tying one particular organism to one particular disease took careful experiments that came much later. To many doctors, the notion that something unseen could make a healthy adult gravely ill sounded preposterous. Third, and this is the uncomfortable part, the new idea implied that physicians might be spreading infection on their own unwashed hands. For a proud profession, that was an affront, and the few doctors who urged hand-washing were often met with ridicule. What finally changed minds? Careful controlled experiments, and a striking drop in infections in hospitals that adopted antiseptic methods. So, to restate the point: the resistance was not simple foolishness. The old theory appeared to succeed, the evidence was genuinely hard to see, and the new idea wounded professional pride."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the lecturer, why does the sky look blue?",
+        "options": [
+          "The air itself has a faint blue color of its own",
+          "Air molecules spread blue light around more than red light",
+          "Sunlight contains more blue light than any other color",
+          "Most red light is soaked up by the air before it can reach our eyes"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "לפי המשפט they scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones, מולקולות האוויר מפזרות אור כחול הרבה יותר מאור אדום.",
+        "explanationEn": "The molecules scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones, so blue light reaches us from everywhere."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What does the man suggest about the evidence for a bilingual advantage?",
+        "options": [
+          "Larger and more careful studies have disproved the effect",
+          "Published results may make the effect look stronger than it is",
+          "The effect shows up most clearly when the tasks are harder",
+          "Bilingual people may differ too much from one another to be studied"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט Studies that find no difference are less likely to get published והמשפט the record we see may flatter the hypothesis (מחמיא להשערה) מראים שהאפקט עשוי להיראות גדול מכפי שהוא באמת.",
+        "explanationEn": "He notes that Studies that find no difference are less likely to get published, so the record we see may flatter the hypothesis."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "How does the woman's position change?",
+        "options": [
+          "She concludes that the advantage is real but rather small",
+          "She stops believing that knowing two languages has real value",
+          "She shifts from accepting the claim to seeing it as unsettled",
+          "She keeps defending the claim by blaming tasks that are too easy"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "בסוף היא אומרת את המשפט Whether it trains some general thinking muscle is still open (השאלה עדיין פתוחה), אחרי שבהתחלה אמרה על הטענה את המילים it makes sense (זה הגיוני).",
+        "explanationEn": "She begins with it makes sense but ends with Whether it trains some general thinking muscle is still open."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the lecturer's main point?",
+        "options": [
+          "Doctors resisted mainly because they were too proud to change",
+          "The resistance had understandable causes beyond mere stubbornness",
+          "The germ idea spread quickly once microscopes revealed tiny organisms",
+          "Physicians dismissed germs simply because no evidence for them existed"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי הצירוף to restate the point בא המשפט the resistance was not simple foolishness (ההתנגדות לא נבעה מטיפשות פשוטה), ושלושת הנימוקים שבהרצאה מראים שלהתנגדות היו מניעים מובנים.",
+        "explanationEn": "She rejects plain stubbornness as too easy and restates that the resistance was not simple foolishness, giving three sensible reasons."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "Why does the lecturer mention that cleaning up filthy districts reduced illness?",
+        "options": [
+          "To suggest that the older theory was largely correct in the end",
+          "To explain why the older theory seemed persuasive in its day",
+          "To show that physicians already accepted the germ idea",
+          "To illustrate how doctors first spotted the microscopic culprits"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הצירוף seemed to work והצירוף though for reasons the theory got wrong (מסיבות שהתיאוריה טעתה בהן) מראים שהדוגמה מסבירה למה התיאוריה הישנה שכנעה, ולא שהתיאוריה צדקה.",
+        "explanationEn": "The old view seemed to work, but the cleanup helped for reasons the theory got wrong, so the example explains its appeal, not its truth."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "cerulean",
+        "pronunciation": "suh-ROO-lee-un",
+        "he": "תכול, בצבע כחול השמיים",
+        "en": "deep sky blue in color"
+      },
+      {
+        "word": "touted",
+        "pronunciation": "TOWT-id",
+        "he": "שזכה לפרסום ולשבחים רבים (much-touted = מהולל, שמרבים לדבר עליו)",
+        "en": "praised and promoted widely"
+      },
+      {
+        "word": "scant",
+        "pronunciation": "SKANT",
+        "he": "מועט, דל, כמעט לא קיים",
+        "en": "very little; barely enough"
+      },
+      {
+        "word": "preposterous",
+        "pronunciation": "prih-POS-ter-us",
+        "he": "מגוחך, אבסורדי לחלוטין",
+        "en": "so unreasonable that it seems silly"
+      },
+      {
+        "word": "affront",
+        "pronunciation": "uh-FRUNT",
+        "he": "עלבון, פגיעה בכבוד",
+        "en": "an insult to someone's pride or dignity"
+      }
+    ]
+  },
+  {
+    "test": 10,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L6-0004",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 6,
+        "context": "A philosophy lecturer talks about what makes a theory scientific.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "What makes a theory scientific? Most of us would point to the evidence piled up in its favor. One influential philosopher argued that this misses the point. A theory that can explain any outcome may look unassailable, but that strength is really a weakness. A scientific theory has to take a risk: there must be some possible observation that would show it to be false. In short, what matters is not how much a theory explains, but whether it could be refuted."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0005",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "An economics lecturer talks about saving during hard times.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Today I want to look at a puzzle that economists call the paradox of thrift. Start with a single household. If a family expects hard times, cutting back and saving more is a judicious choice; it builds a cushion against bad luck. But what happens if every household does the same thing at once? Here's the catch: one person's spending is another person's income. When millions of families retrench together, shops sell less, firms cut jobs or hours, and incomes fall. With lower incomes, people may not manage to save as much as they planned. Now, not every economist accepts the strongest form of this argument; much depends, for instance, on whether the extra savings are invested. Still, the basic point is widely recognized. So, to put it another way: what is prudent for one family can, when everyone does it, deepen a downturn for all."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0006",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "Two literature students discuss how the meaning of a poem should be decided.",
+        "speakers": "A: male literature student · B: female literature student",
+        "transcript": [
+          "A:  I think the author's intention has to decide what a poem means. The poet chose every word for a reason, often after many careful drafts. If we set that aside, what's left to stop a reading from being pure invention?",
+          "B:  But how often do we actually know what the poet intended? For many older poems, we have nothing but the text. And poems regularly carry more than their authors planned; an image can hold echoes the writer never noticed, and later readers may hear them clearly. So I'd say the author isn't the final arbiter.",
+          "A:  I see the point. Still, it's a beguiling idea that a poem can mean whatever a reader wants, and I don't buy it. Some readings are simply wrong.",
+          "B:  Agreed, some are. But they're wrong because the words on the page don't support them, not because they contradict a letter the poet once wrote, years later and perhaps for a different audience.",
+          "A:  Hmm. All right, let me revise what I said. When we can find it, in letters or early drafts, I'd treat what the poet intended as evidence, a strong clue. But I'll grant it can't be the final test.",
+          "B:  That seems fair to me. And I'm not defending readings that are untethered from the text, either.",
+          "A:  Then perhaps we're closer than we sounded at the start."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the view the lecturer presents, what makes a theory scientific?",
+        "options": [
+          "It must rest on a large and growing body of supporting evidence",
+          "It must be open to being contradicted by evidence",
+          "It must be broad enough to account for whatever is observed",
+          "It must already have been contradicted by at least one observation before it is accepted"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט there must be some possible observation that would show it to be false והצירוף whether it could be refuted (האם אפשר להפריך אותה) מראים שתאוריה מדעית חייבת להיות פתוחה להפרכה.",
+        "explanationEn": "The lecturer says there must be some possible observation that would show it to be false; what matters is whether it could be refuted."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the main point of the lecture?",
+        "options": [
+          "Saving by households is the main cause of most economic downturns",
+          "A household's wise decision can become harmful once it is widely copied",
+          "Families ought to spend more and save less whenever hard times are expected",
+          "Shops and firms respond to falling sales by cutting jobs and working hours"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "משפט הסיכום what is prudent for one family can, when everyone does it, deepen a downturn for all (מה שנבון למשפחה אחת עלול, כשכולם נוהגים כך, להעמיק את המיתון של כולם) מבטא את הרעיון המרכזי.",
+        "explanationEn": "The restatement what is prudent for one family can, when everyone does it, deepen a downturn for all gives the main point."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "Why does the lecturer mention whether the extra savings are invested?",
+        "options": [
+          "To suggest that most economists regard the paradox as mistaken",
+          "To indicate that the strength of the effect depends on other factors",
+          "To explain how a careful family should decide where to keep its extra savings",
+          "To show that investing, unlike saving, is what causes downturns"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט not every economist accepts the strongest form of this argument והצירוף much depends (הרבה תלוי) מראים שעוצמת האפקט תלויה בתנאים נוספים.",
+        "explanationEn": "He says not every economist accepts the strongest form of this argument and that much depends on investment, so the effect's strength varies."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "How does the man's view change during the discussion?",
+        "options": [
+          "He concludes that what the poet intended has no bearing on what a poem means",
+          "He comes to treat the poet's aims as evidence to weigh rather than the final word",
+          "He decides that each reader's own response is what defines a poem's meaning",
+          "He holds on to the view that the poet's letters should settle any dispute about meaning"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי המשפט let me revise what I said הוא מכנה את כוונת המשורר בצירוף a strong clue (רמז חזק) ומודה במשפט it can't be the final test (זה לא המבחן הסופי).",
+        "explanationEn": "After let me revise what I said, he calls intention a strong clue but grants it can't be the final test."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What do the two speakers seem to agree on by the end?",
+        "options": [
+          "The poet's intention should be the final test of any reading",
+          "The poem's own words should limit which readings are acceptable",
+          "A poem may fairly mean whatever a careful reader finds in it",
+          "A poet's letters and drafts are better evidence than the poem itself"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "האישה אומרת במשפט they're wrong because the words on the page don't support them (פרשנויות כאלה שגויות כי הטקסט אינו תומך בהן), והגבר מסכם במשפט we're closer than we sounded.",
+        "explanationEn": "She says bad readings fail because the words on the page don't support them, and he concludes we're closer than we sounded."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "unassailable",
+        "pronunciation": "un-uh-SAY-luh-bul",
+        "he": "שאי אפשר לתקוף או לערער עליו; חסין מביקורת",
+        "en": "impossible to attack, question or defeat"
+      },
+      {
+        "word": "judicious",
+        "pronunciation": "joo-DISH-us",
+        "he": "נבון, שקול, שנעשה מתוך שיקול דעת טוב",
+        "en": "showing good judgment; sensible"
+      },
+      {
+        "word": "retrench",
+        "pronunciation": "rih-TRENCH",
+        "he": "לצמצם הוצאות, לקצץ",
+        "en": "to cut back on spending"
+      },
+      {
+        "word": "arbiter",
+        "pronunciation": "AR-bih-ter",
+        "he": "פוסק, מי שקובע סופית; בעל המילה האחרונה",
+        "en": "a person who has the power to settle a question"
+      },
+      {
+        "word": "beguiling",
+        "pronunciation": "bih-GYLE-ing",
+        "he": "מפתה, קוסם, מושך (לעיתים באופן מטעה)",
+        "en": "attractive in a way that may mislead"
+      },
+      {
+        "word": "untethered",
+        "pronunciation": "un-TETH-erd",
+        "he": "מנותק, לא קשור; בלי עוגן",
+        "en": "not tied or connected to something"
+      }
+    ]
+  },
+  {
+    "test": 11,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L6-0007",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 6,
+        "context": "Two statisticians discuss a report that ranks two hospitals.",
+        "speakers": "A: female statistician · B: male statistician",
+        "transcript": [
+          "A:  The report ranks the suburban hospital first, since its overall survival rate is higher.",
+          "B:  Look closer, though. Split the patients by how ill they were, and the downtown hospital does better in both groups.",
+          "A:  In both? Then how does it lose overall?",
+          "B:  It takes far more of the severe cases, and those drag its total down.",
+          "A:  That's vexing. So the overall number may tell us more about who comes through the door than about the care itself.",
+          "B:  Until we compare like with like, the ranking misleads."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0008",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "A student visits a linguistics professor during office hours.",
+        "speakers": "A: male student · B: female linguistics professor",
+        "transcript": [
+          "A:  Professor, I read that the language we speak decides how we think, so if a language has no word for something, its speakers can't really grasp it. Is that right?",
+          "B:  That's the strong version, and very few researchers hold it now. If it were true, translation would be nearly impossible, and new concepts couldn't be learned. Yet people invent or borrow words all the time.",
+          "A:  So the whole idea has been jettisoned?",
+          "B:  Not quite. A weaker version has decent support. Some languages require speakers to mark direction or color in particular ways, and in experiments those speakers seem to notice or remember such things a bit differently. The effects are real but modest; they nudge attention rather than set limits.",
+          "A:  So it's less a prison than a habit.",
+          "B:  That's a nice way to put it, though I'd avoid facile slogans on both sides. The truth is more complicated than either camp admits."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0009",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "A geophysics lecturer talks about the center of the Earth.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Here's a strange fact about our planet: in some ways, we know more about the surfaces of distant worlds than about the rock far beneath our feet. The deepest holes ever drilled barely scratch the crust; the center lies at an almost unfathomable depth. So how do you study a place no one can ever visit? The answer came from earthquakes. A large quake sends waves through the whole planet, and instruments around the world record when and where they arrive; with enough records, you can trace the paths the waves must have taken. Now, there are two main kinds of wave. One kind can pass through both solids and liquids. The other kind can travel only through solid rock; a liquid seems to be impervious to it. When scientists mapped the arrivals, they found that on the far side of the planet from a quake, this second kind simply never showed up. The most natural explanation was a large region of liquid deep inside, an outer core of molten metal. The first kind of wave behaved oddly too, bending sharply as it entered the core. Later, faint signals bouncing back from deep inside suggested that a smaller, solid inner core sits at the very center. In other words, no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "What point do the speakers arrive at about the hospital ranking?",
+        "options": [
+          "Survival rates may be too unreliable to compare hospitals in any way",
+          "The combined rate may reflect the patient mix more than the quality of care",
+          "The suburban hospital gives better care to patients who arrive seriously ill",
+          "Seriously ill patients should be sent to the hospital with the higher overall rate"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט the overall number may tell us more about who comes through the door than about the care itself מראה שהשיעור הכולל עשוי לשקף יותר את סוג המטופלים (מי נכנס בדלת) מאשר את איכות הטיפול.",
+        "explanationEn": "She concludes that the overall number may tell us more about who comes through the door than about the care itself."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "Why does the professor mention that people invent or borrow words?",
+        "options": [
+          "To argue that translating between languages rarely works well",
+          "To show why the strong version is hard to defend",
+          "To explain how the weaker version of the idea came about",
+          "To suggest that vocabulary matters more than grammar in shaping thought"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "אחרי המשפט If it were true, translation would be nearly impossible היא מוסיפה את המשפט people invent or borrow words all the time, כדי להראות שהגרסה החזקה לא מחזיקה מעמד.",
+        "explanationEn": "She says If it were true, translation would be nearly impossible, yet people invent or borrow words all the time."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "What is the professor's view of the weaker version?",
+        "options": [
+          "It shows that some languages leave speakers unable to tell certain colors apart",
+          "It has support from evidence that speakers notice things slightly differently",
+          "It is now rejected by most researchers, just like the strong version",
+          "It rests more on popular slogans than on the results of experiments"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הצירוף real but modest והמשפט they nudge attention rather than set limits (הם מכוונים את תשומת הלב ולא מציבים גבולות) מראים שהראיות מצביעות על הבדלים קטנים בלבד.",
+        "explanationEn": "She calls the effects real but modest and says they nudge attention rather than set limits."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the lecture mainly about?",
+        "options": [
+          "Why drilling is still the most dependable way to study the deep Earth",
+          "How indirect clues revealed what lies at the center of the planet",
+          "How movements of molten metal deep inside the planet set off earthquakes",
+          "Why some kinds of earthquake wave do more damage at the surface than others"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "משפט הסיכום no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish (המבנה הוסק מהתנהגות הגלים) מבטא את הרעיון המרכזי.",
+        "explanationEn": "The restatement no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish gives the main idea."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What led scientists to conclude that part of the core is liquid?",
+        "options": [
+          "Faint signals pointed to a smaller region at the very center",
+          "Waves that cannot cross liquid were missing on the planet's far side",
+          "Drilling eventually reached deep enough to bring up traces of molten metal",
+          "Earthquake waves of both kinds traveled faster through the molten metal"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט The other kind can travel only through solid rock והמשפט this second kind simply never showed up מראים שהיעדר הגלים בצד הרחוק העיד על נוזל.",
+        "explanationEn": "The second kind can travel only through solid rock, and on the far side it simply never showed up."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "vexing",
+        "pronunciation": "VEK-sing",
+        "he": "מטריד, מעצבן, מבלבל",
+        "en": "annoying and puzzling"
+      },
+      {
+        "word": "jettison",
+        "pronunciation": "JET-ih-sun",
+        "he": "להשליך, לזנוח לגמרי (במקור: להשליך מטען מספינה)",
+        "en": "to throw away or abandon completely"
+      },
+      {
+        "word": "facile",
+        "pronunciation": "FAS-il",
+        "he": "שטחי, פשטני מדי, קל מדי",
+        "en": "too simple; ignoring the real difficulties"
+      },
+      {
+        "word": "unfathomable",
+        "pronunciation": "un-FATH-uh-muh-bul",
+        "he": "שאי אפשר לרדת לעומקו; עמוק או גדול מכדי לתפוס",
+        "en": "too deep or too great to measure or understand"
+      },
+      {
+        "word": "impervious",
+        "pronunciation": "im-PUR-vee-us",
+        "he": "חסין, שאינו מאפשר מעבר; שדבר אינו חודר דרכו",
+        "en": "not letting something pass through"
+      }
+    ]
+  },
+  {
+    "test": 12,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L6-0010",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 6,
+        "context": "A biology lecturer talks about how some animals age.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "For most animals, the risk of dying climbs steadily with age, as bodies slide toward decrepitude. Yet a few creatures seem to break the pattern. Certain tortoises and the naked mole-rat, a burrowing rodent, show little sign of rising risk over the years. Have they escaped aging? Not necessarily. Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect. So the open question is not how long they live, but whether their decline is absent or just hidden."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0011",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "A history lecturer talks about the end of a famous library of the ancient world.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Most of us have heard the story: the great library of Alexandria, the treasure house of ancient learning, went up in flames in a single terrible night. It's a dramatic image. But is it what really happened? Many historians now suspect the tale is largely apocryphal. There probably were fires, and one of them may well have damaged part of the collection. Yet the evidence points to a slower, more inglorious end. Royal funding seems to have dried up over time, as later rulers turned to other concerns. Leading scholars left or were forced out, and fewer took their place. And papyrus scrolls don't last forever; unless they were recopied, they simply crumbled. So the library likely wasn't destroyed so much as neglected, fading over centuries as money, people and care drained away. In short, it was less a single catastrophe than a long, quiet decline."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0012",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "Two economists discuss research on the minimum wage.",
+        "speakers": "A: female economist · B: male economist",
+        "transcript": [
+          "A:  The textbook logic seems hard to escape. If you force the price of labor above what the market would set, employers hire fewer people, and the first to lose out are young, low-skilled workers. It's the same reasoning we apply to any price that's held artificially high.",
+          "B:  That's the theory. But when researchers compared neighboring regions, one raising its minimum and one not, many found little or no measurable drop in jobs.",
+          "A:  Little or no drop? Then where does the extra cost go?",
+          "B:  Partly into slightly higher prices, partly into lower turnover. Workers who are paid more tend to stay, so firms spend less on hiring and training new people. Some may also work harder, because the job is now worth keeping.",
+          "A:  I'll admit that's more persuasive than I expected. Still, most of those studies looked at modest increases. A large jump, especially in a region where wages are low, could be a different story. And some studies do find losses, often in hours worked rather than in jobs.",
+          "B:  Fair. I'd be cavalier to claim there's no limit. Push the minimum high enough and employment will surely suffer; the evidence just doesn't tell us precisely where that point lies.",
+          "A:  Then whether a minimum wage costs jobs is almost moot. The real question is how high, and where.",
+          "B:  On that, I think we agree."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "According to the lecturer, what has not yet been settled about these animals?",
+        "options": [
+          "Whether these animals live much longer than most other species",
+          "Whether these animals avoid aging or merely decline too slowly to notice",
+          "Why the risk of dying rises steadily with age in most other animals, including humans",
+          "How these animals manage to switch off the process of aging"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect מראה שהשאלה היא אם ההזדקנות נעדרת או רק איטית מאוד.",
+        "explanationEn": "The lecturer says Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the lecturer's main point?",
+        "options": [
+          "Fire played no part in the library's long decline",
+          "The library's loss was probably a slow process rather than a sudden event",
+          "The library was probably destroyed in a single night of fire",
+          "Its leading scholars left because the library's old scrolls had begun to crumble"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "משפט הסיכום less a single catastrophe than a long, quiet decline (לא אסון יחיד אלא דעיכה ארוכה ושקטה) מבטא את הרעיון המרכזי של ההרצאה.",
+        "explanationEn": "The lecturer sums up that it was less a single catastrophe than a long, quiet decline."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "Why does the lecturer mention that papyrus scrolls had to be recopied?",
+        "options": [
+          "To explain why fire spread so quickly through the library's shelves",
+          "To give one example of how the collection was lost through neglect",
+          "To show that ancient scholars valued copying above writing new works",
+          "To suggest that most of the lost books survived in later copies"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט unless they were recopied, they simply crumbled מופיע ברשימת הסיבות, ואחריו בא הצירוף wasn't destroyed so much as neglected (לא הושמדה אלא הוזנחה), ולכן הפרט על המגילות הוא דוגמה להזנחה.",
+        "explanationEn": "The point unless they were recopied, they simply crumbled supports his claim that the library wasn't destroyed so much as neglected."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "How does the woman's position change during the conversation?",
+        "options": [
+          "She drops her concern that a higher wage floor can reduce employment",
+          "She accepts the evidence on modest raises but still doubts large ones",
+          "She comes to believe that firms mainly cover the cost by raising their prices",
+          "She keeps insisting that even small increases will mainly hurt young, low-skilled workers"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט I'll admit that's more persuasive than I expected מראה שהשתכנעה, אבל על קפיצה גדולה היא אומרת את הצירוף could be a different story (עשוי להיות סיפור אחר).",
+        "explanationEn": "She finds the evidence more persuasive than I expected, yet says a large jump could be a different story."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What do the two speakers end up agreeing on?",
+        "options": [
+          "A higher minimum wage has no real effect on the number of jobs",
+          "How much a raise affects jobs depends mostly on its size and setting",
+          "Comparisons of neighboring regions cannot settle questions about wages",
+          "Lower staff turnover largely makes up for the cost of paying more"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "האישה אומרת את המשפט The real question is how high, and where (השאלה האמיתית היא כמה גבוה והיכן), והגבר עונה במשפט On that, I think we agree.",
+        "explanationEn": "She says The real question is how high, and where, and he replies On that, I think we agree."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "decrepitude",
+        "pronunciation": "dih-KREP-ih-tood",
+        "he": "תשישות וחולשה של זקנה; התבלות",
+        "en": "the weak, worn-out state that comes with old age"
+      },
+      {
+        "word": "apocryphal",
+        "pronunciation": "uh-POK-ruh-ful",
+        "he": "שמקורו מפוקפק; סיפור שכנראה אינו נכון אף שמרבים לספר אותו",
+        "en": "widely told but probably not true"
+      },
+      {
+        "word": "inglorious",
+        "pronunciation": "in-GLOR-ee-us",
+        "he": "חסר הדר, לא מפואר; מביש או אפור",
+        "en": "without glory or drama; somewhat shameful"
+      },
+      {
+        "word": "cavalier",
+        "pronunciation": "kav-uh-LEER",
+        "he": "קליל ופזיז מדי, שאינו מתייחס ברצינות ראויה",
+        "en": "too casual about something that deserves care"
+      },
+      {
+        "word": "moot",
+        "pronunciation": "MOOT",
+        "he": "שאין טעם להתווכח עליו; שאלה שאינה רלוונטית עוד",
+        "en": "no longer worth arguing about"
+      }
+    ]
+  },
+  {
+    "test": 13,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L6-0013",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 6,
+        "context": "A psychology lecturer talks about a problem that experts face when they teach.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "Why do brilliant experts so often make poor teachers? Psychologists describe a trap called the curse of knowledge. Once we truly understand an idea, it becomes remarkably hard to recall what it felt like not to understand it. So the expert skips steps that now seem obvious, and the novice is left befuddled, unable to follow. Notice that this isn't laziness or a lack of goodwill. Put simply, knowing something can quietly erase our memory of not knowing it."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0014",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "Two art-theory students discuss forged paintings in a seminar.",
+        "speakers": "A: female art-theory student · B: male art-theory student",
+        "transcript": [
+          "A:  Here's what bothers me. If a forgery fools every expert, it looks exactly like the original. So why should it be worth less? Surely what we value is what we see.",
+          "B:  But we never just see a painting. We see an achievement: someone solving a visual problem for the first time. The forger merely copies the solution, however resplendent the surface.",
+          "A:  That's a claim about the artist, though, not about the picture.",
+          "B:  Is it? Suppose a brilliant chess game turned out to be copied, move for move, from an older one. The moves wouldn't change, but we'd stop admiring it as original play.",
+          "A:  Fair enough, that would change how I judge the player. But the ersatz canvas still gives the eye the same pleasure.",
+          "B:  Perhaps it does. So maybe we're both partly right.",
+          "A:  Then let me put it this way. The forgery loses value because of what we know about it, not because of anything we see."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0015",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "A lecturer in the history of physics talks about early attempts to time the movement of light.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Here's a puzzle that lasted centuries: how do you time something that seems to arrive instantly? Many thinkers once assumed that light took no time to travel. One audacious early test placed two people with covered lanterns on distant hills. The first uncovered a lantern; the second answered the moment the flash appeared. The result? No delay that anyone could detect. Now, it would be easy to call that a failure. I'd call it a clue. It hinted that light, if it had a speed at all, was inordinately fast, far beyond human reflexes. So the real problem was one of scale. Over any distance on Earth, the travel time was simply too tiny to notice. The methods that eventually worked took two routes. The first went skyward. Astronomers noticed that the eclipses of one of Jupiter's moons came early when Earth was near Jupiter and late when it was far. The natural reading: light needed extra time to cross the extra distance. The second route stayed on the ground but made time visible. A beam passed through the gaps of a spinning toothed wheel to a distant mirror and back. Spin the wheel fast enough, and the returning light meets a tooth instead of a gap. In other words, every successful method did one of two things: it stretched the distance, or it sliced time into pieces fine enough to measure."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "What is the lecturer's main point?",
+        "options": [
+          "Experts often teach poorly because they put little effort into explaining",
+          "Mastering an idea can make a beginner's confusion hard to imagine",
+          "Beginners can follow more easily when experts skip the obvious steps",
+          "Experts gradually forget the difficult ideas they once worked to learn"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט it becomes remarkably hard to recall what it felt like not to understand it (קשה מאוד להיזכר איך זה לא להבין) מראה שדווקא הידע מקשה לראות את הרעיון דרך עיניו של מתחיל.",
+        "explanationEn": "Once we understand an idea, it becomes remarkably hard to recall what it felt like not to understand it, so the expert loses the beginner's view."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "Why does the man mention a copied chess game?",
+        "options": [
+          "To show that copies are usually easy to tell apart from originals",
+          "To suggest that a copied work can earn as much admiration as the original",
+          "To show that knowing how a result was produced can alter its worth",
+          "To argue that games and paintings should be judged by separate standards"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "המשפט The moves wouldn't change, but we'd stop admiring it as original play (המהלכים לא ישתנו, אבל נפסיק להעריך את המשחק כמקורי) מראה שערך התוצאה משתנה כשיודעים איך היא הושגה.",
+        "explanationEn": "He says The moves wouldn't change, but we'd stop admiring it as original play, so learning a result's origin changes its value."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "How does the woman's position change during the discussion?",
+        "options": [
+          "She grants that a forgery's history lowers its value but not its beauty",
+          "She abandons the view that a forgery can give real visual pleasure",
+          "She convinces the man that a painting's worth depends on how it looks",
+          "She begins to doubt that a skilled fake could really fool the art experts"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "הצירוף because of what we know about it, not because of anything we see (בגלל מה שאנחנו יודעים עליו, לא בגלל מה שרואים) מראה שהאישה מסכימה שהזיוף מאבד מערכו, אך לא מיופיו.",
+        "explanationEn": "She concedes the chess point but keeps the visual pleasure, concluding the forgery loses value because of what we know about it, not because of anything we see."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "According to the lecturer, what did the methods that eventually worked have in common?",
+        "options": [
+          "Each relied on events that astronomers observed far beyond the Earth",
+          "Each used a moving part to block and release a beam of light",
+          "Each depended on observers with quicker reflexes than before",
+          "Each overcame how little time light needs to cross short distances"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "המשפט the real problem was one of scale (הבעיה הייתה בקנה המידה) והצירוף it stretched the distance, or it sliced time into pieces fine enough to measure מראים ששתי השיטות התגברו על זמן המעבר הזעיר של האור.",
+        "explanationEn": "The lecturer says the real problem was one of scale, and each method either stretched the distance or sliced time into pieces fine enough to measure."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What is the lecturer's view of the lantern test?",
+        "options": [
+          "He dismisses it as a naive test that told scientists very little",
+          "He credits it with showing that light has a definite speed",
+          "He regards its failure to find a delay as revealing in itself",
+          "He values it mainly as a study of human reaction times"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "הצירוף I'd call it a clue (אני קורא לזה רמז), שבא מיד אחרי הצירוף easy to call that a failure, מראה שלדעת המרצה עצם היעדר העיכוב לימד משהו על האור.",
+        "explanationEn": "Right after easy to call that a failure, he says I'd call it a clue: finding no delay was itself informative."
+      }
+    ],
+    "vocab": [
+      {
+        "word": "befuddled",
+        "pronunciation": "bih-FUD-uld",
+        "he": "מבולבל לגמרי, אובד עצות",
+        "en": "completely confused and unable to think clearly"
+      },
+      {
+        "word": "resplendent",
+        "pronunciation": "rih-SPLEN-dunt",
+        "he": "מרהיב, זוהר ומרשים במראהו",
+        "en": "dazzling and splendid in appearance"
+      },
+      {
+        "word": "ersatz",
+        "pronunciation": "AIR-zahts",
+        "he": "תחליף מזויף ונחות, חיקוי",
+        "en": "made as an imitation of something genuine; fake"
+      },
+      {
+        "word": "audacious",
+        "pronunciation": "aw-DAY-shus",
+        "he": "נועז, מעז לנסות דבר חדש ומסוכן",
+        "en": "showing bold willingness to take risks or try something new"
+      },
+      {
+        "word": "inordinately",
+        "pronunciation": "in-OR-din-it-lee",
+        "he": "במידה מופרזת, באופן חריג",
+        "en": "to an unusually or excessively large degree"
+      }
+    ]
+  },
+  {
+    "test": 14,
+    "clips": [
+      {
+        "index": 1,
+        "clipId": "LL-L6-0016",
+        "length": "קצר",
+        "seconds": 30,
+        "level": 6,
+        "context": "An anthropology lecturer talks about how many relationships a person can maintain.",
+        "speakers": "Lecturer (female)",
+        "transcript": [
+          "How many genuine relationships can one person sustain? One influential proposal ties the size of a primate's brain to the size of its typical social group, and extends that pattern to us. We may be gregarious creatures, the argument runs, but our minds can keep track of only so many people. Critics are less convinced. They point out that estimates drawn from the same data vary enormously. So for now, the limit is best seen as an intriguing hypothesis, not an established law."
+        ],
+        "questionNumbers": [
+          1
+        ]
+      },
+      {
+        "index": 2,
+        "clipId": "LL-L6-0017",
+        "length": "בינוני",
+        "seconds": 60,
+        "level": 6,
+        "context": "A philosophy lecturer discusses two well-known thought experiments.",
+        "speakers": "Lecturer (male)",
+        "transcript": [
+          "Consider two puzzles that philosophers love to argue about. In the first, a runaway trolley is heading toward five workers. You can pull a lever and send it onto a side track, where it will hit one worker instead. Most people have few qualms about pulling the lever. In the second, the only way to stop the trolley is to push a stranger onto the track. Again, one person is harmed and five are spared. Yet most people refuse, and the refusal is swift and visceral. So why should identical numbers produce opposite verdicts? Some philosophers call the reaction a glitch, a gut feeling we ought to override. I'm not so sure. In the first case, the harm is a side effect of redirecting a threat; in the second, a person is used as a tool. Put differently, our judgments seem to track not just how much harm occurs, but how it comes about."
+        ],
+        "questionNumbers": [
+          2,
+          3
+        ]
+      },
+      {
+        "index": 3,
+        "clipId": "LL-L6-0018",
+        "length": "ארוך",
+        "seconds": 90,
+        "level": 6,
+        "context": "Two historians discuss why several ancient societies declined at around the same time.",
+        "speakers": "A: male historian · B: female historian",
+        "transcript": [
+          "A:  I keep coming back to the climate evidence. Pollen and lake sediments from around the eastern Mediterranean point to a long, severe drought just when the palace societies of the Late Bronze Age fell apart. Isn't that the simplest explanation?",
+          "B:  It's certainly part of it. But these societies had come through dry spells before. What had changed, I think, is how dependent they'd become on one another. Bronze needs copper and tin, which rarely occur in the same place, so every palace relied on long, labyrinthine trade routes.",
+          "A:  So a failed harvest in one region could ripple outward?",
+          "B:  Exactly. It could interrupt grain shipments, then metal shipments, then the craftsmen whose work depended on both. Each failure made the next one more likely.",
+          "A:  Hmm. I'll grant that drought alone has trouble explaining why so many centers fell within a few decades. Still, I'd resist calling it just one factor among many. Without the drought, would the chain have started at all?",
+          "B:  Perhaps not. So let's say drought was the spark, and the network was the dry timber. It took a concatenation of strains, failed harvests, broken shipping, perhaps even earthquakes, to bring the whole system down.",
+          "A:  Fair enough. And the irony is that the very connections that made these kingdoms rich also made their fall so precipitous.",
+          "B:  Right. In short, it wasn't one blow. It was a tightly linked system failing together."
+        ],
+        "questionNumbers": [
+          4,
+          5
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "clipIndex": 1,
+        "stem": "What is the lecturer's view of the proposal she describes?",
+        "options": [
+          "It is an established limit whose exact size is still debated",
+          "It is a thought-provoking idea that has yet to be firmly shown",
+          "It has largely been abandoned by researchers in the field",
+          "It explains why the number of friends people have varies so much"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "המשפט the limit is best seen as an intriguing hypothesis, not an established law (עדיף לראות בגבול השערה מסקרנת ולא חוק מבוסס) מראה שהרעיון מעניין אך עדיין לא הוכח.",
+        "explanationEn": "She concludes that the limit is best seen as an intriguing hypothesis, not an established law: interesting, but not yet proven."
+      },
+      {
+        "number": 2,
+        "clipIndex": 2,
+        "stem": "What is the main point of the lecture?",
+        "options": [
+          "People judge harm by its manner as well as its extent",
+          "People settle such dilemmas mainly by counting how many are spared",
+          "Philosophers agree that the second choice is morally worse",
+          "People are more willing to cause harm when they act directly"
+        ],
+        "correctIndex": 0,
+        "explanationHe": "המשפט our judgments seem to track not just how much harm occurs, but how it comes about (נראה שהשיפוט שלנו תלוי לא רק בכמות הנזק אלא גם באופן שבו נגרם) מסכם את ההרצאה: גם הדרך שבה נגרם הנזק חשובה, ולא רק היקפו.",
+        "explanationEn": "He restates that our judgments seem to track not just how much harm occurs, but how it comes about."
+      },
+      {
+        "number": 3,
+        "clipIndex": 2,
+        "stem": "What does the lecturer suggest about people's reaction to the second case?",
+        "options": [
+          "It is a gut feeling that careful thinkers ought to override",
+          "It may reflect a real moral difference rather than a mere error",
+          "It shows that the number of people affected has no place in moral reasoning",
+          "It may fade once people notice that the numbers are identical"
+        ],
+        "correctIndex": 1,
+        "explanationHe": "הצירוף I'm not so sure וההבחנה בין נזק שהוא תוצאת לוואי (a side effect) לבין שימוש באדם ככלי מראים שלדעת המרצה התגובה עשויה לשקף הבדל מוסרי אמיתי.",
+        "explanationEn": "He answers the glitch view with I'm not so sure and contrasts a side effect with a person used as a tool."
+      },
+      {
+        "number": 4,
+        "clipIndex": 3,
+        "stem": "What is the woman's main argument?",
+        "options": [
+          "Drought had little to do with the fall of the great palace societies",
+          "A lack of copper and tin was the main reason the palaces fell",
+          "Their reliance on one another let local shortages spread widely",
+          "The societies fell because dry spells were new to them"
+        ],
+        "correctIndex": 2,
+        "explanationHe": "המשפט What had changed, I think, is how dependent they'd become on one another (מה שהשתנה הוא התלות ההדדית בין הממלכות) והמשפט Each failure made the next one more likely מראים שהתלות הפיצה את המחסור.",
+        "explanationEn": "She says What had changed, I think, is how dependent they'd become on one another, and Each failure made the next one more likely."
+      },
+      {
+        "number": 5,
+        "clipIndex": 3,
+        "stem": "What position does the man hold by the end of the conversation?",
+        "options": [
+          "Drought was a minor factor that historians have tended to overstate",
+          "Drought alone can explain why so many centers fell together",
+          "Trade links made these kingdoms more resilient to bad harvests",
+          "Drought began the crisis, but ties between societies spread it"
+        ],
+        "correctIndex": 3,
+        "explanationHe": "הצירוף drought alone has trouble explaining (קשה להסביר זאת בבצורת בלבד) והשאלה Without the drought, would the chain have started at all? מראים שהגבר מקבל את ההסבר של רשת הקשרים, אך רואה בבצורת את נקודת ההתחלה.",
+        "explanationEn": "He grants that drought alone has trouble explaining the collapse, yet asks Without the drought, would the chain have started at all?"
+      }
+    ],
+    "vocab": [
+      {
+        "word": "gregarious",
+        "pronunciation": "grih-GAIR-ee-us",
+        "he": "חברותי, אוהב חברה; (בבעלי חיים) חי בקבוצות",
+        "en": "fond of company; living in groups"
+      },
+      {
+        "word": "qualms",
+        "pronunciation": "KWAHMZ",
+        "he": "היסוסים, נקיפות מצפון",
+        "en": "feelings of doubt or unease about whether something is right"
+      },
+      {
+        "word": "visceral",
+        "pronunciation": "VIS-er-ul",
+        "he": "בטני, אינסטינקטיבי (תחושה עמוקה ולא שכלית)",
+        "en": "felt deeply and instinctively rather than reasoned out"
+      },
+      {
+        "word": "labyrinthine",
+        "pronunciation": "lab-uh-RIN-thin",
+        "he": "מסובך ומפותל כמו מבוך",
+        "en": "complicated and winding, like a maze"
+      },
+      {
+        "word": "concatenation",
+        "pronunciation": "kon-kat-uh-NAY-shun",
+        "he": "שרשרת של אירועים או גורמים הקשורים זה בזה",
+        "en": "a linked series of events or things"
+      },
+      {
+        "word": "precipitous",
+        "pronunciation": "prih-SIP-ih-tus",
+        "he": "תלול וחד; (ירידה) פתאומית ומהירה",
+        "en": "very steep; sudden and rapid (of a fall or decline)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1026 @@
+[
+  {
+    "id": "LL-L3-0002",
+    "level": 3,
+    "seconds": 30,
+    "words": 75,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 45, clear and friendly university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, a short pause at [pause], and slower, firmer delivery on the last two sentences.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Have you ever noticed that we always see the same face of the Moon? It's a perennial question, one that people have asked for centuries. Here's the answer. The Moon does spin, but it turns exactly once in the time it takes to circle the Earth. Because those two motions match, the same side always points toward us. [pause] So the Moon isn't standing still. Its spin and its orbit simply keep time with each other."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0003",
+    "level": 3,
+    "seconds": 60,
+    "words": 149,
+    "speakers": "A: female student | B: male geology professor",
+    "voice": "Neutral US accent for both speakers. A: female university student, about 21, curious and a little puzzled, moderate pace (about 150 words per minute). B: male professor, about 55, patient and encouraging, moderate pace, slightly slower and firmer on 'But actually' and 'Exactly'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I'm confused about something from yesterday's lecture. Why do we find fossils of sea creatures high up in the mountains?"
+      },
+      {
+        "speaker": "B",
+        "text": "Good question. Many students assume the ocean once rose high enough to cover the peaks. But actually, sea level never rose anywhere near that far."
+      },
+      {
+        "speaker": "A",
+        "text": "Then how did the shells get up there?"
+      },
+      {
+        "speaker": "B",
+        "text": "Well, the land itself moved. Millions of years ago, that area lay under shallow water, and shells settled in the mud and slowly hardened into rock. Then two huge plates of the Earth's crust collided in a slow, ponderous crash, and the crumpled land was pushed upward."
+      },
+      {
+        "speaker": "A",
+        "text": "So the shells were lifted along with the rock."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. [pause] That's why a mountaintop can hold what used to be a seafloor."
+      },
+      {
+        "speaker": "A",
+        "text": "And is that still happening?"
+      },
+      {
+        "speaker": "B",
+        "text": "In some places, yes. The Himalayas are still rising, though very slowly. Those mountains are, in a sense, still being built."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0004",
+    "level": 3,
+    "seconds": 30,
+    "words": 76,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 38, lively and clear university-lecture tone, moderate pace (about 150 words per minute). A little playful emphasis on 'rather perversely', a natural rise on 'Why?', a short pause at [pause], and a slower, firm delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's something odd about water. Most liquids get denser as they freeze, so the solid sinks. Water, rather perversely, does the opposite, and that is worth a moment of thought. Why? As water freezes, its molecules lock into an open, spread-out pattern, so ice takes up more room than the same amount of liquid. Because ice is therefore less dense, it floats. [pause] In short, ice floats on water simply because it is lighter for its size."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0002",
+    "level": 4,
+    "seconds": 90,
+    "words": 222,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 50, thoughtful and measured university-lecture tone, moderate pace (about 150 words per minute). A natural rise on 'So how might it have started?', a short pause at each [pause], a brief beat before 'It isn't.', and a slower, summarizing delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Dogs were probably the first animals that people domesticated, yet nobody knows exactly how that partnership began. So how might it have started? [pause] Researchers currently weigh two main explanations, and they differ mainly on who made the first move."
+      },
+      {
+        "speaker": null,
+        "text": "The first holds that people took the lead. On this view, hunters found wolf pups, raised them, and gradually bred the tamest ones. The second explanation reverses the roles: here, the wolves chose us. Some wolves were bolder than others, and these animals began scavenging around human camps, feeding on leftover scraps. Because the bold ones ate better, they survived and passed on their tolerance of people. Over many generations, the camp-side wolves became more tractable, that is, easier for people to live with, and eventually they became dogs."
+      },
+      {
+        "speaker": null,
+        "text": "Now, you might expect the matter to be settled by now, given how long people have studied it. It isn't. Ancient bones show that dogs and wolves diverged very long ago, but the evidence for any single date or place is tenuous, and different studies point in different directions. That's why many researchers suspect the truth combines both stories: wolves drifted toward camps, and people, in turn, welcomed the friendliest ones. [pause] So, in short, the origin of dogs remains unsettled, with one view stressing human initiative and the other stressing the wolves' own behavior."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0003",
+    "level": 4,
+    "seconds": 60,
+    "words": 152,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, calm, clear and a little wry university-lecture tone, moderate pace (about 150 words per minute). A natural rise on 'Is it really free?', a short pause at [pause], firm emphasis on 'the key point' and on 'But economists reply', and a slower summarizing delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Let's talk about what economists call opportunity cost. Suppose a friend gives you a concert ticket that is ostensibly free. Is it really free? [pause] Not quite. You could have spent that evening earning money at a part-time job or studying for an exam. The key point is that the true price of a choice is not just the money you pay. It is the value of the best alternative you give up."
+      },
+      {
+        "speaker": null,
+        "text": "Notice what that means. A student who skips a lecture to watch a movie has paid for more than the ticket; she has also given up what the lecture would have taught her. Now, some people object that this makes everything sound expensive. But economists reply that the idea is a tool for comparing choices, not a reason to avoid them. So, to restate: whenever you pick one thing, the real cost is the next best thing you didn't choose."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0004",
+    "level": 4,
+    "seconds": 90,
+    "words": 212,
+    "speakers": "A: male student | B: female student",
+    "voice": "Neutral US accent for both speakers. A: male university student, about 21, energetic and a little impatient at first, then open and cooperative, moderate pace (about 150 words per minute). B: female university student, about 22, patient and methodical, moderate pace, with firm emphasis on 'control group' and 'only one thing'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "So, for our growth experiment, I think we should test three fertilizers on three groups of bean plants. That way we can compare them all at once."
+      },
+      {
+        "speaker": "B",
+        "text": "That's a good start, but we also need a control group, plants that get no fertilizer. Otherwise we can't tell whether the fertilizers did anything."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm, but that's one more group to water and measure. Isn't it a waste?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not really. Suppose every plant grows tall. Without a control, we wouldn't know whether the fertilizer caused it or the sunny window did."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay, so the control shows what happens by default. That makes sense. What else?"
+      },
+      {
+        "speaker": "B",
+        "text": "We should change only one thing. If one group gets more light and a different fertilizer, we'll never know which factor mattered. Everything else has to stay equal, so that any difference we see comes from the fertilizer. [pause]"
+      },
+      {
+        "speaker": "A",
+        "text": "Right. Same soil, same pots, same amount of water. Just the fertilizer changes. I was going to put the pots on the shelf in whatever order, though."
+      },
+      {
+        "speaker": "B",
+        "text": "That's actually risky. The pots near the window get more light. Let's assign each pot to a spot by drawing numbers from a hat. It's arduous, I admit, but it keeps the comparison fair."
+      },
+      {
+        "speaker": "A",
+        "text": "All right, I'm convinced. Control group, one variable, random placement."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0005",
+    "level": 4,
+    "seconds": 30,
+    "words": 72,
+    "speakers": "A: female teaching assistant | B: male student",
+    "voice": "Neutral US accent for both speakers. A: female teaching assistant, about 28, patient and explanatory, moderate pace (about 150 words per minute), with emphasis on 'Size isn't the issue'. B: male student, about 20, a little surprised at first, then understanding. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "So why did the class survey say that nearly everyone loves the library?"
+      },
+      {
+        "speaker": "B",
+        "text": "Well, lots of students answered. That's a big sample, isn't it?"
+      },
+      {
+        "speaker": "A",
+        "text": "Size isn't the issue. The survey was online and voluntary, so mostly people who already use the library bothered to reply. [pause] It's an insidious problem, because nothing in the data looks wrong."
+      },
+      {
+        "speaker": "B",
+        "text": "So the sample is biased."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. A big group of volunteers can still misrepresent everyone else."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0006",
+    "level": 4,
+    "seconds": 60,
+    "words": 139,
+    "speakers": "A: male student | B: female student",
+    "voice": "Neutral US accent for both speakers. A: male university student, about 22, confident and argumentative, then conceding in a good-natured way, moderate pace (about 150 words per minute). B: female university student, about 22, calm and precise, moderate pace, with emphasis on 'catalyst, not a cause'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I'd argue the printing press caused the social upheaval of the sixteenth century. Before it, new ideas spread slowly, mostly by hand-copied books. After it, pamphlets reached thousands of readers."
+      },
+      {
+        "speaker": "B",
+        "text": "Hmm, I'm not convinced it was the cause. Discontent with the authorities was already widespread, for many different reasons, so the press arrived in a tumultuous situation; it didn't create one."
+      },
+      {
+        "speaker": "A",
+        "text": "But without cheap pamphlets, reformers couldn't have reached ordinary readers so quickly."
+      },
+      {
+        "speaker": "B",
+        "text": "True. [pause] So I'd call the press a catalyst, not a cause. It sped things up, but the fuel was already there."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair enough. But then maybe speed itself mattered, because authorities couldn't suppress ideas that spread that fast."
+      },
+      {
+        "speaker": "B",
+        "text": "Possibly. Still, speeding something up isn't the same as starting it."
+      },
+      {
+        "speaker": "A",
+        "text": "All right. I'll accept that the press amplified the upheaval, but I won't say it created it."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0007",
+    "level": 4,
+    "seconds": 90,
+    "words": 209,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, clear, engaging university-lecture tone, moderate pace (about 150 words per minute). A natural rise on the opening question, a short pause at each [pause], a slight lift on 'Not necessarily.', and a slower summarizing delivery on 'So, to sum up'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why is the sea salty? [pause] It seems like a simple question, but the answer begins far from the ocean, on dry land. Rain is slightly acidic, so as it falls on rocks, it slowly dissolves tiny amounts of minerals. Rivers then carry these dissolved minerals to the sea. Each river contributes only a little, but there are countless rivers, and they have been flowing for a very long time. Over millions of years, those small contributions add up to an enormous amount."
+      },
+      {
+        "speaker": null,
+        "text": "Here's the puzzle, though. If rivers keep delivering minerals, shouldn't the sea get saltier every year? Not necessarily. Some of the minerals are used by living things or settle to the seafloor, so the sea's saltiness stays roughly steady over long periods. [pause]"
+      },
+      {
+        "speaker": null,
+        "text": "And there is a second part to the story. When the sun warms the ocean surface, copious amounts of water evaporate. But the salt cannot evaporate; it stays behind. So evaporation, in effect, concentrates the salt in the sea, while the pure water goes up into the sky and comes back down as rain."
+      },
+      {
+        "speaker": null,
+        "text": "So, to sum up: rivers deliver the minerals, and evaporation leaves the salt behind. This has been going on so imperceptibly that no single generation could ever have watched it happen."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0008",
+    "level": 4,
+    "seconds": 30,
+    "words": 88,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, clear and friendly university-lecture tone, moderate pace (about 150 words per minute). A natural questioning rise on 'So what turns a pidgin into a creole?', a short pause at each [pause], a slight stress on the one-word answer 'Children', and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Two terms students often mix up are pidgin and creole. [pause] Groups with no shared language often build a simple go-between language for trade. That's a pidgin. Its vocabulary is usually paltry, just enough for buying and selling, and it's rarely spoken at home. So what turns a pidgin into a creole? [pause] Children. Once a new generation grows up speaking it as a first language, it becomes a creole, and its grammar tends to grow richer. In short, a creole is a pidgin that has become someone's mother tongue."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0009",
+    "level": 4,
+    "seconds": 60,
+    "words": 162,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, warm storytelling university-lecture tone, moderate pace (about 150 words per minute). A natural questioning rise on 'So was this just a rural tale, or was it real?', a short pause at each [pause], and a slightly slower, firmer delivery after 'In other words'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today's story begins not in a laboratory but on a farm. [pause] For centuries, smallpox was one of humanity's worst scourges, a disease that killed or scarred huge numbers of people. Doctors already had one defense, but it was risky. They would infect a healthy person with a little material from a smallpox sore, hoping for a mild case. Sometimes, though, the patient became seriously ill. [pause] In the countryside, people had noticed something curious. Milkmaids who had caught cowpox, a mild illness passed on by cows, seemed to escape smallpox. So was this just a rural tale, or was it real? One country doctor decided to find out. He took material from a cowpox sore, put it into a cut on a healthy boy's arm, and later exposed the boy to smallpox. The boy stayed well. [pause] In other words, a mild cow disease could protect people against a deadly human one. That's where the word vaccine comes from: the Latin word for cow."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0010",
+    "level": 4,
+    "seconds": 30,
+    "words": 84,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, engaged and clear university-lecture tone, moderate pace (about 150 words per minute). A natural questioning rise on the opening question, a short pause at each [pause], slight stress on 'something different', and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why did Renaissance painters care so much about straight lines? [pause] Earlier artists often showed importance through size, painting an important person larger than everyone else. Renaissance painters wanted something different: a flat panel that looked like a window onto real space. Linear perspective gave them a method. Parallel lines meet at one point on the horizon, so objects shrink as they move back. The effect could be uncanny, like stepping into the scene. [pause] In short, perspective let them create depth on a flat surface."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0002",
+    "level": 5,
+    "seconds": 90,
+    "words": 215,
+    "speakers": "A: female researcher | B: male researcher",
+    "voice": "Neutral US accent for both speakers; natural academic-conversation rhythm, about 150 words per minute.A: female psychology researcher, about 40, brisk, confident and analytical; firm on 'Bad luck can't explain a pattern that large', warmer on 'That's fair'.B: male psychology researcher, about 45, relaxed and at first skeptical; a short pause at each [pause], a conceding tone on 'Okay, I'll grant you both points', and a slower, summing-up delivery on his last turn.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Did you see the results of that big replication project? A lot of well-known findings in our field didn't hold up when other labs repeated them."
+      },
+      {
+        "speaker": "B",
+        "text": "I did. But honestly, I think it's mostly bad luck. Any single study can miss an effect that's really there."
+      },
+      {
+        "speaker": "A",
+        "text": "Bad luck can't explain a pattern that large. Think about how many of the original studies used tiny samples. With twenty or thirty people, a few unusual participants can create an effect that isn't real."
+      },
+      {
+        "speaker": "B",
+        "text": "A spurious result, you mean. Noise that just looks like a discovery."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. And then there's publishing. Journals tend to accept studies that find something exciting, while studies that find nothing often stay in a drawer."
+      },
+      {
+        "speaker": "B",
+        "text": "So the published record leans toward positive results. [pause] Okay, I'll grant you both points. But let me push back a little. Some of the repeat studies were run in other countries, with different materials. An effect might be real and still depend on the setting."
+      },
+      {
+        "speaker": "A",
+        "text": "That's fair. A failed replication doesn't always mean the original was wrong."
+      },
+      {
+        "speaker": "B",
+        "text": "Still, a tantalizing result from thirty students shouldn't be treated as settled. [pause] So the lesson isn't that psychology is broken. It's that we need bigger samples, and we need to publish the studies that find nothing, too."
+      },
+      {
+        "speaker": "A",
+        "text": "On that, we agree."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0003",
+    "level": 5,
+    "seconds": 60,
+    "words": 169,
+    "speakers": "A: male student | B: female professor",
+    "voice": "Neutral US accent for both speakers; natural office-hours rhythm, about 150 words per minute.A: male undergraduate, about 20, confident at first, then thoughtful and a little unsure; a short pause at [pause] before 'Okay, I'll admit'.B: female philosophy professor, about 55, calm, patient and gently challenging; a questioning rise on 'Are you a different person from the child you once were?' and on 'Which one is the real one?', and a slower, summing-up delivery on her last turn.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, about the ship puzzle from class. If every plank has been replaced, it's simply not the same ship anymore. Nothing original is left."
+      },
+      {
+        "speaker": "B",
+        "text": "A common first reaction. But think about yourself. Many of the cells in your body have been replaced over the years. Are you a different person from the child you once were?"
+      },
+      {
+        "speaker": "A",
+        "text": "Well, no. But that's different. I changed gradually, and I kept my memories."
+      },
+      {
+        "speaker": "B",
+        "text": "And the ship changed gradually too, one plank at a time, keeping its shape."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm. So maybe what matters is the continuity, not the material. [pause] Okay, I'll admit it could still be the same ship."
+      },
+      {
+        "speaker": "B",
+        "text": "Here's the real quandary, though. Suppose someone saved all the old planks and rebuilt the original. Now there are two ships. Which one is the real one?"
+      },
+      {
+        "speaker": "A",
+        "text": "I don't know."
+      },
+      {
+        "speaker": "B",
+        "text": "Neither do philosophers, which is why it remains such an abiding puzzle; it keeps coming back. [pause] The point isn't to settle it. It's to ask what we really mean when we call something the same."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0004",
+    "level": 5,
+    "seconds": 90,
+    "words": 214,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, lively and clear university-lecture tone, moderate pace (about 150 words per minute). A natural questioning rise on 'So which animals play that role in nature?' and 'What keeps them in check?', a short pause at each [pause], slight stress on 'here's the part students often miss', and a slower, firmer final sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Okay, let's go back to food webs. Today I want to introduce the idea of a keystone species. The name comes from building. In a stone arch, the keystone is the stone at the top that holds the others in place. Take it out, and the arch falls. [pause] So which animals play that role in nature? A classic example comes from the kelp forests along the Pacific coast. Kelp is a giant seaweed, and its forests shelter many kinds of fish. Sea urchins are voracious grazers of kelp; left alone, they can strip a forest down to bare rock. What keeps them in check? Sea otters, which eat urchins. When otters were hunted almost to extinction for their fur, urchin numbers exploded in many areas, and the kelp largely disappeared. Without the kelp, many of the fish that had lived there declined as well. Where otters returned, the forests tended to come back. [pause] Now, here's the part students often miss. Otters are not especially numerous. Their importance comes from their effect, not their numbers. That said, they're probably not the only factor; water temperature and storms matter too. [pause] So, to put it simply, a keystone species is the linchpin of its community: an animal whose influence is far larger than its numbers would suggest."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0005",
+    "level": 5,
+    "seconds": 30,
+    "words": 90,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 45, thoughtful and clear university-lecture tone, moderate pace (about 150 words per minute). Slight stress on 'But consider', a natural questioning rise on 'So were they simply born with prodigious memories?', a brief beat before 'Probably not', a short pause at each [pause], and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "For a long time, many scientists assumed that the adult brain was more or less fixed. [pause] But consider drivers in one large, maze-like city, who must memorize thousands of streets before they can get a license. Brain scans suggest that a region linked to memory for places grows larger in these drivers, and the change seems to appear during training itself, not before. So were they simply born with prodigious memories? Probably not. [pause] In other words, the adult brain is less fixed than we thought: practice can physically reshape it."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0006",
+    "level": 5,
+    "seconds": 60,
+    "words": 161,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 50, engaging and clear university-lecture tone, moderate pace (about 150 words per minute). A natural questioning rise on 'More people, more helpers, right?', a short pause at each [pause], slight stress on 'However' and on 'the key point is this', and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a puzzle. If someone faints on a crowded street, you might expect help to come faster than on an empty one. More people, more helpers, right? [pause] Yet studies often find the opposite: the more people present, the less likely any one of them is to step in. This is called the bystander effect. Now, it's not that people in crowds are callous. Each person tends to assume that someone else will act, and each looks around to see whether the others seem worried. If nobody moves, everyone concludes there's no emergency. [pause] However, the effect isn't fixed. It appears weaker when the danger is obvious, and when the bystanders know one another. And one simple step seems to help a lot: pointing at a single person and asking them directly to call for help. Being singled out can impel someone to act. [pause] So the key point is this: a crowd doesn't remove our concern; it spreads our sense of responsibility thin."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0007",
+    "level": 5,
+    "seconds": 90,
+    "words": 229,
+    "speakers": "A: female student | B: male student",
+    "voice": "Neutral US accent for both speakers; natural seminar-discussion rhythm, about 150 words per minute.A: female graduate student in urban planning, about 26, calm, precise and persuasive; firm on 'That's the problem', conceding on 'Fair point', and a short pause at [pause] before 'But as a cure'.B: male graduate student in urban planning, about 27, confident and practical at first, then reflective; a questioning rise on 'Why not?', and a slower, thinking-aloud delivery on 'Then maybe I've been asking the wrong question'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "So your proposal is to widen the main highway into the city. I'm not convinced it would cut traffic."
+      },
+      {
+        "speaker": "B",
+        "text": "Why not? The road is jammed every morning. More lanes means more room for the same cars."
+      },
+      {
+        "speaker": "A",
+        "text": "But it won't stay the same cars. That's the problem. When a road gets faster, people change their behavior. Some who used to take the train start driving. Others make trips they used to skip."
+      },
+      {
+        "speaker": "B",
+        "text": "So the extra space just fills up again."
+      },
+      {
+        "speaker": "A",
+        "text": "Right. Studies in many regions have found that traffic tends to grow roughly in step with new road capacity. Within a few years, the jams are back. Planners call it induced demand."
+      },
+      {
+        "speaker": "B",
+        "text": "Okay, but surely that's not true everywhere. If a region's population is growing fast, you'll need more roads anyway."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair point. In a fast-growing area, extra capacity may be necessary. [pause] But as a cure for congestion on its own, it largely fails. In some cases, it can even exacerbate the problem by pulling more cars into the city center."
+      },
+      {
+        "speaker": "B",
+        "text": "Hmm. So the relief I was counting on is illusory. Then maybe I've been asking the wrong question. [pause] Instead of how much road we build, the real issue is how we manage it, say, by charging drivers at peak hours or running more buses."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. You can't build your way out of traffic, but you can manage the demand."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0008",
+    "level": 5,
+    "seconds": 30,
+    "words": 79,
+    "speakers": "A: male chemistry student | B: female chemistry student",
+    "voice": "Neutral US accent for both speakers. A: male undergraduate, about 21, pleased and a little quick to conclude, moderate pace (about 150 words per minute). B: female undergraduate, about 22, thoughtful and precise, moderate pace, slightly firmer on 'it can't be the whole story' and on 'energetic enough to actually break bonds'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The warm flask finished in half the time. I guess heat makes the particles move faster, so they collide more often."
+      },
+      {
+        "speaker": "B",
+        "text": "That's part of it, but it can't be the whole story. Warming it a little adds only a few extra collisions, yet the rate jumped far more than that."
+      },
+      {
+        "speaker": "A",
+        "text": "So what else changed?"
+      },
+      {
+        "speaker": "B",
+        "text": "More of the collisions are energetic enough to actually break bonds. [pause] In the cold flask, most hits were languid little taps that just bounced off."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0009",
+    "level": 5,
+    "seconds": 60,
+    "words": 153,
+    "speakers": "A: female astronomy graduate student | B: male astronomy graduate student",
+    "voice": "Neutral US accent for both speakers. A: female graduate student, about 26, confident and engaged, moderate pace (about 150 words per minute), firmer on 'But look at what the authors did' and on 'The key point is'. B: male graduate student, about 27, skeptical at first, dry tone; he slows down and softens on 'All right' as he concedes. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "So this paper reports a new planet around a distant star. The method is simple: when a planet passes in front of its star, the starlight dims a little."
+      },
+      {
+        "speaker": "B",
+        "text": "A little is generous. For a planet the size of Earth, the dip is diminutive, far less than one percent. Honestly, I'm not convinced a signal that small means anything."
+      },
+      {
+        "speaker": "A",
+        "text": "That's fair. A dark spot on the star, or a second star behind it, can produce a misleading dip. [pause] But look at what the authors did. They saw the same dip again and again, at perfectly regular intervals, each time with the same depth and shape."
+      },
+      {
+        "speaker": "B",
+        "text": "Hmm. A starspot wouldn't repeat that neatly. All right, a regular repeat does make a planet the likeliest explanation. I'd still want an independent check, though, like the star's wobble."
+      },
+      {
+        "speaker": "A",
+        "text": "Agreed. The key point is that one dip proves very little. It's the repetition that makes the case."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0010",
+    "level": 5,
+    "seconds": 90,
+    "words": 228,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, relaxed and engaging university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question; a short pause at each [pause]; slightly slower on 'Now, notice what this costs' and on the final two sentences after 'In other words'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a question that sounds simple. Why does a piano have twelve notes in each octave, all spaced equally? [pause] Let's start with what sounds good. Two notes blend most smoothly when their frequencies form simple ratios. An octave doubles the frequency, and a fifth multiplies it by one and a half. So, naturally, early tuners built their scales from these pure intervals. Here's the problem, though. If you stack pure fifths, one on top of another, you never land exactly on an octave. You overshoot by a tiny amount. As a result, an instrument tuned perfectly for one key sounds sour, sometimes painfully so, in distant keys. A singer or a violinist can adjust each note slightly while performing. A keyboard can't; its pitches are fixed. [pause] The solution that eventually won out was to divide the octave into twelve equal steps. Now, notice what this costs. Apart from the octave, not a single interval is perfectly pure anymore. Every fifth is a hair too narrow, and the thirds are noticeably wide. To some musicians of the time, this deliberate impurity was anathema. But the gain was enormous: a player could move freely through every key, and each sounded equally acceptable. In other words, equal tuning wasn't chosen because it's perfect. It was an expedient compromise, spreading a small error evenly so that no key would sound badly wrong."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0011",
+    "level": 5,
+    "seconds": 30,
+    "words": 79,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, clear and lively university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question, a short pause at [pause], and a slower, firmer delivery on the last sentence, with light stress on 'not simply their number'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "How can an archaeologist tell when a wooden beam was cut? [pause] The answer lies in its rings. A tree adds one ring a year, usually wider in wet years and narrower in dry ones. So a run of years leaves an indelible pattern, rather like a barcode. Researchers match that pattern against a long master record, often to the exact year. In short, it's the sequence of wide and narrow rings, not simply their number, that dates the wood."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0012",
+    "level": 5,
+    "seconds": 60,
+    "words": 153,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, calm and measured university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question, a short pause at [pause], slight emphasis on 'Now, think about what that does' and on 'this is a tendency, not an iron law', and a firm, slower last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why do some democracies end up with just two big parties, while others have five or six? [pause] One well-known explanation points to the voting rules. In many countries, each district elects a single winner: whoever gets the most votes takes the seat, and everyone else gets nothing. Now, think about what that does. A small party might win a respectable share of votes nationwide and still win almost no seats. Voters notice this. Rather than spend their vote on a forlorn hope, many switch to whichever large party is closest to their views. So support tends to coalesce around two main options. By contrast, systems that hand out seats in proportion to votes give small parties a real chance. Now, this is a tendency, not an iron law. Regional parties, for instance, can survive where their voters are concentrated. But the basic point stands: the rules of counting shape the number of parties."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0013",
+    "level": 5,
+    "seconds": 30,
+    "words": 71,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 40, friendly and precise university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question, a short pause at [pause], light stress on 'far more strongly', and a slower, firmer last sentence after 'Put simply'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why is the daytime sky blue rather than, say, white? [pause] Sunlight contains every color. As it passes through the air, tiny gas molecules scatter some of it in all directions, and they scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones. So wherever you look, scattered blue light reaches your eyes. Put simply, the cerulean sky isn't blue air; it's sunlight sorted by wavelength."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0001",
+    "level": 6,
+    "seconds": 90,
+    "words": 222,
+    "speakers": "A: female graduate student | B: male economic history professor",
+    "voice": "Neutral US accent for both speakers. A: female graduate student, about 25, confident at first, then reflective; moderate pace (about 150 words per minute); slower and thoughtful on 'I suppose I was treating income as if it were the whole story'. B: male professor, about 60, dry, unhurried and gently probing; a skeptical lift on 'Must they?', measured and even on 'That's the heart of the debate'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I've been reading the wage data for the early factory decades, and honestly it looks fairly clear to me. Average wages went up, so ordinary families must have been better off."
+      },
+      {
+        "speaker": "B",
+        "text": "Must they? Look at what those wages had to buy. Once you adjust for food prices, the gains in the first few decades look rather thin. And wages, remember, are only one measure."
+      },
+      {
+        "speaker": "A",
+        "text": "What else would you use?"
+      },
+      {
+        "speaker": "B",
+        "text": "Height, for one. Adult height is a rough record of childhood nutrition and illness, so it captures things a paycheck misses. In several places, the average height of young men seems to have dipped during early industrialization, even as wages crept upward. Add the squalid, crowded housing in the new mill towns, where disease spread quickly, and the picture gets murkier."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm. So wages and health may have been moving in opposite directions. [pause] I suppose I was treating income as if it were the whole story."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the heart of the debate. The optimists point to income, the pessimists to health and working hours, and each side can be a little tendentious in choosing its evidence."
+      },
+      {
+        "speaker": "A",
+        "text": "But surely nobody disputes that, over the longer run, living standards rose enormously?"
+      },
+      {
+        "speaker": "B",
+        "text": "No, hardly anyone does. The real argument is about the first generation or two, the people who paid the price before the gains arrived."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0002",
+    "level": 6,
+    "seconds": 60,
+    "words": 149,
+    "speakers": "A: female cognitive scientist | B: male cognitive scientist",
+    "voice": "Neutral US accent for both speakers. A: female researcher, about 35, enthusiastic at first, then careful and measured; moderate pace (about 150 words per minute); slower on 'Let me put it this way, then'. B: male researcher, about 45, cool and skeptical but not dismissive; slight emphasis on 'The evidence is another matter' and on 'may flatter the hypothesis'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I keep seeing the claim that bilingual people have sharper mental control, that they're better at switching tasks and ignoring distractions. And it makes sense: they're constantly holding back one language while using the other."
+      },
+      {
+        "speaker": "B",
+        "text": "It makes sense, sure. The evidence is another matter. The early studies were small, and when larger samples were tested, the much-touted advantage often shrank or disappeared."
+      },
+      {
+        "speaker": "A",
+        "text": "Couldn't that be because the tasks were too easy? Or because bilinguals differ so much from one another?"
+      },
+      {
+        "speaker": "B",
+        "text": "Possibly. But there's also a publishing problem. Studies that find no difference are less likely to get published. [pause] So the record we see may flatter the hypothesis."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair enough. Let me put it this way, then. Speaking two languages clearly has value, culturally and practically. Whether it trains some general thinking muscle is still open, and the support for a large effect is scant."
+      },
+      {
+        "speaker": "B",
+        "text": "That I can agree with."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0003",
+    "level": 6,
+    "seconds": 90,
+    "words": 226,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 50, thoughtful and slightly wry university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question; a short pause at each [pause]; clear stress on 'First', 'Second' and 'Third'; a lower, more confiding tone on 'this is the uncomfortable part'; slower and firmer after 'to restate the point'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a question that puzzles many students. If germs cause disease, why did so many physicians resist the idea for so long? [pause] It's tempting to blame plain stubbornness. But that, I'd argue, is too easy. Let me offer three reasons that were, at the time, fairly sensible. First, the older view, that illness rose from foul air and rotting matter, seemed to work, at least on the surface. Disease clustered in filthy, crowded districts, and cleaning those districts up really did reduce illness, though for reasons the theory got wrong. Second, the culprits were invisible. Microscopes could show tiny living things, but tying one particular organism to one particular disease took careful experiments that came much later. To many doctors, the notion that something unseen could make a healthy adult gravely ill sounded preposterous. [pause] Third, and this is the uncomfortable part, the new idea implied that physicians might be spreading infection on their own unwashed hands. For a proud profession, that was an affront, and the few doctors who urged hand-washing were often met with ridicule. What finally changed minds? Careful controlled experiments, and a striking drop in infections in hospitals that adopted antiseptic methods. So, to restate the point: the resistance was not simple foolishness. The old theory appeared to succeed, the evidence was genuinely hard to see, and the new idea wounded professional pride."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0004",
+    "level": 6,
+    "seconds": 30,
+    "words": 82,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 50, calm and precise university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question 'What makes a theory scientific?', a short pause at each [pause], slight emphasis on 'misses the point' and on 'really a weakness', and a slower, firmer delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "What makes a theory scientific? [pause] Most of us would point to the evidence piled up in its favor. One influential philosopher argued that this misses the point. A theory that can explain any outcome may look unassailable, but that strength is really a weakness. A scientific theory has to take a risk: there must be some possible observation that would show it to be false. [pause] In short, what matters is not how much a theory explains, but whether it could be refuted."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0005",
+    "level": 6,
+    "seconds": 60,
+    "words": 146,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 45, clear and engaging university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the question 'But what happens if every household does the same thing at once?', a short pause at each [pause], a slightly lower, careful tone on the sentence beginning 'Now, not every economist', and a slower, firmer delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today I want to look at a puzzle that economists call the paradox of thrift. [pause] Start with a single household. If a family expects hard times, cutting back and saving more is a judicious choice; it builds a cushion against bad luck. But what happens if every household does the same thing at once? [pause] Here's the catch: one person's spending is another person's income. When millions of families retrench together, shops sell less, firms cut jobs or hours, and incomes fall. With lower incomes, people may not manage to save as much as they planned. Now, not every economist accepts the strongest form of this argument; much depends, for instance, on whether the extra savings are invested. Still, the basic point is widely recognized. So, to put it another way: what is prudent for one family can, when everyone does it, deepen a downturn for all."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0006",
+    "level": 6,
+    "seconds": 90,
+    "words": 222,
+    "speakers": "A: male literature student | B: female literature student",
+    "voice": "Neutral US accent for both speakers; seminar discussion, moderate pace (about 150 words per minute). A: male student, about 24, confident and a little insistent at first, then thoughtful; a real hesitation on 'Hmm', a short pause at [pause], and a slower, conceding tone on 'let me revise what I said'. B: female student, about 25, calm and precise, friendly but firm; slight emphasis on 'the words on the page' and on 'untethered from the text'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I think the author's intention has to decide what a poem means. The poet chose every word for a reason, often after many careful drafts. If we set that aside, what's left to stop a reading from being pure invention?"
+      },
+      {
+        "speaker": "B",
+        "text": "But how often do we actually know what the poet intended? For many older poems, we have nothing but the text. And poems regularly carry more than their authors planned; an image can hold echoes the writer never noticed, and later readers may hear them clearly. So I'd say the author isn't the final arbiter."
+      },
+      {
+        "speaker": "A",
+        "text": "I see the point. Still, it's a beguiling idea that a poem can mean whatever a reader wants, and I don't buy it. Some readings are simply wrong."
+      },
+      {
+        "speaker": "B",
+        "text": "Agreed, some are. But they're wrong because the words on the page don't support them, not because they contradict a letter the poet once wrote, years later and perhaps for a different audience."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm. [pause] All right, let me revise what I said. When we can find it, in letters or early drafts, I'd treat what the poet intended as evidence, a strong clue. But I'll grant it can't be the final test."
+      },
+      {
+        "speaker": "B",
+        "text": "That seems fair to me. And I'm not defending readings that are untethered from the text, either."
+      },
+      {
+        "speaker": "A",
+        "text": "Then perhaps we're closer than we sounded at the start."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0007",
+    "level": 6,
+    "seconds": 30,
+    "words": 86,
+    "speakers": "A: female statistician | B: male statistician",
+    "voice": "Neutral US accent for both speakers; a working discussion between colleagues, moderate pace (about 150 words per minute). A: female statistician, about 40, businesslike at first, then genuinely puzzled on 'In both?', a short pause at [pause], and a slower, reflective tone on her last sentence. B: male statistician, about 50, patient and matter-of-fact; slight emphasis on 'in both groups' and on 'like with like'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The report ranks the suburban hospital first, since its overall survival rate is higher."
+      },
+      {
+        "speaker": "B",
+        "text": "Look closer, though. Split the patients by how ill they were, and the downtown hospital does better in both groups."
+      },
+      {
+        "speaker": "A",
+        "text": "In both? Then how does it lose overall?"
+      },
+      {
+        "speaker": "B",
+        "text": "It takes far more of the severe cases, and those drag its total down."
+      },
+      {
+        "speaker": "A",
+        "text": "That's vexing. [pause] So the overall number may tell us more about who comes through the door than about the care itself."
+      },
+      {
+        "speaker": "B",
+        "text": "Until we compare like with like, the ranking misleads."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0008",
+    "level": 6,
+    "seconds": 60,
+    "words": 152,
+    "speakers": "A: male student | B: female linguistics professor",
+    "voice": "Neutral US accent for both speakers; office-hours conversation, moderate pace (about 150 words per minute). A: male undergraduate, about 20, curious and a little eager, rising intonation on his questions, pleased with himself on 'less a prison than a habit'. B: female professor, about 55, warm but exact; slight emphasis on 'strong version', a firm 'Not quite', a short pause at [pause], and a dry, amused tone on 'facile slogans'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I read that the language we speak decides how we think, so if a language has no word for something, its speakers can't really grasp it. Is that right?"
+      },
+      {
+        "speaker": "B",
+        "text": "That's the strong version, and very few researchers hold it now. If it were true, translation would be nearly impossible, and new concepts couldn't be learned. Yet people invent or borrow words all the time."
+      },
+      {
+        "speaker": "A",
+        "text": "So the whole idea has been jettisoned?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not quite. A weaker version has decent support. Some languages require speakers to mark direction or color in particular ways, and in experiments those speakers seem to notice or remember such things a bit differently. [pause] The effects are real but modest; they nudge attention rather than set limits."
+      },
+      {
+        "speaker": "A",
+        "text": "So it's less a prison than a habit."
+      },
+      {
+        "speaker": "B",
+        "text": "That's a nice way to put it, though I'd avoid facile slogans on both sides. The truth is more complicated than either camp admits."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0009",
+    "level": 6,
+    "seconds": 90,
+    "words": 227,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, lively and clear university-lecture tone, moderate pace (about 150 words per minute). A touch of wonder in the opening sentence, a natural rise on 'So how do you study a place no one can ever visit?', a short pause at each [pause], slight emphasis on 'only through solid rock' and 'never showed up', and a slower, firmer delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a strange fact about our planet: in some ways, we know more about the surfaces of distant worlds than about the rock far beneath our feet. The deepest holes ever drilled barely scratch the crust; the center lies at an almost unfathomable depth. So how do you study a place no one can ever visit? [pause] The answer came from earthquakes. A large quake sends waves through the whole planet, and instruments around the world record when and where they arrive; with enough records, you can trace the paths the waves must have taken. Now, there are two main kinds of wave. One kind can pass through both solids and liquids. The other kind can travel only through solid rock; a liquid seems to be impervious to it. When scientists mapped the arrivals, they found that on the far side of the planet from a quake, this second kind simply never showed up. The most natural explanation was a large region of liquid deep inside, an outer core of molten metal. The first kind of wave behaved oddly too, bending sharply as it entered the core. Later, faint signals bouncing back from deep inside suggested that a smaller, solid inner core sits at the very center. [pause] In other words, no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0010",
+    "level": 6,
+    "seconds": 30,
+    "words": 86,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, curious and clear university-lecture tone, moderate pace (about 150 words per minute). Natural rise on 'Have they escaped aging?', a short pause at each [pause], a firm 'Not necessarily', and a slower delivery on the last sentence with slight emphasis on 'absent' and 'hidden'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "For most animals, the risk of dying climbs steadily with age, as bodies slide toward decrepitude. Yet a few creatures seem to break the pattern. Certain tortoises and the naked mole-rat, a burrowing rodent, show little sign of rising risk over the years. Have they escaped aging? [pause] Not necessarily. Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect. [pause] So the open question is not how long they live, but whether their decline is absent or just hidden."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0011",
+    "level": 6,
+    "seconds": 60,
+    "words": 146,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 60, warm storytelling tone with a scholarly edge, moderate pace (about 150 words per minute). A slightly theatrical delivery on 'went up in flames in a single terrible night', a natural rise on 'But is it what really happened?', a short pause at each [pause], and a slower, quieter delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Most of us have heard the story: the great library of Alexandria, the treasure house of ancient learning, went up in flames in a single terrible night. It's a dramatic image. But is it what really happened? [pause] Many historians now suspect the tale is largely apocryphal. There probably were fires, and one of them may well have damaged part of the collection. Yet the evidence points to a slower, more inglorious end. Royal funding seems to have dried up over time, as later rulers turned to other concerns. Leading scholars left or were forced out, and fewer took their place. And papyrus scrolls don't last forever; unless they were recopied, they simply crumbled. [pause] So the library likely wasn't destroyed so much as neglected, fading over centuries as money, people and care drained away. In short, it was less a single catastrophe than a long, quiet decline."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0012",
+    "level": 6,
+    "seconds": 90,
+    "words": 223,
+    "speakers": "A: female economist | B: male economist",
+    "voice": "Neutral US accent for both speakers; a professional discussion between colleagues, moderate pace (about 150 words per minute). A: female economist, about 45, firm and analytical at first, genuinely surprised on 'Little or no drop?', a short pause at [pause], then measured and reflective. B: male economist, about 40, relaxed and evidence-minded, conceding readily on 'Fair'; slight emphasis on 'neighboring regions' and on 'no limit'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The textbook logic seems hard to escape. If you force the price of labor above what the market would set, employers hire fewer people, and the first to lose out are young, low-skilled workers. It's the same reasoning we apply to any price that's held artificially high."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the theory. But when researchers compared neighboring regions, one raising its minimum and one not, many found little or no measurable drop in jobs."
+      },
+      {
+        "speaker": "A",
+        "text": "Little or no drop? Then where does the extra cost go?"
+      },
+      {
+        "speaker": "B",
+        "text": "Partly into slightly higher prices, partly into lower turnover. Workers who are paid more tend to stay, so firms spend less on hiring and training new people. Some may also work harder, because the job is now worth keeping."
+      },
+      {
+        "speaker": "A",
+        "text": "I'll admit that's more persuasive than I expected. [pause] Still, most of those studies looked at modest increases. A large jump, especially in a region where wages are low, could be a different story. And some studies do find losses, often in hours worked rather than in jobs."
+      },
+      {
+        "speaker": "B",
+        "text": "Fair. I'd be cavalier to claim there's no limit. Push the minimum high enough and employment will surely suffer; the evidence just doesn't tell us precisely where that point lies."
+      },
+      {
+        "speaker": "A",
+        "text": "Then whether a minimum wage costs jobs is almost moot. The real question is how high, and where."
+      },
+      {
+        "speaker": "B",
+        "text": "On that, I think we agree."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0013",
+    "level": 6,
+    "seconds": 30,
+    "words": 79,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, thoughtful and lightly wry university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question; a short pause at each [pause]; light stress on 'not to understand it' and on 'isn't laziness'; slower and firmer after 'Put simply'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why do brilliant experts so often make poor teachers? [pause] Psychologists describe a trap called the curse of knowledge. Once we truly understand an idea, it becomes remarkably hard to recall what it felt like not to understand it. So the expert skips steps that now seem obvious, and the novice is left befuddled, unable to follow. Notice that this isn't laziness or a lack of goodwill. [pause] Put simply, knowing something can quietly erase our memory of not knowing it."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0014",
+    "level": 6,
+    "seconds": 60,
+    "words": 157,
+    "speakers": "A: female art-theory student | B: male art-theory student",
+    "voice": "Neutral US accent. A: female graduate student, about 25, quick and probing, a little skeptical at first, warmer and more settled by her last line. B: male graduate student, about 27, calm and deliberate, slightly playful on 'Is it?'. Both at a moderate seminar pace (about 150 words per minute), with a short pause at [pause] and a slower, summarizing delivery on A's final sentence.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Here's what bothers me. If a forgery fools every expert, it looks exactly like the original. So why should it be worth less? Surely what we value is what we see."
+      },
+      {
+        "speaker": "B",
+        "text": "But we never just see a painting. We see an achievement: someone solving a visual problem for the first time. The forger merely copies the solution, however resplendent the surface."
+      },
+      {
+        "speaker": "A",
+        "text": "That's a claim about the artist, though, not about the picture."
+      },
+      {
+        "speaker": "B",
+        "text": "Is it? Suppose a brilliant chess game turned out to be copied, move for move, from an older one. The moves wouldn't change, but we'd stop admiring it as original play."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair enough, that would change how I judge the player. But the ersatz canvas still gives the eye the same pleasure."
+      },
+      {
+        "speaker": "B",
+        "text": "Perhaps it does. So maybe we're both partly right."
+      },
+      {
+        "speaker": "A",
+        "text": "Then let me put it this way. [pause] The forgery loses value because of what we know about it, not because of anything we see."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0015",
+    "level": 6,
+    "seconds": 90,
+    "words": 232,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, engaging and slightly dry university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question and on 'The result?'; a short pause at each [pause]; contrastive stress on 'failure' and 'clue'; clear stress on 'The first' and 'The second'; slower and firmer after 'In other words'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a puzzle that lasted centuries: how do you time something that seems to arrive instantly? [pause] Many thinkers once assumed that light took no time to travel. One audacious early test placed two people with covered lanterns on distant hills. The first uncovered a lantern; the second answered the moment the flash appeared. The result? No delay that anyone could detect. Now, it would be easy to call that a failure. I'd call it a clue. It hinted that light, if it had a speed at all, was inordinately fast, far beyond human reflexes. [pause] So the real problem was one of scale. Over any distance on Earth, the travel time was simply too tiny to notice. The methods that eventually worked took two routes. The first went skyward. Astronomers noticed that the eclipses of one of Jupiter's moons came early when Earth was near Jupiter and late when it was far. The natural reading: light needed extra time to cross the extra distance. The second route stayed on the ground but made time visible. A beam passed through the gaps of a spinning toothed wheel to a distant mirror and back. Spin the wheel fast enough, and the returning light meets a tooth instead of a gap. [pause] In other words, every successful method did one of two things: it stretched the distance, or it sliced time into pieces fine enough to measure."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0016",
+    "level": 6,
+    "seconds": 30,
+    "words": 83,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, curious and even-handed university-lecture tone, moderate pace (about 150 words per minute). Natural rise on the opening question; a short pause at each [pause]; a slightly cooler, more skeptical tone on 'Critics are less convinced'; slower and firmer on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "How many genuine relationships can one person sustain? [pause] One influential proposal ties the size of a primate's brain to the size of its typical social group, and extends that pattern to us. We may be gregarious creatures, the argument runs, but our minds can keep track of only so many people. Critics are less convinced. They point out that estimates drawn from the same data vary enormously. [pause] So for now, the limit is best seen as an intriguing hypothesis, not an established law."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0017",
+    "level": 6,
+    "seconds": 60,
+    "words": 154,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, calm, measured and gently provocative university-lecture tone, moderate pace (about 150 words per minute). Neutral, unemotional delivery of the two scenarios; a short pause at each [pause]; natural rise on 'So why should identical numbers produce opposite verdicts?'; a slight, thoughtful hesitation on 'I'm not so sure'; slower and firmer after 'Put differently'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Consider two puzzles that philosophers love to argue about. [pause] In the first, a runaway trolley is heading toward five workers. You can pull a lever and send it onto a side track, where it will hit one worker instead. Most people have few qualms about pulling the lever. In the second, the only way to stop the trolley is to push a stranger onto the track. Again, one person is harmed and five are spared. Yet most people refuse, and the refusal is swift and visceral. [pause] So why should identical numbers produce opposite verdicts? Some philosophers call the reaction a glitch, a gut feeling we ought to override. I'm not so sure. In the first case, the harm is a side effect of redirecting a threat; in the second, a person is used as a tool. [pause] Put differently, our judgments seem to track not just how much harm occurs, but how it comes about."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0018",
+    "level": 6,
+    "seconds": 90,
+    "words": 232,
+    "speakers": "A: male historian | B: female historian",
+    "voice": "Neutral US accent. A: male historian, about 50, confident and a little insistent at first, more reflective from 'Hmm. I'll grant that'. B: female historian, about 45, calm, precise and quietly persuasive, with a light touch on the spark-and-timber image. Both at a moderate conversational pace (about 150 words per minute); natural rise on A's two questions; a short pause at [pause]; B's last two sentences slower and firmer.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I keep coming back to the climate evidence. Pollen and lake sediments from around the eastern Mediterranean point to a long, severe drought just when the palace societies of the Late Bronze Age fell apart. Isn't that the simplest explanation?"
+      },
+      {
+        "speaker": "B",
+        "text": "It's certainly part of it. But these societies had come through dry spells before. What had changed, I think, is how dependent they'd become on one another. Bronze needs copper and tin, which rarely occur in the same place, so every palace relied on long, labyrinthine trade routes."
+      },
+      {
+        "speaker": "A",
+        "text": "So a failed harvest in one region could ripple outward?"
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. It could interrupt grain shipments, then metal shipments, then the craftsmen whose work depended on both. Each failure made the next one more likely."
+      },
+      {
+        "speaker": "A",
+        "text": "Hmm. I'll grant that drought alone has trouble explaining why so many centers fell within a few decades. Still, I'd resist calling it just one factor among many. Without the drought, would the chain have started at all?"
+      },
+      {
+        "speaker": "B",
+        "text": "Perhaps not. So let's say drought was the spark, and the network was the dry timber. It took a concatenation of strains, failed harvests, broken shipping, perhaps even earthquakes, to bring the whole system down."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair enough. And the irony is that the very connections that made these kingdoms rich also made their fall so precipitous."
+      },
+      {
+        "speaker": "B",
+        "text": "Right. [pause] In short, it wasn't one blow. It was a tightly linked system failing together."
+      }
+    ]
+  }
+]
