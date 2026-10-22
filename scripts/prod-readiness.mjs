@@ -1,6 +1,8 @@
 /**
  * Static production-readiness checks (no live secrets / DB required).
- * Fails CI if critical hardening artifacts are missing or answer keys leak into public bank.
+ * Fails CI if critical hardening artifacts are missing. Answer-key leaks into the
+ * browser are caught by `no-bank-in-client.test.ts` (import graph) and
+ * `check-client-chunks.mjs` (built chunks); there is no public bank file any more.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -23,23 +25,9 @@ mustExist("src/app/api/prep/amirant-course/grade/route.ts");
 // The browser no longer receives the bank: pages get their questions from the server.
 mustExist("src/lib/amirant-course/question-bank/for-client.server.ts");
 mustExist("src/lib/amirant-course/question-bank/no-bank-in-client.test.ts");
-mustExist("content/amirant-import/source/questions.public.json");
+mustExist("scripts/check-client-chunks.mjs");
 mustExist("supabase/migrations/20260817_cms_rls_app_metadata.sql");
 mustExist("supabase/migrations/20260817_restrict_course_chunks.sql");
-mustExist("scripts/generate-questions-public.mjs");
-
-const pkg = JSON.parse(read("package.json"));
-const ingest = pkg.scripts?.["ingest:amirant-full"] ?? "";
-if (!ingest.includes("generate:questions-public")) {
-  failures.push("package.json ingest:amirant-full must chain generate:questions-public");
-}
-
-const publicBank = read("content/amirant-import/source/questions.public.json");
-for (const leak of ["correctOptionId", "correct_option_id", '"explanation"']) {
-  if (publicBank.includes(leak)) {
-    failures.push(`questions.public.json must not contain ${leak}`);
-  }
-}
 
 const authBypass = read("src/lib/prep/auth-bypass.ts");
 if (!authBypass.includes("NODE_ENV") && !authBypass.includes("VERCEL_ENV")) {

@@ -14,7 +14,7 @@
  * worse than a general one, because it sends the learner to the wrong practice.
  *
  * Usage: node scripts/tag-question-subtopics.mjs [--dry-run]
- * Then:  npm run generate:questions-public
+ * Then:  npm run generate:course-manifest
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -127,7 +127,7 @@ function main() {
     return;
   }
   fs.writeFileSync(SRC, `${JSON.stringify(questions, null, 2)}\n`);
-  console.log("\nWrote questions.json. Run: npm run generate:questions-public");
+  console.log("\nWrote questions.json. Run: npm run generate:course-manifest");
 }
 
 main();

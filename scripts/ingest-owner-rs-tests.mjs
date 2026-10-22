@@ -26,7 +26,6 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import {
   LEVEL, OPTION_IDS, LETTER_REF,
   readOwnerIndex, readOwnerUnits, checkOwnerItem, resolvePrimaryMethod,
@@ -156,7 +155,6 @@ function main() {
   const kept = bank.filter((q) => !(q.tags ?? []).includes(TAG));
   fs.writeFileSync(BANK, `${JSON.stringify([...kept, ...items], null, 2)}\n`);
   console.log(`Merged into questions.json: ${bank.length} → ${kept.length + items.length} (${bank.length - kept.length} earlier owner items replaced).`);
-  execFileSync("node", [path.join(root, "scripts/generate-questions-public.mjs")], { stdio: "inherit" });
   console.log("Next: npm run qa:amirant-content && npm run generate:course-manifest");
 }
 

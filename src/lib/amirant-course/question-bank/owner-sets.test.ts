@@ -110,10 +110,4 @@ describe("the owner's private index stays on the server", () => {
   it("is absent from the public rows a page may serialise", () => {
     expect(AMIRANT_BANK_QUESTIONS_PUBLIC.flatMap((q) => (q.tags ?? []).filter(isOwnerIndexTag))).toEqual([]);
   });
-
-  it("is absent from the generated public file itself", () => {
-    const file = path.join(process.cwd(), "content/amirant-import/source/questions.public.json");
-    const rows = JSON.parse(fs.readFileSync(file, "utf8")) as { tags?: string[] }[];
-    expect(rows.flatMap((q) => (q.tags ?? []).filter(isOwnerIndexTag))).toEqual([]);
-  });
 });
