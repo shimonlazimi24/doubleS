@@ -1,0 +1,1139 @@
+[
+  {
+    "id": "writing-task-01",
+    "n": 1,
+    "prompt": "If you could spend one year living in another city, anywhere in the world, which city would you choose, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "לא ברור איזו עיר נבחרה, או שהסיבות מופיעות כרשימה של משפטים קצרים בלי הסבר. אין משפט סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "העיר הנבחרת ברורה ויש שתי סיבות, אבל הן רק נאמרות, בלי דוגמה מהחיים או פרט מוחשי. מילות הקישור בסיסיות וחוזרות על עצמן (Also, Second).",
+        "high": "העיר נבחרת כבר במשפט הראשון. יש שתי סיבות מפותחות, וכל אחת מהן נתמכת בדוגמה או בפרט מוחשי, למשל מצב אמיתי שבו הסיבה חשובה. יש מילות סדר (First, Second) ומשפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: התאמה בין הצירוף there is לבין שם עצם ברבים, צורות עבר שגויות (was go), סדר מילים עברי ומיליות חסרות. אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש כמה טעויות חוזרות: שני פעלים מודליים ברצף, בלבול בין התואר interested לתואר interesting ושימוש מיותר במילית the. אוצר המילים פשוט.",
+        "high": "כמעט אין טעויות. מבנה התנאי נכון ועקבי (If I could …, I would choose), המשפטים מגוונים, ואוצר המילים מדויק בתיאור העיר ובמה שהיא מציעה."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. בחירה (משפט פתיחה): שם העיר כבר במשפט הראשון, למשל If I could live in another city for a year, I would choose …2. סיבה ראשונה ודוגמה: מה העיר יכולה לתת שחסר כיום (שפה, עבודה, אקלים), עם מצב אמיתי מהחיים.3. סיבה שנייה ודוגמה: מה אפשר לעשות שם במשך שנה (תרבות, טבע, אנשים), עם פרט מוחשי.4. סיכום: משפט אחד שחוזר על הבחירה ועל שתי הסיבות במילים אחרות, למשל For both … and …, … would be my choice.",
+        "bodyEn": "4-part frame: 1. Choice: name the city in the first sentence (If I could live in another city for a year, I would choose …).2. Reason 1 + example: what the city offers that you lack now.3. Reason 2 + example: what you could do there in a year.4. Conclusion: repeat the choice and both reasons in new words."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "פתיחה של כ-20 מילים, סיבה ראשונה של כ-35 מילים, סיבה שנייה של כ-35 מילים וסיכום של כ-15 מילים. בסך הכול כ-105 מילים, בתוך הטווח של 90–120. כדאי לבחור שתי סיבות בלבד ולפתח אותן, במקום לכתוב משפט אחד על כל דבר טוב בעיר. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~20 + reason 1 ~35 + reason 2 ~35 + conclusion ~15 = about 105 words (range 90–120). Develop two reasons instead of listing many. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. התאמה אחרי המילה there: There are many museums, אבל There is a beach.2. זמן עבר ומשך זמן: I went (ולא I was go), I have lived here for two years (ולא since two years).3. מבנה התנאי: I would choose, I could see (ולא I will can).4. מיליות: a good city, ובלי המילית the בצירוף life in London.5. סדר המילים ואותיות גדולות: I have always wanted (ולא Always I wanted), ושמות של ערים תמיד באות גדולה.",
+        "bodyEn": "5-error check: Check: 1. there are + plural; 2. past and duration (I went, for two years); 3. the conditional (I would choose, never will can); 4. articles (a good city, life in London); 5. word order and capitals (I have always wanted, city names)."
+      }
+    ],
+    "usefulPhrases": [
+      "If I could live anywhere for a year, I would choose …",
+      "The main reason is that …",
+      "I have always wanted to …",
+      "For example, when I …",
+      "Living there would give me the chance to …",
+      "Another reason is that …",
+      "… is full of …",
+      "I could spend my weekends …",
+      "… is lively too, but …",
+      "For both … and …, … would be my choice."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 114,
+        "essay": "If I could live in another city for a year, I would choose New York. First, living there would be the best way to improve my spoken English. At work I read English daily but rarely speak it, so I often freeze when someone asks me a question. In a bustling city full of people from all over the world, I would have to talk to strangers constantly. Second, New York offers endless cultural opportunities. I love theater, and in one year I could see dozens of shows and visit a new museum every weekend. Tel Aviv is lively too, but not on this scale. For these reasons, New York would be my choice.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. הבחירה ברורה כבר במשפט הראשון, במבנה תנאי נכון: המשפט If I could live in another city for a year, I would choose New York עונה ישירות על השאלה.2. שתי הסיבות מסומנות (First, Second) ומפותחות. הסיבה הראשונה נתמכת בדוגמה אישית מוחשית: הצירוף I often freeze when someone asks me a question מסביר למה דרוש תרגול בדיבור.3. השפה עשירה ומגוונת: מבנה התנאי נשמר לאורך כל התשובה (I would have to, I could see), יש השוואה קצרה (Tel Aviv is lively too, but not on this scale), והמילה bustling (הומה, שוקק חיים) משתלבת באופן טבעי בתיאור העיר.שני שיפורים קטנים:1. בצירוף I would have to talk to strangers constantly לא כתוב באיזו שפה ידברו, ולכן הקשר לסיבה הראשונה נשאר מרומז. עדיף הנוסח I would have to speak English with strangers constantly, שמחבר את המשפט ישירות לשיפור האנגלית.2. השם New York מופיע שלוש פעמים. עדיף הנוסח Second, the city offers endless cultural opportunities. הכלל: כדי לגוון את השפה, כדאי להחליף שם שחוזר על עצמו בצירוף כמו the city.טיפ – שיטת תבנית 4 חלקים: החלק הרביעי, הסיכום, יכול לחזור בקצרה על שתי הסיבות ולא רק על הבחירה. המשפט For these reasons, New York would be my choice יכול להפוך למשפט For both the language and the culture, New York would be my choice. גם אחרי השינויים האלה התשובה תכלול 119 מילים, בתוך הטווח.",
+        "analysisEn": "Why it is high: a clear choice in a correct conditional (If I could live in another city for a year, I would choose New York), two reasons, the first with a vivid example (I often freeze when someone asks me a question), and a short comparison (Tel Aviv is lively too, but not on this scale). The word bustling adds range.Refinements:1. I would have to talk to strangers constantly → I would have to speak English with strangers constantly (link the example to the reason).2. Second, New York offers → Second, the city offers (do not repeat the name three times).Method tip – 4-part frame: let the conclusion repeat both reasons: For both the language and the culture, New York would be my choice (119 words in total)."
+      },
+      {
+        "level": "mid",
+        "statedWords": 102,
+        "essay": "I would choose to live in London for one year. The first reason is my English. I want to improve my English, and in London I will can speak English all the time. Also, my aunt and her family live there, so I will not be alone. Second, I am interesting in theater and music, and London has a lot of shows and concerts. There are also people from all the world, so I can make new friends. Of course, the life in London is expensive, but I think it is worth it. In conclusion, London is the best city for me.",
+        "analysisHe": "נקודות חוזק:1. המבנה ברור: יש בחירה בפתיחה, שתי סיבות מסומנות (The first reason is my English, Second) ומשפט סיכום (In conclusion, London is the best city for me).2. יש פרט אישי שתומך בבחירה: המשפט my aunt and her family live there, so I will not be alone משתמש במילת התוצאה so כדי להסביר את היתרון.3 התיקונים החשובים ביותר:1. הצירוף I will can speak – התיקון: I will be able to speak. הכלל: אין לשים שני פעלים מודליים ברצף (will ו-can). כדי לבטא יכולת בעתיד משתמשים בצירוף will be able to.2. הצירוף I am interesting in theater – התיקון: I am interested in theater. הכלל: התואר interested (מתעניין) מתאר את מה שהאדם מרגיש, והתואר interesting (מעניין) מתאר את הדבר עצמו. למשל, במשפט Theater is interesting התואר מתאר את התיאטרון, ובמשפט I am interested in theater הוא מתאר את האדם.3. הצירוף the life in London – התיקון: life in London. הכלל: כשמדברים על החיים באופן כללי, אין לשים את המילית the לפני המילה life, אף שבעברית אומרים החיים בה' הידיעה.משפט משודרג:המשפט There are also people from all the world, so I can make new friends יכול להפוך למשפט London is home to people from all over the world, so I could make friends from many different cultures. כך הרעיון מקבל פירוט, וגם הצירוף from all the world מתוקן לצירוף הנכון from all over the world.טיפ – שיטת תבנית 4 חלקים: הסיבה הראשונה (The first reason is my English) נאמרת, אבל אין דוגמה למצב שבו האנגלית חסרה. כדאי להוסיף לכל סיבה משפט אחד של הסבר או דוגמה, למשל מתי קשה לדבר אנגלית בעבודה או בלימודים.",
+        "analysisEn": "Strengths: a clear structure (The first reason is my English, Second, In conclusion) and a personal detail with a result (my aunt and her family live there, so I will not be alone).Top 3 fixes:1. I will can speak → I will be able to speak (never two modals together).2. I am interesting in theater → I am interested in theater (interested = how you feel; interesting = the thing).3. the life in London → life in London (no the before life in general).Upgrade: There are also people from all the world, so I can make new friends → London is home to people from all over the world, so I could make friends from many different cultures.Method tip – 4-part frame: support each reason with one sentence of explanation or example."
+      },
+      {
+        "level": "low",
+        "statedWords": 70,
+        "essay": "I would choose Barcelona. Always I wanted to live near the sea. In the past I was go to Barcelona with my family and it was amazing. There is many beautiful places, and the food is very good. Also the weather is more better than in Israel. I learn Spanish since two years, so I can speak with the people there. Barcelona is good city for young people like me.",
+        "analysisHe": "נקודות חוזק:1. הבחירה ברורה כבר במשפט הראשון: המשפט I would choose Barcelona עונה ישירות על השאלה, ובצורה הנכונה would choose.2. יש כמה סיבות ממשיות לבחירה: הים (to live near the sea), האוכל (the food is very good) והשפה (so I can speak with the people there).3 התיקונים החשובים ביותר:1. הצירוף There is many beautiful places – התיקון: There are many beautiful places. הכלל: כששם העצם שבא אחרי המילה there הוא ברבים (places), הפועל הוא are. הפועל is בא רק לפני שם עצם ביחיד.2. הצירוף I learn Spanish since two years – התיקון: I have been learning Spanish for two years. הכלל: פעולה שהתחילה בעבר ועדיין נמשכת נכתבת בזמן present perfect continuous (have been learning). לפני משך זמן באה המילה for, והמילה since באה רק לפני נקודת התחלה, למשל since 2024.3. הצירוף I was go – התיקון: I went. הכלל: בזמן past simple משתמשים בצורת העבר של הפועל (go → went), בלי הפועל was לפניה.משפט משודרג:המשפט Always I wanted to live near the sea יכול להפוך למשפט I have always dreamed of living near the sea, and in Barcelona I could swim every morning before work. כך הסיבה מקבלת פירוט מוחשי, וגם סדר המילים תקין: המילה always באה אחרי פועל העזר have ולפני הפועל העיקרי dreamed.טיפ – שיטת תקציב מילים: בתשובה יש 70 מילים בלבד, והמינימום הוא 90. יש בה סיבות רבות, אבל כל סיבה מקבלת משפט קצר אחד בלבד. עדיף לבחור שתי סיבות (למשל הים והשפה) ולתת לכל אחת כ-35 מילים של הסבר ודוגמה, ולסיים במשפט סיכום שחוזר על הבחירה.",
+        "analysisEn": "Strengths: a clear choice in the first sentence (I would choose Barcelona) and several real reasons: the sea, the food and the language (so I can speak with the people there).Top 3 fixes:1. There is many beautiful places → There are many beautiful places (are before a plural noun).2. I learn Spanish since two years → I have been learning Spanish for two years (present perfect continuous; for + a period of time).3. I was go → I went (past simple, with no was).Upgrade: Always I wanted to live near the sea → I have always dreamed of living near the sea, and in Barcelona I could swim every morning before work.Method tip – Word budget: 70 words is under the 90-word minimum. Choose two reasons and give each about 35 words of explanation and example."
+      }
+    ],
+    "words": [
+      {
+        "word": "bustling",
+        "pronunciation": "BUSS-ling",
+        "meaningHe": "הומה, שוקק חיים (מלא אנשים ותנועה)"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-02",
+    "n": 2,
+    "prompt": "If you could learn to play any musical instrument, which one would you choose, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "לא ברור איזה כלי נבחר, או שכל סיבה נאמרת במשפט קצר אחד בלי הסבר. אין פתיחה שעונה על השאלה, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "הכלי הנבחר ברור ויש שתי סיבות, אבל הן כלליות (למשל, הצליל יפה והנגינה מרגיעה) ואינן נתמכות במצב מוחשי. מילות הקישור בסיסיות (Also, In conclusion).",
+        "high": "הכלי נבחר כבר במשפט הראשון. יש שתי סיבות מוחשיות, למשל מצב מהחיים שבו המוזיקה עוזרת ומה אפשר יהיה לעשות עם הכלי. מילות הקישור פשוטות ומדויקות (First, Second, so, Instead of), ויש משפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: חסרה המילה to אחרי הפועל want, חסרה הסיומת ‎-s‎ בגוף שלישי, יש בלבול בין הפועל learn לפועל teach, ויש צירופים שתורגמו מעברית (make a party). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש כמה טעויות בתבניות קבועות: הצירוף enjoy to, מילת היחס on אחרי הפועל play, הפועל will אחרי המילה If והמילית a לפני תנועה. אוצר המילים פשוט וחוזר על עצמו (good, calm).",
+        "high": "כמעט אין טעויות. מבנה התנאי נכון ועקבי (I would choose, would let me), יש מבנים מגוונים (Being able to, Instead of), ואוצר המילים מדויק בתיאור צליל ורגש."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. בחירה (משפט פתיחה): שם הכלי כבר במשפט הראשון, למשל If I could learn to play any instrument, I would choose …2. סיבה ראשונה ודוגמה: מה מושך בכלי הזה (הצליל, סגנון מוזיקה, זיכרון), עם מצב מוחשי מהחיים.3. סיבה שנייה ודוגמה: מה אפשר יהיה לעשות עם הכלי (לנגן עם אחרים, להירגע, לנגן למשפחה).4. סיכום: משפט אחד שחוזר על הבחירה. אפשר להוסיף בו השוואה קצרה לכלי אחר, למשל … is easier to carry, but … is my choice.",
+        "bodyEn": "4-part frame: 1. Choice: name the instrument in the first sentence.2. Reason 1 + example: what attracts you to it (the sound, a style, a memory).3. Reason 2 + example: what you could do with it.4. Conclusion: repeat the choice; a short comparison with another instrument can help."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "פתיחה של כ-15–20 מילים, סיבה ראשונה של כ-35–40 מילים, סיבה שנייה של כ-35–40 מילים וסיכום של כ-15 מילים. בסך הכול כ-105–115 מילים, בתוך הטווח של 90–120. אם הסיכום כולל השוואה לכלי אחר, כדאי לשמור עליו קצר, משפט אחד בלבד. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~15–20 + reason 1 ~35–40 + reason 2 ~35–40 + conclusion ~15 = about 105–115 words (range 90–120). Keep any comparison to one sentence. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. הפועל play בלי מילת יחס: play the piano, play guitar (ולא play on the piano).2. הפועל שבא אחרי פועל אחר: want to learn, enjoy listening.3. משפטי תנאי: If I learned …, I could … (ולא If I will).4. מיליות: an instrument, a guitar.5. בחירת הפועל הנכון: teach me (ולא learn me), have a party (ולא make a party).",
+        "bodyEn": "5-error check: Check: 1. play the piano (no on); 2. verb patterns (want to learn, enjoy listening); 3. conditionals (If I learned …, I could …); 4. articles (an instrument); 5. the right verb (teach me, have a party)."
+      }
+    ],
+    "usefulPhrases": [
+      "If I could learn any instrument, I would choose …",
+      "I have always loved the sound of …",
+      "Whenever I feel …, I listen to …",
+      "It would help me relax after …",
+      "Being able to play … would …",
+      "Another reason is that …",
+      "It would let me join …",
+      "Instead of …, I would …",
+      "… is easier to learn, but …",
+      "That is why … is the instrument for me."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 114,
+        "essay": "If I could learn to play any instrument, I would choose the cello. First, its deep, warm sound has always moved me. Whenever I feel stressed before an exam, I listen to cello music, and I soon feel calmer. Being able to create that soothing sound myself would be a wonderful way to relax after a long day. Second, the cello is often played with other musicians, so learning it would let me join a small group or an orchestra. Instead of practicing alone in my room, I would make music with people who share my interest. The guitar is easier to carry, of course, but for these reasons, the cello is my choice.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. הבחירה ברורה כבר במשפט הראשון, במבנה תנאי נכון: המשפט If I could learn to play any instrument, I would choose the cello עונה ישירות על השאלה.2. כל סיבה מפותחת בפרטים מוחשיים. הסיבה הראשונה נתמכת במצב אמיתי מהחיים (Whenever I feel stressed before an exam, I listen to cello music), והשנייה מסבירה תוצאה בעזרת המילה so (so learning it would let me join a small group or an orchestra).3. המשפטים מגוונים ומורכבים: פתיחה בצורת ‎-ing‎ (Being able to create that soothing sound myself), הצירוף Instead of practicing alone והשוואה לכלי אחר (The guitar is easier to carry, of course, but). המילה soothing (מרגיע, מרכך) משתלבת באופן טבעי בתיאור הצליל.שני שיפורים קטנים:1. משפט משודרג: הצירוף a wonderful way to relax כללי מעט. עדיף הצירוף the perfect way to unwind (להירגע ולשחרר מתח), שמעשיר את אוצר המילים בלי להאריך את המשפט.2. הצירוף join a small group or an orchestra כללי. עדיף הצירוף המדויק join a community orchestra (תזמורת קהילתית), שגם קצר יותר.טיפ – שיטת תקציב מילים: הסיבה הראשונה כוללת כ-45 מילים והשנייה כ-39 מילים, ולכן החלוקה מאוזנת. כשאחת הסיבות מתארכת מדי, כדאי לקצר אותה ולא את הסיכום, כי בלי משפט סיכום התשובה נראית לא גמורה.",
+        "analysisEn": "Why it is high: a clear choice in a correct conditional (I would choose the cello), two reasons with concrete details (Whenever I feel stressed before an exam, I listen to cello music), and varied structures (Being able to create that soothing sound myself, Instead of practicing alone, The guitar is easier to carry, of course, but). The word soothing adds range.Refinements:1. Upgrade: a wonderful way to relax → the perfect way to unwind (richer wording).2. join a small group or an orchestra → join a community orchestra (more precise, and shorter).Method tip – Word budget: your reasons take about 45 and 39 words, a good balance. If one reason grows too long, shorten it, not the conclusion."
+      },
+      {
+        "level": "mid",
+        "statedWords": 103,
+        "essay": "I would choose the piano. I always wanted to play on the piano, and I think it is a instrument that everyone loves. I enjoy to listen to piano music, and it makes me calm. Also, my grandmother had a piano in her house, and she played for us on holidays, so it is a good memory for me. If I will learn the piano, I can play songs for my family. The piano is not easy, but I am ready to practice every day. In conclusion, I would choose the piano because I love the sound and it is good for relaxing.",
+        "analysisHe": "נקודות חוזק:1. התשובה עונה ישירות על השאלה כבר במשפט הראשון (I would choose the piano), והסיכום חוזר על הבחירה ועל הסיבה המרכזית: המשפט In conclusion, I would choose the piano because I love the sound.2. יש התייחסות לקושי ומענה עליו: המשפט The piano is not easy, but I am ready to practice every day מראה חשיבה מאוזנת.3 התיקונים החשובים ביותר:1. הצירוף If I will learn the piano, I can play – התיקון: If I learned the piano, I could play. הכלל: אחרי המילה If לא בא הפועל will. במצב דמיוני, כמו בשאלה הזאת, משתמשים בצורת עבר אחרי המילה If ובמילה could או would בחלק השני של המשפט.2. הצירוף I enjoy to listen – התיקון: I enjoy listening. הכלל: אחרי הפועל enjoy בא פועל עם הסיומת ‎-ing‎, ולא עם המילה to.3. הצירוף to play on the piano – התיקון: to play the piano. הכלל: בעברית מנגנים על כלי, אבל באנגלית הצירוף הוא play the piano או play the violin, בלי מילת היחס on.משפט משודרג:המשפט my grandmother had a piano in her house, and she played for us on holidays, so it is a good memory for me יכול להפוך למשפט my grandmother used to play for us on holidays, and learning the piano would keep that warm memory alive. כך הסיבה מקבלת משמעות רגשית ברורה, והצירוף used to מתאר נכון הרגל שהיה בעבר.טיפ – שיטת בדיקת 5 הטעויות: כל ארבע הטעויות בתשובה נמצאות בצירופים קצרים: הצירוף enjoy to listen, הצירוף play on the piano, הצירוף If I will והצירוף a instrument (התיקון: an instrument, כי המילה instrument מתחילה בצליל של תנועה). בדיקה של שתי דקות בסוף, משפט אחרי משפט, תופסת טעויות כאלה.",
+        "analysisEn": "Strengths: a direct answer, repeated in the conclusion (In conclusion, I would choose the piano because I love the sound) and a difficulty with a reply (The piano is not easy, but I am ready to practice every day).Top 3 fixes:1. If I will learn the piano, I can play → If I learned the piano, I could play (no will after if; past + could for an imagined situation).2. I enjoy to listen → I enjoy listening (enjoy + -ing).3. to play on the piano → to play the piano (no on).Upgrade: my grandmother had a piano in her house, and she played for us on holidays → my grandmother used to play for us on holidays, and learning the piano would keep that warm memory alive.Method tip – 5-error check: all four errors are in short word pairs (enjoy to listen, play on, If I will, a instrument → an instrument); a two-minute final check catches them."
+      },
+      {
+        "level": "low",
+        "statedWords": 66,
+        "essay": "I want learn guitar. My uncle play guitar very good, and he can learn me. Guitar is small, so I can take it to everywhere. When we make a party, I can play for my friends, they can sing with me. Also the guitar is more cheap than piano, so my parents can buy it for me. I think guitar is the best instrument for me.",
+        "analysisHe": "נקודות חוזק:1. יש סיבה מעשית שמחוברת לתוצאה: הצירוף so my parents can buy it for me מסביר למה המחיר של הכלי חשוב.2. יש תמונה מוחשית של השימוש בכלי: הצירוף I can play for my friends מראה מה אפשר יהיה לעשות עם הגיטרה.3 התיקונים החשובים ביותר:1. הצירוף he can learn me – התיקון: he can teach me. הכלל: בעברית ללמוד וללמד באים מאותו שורש, אבל באנגלית אלה שני פעלים שונים. הפועל learn פירושו ללמוד, והפועל teach פירושו ללמד מישהו אחר.2. הצירוף My uncle play guitar very good – התיקון: My uncle plays guitar very well. הכלל: בזמן present simple מוסיפים את הסיומת ‎-s‎ לפועל בגוף שלישי יחיד (he plays). כדי לתאר איך עושים פעולה משתמשים בתואר הפועל well, ולא בתואר good.3. הצירוף When we make a party – התיקון: When we have a party. הכלל: הצירופים הנכונים הם have a party או throw a party. הצירוף make a party הוא תרגום מילולי מעברית.משפט משודרג:המשפט Guitar is small, so I can take it to everywhere יכול להפוך למשפט A guitar is light and small, so I could take it on trips and play it around a campfire with my friends. כך הסיבה מקבלת דוגמה מוחשית. בנוסף, לפני המילה guitar נוספה המילית A, והצירוף השגוי to everywhere הוחלף בצירוף on trips.טיפ – שיטת תבנית 4 חלקים: התשובה נפתחת במשפט I want learn guitar, שאינו עונה במבנה של בחירה, ואף אחת מהסיבות אינה מפותחת. כדאי לפתוח במשפט If I could learn any instrument, I would choose the guitar, לפתח שתי סיבות בלבד (הדוד שמלמד, והנגינה עם חברים) ולשמור על משפט הסיכום. כך התשובה תגיע גם ל-90 מילים לפחות (כרגע יש בה 66 מילים בלבד).",
+        "analysisEn": "Strengths: a practical reason with a result (so my parents can buy it for me) and a concrete picture of using the instrument (I can play for my friends).Top 3 fixes:1. he can learn me → he can teach me (learn = get knowledge; teach = give it).2. My uncle play guitar very good → My uncle plays guitar very well (-s after he/she/it; well describes a verb).3. When we make a party → When we have a party (have or throw a party).Upgrade: Guitar is small, so I can take it to everywhere → A guitar is light and small, so I could take it on trips and play it around a campfire with my friends.Method tip – 4-part frame: open with If I could learn any instrument, I would choose the guitar, develop just two reasons and keep your closing line; this will also take you past 90 words (now 66)."
+      }
+    ],
+    "words": [
+      {
+        "word": "soothing",
+        "pronunciation": "SOO-thing (th as in this)",
+        "meaningHe": "מרגיע, מרכך (גורם לתחושת רוגע)"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-03",
+    "n": 3,
+    "prompt": "Do you prefer to study in the morning or late at night? Explain your choice.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "לא ברור איזה זמן נבחר, או שההשוואה היא משפט אחד בלי הסבר. אין משפט סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "הבחירה ברורה ויש שתי סיבות, אבל לפחות אחת מהן היא טענה בלי הסבר או דוגמה, וההשוואה לזמן השני שטחית. מילות הקישור בסיסיות (Also, In conclusion).",
+        "high": "הבחירה מוצגת במשפט הראשון. יש שתי סיבות מפותחות, והתשובה משווה בבירור בין הבוקר ללילה. המילים because, so ו-also מקשרות בין סיבה לתוצאה, ויש דוגמה אישית ומשפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: הפועל am לפני פועל אחר, המילה to אחרי המילה can't, מילות יחס שגויות בביטויי זמן (in the night) וחוסר התאמה בין הנושא לפועל. אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש כמה טעויות: שלילה כפולה (nobody don't), תרגום מילולי מעברית (I am more concentrated), מילת יחס שגויה לפני שעה ושימוש מיותר במילית the. אוצר המילים פשוט.",
+        "high": "כמעט אין טעויות. ביטויי הזמן מדויקים (at seven o'clock, past midnight), יש מבנים מגוונים, כמו דרגה עליונה (clearest) והשוואה (is worth two hours at night), ואוצר המילים מדויק בתיאור עייפות וריכוז."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. בחירה (משפט פתיחה): הזמן המועדף כבר במשפט הראשון, למשל I definitely prefer to study in the morning.2. סיבה ראשונה ודוגמה: למה הזמן הזה עובד (ריכוז, אנרגיה, זיכרון), עם מצב אמיתי מהחיים.3. סיבה שנייה והשוואה: מה קורה בזמן השני, למשל רעש, עייפות או עבודה, עם המילים because, so ו-also.4. סיכום: משפט אחד שחוזר על הבחירה, למשל For these reasons, I always study …",
+        "bodyEn": "4-part frame: 1. Choice: state your preferred time first.2. Reason 1 + example: why that time works for you.3. Reason 2 + comparison: what goes wrong at the other time (use because, so, also).4. Conclusion: repeat the choice in new words."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "פתיחה של כ-10–15 מילים (בשאלת השוואה הפתיחה יכולה להיות קצרה), סיבה ראשונה של כ-35–40 מילים, סיבה שנייה והשוואה של כ-40 מילים וסיכום של כ-15 מילים. בסך הכול כ-105 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~10–15 + reason 1 ~35–40 + reason 2 and comparison ~40 + conclusion ~15 = about 105 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. מילות יחס בביטויי זמן: at night, in the morning, at two o'clock.2. צורת הפועל: prefer to study, can't focus, I wake up (בלי am).3. התאמה בין הנושא לפועל: my roommates make, nobody calls.4. שלילה אחת בלבד: nobody calls me (ולא nobody don't call me).5. דרגות השוואה: easier (ולא more easy), most of my friends (בלי the).",
+        "bodyEn": "5-error check: Check: 1. time prepositions (at night, at two o'clock); 2. verb patterns (prefer to study, can't focus, I wake up); 3. agreement (my roommates make); 4. one negative only (nobody calls me); 5. comparatives (easier, most of my friends)."
+      }
+    ],
+    "usefulPhrases": [
+      "I definitely prefer to study in the … because …",
+      "My mind is clearest when …",
+      "When I study …, I can …",
+      "One hour in the … is worth two hours …",
+      "This is because …",
+      "…, so I can focus without interruptions.",
+      "Studying late at night also …",
+      "By contrast, …",
+      "I find it much easier to … when …",
+      "For these reasons, I always study …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 116,
+        "essay": "I definitely prefer to study in the morning. First, my mind is clearest after a good night's sleep. When I review my notes at seven o'clock with a cup of coffee, I remember new material quickly, so one hour in the morning is worth two hours at night. Second, mornings are quiet in my apartment because my roommates are still asleep and nobody is sending messages yet, so I can focus without interruptions. Studying late at night also ruins my sleep. During my first year, I often stayed up past midnight, and the next day I felt groggy and made careless mistakes in class. For these reasons, I plan my study time for the early hours.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה ברורה כבר במשפט הראשון, והמילה definitely מחזקת אותה: המשפט I definitely prefer to study in the morning עונה ישירות על השאלה.2. שתי הסיבות מפותחות ומקושרות היטב במילים because ו-so. הסיבה הראשונה מסתיימת בתוצאה מוחשית (so one hour in the morning is worth two hours at night), והשנייה מסבירה למה הבוקר שקט (because my roommates are still asleep).3. יש השוואה לאפשרות השנייה, עם דוגמה אישית בזמן עבר: המשפט Studying late at night also ruins my sleep ואחריו הצירוף I often stayed up past midnight, and the next day I felt groggy. המילה groggy (מטושטש ומנומנם) משתלבת באופן טבעי ומעשירה את השפה.שני שיפורים קטנים:1. המשפט Studying late at night also ruins my sleep עובר לצד השני של ההשוואה בלי לסמן זאת. עדיף הנוסח Studying late at night, by contrast, ruins my sleep. הכלל: כשעוברים מאפשרות אחת לאפשרות השנייה, כדאי לסמן את המעבר במילת ניגוד כמו by contrast או on the other hand.2. משפט משודרג: הצירוף I plan my study time for the early hours כללי מעט. עדיף הצירוף I always schedule my hardest subjects for the early hours, שמדויק יותר ומחבר את הסיכום לסיבה הראשונה.טיפ – שיטת בדיקת 5 הטעויות: בתשובה על זמני לימוד יש ביטויי זמן רבים, ובהם קל לטעות במילת היחס. כאן כל ביטויי הזמן נכונים (at seven o'clock, in the morning, at night, past midnight). כדאי לבדוק כל ביטוי זמן בסוף הכתיבה.",
+        "analysisEn": "Why it is high: a clear position in the first sentence (I definitely prefer to study in the morning), two reasons linked with because and so (so one hour in the morning is worth two hours at night), and a comparison with a past example (I often stayed up past midnight, and the next day I felt groggy). The word groggy adds range.Refinements:1. Studying late at night also ruins my sleep → Studying late at night, by contrast, ruins my sleep (mark the switch to the other option).2. Upgrade: I plan my study time for the early hours → I always schedule my hardest subjects for the early hours.Method tip – 5-error check: check every time phrase (at seven o'clock, in the morning, at night, past midnight); prepositions of time are easy to get wrong."
+      },
+      {
+        "level": "mid",
+        "statedWords": 97,
+        "essay": "I prefer to study late at night. In the morning I work in a cafe, so I don't have time to study. At night my house is quiet and nobody don't call me, so I am more concentrated. Also, I am a night person. I usually go to sleep in two o'clock, and my brain works better in the evening. The most of my friends study in the morning, but in the morning I am tired and I can't think clearly. In conclusion, I prefer to study at night because it is quiet and I can concentrate.",
+        "analysisHe": "נקודות חוזק:1. יש סיבה מעשית וברורה נגד הבוקר: המשפט In the morning I work in a cafe, so I don't have time to study משתמש במילת התוצאה so כדי לקשר בין סיבה לתוצאה.2. העמדה עקבית מההתחלה ועד הסוף: התשובה נפתחת בבחירה בלילה, והסיכום חוזר עליה עם נימוק (because it is quiet and I can concentrate).3 התיקונים החשובים ביותר:1. הצירוף nobody don't call me – התיקון: nobody calls me. הכלל: באנגלית יש רק מילת שלילה אחת בכל משפט. המילה nobody כבר שלילית, ולכן אין להוסיף את המילה don't. הפועל שבא אחרי המילה nobody הוא בגוף שלישי יחיד (calls).2. הצירוף I am more concentrated – התיקון: I can concentrate better. הכלל: התואר concentrated אינו מתאר מצב של אדם. הוא מתאר חומר מרוכז (concentrated juice) או מאמץ מרוכז (a concentrated effort). כדי לתאר ריכוז של אדם משתמשים בפועל concentrate או בתואר focused.3. הצירוף The most of my friends – התיקון: Most of my friends. הכלל: כשהכוונה לרוב, כותבים את הצירוף most of בלי המילית the. הצירוף the most משמש לדרגה העליונה, למשל the most important.משפט משודרג:המשפט I usually go to sleep in two o'clock, and my brain works better in the evening יכול להפוך למשפט I rarely fall asleep before two in the morning, and my brain is at its sharpest late at night. כך הסיבה מקבלת תיאור מדויק, וגם מילת היחס השגויה in לפני השעה נעלמת. לפני שעה כותבים את מילת היחס at, למשל at two o'clock.טיפ – שיטת תבנית 4 חלקים: הסיבה השנייה (Also, I am a night person) נאמרת כטענה, וההסבר שאחריה קצר מאוד. כדאי להוסיף לה דוגמה אמיתית, למשל מבחן שההכנה אליו נעשתה בלילה והציון בו היה טוב, כדי שהסיבה תהיה מפותחת כמו הראשונה.",
+        "analysisEn": "Strengths: a clear practical reason with a result (In the morning I work in a cafe, so I don't have time to study) and a consistent position, repeated with a reason in the conclusion (because it is quiet and I can concentrate).Top 3 fixes:1. nobody don't call me → nobody calls me (one negative only; nobody + -s).2. I am more concentrated → I can concentrate better (concentrated describes juice or an effort, not a person).3. The most of my friends → Most of my friends (no the before most of).Upgrade: I usually go to sleep in two o'clock, and my brain works better in the evening → I rarely fall asleep before two in the morning, and my brain is at its sharpest late at night.Method tip – 4-part frame: support the second reason (I am a night person) with a real example, such as a test you prepared for at night and did well on."
+      },
+      {
+        "level": "low",
+        "statedWords": 64,
+        "essay": "I prefer study in the morning. I am wake up at six o'clock, and I drink coffee. In the morning my head is fresh, so the morning is more easy for me. In the night I am very tired and I can't to focus. Also my roommates makes noise in the night, they watch TV and talk. So for me the morning is better.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה ועקבית: התשובה נפתחת בבחירה בבוקר ומסתיימת במשפט So for me the morning is better.2. יש סיבה מוחשית נגד הלילה: הצירוף they watch TV and talk מראה בדיוק מה מפריע ללמוד בלילה.3 התיקונים החשובים ביותר:1. הצירוף I am wake up – התיקון: I wake up. הכלל: בזמן present simple אין לשים את הפועל am לפני פועל אחר. הצורה הנכונה היא I wake up, בדיוק כמו הצירוף I drink.2. הצירוף I can't to focus – התיקון: I can't focus. הכלל: אחרי פועל מודלי (can, can't, must, should) בא הפועל בצורת הבסיס, בלי המילה to.3. הצירוף In the night – התיקון: At night. הכלל: הצירוף הנכון הוא at night, עם מילת היחס at ובלי המילית the. לעומת זאת, הצירופים in the morning ו-in the evening באים עם מילת היחס in.משפט משודרג:המשפט In the morning my head is fresh, so the morning is more easy for me יכול להפוך למשפט My mind is fresh in the morning, so even difficult material seems much easier to understand. כך הסיבה מקבלת הסבר. בנוסף, הצירוף השגוי more easy הוחלף בצורה easier, והמילה head (העתקה מהביטוי העברי הראש רענן) הוחלפה במילה mind.טיפ – שיטת תקציב מילים: בתשובה יש 64 מילים בלבד, והמינימום הוא 90. כל צד בהשוואה מקבל כאן משפט אחד או שניים. כדאי לתכנן כ-35 מילים לסיבה הראשונה (מה קורה בבוקר ולמה זה עוזר), כ-35 מילים לסיבה השנייה (מה מפריע בלילה) וכ-15 מילים לסיכום.",
+        "analysisEn": "Strengths: a clear, consistent position (So for me the morning is better) and a concrete problem with studying at night (they watch TV and talk).Top 3 fixes:1. I am wake up → I wake up (no am before another verb in the present simple).2. I can't to focus → I can't focus (can/can't + base verb, no to).3. In the night → At night (but in the morning, in the evening).Upgrade: In the morning my head is fresh, so the morning is more easy for me → My mind is fresh in the morning, so even difficult material seems much easier to understand.Method tip – Word budget: 64 words is under the 90-word minimum. Plan about 35 words for each reason and 15 for the conclusion."
+      }
+    ],
+    "words": [
+      {
+        "word": "groggy",
+        "pronunciation": "GROG-ee",
+        "meaningHe": "מטושטש ומנומנם (בעיקר אחרי שינה לא מספקת)"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-04",
+    "n": 4,
+    "prompt": "Some people like to read books on paper, while others prefer to read on a screen. Which do you prefer, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "לא ברור איזו אפשרות נבחרה, או שהצד השני לא מוזכר בכלל. כל סיבה נאמרת במשפט קצר אחד בלי הסבר, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "ההעדפה ברורה, יש שתי סיבות והצד השני מוזכר, אבל ההשוואה אינה מפותחת: הטענה הנגדית מקבלת מענה בלי נימוק. מילות הניגוד מעטות או שגויות (Despite I like).",
+        "high": "ההעדפה ושני הצדדים מוצגים כבר בפתיחה. כל סיבה משווה בין נייר למסך, הניגוד מסומן לאורך כל התשובה (While, however, Still), ויש הסתייגות קצרה עם מענה ומשפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: צירופים קבועים שגויים (In the other hand), שלילה עם is not לפני פועל, חוסר התאמה בין הנושא לפועל (the phone have) ומילות יחס שגויות (in paper, in the beach). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש כמה טעויות: המילה Despite לפני משפט שלם, משפט בלי נושא, צורת רבים לשם עצם שאינו נספר (informations) ומילת יחס שגויה (in my phone). אוצר המילים פשוט.",
+        "high": "כמעט אין טעויות. מילות הניגוד וההסתייגות מגוונות ומדויקות (While, however, Admittedly, Still), יש משפטים מורכבים (I often find myself checking messages instead of following the story) ואוצר מילים עשיר (distractions, notifications)."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. העדפה (משפט פתיחה): שני הצדדים והבחירה במשפט אחד, למשל While many people read on screens, I prefer books on paper.2. סיבה ראשונה והשוואה: מה קורה בקריאה מהמסך לעומת קריאה מהדף, עם המילה however או whereas.3. סיבה שנייה ודוגמה: מצב מוחשי מהחיים, למשל קריאה אחרי יום ארוך מול מחשב.4. הסתייגות קצרה וסיכום: יתרון אחד של הצד השני (Admittedly, …), ואחריו חזרה על הבחירה (Still, …).",
+        "bodyEn": "4-part frame: 1. Preference: both sides and your choice in one sentence (While many people read on screens, I prefer …).2. Reason 1 + comparison (however / whereas).3. Reason 2 + a concrete example.4. A short concession (Admittedly, …) and the conclusion (Still, …)."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "פתיחה של כ-15–20 מילים, סיבה ראשונה של כ-35 מילים, סיבה שנייה של כ-30 מילים, הסתייגות של כ-15 מילים וסיכום של כ-10 מילים. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. ההסתייגות היא משפט אחד בלבד, כדי שלא תגזול מילים מהסיבות. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~15–20 + reason 1 ~35 + reason 2 ~30 + concession ~15 + conclusion ~10 = about 110 words (range 90–120). Keep the concession to one sentence. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. מילות ניגוד: On the other hand (ולא In the other hand), Although I like … (ולא Despite I like …).2. מילות יחס: on paper, on a screen, on my phone, on the beach.3. נושא בכל משפט: it is more comfortable (ולא is more comfortable).4. שלילה והתאמה: does not need, my eyes hurt, the phone has.5. שמות עצם שאינם נספרים: information, advice (בלי הסיומת ‎-s‎).",
+        "bodyEn": "5-error check: Check: 1. contrast words (On the other hand, Although I like …); 2. prepositions (on paper, on a screen, on my phone); 3. a subject in every sentence (it is more comfortable); 4. negatives and agreement (does not need, the phone has); 5. uncountable nouns (information)."
+      }
+    ],
+    "usefulPhrases": [
+      "While many people …, I prefer …",
+      "The main reason is …",
+      "When I read on a screen, …",
+      "A printed book, however, …",
+      "…, whereas …",
+      "Another reason is that …",
+      "I often find myself … instead of …",
+      "On the other hand, …",
+      "Admittedly, …",
+      "Still, …",
+      "Nothing beats …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 114,
+        "essay": "While many of my friends read everything on their phones, I prefer books on paper. The main reason is concentration. When I read on a screen, notifications keep interrupting me, and I often find myself checking messages instead of following the story. A printed book, however, offers no distractions, so I can read for an hour without stopping. Another reason is that paper is easier on my eyes. After a full day in front of a computer at work, reading on a screen at night gives me headaches. Admittedly, e-readers are lighter, and carrying several heavy books on a trip can be cumbersome. Still, for everyday reading, nothing beats the feel of real pages.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. הפתיחה מציגה את שני הצדדים ואת הבחירה במשפט אחד: המשפט While many of my friends read everything on their phones, I prefer books on paper עונה ישירות על השאלה ומשתמש במילת הניגוד While.2. הניגוד נשמר לאורך כל התשובה. בסיבה הראשונה המסך מושווה לספר בעזרת המילה however (A printed book, however, offers no distractions), והסיבה השנייה נתמכת במצב מוחשי (After a full day in front of a computer at work).3. יש הסתייגות ומענה עליה: הצירוף Admittedly, e-readers are lighter ואחריו המשפט Still, for everyday reading, nothing beats the feel of real pages. המילה cumbersome (מסורבל, מגושם וקשה לסחיבה) משתלבת באופן טבעי ומעשירה את השפה.שני שיפורים קטנים:1. המשפט האחרון, Still, for everyday reading, nothing beats the feel of real pages, מוסיף רעיון חדש (תחושת הדפים) ואינו חוזר על שתי הסיבות. עדיף הנוסח Still, for focused, comfortable everyday reading, nothing beats a printed book, שמזכיר את הריכוז ואת הנוחות לעיניים באותו מספר מילים.2. משפט משודרג: הצירוף reading on a screen at night gives me headaches יכול להפוך לצירוף staring at a screen again at night gives me headaches. הפועל stare (לבהות) מדויק יותר, והמילה again מחברת את המשפט ליום העבודה מול המחשב.טיפ – שיטת תבנית 4 חלקים: בשאלת העדפה עם ניגוד, החלק הרביעי כולל הסתייגות קצרה ואחריה סיכום. כאן ההסתייגות היא משפט אחד של 15 מילים, וזה האורך הנכון: מספיק כדי להראות חשיבה מאוזנת, בלי לגזול מילים מהסיבות.",
+        "analysisEn": "Why it is high: an opening that sets both sides against each other (While many of my friends read everything on their phones, I prefer books on paper), a contrast tracked with however (A printed book, however, offers no distractions), and a concession with a reply (Admittedly, e-readers are lighter … Still, …). The word cumbersome adds range.Refinements:1. Still, for everyday reading, nothing beats the feel of real pages → Still, for focused, comfortable everyday reading, nothing beats a printed book (recall both reasons).2. Upgrade: reading on a screen at night gives me headaches → staring at a screen again at night gives me headaches.Method tip – 4-part frame: keep the concession to one short sentence (here 15 words) before the conclusion."
+      },
+      {
+        "level": "mid",
+        "statedWords": 103,
+        "essay": "I prefer to read on a screen. First, is more comfortable. I have a lot of books in my phone, so I can read everywhere, for example on the bus or in a waiting room. Second, on the internet I can find informations very fast, and I can change the size of the letters. Despite I like the smell of paper books, I don't buy them anymore because they are expensive and heavy. Some people say that screens are bad for the eyes, but I don't have a problem with this. In conclusion, I think reading on a screen is better for me.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה מההתחלה ועד הסוף: המשפט I prefer to read on a screen פותח את התשובה, ומשפט הסיכום In conclusion, I think reading on a screen is better for me חוזר עליו.2. יש התייחסות לצד השני, כנדרש ברמה הזאת: המשפט Some people say that screens are bad for the eyes מציג טענה נגדית.3 התיקונים החשובים ביותר:1. הצירוף Despite I like the smell of paper books – התיקון: Although I like the smell of paper books. הכלל: אחרי המילה Despite בא שם עצם או צורת ‎-ing‎ (Despite liking), ולא משפט שלם. לפני משפט שלם, עם נושא ופועל, כותבים את המילה Although.2. המשפט First, is more comfortable. – התיקון: First, it is more comfortable. הכלל: באנגלית כל משפט צריך נושא, גם כשבעברית אפשר לוותר עליו (יותר נוח). כאן הנושא הוא it.3. המילה informations – התיקון: information. הכלל: המילה information היא שם עצם שאי אפשר לספור, ולכן אין לה צורת רבים עם הסיומת ‎-s‎.משפט משודרג:המשפט I have a lot of books in my phone, so I can read everywhere יכול להפוך למשפט I keep dozens of books on my phone, so I can turn every bus ride or long wait into reading time. כך היתרון מקבל תמונה מוחשית, וגם מילת היחס תקינה: על טלפון או על מסך משתמשים במילת היחס on, ולא במילת היחס in.טיפ – שיטת תבנית 4 חלקים: ברמה הזאת התבנית כוללת גם הסתייגות ומענה עליה. התשובה מציגה טענה נגדית, אבל עונה עליה רק בצירוף but I don't have a problem with this, בלי נימוק. כדאי לנמק את המענה, למשל בנוסח but I use night mode and take short breaks, so my eyes stay comfortable.",
+        "analysisEn": "Strengths: a clear position, repeated in the conclusion (I think reading on a screen is better for me), and an opposing view (Some people say that screens are bad for the eyes).Top 3 fixes:1. Despite I like the smell of paper books → Although I like the smell of paper books (despite + noun or -ing; although + a clause).2. First, is more comfortable. → First, it is more comfortable. (every sentence needs a subject).3. informations → information (uncountable; no -s).Upgrade: I have a lot of books in my phone, so I can read everywhere → I keep dozens of books on my phone, so I can turn every bus ride or long wait into reading time.Method tip – 4-part frame: answer the opposing view with a reason, e.g. but I use night mode and take short breaks, so my eyes stay comfortable."
+      },
+      {
+        "level": "low",
+        "statedWords": 70,
+        "essay": "I prefer read in paper. When I read on the screen, my eyes is hurt and I am tired very fast. A paper book is not need battery, and I can read it in the beach. In the other hand, the phone have many books in one place. Last month I didn't finished a book on my phone, because I always check messages. So for me paper is the best.",
+        "analysisHe": "נקודות חוזק:1. יש דוגמה אישית שמסבירה את הבעיה במסך: הצירוף because I always check messages מראה למה קשה להתרכז בקריאה בטלפון.2. התשובה מתייחסת גם לצד השני ומציינת יתרון של הטלפון (many books in one place), כפי שנדרש בשאלה שמשווה בין שתי אפשרויות.3 התיקונים החשובים ביותר:1. הצירוף In the other hand – התיקון: On the other hand. הכלל: זה צירוף קבוע, והוא תמיד מתחיל במילת היחס On. בשאלה שמשווה בין שתי אפשרויות, זה אחד הצירופים החשובים ביותר.2. הצירוף A paper book is not need battery – התיקון: A paper book does not need a battery. הכלל: השלילה של פועל רגיל (need) נבנית עם הצירוף does not, ולא עם הצירוף is not. לפני שם עצם ביחיד שאפשר לספור צריך את המילית a.3. הצירוף my eyes is hurt – התיקון: my eyes hurt. הכלל: המילה hurt היא כאן פועל (כואבות), ולכן אין לשים לפניה את הפועל is. בנוסף, המילה eyes היא ברבים, ולכן גם הפועל is אינו מתאים לה.משפט משודרג:המשפט Last month I didn't finished a book on my phone, because I always check messages יכול להפוך למשפט Last month I could not finish a single book on my phone, because I kept stopping to check my messages. כך הדוגמה חיה יותר, וגם צורת הפועל תקינה: אחרי הצירופים did not או could not בא הפועל בצורת הבסיס (finish).טיפ – שיטת תבנית 4 חלקים: כדאי לפתוח במשפט שמציג את שני הצדדים ואת הבחירה, למשל המשפט While many people read on screens, I prefer paper books. אחר כך כדאי לפתח שתי סיבות (העיניים וההודעות בטלפון) ולסיים במשפט סיכום. כך התשובה תגיע גם ל-90 מילים לפחות (כרגע יש בה 70 מילים בלבד).",
+        "analysisEn": "Strengths: a personal reason for the problem with screens (because I always check messages) and an advantage of the other side (many books in one place).Top 3 fixes:1. In the other hand → On the other hand (a fixed phrase).2. A paper book is not need battery → A paper book does not need a battery (does not + verb; a before a singular noun).3. my eyes is hurt → my eyes hurt (hurt is the verb here; no is).Upgrade: Last month I didn't finished a book on my phone, because I always check messages → Last month I could not finish a single book on my phone, because I kept stopping to check my messages.Method tip – 4-part frame: open with both sides and your choice (While many people read on screens, I prefer paper books), develop two reasons and conclude; this will also take you past 90 words (now 70)."
+      }
+    ],
+    "words": [
+      {
+        "word": "cumbersome",
+        "pronunciation": "KUM-ber-sum",
+        "meaningHe": "מסורבל, מגושם (כבד וקשה לסחיבה או לשימוש)"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-05",
+    "n": 5,
+    "prompt": "Should high school students be allowed to use their phones during breaks? Explain your opinion.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "העמדה לא ברורה, או שיש רק סיבה אחת בלי הסבר. הטענה הנגדית (שהטלפון פוגע בשיחה בין התלמידים) מוזכרת בלי מענה, אין סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "העמדה ברורה ויש שתי סיבות וגם טענה נגדית, אבל הסיבות רק נאמרות, בלי דוגמה או תוצאה. המענה לטענה הנגדית קצר ואינו משכנע, למשל המשפט a break is only fifteen minutes.",
+        "high": "העמדה מופיעה כבר במשפט הראשון. יש שתי סיבות מפותחות, כל אחת עם תוצאה או דוגמה מחיי בית הספר. הטענה הנגדית מוצגת בהגינות (It is true that …) ומקבלת מענה מנומק (However, …), ובסוף יש משפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: חוסר התאמה בין הנושא לפועל (everybody have, the students is), פועל במקום שם תואר (feel relax), שלילה בלי הפועל do ותרגום מילולי מעברית (take them the phone). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש 3–5 טעויות אופייניות: צירופים מתורגמים מעברית (make a break, be in connection with, one with the other) ומילת יחס שגויה אחרי המילה addicted. המשפטים פשוטים, ואוצר המילים כללי, למשל המילה OK בסיכום.",
+        "high": "אין טעויות. המשפטים מורכבים ומגוונים: פסוקית תוצאה (so they return to class ready to concentrate), נקודתיים לפני רשימת דוגמאות ונקודה-פסיק בין שני משפטים קשורים. אוצר המילים מדויק ומתאים לחיי בית הספר (glued to their screens, social skills)."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה (משפט פתיחה): תשובה ישירה לשאלה, למשל In my opinion, high school students should be allowed to use their phones during breaks.2. סיבה ראשונה ותוצאה: ההפסקה נועדה למנוחה, ומנוחה קצרה עוזרת להתרכז בשיעור הבא.3. סיבה שנייה ודוגמה: הטלפון משמש לסידורים מעשיים, כמו בדיקת זמני אוטובוס או שיחה עם ההורים.4. טענה נגדית, מענה וסיכום: המבנה It is true that … However, …, ואחריו משפט סיכום אחד שחוזר על העמדה במילים אחרות.",
+        "bodyEn": "4-part frame: 1. Position: answer the question in the first sentence.2. Reason 1 + result: a break is for rest, and rest helps students concentrate.3. Reason 2 + example: phones are for practical things (bus times, parents).4. The other side, a reply and a conclusion: It is true that … However, …, then one closing sentence."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. בשאלה הזאת צריך גם להציג את הטענה הנגדית ולענות עליה, ולכן כדאי לחלק כך: פתיחה של כ-15 מילים, כ-30 מילים לכל סיבה, כ-25 מילים לטענה הנגדית ולמענה עליה וכ-10 מילים לסיכום. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. With the other side: opening ~15, each reason ~30, other side and reply ~25, conclusion ~10 = about 110 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. התאמה בין הנושא לפועל: students are tired, everybody has a phone, many parents want.2. שלילה בהווה פשוט: the students do not talk (ולא the students not talk).3. צירופים קבועים: take a break (ולא make a break), stay in touch with (ולא be in connection with) ו-addicted to (ולא addicted for).4. שם תואר אחרי הפועל feel: כותבים they feel relaxed, ולא they feel relax.5. תרגום מילולי: each other (ולא one with the other) ו-take their phones away (ולא take them the phone).",
+        "bodyEn": "5-error check: Check: 1. agreement (students are, everybody has, many parents want); 2. do not in negatives; 3. fixed phrases (take a break, stay in touch with, addicted to); 4. feel relaxed (not feel relax); 5. calques (each other, take their phones away)."
+      }
+    ],
+    "usefulPhrases": [
+      "In my opinion, students should be allowed to …",
+      "First, a break is meant to …",
+      "After several hours of lessons, …",
+      "… so they return to class ready to …",
+      "Second, phones are part of how teenagers …",
+      "For example, they can …",
+      "It is true that … However, …",
+      "A ban will not …",
+      "Instead, schools can …",
+      "Therefore, …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 115,
+        "essay": "In my opinion, high school students should be allowed to use their phones during breaks. First, a break is meant to be a rest from the classroom. After three hours of lessons, a short video or a message to a friend helps students relax, so they return to class ready to concentrate. Second, phones are part of how teenagers organize their lives: they check bus times, arrange to meet after school and answer their parents. It is true that incessant notifications can keep some students glued to their screens instead of talking to classmates. However, a ban will not teach them social skills; schools can offer games and clubs instead. Therefore, breaks should stay phone-friendly.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה ברורה כבר במשפט הראשון: המשפט In my opinion, high school students should be allowed to use their phones during breaks עונה ישירות על השאלה.2. יש שתי סיבות מפותחות עם מילות סדר (First, Second). הסיבה הראשונה מסתיימת בתוצאה (so they return to class ready to concentrate), והשנייה נתמכת ברשימת דוגמאות אחרי נקודתיים (they check bus times, arrange to meet after school and answer their parents).3. הטענה הנגדית מוצגת בהגינות ומקבלת מענה: הצירוף It is true that incessant notifications can keep some students glued to their screens ואחריו המשפט However, a ban will not teach them social skills. נקודה-פסיק מחברת שני משפטים קשורים, והמילה incessant (בלתי פוסק) משתלבת באופן טבעי ומעשירה את השפה.שני שיפורים קטנים:1. בצירוף schools can offer games and clubs instead לא ברור מיד במקום מה. עדיף הנוסח However, a ban will not teach them social skills; games and clubs during breaks will. כך שני חלקי הניגוד עוסקים באותו עניין: האיסור לא ילמד כישורים חברתיים, אבל משחקים וחוגים כן. הכלל: במשפט ניגוד כדאי ששני החלקים יתייחסו לאותו נושא.2. משפט משודרג: הצירוף helps students relax יכול להפוך לצירוף helps students recharge (להיטען מחדש), עם פועל ציורי ומדויק יותר.טיפ – שיטת תבנית 4 חלקים: הטענה הנגדית באה כאן אחרי שתי הסיבות ולפני הסיכום. זה הסדר המומלץ, כי כך המילה האחרונה נשארת של הכותב (Therefore, breaks should stay phone-friendly).",
+        "analysisEn": "Why it is high: a clear position in the first sentence, two reasons with a result (so they return to class ready to concentrate) and examples after a colon (they check bus times, arrange to meet after school and answer their parents), and the other side with a reply (It is true that … However, a ban will not teach them social skills). The word incessant adds range.Refinements:1. schools can offer games and clubs instead → games and clubs during breaks will (make both sides of the contrast about the same thing).2. Upgrade: helps students relax → helps students recharge.Method tip – 4-part frame: put the other side after your two reasons and before the conclusion, so your view gets the last word."
+      },
+      {
+        "level": "mid",
+        "statedWords": 100,
+        "essay": "I think high school students should be allowed to use their phones during breaks. First, after many hours of lessons, students need to make a break, and the phone helps them relax. They can listen to music or play a short game. Second, students need to be in connection with their parents, for example about who will pick them up after school. However, some people say that teenagers are addicted for their phones and they don't talk one with the other. This is true, but a break is only fifteen minutes. In conclusion, I think phones during breaks are OK.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה כבר במשפט הראשון: המשפט I think high school students should be allowed to use their phones during breaks עונה ישירות על השאלה ומשתמש במילים שלה.2. יש דוגמה מעשית ומוחשית: הצירוף who will pick them up after school מראה מדוע תלמידים צריכים את הטלפון גם בזמן הלימודים.3 התיקונים החשובים ביותר:1. הצירוף students need to make a break – התיקון: students need to take a break. הכלל: באנגלית הצירוף הקבוע הוא take a break. הצירוף make a break הוא תרגום מילולי של \"לעשות הפסקה\".2. הצירוף to be in connection with their parents – התיקון: to stay in touch with their parents. הכלל: \"להיות בקשר\" עם מישהו הוא stay in touch with או be in contact with. הצירוף be in connection with הוא תרגום מילולי מעברית.3. הצירוף addicted for their phones and they don't talk one with the other – התיקון: addicted to their phones and they don't talk to each other. הכלל: אחרי המילה addicted באה מילת היחס to. במשמעות \"זה עם זה\" כותבים each other, והצירוף one with the other הוא תרגום מילולי של \"אחד עם השני\".משפט משודרג:המשפט This is true, but a break is only fifteen minutes. יכול להפוך למשפט This is a real concern. However, a ban will not teach teenagers to talk to each other, while clubs and games during breaks can. כך המענה לטענה הנגדית מקבל נימוק, ולא רק עובדה.טיפ – שיטת תבנית 4 חלקים: כל סיבה צריכה טענה ועוד משפט של הסבר או תוצאה. למשל, אחרי הצירוף the phone helps them relax אפשר להוסיף תוצאה: so they can concentrate in the next lesson. גם המענה לטענה הנגדית צריך נימוק, ולא רק את העובדה שההפסקה קצרה.",
+        "analysisEn": "Strengths: a clear position (I think high school students should be allowed to use their phones during breaks) and a practical example (who will pick them up after school).Top 3 fixes:1. make a break → take a break (the fixed phrase is take a break).2. to be in connection with their parents → to stay in touch with their parents (a Hebrew calque).3. addicted for their phones and they don't talk one with the other → addicted to their phones and they don't talk to each other (addicted to; each other).Upgrade: This is true, but a break is only fifteen minutes. → This is a real concern. However, a ban will not teach teenagers to talk to each other, while clubs and games during breaks can.Method tip – 4-part frame: add a result to each reason (so they can concentrate in the next lesson) and a real argument to your reply."
+      },
+      {
+        "level": "low",
+        "statedWords": 76,
+        "essay": "In my opinion the students need to use the phone in the breaks. The life today is with phones, everybody have phone. In the break the students is tired from the lessons and with the phone they feel relax. Also many parents wants to talk with the children. But some teachers think the phone is bad, they say the students not talk with friends. So I think it is not fair to take them the phone.",
+        "analysisHe": "נקודות חוזק:1. יש סיבה הגיונית מחיי בית הספר: הצירוף tired from the lessons מסביר מדוע התלמידים צריכים מנוחה בהפסקה.2. יש התייחסות לצד השני: המשפט But some teachers think the phone is bad מראה שהכותב מכיר את הטענה הנגדית, וזו דרישה חשובה בשאלת דעה.3 התיקונים החשובים ביותר:1. הצירוף everybody have phone – התיקון: everybody has a phone. הכלל: המילה everybody נחשבת יחיד, ולכן הפועל בא בצורת גוף שלישי יחיד (has). לפני שם עצם ביחיד שאפשר לספור צריך את המילית a.2. הצירוף they feel relax – התיקון: they feel relaxed. הכלל: אחרי הפועל feel בא שם תואר. המילה relax היא פועל (להירגע), ושם התואר שמתאר איך אדם מרגיש הוא relaxed (רגוע), עם הסיומת ‎-ed‎.3. הצירוף the students not talk with friends – התיקון: the students do not talk with friends. הכלל: בשלילה בהווה פשוט כותבים do not (או does not בגוף שלישי יחיד) לפני הפועל. המילה not לבדה, כמו \"לא מדברים\" בעברית, אינה מספיקה.משפט משודרג:המשפט So I think it is not fair to take them the phone. יכול להפוך למשפט That is why I think it would be unfair to take students' phones away during breaks. הצירוף take them the phone הוא תרגום מילולי של \"לקחת להם את הטלפון\". באנגלית כותבים take someone's phone away.טיפ – שיטת תקציב מילים: בתשובה יש 76 מילים בלבד, והמינימום הוא 90. תשובה קצרה מדי מקבלת ציון נמוך. כדאי לתכנן כ-15 מילים לפתיחה, כ-30 מילים לכל סיבה, כ-25 מילים לטענה הנגדית ולמענה עליה וכ-10 מילים לסיכום. כאן חסר בעיקר מענה לטענה של המורים.",
+        "analysisEn": "Strengths: a school-based reason (tired from the lessons) and the other side (But some teachers think the phone is bad).Top 3 fixes:1. everybody have phone → everybody has a phone (everybody is singular; a before a singular noun).2. they feel relax → they feel relaxed (feel + an adjective; relax is a verb).3. the students not talk with friends → the students do not talk with friends (do not before the verb).Upgrade: So I think it is not fair to take them the phone. → That is why I think it would be unfair to take students' phones away during breaks.Method tip – Word budget: 76 words is under the 90-word minimum. Plan about 15 + 30 + 30 + 25 + 10 words, and add a reply to the teachers' view."
+      }
+    ],
+    "words": [
+      {
+        "word": "incessant",
+        "pronunciation": "in-SESS-unt",
+        "meaningHe": "בלתי פוסק, שאינו נעצר לרגע (לרוב במשמעות מעיקה)"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-06",
+    "n": 6,
+    "prompt": "Is it better to travel alone or with a group of friends? Explain your opinion.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "הבחירה לא ברורה או מופיעה רק פעם אחת. יש סיבה אחת לטובת האפשרות הנבחרת, בלי התייחסות ליתרונות של האפשרות האחרת, אין סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "הבחירה ברורה, ויש יתרונות וחסרונות של שתי האפשרויות, אבל הם מופיעים כרשימה, בלי דוגמה או הסבר. לא ברור מדוע היתרונות של האפשרות הנבחרת חשובים יותר.",
+        "high": "היתרון של האפשרות האחרת מוצג בהגינות (Traveling alone certainly offers freedom), ואחריו מילת ניגוד (However) ושתי סיבות מפותחות לבחירה, אחת מהן עם דוגמה אישית מוחשית. הסיכום מאזן בין הצדדים (although …, I prefer …)."
+      },
+      "language": {
+        "low": "טעויות רבות: זמן שגוי ותרגום מילולי של \"לפני שנתיים\" (Before two years I go), מילת יחס שגויה (laughed on everything), מיליות חסרות ומשפט בלי נושא (is boring). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש 3–5 טעויות אופייניות: המילה to אחרי הצירוף makes you, מילות יחס מיותרות או שגויות (discuss about, depend in) וצורת רבים לשם עצם שאינו נספר (advices). המשפטים פשוטים ודומים זה לזה.",
+        "high": "אין טעויות. יש מבנים מגוונים: נקודתיים לפני הסבר, הווה מושלם (I have found that), פסוקית זיקה (the ones you share) ופסוקית ויתור (although solo travel builds independence). אוצר המילים מדויק ועשיר (split the cost, company on the road)."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. בחירה (משפט פתיחה): הכרה קצרה בכך שלשתי האפשרויות יש יתרונות, ומיד אחריה הבחירה, למשל Both ways of traveling have their charm, but I would rather travel with a group of friends.2. הצד השני בהגינות: יתרון אמיתי של האפשרות האחרת (חופש, היכרות עם אנשים מקומיים), ואחריו מילת ניגוד כמו המילה However.3. שתי סיבות לבחירה: חוויה משותפת עם דוגמה אישית, ואחריה יתרון מעשי (בטיחות או חיסכון).4. סיכום מאוזן: משפט אחד במבנה although …, I prefer ….",
+        "bodyEn": "4-part frame: 1. Choice: admit both have advantages, then choose (Both ways of traveling have their charm, but I would rather …).2. The other side, fairly: one real advantage of the other option, then However.3. Two reasons for your choice: a shared experience with a personal example, then a practical benefit.4. Balanced conclusion: although …, I prefer …."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. בשאלת העדפה עם איזון בין הצדדים כדאי לחלק כך: פתיחה של כ-15 מילים, כ-25 מילים ליתרון של האפשרות האחרת, כ-55 מילים לשתי הסיבות לבחירה (כולל דוגמה) וכ-15 מילים לסיכום. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. For a balanced preference: opening ~15, the other side ~25, two reasons with an example ~55, conclusion ~15 = about 110 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. זמן עבר ומילת הזמן ago: Two years ago, I went (ולא Before two years I go).2. הפועל make: כותבים it makes you independent, בלי המילה to.3. מילות יחס: discuss a plan (בלי המילה about) ו-depend on (ולא depend in).4. שמות עצם שאינם נספרים: המילים advice ו-information אינן מקבלות את הסיומת ‎-s‎. אפשר לכתוב some advice או a piece of advice.5. נושא ומיליות: כל משפט צריך נושא (it is boring, ולא is boring), ולפני שם עצם ביחיד שאפשר לספור צריך את המילית a (a group of friends, a problem).",
+        "bodyEn": "5-error check: Check: 1. past tense and ago (Two years ago, I went); 2. it makes you independent (no to); 3. prepositions (discuss a plan, depend on); 4. uncountable advice (no -s); 5. a subject and articles (it is boring, a group, a problem)."
+      }
+    ],
+    "usefulPhrases": [
+      "Both options have their advantages, but …",
+      "I would rather … than …",
+      "… certainly offers …",
+      "you are more likely to …",
+      "However, I have found that …",
+      "For example, two summers ago I …",
+      "What I remember most is …",
+      "In addition, …",
+      "since you can split the cost of …",
+      "Therefore, although …, I prefer …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 114,
+        "essay": "Both ways of traveling have their charm, but I would rather travel with a group of friends. Traveling alone certainly offers freedom: you can change your plans whenever you like, and you are more likely to meet local people. However, I have found that the best moments of a trip are the ones you share. Two summers ago, I hiked in northern Italy with three friends, and the camaraderie of cooking dinner together after a long day is what I remember most. In addition, a group is safer and cheaper, since you can split the cost of a car or an apartment. Therefore, although solo travel builds independence, I prefer company on the road.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. הפתיחה מאוזנת והבחירה ברורה כבר במשפט הראשון: המשפט Both ways of traveling have their charm, but I would rather travel with a group of friends מכיר בשתי האפשרויות ובוחר אחת מהן.2. היתרון של האפשרות האחרת מוצג בהגינות ומוסבר אחרי נקודתיים (Traveling alone certainly offers freedom), ואחריו מגיע ניגוד ברור, בהווה מושלם ועם פסוקית זיקה: המשפט However, I have found that the best moments of a trip are the ones you share.3. יש דוגמה אישית מוחשית (Two summers ago, I hiked in northern Italy with three friends) וסיכום מאוזן עם פסוקית ויתור (although solo travel builds independence, I prefer company on the road). המילה camaraderie (רעות, אחווה) משתלבת באופן טבעי ומעשירה את השפה.שני שיפורים קטנים:1. במשפט a group is safer and cheaper, since you can split the cost of a car or an apartment הנימוק מסביר רק את החיסכון, ולא את הבטיחות. עדיף הנוסח a group is safer and cheaper, since friends can look out for one another and split the cost of a car or an apartment. הכלל: כל טענה במשפט צריכה נימוק משלה.2. משפט משודרג: הצירוף you are more likely to meet local people יכול להפוך לצירוף you are more likely to strike up conversations with local people (לפתוח בשיחה), עם צירוף קבוע עשיר יותר.טיפ – שיטת תקציב מילים: בתשובה יש 114 מילים. שני השיפורים יחד מוסיפים כ-9 מילים, ואז התשובה תעבור את גבול 120 המילים. לכן כדאי לבחור שיפור אחד, או לקצר במקום אחר, למשל למחוק את הצירוף after a long day.",
+        "analysisEn": "Why it is high: a balanced opening with a clear choice (I would rather travel with a group of friends), a fair look at the other side (Traveling alone certainly offers freedom) followed by a clear contrast (However, I have found that the best moments of a trip are the ones you share), a vivid example and a balanced conclusion (although solo travel builds independence). The word camaraderie adds range.Refinements:1. since you can split the cost → since friends can look out for one another and split the cost (support both claims: safer and cheaper).2. Upgrade: you are more likely to meet local people → you are more likely to strike up conversations with local people.Method tip – Word budget: at 114 words, both refinements (+9) would pass 120; choose one, or cut after a long day."
+      },
+      {
+        "level": "mid",
+        "statedWords": 101,
+        "essay": "Both options have advantages, but I prefer to travel with a group of friends. When you travel alone, you are free to choose where to go and what to eat. Also, it makes you to be independent. But with friends, you are never lonely, and you can share the costs of the hotel and the car. Of course, in a group you need to discuss about every plan, and sometimes people argue. Still, friends give you advices when you have a problem, and you do not depend in strangers. In conclusion, I think traveling with friends is better and more fun.",
+        "analysisHe": "נקודות חוזק:1. הפתיחה מאוזנת והבחירה ברורה: המשפט Both options have advantages, but I prefer to travel with a group of friends מכיר בשתי האפשרויות ובוחר מיד.2. יש התייחסות גם לחיסרון של האפשרות הנבחרת: הצירוף sometimes people argue מראה חשיבה מאוזנת, שהיא דרישה מרכזית בשאלה הזאת.3 התיקונים החשובים ביותר:1. הצירוף it makes you to be independent – התיקון: it makes you independent. הכלל: אחרי הפועל make והמושא בא שם תואר (makes you independent) או פועל בצורת הבסיס (makes you think), בלי המילה to.2. הצירוף discuss about every plan – התיקון: discuss every plan. הכלל: אחרי הפועל discuss בא המושא ישירות, בלי המילה about, בניגוד לעברית (\"לדון על\"). עם הפועל talk כן כותבים about.3. הצירוף friends give you advices – התיקון: friends give you advice. הכלל: המילה advice היא שם עצם שאינו נספר, ולכן אין לה צורת רבים עם הסיומת ‎-s‎. לעצה אחת כותבים a piece of advice.משפט משודרג:המשפט But with friends, you are never lonely, and you can share the costs of the hotel and the car. יכול להפוך למשפט With friends, however, you are never lonely, and splitting the cost of the hotel and the car makes the trip much cheaper. כך היתרון המעשי מקבל תוצאה ברורה, ומילת הניגוד however משתלבת באמצע המשפט.טיפ – שיטת בדיקת 5 הטעויות: שלוש מתוך ארבע הטעויות בתשובה הזאת קשורות למילים קטנות אחרי הפועל, והרביעית קשורה לסיומת הרבים (advices). בבדיקה האחרונה כדאי לעבור על כל פועל ולבדוק איזו מילת יחס באה אחריו, אם בכלל. למשל, כותבים depend on strangers, ולא depend in strangers.",
+        "analysisEn": "Strengths: a balanced opening with a clear choice (Both options have advantages, but I prefer to travel with a group of friends) and a weakness of your own choice (sometimes people argue).Top 3 fixes:1. it makes you to be independent → it makes you independent (make someone + adjective or base verb, no to).2. discuss about every plan → discuss every plan (discuss takes no about).3. friends give you advices → friends give you advice (advice is uncountable).Upgrade: But with friends, you are never lonely, and you can share the costs of the hotel and the car. → With friends, however, you are never lonely, and splitting the cost of the hotel and the car makes the trip much cheaper.Method tip – 5-error check: check the small word after each verb (depend on strangers, not depend in strangers)."
+      },
+      {
+        "level": "low",
+        "statedWords": 66,
+        "essay": "I prefer to travel with group of friends. Before two years I go to Greece with my friends and it was amazing. Every night we sat on the beach and laughed on everything. When you travel alone nobody help you if there is problem, and is boring to eat alone. Maybe alone you can do what you want, but for me friends is the most important.",
+        "analysisHe": "נקודות חוזק:1. הבחירה ברורה כבר במשפט הראשון, ויש דוגמה אישית מטיול אמיתי: הצירוף with my friends and it was amazing מראה מה הכותב אוהב בטיול משותף.2. יש התייחסות לאפשרות האחרת: המשפט Maybe alone you can do what you want מכיר ביתרון של טיול לבד, וזה בדיוק מה ששאלת העדפה מבקשת.3 התיקונים החשובים ביותר:1. הצירוף Before two years I go – התיקון: Two years ago, I went. הכלל: \"לפני\" במשמעות של זמן שעבר מתורגם למילה ago, שבאה אחרי משך הזמן. על אירוע שקרה ונגמר כותבים בזמן עבר פשוט, וצורת העבר של הפועל go היא went.2. הצירוף laughed on everything – התיקון: laughed at everything. הכלל: אחרי הפועל laugh באה מילת היחס at (או about), ולא on, אף שבעברית אומרים \"לצחוק על\".3. הצירוף nobody help you if there is problem – התיקון: nobody helps you if there is a problem. הכלל: המילה nobody נחשבת יחיד, ולכן הפועל מקבל את הסיומת ‎-s‎. לפני שם עצם ביחיד שאפשר לספור צריך את המילית a.משפט משודרג:המשפט Maybe alone you can do what you want, but for me friends is the most important. יכול להפוך למשפט It is true that you can do whatever you want when you travel alone, but for me, sharing the trip with friends matters most. המבנה It is true that …, but … מציג את הצד השני בהגינות, והצירוף friends is (נושא ברבים עם פועל ביחיד) נעלם.טיפ – שיטת תבנית 4 חלקים: התשובה מסתיימת בלי סיכום, והיתרון של טיול לבד מופיע רק במשפט האחרון. כדאי לבנות אותה כך: בחירה, היתרון של האפשרות האחרת עם מילת ניגוד, שתי סיבות (הטיול ליוון והעזרה במקרה של בעיה) וסיכום. כך התשובה גם תגיע ל-90 מילים לפחות (כרגע יש בה 66 מילים בלבד).",
+        "analysisEn": "Strengths: a clear choice with a real trip (with my friends and it was amazing) and a nod to the other side (Maybe alone you can do what you want).Top 3 fixes:1. Before two years I go → Two years ago, I went (ago comes after the time; past simple for a finished event).2. laughed on everything → laughed at everything (laugh at or about, not on).3. nobody help you if there is problem → nobody helps you if there is a problem (nobody takes -s; a before a singular noun).Upgrade: Maybe alone you can do what you want, but for me friends is the most important. → It is true that you can do whatever you want when you travel alone, but for me, sharing the trip with friends matters most.Method tip – 4-part frame: choice, the other side + However, two reasons, conclusion; this will also take you past 90 words (now 66)."
+      }
+    ],
+    "words": [
+      {
+        "word": "camaraderie",
+        "pronunciation": "kahm-uh-RAH-duh-ree",
+        "meaningHe": "רעות, תחושת אחווה וחברות בין אנשים שחווים משהו יחד"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-07",
+    "n": 7,
+    "prompt": "Is it a good idea for young people to take a year off between finishing school and starting university? Explain your opinion.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "יש עמדה, אבל הסיבות קצרות ולא מוסברות, ואין קשר ברור בין שנת ההפסקה לבין התוצאה שלה בלימודים. הטענה הנגדית מוזכרת בלי מענה, אין סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "העמדה ברורה, ויש שתי סיבות ודוגמה אישית, אבל הקשר בין הסיבה לתוצאה רק נאמר ואינו מוסבר (למשל, מדוע שנת עבודה מובילה להצלחה בלימודים). המענה לטענה הנגדית אינו מנומק, כמו המשפט But this is not common.",
+        "high": "העמדה ברורה כבר בפתיחה. כל סיבה מפותחת כשרשרת של סיבה ותוצאה, עם מילות תוצאה (As a result, therefore). יש הסתייגות הוגנת (Of course, …) ומענה שחוזר לעמדה ומסכם אותה (Still, …)."
+      },
+      "language": {
+        "low": "טעויות רבות: משפט בלי נושא ובלי מילית (is good idea), שימוש מיותר במילה the (The young people, the school), הפועל learn במקום הפועל study, זמן שגוי (My brother take) ושגיאות כתיב ופיסוק (countrys, dont, its). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש 3–5 טעויות אופייניות: הצירוף said me במקום הצירוף told me, שם העצם success במקום הפועל succeed, הצירוף very more, והצירוף The most important is בלי המילה thing. רוב המשפטים פשוטים.",
+        "high": "אין טעויות. המשפטים מגוונים: פסוקית זיקה (Students who have supported themselves), הווה מושלם (have never had time), פסוקית זמן (before they commit) ונושא שהוא צורת ‎-ing‎ של פועל (earning and managing their own money). אוצר המילים מדויק (commit, a worthwhile investment)."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה (משפט פתיחה): תשובה ישירה לשאלה, למשל I believe taking a year off between school and university is a wise decision for many young people.2. סיבה ראשונה ותוצאה: בגיל 18 רבים עדיין לא יודעים מה מעניין אותם, ולכן חלקם בוחרים תואר כמעט באקראי. שנת הפסקה מאפשרת לבדוק תחומי עניין לפני ההחלטה.3. סיבה שנייה ותוצאה: עבודה וניהול כסף מלמדים אחריות, ולכן הסטודנטים מתכננים את הזמן טוב יותר.4. הסתייגות, מענה וסיכום: המבנה Of course, … Still, …. שנת הפסקה בלי תוכנית עלולה להתבזבז, אבל עם מטרות ברורות היא השקעה משתלמת.",
+        "bodyEn": "4-part frame: 1. Position: answer the question in the first sentence.2. Reason 1 + result: many 18-year-olds do not know their interests yet, so a year off lets them test them before choosing a degree.3. Reason 2 + result: work and money teach responsibility, so students plan their time better.4. Concession, reply and conclusion: Of course, … Still, …."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "בשאלה שבודקת סיבה ותוצאה כדאי לחלק כך: פתיחה של כ-20 מילים, כ-35 מילים לכל סיבה (טענה, תוצאה והסבר) וכ-25 מילים להסתייגות, למענה ולסיכום. בסך הכול כ-115 מילים, קרוב לתקרה של 120, ולכן כדאי לנסח כל תוצאה במשפט אחד בלבד. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~20 + each reason ~35 (claim, result, explanation) + concession, reply and conclusion ~25 = about 115 words, close to 120, so keep each result to one sentence. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. הפועל study והפועל learn: לימודים לתואר מתוארים בצירוף study at university. הפועל learn מתאים לרכישת מיומנות או מידע, כמו בצירוף learn to drive.2. הפועל tell והפועל say: כותבים She told me that … או She said that …, ולא She said me.3. שם עצם או פועל: המילה success היא שם עצם, והפועל הוא succeed, כמו בצירוף they succeed in their studies.4. המילית the: אין לכתוב אותה לפני שם עצם כללי ברבים (young people, ולא The young people), וגם לא לפני המילה school בצירוף finish school (ולא finish the school).5. כתיב ופיסוק: countries (ולא countrys), ו-don't ו-it's עם גרש.",
+        "bodyEn": "5-error check: Check: 1. study at university (not learn in the university); 2. She told me / She said that (not She said me); 3. succeed is the verb, success the noun; 4. no the for people in general (young people, finish school); 5. spelling and apostrophes (countries, don't, it's)."
+      }
+    ],
+    "usefulPhrases": [
+      "I believe that taking a year off is …",
+      "First, most young people …",
+      "As a result, …",
+      "… lets them … before they commit.",
+      "Second, … teaches young people …",
+      "Students who have … tend to …",
+      "… and therefore they are less likely to …",
+      "Of course, … can easily …",
+      "Still, with clear goals, …",
+      "… is a worthwhile investment."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 116,
+        "essay": "I believe taking a year off between school and university is a wise decision for many young people. First, most eighteen-year-olds have never had time to discover what truly interests them. As a result, some choose a degree almost at random and flounder in their first year. A year of work or volunteering lets them test their interests before they commit. Second, earning and managing their own money teaches young people responsibility. Students who have supported themselves tend to plan their time better, and therefore they are less likely to waste a semester. Of course, a year off can easily become a lazy one without a plan. Still, with clear goals, it is a worthwhile investment.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה ברורה כבר במשפט הראשון, ובכל זאת זהירה: המשפט I believe taking a year off between school and university is a wise decision for many young people אומר \"לרבים\", ולא \"לכולם\".2. כל סיבה בנויה כשרשרת של סיבה ותוצאה, עם מילות תוצאה: הצירוף As a result, some choose a degree almost at random and flounder in their first year והצירוף and therefore they are less likely to waste a semester. המילה flounder (להתקשות בלי כיוון) משתלבת באופן טבעי ומעשירה את השפה.3. יש הסתייגות הוגנת ומענה עליה, שמשמש גם כסיכום: המשפט Of course, a year off can easily become a lazy one without a plan ואחריו המשפט Still, with clear goals, it is a worthwhile investment. המבנים מגוונים: פסוקית זיקה (Students who have supported themselves) ונושא בצורת ‎-ing‎ (earning and managing their own money).שני שיפורים קטנים:1. המענה להסתייגות כללי מעט. עדיף הנוסח Still, with a clear goal, such as saving for tuition, it is a worthwhile investment. הכלל: מענה להסתייגות משכנע יותר כשיש בו דוגמה מוחשית.2. משפט משודרג: הצירוף tend to plan their time better יכול להפוך לצירוף tend to manage their time more efficiently (ביעילות רבה יותר), עם אוצר מילים מדויק יותר.טיפ – שיטת תקציב מילים: בתשובה יש 116 מילים. השיפור הראשון מוסיף 6 מילים והשני מוסיף מילה אחת, ולכן אם מוסיפים את שניהם, התשובה תגיע ל-123 מילים ותעבור את גבול 120 המילים. כדאי לבחור שיפור אחד. אם בוחרים בשיפור הראשון, כדאי גם למחוק שתי מילים במקום אחר, למשל את המילים truly ו-almost.",
+        "analysisEn": "Why it is high: a clear but careful position (a wise decision for many young people), two cause-and-effect chains with result words (As a result, … flounder in their first year; and therefore they are less likely to waste a semester), and a concession with a reply that also concludes (Of course, … Still, …). The word flounder adds range.Refinements:1. Still, with clear goals → Still, with a clear goal, such as saving for tuition (a concrete reply is more convincing).2. Upgrade: tend to plan their time better → tend to manage their time more efficiently.Method tip – Word budget: at 116 words, both refinements (+7) would reach 123; choose one, and with the first (+6) also cut truly and almost."
+      },
+      {
+        "level": "mid",
+        "statedWords": 107,
+        "essay": "I think that a year off between school and university is a good idea. The most important is that young people have time to decide what they want to study. My cousin took a year off after school, and now she is studying nursing. She said me that the year helped her to choose. Also, students who work for a year are very more mature, and as a result they success in their studies. On the other hand, some people lose their motivation and never go back to studying. But this is not common. In conclusion, I think a year off is good for most young people.",
+        "analysisHe": "נקודות חוזק:1. יש דוגמה אישית שתומכת בסיבה: המשפט My cousin took a year off after school ואחריו הצירוף now she is studying nursing מראים מה שנת ההפסקה נותנת בפועל.2. יש התייחסות לצד השני: המשפט On the other hand, some people lose their motivation and never go back to studying מציג חיסרון אמיתי של שנת הפסקה.3 התיקונים החשובים ביותר:1. הצירוף She said me that – התיקון: She told me that. הכלל: אחרי הפועל tell בא ישירות האדם שמדברים אליו (told me). אחרי הפועל say לא בא האדם ישירות: כותבים said that או said to me. הצירוף said me הוא תרגום מילולי של \"אמרה לי\".2. הצירוף they success in their studies – התיקון: they succeed in their studies. הכלל: המילה success היא שם עצם (הצלחה), והפועל הוא succeed (להצליח).3. הצירוף are very more mature – התיקון: are much more mature. הכלל: לפני צורת השוואה (more, better) כותבים much או far, ולא very.משפט משודרג:המשפט The most important is that young people have time to decide what they want to study. יכול להפוך למשפט The most important reason is that young people need time to discover what they really want to study before they choose a degree. הצירוף The most important צריך שם עצם אחריו (reason או thing), והוא אינו יכול לעמוד לבד כמו הצירוף העברי \"הכי חשוב זה\".טיפ – שיטת תבנית 4 חלקים: הקשר בין הסיבה לתוצאה קצר מדי: הצירוף as a result they success in their studies אינו מסביר מדוע בגרות מובילה להצלחה. כדאי להוסיף משפט הסבר, למשל because they know how to manage their time. גם המשפט But this is not common אינו מענה מנומק לטענה הנגדית.",
+        "analysisEn": "Strengths: a personal example (My cousin took a year off after school) and the other side (some people lose their motivation and never go back to studying).Top 3 fixes:1. She said me that → She told me that (tell someone; say something, or say to someone).2. they success → they succeed (success is the noun).3. very more mature → much more mature (much, not very, before a comparative).Upgrade: The most important is that young people have time to decide what they want to study. → The most important reason is that young people need time to discover what they really want to study before they choose a degree.Method tip – 4-part frame: explain each result (because they know how to manage their time) and argue your reply to the other side."
+      },
+      {
+        "level": "low",
+        "statedWords": 74,
+        "essay": "I think is good idea to take a year off. The young people finish the school and they dont know what they want to learn in the university. In the year off they can work and save money, and travel to other countrys. When they start the studies they are more mature. My brother take a year off and after he was more serious. But some people lose the year and its a problem.",
+        "analysisHe": "נקודות חוזק:1. יש סיבה אמיתית לשנת הפסקה: הצירוף they dont know what they want to learn מסביר מדוע צעירים צריכים זמן לפני הלימודים.2. יש דוגמה אישית שמראה תוצאה: הצירוף he was more serious מתאר את השינוי באח אחרי שנת ההפסקה.3 התיקונים החשובים ביותר:1. הצירוף I think is good idea – התיקון: I think it is a good idea. הכלל: במשפט באנגלית חייב להיות נושא. כשאין נושא אמיתי (כמו בעברית \"זה רעיון טוב\"), כותבים it. לפני שם עצם ביחיד שאפשר לספור, כמו המילה idea, צריך את המילית a.2. הצירוף to learn in the university – התיקון: to study at university. הכלל: ללימודים לתואר מתאים הפועל study, והפועל learn מתאים לרכישת מיומנות או מידע. מילת היחס הטבעית במשמעות \"לומד באוניברסיטה\" היא at.3. המשפט My brother take a year off and after he was more serious – התיקון: My brother took a year off, and after that he was more serious. הכלל: על אירוע שקרה ונגמר כותבים בזמן עבר פשוט (took). במשמעות \"אחר כך\" כותבים after that או afterward, כי המילה after לבדה פותחת בדרך כלל פסוקית (after he finished school).משפט משודרג:המשפט In the year off they can work and save money, and travel to other countrys. יכול להפוך למשפט During the year off, they can work, save money and travel abroad, so they start university with more experience. כך יש לסיבה גם תוצאה (so …), והצירוף travel abroad (לנסוע לחו\"ל) מחליף את הצירוף travel to other countrys, שגם כתוב בשגיאה (countries).טיפ – שיטת בדיקת 5 הטעויות: בתשובה יש הרבה טעויות קטנות שחוזרות: המילית the במקומות מיותרים (The young people, the school, the studies), שגיאת כתיב (countrys) וגרש חסר (dont, its). בדיקה של שתי דקות בסוף הכתיבה הייתה מתקנת את רובן. בנוסף, בתשובה יש 74 מילים בלבד, ולכן כדאי להוסיף לכל סיבה משפט של תוצאה, כדי להגיע ל-90 מילים לפחות.",
+        "analysisEn": "Strengths: a real cause (they dont know what they want to learn) and a result shown in a personal example (he was more serious).Top 3 fixes:1. I think is good idea → I think it is a good idea (a sentence needs a subject; a before idea).2. to learn in the university → to study at university (study for a degree; learn a skill).3. My brother take a year off and after he was more serious → My brother took a year off, and after that he was more serious (past simple; after that = afterward).Upgrade: In the year off they can work and save money, and travel to other countrys. → During the year off, they can work, save money and travel abroad, so they start university with more experience.Method tip – 5-error check: a 2-minute check would catch the before general nouns, countrys and the missing apostrophes (dont, its). Also add a result to each reason to pass 90 words (now 74)."
+      }
+    ],
+    "words": [
+      {
+        "word": "flounder",
+        "pronunciation": "FLOUN-der",
+        "meaningHe": "להתקשות ולהתנהל בלי כיוון, לא לדעת איך להתקדם"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-08",
+    "n": 8,
+    "prompt": "Some people believe that online friendships can be as meaningful as face-to-face friendships. Do you agree, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "העמדה לא ברורה או סותרת את עצמה, למשל פתיחה בצירוף can be good friends וסיום בצירוף it is not the same. יש דוגמה אישית אחת בלי הסבר, אין הסתייגות ומענה, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדה ברורה, שתי סיבות והסתייגות, אבל התשובה אינה מתייחסת להשוואה שבשאלה (as meaningful as) ואומרת רק שחברות ברשת יכולה להיות משמעותית. המענה להסתייגות קצר ואינו מנומק, למשל המשפט But we can do video calls.",
+        "high": "העמדה עונה בדיוק על ההשוואה שבשאלה (just as meaningful as). יש שתי סיבות מפותחות עם דוגמה, הסתייגות הוגנת (Admittedly, …) ומענה מדויק שמגדיר מה הופך חברות למשמעותית (Nevertheless, … not physical presence)."
+      },
+      "language": {
+        "low": "טעויות רבות: מילות יחס שגויות (in the internet, in real), הצירוף not same like, פסיק בין משפטים שלמים, הצירוף every days ופועל בלי הסיומת ‎-s‎ ובלי מילת היחס to (He explain me). אוצר המילים בסיסי מאוד.",
+        "mid": "המשמעות ברורה, אבל יש 3–5 טעויות אופייניות לדוברי עברית: הצירוף it's mean במקום הצירוף it means, כינוי גוף מיותר בפסוקית זיקה (friends that I talk with them), המילים Although ו-but באותו משפט, ומילת יחס מיותרת אחרי הפועל trust (trust on). רוב המשפטים פשוטים.",
+        "high": "אין טעויות. יש מבנים מגוונים ומדויקים: השוואה (just as meaningful as those formed face to face), פסוקיות זיקה, מילים שמסייגות את הטענה (can, may) ומבנה שמבליט את הרעיון המרכזי (what makes a friendship meaningful is …). אוצר המילים עשיר וטבעי (solace, steadfast)."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה (משפט פתיחה): תשובה מדויקת להשוואה שבשאלה, למשל I agree that online friendships can be just as meaningful as those formed face to face.2. סיבה ראשונה ודוגמה: קהילה ברשת נותנת הבנה למי שמרגיש לבד בסביבה הקרובה, למשל נערה שהיא חובבת השחמט היחידה בבית הספר שלה.3. סיבה שנייה ודוגמה: מרחק אינו מוחק קרבה, למשל חברות שהתחילה בקורס מקוון ונמשכת שנים.4. הסתייגות, מענה וסיכום: המבנה Admittedly, … Nevertheless, …. המענה מגדיר מה הופך חברות למשמעותית, וכך הוא משמש גם כסיכום.",
+        "bodyEn": "4-part frame: 1. Position: answer the exact comparison (just as meaningful as).2. Reason 1 + example: an online community gives understanding to people who feel alone where they live.3. Reason 2 + example: distance does not erase closeness (a friendship from an online course).4. Concession, reply and conclusion: Admittedly, … Nevertheless, …; define what makes a friendship meaningful."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. ברמה הזאת צריך גם הסתייגות, ולכן כדאי לחלק כך: פתיחה של כ-15 מילים, כ-30 מילים לכל סיבה, כ-25 מילים להסתייגות ולמענה עליה וכ-10 מילים לסיכום. כשהמענה משמש גם כסיכום, אפשר להעביר את המילים שנחסכו לדוגמאות. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. With a concession: opening ~15, each reason ~30, concession and reply ~25, conclusion ~10 = about 110 words (range 90–120). If your reply is also your conclusion, give the saved words to your examples. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. המילים Although ו-but: באנגלית משתמשים רק באחת מהן באותו משפט, למשל Although I never met them, they know a lot about my life (ולא Although …, but …).2. הפועל trust: כותבים I can trust them, בלי מילת יחס (ולא trust on). לעומת זאת כותבים rely on ו-count on.3. פסוקית זיקה: אין לחזור על כינוי הגוף בסוף הפסוקית: friends that I talk with (ולא friends that I talk with them).4. מילות יחס: on the internet, in real life, explain something to someone.5. פועל והשוואה: המילה mean היא פועל, ולכן כותבים it means (ולא it's mean). ההשוואה היא the same as (ולא same like).",
+        "bodyEn": "5-error check: Check: 1. Although or but, never both; 2. trust them (no on), but rely on; 3. no extra pronoun in a relative clause (friends that I talk with); 4. prepositions (on the internet, in real life, explain it to me); 5. it means (not it's mean) and the same as."
+      }
+    ],
+    "usefulPhrases": [
+      "I agree that … can be just as … as …",
+      "For people who feel …, …",
+      "…, for instance, …",
+      "may find real … in …",
+      "Moreover, …",
+      "distance does not erase closeness",
+      "… ever since, …",
+      "Admittedly, …",
+      "Nevertheless, …",
+      "What makes … meaningful is …, not …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 116,
+        "essay": "I agree that online friendships can be just as meaningful as those formed face to face. For people who feel out of place in their own town, an online community can offer genuine understanding. A teenager who is the only chess fan in her school, for instance, may find real solace in talking every evening with players who share her passion. Moreover, distance does not erase closeness. I met a friend in an online course three years ago, and we have been steadfast friends ever since, supporting each other through every exam. Admittedly, a screen cannot replace a hug or a shared meal. Nevertheless, what makes a friendship meaningful is trust and attention, not physical presence.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה עונה בדיוק על ההשוואה שבשאלה: המשפט I agree that online friendships can be just as meaningful as those formed face to face משתמש במבנה just as … as, והמילה those חוסכת חזרה על המילה friendships.2. שתי הסיבות מפותחות, כל אחת עם דוגמה. הדוגמה הראשונה כללית ומסויגת במילה may (A teenager who is the only chess fan in her school, for instance, may find real solace), והשנייה אישית, בהווה מושלם (we have been steadfast friends ever since, supporting each other through every exam). המילים solace (נחמה) ו-steadfast (נאמן ויציב) משתלבות באופן טבעי ומעשירות את השפה.3. ההסתייגות והמענה עוסקים באותו עניין בדיוק: המשפט Admittedly, a screen cannot replace a hug or a shared meal מדבר על נוכחות פיזית, והמשפט Nevertheless, what makes a friendship meaningful is trust and attention, not physical presence עונה עליו בניגוד מדויק ומשמש גם כסיכום.שני שיפורים קטנים:1. במשפט I met a friend in an online course three years ago, and we have been steadfast friends ever since המילה friend חוזרת פעמיים, ובזמן הפגישה השניים עוד לא היו חברים. עדיף הנוסח I met a classmate in an online course three years ago, and we have been steadfast friends ever since. הכלל: כדאי להימנע מחזרה על אותה מילה במשפט אחד.2. משפט משודרג: המשפט Moreover, distance does not erase closeness. יכול להפוך למשפט Moreover, physical distance does not erase emotional closeness. כך הניגוד בין המרחק הפיזי לקרבה הרגשית מדויק יותר.טיפ – שיטת תבנית 4 חלקים: ברמה הזאת החלק הרביעי כולל הסתייגות ומענה. התשובה הזאת מדגימה את העיקרון החשוב: המענה מתייחס ישירות לטענה שבהסתייגות (נוכחות פיזית), ולכן הוא משכנע. כדאי לבנות כך כל הסתייגות. בתשובה יש 116 מילים, ולכן השיפור השני (שתי מילים נוספות) עדיין נשאר בתוך הטווח.",
+        "analysisEn": "Why it is high: the position answers the exact comparison (just as meaningful as those formed face to face), two reasons with a hedged example (may find real solace) and a personal one (we have been steadfast friends ever since), and a concession whose reply answers it precisely (Admittedly, a screen cannot replace a hug … Nevertheless, … not physical presence). The words solace and steadfast add range.Refinements:1. I met a friend → I met a classmate (avoid repeating friend; they were not friends yet).2. Upgrade: distance does not erase closeness → physical distance does not erase emotional closeness.Method tip – 4-part frame: make your reply answer the exact point of your concession, as here (physical presence)."
+      },
+      {
+        "level": "mid",
+        "statedWords": 105,
+        "essay": "I agree that online friendships can be meaningful. Today it is easy to stay in touch with people from all over the world. I have some friends that I talk with them almost every day on a gaming app. Although I never met them, but they know a lot about my life. When I have a problem, I can trust on them, and for me it's mean that the friendship is real. On the other hand, it is true that online you cannot hug your friend or see his face. But we can do video calls. In conclusion, online friends can be real friends too.",
+        "analysisHe": "נקודות חוזק:1. יש הסתייגות הוגנת, כפי שנדרש ברמה הזאת: המשפט On the other hand, it is true that online you cannot hug your friend or see his face מציג את החיסרון העיקרי של חברות ברשת.2. יש דוגמה אישית שמראה קשר אמיתי: הצירוף almost every day on a gaming app והצירוף they know a lot about my life מראים שהחברות הזאת עמוקה.3 התיקונים החשובים ביותר:1. המשפט Although I never met them, but they know a lot about my life. – התיקון: Although I never met them, they know a lot about my life. הכלל: באנגלית אין לשים את המילה Although ואת המילה but באותו משפט, אף שבעברית אומרים \"למרות ש…, אבל…\". יש לבחור רק אחת מהן.2. הצירוף I can trust on them – התיקון: I can trust them. הכלל: אחרי הפועל trust בא המושא ישירות, בלי מילת יחס, אף שבעברית אומרים \"לסמוך על\". מילת היחס on באה אחרי הפעלים rely ו-count (I can rely on them).3. הצירוף friends that I talk with them – התיקון: friends that I talk with. הכלל: בפסוקית זיקה אין לחזור על כינוי הגוף (them), כי המילה that כבר מחליפה אותו. זו העתקה של המבנה העברי \"שאני מדבר איתם\".משפט משודרג:משפט הפתיחה I agree that online friendships can be meaningful. יכול להפוך למשפט I agree that online friendships can be just as meaningful as face-to-face ones, because what holds a friendship together is trust, not touch. השאלה שואלת אם חברות ברשת משמעותית באותה מידה (as meaningful as), ולא רק אם היא משמעותית. הנוסח המשודרג עונה על ההשוואה עצמה ומוסיף נימוק.טיפ – שיטת בדיקת 5 הטעויות: שלוש מהטעויות בתשובה הזאת הן העתקה של מבנה עברי: כינוי גוף כפול בפסוקית זיקה, הצירוף Although …, but … והצירוף trust on. בבדיקה האחרונה כדאי לחפש בדיוק את שלושת המבנים האלה, ואת הצירוף it's mean (התיקון: it means).",
+        "analysisEn": "Strengths: a fair concession (On the other hand, it is true that online you cannot hug your friend or see his face) and a personal example (they know a lot about my life).Top 3 fixes:1. Although I never met them, but they know → Although I never met them, they know (although or but, never both).2. I can trust on them → I can trust them (trust takes no preposition; rely on).3. friends that I talk with them → friends that I talk with (no extra pronoun in a relative clause).Upgrade: I agree that online friendships can be meaningful. → I agree that online friendships can be just as meaningful as face-to-face ones, because what holds a friendship together is trust, not touch. (answer the comparison in the question).Method tip – 5-error check: look for the Hebrew patterns (an extra pronoun, Although … but, trust on) and it's mean (→ it means)."
+      },
+      {
+        "level": "low",
+        "statedWords": 73,
+        "essay": "I think friends in the internet can be good friends, but not same like real friends. I have a friend from Canada, we play games together every days. He explain me things about his country and I tell him about Israel. But I never saw him in real, so I dont know if he is really like this. Real friends you can meet and hug. So for me it is not the same.",
+        "analysisHe": "נקודות חוזק:1. יש דוגמה אישית ומוחשית: הצירוף we play games together והצירוף I tell him about Israel מראים שיש בחברות הזאת קשר אמיתי והדדי.2. יש נימוק הגיוני להבדל בין סוגי החברות: המשפט Real friends you can meet and hug מצביע על מה שחסר בקשר ברשת.3 התיקונים החשובים ביותר:1. הצירוף friends in the internet – התיקון: friends on the internet. הכלל: באנגלית כותבים on the internet (או online), אף שבעברית אומרים \"באינטרנט\".2. הצירוף not same like real friends – התיקון: not the same as real friends. הכלל: הצירוף הקבוע להשוואה הוא the same as, עם המילית the ועם המילה as (ולא like).3. הצירוף He explain me things – התיקון: He explains things to me. הכלל: בגוף שלישי יחיד מוסיפים לפועל את הסיומת ‎-s‎. אחרי הפועל explain בא קודם הדבר שמסבירים, ואחריו מילת היחס to והאדם (explain something to someone), בניגוד לעברית (\"מסביר לי\").משפט משודרג:המשפט But I never saw him in real, so I dont know if he is really like this. יכול להפוך למשפט However, I have never met him in real life, so I cannot be sure that he is the person he seems to be online. הצירוף in real אינו קיים באנגלית במשמעות \"במציאות\", והצירוף הנכון הוא in real life. בנוסף, המילה don't נכתבת עם גרש.טיפ – שיטת תקציב מילים: בתשובה יש 73 מילים בלבד, והמינימום הוא 90. כדאי לתכנן כ-15 מילים לפתיחה, כ-30 מילים לכל סיבה, כ-25 מילים להסתייגות ולמענה עליה וכ-10 מילים לסיכום. כאן חסרה בעיקר סיבה שנייה. בנוסף, העמדה צריכה להיות אחת מההתחלה ועד הסוף: התשובה נפתחת בצירוף can be good friends ומסתיימת בצירוף it is not the same.",
+        "analysisEn": "Strengths: a concrete example (we play games together, I tell him about Israel) and a reason for the difference (Real friends you can meet and hug).Top 3 fixes:1. friends in the internet → friends on the internet (on the internet, or online).2. not same like real friends → not the same as real friends (the fixed phrase is the same as).3. He explain me things → He explains things to me (-s after he; explain something to someone).Upgrade: But I never saw him in real, so I dont know if he is really like this. → However, I have never met him in real life, so I cannot be sure that he is the person he seems to be online.Method tip – Word budget: 73 words is under the 90-word minimum. Plan about 15 + 30 + 30 + 25 + 10 words, add a second reason, and keep one position from start to end."
+      }
+    ],
+    "words": [
+      {
+        "word": "solace",
+        "pronunciation": "SOL-iss",
+        "meaningHe": "נחמה, הקלה ותמיכה בזמן קשה · steadfast [STED-fast] – נאמן ויציב, שאינו משתנה גם בזמנים קשים"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-09",
+    "n": 9,
+    "prompt": "Should the centers of large cities be closed to private cars? Explain your opinion, considering both the benefits and the costs.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "העמדה לא ברורה, או שיש רק סיבות קצרות בלי הסבר. אין התייחסות לצד השני (למשל למחיר של השינוי לנהגים ולבעלי עסקים) ואין סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדה ברורה ושתי סיבות, ולפעמים גם הסתייגות, אבל הסיבות נאמרות בלי הסבר או דוגמה (למשל הצירוף there are always traffic jams), והמענה להסתייגות אינו מנומק.",
+        "high": "העמדה ברורה כבר בפתיחה ומנוסחת בזהירות, למשל עם תנאי (provided that …). יש שתי תועלות מפותחות, כל אחת עם דוגמה או תוצאה, הסתייגות הוגנת לגבי המחיר (Admittedly …) ומענה משכנע עליה (However …), ובסוף סיכום ששוקל את שני הצדדים."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: התאמה בין הנושא לפועל (people needs), המבנה for go, משפט בלי נושא ובלבול בין מילים דומות (its/it's, then/than). אוצר המילים בסיסי מאוד.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות אופייניות, כמו המבנה Even though … but, הצירוף so much cars והצירוף it's take. רוב המשפטים פשוטים, והטענות מנוסחות בוודאות מוחלטת (will), בלי מילות סייג.",
+        "high": "אין טעויות. המשפטים מורכבים ומגוונים (פסוקיות זיקה ומבנה תנאי), מילות הסייג מדויקות (may, are likely to, seem to), ואוצר המילים מדויק בתחום העיר והתחבורה."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה (משפט פתיחה): תשובה ישירה לשאלה, ואפשר גם עם תנאי, למשל In my view, closing city centers to private cars is a good idea, provided that …2. תועלת ראשונה ודוגמה: אוויר נקי יותר ופחות רעש, עם תמונה מוכרת מהחיים בעיר.3. תועלת שנייה ודוגמה: מה אפשר לעשות במרחב שמתפנה מכבישים ומחניות, למשל מדרכות רחבות וספסלים.4. מחיר, מענה וסיכום: מי עלול להיפגע מהשינוי (בעלי חנויות, אנשים מבוגרים), במבנה Admittedly, … However, …, ואחריו משפט סיכום ששוקל את שני הצדדים (On balance, …).",
+        "bodyEn": "4-part frame: 1. Position: answer in the first sentence, with a condition if needed (provided that …).2. Benefit 1 + example: cleaner air and less noise.3. Benefit 2 + example: what the freed space could become.4. Cost, reply and conclusion: Admittedly, … However, …, then On balance, …."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "בשאלה שמבקשת לשקול תועלות ומחירים, הטעות הנפוצה היא להשקיע את כל המילים בתועלות ולהשאיר להסתייגות חצי משפט. לכן כדאי לחלק כך: פתיחה של כ-20 מילים, כ-25 מילים לכל תועלת, כ-30 מילים למחיר ולמענה עליו וכ-10 מילים לסיכום. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: A costs-and-benefits question needs real space for the cost. Opening ~20, each benefit ~25, cost and reply ~30, conclusion ~10 = about 110 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. התאמה בין הנושא לפועל: people need, the buses are, the bus comes, it takes.2. המילים many ו-much: many cars (אפשר לספור), אבל much traffic (אי אפשר לספור).3. הצירוף Even though: אחריו לא באה המילה but באותו משפט.4. מילים שנשמעות דומה: הצורה it's (קיצור של it is) לעומת מילת השייכות its, והמילה than בהשוואה לעומת המילה then (אז).5. שם עצם שאי אפשר לספור: המילה parking (חניה באופן כללי) או הצירוף a parking space (מקום חניה), ולא הצירוף a parking.",
+        "bodyEn": "5-error check: Check: 1. subject–verb agreement (people need, it takes); 2. many cars / much traffic; 3. no but after Even though; 4. it's/its and than/then; 5. parking or a parking space (not a parking)."
+      }
+    ],
+    "usefulPhrases": [
+      "In my view, … is a good idea, provided that …",
+      "The most obvious benefit is …",
+      "Anyone who has … knows how …",
+      "… could be turned into …",
+      "As a result, …",
+      "Admittedly, … may …",
+      "However, … are likely to …",
+      "It is true that …, but …",
+      "cleaner air and quieter streets",
+      "On balance, the benefits outweigh the costs."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 116,
+        "essay": "In my view, closing city centers to private cars is a good idea, provided that public transportation is frequent and reliable. First, the air would become cleaner and the streets quieter. Anyone who has waited at a busy downtown junction knows how noxious the exhaust fumes can be. Second, the space now devoted to traffic and parking could be given back to people. A crowded thoroughfare, for instance, might become a tree-lined street with benches and cafes. Admittedly, shop owners may fear that customers who can no longer drive in will shop elsewhere. However, people who can stroll comfortably are likely to stay longer and spend more. On balance, the benefits seem to outweigh the costs.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה ברורה כבר בפתיחה, והיא מסויגת בתנאי: המשפט In my view, closing city centers to private cars is a good idea, provided that public transportation is frequent and reliable עונה על השאלה, והצירוף provided that (בתנאי ש) מראה שקילה זהירה ולא עמדה קיצונית.2. שתי התועלות מפותחות, ולכל אחת יש תמונה מוחשית: הסיבה הראשונה נתמכת בחוויה מוכרת במשפט Anyone who has waited at a busy downtown junction knows how noxious the exhaust fumes can be, והשנייה בדוגמה במשפט A crowded thoroughfare, for instance, might become a tree-lined street with benches and cafes. המילים noxious (מזיק, רעיל) ו-thoroughfare (עורק תנועה ראשי) משתלבות באופן טבעי ומעשירות את השפה.3. יש שקילה של המחיר ומענה עליו: הצירוף Admittedly, shop owners may fear ואחריו המשפט However, people who can stroll comfortably are likely to stay longer and spend more. מילות הסייג (may, might, are likely to, seem to) מנסחות את הטענות בזהירות, כפי שנדרש ברמה הזאת.שני שיפורים קטנים:1. משפט משודרג: התנאי provided that public transportation is frequent and reliable מופיע בפתיחה ואינו חוזר בהמשך. עדיף להחליף את משפט הסיכום On balance, the benefits seem to outweigh the costs במשפט On balance, if public transportation is reliable, the benefits outweigh the costs, וכך הסיכום חוזר לתנאי שבפתיחה.2. הצירוף could be given back to people כללי. עדיף הנוסח could be returned to pedestrians (הולכי רגל), שמדויק יותר וגם קצר יותר במילה אחת.טיפ – שיטת תקציב מילים: בתשובה יש 116 מילים. השיפור הראשון מוסיף 3 מילים והשני חוסך מילה אחת, ולכן התשובה תגיע ל-118 מילים, עדיין מתחת לגבול של 120. לפני כל תוספת כדאי לחשב כמה מילים היא עולה.",
+        "analysisEn": "Why it is high: a clear, conditional position (provided that public transportation is frequent and reliable), two developed benefits with concrete images (Anyone who has waited at a busy downtown junction; A crowded thoroughfare, for instance), and a concession with a reply (Admittedly … However …). Careful hedging (may, are likely to, seem to) suits the task, and noxious and thoroughfare add range.Refinements:1. Upgrade: On balance, the benefits seem to outweigh the costs → On balance, if public transportation is reliable, the benefits outweigh the costs (return to your opening condition).2. could be given back to people → could be returned to pedestrians (more precise, and one word shorter).Method tip – Word budget: refinement 1 adds 3 words and refinement 2 saves 1, so the answer reaches 118, still under 120."
+      },
+      {
+        "level": "mid",
+        "statedWords": 108,
+        "essay": "I think that the centers of big cities should be closed to private cars. First, there are so much cars in the center, and the air is dirty. It is not healthy for the people who live there. Second, there are always traffic jams. When I drive to the city center, it's take me one hour to get there and to find a parking. Without cars, the buses will be faster. Even though some people need their car, for example, elderly people, but they can use buses or taxis. In conclusion, closing the center to cars is a good idea, because the city will be cleaner and quieter.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה בפתיחה וחוזרת בסיכום: המשפט I think that the centers of big cities should be closed to private cars עונה ישירות על השאלה, והמשפט In conclusion, closing the center to cars is a good idea סוגר את התשובה.2. יש התייחסות למחיר של השינוי, עם דוגמה לקבוצה שתיפגע ממנו: הצירוף some people need their car, for example, elderly people מראה שקילה של שני הצדדים, כפי שהשאלה דורשת.3 התיקונים החשובים ביותר:1. המשפט Even though some people need their car, for example, elderly people, but they can use buses or taxis – התיקון: Even though some people need their car, for example, elderly people, they can use buses or taxis. הכלל: הצירוף Even though (למרות ש) כבר מחבר את שני חלקי המשפט, ולכן אין להוסיף אחריו את המילה but. המבנה \"למרות ש... אבל\" תקין בעברית, אבל לא באנגלית.2. הצירוף it's take me one hour – התיקון: it takes me one hour. הכלל: המילה take היא הפועל של המשפט, ולכן אין לשים לפניה את הפועל is (בקיצור 's). בהווה פשוט מוסיפים לפועל את הסיומת ‎-s‎ בגוף שלישי יחיד.3. הצירוף so much cars – התיקון: so many cars. הכלל: המילה many באה לפני שם עצם ברבים שאפשר לספור (many cars), והמילה much באה לפני שם עצם שאי אפשר לספור (much traffic). בעברית המילה \"הרבה\" מתאימה לשני המקרים, ומכאן הטעות.משפט משודרג:המשפט Without cars, the buses will be faster יכול להפוך למשפט Without private cars blocking the roads, buses would probably move faster, so more people might choose them over driving. כך הטענה מקבלת הסבר ותוצאה, והמילים probably ו-might מנסחות אותה בזהירות, כפי שמתאים לרמה הזאת.טיפ – שיטת תבנית 4 חלקים: כל סיבה צריכה טענה ועוד משפט של הסבר או דוגמה. כאן הסיבה השנייה היא רק הצירוף there are always traffic jams ועוד חוויה אישית אחת. גם המענה להסתייגות (they can use buses or taxis) אינו מסביר איך אנשים מבוגרים יסתדרו בפועל.",
+        "analysisEn": "Strengths: a clear position, repeated in the conclusion (I think that the centers of big cities should be closed to private cars), and a cost of the change (some people need their car, for example, elderly people).Top 3 fixes:1. Even though some people need their car, for example, elderly people, but they can use buses or taxis → Even though some people need their car, for example, elderly people, they can use buses or taxis (even though already links the clauses, so no but).2. it's take me one hour → it takes me one hour (take is the verb: no 's; add -s).3. so much cars → so many cars (many + plural countable nouns).Upgrade: Without cars, the buses will be faster → Without private cars blocking the roads, buses would probably move faster, so more people might choose them over driving.Method tip – 4-part frame: explain each reason, and argue your reply to the concession."
+      },
+      {
+        "level": "low",
+        "statedWords": 73,
+        "essay": "According to my opinion, its not a good idea to close the city center to cars. A lot of people needs the car for go to work, and the buses in my city is not enough good. The bus always come late, and it is slower then a car. Also, in the weekend families want to go to the center and buy things. Without car is very hard to carry all the bags.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה כבר במשפט הראשון: הצירוף not a good idea to close the city center to cars עונה ישירות על השאלה.2. הסיבות מעשיות ולקוחות מחיי היום-יום: המשפט The bus always come late, and it is slower then a car מסביר למה קשה לוותר על הרכב, והצירוף carry all the bags מוסיף פרט מוחשי.3 התיקונים החשובים ביותר:1. הצירוף A lot of people needs – התיקון: A lot of people need. הכלל: המילה people היא ברבים, ולכן הפועל בא בלי הסיומת ‎-s‎. זו טעות התאמה שחוזרת בתשובה שלוש פעמים, וכך גם בצירופים the buses in my city is (התיקון: the buses in my city are) ו-The bus always come (התיקון: The bus always comes).2. הצירוף for go to work – התיקון: to go to work. הכלל: כדי להביע מטרה (\"כדי ל...\") משתמשים במילה to ובצורת הבסיס של הפועל. המבנה for go הוא העתקה של \"בשביל ללכת\".3. המשפט Without car is very hard to carry all the bags – התיקון: Without a car, it is very hard to carry all the bags. הכלל: לכל משפט באנגלית צריך נושא. כשאין נושא אמיתי, משתמשים במילה it. בנוסף, המילה car היא שם עצם ביחיד שאפשר לספור, ולכן צריך לפניה את המילית a.משפט משודרג:המשפט Also, in the weekend families want to go to the center and buy things יכול להפוך למשפט On weekends, many families drive downtown to shop, and without a car they could hardly carry their bags home. כך מילת היחס נכונה (on weekends, ולא in the weekend), והסיבה מקבלת תוצאה ברורה.טיפ – שיטת בדיקת 5 הטעויות: בתשובה יש שלוש טעויות התאמה בין הנושא לפועל ושתי טעויות כתיב: במקום המילה its צריך לכתוב את הצורה it's (קיצור של it is), ובהשוואה צריך לכתוב את המילה than במקום המילה then. כדאי לעבור בסוף על כל פועל ולבדוק את הנושא שלו. בנוסף, בתשובה יש 73 מילים בלבד, והמינימום הוא 90.",
+        "analysisEn": "Strengths: a clear position in the first sentence (not a good idea to close the city center to cars) and practical, everyday reasons (The bus always come late; carry all the bags).Top 3 fixes:1. A lot of people needs → A lot of people need (people is plural; the same error appears in the buses in my city is and The bus always come).2. for go to work → to go to work (to + base verb expresses purpose).3. Without car is very hard to carry all the bags → Without a car, it is very hard to carry all the bags (a sentence needs a subject; a before a singular countable noun).Upgrade: Also, in the weekend families want to go to the center and buy things → On weekends, many families drive downtown to shop, and without a car they could hardly carry their bags home.Method tip – 5-error check: check every verb against its subject, and fix its → it's and then → than. At 73 words, the answer is also under the 90-word minimum."
+      }
+    ],
+    "words": [
+      {
+        "word": "noxious",
+        "pronunciation": "NOK-shus",
+        "meaningHe": "מזיק, רעיל (בעיקר גזים, עשן וריחות) · thoroughfare [THUR-oh-fair] – עורק תנועה ראשי, רחוב סואן שעוברים בו הרבה כלי רכב ואנשים"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-10",
+    "n": 10,
+    "prompt": "Some people say that we learn more from failure than from success. Do you agree, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "העמדה לא ברורה, או שיש דוגמה אחת בלי הסבר איך היא קשורה ללמידה (למשל תיאור של רגשות בלבד). אין סיבה שנייה או סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדה ברורה ודוגמה אישית טובה, אבל הסיבה השנייה רק נאמרת, והמענה להסתייגות קצר ולא מנומק (למשל המשפט But this is normal). רוב המילים הולכות לסיפור, ומעטות לטיעון.",
+        "high": "העמדה ברורה ומסויגת (I largely agree). כל טענה כללית נתמכת במקרה מוחשי, יש סיבה שנייה מפותחת, הסתייגות הוגנת (Admittedly …) ומענה שחוזר לעמדה."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: בלבול בין שם עצם לפועל (success/succeed), משפט בלי פועל (I afraid), מיליות שגויות (a good grades) והצירוף said me. אוצר המילים בסיסי מאוד.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות אופייניות של העתקה מעברית, כמו הצירופים do a mistake, failed in ו-disappointed from. רוב המשפטים פשוטים, ואוצר המילים כללי.",
+        "high": "אין טעויות. הזמנים מדויקים (כולל הזמן past perfect), המשפטים מגוונים (whereas, rather than, מבנה תנאי), ואוצר המילים המופשט מדויק."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה (משפט פתיחה): תשובה ישירה לשאלה, ואפשר גם לסייג אותה, למשל I largely agree that failure teaches us more than success does.2. סיבה ראשונה ודוגמה: טענה כללית (כישלון מכריח לבדוק מה השתבש), ואחריה מקרה אישי מוחשי, למשל מבחן נהיגה או מבחן בלימודים.3. סיבה שנייה: מה קורה אחרי הצלחה (בדרך כלל לא עוצרים לבדוק מה עבד), ומה התוצאה של זה.4. הסתייגות, מענה וסיכום: המבנה Admittedly, … However, …, ואחריו משפט שחוזר לעמדה.",
+        "bodyEn": "4-part frame: 1. Position: answer in the first sentence; you may hedge it (I largely agree …).2. Reason 1 + example: a general claim, then a concrete personal case.3. Reason 2: what happens after success, and the result.4. Concession, reply and conclusion: Admittedly, … However, …, then return to your position."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "בשאלה מופשטת, הדוגמה האישית עלולה \"לבלוע\" את כל התשובה. לכן כדאי להגביל אותה: פתיחה של כ-15 מילים, כ-35 מילים לסיבה הראשונה (כ-10 לטענה וכ-25 לדוגמה), כ-25 מילים לסיבה השנייה, כ-25 מילים להסתייגות ולמענה וכ-10 מילים לסיכום. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Keep the story in check. Opening ~15, reason 1 ~35 (claim ~10 + example ~25), reason 2 ~25, concession and reply ~25, conclusion ~10 = about 110 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. צירופים קבועים: make a mistake (ולא do a mistake).2. מילות יחס אחרי פעלים ותארים: fail an exam (בלי in), disappointed in או disappointed with, afraid of.3. שם עצם ופועל: המילה success (הצלחה) לעומת הפועל succeed (להצליח), והמילה failure (כישלון) לעומת הפועל fail (להיכשל).4. הפועל be לפני שם תואר: I am afraid, I was disappointed.5. הפעלים say ו-tell: told me או said to me, ולא said me.",
+        "bodyEn": "5-error check: Check: 1. make a mistake; 2. prepositions (fail an exam, disappointed in, afraid of); 3. success/succeed, failure/fail; 4. be before adjectives (I am afraid); 5. told me / said to me."
+      }
+    ],
+    "usefulPhrases": [
+      "I largely agree that …",
+      "When something goes well, we rarely …",
+      "By contrast, …",
+      "… forces us to examine what went wrong.",
+      "For example, when I …, I realized that …",
+      "That experience taught me to …",
+      "Moreover, …",
+      "Admittedly, … can be discouraging.",
+      "However, if we treat … as …, …",
+      "learn from our mistakes"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 115,
+        "essay": "I largely agree that failure teaches us more than success does. When something goes well, we rarely stop to ask why; we simply enjoy the result. Failure, by contrast, forces us to examine what went wrong. When I failed my first driving test, for example, I realized that I had memorized every rule but had seldom driven in heavy traffic. That mortifying morning made me a far more careful driver. Moreover, success can breed complacency, whereas a setback reminds us that effort still matters. Admittedly, repeated failure can be discouraging, especially for teenagers. However, if we treat each mistake as information rather than a verdict on our abilities, failure can become our most valuable teacher.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה ברורה כבר בפתיחה, ומנוסחת בזהירות: במשפט I largely agree that failure teaches us more than success does המילה largely (ברובו, במידה רבה) מראה הסכמה שאינה מוחלטת.2. הטענה הכללית נתמכת בדוגמה מוחשית: אחרי הטענה המופשטת Failure, by contrast, forces us to examine what went wrong בא המקרה האישי When I failed my first driving test, for example, I realized that I had memorized every rule but had seldom driven in heavy traffic, עם שימוש נכון בזמן past perfect (had memorized).3. יש סיבה שנייה, הסתייגות ומענה עליה: המשפט Moreover, success can breed complacency, whereas a setback reminds us that effort still matters, ואחריו הצירוף Admittedly, repeated failure can be discouraging והמענה However, if we treat each mistake as information rather than a verdict on our abilities. המילים mortifying (מביך מאוד, משפיל) ו-complacency (שאננות) משתלבות באופן טבעי ומעשירות את השפה.שני שיפורים קטנים:1. משפט משודרג: המשפט That mortifying morning made me a far more careful driver אומר מה השתנה, אבל לא מה הכותב למד לעשות. עדיף המשפט After that mortifying morning, I practiced in rush-hour traffic until I felt confident, שמראה את הלמידה עצמה.2. הצירוף a setback reminds us that effort still matters כללי. הנוסח a setback shows us where to improve מדויק יותר, כי הוא מסביר מה בדיוק לומדים מכישלון, וגם קצר יותר במילה אחת.טיפ – שיטת תבנית 4 חלקים: בתשובה הזאת המענה להסתייגות משמש גם כסיכום, כי הוא חוזר לעמדה (failure can become our most valuable teacher). כשהמילים מעטות, זו דרך טובה לחסוך משפט. השיפור הראשון מוסיף 3 מילים והשני חוסך מילה אחת, ולכן התשובה תגיע ל-117 מילים, בתוך הטווח.",
+        "analysisEn": "Why it is high: a clear, hedged position (I largely agree), an abstract claim (Failure, by contrast, forces us to examine what went wrong) backed by a concrete example with a correct past perfect (I realized that I had memorized every rule), a second reason, and a concession with a reply (Admittedly … However …). mortifying and complacency add range.Refinements:1. Upgrade: That mortifying morning made me a far more careful driver → After that mortifying morning, I practiced in rush-hour traffic until I felt confident (show what you learned).2. a setback reminds us that effort still matters → a setback shows us where to improve (more precise, and one word shorter).Method tip – 4-part frame: here the reply to the concession doubles as the conclusion, which saves words; together the refinements add only 2 words (117 in total)."
+      },
+      {
+        "level": "mid",
+        "statedWords": 107,
+        "essay": "I agree that we learn more from failure than from success. When we fail, we think about what we did wrong. For example, last year I failed in my math exam because I didn't study enough. I was very disappointed from myself, but then I started to study every day, and I passed the next exam. I learned from it a lot. When we succeed, we are happy, but we don't think about the reasons. Of course, failure can make people sad, and some give up. But this is normal. In conclusion, failure is the best teacher, because when we do a mistake, we learn from it.",
+        "analysisHe": "נקודות חוזק:1. הטענה הכללית נתמכת בדוגמה מוחשית ומסודרת: המשפט For example, last year I failed in my math exam because I didn't study enough מציג את הכישלון ואת הסיבה לו, והצירוף I started to study every day, and I passed the next exam מראה את השינוי ואת התוצאה.2. יש התייחסות לצד השני: המשפט Of course, failure can make people sad, and some give up מראה שהכותב מכיר את המחיר של כישלון.3 התיקונים החשובים ביותר:1. הצירוף when we do a mistake – התיקון: when we make a mistake. הכלל: באנגלית הצירוף הקבוע הוא make a mistake, עם הפועל make. הצירוף do a mistake הוא העתקה של \"לעשות טעות\".2. הצירוף I failed in my math exam – התיקון: I failed my math exam. הכלל: הפועל fail מקבל את המבחן ישירות, בלי מילת היחס in. בעברית אומרים \"נכשלתי במבחן\", ומכאן הטעות.3. הצירוף disappointed from myself – התיקון: disappointed in myself. הכלל: אחרי המילה disappointed באות מילות היחס in או with, ולא מילת היחס from, שהיא תרגום של \"מאוכזב מ...\".משפט משודרג:המשפט When we succeed, we are happy, but we don't think about the reasons יכול להפוך למשפט When we succeed, we tend to celebrate rather than ask what worked, so the lesson is often lost. כך הסיבה השנייה מקבלת הסבר ותוצאה, והמילים tend to ו-often מנסחות אותה בזהירות.טיפ – שיטת תקציב מילים: הדוגמה על המבחן תופסת כ-40 מילים, אבל הסיבה השנייה מקבלת 13 מילים בלבד, והמענה להסתייגות (But this is normal) רק 4 מילים. כדאי לקצר מעט את הדוגמה ולהעביר את המילים לסיבה השנייה ולמענה מנומק.",
+        "analysisEn": "Strengths: a concrete, well-ordered example (last year I failed in my math exam because I didn't study enough; I started to study every day, and I passed the next exam) and a concession (Of course, failure can make people sad, and some give up).Top 3 fixes:1. when we do a mistake → when we make a mistake (make a mistake).2. I failed in my math exam → I failed my math exam (fail an exam, with no in).3. disappointed from myself → disappointed in myself (disappointed in/with, not from).Upgrade: When we succeed, we are happy, but we don't think about the reasons → When we succeed, we tend to celebrate rather than ask what worked, so the lesson is often lost.Method tip – Word budget: the example takes about 40 words, the second reason only 13 and the reply 4. Move words from the example to the second reason and the reply."
+      },
+      {
+        "level": "low",
+        "statedWords": 71,
+        "essay": "I think we learn more from success. When I success, I feel strong and I want to continue. For example, in the school I got a good grades in English, and the teacher said me that I have talent. Now I love English and I read books in English. But when I fail, I afraid to try again and the failure make me sad. So success is better teacher for me.",
+        "analysisHe": "נקודות חוזק:1. העמדה ברורה כבר במשפט הראשון: המשפט I think we learn more from success עונה ישירות על השאלה.2. יש דוגמה אישית מוחשית עם תוצאה: אחרי הסיפור על הציונים באנגלית בא המשפט Now I love English and I read books in English, שמראה איך הצלחה אחת הובילה לאהבה לשפה.3 התיקונים החשובים ביותר:1. הצירוף When I success – התיקון: When I succeed. הכלל: המילה success (הצלחה) היא שם עצם. הפועל succeed פירושו \"להצליח\", ושם התואר successful פירושו \"מוצלח\".2. הצירוף I afraid to try again – התיקון: I am afraid to try again. הכלל: המילה afraid היא שם תואר ולא פועל, ולכן צריך לפניה את הפועל am, is או are. בעברית הצירוף \"אני מפחד\" הוא משפט שלם, אבל באנגלית חסר בו פועל.3. הצירוף the teacher said me – התיקון: the teacher told me. הכלל: אחרי הפועל say לא בא ישירות האדם ששומע. אפשר לכתוב את הצירוף told me או את הצירוף said to me.משפט משודרג:המשפט So success is better teacher for me יכול להפוך למשפט For me, success is a better teacher, because the confidence it gives me makes me want to learn more. כך המילית a שהייתה חסרה נוספת (a better teacher), והמשפט מסביר איך ההצלחה קשורה ללמידה, שהיא הנושא של השאלה, ולא רק לרגשות.טיפ – שיטת תקציב מילים: בתשובה יש 71 מילים בלבד, והמינימום הוא 90. חסרות בה סיבה שנייה עם דוגמה ומשפט סיכום. כדאי לתכנן כ-20 מילים לפתיחה, כ-35 מילים לכל סיבה וכ-15 מילים לסיכום.",
+        "analysisEn": "Strengths: a clear position in the first sentence (I think we learn more from success) and a concrete personal example with a result (Now I love English and I read books in English).Top 3 fixes:1. When I success → When I succeed (success is the noun; succeed is the verb).2. I afraid to try again → I am afraid to try again (afraid is an adjective, so it needs am/is/are).3. the teacher said me → the teacher told me (tell someone; say to someone).Upgrade: So success is better teacher for me → For me, success is a better teacher, because the confidence it gives me makes me want to learn more.Method tip – Word budget: 71 words is under the 90-word minimum. Add a second reason with an example and a closing sentence: plan about 20 + 35 + 35 + 15 words."
+      }
+    ],
+    "words": [
+      {
+        "word": "mortifying",
+        "pronunciation": "MOR-tuh-fy-ing",
+        "meaningHe": "מביך מאוד, משפיל · complacency [kum-PLAY-sun-see] – שאננות, שביעות רצון עצמית שגורמת להפסיק להתאמץ"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-11",
+    "n": 11,
+    "prompt": "If you could add one subject to every high school's program, what would it be, and why?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "הבחירה ברורה, אבל יש סיבה אחת בלבד, או שהנימוק אישי בלבד ואינו מסביר למה המקצוע חשוב לכל התלמידים. אין הסתייגות ואין סיכום, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "הבחירה ברורה ויש שתי סיבות, ולפעמים גם הסתייגות, אבל אחת הסיבות רק נאמרת (למשל הצירוף it is not difficult), והמענה להסתייגות קצר.",
+        "high": "הבחירה מוצגת כבר במשפט הראשון. יש שתי סיבות מפותחות שנוגעות לכל התלמידים ולא רק לכותב (צורך, תוצאה, הוגנות), הסתייגות לגבי המחיר (Admittedly …) ומענה עליה (However …), ובסוף משפט סיכום."
+      },
+      "language": {
+        "low": "טעויות רבות שמקשות על הקריאה: המילה will במקום המילה would במשפט תנאי, סדר מילים שגוי בשאלה עקיפה (how much cost), מיליות חסרות, המילה every עם רבים ומשפטים שמחוברים בפסיקים. אוצר המילים בסיסי מאוד, למשל המילה economy במקום המילה economics.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות אופייניות, כמו כינוי גוף מיותר (that every person needs it), המילה from במקום המילה than בהשוואה והצירוף Before two months. רוב המשפטים פשוטים.",
+        "high": "אין טעויות. מבנה התנאי עקבי (would, could), המשפטים מורכבים ומגוונים (פסוקיות זיקה, המבנה by + ‎-ing‎), ואוצר המילים מדויק בתחום הכסף והחינוך."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. בחירה (משפט פתיחה): שם המקצוע כבר במשפט הראשון, למשל If I could add one subject to every high school's program, it would be …2. סיבה ראשונה ותוצאה: איזה צורך של כל אדם בוגר המקצוע ממלא, ומה קורה למי שלא למד אותו.3. סיבה שנייה: מדוע דווקא בית הספר צריך ללמד את המקצוע, למשל כי לא כל משפחה יכולה ללמד אותו בבית.4. הסתייגות, מענה וסיכום: המחיר של ההצעה (מערכת השעות כבר מלאה), במבנה Admittedly, … However, …, ואחריו משפט סיכום.",
+        "bodyEn": "4-part frame: 1. Choice: name the subject in the first sentence.2. Reason 1 + result: what need it meets for every adult.3. Reason 2: why school should teach it (not every family can).4. Concession, reply and conclusion: Admittedly, … However, …, then one closing sentence."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "בשאלת בחירה קל להקדיש את רוב המילים לסיבות האישיות לבחירה. כדי שהנימוקים יעסקו בכל התלמידים ולא רק בכותב, כדאי לחלק כך: פתיחה של כ-15 מילים, כ-35 מילים לסיבה הראשונה, כ-30 מילים לסיבה השנייה, כ-20 מילים להסתייגות ולמענה וכ-10 מילים לסיכום. בסך הכול כ-110 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Opening ~15, reason 1 ~35, reason 2 ~30, concession and reply ~20, conclusion ~10 = about 110 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. מבנה התנאי: אחרי הצירוף If I could כותבים את הצירוף I would add (ולא I will add), ושומרים על הפועל would לאורך כל התשובה.2. השוואה: more important than (ולא from).3. המילה every עם יחיד: every student needs, ולא every students או every young people.4. שאלה עקיפה: how much an apartment costs (קודם הנושא ואחר כך הפועל).5. פסוקית זיקה בלי כינוי גוף מיותר: a subject that every person needs (בלי it).",
+        "bodyEn": "5-error check: Check: 1. If I could …, I would … (not will); 2. more important than; 3. every + singular (every student needs); 4. how much an apartment costs; 5. no extra it after that."
+      }
+    ],
+    "usefulPhrases": [
+      "If I could add one subject, it would be …",
+      "To begin with, every adult has to …",
+      "yet most students leave school without …",
+      "As a result, …",
+      "learn … the hard way",
+      "Moreover, … start at a disadvantage.",
+      "would give every student the same chance",
+      "Admittedly, … However, …",
+      "even one lesson a week could …",
+      "For these reasons, … deserves a place in every school."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 115,
+        "essay": "If I could add one subject to every high school's program, it would be personal finance. To begin with, every adult must manage money, yet most of us leave school unable to plan a budget or compare loans. As a result, many young people learn these lessons the hard way, by falling into debt or trusting disreputable lenders. Moreover, students whose families rarely discuss money start at a disadvantage, and a school course would give everyone the same tools. Admittedly, the school day is already full. However, even one lesson a week could help students make prudent choices for the rest of their lives. For these reasons, personal finance deserves a place in every school.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. הבחירה ברורה כבר במשפט הראשון, במבנה תנאי נכון: המשפט If I could add one subject to every high school's program, it would be personal finance עונה ישירות על השאלה.2. הנימוקים חורגים מטעם אישי ונוגעים לכל התלמידים: הסיבה הראשונה מסתיימת בתוצאה מוחשית (As a result, many young people learn these lessons the hard way, by falling into debt or trusting disreputable lenders), והשנייה עוסקת בשוויון הזדמנויות (students whose families rarely discuss money start at a disadvantage). מילות הקישור מגוונות (To begin with, yet, As a result, Moreover).3. יש הסתייגות ומענה עליה: המשפט Admittedly, the school day is already full ואחריו המשפט However, even one lesson a week could help students make prudent choices for the rest of their lives. המילים disreputable (מפוקפק, בעל שם רע) ו-prudent (נבון וזהיר בהחלטות) משתלבות באופן טבעי ומעשירות את השפה.שני שיפורים קטנים:1. משפט משודרג: ההסתייגות Admittedly, the school day is already full קצרה וכללית. עדיף המשפט Admittedly, a new subject would take time from others, שאומר במפורש מה המחיר של ההצעה.2. בצירוף make prudent choices לא מצוין באיזה תחום מדובר. הנוסח make prudent financial choices מחבר את המשפט ישירות למקצוע המוצע.טיפ – שיטת בדיקת 5 הטעויות: בתשובה שנפתחת במבנה תנאי (If I could …), טעות נפוצה היא לעבור באמצע לפועל will. כאן המבנה עקבי (would give, could help), וכדאי לבדוק זאת בכל תשובה מהסוג הזה. שני השיפורים יחד מוסיפים 3 מילים, ולכן התשובה תגיע ל-118 מילים, בתוך הטווח.",
+        "analysisEn": "Why it is high: a clear choice with a correct conditional (it would be personal finance), reasons that go beyond personal taste (falling into debt or trusting disreputable lenders; students whose families rarely discuss money start at a disadvantage), varied linking words, and a concession with a reply (Admittedly … However …). disreputable and prudent add range.Refinements:1. Upgrade: Admittedly, the school day is already full → Admittedly, a new subject would take time from others (name the cost).2. make prudent choices → make prudent financial choices (link it to the subject).Method tip – 5-error check: after If I could …, keep would/could throughout (never will); the refinements add 3 words (118 in total)."
+      },
+      {
+        "level": "mid",
+        "statedWords": 105,
+        "essay": "If I could add one subject to every high school, I would add first aid. First, this is a subject that every person needs it. Before two months, an elderly man fell in the street, and nobody knew what to do. If every students learned first aid in school, people could help in situations like this. Second, it is not difficult, and it does not take a lot of time. Some people think that math and English are more important from first aid. I agree that they are important, but first aid can save lives. In conclusion, first aid is the best subject to add.",
+        "analysisHe": "נקודות חוזק:1. הבחירה נתמכת בדוגמה מהחיים ובתועלת לכלל הציבור, ולא רק בטעם אישי: הצירוף an elderly man fell in the street, and nobody knew what to do מציג מקרה אמיתי, והצירוף people could help in situations like this מראה את התוצאה.2. יש התייחסות לצד השני ומענה עליו: המשפט Some people think that math and English are more important ואחריו המשפט I agree that they are important, but first aid can save lives מראים שקילה הוגנת.3 התיקונים החשובים ביותר:1. הצירוף a subject that every person needs it – התיקון: a subject that every person needs. הכלל: בפסוקית זיקה (אחרי המילים that, which או who) אין לחזור על המושא בעזרת כינוי גוף (it). בעברית אומרים \"מקצוע שכל אדם צריך אותו\", אבל באנגלית המילה that כבר מחליפה את המושא.2. הצירוף more important from first aid – התיקון: more important than first aid. הכלל: בהשוואה משתמשים במילה than, ולא במילת היחס from, שהיא תרגום של \"חשוב יותר מ...\".3. הצירוף Before two months – התיקון: Two months ago. הכלל: כדי לומר \"לפני\" + פרק זמן, כותבים את פרק הזמן ואחריו את המילה ago. המילה before באה לפני אירוע (before the exam), ולא לפני פרק זמן.משפט משודרג:המשפט Second, it is not difficult, and it does not take a lot of time יכול להפוך למשפט Second, a basic first aid course takes only a few hours, so schools could easily fit it into their program. כך הסיבה השנייה מקבלת פרט מוחשי ותוצאה.טיפ – שיטת בדיקת 5 הטעויות: כל הטעויות בתשובה הזאת הן מבנים קבועים שבדיקה אחרונה תופסת: כינוי גוף מיותר אחרי that, המילה than בהשוואה, המילה ago לזמן שעבר והמילה every עם שם עצם ביחיד (every student, ולא every students).",
+        "analysisEn": "Strengths: a real-life example with a public benefit (an elderly man fell in the street, and nobody knew what to do; people could help in situations like this) and a fair reply to the other side (I agree that they are important, but first aid can save lives).Top 3 fixes:1. a subject that every person needs it → a subject that every person needs (no extra it after that).2. more important from first aid → more important than first aid (compare with than).3. Before two months → Two months ago (time period + ago).Upgrade: Second, it is not difficult, and it does not take a lot of time → Second, a basic first aid course takes only a few hours, so schools could easily fit it into their program.Method tip – 5-error check: all four errors are fixed patterns a final check catches (that … it, than, ago, every student)."
+      },
+      {
+        "level": "low",
+        "statedWords": 73,
+        "essay": "If I could add one subject, I will add economy. Every young people need to know how to manage money. After school they need to rent apartment and pay bills, but they don't know how much cost an apartment. My parents explained me about money, but many parents don't do it. I am sure that every student will be happy to learn this subject, money is very important, without money you can't live.",
+        "analysisHe": "נקודות חוזק:1. הבחירה מנומקת בצורך של כולם, ולא רק בטעם אישי: המשפט Every young people need to know how to manage money מסביר למה המקצוע חשוב לכל תלמיד.2. יש דוגמאות מוחשיות לצורך: הצירוף rent apartment and pay bills מראה מה צעירים צריכים לדעת מיד אחרי בית הספר (לפני שם עצם ביחיד שאפשר לספור צריך מילית: rent an apartment).3 התיקונים החשובים ביותר:1. הצירוף I will add – התיקון: I would add. הכלל: במשפט תנאי שמתחיל במילים If I could, החלק השני בנוי עם הפועל would ולא עם הפועל will. גם השאלה עצמה משתמשת במילה would (what would it be).2. הצירוף how much cost an apartment – התיקון: how much an apartment costs. הכלל: בשאלה עקיפה (שאלה בתוך משפט) סדר המילים הוא כמו במשפט רגיל: קודם הנושא (an apartment) ואחריו הפועל (costs). המבנה השגוי הוא העתקה של \"כמה עולה דירה\".3. הצירוף Every young people need – התיקון: Every young person needs. הכלל: אחרי המילה every בא שם עצם ביחיד, והפועל מקבל את הסיומת ‎-s‎. אפשר גם לכתוב את הצירוף All young people need.משפט משודרג:המשפט My parents explained me about money, but many parents don't do it יכול להפוך למשפט My parents taught me how to save, but many families never discuss money, so a school course would give every student the same chance. כך נעלמת גם הטעות בצירוף explained me (התיקון: explained to me), והמשפט מראה שהמקצוע חשוב לכלל התלמידים, ולא רק לכותב.טיפ – שיטת תבנית 4 חלקים: בתשובה יש סיבה אחת בלבד, והיא נגמרת במשפט ארוך שמחובר בפסיקים (money is very important, without money you can't live) במקום משפט סיכום. כדאי להוסיף סיבה שנייה עם דוגמה (למשל הלוואות וחובות), הסתייגות קצרה ומשפט סיכום נפרד. כך התשובה גם תגיע ל-90 מילים לפחות (כרגע יש בה 73 מילים).",
+        "analysisEn": "Strengths: the choice is justified by everyone's needs, not only personal taste (Every young people need to know how to manage money), with concrete examples (rent apartment and pay bills; say rent an apartment).Top 3 fixes:1. I will add → I would add (If I could …, I would …).2. how much cost an apartment → how much an apartment costs (statement word order inside a sentence).3. Every young people need → Every young person needs (every + singular noun + -s).Upgrade: My parents explained me about money, but many parents don't do it → My parents taught me how to save, but many families never discuss money, so a school course would give every student the same chance.Method tip – 4-part frame: add a second reason with an example, a short concession and a separate closing sentence; this will also take you past 90 words (now 73)."
+      }
+    ],
+    "words": [
+      {
+        "word": "disreputable",
+        "pronunciation": "dis-REP-yuh-tuh-bul",
+        "meaningHe": "מפוקפק, בעל שם רע, שאי אפשר לסמוך עליו · prudent [PROO-dent] – נבון וזהיר, שוקל היטב לפני שהוא מחליט"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-12",
+    "n": 12,
+    "prompt": "Some argue that modern technology has made people less patient. To what extent do you agree with this claim?",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "התשובה אינה עונה על השאלה To what extent: הכותב מסכים או מתנגד לגמרי, בלי לקבוע עד כמה. הדוגמאות קצרות ולא מוסברות, אין התייחסות לצד השני, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדה מסויגת, דוגמה בעד ודוגמה נגד, אבל הדוגמאות כלליות (למשל הצירוף learn new things), והגבול בין החלק שבו מסכימים לחלק שבו לא מסכימים אינו מוגדר.",
+        "high": "הפתיחה קובעת עד כמה הכותב מסכים. יש הסתייגות (Admittedly …) ומענה עליה (However …), ולכל צד דוגמה מוחשית. הסיכום מגדיר בדיוק איפה עובר הגבול, למשל בין עיכובים קטנים לבין מטרות ארוכות טווח."
+      },
+      "language": {
+        "low": "טעויות רבות: זמנים (In the last years people lost), בלבול בין שם תואר לשם עצם (המילה patient במקום המילה patience), מילות יחס (wait to), פסיקים שמחברים משפטים שלמים ומילים שתורגמו מעברית, כמו המילה nervous במשמעות \"עצבני\". אוצר המילים מוגבל.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות במבנים קבועים, כמו הצירופים until some point, are used to get ו-not worth to wait, ותואר פועל במקום שם תואר (is slowly). רוב המשפטים פשוטים.",
+        "high": "אין טעויות. התחביר צפוף ומגוון אבל טבעי: מבנה מקוצר (Accustomed to …), המבנה Far from + ‎-ing‎, ניסוח זהיר (not necessarily) ואוצר מילים מדויק ועשיר."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה: משפט פתיחה שקובע עד כמה מסכימים, למשל I agree with this claim only up to a point.2. החלק שבו מסכימים, עם דוגמה: הטכנולוגיה הרגילה אותנו לתוצאות מיידיות, ולכן קשה לנו לחכות לאתר שנטען לאט.3. החלק שבו לא מסכימים, עם דוגמה: חוסר סבלנות כלפי מכשירים אינו מעיד על חוסר סבלנות כלפי מטרות ארוכות טווח, למשל לימוד שפה באפליקציה במשך חודשים.4. סיכום שמגדיר את הגבול: משפט אחד שאומר במה הטכנולוגיה שינתה אותנו ובמה לא.",
+        "bodyEn": "4-part frame: 1. Position: say how far you agree (only up to a point).2. The part you accept + example: we now expect instant results.3. The part you reject + example: we still persist with long-term goals, such as learning a language on an app.4. Conclusion: one sentence that defines the limit."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. בשאלה מסוג To what extent כדאי לחלק כך: פתיחה של כ-15 מילים, כ-35 מילים לחלק שבו מסכימים (כולל דוגמה), כ-40 מילים לחלק שבו לא מסכימים (כולל דוגמה) וכ-15 מילים לסיכום שמגדיר את הגבול. בסך הכול כ-105 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. For a To what extent prompt: opening ~15, the part you accept ~35, the part you reject ~40, conclusion ~15 = about 105 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. הזמן present perfect לשינוי שנמשך עד היום: כותבים technology has made us ו-people have lost, ולא people lost. הצירוף \"בשנים האחרונות\" הוא in recent years.2. שם עצם או שם תואר: המילה patience (סבלנות) היא שם עצם, והמילה patient (סבלני) היא שם תואר. כותבים we have less patience או we are less patient.3. מבנים קבועים עם הסיומת ‎-ing‎: כותבים be used to getting ו-worth waiting.4. מילות יחס: כותבים wait for ו-up to a point.5. פסיק בין משפטים שלמים: אין לחבר שני משפטים שלמים בפסיק בלבד. יש לשים ביניהם נקודה או מילת קישור.",
+        "bodyEn": "5-error check: Check: 1. present perfect for a change up to now (has made, have lost; in recent years); 2. patience (noun) vs patient (adjective); 3. -ing after be used to and worth; 4. prepositions (wait for, up to a point); 5. comma splices."
+      }
+    ],
+    "usefulPhrases": [
+      "I agree with this claim only up to a point.",
+      "To some extent, …",
+      "Admittedly, …",
+      "It is true that …; however, …",
+      "… does not necessarily mean that …",
+      "Accustomed to …, many of us …",
+      "Far from …ing, …",
+      "in recent years",
+      "instant results / minor delays",
+      "long-term goals",
+      "Technology, then, has made us …, but hardly …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 115,
+        "essay": "I agree with this claim only up to a point. Admittedly, technology has trained us to expect instant results. Accustomed to messages that arrive within seconds, many of us grow restive when a web page takes a moment too long to load. Few of us could now muster the forbearance that waiting weeks for a letter once demanded. However, impatience with machines does not necessarily extend to people or long-term goals. Many people happily spend months learning a language through an app or training for a marathon with a fitness tracker. Far from eroding perseverance, such tools often sustain it. Technology, then, has made us less tolerant of minor delays, but hardly less patient overall.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה מסויגת ועונה בדיוק על השאלה To what extent: המשפט I agree with this claim only up to a point קובע את מידת ההסכמה כבר בפתיחה, ומשפט הסיכום מגדיר את הגבול במדויק: less tolerant of minor delays, but hardly less patient overall.2. יש הסתייגות ומענה עליה, ולכל צד יש דוגמה מוחשית. המשפט Admittedly, technology has trained us to expect instant results מודה בחלק הנכון של הטענה, עם הדוגמה של מכתב שחיכו לו שבועות. המשפט However, impatience with machines does not necessarily extend to people or long-term goals מגביל את הטענה, עם הדוגמאות של לימוד שפה ואימון למרתון. הצירוף does not necessarily מנסח את הטענה בזהירות.3. התחביר צפוף ומגוון אבל טבעי: משפט אחד נפתח במבנה מקוצר (Accustomed to messages that arrive within seconds), ובהמשך יש המבנה המתקדם Far from eroding perseverance, such tools often sustain it (במקום לשחוק את ההתמדה, הכלים האלה דווקא מחזקים אותה). המילים restive (חסר מנוחה, קצר רוח) ו-forbearance (סבלנות ואיפוק) משתלבות בטבעיות ומעשירות את השפה.שני שיפורים קטנים:1. המשפט However, impatience with machines does not necessarily extend to people or long-term goals טוען גם לגבי סבלנות כלפי אנשים, אבל הדוגמאות שאחריו עוסקות רק במטרות ארוכות טווח. עדיף הנוסח does not necessarily extend to long-term goals, שמתאים בדיוק לדוגמאות וגם קצר יותר בשתי מילים.2. משפט משודרג: המילה overall בסוף התשובה כללית מדי. עדיף לסיים בצירוף but hardly less patient where it truly matters, שמחזיר את הקורא למטרות ארוכות הטווח ומוסיף שלוש מילים בלבד.טיפ – שיטת תבנית 4 חלקים: בשאלה מסוג To what extent כדאי להתאים את התבנית כמו בתשובה הזאת: עמדה שקובעת את מידת ההסכמה, החלק שבו מסכימים (Admittedly …), החלק שבו לא מסכימים (However …) וסיכום שמגדיר בדיוק את הגבול בין שני החלקים.",
+        "analysisEn": "Why it is high: a qualified position that answers To what extent (I agree with this claim only up to a point) and a conclusion that marks the limit (less tolerant of minor delays, but hardly less patient overall); a concession with a reply (Admittedly … However …), each side with a concrete example; and dense, natural syntax (Accustomed to messages that arrive within seconds; Far from eroding perseverance, such tools often sustain it). restive and forbearance add range.Refinements:1. does not necessarily extend to people or long-term goals → does not necessarily extend to long-term goals (the examples are about goals, not people).2. Upgrade: but hardly less patient overall → but hardly less patient where it truly matters.Method tip – 4-part frame: for a To what extent prompt, state how far you agree, give the part you accept (Admittedly …), then the part you reject (However …), and end by defining the limit."
+      },
+      {
+        "level": "mid",
+        "statedWords": 106,
+        "essay": "I agree with this claim until some point. Today we are used to get everything fast. For example, if the internet is slowly, people start to complain, and nobody wants to wait in line at the bank anymore. Also, children watch short videos all day, so it is hard for them to read a long book. On the other hand, some people use technology to learn new things for a long time, like languages. It's not worth to wait for things that can be fast, but we still need patience for important things. In conclusion, technology has made us less patient, but not in every way.",
+        "analysisHe": "נקודות חוזק:1. העמדה מסויגת, כפי שהשאלה דורשת: משפט הסיכום technology has made us less patient, but not in every way מראה שהכותב הבין שהשאלה To what extent אינה מבקשת הסכמה מלאה.2. יש התייחסות לצד השני: המשפט On the other hand, some people use technology to learn new things for a long time, like languages מציג דוגמה שסותרת את הטענה, וזו חשיבה מאוזנת.3 התיקונים החשובים ביותר:1. הצירוף until some point – התיקון: up to a point (או to some extent). הכלל: הצירוף העברי \"עד נקודה מסוימת\" מתורגם באנגלית לצירוף הקבוע up to a point. המילה until מציינת זמן בלבד.2. הצירוף we are used to get – התיקון: we are used to getting. הכלל: במבנה be used to (להיות רגיל ל-) המילה to היא מילת יחס, ולכן אחריה בא פועל עם הסיומת ‎-ing‎. אין לבלבל עם המבנה used to get (נהגנו לקבל בעבר).3. הצירוף if the internet is slowly – התיקון: if the internet is slow. הכלל: אחרי הפועל is צריך שם תואר (slow). תואר הפועל slowly מתאר איך עושים פעולה, למשל he walks slowly.משפט משודרג:המשפט It's not worth to wait for things that can be fast, but we still need patience for important things יכול להפוך למשפט Waiting for things that could be instant may seem pointless, yet goals that truly matter, such as learning a language, still demand patience. כך הטענה מקבלת דוגמה, והצירוף השגוי not worth to wait נעלם. הכלל: אחרי המילה worth בא פועל עם הסיומת ‎-ing‎, כמו בצירוף not worth waiting.טיפ – שיטת תבנית 4 חלקים: הדוגמה על לימוד שפות היא הטיעון החזק ביותר נגד הטענה, אבל היא מוזכרת בחצי משפט ואינה מוסברת. כדאי להקדיש לה משפט נוסף שמסביר למה היא מראה שהסבלנות לא נעלמה, למשל אנשים שמתמידים חודשים בלימוד שפה באפליקציה, ולחבר אותה לסיכום.",
+        "analysisEn": "Strengths: a qualified conclusion (technology has made us less patient, but not in every way) and a counterexample (On the other hand, some people use technology to learn new things for a long time, like languages).Top 3 fixes:1. until some point → up to a point (a fixed phrase; until is for time).2. we are used to get → we are used to getting (be used to + -ing).3. if the internet is slowly → if the internet is slow (an adjective after is).Upgrade: It's not worth to wait for things that can be fast, but we still need patience for important things → Waiting for things that could be instant may seem pointless, yet goals that truly matter, such as learning a language, still demand patience (also: worth + -ing).Method tip – 4-part frame: your counterexample about learning languages is your strongest point, so explain it in a full sentence and link it to your conclusion."
+      },
+      {
+        "level": "low",
+        "statedWords": 74,
+        "essay": "I think that technology makes people less patient. In the last years people lost the ability to wait. Today everything is in one click, you order food and it comes in twenty minutes. My little brother doesn't know to wait, when the computer is slow he is very nervous. Also people don't have patient to wait to the bus, they look on the phone all the time. So technology is very bad for patience.",
+        "analysisHe": "נקודות חוזק:1. יש דוגמה מוחשית מחיי היומיום: הצירוף you order food and it comes in twenty minutes מראה איך הטכנולוגיה מרגילה אותנו לקבל הכול מיד.2. יש דוגמה אישית נוספת: הצירוף when the computer is slow מתאר מצב מוכר שבו אפשר לראות חוסר סבלנות.3 התיקונים החשובים ביותר:1. הצירוף In the last years people lost – התיקון: In recent years people have lost. הכלל: שינוי שהתחיל בעבר ונמשך עד היום מתארים בזמן present perfect (have lost). הצירוף in the last years הוא העתקה של \"בשנים האחרונות\", ובאנגלית אומרים in recent years.2. הצירוף don't have patient to wait to the bus – התיקון: don't have the patience to wait for the bus. הכלל: המילה patient היא שם תואר (סבלני), ושם העצם הוא patience (סבלנות). בנוסף, הפועל wait בא עם מילת היחס for ולא עם המילה to.3. המשפט Today everything is in one click, you order food – התיקון: Today everything is one click away: you order food. הכלל: אין לחבר שני משפטים שלמים בפסיק בלבד, ולכן כדאי לשים נקודתיים או נקודה במקום הפסיק. הצירוף in one click הוא העתקה של \"בלחיצה אחת\", ובאנגלית אומרים one click away או with one click.משפט משודרג:המשפט My little brother doesn't know to wait, when the computer is slow he is very nervous יכול להפוך למשפט My little brother cannot bear to wait: whenever the computer is slow, he becomes irritated within seconds. כך נעלם הפסיק שמחבר שני משפטים שלמים, והמילה nervous (לחוץ, חושש) מוחלפת במילה irritated (עצבני, מרוגז), שמתאימה למשמעות. גם הצירוף know to wait שגוי: כדי לומר \"לדעת לחכות\" כותבים באנגלית know how to wait.טיפ – שיטת תבנית 4 חלקים: השאלה To what extent do you agree מבקשת לקבוע עד כמה מסכימים, אבל התשובה מסכימה לגמרי ואינה מתייחסת לצד השני. כדאי לפתוח בעמדה מסויגת (I agree only up to a point), להציג סיבה בעד וסיבה נגד, כל אחת עם דוגמה, ולסיים בסיכום. כך התשובה גם תגיע ל-90 מילים לפחות (כרגע יש בה 74 מילים בלבד).",
+        "analysisEn": "Strengths: an everyday example (you order food and it comes in twenty minutes) and a second, personal one (when the computer is slow).Top 3 fixes:1. In the last years people lost → In recent years people have lost (present perfect for a change that continues now).2. don't have patient to wait to the bus → don't have the patience to wait for the bus (patience is the noun; wait for).3. Today everything is in one click, you order food → Today everything is one click away: you order food (no comma splice; say one click away).Upgrade: My little brother doesn't know to wait, when the computer is slow he is very nervous → My little brother cannot bear to wait: whenever the computer is slow, he becomes irritated within seconds (nervous means anxious; know how to).Method tip – 4-part frame: To what extent asks how far you agree, yet the answer agrees completely. Open with a qualified position, give one reason for and one against, each with an example, and conclude; this will also take you past 90 words (now 74)."
+      }
+    ],
+    "words": [
+      {
+        "word": "restive",
+        "pronunciation": "RES-tiv",
+        "meaningHe": "חסר מנוחה וקצר רוח, מתקשה לחכות בשקט · forbearance [for-BAIR-unss] – סבלנות ואיפוק, היכולת לחכות או לסבול משהו בלי לכעוס"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-13",
+    "n": 13,
+    "prompt": "Should old buildings be preserved even when a city needs space for new housing? Explain your view.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "העמדה לא ברורה: הכותב אוהב את הבניינים הישנים אבל גם חושב שאנשים חשובים יותר, ומסיים במשפט So both things are important. הסיבות מופיעות במשפט קצר אחד בלי הסבר, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדת ביניים (but not always) ושתי סיבות, אבל הן אינן מפותחות: המחסור בדירות מוצג בלי דוגמה, והפשרה אינה מסבירה איך מחליטים אילו בניינים לשמר.",
+        "high": "עמדת ביניים מדויקת כבר בפתיחה (but only selectively), דוגמאות מנוגדות שמראות איפה עובר הגבול, הסתייגות כנה מהעמדה עצמה ומענה עליה, וסיכום שמנסח קריטריון ברור."
+      },
+      "language": {
+        "low": "טעויות רבות: סדר מילים (I very like), המילה this לפני שם עצם ברבים, צירופים שתורגמו מעברית (keep on them, don't have where to live), שם תואר בצורת רבים (more importants) ופסיק בין משפטים שלמים. אוצר המילים מוגבל.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות במילות היחס של צירופים קבועים, כמו הצירופים In my point of view, part from ו-on the account of. אוצר המילים כללי (a big lack).",
+        "high": "אין טעויות. אוצר המילים מדויק (replicate, merit, take priority over), יש היפוך של סדר המילים אחרי הצירוף Only when, ומילות הקישור מגוונות."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה: עמדת ביניים ברורה, למשל In my view, old buildings deserve protection, but only selectively.2. הצד של השימור, עם דוגמה: בניין היסטורי שנהרס אובד לתמיד, למשל שוק מקורה בן מאה שנה.3. הצד של הדיור, עם דוגמה: מחסן ישן בלי ערך אדריכלי אינו צריך לעמוד בדרכן של משפחות צעירות שמחפשות דירה.4. הסתייגות, מענה וסיכום: המבנה Admittedly, … Nevertheless, …, ואחריו קריטריון ברור, למשל Only when a building is irreplaceable should it …",
+        "bodyEn": "4-part frame: 1. Position: a clear middle position.2. The case for preservation + example: a demolished historic building is lost for good.3. The case for housing + example: a worthless old warehouse should not block new homes.4. Concession, reply and conclusion: Admittedly, … Nevertheless, …, then a clear test."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. בעמדת ביניים כדאי לחלק כך: פתיחה של כ-10 מילים, כ-30 מילים לצד של השימור, כ-30 מילים לצד של הדיור, כ-25 מילים להסתייגות ולמענה וכ-20 מילים לסיכום שמנסח קריטריון. בסך הכול כ-115 מילים, בתוך הטווח של 90–120. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. For a middle position: opening ~10, preservation ~30, housing ~30, concession and reply ~25, conclusion ~20 = about 115 words (range 90–120). Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. מילות יחס בצירופים קבועים: כותבים from my point of view, part of, a shortage of ו-at the expense of.2. המילים this ו-these: לפני שם עצם ברבים כותבים these, כמו בצירוף these buildings.3. שמות תואר אינם מקבלים צורת רבים: כותבים more important, ולא more importants.4. צירופים שתורגמו מעברית: הצירוף \"לשמור על\" מתורגם לפועל preserve או לפועל protect, והצירוף \"אין להם איפה לגור\" מתורגם לצירוף have nowhere to live.5. פסיק בין משפטים שלמים: אין לחבר שני משפטים שלמים בפסיק בלבד. יש לשים ביניהם נקודה או מילת קישור כמו because.",
+        "bodyEn": "5-error check: Check: 1. prepositions in fixed phrases (from my point of view, part of, a shortage of, at the expense of); 2. these + plural noun; 3. no plural adjectives (more important); 4. Hebrew calques (preserve, have nowhere to live); 5. comma splices."
+      }
+    ],
+    "usefulPhrases": [
+      "In my view, … but only selectively.",
+      "… deserve(s) protection",
+      "Once … is demolished, it is lost for good.",
+      "Not every … is worth saving.",
+      "stand in the way of …",
+      "an affordable home / affordable housing",
+      "a shortage of …",
+      "Admittedly, … Nevertheless, …",
+      "not at the expense of …",
+      "take priority over …",
+      "Only when … should …"
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 116,
+        "essay": "In my view, old buildings deserve protection, but only selectively. A city's historic architecture gives it a character that no modern complex can replicate, and once a century-old market hall is demolished, it is lost for good. Yet not every aging edifice is worth saving. A dilapidated warehouse with no architectural value should not stand in the way of young families who cannot find an affordable home. Admittedly, deciding which buildings merit protection is difficult, and developers may exaggerate a structure's flaws. Nevertheless, an independent panel of experts could identify the truly significant sites. Only when a building is genuinely irreplaceable should it take priority over housing; otherwise, the needs of the living must come first.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה מאוזנת ומדויקת כבר בפתיחה: הצירוף old buildings deserve protection, but only selectively קובע עמדת ביניים. משפט הסיום הופך אותה לקריטריון ברור, במבנה מתקדם של היפוך סדר המילים אחרי הצירוף Only when: Only when a building is genuinely irreplaceable should it take priority over housing.2. לכל צד יש דוגמה מוחשית, והניגוד בין שתי הדוגמאות מראה בדיוק איפה עובר הגבול: הצירוף once a century-old market hall is demolished, it is lost for good מול הצירוף A dilapidated warehouse with no architectural value. המילים dilapidated (רעוע, מוזנח ומתפורר) ו-edifice (מבנה גדול ומרשים) משתלבות באופן טבעי ומעשירות את השפה.3. יש הסתייגות כנה מהעמדה של הכותב עצמו ומענה עליה: המשפט Admittedly, deciding which buildings merit protection is difficult ואחריו המשפט Nevertheless, an independent panel of experts could identify the truly significant sites. אוצר המילים מדויק (replicate, merit, take priority over), ומילות הקישור מגוונות (Yet, Admittedly, Nevertheless, otherwise).שני שיפורים קטנים:1. המענה להסתייגות אינו מתייחס ליזמים שהוזכרו בה (developers may exaggerate a structure's flaws). הנוסח an independent panel of experts, rather than developers, could identify סוגר את הטיעון ומוסיף שלוש מילים בלבד.2. המילה truly במשפט על הוועדה ומיד אחריה המילה genuinely במשפט הסיום הן שתי מילות חיזוק ברצף. עדיף למחוק את המילה truly ולהשאיר את החיזוק רק בסיום, שם הוא חשוב יותר.טיפ – שיטת תקציב מילים: בתשובה יש 116 מילים. השיפור הראשון מוסיף 3 מילים והשני חוסך מילה אחת, ולכן התשובה תגיע ל-118 מילים, עדיין מתחת לגבול של 120. לפני כל תוספת כדאי לחשב כמה מילים היא עולה.",
+        "analysisEn": "Why it is high: a nuanced position from the start (old buildings deserve protection, but only selectively), turned into a clear test with inversion at the end (Only when a building is genuinely irreplaceable should it take priority over housing); two contrasting examples (a century-old market hall vs A dilapidated warehouse with no architectural value); and an honest concession with a reply (Admittedly … Nevertheless …). dilapidated and edifice add range.Refinements:1. an independent panel of experts could identify → an independent panel of experts, rather than developers, could identify (answer the point about developers).2. Delete truly before significant sites; genuinely in the last sentence is enough.Method tip – Word budget: 116 + 3 − 1 = 118 words, still under 120. Count before you add."
+      },
+      {
+        "level": "mid",
+        "statedWords": 105,
+        "essay": "In my point of view, old buildings should be preserved, but not always. First, old buildings are part from our history and they make the city beautiful. When tourists come to a city, they want to see the old places and not only new towers. Second, there is a big lack in apartments, and many young couples cannot buy a home. I think the city can keep the most important buildings and build new houses in other places. Of course it is important to preserve history, but not on the account of people who need a place to live. In conclusion, we need a balance.",
+        "analysisHe": "נקודות חוזק:1. העמדה מאוזנת ויש בה פשרה מעשית: המשפט old buildings should be preserved, but not always מסייג את העמדה כבר בפתיחה, והמשפט the city can keep the most important buildings and build new houses in other places מציע דרך לשלב בין שני הצדדים.2. הסיבה הראשונה נתמכת בדוגמה: המשפט When tourists come to a city, they want to see the old places and not only new towers מראה ערך מוחשי של הבניינים הישנים.3 התיקונים החשובים ביותר:1. הצירוף In my point of view – התיקון: From my point of view (או In my view). הכלל: הצירוף הקבוע point of view בא עם מילת היחס from. עם מילת היחס in אומרים in my view או in my opinion.2. הצירוף part from our history – התיקון: part of our history. הכלל: הצירוף העברי \"חלק מ-\" מתורגם באנגלית לצירוף part of. המילה from מציינת מקור או כיוון.3. הצירוף a big lack in apartments – התיקון: a severe shortage of apartments. הכלל: אחרי המילה lack בא הצירוף of (a lack of). כשמדברים על דיור, הצירוף הטבעי הוא a shortage of, והמילה severe מדויקת יותר מהמילה big.משפט משודרג:המשפט Of course it is important to preserve history, but not on the account of people who need a place to live יכול להפוך למשפט Of course, history deserves protection, but not at the expense of families who have nowhere to live. כך הניסוח מדויק יותר, והשגיאה בצירוף on the account of נעלמת. הכלל: הצירוף העברי \"על חשבון\" מתורגם באנגלית לצירוף at the expense of.טיפ – שיטת בדיקת 5 הטעויות: ארבע הטעויות בתשובה הזאת הן מילות יחס בצירופים קבועים שתורגמו מילה במילה מעברית (point of view, part of, a shortage of, at the expense of). לפני השליחה כדאי לעבור על כל צירוף קבוע ולבדוק אם מילת היחס שבו נבחרה לפי העברית או לפי השימוש באנגלית.",
+        "analysisEn": "Strengths: a balanced position with a practical compromise (old buildings should be preserved, but not always; the city can keep the most important buildings and build new houses in other places) and an example (When tourists come to a city, they want to see the old places).Top 3 fixes:1. In my point of view → From my point of view (or In my view).2. part from our history → part of our history (part of, not from).3. a big lack in apartments → a severe shortage of apartments (lack of; shortage is the natural word for housing).Upgrade: Of course it is important to preserve history, but not on the account of people who need a place to live → Of course, history deserves protection, but not at the expense of families who have nowhere to live.Method tip – 5-error check: all four errors are prepositions in fixed phrases translated from Hebrew. Before submitting, check the preposition in every fixed phrase."
+      },
+      {
+        "level": "low",
+        "statedWords": 71,
+        "essay": "I very like old buildings, they are beautiful and they have a story. In my city there are houses from a hundred years ago. This buildings are a part of our culture, so we need to keep on them. But many young couples don't have where to live. People are more importants than buildings. Instead to destroy old buildings, the city can build outside the center. So both things are important.",
+        "analysisHe": "נקודות חוזק:1. יש פרט מוחשי מהחיים: המשפט In my city there are houses from a hundred years ago מראה שהכותב מכיר את הנושא מקרוב.2. יש רעיון לפתרון מעשי: הצירוף the city can build outside the center מציע דרך לשמור על הבניינים הישנים וגם לבנות דירות.3 התיקונים החשובים ביותר:1. המשפט I very like old buildings, they are beautiful – התיקון: I really like old buildings because they are beautiful. הכלל: המילה very אינה באה לפני פועל. כדי לחזק פועל כותבים really like או like … very much. בנוסף, אין לחבר שני משפטים שלמים בפסיק בלבד, ולכן מוסיפים את מילת הקישור because.2. המשפט This buildings are a part of our culture, so we need to keep on them – התיקון: These buildings are a part of our culture, so we need to preserve them. הכלל: לפני שם עצם ברבים כותבים these ולא this. הצירוף keep on פירושו \"להמשיך\", ולכן הוא אינו מתאים כאן. הצירוף העברי \"לשמור על\" מתורגם באנגלית לפועל preserve (לשמר) או לפועל protect (להגן על).3. הצירוף don't have where to live – התיקון: have nowhere to live. הכלל: הצירוף הזה הוא העתקה של המבנה העברי \"אין להם איפה לגור\". באנגלית אומרים have nowhere to live או cannot find a place to live.משפט משודרג:המשפט Instead to destroy old buildings, the city can build outside the center יכול להפוך למשפט Instead of destroying old buildings, the city could build new neighborhoods outside the center. כך המשפט מציג פתרון ברור יותר, והשגיאה בצירוף Instead to destroy נעלמת. הכלל: אחרי הצירוף instead of בא פועל עם הסיומת ‎-ing‎.טיפ – שיטת תקציב מילים: בתשובה יש 71 מילים בלבד, וכל רעיון מקבל משפט אחד קצר. לפי התקציב (כ-10 מילים לעמדה, כ-30 מילים לכל סיבה, כ-25 מילים להסתייגות ולמענה וכ-20 מילים לסיכום) כדאי להוסיף לכל סיבה הסבר או דוגמה. כדאי גם להחליף את משפט הסיום So both things are important בעמדה ברורה, כי משפט כזה אינו עונה על השאלה.",
+        "analysisEn": "Strengths: a concrete detail (In my city there are houses from a hundred years ago) and a practical idea (the city can build outside the center).Top 3 fixes:1. I very like old buildings, they are beautiful → I really like old buildings because they are beautiful (very cannot come before a verb; no comma splice).2. This buildings are a part of our culture, so we need to keep on them → These buildings are a part of our culture, so we need to preserve them (these + plural; keep on means continue).3. don't have where to live → have nowhere to live (a Hebrew calque).Upgrade: Instead to destroy old buildings, the city can build outside the center → Instead of destroying old buildings, the city could build new neighborhoods outside the center (instead of + -ing).Method tip – Word budget: at 71 words, each idea gets one short sentence. Add an explanation or example to each reason, and replace So both things are important with a clear position."
+      }
+    ],
+    "words": [
+      {
+        "word": "dilapidated",
+        "pronunciation": "dih-LAP-ih-day-tid",
+        "meaningHe": "רעוע, מוזנח ומתפורר בגלל גיל או חוסר טיפול · edifice [ED-ih-fiss] – מבנה גדול ומרשים"
+      }
+    ]
+  },
+  {
+    "id": "writing-task-14",
+    "n": 14,
+    "prompt": "Do the benefits of tourism to a town outweigh its costs? Explain your view.",
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "rubric": {
+      "content": {
+        "low": "התשובה מונה תועלות ונזקים אבל אינה מכריעה ביניהם, ומסתיימת במשפט So tourism is good and bad. הדוגמאות קצרות ואין ביניהן שקילה, או שהתשובה קצרה מ-90 מילים.",
+        "mid": "יש עמדה מסויגת (In most cases) ושתי תועלות, אבל התועלת השנייה אינה מפותחת, והמענה לנזקים קצר ולא משכנע (But this is only temporary). גם התנאי בסיום אינו מוסבר.",
+        "high": "עמדה מסויגת עם תנאי כבר בפתיחה, שתי תועלות שונות ומפותחות, שקילה הוגנת של הנזקים ומענה שמשנה את נקודת המבט, וסיכום מותנה (Provided that …) שחוזר לפתיחה."
+      },
+      "language": {
+        "low": "טעויות רבות: מילות יחס בצירופים קבועים (full with, In the same time), שם עצם במקום שם תואר (very crowd), התאמה בפסוקית זיקה (who lives), המילה Beside במקום המילה Besides ושימוש מיותר במילית the. המשפטים קצרים ופשוטים.",
+        "mid": "הטקסט קריא, אבל יש בו 3–5 טעויות בבחירת מילים ובצירופים: הצירוף outweigh on, המילה economical במקום המילה economic, המילה raise במקום המילה rise והצירוף As a result from. רוב המשפטים פשוטים.",
+        "high": "אין טעויות. יש מבנה מקוצר (a town inundated with visitors), פסוקית תנאי (Provided that …), ניגוד מדויק (rather than), מילות סייג (may, should) ואוצר מילים עשיר."
+      }
+    },
+    "method": [
+      {
+        "titleHe": "תבנית 4 חלקים",
+        "bodyHe": "1. עמדה מסויגת עם תנאי, למשל To a large extent, the benefits outweigh the costs, although much depends on how a town manages its visitors.2. התועלת הראשונה, עם תוצאה: כסף שמחזיק עסקים מקומיים, ומקומות עבודה שמאפשרים לצעירים להישאר בעיירה.3. התועלת השנייה, עם דוגמה: התיירות נותנת לעיירה סיבה לשפץ את הכיכר הישנה ולשמור על המסורות שלה.4. הנזקים, המענה והסיכום: המבנה Admittedly, … however, …, ואחריו סיכום מותנה, למשל Provided that …, the gains should far exceed the losses.",
+        "bodyEn": "4-part frame: 1. Position: a qualified view with a condition.2. Benefit 1 + result: money for local businesses and jobs that keep young people in town.3. Benefit 2 + example: a reason to restore the old square and keep traditions alive.4. Costs, reply and conclusion: Admittedly, … however, …, then a conditional conclusion (Provided that …)."
+      },
+      {
+        "titleHe": "תקציב מילים",
+        "bodyHe": "התקציב הבסיסי הוא כ-20 + 35 + 35 + 15 מילים. בשאלה ששוקלת תועלות מול נזקים כדאי לחלק כך: פתיחה של כ-20 מילים עם התנאי, כ-25 מילים לכל תועלת, כ-30 מילים לנזקים ולמענה עליהם וכ-15 מילים לסיכום המותנה. בסך הכול כ-115 מילים, בתוך הטווח של 90–120. הטעות הנפוצה היא להשקיע את רוב המילים בתועלות ולהשאיר לנזקים חצי משפט. חלוקת הזמן: כ-2 דקות לתכנון, כ-8 דקות לכתיבה וכ-2 דקות לבדיקה.",
+        "bodyEn": "Word budget: Basic budget: 20 + 35 + 35 + 15. When weighing benefits against costs: opening with the condition ~20, each benefit ~25, costs and reply ~30, conditional conclusion ~15 = about 115 words (range 90–120). Do not leave the costs half a sentence. Time: 2 minutes to plan, 8 to write, 2 to check."
+      },
+      {
+        "titleHe": "בדיקת 5 הטעויות",
+        "bodyHe": "לפני השליחה כדאי לבדוק בתשובה הזאת חמש טעויות:1. הפועל outweigh בא בלי מילת יחס: כותבים the benefits outweigh the costs, ולא outweigh on.2. מילים דומות: המילה economic (כלכלי) לעומת המילה economical (חסכוני), והפועל rise (לעלות) לעומת הפועל raise (להעלות משהו).3. מילות יחס בצירופים קבועים: כותבים full of, at the same time ו-as a result of.4. התאמה בין הנושא לפועל: בצירוף people who live here הפועל מתאים למילה people, שהיא צורת רבים.5. המילית the: לפני שם עצם כללי שאינו נספר אין צורך במילית the, ולכן כותבים Tourism is good, ולא The tourism is good.",
+        "bodyEn": "5-error check: Check: 1. outweigh + direct object (no on); 2. look-alike words (economic/economical, rise/raise); 3. prepositions in fixed phrases (full of, at the same time, as a result of); 4. agreement (people who live); 5. no the before a general uncountable noun (Tourism is good)."
+      }
+    ],
+    "usefulPhrases": [
+      "To a large extent, …",
+      "although much depends on …",
+      "The benefits outweigh the costs.",
+      "economic benefits",
+      "money that sustains local businesses",
+      "allow … to stay rather than move away",
+      "Admittedly, … may suffer from …",
+      "These problems, however, stem from … rather than …",
+      "Provided that …, …",
+      "The gains should far exceed the losses."
+    ],
+    "samples": [
+      {
+        "level": "high",
+        "statedWords": 115,
+        "essay": "To a large extent, I believe the benefits of tourism outweigh its costs, although much depends on how a town manages its visitors. Tourists bring money that sustains local cafes, guesthouses and craft shops, and the resulting jobs allow young residents to stay rather than move away. Tourism can also give a quaint village a reason to restore its old square and keep its traditions alive. Admittedly, a town inundated with visitors every summer may suffer from traffic, litter and rising rents that push locals out. These problems, however, stem from poor planning rather than tourism itself. Provided that a town limits short-term rentals and reinvests the revenue, the gains should far exceed the losses.",
+        "analysisHe": "למה זו תשובה ברמה גבוהה:1. העמדה מסויגת ושקולה: הצירוף To a large extent קובע את מידת ההסכמה, והצירוף although much depends on how a town manages its visitors מציב תנאי כבר בפתיחה. משפט הסיום חוזר לתנאי הזה במבנה מתקדם: Provided that a town limits short-term rentals and reinvests the revenue, the gains should far exceed the losses.2. שתי התועלות מפותחות ושונות זו מזו. התועלת הכלכלית מגיעה עד התוצאה שלה (the resulting jobs allow young residents to stay rather than move away), והתועלת התרבותית מוצגת בדוגמה מוחשית (give a quaint village a reason to restore its old square and keep its traditions alive). המילים quaint (ציורי ומקסים בסגנון ישן) ו-inundated (מוצף) משתלבות באופן טבעי ומעשירות את השפה.3. הנזקים של התיירות נשקלים בהגינות, והמענה עליהם משנה את נקודת המבט: הצירוף Admittedly, a town inundated with visitors every summer may suffer from traffic, litter and rising rents ואחריו המשפט These problems, however, stem from poor planning rather than tourism itself. מילות הסייג may ו-should מנסחות את הטענות בזהירות.שני שיפורים קטנים:1. הצירוף reinvests the revenue אינו אומר לאן הולך הכסף. הנוסח reinvests the revenue in local services מראה איך העיירה מטפלת בפקקים ובלכלוך שהוזכרו בהסתייגות, ומוסיף שלוש מילים בלבד (118 מילים בסך הכול).2. השאלה עוסקת בעיירה (town), והתשובה כולה מדברת על עיירה, אבל בדוגמה השנייה מופיע הצירוף a quaint village. עדיף הצירוף a quaint town, כדי לשמור על עקביות בלי להוסיף מילים.טיפ – שיטת בדיקת 5 הטעויות: גם בתשובה נקייה כדאי לבדוק בסוף שני דברים. ראשית, המילה however באמצע המשפט מוקפת בפסיקים (These problems, however, stem from), וכך נמנע חיבור של שני משפטים שלמים בפסיק. בתחילת רעיון חדש המילה However באה אחרי נקודה. שנית, בפסוקית זיקה כמו money that sustains local cafes הפועל מתאים לשם העצם שלפני המילה that. המילה money היא שם עצם שאינו נספר, ולכן הפועל sustains בא עם הסיומת ‎-s‎.",
+        "analysisEn": "Why it is high: a qualified position with a condition (To a large extent; although much depends on how a town manages its visitors) and a conclusion that returns to it (Provided that a town limits short-term rentals and reinvests the revenue); two distinct, developed benefits (the resulting jobs allow young residents to stay; give a quaint village a reason to restore its old square); and a fair concession with a reply that reframes it (These problems, however, stem from poor planning rather than tourism itself). quaint and inundated add range.Refinements:1. reinvests the revenue → reinvests the revenue in local services (say where the money goes; 118 words).2. a quaint village → a quaint town (the prompt and the rest of the answer are about a town).Method tip – 5-error check: even in a clean answer, check that a mid-sentence however sits between commas, and that a verb in a relative clause agrees with its noun (money that sustains)."
+      },
+      {
+        "level": "mid",
+        "statedWords": 107,
+        "essay": "In most cases, I think the benefits of tourism outweigh on the costs. First, tourism brings economical benefits to the town. Tourists sleep in hotels, eat in restaurants and shop in local stores, so many residents have work. As a result from this, young people do not leave. Second, the town becomes more famous, and the residents are proud of it. On the other hand, in the summer there is a lot of traffic and noise, and the prices raise, so life is hard for the residents. But this is only temporary. In conclusion, tourism is good for a town if there are not too many tourists.",
+        "analysisHe": "נקודות חוזק:1. העמדה זהירה ומסויגת, כפי שהשאלה דורשת: הצירוף In most cases מסייג אותה כבר בפתיחה, ומשפט הסיום מוסיף תנאי (if there are not too many tourists).2. הסיבה הראשונה מפותחת בשרשרת של תוצאות: המשפט Tourists sleep in hotels, eat in restaurants and shop in local stores, so many residents have work מראה איך הכסף של התיירים מגיע לתושבים.3 התיקונים החשובים ביותר:1. הצירוף outweigh on the costs – התיקון: outweigh the costs. הכלל: אחרי הפועל outweigh בא מושא ישיר, בלי מילת יחס. המילה on נוספה בהשפעת המבנה העברי \"עולות על\".2. הצירוף economical benefits – התיקון: economic benefits. הכלל: שם התואר economic פירושו \"כלכלי, קשור לכלכלה\", ושם התואר economical פירושו \"חסכוני\".3. הצירוף the prices raise – התיקון: the prices rise. הכלל: הפועל rise פירושו \"לעלות\" (משהו עולה מעצמו), והפועל raise פירושו \"להעלות\" (מישהו מעלה משהו), ולכן אחרי הפועל raise צריך מושא, כמו בצירוף raise prices.משפט משודרג:המשפט As a result from this, young people do not leave יכול להפוך למשפט As a result of these new jobs, young people no longer need to move away to find work. כך ברור מה גורם לתוצאה, והשגיאה בצירוף As a result from נעלמת. הכלל: הצירוף הקבוע הוא as a result of.טיפ – שיטת תקציב מילים: הסיבה הראשונה מקבלת כ-35 מילים, אבל המענה להסתייגות מקבל חמש מילים בלבד (But this is only temporary), והוא גם חלש, כי הבעיות חוזרות בכל קיץ. כדאי לקצר מעט את הסיבה הראשונה ולהקדיש כ-15 מילים למענה, למשל להסביר איך עיירה יכולה לצמצם את הפקקים והרעש.",
+        "analysisEn": "Strengths: a hedged position with a condition (In most cases; if there are not too many tourists) and a first reason developed as a chain of results (Tourists sleep in hotels, eat in restaurants and shop in local stores, so many residents have work).Top 3 fixes:1. outweigh on the costs → outweigh the costs (outweigh takes a direct object).2. economical benefits → economic benefits (economic = related to the economy; economical = saving money).3. the prices raise → the prices rise (rise has no object; raise needs one).Upgrade: As a result from this, young people do not leave → As a result of these new jobs, young people no longer need to move away to find work (as a result of).Method tip – Word budget: reason 1 gets about 35 words, but the reply to the concession gets five (But this is only temporary), and the problems return every summer. Shorten reason 1 a little and give the reply about 15 words."
+      },
+      {
+        "level": "low",
+        "statedWords": 74,
+        "essay": "I live in a small town near the sea. The tourism is good because it brings money, but in the summer the town is full with tourists and very crowd. Beside that, the tourists make noise at night and throw garbage on the beach. The people who lives here are angry. In the same time, my father has a restaurant and he earns a lot in the summer. So tourism is good and bad.",
+        "analysisHe": "נקודות חוזק:1. יש דוגמה אישית לתועלת: המשפט my father has a restaurant and he earns a lot in the summer מראה איך התיירות עוזרת לתושבים.2. גם החסרונות של התיירות מתוארים בפרטים מוחשיים: הצירוף make noise at night and throw garbage on the beach מראה בדיוק מה מפריע לתושבים.3 התיקונים החשובים ביותר:1. הצירוף full with tourists and very crowd – התיקון: full of tourists and very crowded. הכלל: הצירוף העברי \"מלא ב-\" מתורגם באנגלית לצירוף full of. בנוסף, המילה crowd היא שם עצם (המון, קהל), ושם התואר הוא crowded (צפוף, עמוס).2. הצירוף The people who lives here – התיקון: The people who live here. הכלל: בפסוקית זיקה הפועל מתאים לשם העצם שלפני המילה who. המילה people היא צורת רבים, ולכן הפועל live בא בלי הסיומת ‎-s‎.3. הצירוף In the same time – התיקון: At the same time. הכלל: הצירוף העברי \"באותו זמן\" מתורגם באנגלית לצירוף הקבוע at the same time, עם מילת היחס at.משפט משודרג:המשפט Beside that, the tourists make noise at night and throw garbage on the beach יכול להפוך למשפט Besides that, crowds of visitors make noise late into the night and leave litter on the beach, which angers many residents. כך שני משפטים קצרים מתחברים למשפט אחד עם פסוקית זיקה, והשגיאה בצירוף Beside that נעלמת. הכלל: המילה beside פירושה \"ליד\", ובמשמעות \"חוץ מזה\" כותבים besides.טיפ – שיטת תבנית 4 חלקים: השאלה שואלת אם התועלות של התיירות גדולות מהנזקים שלה, אבל משפט הסיום So tourism is good and bad אינו מכריע. כדאי לפתוח בעמדה ברורה, להציג סיבה בעד וסיבה נגד, כל אחת עם הסבר, ולסיים במשפט שקובע איזה צד חשוב יותר. כך התשובה גם תגיע ל-90 מילים לפחות (כרגע יש בה 74 מילים בלבד).",
+        "analysisEn": "Strengths: a personal example of a benefit (my father has a restaurant and he earns a lot in the summer) and concrete costs (make noise at night and throw garbage on the beach).Top 3 fixes:1. full with tourists and very crowd → full of tourists and very crowded (full of; crowded is the adjective).2. The people who lives here → The people who live here (people is plural).3. In the same time → At the same time (a fixed phrase with at).Upgrade: Beside that, the tourists make noise at night and throw garbage on the beach → Besides that, crowds of visitors make noise late into the night and leave litter on the beach, which angers many residents (besides = in addition; beside = next to).Method tip – 4-part frame: the question asks whether the benefits outweigh the costs, but So tourism is good and bad does not decide. State a position, give one reason for and one against, and end by saying which side matters more; this will also take you past 90 words (now 74)."
+      }
+    ],
+    "words": [
+      {
+        "word": "quaint",
+        "pronunciation": "KWAYNT",
+        "meaningHe": "ציורי ומקסים בסגנון ישן ומיושן · inundated [IN-un-day-tid] – מוצף, מקבל כמות גדולה מדי של משהו, כמו אנשים או בקשות"
+      }
+    ]
+  }
+]
