@@ -1,6 +1,6 @@
 /**
  * Structured lesson body - no raw HTML stored in DB or CMS for this course.
- * Rendered in the UI via `AmirantPremiumLessonView` (flow) and `LessonBlockRenderer` (raw blocks).
+ * Rendered in the UI via `AmirantPremiumLessonView`.
  */
 export type ContentBlock =
   | { type: "intro"; title: string; body: string }
