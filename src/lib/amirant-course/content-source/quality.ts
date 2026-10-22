@@ -1,4 +1,4 @@
-import { getResolvedAmirantProductionContent } from "./resolved-content";
+import { getResolvedAmirantProductionContent } from "./resolved-package";
 
 export type AmirantContentQualityMode =
   | "authored_production"

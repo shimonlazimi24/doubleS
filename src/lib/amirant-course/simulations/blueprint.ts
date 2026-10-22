@@ -50,7 +50,7 @@ function sim(id: string, title: string): ManifestSimulation {
 }
 
 /** Six full simulations — identical structure, fresh items drawn from the bank. */
-export const DEMO_SIMULATIONS: ManifestSimulation[] = [
+export const COURSE_SIMULATIONS: ManifestSimulation[] = [
   sim("sim-01", "סימולציה 1 · מדידת פתיחה"),
   sim("sim-02", "סימולציה 2 · חימום"),
   sim("sim-03", "סימולציה 3 · אתגר"),
@@ -70,5 +70,5 @@ if (declaredQuestions !== EXAM_SCORED_QUESTION_COUNT || declaredMinutes !== EXAM
   );
 }
 
-export const AMIRANT_SIMULATION_COUNT = DEMO_SIMULATIONS.length;
+export const AMIRANT_SIMULATION_COUNT = COURSE_SIMULATIONS.length;
 

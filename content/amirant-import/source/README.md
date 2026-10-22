@@ -1,12 +1,16 @@
 # Amirant Production Source Files
 
-Fill these files with real course content:
+Authoring inputs for the ingestion layer and the coverage tooling:
 
 - `lessons.json`
 - `questions.json`
+- `passages.json`
 - `practice-sets.json`
 - `simulations.json`
 - `ai-retrieval.json`
 - `syllabus-mapping.json`
 
-These files are authoring inputs for the ingestion layer and coverage tooling.
+Only `questions.json` and `passages.json` are read by the running app
+(`src/lib/amirant-course/content-source/question-source.ts`, server side).
+The others feed `scripts/generate-course-manifest.mjs`, the ingest and
+coverage scripts and the embeddings sync, and are not loaded per request.

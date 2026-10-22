@@ -12,7 +12,7 @@ export { importAmirantCourseContent } from "./import";
 export {
   getResolvedAmirantProductionContent,
   getAmirantContentMode,
-} from "./resolved-content";
+} from "./resolved-package";
 export {
   getAmirantContentQualityMode,
   type AmirantContentQualityMode,
