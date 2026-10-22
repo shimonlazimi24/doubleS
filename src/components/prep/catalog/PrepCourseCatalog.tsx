@@ -7,10 +7,17 @@ type Props = {
   showBreadcrumbs?: boolean;
   breadcrumbTrail?: { label: string; href?: string }[];
   id?: string;
+  /** 1 when the catalog is the page itself (/prep/courses had no H1); 2 when embedded. */
+  headingLevel?: 1 | 2;
 };
 
 /* שני קורסים בקטלוג - סינון בצ'יפים היה כרום מיותר. */
-export function PrepCourseCatalog({ showBreadcrumbs = false, breadcrumbTrail = [], id = "catalog" }: Props) {
+export function PrepCourseCatalog({
+  showBreadcrumbs = false,
+  breadcrumbTrail = [],
+  id = "catalog",
+  headingLevel = 2,
+}: Props) {
   return (
     <section id={id} className="border-t border-line/60 bg-paper py-section md:py-section-lg">
       <Container>
@@ -20,7 +27,7 @@ export function PrepCourseCatalog({ showBreadcrumbs = false, breadcrumbTrail = [
           <Text as="p" variant="labelAccent" className="mb-ds-2">
             ההכנות שלנו
           </Text>
-          <Heading level={2}>קורסים ומבחני אנגלית</Heading>
+          <Heading level={headingLevel}>קורסים ומבחני אנגלית</Heading>
           <Text as="p" variant="body" className="mt-ds-3 text-muted">
             {PREP_BRAND_TAGLINE_HE}
           </Text>

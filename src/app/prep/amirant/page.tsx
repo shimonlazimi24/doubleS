@@ -1,30 +1,21 @@
 import type { Metadata } from "next";
 import { PrepAmirantHub } from "@/components/prep/amirant-hub/PrepAmirantHub";
-import { AMIRANT_COURSE_SYLLABUS_META } from "@/lib/prep/amirant-course-syllabus";
 import { JsonLdScript, amirantCourseJsonLd, amirantFaqJsonLd, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { PREP_PAGE_META, prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 const siteUrl = getPublicSiteUrl();
+const meta = PREP_PAGE_META.amirant;
 
 export const metadata: Metadata = {
-  title: "הכנה לאמירנט - קורס דיגיטלי מלא",
-  description:
-    "קורס הכנה מקיף לאמירנט (מבחן האנגלית של מאל״ו). " +
-    "תרגול אדפטיבי, " +
-    `${AMIRANT_COURSE_SYLLABUS_META.shortNoteHe} ` +
-    "סימולציות מלאות בטיימר, ומבחן רמה משוער בחינם. הציון הרשמי נקבע במאל״ו.",
+  title: meta.title,
+  description: meta.description,
   keywords: [
-    "הכנה לאמירנט", "קורס אמירנט", "אמירנט אנגלית", "מבחן אמירנט",
-    "sentence completion", "reading comprehension", "מאלו", "amirant",
+    "הכנה לאמירנט", "קורס אמירנט אונליין", "מבחן אמירנט", "אמירנט ציון עובר",
+    "אמירנט 2026 רפורמה", "sentence completion", "reading comprehension", "מאלו", "amirant",
   ],
   alternates: { canonical: `${siteUrl}/prep/amirant` },
-  openGraph: {
-    title: "הכנה לאמירנט - קורס דיגיטלי מלא",
-    description: "תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות מלאות. הכינו לאמירנט בחכמה.",
-    url: `${siteUrl}/prep/amirant`,
-    locale: "he_IL",
-    type: "website",
-  },
+  openGraph: prepOpenGraph(siteUrl, { ...meta, path: "/prep/amirant" }),
 };
 
 export default function AmirantHubPage() {
@@ -34,7 +25,7 @@ export default function AmirantHubPage() {
       <JsonLdScript data={amirantFaqJsonLd()} />
       <JsonLdScript data={breadcrumbJsonLd(siteUrl, [
         { name: "PREPARE", path: "/prep" },
-        { name: "אמירנט", path: "/prep/amirant" },
+        { name: "הכנה לאמירנט", path: "/prep/amirant" },
       ])} />
       <PrepAmirantHub />
     </>

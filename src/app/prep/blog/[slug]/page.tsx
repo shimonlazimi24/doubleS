@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { PREP_BASE, PREP_BRAND_LATIN } from "@/lib/prep/constants";
+import { PREP_BASE } from "@/lib/prep/constants";
 import { getBlogPost, listBlogPosts } from "@/lib/prep/blog.server";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
-import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { JsonLdScript, articleJsonLd, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { AMIRANT_COURSE_MD_COMPONENTS } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
 import { Container, PageLayout, Text } from "@/components/ui";
 
@@ -29,30 +30,11 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     description: post.description,
     keywords: post.keywords,
     alternates: { canonical: url },
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      url,
-      locale: "he_IL",
-      type: "article",
-      publishedTime: post.date,
-    },
-  };
-}
-
-function articleJsonLd(post: { slug: string; title: string; description: string; date: string }) {
-  const url = `${siteUrl}${PREP_BASE}/blog/${post.slug}`;
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
-    inLanguage: "he",
-    mainEntityOfPage: url,
-    author: { "@type": "Organization", name: PREP_BRAND_LATIN, url: `${siteUrl}${PREP_BASE}` },
-    publisher: { "@type": "Organization", name: PREP_BRAND_LATIN, url: `${siteUrl}${PREP_BASE}` },
+    openGraph: prepOpenGraph(
+      siteUrl,
+      { title: post.title, description: post.description, path: `${PREP_BASE}/blog/${post.slug}` },
+      { publishedTime: post.date, modifiedTime: post.updated, section: "הכנה לאמירנט", tags: post.keywords },
+    ),
   };
 }
 
@@ -68,7 +50,16 @@ export default function PrepBlogPostPage({ params }: { params: Params }) {
 
   return (
     <div className="bg-paper">
-      <JsonLdScript data={articleJsonLd(post)} />
+      <JsonLdScript
+        data={articleJsonLd(siteUrl, {
+          path: `${PREP_BASE}/blog/${post.slug}`,
+          title: post.title,
+          description: post.description,
+          datePublished: post.date,
+          dateModified: post.updated,
+          keywords: post.keywords,
+        })}
+      />
       <JsonLdScript
         data={breadcrumbJsonLd(siteUrl, [
           { name: "PREPARE", path: PREP_BASE },

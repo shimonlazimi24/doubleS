@@ -4,21 +4,17 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { listBlogPosts } from "@/lib/prep/blog.server";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 import { Container, Heading, PageLayout, Text } from "@/components/ui";
+import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { PREP_PAGE_META, prepOpenGraph } from "@/lib/prep/seo/page-meta";
 
 const siteUrl = getPublicSiteUrl();
+const meta = PREP_PAGE_META.blog;
 
 export const metadata: Metadata = {
-  title: "בלוג - מדריכים להכנה לאמירנט",
-  description:
-    "מדריכים מעשיים לאמירנט: מבנה המבחן, סולם הציונים ופטור מאנגלית, רפורמת 2026 ואסטרטגיות הכנה.",
+  title: meta.title,
+  description: meta.description,
   alternates: { canonical: `${siteUrl}/prep/blog` },
-  openGraph: {
-    title: "בלוג PREPARE - מדריכים להכנה לאמירנט",
-    description: "מבנה המבחן, ציונים ופטור מאנגלית, רפורמת 2026 ואסטרטגיות הכנה.",
-    url: `${siteUrl}/prep/blog`,
-    locale: "he_IL",
-    type: "website",
-  },
+  openGraph: prepOpenGraph(siteUrl, { ...meta, path: "/prep/blog" }),
 };
 
 function formatHeDate(iso: string): string {
@@ -31,6 +27,12 @@ export default function PrepBlogIndexPage() {
   const posts = listBlogPosts();
   return (
     <div className="bg-paper">
+      <JsonLdScript
+        data={breadcrumbJsonLd(siteUrl, [
+          { name: "PREPARE", path: PREP_BASE },
+          { name: "בלוג", path: `${PREP_BASE}/blog` },
+        ])}
+      />
       <PageLayout pad="lg">
         <Container max="measureWide">
           <Link
