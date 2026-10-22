@@ -5,6 +5,7 @@ export const AMIRANT_TOPIC_LABEL_HE: Record<AmirantBankTopicSlug, string> = {
   sentence_completion: "השלמת משפטים",
   rephrasing: "ניסוח מחדש",
   reading_comprehension: "הבנת הנקרא",
+  listening: "הבנת הנשמע",
 };
 
 const KNOWN = new Set<string>(["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"]);

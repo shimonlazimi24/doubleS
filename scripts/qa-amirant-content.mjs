@@ -59,7 +59,8 @@ function stemContamination(text) {
  *  (weak areas, recommendations, section filtering) is attributed wrongly. */
 function topicShapeMismatch(q) {
   const topic = String(q.topic ?? "");
-  if (q.passageId && topic !== "reading_comprehension") {
+  // Reading questions share a passage; listening questions share a clip (also a passage row).
+  if (q.passageId && topic !== "reading_comprehension" && topic !== "listening") {
     return `${q.questionId}: has passageId but topic=${topic}`;
   }
   if (/^\s*Original:/i.test(String(q.questionText ?? "")) && topic !== "rephrasing") {

@@ -4,7 +4,9 @@ export type AmirantBankTopicSlug =
   | "vocabulary"
   | "sentence_completion"
   | "rephrasing"
-  | "reading_comprehension";
+  | "reading_comprehension"
+  /** הבנת הנשמע: the owner's listening tests only; never drawn into quizzes. */
+  | "listening";
 
 export interface BankQuestionOption {
   id: string;

@@ -167,6 +167,12 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
                     <p className="mb-2 text-sm font-semibold text-ink">{passage.title}</p>
                   ) : null}
                   <PremiumMarkdownBody body={passage.bodyMarkdown} variant="card" className="[direction:ltr] [&_*]:!text-start" />
+                  {checked && passage.revealMarkdown ? (
+                    // The transcript of a listening clip: hidden while answering, as in the exam.
+                    <div className="mt-4 border-t border-line/70 pt-3">
+                      <PremiumMarkdownBody body={passage.revealMarkdown} variant="card" className="[direction:ltr] [&_*]:!text-start" />
+                    </div>
+                  ) : null}
                 </div>
               ) : null}
               <div

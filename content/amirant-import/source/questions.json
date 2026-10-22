@@ -28772,5 +28772,2595 @@
       "l6-top",
       "owner-status:qa_passed"
     ]
+  },
+  {
+    "questionId": "ls-t01-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 3,
+    "questionText": "Why does the same side of the Moon always face the Earth?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The Earth spins once during each orbit the Moon makes"
+      },
+      {
+        "id": "b",
+        "label": "The Moon moves around the Earth much faster than it spins"
+      },
+      {
+        "id": "c",
+        "label": "The Moon completes one spin per trip around the Earth"
+      },
+      {
+        "id": "d",
+        "label": "The Moon does not spin, so one side is always fixed toward us"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** לפי המשפט it turns exactly once in the time it takes to circle the Earth (הוא מסתובב פעם אחת בדיוק בזמן שלוקח לו להקיף את כדור הארץ), הסיבוב של הירח תואם את המסלול שלו, ולכן אותו צד תמיד פונה אלינו.\n\n_The Moon turns exactly once in the time it takes to circle the Earth, so its spin and its orbit match and one side always faces us._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l3-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-1",
+      "quiz",
+      "difficulty_3"
+    ]
+  },
+  {
+    "questionId": "ls-t01-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 3,
+    "questionText": "Which common assumption does the professor correct?",
+    "options": [
+      {
+        "id": "a",
+        "label": "That mountaintops are made of the oldest rock on Earth"
+      },
+      {
+        "id": "b",
+        "label": "That shells can slowly harden into solid rock"
+      },
+      {
+        "id": "c",
+        "label": "That the ocean once climbed as high as the peaks"
+      },
+      {
+        "id": "d",
+        "label": "That huge waves once threw sea creatures onto high ground"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** אחרי הצירוף But actually מופיע המשפט sea level never rose anywhere near that far (מפלס הים מעולם לא עלה כל כך גבוה), ולכן הפרופסור מתקן את ההנחה שהאוקיינוס כיסה פעם את ההרים.\n\n_After But actually, he says sea level never rose anywhere near that far, which corrects the idea that the ocean once covered the peaks._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l3-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-1",
+      "quiz",
+      "difficulty_3"
+    ]
+  },
+  {
+    "questionId": "ls-t01-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 3,
+    "questionText": "According to the professor, how did the shells end up high in the mountains?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The land was thrust upward as two plates collided"
+      },
+      {
+        "id": "b",
+        "label": "The sea slowly dried up and left the shells on high ground"
+      },
+      {
+        "id": "c",
+        "label": "The shells hardened into rock in the mud of a shallow sea"
+      },
+      {
+        "id": "d",
+        "label": "Powerful floods carried the shells up to the peaks"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המשפט the land itself moved (הקרקע עצמה זזה) מוסבר בהמשך במשפט the crumpled land was pushed upward (האדמה המקומטת נדחפה כלפי מעלה), ולכן הצדפות עלו יחד עם הסלע.\n\n_After the land itself moved, he explains that the crumpled land was pushed upward, so the shells rose together with the rock._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l3-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-1",
+      "quiz",
+      "difficulty_3"
+    ]
+  },
+  {
+    "questionId": "ls-t01-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 4,
+    "questionText": "What is the lecture mainly about?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Competing theories on how dogs and people became partners"
+      },
+      {
+        "id": "b",
+        "label": "Why early hunters raised wolf pups and bred the tamest ones"
+      },
+      {
+        "id": "c",
+        "label": "How ancient bones reveal exactly when dogs split from wolves"
+      },
+      {
+        "id": "d",
+        "label": "How people first learned to domesticate many wild animals"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הצירוף two main explanations (שני הסברים עיקריים) והמשפט the origin of dogs remains unsettled (מקור הכלבים עדיין לא הוכרע) מראים שההרצאה עוסקת בהסברים מתחרים להתחלת הקשר בין האדם לכלב.\n\n_The phrases two main explanations and the origin of dogs remains unsettled show that the lecture is about rival theories of how the partnership began._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-1",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t01-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 4,
+    "questionText": "What does the lecturer suggest about the two explanations?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Ancient bones probably favor the first explanation over the second"
+      },
+      {
+        "id": "b",
+        "label": "The second explanation is now accepted by most researchers"
+      },
+      {
+        "id": "c",
+        "label": "Each may describe part of what really happened"
+      },
+      {
+        "id": "d",
+        "label": "The two explanations may be too different to be combined"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** לפי המשפט the truth combines both stories (האמת משלבת את שני הסיפורים), כל אחד משני ההסברים עשוי לתאר חלק ממה שקרה באמת.\n\n_The lecturer says many researchers suspect that the truth combines both stories, so each explanation may describe part of what happened._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-1",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t02-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 3,
+    "questionText": "Why does ice float on liquid water?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Air trapped inside the ice lifts it up above the surface"
+      },
+      {
+        "id": "b",
+        "label": "Water gets denser as it freezes, just like most liquids do"
+      },
+      {
+        "id": "c",
+        "label": "Ice holds less material in the same space than liquid does"
+      },
+      {
+        "id": "d",
+        "label": "Ice forms at the surface, so it has no chance to sink"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** לפי המשפט ice takes up more room than the same amount of liquid (קרח תופס יותר מקום מאותה כמות של נוזל), הקרח פחות צפוף מהמים הנוזליים, ולכן הוא צף.\n\n_Since ice takes up more room than the same amount of liquid, it is less dense, so it floats._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l3-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-2",
+      "quiz",
+      "difficulty_3"
+    ]
+  },
+  {
+    "questionId": "ls-t02-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "According to the lecturer, what is the true cost of a choice?",
+    "options": [
+      {
+        "id": "a",
+        "label": "What the single best rejected option was worth"
+      },
+      {
+        "id": "b",
+        "label": "The combined value of the options that were passed over"
+      },
+      {
+        "id": "c",
+        "label": "The money someone pays for the option they pick"
+      },
+      {
+        "id": "d",
+        "label": "The hours someone spends on the activity they pick"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המשפט It is the value of the best alternative you give up (זהו הערך של החלופה הטובה ביותר שמוותרים עליה) מגדיר את העלות האמיתית, והמשפט the real cost is the next best thing you didn't choose חוזר על כך בסיכום.\n\n_The lecturer defines the true cost as the value of the best alternative you give up, and repeats it as the next best thing you didn't choose._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-2",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t02-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "How does the lecturer answer the objection that the idea makes everything sound expensive?",
+    "options": [
+      {
+        "id": "a",
+        "label": "By admitting that the idea works for money but not for time"
+      },
+      {
+        "id": "b",
+        "label": "By saying it helps people weigh choices, not avoid them"
+      },
+      {
+        "id": "c",
+        "label": "By agreeing that people should avoid choices that have a cost"
+      },
+      {
+        "id": "d",
+        "label": "By claiming that the cost of a choice is mostly its money price"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי המילה But מופיע המשפט the idea is a tool for comparing choices, not a reason to avoid them (הרעיון הוא כלי להשוואת בחירות ולא סיבה להימנע מהן), ולכן ההתנגדות נדחית.\n\n_After But, the lecturer says the idea is a tool for comparing choices, not a reason to avoid them, which answers the objection._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-2",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t02-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 4,
+    "questionText": "What are the two students mainly doing?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Planning how to run a fair plant experiment"
+      },
+      {
+        "id": "b",
+        "label": "Arguing about how many plants their lab can afford to grow"
+      },
+      {
+        "id": "c",
+        "label": "Deciding which fertilizer will help bean plants grow best"
+      },
+      {
+        "id": "d",
+        "label": "Reviewing the results of an experiment they already finished"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הצירוף Control group, one variable, random placement (קבוצת ביקורת, משתנה אחד, שיבוץ אקראי) מסכם את מה שהם מתכננים: ניסוי הוגן.\n\n_They are planning a fair test, as the summary Control group, one variable, random placement shows._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-2",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t02-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "How does the man respond to the idea of a control group?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He supports it immediately and adds reasons of his own"
+      },
+      {
+        "id": "b",
+        "label": "He accepts it because their professor requires it"
+      },
+      {
+        "id": "c",
+        "label": "He rejects it throughout and keeps his own design"
+      },
+      {
+        "id": "d",
+        "label": "He objects at first but accepts it once she explains"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** המשפט Isn't it a waste? (האם זה לא בזבוז?) מראה התנגדות בתחילה, והמשפט I'm convinced (השתכנעתי) בסוף מראה שהוא קיבל את הרעיון אחרי ההסבר שלה.\n\n_He first asks Isn't it a waste?, but after her explanation he says I'm convinced._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-2",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t03-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "Why does the teaching assistant say the survey result is unreliable?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Too few students answered the survey"
+      },
+      {
+        "id": "b",
+        "label": "Those who replied were not typical of all students"
+      },
+      {
+        "id": "c",
+        "label": "The questions were worded to push students toward praising the library"
+      },
+      {
+        "id": "d",
+        "label": "Going online made students answer quickly and without much care"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי המשפט Size isn't the issue (הגודל אינו הבעיה) בא המשפט mostly people who already use the library bothered to reply (בעיקר מי שכבר משתמשים בספרייה טרחו לענות), ולכן המשיבים אינם מייצגים את כל הסטודנטים.\n\n_After Size isn't the issue, she explains that mostly people who already use the library bothered to reply, so the answers are biased._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0005",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-3",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t03-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "How does the woman's view differ from the man's opening claim?",
+    "options": [
+      {
+        "id": "a",
+        "label": "She thinks reformers used the press more cleverly than the authorities did"
+      },
+      {
+        "id": "b",
+        "label": "She sees the press as speeding up an upheaval that had other roots"
+      },
+      {
+        "id": "c",
+        "label": "She thinks the press had no influence on how ideas spread to readers"
+      },
+      {
+        "id": "d",
+        "label": "She thinks the pamphlets reached too few people to make a difference"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף a catalyst, not a cause (זרז ולא סיבה) והמשפט the fuel was already there (הדלק כבר היה שם) מראים שלדעתה הדפוס רק האיץ תסיסה שהיו לה שורשים אחרים.\n\n_She calls the press a catalyst, not a cause and says the fuel was already there, so it only sped up an upheaval with other roots._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-3",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t03-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "Why does the man say that authorities could not suppress ideas that spread fast?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To suggest that the authorities probably lost control before the press arrived"
+      },
+      {
+        "id": "b",
+        "label": "To admit that the press did not matter much in the end"
+      },
+      {
+        "id": "c",
+        "label": "To explain why pamphlets were cheap enough for ordinary readers"
+      },
+      {
+        "id": "d",
+        "label": "To suggest that fast spreading was significant in itself"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי הצירוף But then מופיע המשפט maybe speed itself mattered (אולי המהירות עצמה הייתה חשובה), כלומר הגבר טוען שההתפשטות המהירה הייתה משמעותית כשלעצמה.\n\n_After But then, he says maybe speed itself mattered, which means he thinks the fast spread was important in its own right._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-3",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t03-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 4,
+    "questionText": "What is the lecturer mainly explaining?",
+    "options": [
+      {
+        "id": "a",
+        "label": "How water travels between the sea, the sky and the land"
+      },
+      {
+        "id": "b",
+        "label": "How rain slowly dissolves minerals out of the rocks on land"
+      },
+      {
+        "id": "c",
+        "label": "Why seawater keeps getting saltier as the years pass"
+      },
+      {
+        "id": "d",
+        "label": "How rivers and evaporation account for salty seawater"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** המשפט rivers deliver the minerals, and evaporation leaves the salt behind (נהרות מביאים את המינרלים וההתאדות משאירה את המלח) מסכם שההרצאה מסבירה את מליחות הים באמצעות נהרות והתאדות.\n\n_The summary rivers deliver the minerals, and evaporation leaves the salt behind shows that the lecture explains the sea's saltiness through rivers and evaporation._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0007",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-3",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t03-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 4,
+    "questionText": "According to the lecturer, why does the sea not simply get saltier year after year?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Some minerals are removed by living things or by sinking"
+      },
+      {
+        "id": "b",
+        "label": "Each river carries so little that the sea hardly changes"
+      },
+      {
+        "id": "c",
+        "label": "Melting ice sends fresh water into the sea and dilutes it"
+      },
+      {
+        "id": "d",
+        "label": "Evaporation takes the salt out of the water"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** אחרי המילים Not necessarily (לא בהכרח) המשפט Some of the minerals are used by living things or settle to the seafloor (חלק מהמינרלים נצרכים על ידי יצורים חיים או שוקעים לקרקעית הים) מסביר למה המליחות נשארת יציבה.\n\n_After Not necessarily, she says Some of the minerals are used by living things or settle to the seafloor, so the saltiness stays roughly steady._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0007",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-3",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t04-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "According to the lecturer, what turns a pidgin into a creole?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Children learn it from infancy as their home language"
+      },
+      {
+        "id": "b",
+        "label": "The traders who use it give it a richer grammar"
+      },
+      {
+        "id": "c",
+        "label": "Groups from different places adopt it for trade"
+      },
+      {
+        "id": "d",
+        "label": "Scholars write down its rules and teach them in schools"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המרצה עונה על השאלה what turns a pidgin into a creole? במילה Children ומסכמת שקריאולית היא פידג'ין שהפך לשפת אם (mother tongue).\n\n_The lecturer answers what turns a pidgin into a creole? with Children and sums up that a creole has become someone's mother tongue._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0008",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-4",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t04-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 4,
+    "questionText": "What is the lecture mainly about?",
+    "options": [
+      {
+        "id": "a",
+        "label": "How something noticed among farm workers led to a way of preventing disease"
+      },
+      {
+        "id": "b",
+        "label": "Why doctors finally gave up the older and riskier method of fighting smallpox"
+      },
+      {
+        "id": "c",
+        "label": "How farmers in the countryside protected their cows from catching smallpox"
+      },
+      {
+        "id": "d",
+        "label": "Why milkmaids were more likely than other workers to catch cowpox from cows"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המרצה פותח בצירוף not in a laboratory but on a farm ומסכם שמחלת פרות קלה יכולה להגן מפני מחלה אנושית קטלנית (a mild cow disease could protect people against a deadly human one).\n\n_The talk begins not in a laboratory but on a farm and ends with the point that a mild cow disease could protect people against a deadly human one._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-4",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t04-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "According to the lecturer, how was the country doctor's method different from the older defense?",
+    "options": [
+      {
+        "id": "a",
+        "label": "It took material from a person who had a mild case of smallpox"
+      },
+      {
+        "id": "b",
+        "label": "It used a mild disease caught from cows rather than smallpox itself"
+      },
+      {
+        "id": "c",
+        "label": "It was first tried out on a large group of milkmaids in the countryside"
+      },
+      {
+        "id": "d",
+        "label": "It could be given safely by farm workers without a doctor present"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** בשיטה הישנה השתמשו בחומר מפצע של אבעבועות שחורות (a smallpox sore), ואילו הרופא לקח חומר מפצע של אבעבועות הפרות (a cowpox sore), מחלה קלה שעוברת מפרות.\n\n_The older defense used material from a smallpox sore, while the doctor took material from a cowpox sore, a mild illness passed on by cows._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-4",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t04-q4",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 5,
+    "questionText": "By the end of the conversation, what is the man's view of the woman's explanation?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He rejects her arguments and still blames bad luck"
+      },
+      {
+        "id": "b",
+        "label": "He accepts her two arguments but adds that context can matter"
+      },
+      {
+        "id": "c",
+        "label": "He accepts her arguments and concludes that the field itself is broken"
+      },
+      {
+        "id": "d",
+        "label": "He agrees with her about journals but doubts what she says about samples"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הגבר מודה במשפט I'll grant you both points (אני מקבל את שתי הטענות), ומיד מסייג במשפט An effect might be real and still depend on the setting (אפקט יכול להיות אמיתי ועדיין להיות תלוי בהקשר).\n\n_He says I'll grant you both points and then qualifies them: An effect might be real and still depend on the setting._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-4",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t04-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "What conclusion do the two researchers reach?",
+    "options": [
+      {
+        "id": "a",
+        "label": "A failed replication shows that the original study was probably wrong"
+      },
+      {
+        "id": "b",
+        "label": "Psychology should stop relying on studies that were run in other countries"
+      },
+      {
+        "id": "c",
+        "label": "Samples should be larger, and studies finding no effect should be published"
+      },
+      {
+        "id": "d",
+        "label": "Journals should publish fewer of the studies that report exciting new effects"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הגבר מסכם במשפט we need bigger samples, and we need to publish the studies that find nothing, too (מדגמים גדולים יותר ופרסום גם של מחקרים שלא מצאו דבר), והאישה מסכימה.\n\n_He concludes we need bigger samples, and we need to publish the studies that find nothing, too, and she replies On that, we agree._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-4",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t05-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 4,
+    "questionText": "According to the lecturer, why did Renaissance painters adopt linear perspective?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To make clear which people in a scene were the most important"
+      },
+      {
+        "id": "b",
+        "label": "To make a painted surface look like a view into real space"
+      },
+      {
+        "id": "c",
+        "label": "To make the buildings in their scenes look larger and grander"
+      },
+      {
+        "id": "d",
+        "label": "To work faster by following one fixed rule in each painting"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי המשפט Renaissance painters wanted something different המרצה מתאר חלון אל מרחב אמיתי (a window onto real space) ומסכם במשפט perspective let them create depth on a flat surface.\n\n_After wanted something different, the lecturer says they wanted a window onto real space and sums up that perspective let them create depth on a flat surface._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l4-0010",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-5",
+      "quiz",
+      "difficulty_4"
+    ]
+  },
+  {
+    "questionId": "ls-t05-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "Why does the professor mention the cells in the student's body?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To challenge his claim that new parts make a new thing"
+      },
+      {
+        "id": "b",
+        "label": "To show that his memories matter more than his body"
+      },
+      {
+        "id": "c",
+        "label": "To argue that he is no longer the person he was as a child"
+      },
+      {
+        "id": "d",
+        "label": "To explain why ships and living bodies change in different ways"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הפרופסורית שואלת את השאלה Are you a different person from the child you once were? כדי לערער על הטענה it's simply not the same ship anymore (זו כבר לא אותה ספינה).\n\n_She asks Are you a different person from the child you once were? to challenge his claim that it's simply not the same ship anymore._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-5",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t05-q3",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 5,
+    "questionText": "What does the professor suggest about the ship puzzle at the end?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Philosophers now agree that the rebuilt ship is the real one"
+      },
+      {
+        "id": "b",
+        "label": "Since it has no clear answer, it is not really worth discussing"
+      },
+      {
+        "id": "c",
+        "label": "It can be settled once we know which of the planks are the oldest"
+      },
+      {
+        "id": "d",
+        "label": "Its value lies in making people ask what being the same means"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** הפרופסורית אומרת במשפט The point isn't to settle it ומוסיפה שהמטרה היא לשאול מה פירוש להיות אותו דבר (what we really mean when we call something the same).\n\n_She says The point isn't to settle it but to ask what we really mean when we call something the same._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-5",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t05-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 5,
+    "questionText": "What is the main point of the lecture?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Sea otters became rare in many areas because they were hunted for fur"
+      },
+      {
+        "id": "b",
+        "label": "An animal that is not plentiful can still hold its community together"
+      },
+      {
+        "id": "c",
+        "label": "Kelp forests depend more on water temperature than on any animal"
+      },
+      {
+        "id": "d",
+        "label": "The most numerous species in a habitat usually has the most influence"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המרצה מדגישה את המשפט Otters are not especially numerous ומסכמת שלמין מפתח יש השפעה גדולה בהרבה ממספרו (whose influence is far larger than its numbers would suggest).\n\n_She stresses that Otters are not especially numerous and sums up a keystone species as an animal whose influence is far larger than its numbers would suggest._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-5",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t05-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the lecturer, why did kelp largely disappear in some areas?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Storms and warm water killed off the otters, letting urchins spread"
+      },
+      {
+        "id": "b",
+        "label": "With fewer otters to eat them, urchins multiplied and grazed it away"
+      },
+      {
+        "id": "c",
+        "label": "Hunters took the urchins as well, leaving the kelp with no defenders"
+      },
+      {
+        "id": "d",
+        "label": "Returning otters disturbed the kelp while diving for urchins"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המרצה מסבירה שהלוטרות אוכלות קיפודי ים, ולפי המשפט When otters were hunted almost to extinction for their fur, urchin numbers exploded הקיפודים התרבו ויער האצות נעלם.\n\n_Otters eat urchins, so When otters were hunted almost to extinction for their fur, urchin numbers exploded, and the urchins stripped the kelp._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-5",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t06-q1",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 5,
+    "questionText": "What does the lecturer suggest about the drivers' brains?",
+    "options": [
+      {
+        "id": "a",
+        "label": "They were probably born with an unusual gift for remembering places"
+      },
+      {
+        "id": "b",
+        "label": "Learning the streets seems to have physically altered their brains"
+      },
+      {
+        "id": "c",
+        "label": "Their brains stayed fixed, but they learned to use them more efficiently"
+      },
+      {
+        "id": "d",
+        "label": "Their memory for places grew at the cost of other kinds of memory"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** לפי המרצה השינוי מופיע במהלך האימון עצמו (during training itself, not before), על השאלה אם נולדו כך הוא עונה בצירוף Probably not, ומסכם במשפט practice can physically reshape it (אימון יכול לשנות אותו פיזית).\n\n_The change appears during training itself, not before, inborn talent gets a Probably not, and the lecturer concludes that practice can physically reshape it._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0005",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-6",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t06-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 5,
+    "questionText": "What is the main point of the lecture?",
+    "options": [
+      {
+        "id": "a",
+        "label": "People in a crowd simply care less about strangers than people alone do"
+      },
+      {
+        "id": "b",
+        "label": "Each person in a crowd feels less responsible, not less concerned"
+      },
+      {
+        "id": "c",
+        "label": "A larger crowd usually means that help arrives more quickly"
+      },
+      {
+        "id": "d",
+        "label": "Pointing at one person is the main way to get a crowd to help"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המרצה מסכמת במשפט a crowd doesn't remove our concern; it spreads our sense of responsibility thin (הקהל לא מבטל את הדאגה אלא מפזר את תחושת האחריות).\n\n_The lecturer sums up: a crowd doesn't remove our concern; it spreads our sense of responsibility thin._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-6",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t06-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the lecturer, which situation is likely to weaken the bystander effect?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The crowd is very large and is made up mostly of strangers"
+      },
+      {
+        "id": "b",
+        "label": "One onlooker is picked out and personally asked to get help"
+      },
+      {
+        "id": "c",
+        "label": "The person who fainted looks as if they are only slightly unwell"
+      },
+      {
+        "id": "d",
+        "label": "Each onlooker waits to see how worried the other people seem"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** לפי המרצה צעד אחד עוזר במיוחד: להצביע על אדם אחד ולבקש ממנו ישירות לקרוא לעזרה (pointing at a single person and asking them directly to call for help).\n\n_One step seems to help a lot: pointing at a single person and asking them directly to call for help._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-6",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t06-q4",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the woman, why does widening a road often fail to reduce traffic?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Faster trips lead people to drive more than they used to"
+      },
+      {
+        "id": "b",
+        "label": "Construction closes lanes for years and causes new jams"
+      },
+      {
+        "id": "c",
+        "label": "A growing population fills the extra lanes with new residents"
+      },
+      {
+        "id": "d",
+        "label": "Drivers avoid the new lanes because they must pay to use them"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** האישה מסבירה במשפט When a road gets faster, people change their behavior (כשהנסיעה בכביש מתקצרת, אנשים משנים את התנהגותם), ולמשל מי שנסע ברכבת מתחיל לנהוג (start driving).\n\n_She explains that When a road gets faster, people change their behavior: train riders start driving and others make trips they used to skip._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0007",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-6",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t06-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 5,
+    "questionText": "How has the man's view changed by the end of the discussion?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He still thinks widening the highway would cut the morning jams"
+      },
+      {
+        "id": "b",
+        "label": "He now regards managing road use as more important than adding lanes"
+      },
+      {
+        "id": "c",
+        "label": "He now believes new roads cannot be justified even in growing regions"
+      },
+      {
+        "id": "d",
+        "label": "He now thinks buses alone can end the city's morning traffic problem"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הגבר מודה במשפט Then maybe I've been asking the wrong question ומסיק שהשאלה האמיתית היא איך מנהלים את הכביש (the real issue is how we manage it).\n\n_He admits maybe I've been asking the wrong question and concludes that the real issue is how we manage it, not how much road we build._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0007",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-6",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t07-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "What point does the woman add to the man's explanation?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The warm particles meet one another more often than cold ones"
+      },
+      {
+        "id": "b",
+        "label": "A larger share of the collisions carry enough energy to react"
+      },
+      {
+        "id": "c",
+        "label": "How often particles collide matters more than how hard they hit"
+      },
+      {
+        "id": "d",
+        "label": "Heating may loosen the bonds before the particles even meet"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי הצירוף it can't be the whole story (זה לא כל ההסבר) היא אומרת את המשפט More of the collisions are energetic enough to actually break bonds, כלומר יותר התנגשויות חזקות מספיק כדי לשבור קשרים.\n\n_After it can't be the whole story, she adds that More of the collisions are energetic enough to actually break bonds._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0008",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-7",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t07-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "How does the man's view change during the discussion?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He drops his doubts and treats the planet as firmly established"
+      },
+      {
+        "id": "b",
+        "label": "He keeps arguing that a dip this small may be meaningless"
+      },
+      {
+        "id": "c",
+        "label": "He now favors a planet but still wants another test"
+      },
+      {
+        "id": "d",
+        "label": "He comes to think a dark spot on the star probably caused the dip"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המשפט a regular repeat does make a planet the likeliest explanation (ההסבר הסביר ביותר) והמשפט I'd still want an independent check מראים שהוא משתכנע, אבל רק בחלקו.\n\n_He concedes that a regular repeat does make a planet the likeliest explanation, yet adds I'd still want an independent check._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-7",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t07-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the woman, what makes the planet explanation convincing?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The dip was deeper than a dark spot on a star could produce"
+      },
+      {
+        "id": "b",
+        "label": "The star was also seen to wobble as the planet circled it"
+      },
+      {
+        "id": "c",
+        "label": "A single dip is enough when the star is otherwise steady"
+      },
+      {
+        "id": "d",
+        "label": "The dip recurred on a steady schedule, the same each time"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי הצירוף But look at what the authors did היא מתארת ירידה באור הכוכב שחוזרת במרווחים סדירים לגמרי (at perfectly regular intervals), ומסכמת במשפט It's the repetition that makes the case.\n\n_She stresses a dip seen at perfectly regular intervals with the same depth and shape, and sums up: It's the repetition that makes the case._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-7",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t07-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 5,
+    "questionText": "What is the main point of the lecture?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Equal steps trade pure intervals for the freedom to play in any key"
+      },
+      {
+        "id": "b",
+        "label": "Pure fifths work well as long as the player stays in one key"
+      },
+      {
+        "id": "c",
+        "label": "Equal steps won out because they make the intervals sound pure"
+      },
+      {
+        "id": "d",
+        "label": "Over time, listeners learned to hear slightly sour intervals as pure"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המשפט equal tuning wasn't chosen because it's perfect והצירוף spreading a small error evenly (פיזור טעות קטנה באופן שווה) מראים שזו פשרה: מוותרים על טוהר המרווחים כדי לנגן בכל סולם.\n\n_The lecturer says equal tuning wasn't chosen because it's perfect; it works by spreading a small error evenly so every key is usable._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0010",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-7",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t07-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "Why does the lecturer mention singers and violinists?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To show that string players were the first to accept equal steps"
+      },
+      {
+        "id": "b",
+        "label": "To point out that keyboards, unlike them, cannot correct pitch"
+      },
+      {
+        "id": "c",
+        "label": "To suggest that pure intervals are easier to sing than to play"
+      },
+      {
+        "id": "d",
+        "label": "To explain why some musicians objected to the new tuning"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** מיד אחרי הזמר והכנר, שיכולים לתקן כל צליל, בא המשפט A keyboard can't; its pitches are fixed (הצלילים קבועים), ולכן הם מוזכרים כניגוד לקלידים.\n\n_Right after singers and violinists comes A keyboard can't; its pitches are fixed, so they are mentioned as a contrast to keyboards._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0010",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-7",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t08-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the lecturer, what allows researchers to date a wooden beam?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Counting how many rings the beam contains from its center outward"
+      },
+      {
+        "id": "b",
+        "label": "Matching its order of thick and thin rings to a record"
+      },
+      {
+        "id": "c",
+        "label": "Comparing how wet or dry the wood itself has become"
+      },
+      {
+        "id": "d",
+        "label": "Measuring the beam's width against trees growing today"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי הצירוף In short בא המשפט it's the sequence of wide and narrow rings, not simply their number, that dates the wood (הרצף של טבעות רחבות וצרות, ולא רק מספרן, הוא שמאפשר לתארך את העץ).\n\n_After In short, she says it's the sequence of wide and narrow rings, not simply their number, that dates the wood._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0011",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-8",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t08-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 5,
+    "questionText": "What is the lecturer's main point?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Proportional voting tends to produce weak, short-lived governments"
+      },
+      {
+        "id": "b",
+        "label": "Voters prefer the large party closest to their own views"
+      },
+      {
+        "id": "c",
+        "label": "Counting rules can steer a country toward two main parties"
+      },
+      {
+        "id": "d",
+        "label": "Regional parties manage to win seats despite the voting rules"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המשפט המסכם the rules of counting shape the number of parties (כללי הספירה קובעים את מספר המפלגות) מראה שהנושא הוא איך שיטת הבחירה דוחפת לשתי מפלגות גדולות.\n\n_He sums up with the rules of counting shape the number of parties, after showing how support drifts to two large parties._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0012",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-8",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t08-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "Why does the lecturer mention regional parties?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To give the clearest case of small parties losing out"
+      },
+      {
+        "id": "b",
+        "label": "To admit that the pattern he describes has exceptions"
+      },
+      {
+        "id": "c",
+        "label": "To suggest that proportional systems favor regional voters"
+      },
+      {
+        "id": "d",
+        "label": "To explain why voters desert small national parties"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט this is a tendency, not an iron law (זו נטייה, לא חוק ברזל) בא רגע לפני המפלגות האזוריות, ולכן הן מוזכרות כחריג לדפוס.\n\n_He first says this is a tendency, not an iron law, then offers Regional parties, for instance as the exception._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0012",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-8",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t08-q4",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "How does the student's view change during the conversation?",
+    "options": [
+      {
+        "id": "a",
+        "label": "She decides that early factory work may have left families poorer"
+      },
+      {
+        "id": "b",
+        "label": "She concludes that the wage figures she relied on were inaccurate"
+      },
+      {
+        "id": "c",
+        "label": "She sees that higher pay alone may not prove people lived better"
+      },
+      {
+        "id": "d",
+        "label": "She starts to doubt that living standards rose even in the long run"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המשפט I suppose I was treating income as if it were the whole story (התייחסתי להכנסה כאילו היא כל הסיפור) מראה שהיא מבינה ששכר גבוה יותר לבדו אינו מוכיח רווחה.\n\n_She admits I suppose I was treating income as if it were the whole story, so higher wages alone no longer settle the question for her._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0001",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-8",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t08-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What can be inferred about the professor's position?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He holds that ordinary families plainly grew poorer in those decades"
+      },
+      {
+        "id": "b",
+        "label": "He suspects the early gains were smaller than wages suggest"
+      },
+      {
+        "id": "c",
+        "label": "He considers height a more reliable guide than wages to well-being"
+      },
+      {
+        "id": "d",
+        "label": "He believes the long-run rise in living standards is still uncertain"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** השאלה Must they? והמשפט the gains in the first few decades look rather thin (הרווחים בעשורים הראשונים נראים דלים) מרמזים שהוא מפקפק בגודל השיפור המוקדם.\n\n_His Must they? and the gains in the first few decades look rather thin imply doubt about the size of the early improvement._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0001",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-8",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t09-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 5,
+    "questionText": "According to the lecturer, why does the sky look blue?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The air itself has a faint blue color of its own"
+      },
+      {
+        "id": "b",
+        "label": "Air molecules spread blue light around more than red light"
+      },
+      {
+        "id": "c",
+        "label": "Sunlight contains more blue light than any other color"
+      },
+      {
+        "id": "d",
+        "label": "Most red light is soaked up by the air before it can reach our eyes"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** לפי המשפט they scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones, מולקולות האוויר מפזרות אור כחול הרבה יותר מאור אדום.\n\n_The molecules scatter short wavelengths, the blue end of the spectrum, far more strongly than long, red ones, so blue light reaches us from everywhere._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l5-0013",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-9",
+      "quiz",
+      "difficulty_5"
+    ]
+  },
+  {
+    "questionId": "ls-t09-q2",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What does the man suggest about the evidence for a bilingual advantage?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Larger and more careful studies have disproved the effect"
+      },
+      {
+        "id": "b",
+        "label": "Published results may make the effect look stronger than it is"
+      },
+      {
+        "id": "c",
+        "label": "The effect shows up most clearly when the tasks are harder"
+      },
+      {
+        "id": "d",
+        "label": "Bilingual people may differ too much from one another to be studied"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט Studies that find no difference are less likely to get published והמשפט the record we see may flatter the hypothesis (מחמיא להשערה) מראים שהאפקט עשוי להיראות גדול מכפי שהוא באמת.\n\n_He notes that Studies that find no difference are less likely to get published, so the record we see may flatter the hypothesis._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-9",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t09-q3",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "How does the woman's position change?",
+    "options": [
+      {
+        "id": "a",
+        "label": "She concludes that the advantage is real but rather small"
+      },
+      {
+        "id": "b",
+        "label": "She stops believing that knowing two languages has real value"
+      },
+      {
+        "id": "c",
+        "label": "She shifts from accepting the claim to seeing it as unsettled"
+      },
+      {
+        "id": "d",
+        "label": "She keeps defending the claim by blaming tasks that are too easy"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** בסוף היא אומרת את המשפט Whether it trains some general thinking muscle is still open (השאלה עדיין פתוחה), אחרי שבהתחלה אמרה על הטענה את המילים it makes sense (זה הגיוני).\n\n_She begins with it makes sense but ends with Whether it trains some general thinking muscle is still open._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0002",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-9",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t09-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecturer's main point?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Doctors resisted mainly because they were too proud to change"
+      },
+      {
+        "id": "b",
+        "label": "The resistance had understandable causes beyond mere stubbornness"
+      },
+      {
+        "id": "c",
+        "label": "The germ idea spread quickly once microscopes revealed tiny organisms"
+      },
+      {
+        "id": "d",
+        "label": "Physicians dismissed germs simply because no evidence for them existed"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי הצירוף to restate the point בא המשפט the resistance was not simple foolishness (ההתנגדות לא נבעה מטיפשות פשוטה), ושלושת הנימוקים שבהרצאה מראים שלהתנגדות היו מניעים מובנים.\n\n_She rejects plain stubbornness as too easy and restates that the resistance was not simple foolishness, giving three sensible reasons._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-9",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t09-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "Why does the lecturer mention that cleaning up filthy districts reduced illness?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To suggest that the older theory was largely correct in the end"
+      },
+      {
+        "id": "b",
+        "label": "To explain why the older theory seemed persuasive in its day"
+      },
+      {
+        "id": "c",
+        "label": "To show that physicians already accepted the germ idea"
+      },
+      {
+        "id": "d",
+        "label": "To illustrate how doctors first spotted the microscopic culprits"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף seemed to work והצירוף though for reasons the theory got wrong (מסיבות שהתיאוריה טעתה בהן) מראים שהדוגמה מסבירה למה התיאוריה הישנה שכנעה, ולא שהתיאוריה צדקה.\n\n_The old view seemed to work, but the cleanup helped for reasons the theory got wrong, so the example explains its appeal, not its truth._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0003",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-9",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t10-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "According to the view the lecturer presents, what makes a theory scientific?",
+    "options": [
+      {
+        "id": "a",
+        "label": "It must rest on a large and growing body of supporting evidence"
+      },
+      {
+        "id": "b",
+        "label": "It must be open to being contradicted by evidence"
+      },
+      {
+        "id": "c",
+        "label": "It must be broad enough to account for whatever is observed"
+      },
+      {
+        "id": "d",
+        "label": "It must already have been contradicted by at least one observation before it is accepted"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט there must be some possible observation that would show it to be false והצירוף whether it could be refuted (האם אפשר להפריך אותה) מראים שתאוריה מדעית חייבת להיות פתוחה להפרכה.\n\n_The lecturer says there must be some possible observation that would show it to be false; what matters is whether it could be refuted._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0004",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-10",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t10-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the main point of the lecture?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Saving by households is the main cause of most economic downturns"
+      },
+      {
+        "id": "b",
+        "label": "A household's wise decision can become harmful once it is widely copied"
+      },
+      {
+        "id": "c",
+        "label": "Families ought to spend more and save less whenever hard times are expected"
+      },
+      {
+        "id": "d",
+        "label": "Shops and firms respond to falling sales by cutting jobs and working hours"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** משפט הסיכום what is prudent for one family can, when everyone does it, deepen a downturn for all (מה שנבון למשפחה אחת עלול, כשכולם נוהגים כך, להעמיק את המיתון של כולם) מבטא את הרעיון המרכזי.\n\n_The restatement what is prudent for one family can, when everyone does it, deepen a downturn for all gives the main point._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0005",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-10",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t10-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "Why does the lecturer mention whether the extra savings are invested?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To suggest that most economists regard the paradox as mistaken"
+      },
+      {
+        "id": "b",
+        "label": "To indicate that the strength of the effect depends on other factors"
+      },
+      {
+        "id": "c",
+        "label": "To explain how a careful family should decide where to keep its extra savings"
+      },
+      {
+        "id": "d",
+        "label": "To show that investing, unlike saving, is what causes downturns"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט not every economist accepts the strongest form of this argument והצירוף much depends (הרבה תלוי) מראים שעוצמת האפקט תלויה בתנאים נוספים.\n\n_He says not every economist accepts the strongest form of this argument and that much depends on investment, so the effect's strength varies._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0005",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-10",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t10-q4",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "How does the man's view change during the discussion?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He concludes that what the poet intended has no bearing on what a poem means"
+      },
+      {
+        "id": "b",
+        "label": "He comes to treat the poet's aims as evidence to weigh rather than the final word"
+      },
+      {
+        "id": "c",
+        "label": "He decides that each reader's own response is what defines a poem's meaning"
+      },
+      {
+        "id": "d",
+        "label": "He holds on to the view that the poet's letters should settle any dispute about meaning"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי המשפט let me revise what I said הוא מכנה את כוונת המשורר בצירוף a strong clue (רמז חזק) ומודה במשפט it can't be the final test (זה לא המבחן הסופי).\n\n_After let me revise what I said, he calls intention a strong clue but grants it can't be the final test._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-10",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t10-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What do the two speakers seem to agree on by the end?",
+    "options": [
+      {
+        "id": "a",
+        "label": "The poet's intention should be the final test of any reading"
+      },
+      {
+        "id": "b",
+        "label": "The poem's own words should limit which readings are acceptable"
+      },
+      {
+        "id": "c",
+        "label": "A poem may fairly mean whatever a careful reader finds in it"
+      },
+      {
+        "id": "d",
+        "label": "A poet's letters and drafts are better evidence than the poem itself"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** האישה אומרת במשפט they're wrong because the words on the page don't support them (פרשנויות כאלה שגויות כי הטקסט אינו תומך בהן), והגבר מסכם במשפט we're closer than we sounded.\n\n_She says bad readings fail because the words on the page don't support them, and he concludes we're closer than we sounded._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0006",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-10",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t11-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "What point do the speakers arrive at about the hospital ranking?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Survival rates may be too unreliable to compare hospitals in any way"
+      },
+      {
+        "id": "b",
+        "label": "The combined rate may reflect the patient mix more than the quality of care"
+      },
+      {
+        "id": "c",
+        "label": "The suburban hospital gives better care to patients who arrive seriously ill"
+      },
+      {
+        "id": "d",
+        "label": "Seriously ill patients should be sent to the hospital with the higher overall rate"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט the overall number may tell us more about who comes through the door than about the care itself מראה שהשיעור הכולל עשוי לשקף יותר את סוג המטופלים (מי נכנס בדלת) מאשר את איכות הטיפול.\n\n_She concludes that the overall number may tell us more about who comes through the door than about the care itself._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0007",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-11",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t11-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "Why does the professor mention that people invent or borrow words?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To argue that translating between languages rarely works well"
+      },
+      {
+        "id": "b",
+        "label": "To show why the strong version is hard to defend"
+      },
+      {
+        "id": "c",
+        "label": "To explain how the weaker version of the idea came about"
+      },
+      {
+        "id": "d",
+        "label": "To suggest that vocabulary matters more than grammar in shaping thought"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי המשפט If it were true, translation would be nearly impossible היא מוסיפה את המשפט people invent or borrow words all the time, כדי להראות שהגרסה החזקה לא מחזיקה מעמד.\n\n_She says If it were true, translation would be nearly impossible, yet people invent or borrow words all the time._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0008",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-11",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t11-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "What is the professor's view of the weaker version?",
+    "options": [
+      {
+        "id": "a",
+        "label": "It shows that some languages leave speakers unable to tell certain colors apart"
+      },
+      {
+        "id": "b",
+        "label": "It has support from evidence that speakers notice things slightly differently"
+      },
+      {
+        "id": "c",
+        "label": "It is now rejected by most researchers, just like the strong version"
+      },
+      {
+        "id": "d",
+        "label": "It rests more on popular slogans than on the results of experiments"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף real but modest והמשפט they nudge attention rather than set limits (הם מכוונים את תשומת הלב ולא מציבים גבולות) מראים שהראיות מצביעות על הבדלים קטנים בלבד.\n\n_She calls the effects real but modest and says they nudge attention rather than set limits._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0008",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-11",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t11-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecture mainly about?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Why drilling is still the most dependable way to study the deep Earth"
+      },
+      {
+        "id": "b",
+        "label": "How indirect clues revealed what lies at the center of the planet"
+      },
+      {
+        "id": "c",
+        "label": "How movements of molten metal deep inside the planet set off earthquakes"
+      },
+      {
+        "id": "d",
+        "label": "Why some kinds of earthquake wave do more damage at the surface than others"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** משפט הסיכום no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish (המבנה הוסק מהתנהגות הגלים) מבטא את הרעיון המרכזי.\n\n_The restatement no one has seen the core; its structure was inferred from how waves bend, slow down, or vanish gives the main idea._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-11",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t11-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "What led scientists to conclude that part of the core is liquid?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Faint signals pointed to a smaller region at the very center"
+      },
+      {
+        "id": "b",
+        "label": "Waves that cannot cross liquid were missing on the planet's far side"
+      },
+      {
+        "id": "c",
+        "label": "Drilling eventually reached deep enough to bring up traces of molten metal"
+      },
+      {
+        "id": "d",
+        "label": "Earthquake waves of both kinds traveled faster through the molten metal"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט The other kind can travel only through solid rock והמשפט this second kind simply never showed up מראים שהיעדר הגלים בצד הרחוק העיד על נוזל.\n\n_The second kind can travel only through solid rock, and on the far side it simply never showed up._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0009",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-11",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t12-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "According to the lecturer, what has not yet been settled about these animals?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Whether these animals live much longer than most other species"
+      },
+      {
+        "id": "b",
+        "label": "Whether these animals avoid aging or merely decline too slowly to notice"
+      },
+      {
+        "id": "c",
+        "label": "Why the risk of dying rises steadily with age in most other animals, including humans"
+      },
+      {
+        "id": "d",
+        "label": "How these animals manage to switch off the process of aging"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect מראה שהשאלה היא אם ההזדקנות נעדרת או רק איטית מאוד.\n\n_The lecturer says Researchers are unsure whether these animals truly stop aging or simply age too slowly for studies to detect._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0010",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-12",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t12-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecturer's main point?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Fire played no part in the library's long decline"
+      },
+      {
+        "id": "b",
+        "label": "The library's loss was probably a slow process rather than a sudden event"
+      },
+      {
+        "id": "c",
+        "label": "The library was probably destroyed in a single night of fire"
+      },
+      {
+        "id": "d",
+        "label": "Its leading scholars left because the library's old scrolls had begun to crumble"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** משפט הסיכום less a single catastrophe than a long, quiet decline (לא אסון יחיד אלא דעיכה ארוכה ושקטה) מבטא את הרעיון המרכזי של ההרצאה.\n\n_The lecturer sums up that it was less a single catastrophe than a long, quiet decline._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0011",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-12",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t12-q3",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "Why does the lecturer mention that papyrus scrolls had to be recopied?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To explain why fire spread so quickly through the library's shelves"
+      },
+      {
+        "id": "b",
+        "label": "To give one example of how the collection was lost through neglect"
+      },
+      {
+        "id": "c",
+        "label": "To show that ancient scholars valued copying above writing new works"
+      },
+      {
+        "id": "d",
+        "label": "To suggest that most of the lost books survived in later copies"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט unless they were recopied, they simply crumbled מופיע ברשימת הסיבות, ואחריו בא הצירוף wasn't destroyed so much as neglected (לא הושמדה אלא הוזנחה), ולכן הפרט על המגילות הוא דוגמה להזנחה.\n\n_The point unless they were recopied, they simply crumbled supports his claim that the library wasn't destroyed so much as neglected._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0011",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-12",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t12-q4",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "How does the woman's position change during the conversation?",
+    "options": [
+      {
+        "id": "a",
+        "label": "She drops her concern that a higher wage floor can reduce employment"
+      },
+      {
+        "id": "b",
+        "label": "She accepts the evidence on modest raises but still doubts large ones"
+      },
+      {
+        "id": "c",
+        "label": "She comes to believe that firms mainly cover the cost by raising their prices"
+      },
+      {
+        "id": "d",
+        "label": "She keeps insisting that even small increases will mainly hurt young, low-skilled workers"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט I'll admit that's more persuasive than I expected מראה שהשתכנעה, אבל על קפיצה גדולה היא אומרת את הצירוף could be a different story (עשוי להיות סיפור אחר).\n\n_She finds the evidence more persuasive than I expected, yet says a large jump could be a different story._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0012",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-12",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t12-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What do the two speakers end up agreeing on?",
+    "options": [
+      {
+        "id": "a",
+        "label": "A higher minimum wage has no real effect on the number of jobs"
+      },
+      {
+        "id": "b",
+        "label": "How much a raise affects jobs depends mostly on its size and setting"
+      },
+      {
+        "id": "c",
+        "label": "Comparisons of neighboring regions cannot settle questions about wages"
+      },
+      {
+        "id": "d",
+        "label": "Lower staff turnover largely makes up for the cost of paying more"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** האישה אומרת את המשפט The real question is how high, and where (השאלה האמיתית היא כמה גבוה והיכן), והגבר עונה במשפט On that, I think we agree.\n\n_She says The real question is how high, and where, and he replies On that, I think we agree._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0012",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-12",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t13-q1",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecturer's main point?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Experts often teach poorly because they put little effort into explaining"
+      },
+      {
+        "id": "b",
+        "label": "Mastering an idea can make a beginner's confusion hard to imagine"
+      },
+      {
+        "id": "c",
+        "label": "Beginners can follow more easily when experts skip the obvious steps"
+      },
+      {
+        "id": "d",
+        "label": "Experts gradually forget the difficult ideas they once worked to learn"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט it becomes remarkably hard to recall what it felt like not to understand it (קשה מאוד להיזכר איך זה לא להבין) מראה שדווקא הידע מקשה לראות את הרעיון דרך עיניו של מתחיל.\n\n_Once we understand an idea, it becomes remarkably hard to recall what it felt like not to understand it, so the expert loses the beginner's view._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0013",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-13",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t13-q2",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "Why does the man mention a copied chess game?",
+    "options": [
+      {
+        "id": "a",
+        "label": "To show that copies are usually easy to tell apart from originals"
+      },
+      {
+        "id": "b",
+        "label": "To suggest that a copied work can earn as much admiration as the original"
+      },
+      {
+        "id": "c",
+        "label": "To show that knowing how a result was produced can alter its worth"
+      },
+      {
+        "id": "d",
+        "label": "To argue that games and paintings should be judged by separate standards"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המשפט The moves wouldn't change, but we'd stop admiring it as original play (המהלכים לא ישתנו, אבל נפסיק להעריך את המשחק כמקורי) מראה שערך התוצאה משתנה כשיודעים איך היא הושגה.\n\n_He says The moves wouldn't change, but we'd stop admiring it as original play, so learning a result's origin changes its value._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0014",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-13",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t13-q3",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "How does the woman's position change during the discussion?",
+    "options": [
+      {
+        "id": "a",
+        "label": "She grants that a forgery's history lowers its value but not its beauty"
+      },
+      {
+        "id": "b",
+        "label": "She abandons the view that a forgery can give real visual pleasure"
+      },
+      {
+        "id": "c",
+        "label": "She convinces the man that a painting's worth depends on how it looks"
+      },
+      {
+        "id": "d",
+        "label": "She begins to doubt that a skilled fake could really fool the art experts"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הצירוף because of what we know about it, not because of anything we see (בגלל מה שאנחנו יודעים עליו, לא בגלל מה שרואים) מראה שהאישה מסכימה שהזיוף מאבד מערכו, אך לא מיופיו.\n\n_She concedes the chess point but keeps the visual pleasure, concluding the forgery loses value because of what we know about it, not because of anything we see._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0014",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-13",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t13-q4",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "According to the lecturer, what did the methods that eventually worked have in common?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Each relied on events that astronomers observed far beyond the Earth"
+      },
+      {
+        "id": "b",
+        "label": "Each used a moving part to block and release a beam of light"
+      },
+      {
+        "id": "c",
+        "label": "Each depended on observers with quicker reflexes than before"
+      },
+      {
+        "id": "d",
+        "label": "Each overcame how little time light needs to cross short distances"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** המשפט the real problem was one of scale (הבעיה הייתה בקנה המידה) והצירוף it stretched the distance, or it sliced time into pieces fine enough to measure מראים ששתי השיטות התגברו על זמן המעבר הזעיר של האור.\n\n_The lecturer says the real problem was one of scale, and each method either stretched the distance or sliced time into pieces fine enough to measure._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0015",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-13",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t13-q5",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecturer's view of the lantern test?",
+    "options": [
+      {
+        "id": "a",
+        "label": "He dismisses it as a naive test that told scientists very little"
+      },
+      {
+        "id": "b",
+        "label": "He credits it with showing that light has a definite speed"
+      },
+      {
+        "id": "c",
+        "label": "He regards its failure to find a delay as revealing in itself"
+      },
+      {
+        "id": "d",
+        "label": "He values it mainly as a study of human reaction times"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הצירוף I'd call it a clue (אני קורא לזה רמז), שבא מיד אחרי הצירוף easy to call that a failure, מראה שלדעת המרצה עצם היעדר העיכוב לימד משהו על האור.\n\n_Right after easy to call that a failure, he says I'd call it a clue: finding no delay was itself informative._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0015",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-13",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t14-q1",
+    "topic": "listening",
+    "subtopic": "listening-detail",
+    "difficultyLevel": 6,
+    "questionText": "What is the lecturer's view of the proposal she describes?",
+    "options": [
+      {
+        "id": "a",
+        "label": "It is an established limit whose exact size is still debated"
+      },
+      {
+        "id": "b",
+        "label": "It is a thought-provoking idea that has yet to be firmly shown"
+      },
+      {
+        "id": "c",
+        "label": "It has largely been abandoned by researchers in the field"
+      },
+      {
+        "id": "d",
+        "label": "It explains why the number of friends people have varies so much"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המשפט the limit is best seen as an intriguing hypothesis, not an established law (עדיף לראות בגבול השערה מסקרנת ולא חוק מבוסס) מראה שהרעיון מעניין אך עדיין לא הוכח.\n\n_She concludes that the limit is best seen as an intriguing hypothesis, not an established law: interesting, but not yet proven._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0016",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-14",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t14-q2",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the main point of the lecture?",
+    "options": [
+      {
+        "id": "a",
+        "label": "People judge harm by its manner as well as its extent"
+      },
+      {
+        "id": "b",
+        "label": "People settle such dilemmas mainly by counting how many are spared"
+      },
+      {
+        "id": "c",
+        "label": "Philosophers agree that the second choice is morally worse"
+      },
+      {
+        "id": "d",
+        "label": "People are more willing to cause harm when they act directly"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** המשפט our judgments seem to track not just how much harm occurs, but how it comes about (נראה שהשיפוט שלנו תלוי לא רק בכמות הנזק אלא גם באופן שבו נגרם) מסכם את ההרצאה: גם הדרך שבה נגרם הנזק חשובה, ולא רק היקפו.\n\n_He restates that our judgments seem to track not just how much harm occurs, but how it comes about._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0017",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-14",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t14-q3",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What does the lecturer suggest about people's reaction to the second case?",
+    "options": [
+      {
+        "id": "a",
+        "label": "It is a gut feeling that careful thinkers ought to override"
+      },
+      {
+        "id": "b",
+        "label": "It may reflect a real moral difference rather than a mere error"
+      },
+      {
+        "id": "c",
+        "label": "It shows that the number of people affected has no place in moral reasoning"
+      },
+      {
+        "id": "d",
+        "label": "It may fade once people notice that the numbers are identical"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף I'm not so sure וההבחנה בין נזק שהוא תוצאת לוואי (a side effect) לבין שימוש באדם ככלי מראים שלדעת המרצה התגובה עשויה לשקף הבדל מוסרי אמיתי.\n\n_He answers the glitch view with I'm not so sure and contrasts a side effect with a person used as a tool._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0017",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-14",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t14-q4",
+    "topic": "listening",
+    "subtopic": "listening-main-idea",
+    "difficultyLevel": 6,
+    "questionText": "What is the woman's main argument?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Drought had little to do with the fall of the great palace societies"
+      },
+      {
+        "id": "b",
+        "label": "A lack of copper and tin was the main reason the palaces fell"
+      },
+      {
+        "id": "c",
+        "label": "Their reliance on one another let local shortages spread widely"
+      },
+      {
+        "id": "d",
+        "label": "The societies fell because dry spells were new to them"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המשפט What had changed, I think, is how dependent they'd become on one another (מה שהשתנה הוא התלות ההדדית בין הממלכות) והמשפט Each failure made the next one more likely מראים שהתלות הפיצה את המחסור.\n\n_She says What had changed, I think, is how dependent they'd become on one another, and Each failure made the next one more likely._",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0018",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-14",
+      "quiz",
+      "difficulty_6"
+    ]
+  },
+  {
+    "questionId": "ls-t14-q5",
+    "topic": "listening",
+    "subtopic": "listening-inference",
+    "difficultyLevel": 6,
+    "questionText": "What position does the man hold by the end of the conversation?",
+    "options": [
+      {
+        "id": "a",
+        "label": "Drought was a minor factor that historians have tended to overstate"
+      },
+      {
+        "id": "b",
+        "label": "Drought alone can explain why so many centers fell together"
+      },
+      {
+        "id": "c",
+        "label": "Trade links made these kingdoms more resilient to bad harvests"
+      },
+      {
+        "id": "d",
+        "label": "Drought began the crisis, but ties between societies spread it"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** הצירוף drought alone has trouble explaining (קשה להסביר זאת בבצורת בלבד) והשאלה Without the drought, would the chain have started at all? מראים שהגבר מקבל את ההסבר של רשת הקשרים, אך רואה בבצורת את נקודת ההתחלה.\n\n_He grants that drought alone has trouble explaining the collapse, yet asks Without the drought, would the chain have started at all?_",
+    "distractorExplanations": {},
+    "estimatedTimeSec": 84,
+    "passageId": "owner-ls-ll-l6-0018",
+    "tags": [
+      "owner_ls",
+      "shuffle-safe",
+      "owner-ls-test-14",
+      "quiz",
+      "difficulty_6"
+    ]
   }
 ]

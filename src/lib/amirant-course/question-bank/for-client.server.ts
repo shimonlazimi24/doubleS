@@ -47,7 +47,12 @@ export function toClientPoolQuestion(q: BankQuestion): ClientPoolQuestion {
 export function toClientPassage(passageId: string): ClientPassage | undefined {
   const p = getPassage(passageId);
   if (!p) return undefined;
-  return { id: p.passageId, title: p.title, bodyMarkdown: p.bodyMarkdown };
+  return {
+    id: p.passageId,
+    title: p.title,
+    bodyMarkdown: p.bodyMarkdown,
+    ...(p.revealMarkdown ? { revealMarkdown: p.revealMarkdown } : {}),
+  };
 }
 
 /** The given rows plus every passage they reference, each passage once. */

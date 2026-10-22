@@ -734,10 +734,88 @@
           "estimatedMinutes": 30
         },
         {
-          "id": "lesson.reform.03",
-          "title": "מבחני שמיעה (7.3)",
+          "id": "lesson.listening.test-01",
+          "title": "מבחן האזנה 1 (קל-בינוני)",
           "kind": "text",
-          "estimatedMinutes": 30
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-02",
+          "title": "מבחן האזנה 2 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-03",
+          "title": "מבחן האזנה 3 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-04",
+          "title": "מבחן האזנה 4 (בינוני-קשה)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-05",
+          "title": "מבחן האזנה 5 (בינוני-קשה)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-06",
+          "title": "מבחן האזנה 6 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-07",
+          "title": "מבחן האזנה 7 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-08",
+          "title": "מבחן האזנה 8 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-09",
+          "title": "מבחן האזנה 9 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-10",
+          "title": "מבחן האזנה 10 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-11",
+          "title": "מבחן האזנה 11 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-12",
+          "title": "מבחן האזנה 12 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-13",
+          "title": "מבחן האזנה 13 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
+        },
+        {
+          "id": "lesson.listening.test-14",
+          "title": "מבחן האזנה 14 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 9
         },
         {
           "id": "lesson.reform.04",

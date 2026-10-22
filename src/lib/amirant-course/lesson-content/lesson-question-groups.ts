@@ -19,6 +19,8 @@ const OWNER_RS_SET_TIME_SEC = 4 * 2 * 60;
 const OWNER_SC_TEST_TIME_SEC = 8 * 60;
 /** Reading passages run three minutes per question, reading time included. */
 const OWNER_RC_SEC_PER_QUESTION = 3 * 60;
+/** A listening test: three clips and five questions in seven minutes, as in the exam section. */
+const OWNER_LS_TEST_TIME_SEC = 7 * 60;
 
 export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   // -- השלמת משפטים --
@@ -63,6 +65,21 @@ export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   "lesson.reading.passage-08": { tag: "owner-rc-passage-8", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
   "lesson.reading.passage-09": { tag: "owner-rc-passage-9", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
   "lesson.reading.passage-10": { tag: "owner-rc-passage-10", timeLimitSec: 6 * OWNER_RC_SEC_PER_QUESTION },
+  // -- האזנה: the content owner's tests (3 clips, 5 questions, 7 minutes including the listening) --
+  "lesson.listening.test-01": { tag: "owner-ls-test-1", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-02": { tag: "owner-ls-test-2", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-03": { tag: "owner-ls-test-3", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-04": { tag: "owner-ls-test-4", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-05": { tag: "owner-ls-test-5", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-06": { tag: "owner-ls-test-6", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-07": { tag: "owner-ls-test-7", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-08": { tag: "owner-ls-test-8", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-09": { tag: "owner-ls-test-9", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-10": { tag: "owner-ls-test-10", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-11": { tag: "owner-ls-test-11", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-12": { tag: "owner-ls-test-12", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-13": { tag: "owner-ls-test-13", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  "lesson.listening.test-14": { tag: "owner-ls-test-14", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
   // -- סימולציות (שאלותיהן בבנק, כולל קטעי קריאה) --
   "lesson.sim.04": { tag: "simulation-1-baseline", timeLimitSec: 39 * 60 },
   "lesson.sim.05": { tag: "simulation-2-warmup", timeLimitSec: 39 * 60 },
