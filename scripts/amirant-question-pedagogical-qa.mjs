@@ -256,11 +256,19 @@ function evaluateQuestion(q, stemFrequency) {
   }
 
   // פתיחי הבנת-הנקרא קנוניים חוזרים בין קטעים במבחן האמיתי - לא שיבוט תבניות
+  // Fixed question forms of the exam itself (reading and listening main-idea
+  // items), not a template to rewrite.
   const CANONICAL_COMPREHENSION_STEMS = new Set([
     "what is the main idea of the passage",
     "what is the main idea of this passage",
     "what is the main purpose of the passage",
     "which of the following best expresses the main idea of the passage",
+    "what is the lecture mainly about",
+    "what is the conversation mainly about",
+    "what is the main point of the lecture",
+    "what is the lecturer s main point",
+    "what is the speaker s main point",
+    "what is the main purpose of the lecture",
   ]);
   if (stemFrequency.get(stem) >= 3 && !CANONICAL_COMPREHENSION_STEMS.has(stem)) {
     const freq = stemFrequency.get(stem);
