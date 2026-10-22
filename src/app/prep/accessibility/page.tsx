@@ -25,7 +25,7 @@ const LAST_UPDATED_HE = "אוקטובר 2026";
  * לאנשים עם מוגבלות, התאמות נגישות לשירות). This placeholder is replaced by the
  * owner - never invent a name here.
  */
-const COORDINATOR_NAME = "[שם רכז הנגישות]";
+const COORDINATOR_NAME = "אדם";
 
 type Section = { heading: string; body?: string; bullets?: string[] };
 
