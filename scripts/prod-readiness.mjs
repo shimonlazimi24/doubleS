@@ -20,7 +20,9 @@ function read(rel) {
 
 // Artifacts from senior hardening
 mustExist("src/app/api/prep/amirant-course/grade/route.ts");
-mustExist("src/lib/amirant-course/question-bank/client-bank.ts");
+// The browser no longer receives the bank: pages get their questions from the server.
+mustExist("src/lib/amirant-course/question-bank/for-client.server.ts");
+mustExist("src/lib/amirant-course/question-bank/no-bank-in-client.test.ts");
 mustExist("content/amirant-import/source/questions.public.json");
 mustExist("supabase/migrations/20260817_cms_rls_app_metadata.sql");
 mustExist("supabase/migrations/20260817_restrict_course_chunks.sql");

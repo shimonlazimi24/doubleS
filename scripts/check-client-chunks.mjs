@@ -101,7 +101,7 @@ function main() {
   console.error(
     "\nUsually this means a client component imported `@/lib/amirant-course`'s heavy" +
       "\nneighbours. Import `./manifest` (generated, 31KB) and" +
-      "\n`./question-bank/client-bank` (no answers) instead.",
+      "\n`./question-bank/for-client.server` on the server and pass the rows as props.",
   );
   process.exit(1);
 }
