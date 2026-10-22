@@ -5,15 +5,18 @@ import { AMIRANT_PREPARATION_MANIFEST, countManifestLessons } from "@/lib/amiran
 import { MARKETING_HERO } from "@/lib/prep/marketing/content";
 import { SUPPORT_EMAIL } from "@/lib/prep/marketing-pages";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { PREP_PAGE_META, prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 const siteUrl = getPublicSiteUrl();
+const meta = PREP_PAGE_META.about;
 
 export const metadata: Metadata = {
-  title: "אודות",
-  description:
-    "PREPARE היא פלטפורמת הכנה דיגיטלית לאמירנט: שיעורים מובנים, תרגול אדפטיבי, סימולציות מלאות ועוזר AI בעברית.",
+  title: meta.title,
+  description: meta.description,
   alternates: { canonical: `${siteUrl}/prep/about` },
+  openGraph: prepOpenGraph(siteUrl, { ...meta, path: "/prep/about" }),
 };
 
 /** מה בקורס - עובדות בלבד, מיושרות ל-llms.txt ולתוכן השיווקי. */
@@ -69,6 +72,12 @@ const METHOD_PRINCIPLES = [
 export default function PrepAboutPage() {
   return (
     <div className="bg-canvas">
+      <JsonLdScript
+        data={breadcrumbJsonLd(siteUrl, [
+          { name: "PREPARE", path: PREP_BASE },
+          { name: "אודות", path: `${PREP_BASE}/about` },
+        ])}
+      />
       {/* ── Hero קומפקטי: קיקר, הצהרת עיקרון, פס נתונים ── */}
       <header className="border-b border-line bg-paper">
         <Container max="readable" className="py-10 md:py-14">

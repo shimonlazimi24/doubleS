@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
 import { PrepHomeView } from "@/components/prep/PrepHomeView";
+import { PREP_PAGE_META } from "@/lib/prep/seo/page-meta";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 const siteUrl = getPublicSiteUrl();
+const meta = PREP_PAGE_META.home;
 
 export const metadata: Metadata = {
-  title: "PREPARE - הכנה לאמירנט ומבחני אנגלית אקדמיים",
-  description:
-    "PREPARE: קורסי הכנה דיגיטליים לאמירנט ולמבחני אנגלית אקדמיים. " +
-    "תרגול אדפטיבי עם AI, שיעורים מובנים, וסימולציות מלאות. הציון הרשמי נקבע במבחן מאל״ו.",
+  // The brand is already in the title, so opt out of the layout's " | PREPARE"
+  // template - it used to render the name twice.
+  title: { absolute: meta.title },
+  description: meta.description,
   keywords: [
     "הכנה לאמירנט",
     "אמירנט",
+    "קורס אמירנט אונליין",
     "מבחן אנגלית אקדמי",
     "מאלו",
-    "קורס אמירנט",
     "amirant",
     "prepare academy",
   ],
   alternates: { canonical: `${siteUrl}/prep` },
   openGraph: {
-    title: "PREPARE - הכנה לאמירנט",
-    description: "קורסי הכנה דיגיטליים לאמירנט. תרגול אדפטיבי, שיעורים מובנים וסימולציות מלאות.",
+    title: meta.title,
+    description: meta.description,
     url: `${siteUrl}/prep`,
     locale: "he_IL",
     type: "website",

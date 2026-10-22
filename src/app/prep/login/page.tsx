@@ -4,10 +4,15 @@ import { Suspense } from "react";
 import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
 import { PrepLoginForm } from "@/components/prep/PrepLoginForm";
 import { Container, Heading, Text } from "@/components/ui";
+import { PREP_PAGE_META } from "@/lib/prep/seo/page-meta";
+import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 export const metadata: Metadata = {
-  title: "התחברות",
-  description: "התחברות ל-PREPARE עם Google או קוד במייל - שמירת התקדמות וקורס אמירנט.",
+  title: PREP_PAGE_META.login.title,
+  description: PREP_PAGE_META.login.description,
+  alternates: { canonical: `${getPublicSiteUrl()}/prep/login` },
+  // A sign-in form is not a landing page; keep it out of the index (links still followed).
+  robots: { index: false, follow: true },
 };
 
 /** מסך ממוקד אחד: כותרת צמודה לטופס, בלי רצועות ריק (DESIGN_GUIDELINES: one purpose per screen). */

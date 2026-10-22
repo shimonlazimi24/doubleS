@@ -7,6 +7,8 @@ export type BlogPost = {
   description: string;
   /** ISO date (YYYY-MM-DD) */
   date: string;
+  /** ISO date of the last substantive edit; drives sitemap lastmod and Article.dateModified. */
+  updated?: string;
   keywords: string[];
   body: string;
 };
@@ -44,9 +46,10 @@ function readPost(slug: string): BlogPost | null {
   const title = typeof meta.title === "string" ? meta.title : slug;
   const description = typeof meta.description === "string" ? meta.description : "";
   const date = typeof meta.date === "string" ? meta.date : "";
+  const updated = typeof meta.updated === "string" && meta.updated ? meta.updated : undefined;
   const keywords = Array.isArray(meta.keywords) ? meta.keywords : [];
   if (!title || !body.trim()) return null;
-  return { slug, title, description, date, keywords, body: body.trim() };
+  return { slug, title, description, date, updated, keywords, body: body.trim() };
 }
 
 export function listBlogPosts(): BlogPost[] {

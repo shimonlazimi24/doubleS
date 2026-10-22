@@ -17,22 +17,52 @@ import {
   type MarketingPageContent,
 } from "@/lib/prep/marketing-pages";
 import { Container, Heading, Text } from "@/components/ui";
+import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
+import { PREP_PAGE_META, type PrepPageMetaKey, prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 
 type Props = { params: { slug: string } };
 
+const siteUrl = getPublicSiteUrl();
+
+/**
+ * Slugs that have a dedicated route (src/app/prep/<slug>/page.tsx). The static
+ * route wins at request time, but prerendering them here too wrote a 307-to-
+ * itself into the same `.next/server/app/prep/<slug>.html` the real page uses -
+ * whichever finished last won, and one build produced /prep/about as a 307 to itself.
+ */
+const DEDICATED_ROUTE_SLUGS: ReadonlySet<PrepMarketingSlug> = new Set<PrepMarketingSlug>([
+  "amirant",
+  "pricing",
+  "about",
+  "login",
+  "blog",
+]);
+
 export function generateStaticParams() {
-  return PREP_MARKETING_SLUGS.map((slug) => ({ slug }));
+  return PREP_MARKETING_SLUGS.filter((slug) => !DEDICATED_ROUTE_SLUGS.has(slug)).map((slug) => ({ slug }));
 }
+
+/** Placeholder "coming soon" page: reachable, but not worth a search result of its own. */
+const NOINDEX_SLUGS: ReadonlySet<PrepMarketingSlug> = new Set<PrepMarketingSlug>(["toefl"]);
 
 export function generateMetadata({ params }: Props): Metadata {
   if (!isPrepMarketingSlug(params.slug)) return {};
+  const slug = params.slug;
+  const url = `${siteUrl}/prep/${slug}`;
+  const meta = slug in PREP_PAGE_META ? PREP_PAGE_META[slug as PrepPageMetaKey] : null;
+  const title = meta?.title ?? PREP_MARKETING_TITLES[slug];
   return {
-    title: PREP_MARKETING_TITLES[params.slug],
+    title,
+    // Without a description of its own each of these pages inherited the layout's,
+    // so contact, terms and privacy all carried the same snippet.
+    description: meta?.description,
     // Without its own canonical this page inherited the layout's, which pointed
     // at /prep — so contact, terms and privacy were submitted in the sitemap
     // while telling Google they were duplicates of the home page.
-    alternates: { canonical: `${getPublicSiteUrl()}/prep/${params.slug}` },
+    alternates: { canonical: url },
+    openGraph: meta ? prepOpenGraph(siteUrl, { ...meta, path: `/prep/${slug}` }) : undefined,
+    robots: NOINDEX_SLUGS.has(slug) ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -58,9 +88,23 @@ function ContactCard() {
   );
 }
 
-function StructuredMarketingPage({ title, content }: { title: string; content: MarketingPageContent }) {
+function StructuredMarketingPage({
+  slug,
+  title,
+  content,
+}: {
+  slug: PrepMarketingSlug;
+  title: string;
+  content: MarketingPageContent;
+}) {
   return (
     <div className="bg-canvas">
+      <JsonLdScript
+        data={breadcrumbJsonLd(siteUrl, [
+          { name: "PREPARE", path: PREP_BASE },
+          { name: title, path: `${PREP_BASE}/${slug}` },
+        ])}
+      />
       {/* Header קומפקטי - בלי חלל ריק */}
       <div className="border-b border-line bg-paper">
         <Container max="readable" className="py-10 md:py-14">
@@ -141,7 +185,7 @@ export default function PrepMarketingPage({ params }: Props) {
   const title = PREP_MARKETING_TITLES[slug];
   const content = PREP_MARKETING_PAGES[slug];
   if (content) {
-    return <StructuredMarketingPage title={title} content={content} />;
+    return <StructuredMarketingPage slug={slug} title={title} content={content} />;
   }
 
   // fallback לסלאגים בלי תוכן מובנה (toefl/blog)

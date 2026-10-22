@@ -5,7 +5,7 @@ import {
   PREP_BRAND_SUBTITLE_HE,
   PREP_BRAND_WORDMARK,
 } from "@/lib/prep/brand";
-import { JsonLdScript, organizationJsonLd } from "@/lib/prep/seo/json-ld";
+import { JsonLdScript, organizationJsonLd, websiteJsonLd } from "@/lib/prep/seo/json-ld";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 import { PrepUtmCapture } from "@/components/prep/PrepUtmCapture";
 import { Suspense } from "react";
@@ -20,11 +20,14 @@ export const metadata: Metadata = {
   },
   description: `${PREP_BRAND_SUBTITLE_HE} - קורסים דיגיטליים, תרגול חכם והכנה ממוקדת לאמירנט. TOEFL בקרוב.`,
   openGraph: {
+    siteName: PREP_BRAND_WORDMARK,
     locale: "he_IL",
     type: "website",
     url: `${siteUrl}/prep`,
     // התמונה עצמה מגיעה מ-opengraph-image.tsx (1200×630, file convention)
   },
+  // Twitter/X reads its own tags; without this block the card showed no title.
+  twitter: { card: "summary_large_image" },
   // No canonical here on purpose: metadata in a layout is inherited by every
   // page beneath it, so this used to declare /prep/pricing, /prep/courses,
   // /prep/contact, /prep/terms and /prep/privacy as duplicates of /prep. Each
@@ -35,6 +38,7 @@ export default function PrepRootLayout({ children }: { children: React.ReactNode
   return (
     <>
       <JsonLdScript data={organizationJsonLd(siteUrl)} />
+      <JsonLdScript data={websiteJsonLd(siteUrl)} />
       <Suspense fallback={null}>
         <PrepUtmCapture />
       </Suspense>
