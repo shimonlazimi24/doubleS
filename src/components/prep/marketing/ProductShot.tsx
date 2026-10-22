@@ -26,7 +26,9 @@ export function ProductShot({ className, priority = false }: { className?: strin
           alt="דף הקורס: תוכנית הקורס בצד, מודול השלמת משפטים פתוח עם מבחני התרגול לפי רמה"
         />
       </div>
-      <figcaption className="mt-2 text-xs text-muted">דף הקורס כפי שהוא נראה ללומד</figcaption>
+      <figcaption className="mt-2 text-xs text-muted">
+        {hasVideo ? "מבחן תרגול בקורס: בחירת תשובות, בדיקה והסבר, כפי שהלומד רואה" : "דף הקורס כפי שהוא נראה ללומד"}
+      </figcaption>
     </figure>
   );
 }
