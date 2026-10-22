@@ -8,7 +8,7 @@ import { markdownishToPlain } from "@/lib/amirant-course/lesson-content/split-ma
 import { LessonBlockCard } from "../lesson/LessonBlockCard";
 import { LessonHeroCard } from "../lesson/LessonHeroCard";
 import { LessonInteractionBlock } from "../lesson/LessonInteractionBlock";
-import { LessonAiBlock } from "../lesson/LessonAiBlock";
+import { splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { LessonKeyTakeawayClosing } from "../lesson/LessonKeyTakeawayClosing";
 import { LessonFooterCTA } from "../lesson/LessonFooterCTA";
 import { AmirantInlineQuestionsCard } from "../lesson/AmirantInlineQuestionsCard";
@@ -198,7 +198,9 @@ export function PremiumLessonWorkspace({
     current,
     mode,
     vocabData,
-    title,
+    // The learner never sees the source document's "(4.2)" / "4.3 - " title.
+    title: splitLessonTitle(title).name,
+    vocabTitle: title,
     intro,
     defaultIntroFallback,
     estimatedMinutes,
@@ -365,7 +367,8 @@ export function PremiumLessonWorkspace({
                   <div
                     ref={stepBlockRef}
                     id="amirant-step-viewport"
-                    className="min-w-0 scroll-mt-4 min-h-[32vh] sm:min-h-[36vh]"
+                    // scroll-margin clears the sticky site header (3.5rem) and, below lg, the steps button.
+                    className="min-w-0 min-h-[32vh] scroll-mt-[7.5rem] sm:min-h-[36vh] lg:scroll-mt-20"
                   >
                     <div
                       key={`${lessonId}-${activeIndex}`}
@@ -385,7 +388,8 @@ export function PremiumLessonWorkspace({
                       isLast={isLast}
                       onPrev={prev}
                       onNext={next}
-                      practiceHref={practiceHref}
+                      // The closing step carries its own primary action; the footer keeps only "back".
+                      practiceHref={current.kind === "practice_cta" ? null : practiceHref}
                     />
                   </div>
                 </div>
@@ -403,6 +407,8 @@ type RenderParams = {
   mode: "markdown" | "blocks" | "vocab";
   vocabData?: VocabParseResult;
   title: string;
+  /** The raw title: the vocabulary model parses it. */
+  vocabTitle: string;
   intro: string;
   defaultIntroFallback: string;
   estimatedMinutes: number | null;
@@ -470,7 +476,7 @@ function renderStepBody(p: RenderParams) {
           <VocabularyLessonExperience
             data={p.vocabData}
             lessonId={p.lessonId}
-            title={p.title}
+            title={p.vocabTitle}
             estimatedMinutes={p.estimatedMinutes}
           />
         </div>
@@ -635,23 +641,21 @@ function renderStepBody(p: RenderParams) {
     );
   }
   if (c.kind === "quick_check" && c.flowIndex != null) {
-    const isFirstGate = p.firstGateIndex === c.flowIndex;
     return (
       <LessonStepContent kind="quick_check" className="!min-h-0">
-        <div className="space-y-5 sm:space-y-6">
-          <LessonInteractionBlock onContinue={p.onInteractionContinue} surface="embed" />
-          {isFirstGate ? <LessonAiBlock /> : null}
-        </div>
+        <LessonInteractionBlock onContinue={p.onInteractionContinue} surface="embed" />
       </LessonStepContent>
     );
   }
   if (c.card) {
     const card = c.card;
     const k = asContentStepKind(c.kind);
-    const stepTitle = c.label;
+    // The H2 is the section's full heading; the shortened label stays in the sidebar.
+    const stepTitle = c.heading ?? c.label;
     let bodyForDisplay =
-      stripLeadingDuplicateSectionHeading(card.body, card.stepLabel) ?? card.body ?? "";
-    bodyForDisplay = stripLeadingDuplicateSectionHeading(bodyForDisplay, stepTitle) ?? bodyForDisplay;
+      stripLeadingDuplicateSectionHeading(card.body, stepTitle) ?? card.body ?? "";
+    bodyForDisplay = stripLeadingDuplicateSectionHeading(bodyForDisplay, card.stepLabel) ?? bodyForDisplay;
+    bodyForDisplay = stripLeadingDuplicateSectionHeading(bodyForDisplay, c.label) ?? bodyForDisplay;
     bodyForDisplay = stripEdgeSeparatorNoise(
       stripTakeawayBlocksFromBody(bodyForDisplay) ?? bodyForDisplay,
     );
@@ -689,9 +693,8 @@ function renderStepBody(p: RenderParams) {
             />
           </div>
           {c.embedQuickCheck && c.flowIndex != null ? (
-            <div className="mt-6 space-y-5 border-t border-stone-100 pt-5">
+            <div className="mt-6">
               <LessonInteractionBlock onContinue={p.onInteractionContinue} surface="embed" />
-              {p.firstGateIndex === c.flowIndex ? <LessonAiBlock /> : null}
             </div>
           ) : null}
         </div>

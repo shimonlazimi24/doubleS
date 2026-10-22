@@ -4,6 +4,7 @@ import type { ClientPassage } from "@/lib/amirant-course/question-bank/client-ty
 import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
 import {
   cleanLessonStepSectionTitle,
+  cleanStepHeading,
   expandSectionFlowToLessonCards,
   type ExpandedLessonCard,
 } from "@/lib/amirant-course/lesson-content/microsection-split";
@@ -56,8 +57,10 @@ export type WorkspaceStepKind =
 export type BuiltWorkspaceStep = {
   id: string;
   kind: WorkspaceStepKind;
-  /** Sidebar label (RTL), sanitized - never placeholder-only titles like "---". */
+  /** Sidebar label (RTL), sanitized - never placeholder-only titles like "---". May be shortened. */
   label: string;
+  /** The section's full heading for the step's H2 when the label had to be shortened. */
+  heading?: string;
   /** Index in `flow` for section/gate steps; null for synthetic steps. */
   flowIndex: number | null;
   /**
@@ -94,6 +97,41 @@ function truncate(s: string, n = TRUNC): string {
   return t.slice(0, n - 1) + "…";
 }
 
+/**
+ * "1. פתיחה", "2) מבנה", "3.1 זמן": the source document's outline numbers;
+ * the workspace already counts steps. Names such as "שיטה 1:" keep theirs.
+ */
+export function stripLeadingNumbering(s: string): string {
+  const t = s.replace(/\s+/g, " ").trim();
+  const out = t.replace(/^(?:\d+(?:\.\d+)*[.)]|\d+(?:\.\d+)+)\s+[-–—]?\s*/, "").trim();
+  return out || t;
+}
+
+function cleanTitle(s: string): string {
+  return stripLeadingNumbering(cleanLessonStepSectionTitle(s));
+}
+
+function firstHeadingLine(body: string | undefined): string | null {
+  const first = body?.split("\n").find((l) => l.trim())?.trim();
+  const m = first?.match(/^#{1,6}\s+(.+)$/);
+  return m?.[1] ? cleanTitle(cleanStepHeading(m[1])) : null;
+}
+
+/**
+ * The step's full heading, when the body opens with one that the (possibly
+ * shortened) label was derived from. Otherwise the label is the heading.
+ */
+export function fullHeadingForLabel(label: string, body: string | undefined): string | undefined {
+  const heading = firstHeadingLine(body);
+  if (!heading) return undefined;
+  const stem = label.replace(/…$/, "").replace(/\s+/g, " ").trim();
+  if (!stem) return undefined;
+  const norm = (x: string) => x.toLowerCase();
+  if (norm(heading) === norm(stem)) return heading === label ? undefined : heading;
+  if (label.endsWith("…") && norm(heading).startsWith(norm(stem))) return heading;
+  return undefined;
+}
+
 /** Horizontal rules / empty headings often become "---" in CMS - treat as missing title. */
 export function isPlaceholderStepTitle(s: string): boolean {
   const t = s.replace(/\s+/g, " ").trim();
@@ -120,21 +158,21 @@ function firstPlainLineFromBody(body: string | undefined): string | null {
 function fallbackLabelFromCard(card: ExpandedLessonCard, sectionTitle: string): string {
   const fromHeading = firstPlainLineFromBody(card.body);
   if (fromHeading && !isPlaceholderStepTitle(fromHeading)) {
-    return truncate(cleanLessonStepSectionTitle(fromHeading), MAX_LABEL);
+    return truncate(cleanTitle(fromHeading), MAX_LABEL);
   }
   const firstItem = card.items?.[0] ?? card.bullets?.[0];
   if (firstItem?.trim()) return truncate(firstItem.trim(), MAX_LABEL);
-  const cleaned = cleanLessonStepSectionTitle(sectionTitle);
+  const cleaned = cleanTitle(sectionTitle);
   return cleaned ? truncate(cleaned, MAX_LABEL) : "חלק בשיעור";
 }
 
 const MAX_LABEL = 72;
 
 function finalizeStepLabel(raw: string, card: ExpandedLessonCard | undefined, sectionTitle: string): string {
-  const base = raw.replace(/\s+/g, " ").trim();
+  const base = stripLeadingNumbering(raw);
   if (!isPlaceholderStepTitle(base)) return truncate(base, MAX_LABEL) || "חלק בשיעור";
   if (card) return fallbackLabelFromCard(card, sectionTitle);
-  const t = cleanLessonStepSectionTitle(sectionTitle);
+  const t = cleanTitle(sectionTitle);
   return t ? truncate(t, MAX_LABEL) : "חלק בשיעור";
 }
 
@@ -226,10 +264,12 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
     cards.forEach((card, j) => {
       const raw = card.stepLabel || truncate(item.title) || "חלק";
       const label = finalizeStepLabel(raw, card, item.title);
+      const heading = fullHeadingForLabel(label, card.body);
       out.push({
         id: `ws-${item.id}--${i}--p${j}`,
         kind: k,
         label,
+        ...(heading ? { heading } : {}),
         flowIndex: i,
         partIndex: j,
         partTotal: cards.length,
