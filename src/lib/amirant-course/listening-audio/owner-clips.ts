@@ -8,380 +8,380 @@ import type { ListeningAudioClip } from "./manifest";
 export const OWNER_LISTENING_CLIPS: (ListeningAudioClip & { durationSec: number | null })[] = [
   {
     "id": "ls-LL-L3-0002",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-27 שניות",
+    "src": "/prep/listening/LL-L3-0002.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L3-0002.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 26.7
   },
   {
     "id": "ls-LL-L3-0003",
     "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L3-0003.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L3-0003.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 60.34
   },
   {
     "id": "ls-LL-L3-0004",
     "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L3-0004.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L3-0004.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 30.47
   },
   {
     "id": "ls-LL-L4-0002",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-83 שניות",
+    "src": "/prep/listening/LL-L4-0002.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0002.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 83.37
   },
   {
     "id": "ls-LL-L4-0003",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-57 שניות",
+    "src": "/prep/listening/LL-L4-0003.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0003.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 56.78
   },
   {
     "id": "ls-LL-L4-0004",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-84 שניות",
+    "src": "/prep/listening/LL-L4-0004.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0004.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 83.57
   },
   {
     "id": "ls-LL-L4-0005",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-26 שניות",
+    "src": "/prep/listening/LL-L4-0005.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0005.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 26.42
   },
   {
     "id": "ls-LL-L4-0006",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-56 שניות",
+    "src": "/prep/listening/LL-L4-0006.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0006.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 55.74
   },
   {
     "id": "ls-LL-L4-0007",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-71 שניות",
+    "src": "/prep/listening/LL-L4-0007.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0007.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 70.96
   },
   {
     "id": "ls-LL-L4-0008",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-45 שניות",
+    "src": "/prep/listening/LL-L4-0008.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0008.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 45
   },
   {
     "id": "ls-LL-L4-0009",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-51 שניות",
+    "src": "/prep/listening/LL-L4-0009.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0009.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 51.03
   },
   {
     "id": "ls-LL-L4-0010",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-35 שניות",
+    "src": "/prep/listening/LL-L4-0010.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L4-0010.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 34.52
   },
   {
     "id": "ls-LL-L5-0002",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-80 שניות",
+    "src": "/prep/listening/LL-L5-0002.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0002.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 80.2
   },
   {
     "id": "ls-LL-L5-0003",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-61 שניות",
+    "src": "/prep/listening/LL-L5-0003.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0003.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 60.64
   },
   {
     "id": "ls-LL-L5-0004",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-100 שניות",
+    "src": "/prep/listening/LL-L5-0004.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0004.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 100.13
   },
   {
     "id": "ls-LL-L5-0005",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-33 שניות",
+    "src": "/prep/listening/LL-L5-0005.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0005.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 32.83
   },
   {
     "id": "ls-LL-L5-0006",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-57 שניות",
+    "src": "/prep/listening/LL-L5-0006.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0006.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 57.07
   },
   {
     "id": "ls-LL-L5-0007",
     "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L5-0007.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0007.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 90.17
   },
   {
     "id": "ls-LL-L5-0008",
     "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L5-0008.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0008.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 30.49
   },
   {
     "id": "ls-LL-L5-0009",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-59 שניות",
+    "src": "/prep/listening/LL-L5-0009.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0009.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 58.67
   },
   {
     "id": "ls-LL-L5-0010",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-87 שניות",
+    "src": "/prep/listening/LL-L5-0010.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0010.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 86.59
   },
   {
     "id": "ls-LL-L5-0011",
     "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L5-0011.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0011.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 30.03
   },
   {
     "id": "ls-LL-L5-0012",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-57 שניות",
+    "src": "/prep/listening/LL-L5-0012.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0012.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 56.66
   },
   {
     "id": "ls-LL-L5-0013",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-29 שניות",
+    "src": "/prep/listening/LL-L5-0013.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L5-0013.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 28.6
   },
   {
     "id": "ls-LL-L6-0001",
     "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L6-0001.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0001.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 89.71
   },
   {
     "id": "ls-LL-L6-0002",
     "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L6-0002.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0002.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 60.45
   },
   {
     "id": "ls-LL-L6-0003",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-85 שניות",
+    "src": "/prep/listening/LL-L6-0003.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0003.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 85.46
   },
   {
     "id": "ls-LL-L6-0004",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-33 שניות",
+    "src": "/prep/listening/LL-L6-0004.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0004.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 32.69
   },
   {
     "id": "ls-LL-L6-0005",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-66 שניות",
+    "src": "/prep/listening/LL-L6-0005.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0005.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 66.18
   },
   {
     "id": "ls-LL-L6-0006",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-80 שניות",
+    "src": "/prep/listening/LL-L6-0006.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0006.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 80.4
   },
   {
     "id": "ls-LL-L6-0007",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-33 שניות",
+    "src": "/prep/listening/LL-L6-0007.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0007.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 33.05
   },
   {
     "id": "ls-LL-L6-0008",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-62 שניות",
+    "src": "/prep/listening/LL-L6-0008.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0008.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 62.26
   },
   {
     "id": "ls-LL-L6-0009",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-79 שניות",
+    "src": "/prep/listening/LL-L6-0009.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0009.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 78.98
   },
   {
     "id": "ls-LL-L6-0010",
     "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L6-0010.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0010.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 29.74
   },
   {
     "id": "ls-LL-L6-0011",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-54 שניות",
+    "src": "/prep/listening/LL-L6-0011.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0011.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 53.95
   },
   {
     "id": "ls-LL-L6-0012",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-86 שניות",
+    "src": "/prep/listening/LL-L6-0012.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0012.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 85.5
   },
   {
     "id": "ls-LL-L6-0013",
-    "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-33 שניות",
+    "src": "/prep/listening/LL-L6-0013.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0013.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 32.83
   },
   {
     "id": "ls-LL-L6-0014",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-59 שניות",
+    "src": "/prep/listening/LL-L6-0014.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0014.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 59.01
   },
   {
     "id": "ls-LL-L6-0015",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-85 שניות",
+    "src": "/prep/listening/LL-L6-0015.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0015.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 84.57
   },
   {
     "id": "ls-LL-L6-0016",
     "title": "קטע שמע · כ-30 שניות",
-    "src": null,
+    "src": "/prep/listening/LL-L6-0016.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0016.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 30.08
   },
   {
     "id": "ls-LL-L6-0017",
-    "title": "קטע שמע · כ-60 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-58 שניות",
+    "src": "/prep/listening/LL-L6-0017.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0017.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 57.56
   },
   {
     "id": "ls-LL-L6-0018",
-    "title": "קטע שמע · כ-90 שניות",
-    "src": null,
+    "title": "קטע שמע · כ-94 שניות",
+    "src": "/prep/listening/LL-L6-0018.m4a",
     "examReplayLimit": 3,
     "suggestedFilename": "LL-L6-0018.m4a",
     "synthetic": true,
-    "durationSec": null
+    "durationSec": 94.05
   }
 ];

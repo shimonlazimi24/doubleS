@@ -21,7 +21,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import "../load-project-env.mjs";
+import { loadProjectEnv } from "../load-project-env.mjs";
+
+loadProjectEnv();
 
 const root = process.cwd();
 const CLIPS = path.join(root, "content/amirant-import/owner/listening-clips.json");
@@ -32,6 +34,8 @@ const MODEL = process.env.OPENAI_TTS_MODEL || "gpt-4o-mini-tts";
 const RATE = 24000;
 const LINE_GAP_SEC = 0.6;
 const PAUSE_SEC = 0.8;
+/** Exam lecture pace (NITE's clips run about 30/60/90 s; the briefs ask ~150 wpm). */
+const TARGET_WPM = Number(process.env.LISTENING_TARGET_WPM || 160);
 
 const args = process.argv.slice(2);
 const FORCE = args.includes("--force");
@@ -67,11 +71,11 @@ function voicesFor(brief) {
   return map;
 }
 
-async function tts(text, voice, instructions) {
+async function tts(text, voice, instructions, speed = 1) {
   const res = await fetch("https://api.openai.com/v1/audio/speech", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ model: MODEL, voice, input: text, instructions, response_format: "pcm" }),
+    body: JSON.stringify({ model: MODEL, voice, input: text, instructions, speed, response_format: "pcm" }),
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${(await res.text()).slice(0, 200)}`);
   return Buffer.from(await res.arrayBuffer());
@@ -106,14 +110,31 @@ function segments(brief) {
   return out;
 }
 
-async function render(brief) {
+/** Words spoken in a clip, [pause] markers excluded. */
+function wordCount(brief) {
+  return brief.script.reduce((n, l) => n + l.text.replace(/\[pause\]/g, "").split(/\s+/).filter(Boolean).length, 0);
+}
+
+/**
+ * The exam's lecture pace is about 150 words per minute, which the briefs
+ * also ask for; the model tends to read slower. With a previous take in the
+ * manifest, the playback speed is corrected toward the target pace.
+ */
+function speedFor(brief, prev) {
+  if (!prev?.seconds) return 1;
+  const measuredWpm = (wordCount(brief) / prev.seconds) * 60;
+  const factor = (TARGET_WPM / measuredWpm) * (prev.speed ?? 1);
+  return Math.round(Math.min(1.3, Math.max(1, factor)) * 100) / 100;
+}
+
+async function render(brief, speed) {
   const segs = segments(brief);
   const chars = segs.reduce((s, x) => s + (x.text?.length ?? 0), 0);
   if (DRY) return { chars, seconds: null };
   const buffers = [];
   for (const s of segs) {
     if (s.gap) { buffers.push(silence(s.gap)); continue; }
-    buffers.push(await tts(s.text, s.voice, brief.voice));
+    buffers.push(await tts(s.text, s.voice, `${brief.voice} Keep a natural, steady university-lecture pace; do not slow down.`, speed));
   }
   const pcm = Buffer.concat([silence(0.3), ...buffers, silence(0.5)]);
   const wavPath = path.join(OUT_DIR, `${brief.id}.wav`);
@@ -132,12 +153,14 @@ async function main() {
   for (const b of briefs) {
     const target = path.join(OUT_DIR, `${b.id}.m4a`);
     if (!FORCE && !DRY && fs.existsSync(target) && manifest[b.id]) { console.log(`  keep ${b.id}`); continue; }
-    const r = await render(b);
+    const speed = speedFor(b, manifest[b.id]);
+    const r = await render(b, speed);
     chars += r.chars;
     if (r.seconds != null) {
-      manifest[b.id] = { seconds: r.seconds, bytes: r.bytes, model: MODEL };
+      manifest[b.id] = { seconds: r.seconds, bytes: r.bytes, model: MODEL, speed };
       fs.writeFileSync(MANIFEST, `${JSON.stringify(manifest, null, 2)}\n`);
-      console.log(`  ${b.id}: ${r.seconds}s, ${(r.bytes / 1024).toFixed(0)}KB (brief said ~${b.seconds}s)`);
+      const wpm = Math.round((wordCount(b) / r.seconds) * 60);
+      console.log(`  ${b.id}: ${r.seconds}s, ${wpm} wpm at x${speed}, ${(r.bytes / 1024).toFixed(0)}KB (brief said ~${b.seconds}s)`);
     } else {
       console.log(`  ${b.id}: ${r.chars} characters`);
     }

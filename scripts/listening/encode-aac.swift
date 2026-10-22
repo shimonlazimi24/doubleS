@@ -9,22 +9,30 @@ let inURL = URL(fileURLWithPath: a[1]), outURL = URL(fileURLWithPath: a[2])
 let bitrate = a.count > 3 ? Int(a[3])! : 48000
 try? FileManager.default.removeItem(at: outURL)
 
-let input = try AVAudioFile(forReading: inURL)
-let fmt = input.processingFormat
-let settings: [String: Any] = [
-  AVFormatIDKey: kAudioFormatMPEG4AAC,
-  AVSampleRateKey: fmt.sampleRate,
-  AVNumberOfChannelsKey: 1,
-  AVEncoderBitRateKey: bitrate,
-  AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
-]
-let output = try AVAudioFile(forWriting: outURL, settings: settings, commonFormat: fmt.commonFormat, interleaved: fmt.isInterleaved)
-let chunk: AVAudioFrameCount = 32768
-let buf = AVAudioPCMBuffer(pcmFormat: fmt, frameCapacity: chunk)!
-while input.framePosition < input.length {
-  try input.read(into: buf, frameCount: chunk)
-  if buf.frameLength == 0 { break }
-  try output.write(from: buf)
+// The AVAudioFile writer finalises the container (the moov atom) only when it
+// is released, so the whole write lives in a function scope and must return
+// before the process exits.
+func encode() throws -> Double {
+  let input = try AVAudioFile(forReading: inURL)
+  let fmt = input.processingFormat
+  let settings: [String: Any] = [
+    AVFormatIDKey: kAudioFormatMPEG4AAC,
+    AVSampleRateKey: fmt.sampleRate,
+    AVNumberOfChannelsKey: 1,
+    AVEncoderBitRateKey: bitrate,
+    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
+  ]
+  let output = try AVAudioFile(forWriting: outURL, settings: settings, commonFormat: fmt.commonFormat, interleaved: fmt.isInterleaved)
+  let chunk: AVAudioFrameCount = 32768
+  let buf = AVAudioPCMBuffer(pcmFormat: fmt, frameCapacity: chunk)!
+  while input.framePosition < input.length {
+    try input.read(into: buf, frameCount: chunk)
+    if buf.frameLength == 0 { break }
+    try output.write(from: buf)
+  }
+  if #available(macOS 15, *) { output.close() }
+  return Double(input.length) / fmt.sampleRate
 }
-let seconds = Double(input.length) / fmt.sampleRate
+
+let seconds = try encode()
 print(String(format: "%.2f", seconds))
