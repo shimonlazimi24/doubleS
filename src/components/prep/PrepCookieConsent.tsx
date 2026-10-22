@@ -53,14 +53,14 @@ export function PrepCookieConsentBanner() {
           <button
             type="button"
             onClick={() => decide("essential")}
-            className="inline-flex min-h-10 items-center justify-center rounded-control border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:border-primary/35"
+            className="inline-flex min-h-11 items-center justify-center rounded-control border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:border-primary/35"
           >
             חיוניות בלבד
           </button>
           <button
             type="button"
             onClick={() => decide("all")}
-            className="inline-flex min-h-10 items-center justify-center rounded-control bg-primary px-4 text-sm font-bold text-white transition hover:bg-primary-hover"
+            className="inline-flex min-h-11 items-center justify-center rounded-control bg-primary px-4 text-sm font-bold text-white transition hover:bg-primary-hover"
           >
             מאשר/ת
           </button>

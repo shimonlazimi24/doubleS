@@ -7,7 +7,10 @@
      כל צבע גם כטריפלט RGB כדי ש-Tailwind יוכל להחיל שקיפויות (/60 וכו') */
   --color-ink: #0f172a;              --color-ink-rgb: 15 23 42;
   --color-muted: #5a6480;            --color-muted-rgb: 90 100 128;
-  --color-muted-2: #94a3b8;          --color-muted-2-rgb: 148 163 184;
+  /* muted-2 was #94a3b8 (2.5:1 on white) - captions and footnotes failed WCAG AA.
+     #67718a keeps the slate hue a step lighter than muted and clears 4.5:1 on
+     paper, canvas and surface-low. */
+  --color-muted-2: #67718a;          --color-muted-2-rgb: 103 113 138;
   --color-canvas: #fbfcfe;           --color-canvas-rgb: 251 252 254;
   --color-surface-low: #f3f6fb;      --color-surface-low-rgb: 243 246 251;
   --color-surface-high: #e5eaf4;     --color-surface-high-rgb: 229 234 244;

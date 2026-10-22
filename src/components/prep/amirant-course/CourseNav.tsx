@@ -41,7 +41,7 @@ export function CourseNav() {
     <header className="sticky top-0 z-[100] border-b border-line bg-paper">
       <div className="mx-auto flex h-14 max-w-[75rem] items-center justify-between gap-4 px-4 sm:px-6" dir="rtl">
         <div className="flex h-full items-center gap-5 sm:gap-7">
-          <Link href={PREP_BASE} className="text-[15px] font-extrabold tracking-wide text-primary" aria-label="PREPARE, חזרה לאתר">
+          <Link href={PREP_BASE} className="flex h-full items-center text-[15px] font-extrabold tracking-wide text-primary" aria-label="PREPARE, חזרה לאתר">
             PREPARE
           </Link>
           <nav aria-label="ניווט בקורס" className="flex h-full items-stretch gap-4 sm:gap-6">
@@ -53,7 +53,7 @@ export function CourseNav() {
                   href={tab.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "flex items-center border-b-2 text-sm transition-colors",
+                    "flex min-w-11 items-center justify-center border-b-2 text-sm transition-colors",
                     active ? "border-primary font-bold text-primary" : "border-transparent font-medium text-muted hover:text-primary",
                   )}
                 >

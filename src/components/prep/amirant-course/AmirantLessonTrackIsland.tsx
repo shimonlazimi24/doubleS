@@ -29,7 +29,7 @@ export function AmirantLessonTrackIsland({ lessonId, lessonTitle, className }: P
         <button
           type="button"
           onClick={() => markLessonCompleted(lessonId)}
-          className="whitespace-nowrap rounded border border-line bg-paper px-3 py-1.5 text-xs font-medium text-muted transition hover:border-primary/40 hover:text-primary"
+          className="min-h-11 whitespace-nowrap rounded border border-line bg-paper px-3 py-1.5 text-xs font-medium text-muted sm:min-h-0 transition hover:border-primary/40 hover:text-primary"
         >
           סימון כהושלם
         </button>

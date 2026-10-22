@@ -212,7 +212,7 @@ export function AmirantCurriculumHub({ introVideoUrl }: { introVideoUrl?: string
         onClick={onClick}
         aria-current={active ? "true" : undefined}
         className={cn(
-          "grid w-full grid-cols-[1.375rem_minmax(0,1fr)_auto] items-baseline gap-2.5 border-e-2 py-2.5 pe-3 text-start transition-colors",
+          "grid min-h-11 w-full grid-cols-[1.375rem_minmax(0,1fr)_auto] items-baseline gap-2.5 border-e-2 py-2.5 pe-3 text-start transition-colors lg:min-h-0",
           active ? "border-primary text-ink" : "border-transparent text-muted hover:text-ink",
         )}
       >
@@ -244,7 +244,8 @@ export function AmirantCurriculumHub({ introVideoUrl }: { introVideoUrl?: string
         </aside>
 
         {/* Desktop: the selected module */}
-        <main className="hidden py-7 lg:block">
+        {/* A <div>, not <main>: the /prep layout already owns the page's single main landmark. */}
+        <div className="hidden py-7 lg:block">
           {selected ? (
             <ModulePanel
               mod={selected}
@@ -255,7 +256,7 @@ export function AmirantCurriculumHub({ introVideoUrl }: { introVideoUrl?: string
               continueLesson={continueLessonIn(selected)}
             />
           ) : null}
-        </main>
+        </div>
       </div>
 
       {/* Phone and tablet: continue, then the modules as an accordion */}

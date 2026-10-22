@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getBlogPost, listBlogPosts } from "@/lib/prep/blog.server";
@@ -37,6 +37,20 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     ),
   };
 }
+
+/**
+ * The course map shifts every markdown heading one level down (its h1 is the
+ * lesson title). A post's title is the page h1 and its body starts at "##", so
+ * here "##" stays an h2 - otherwise the outline jumped h1 -> h3 (WCAG 1.3.1).
+ */
+const BLOG_MD_COMPONENTS: Components = {
+  ...AMIRANT_COURSE_MD_COMPONENTS,
+  h2: ({ children }) => (
+    <h2 className="mb-3 mt-8 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
+  ),
+  h3: ({ children }) => <h3 className="mb-2 mt-6 text-xl font-semibold text-ink first:mt-0">{children}</h3>,
+  h4: ({ children }) => <h4 className="mb-2 mt-4 text-lg font-semibold text-ink">{children}</h4>,
+};
 
 function formatHeDate(iso: string): string {
   const d = new Date(`${iso}T00:00:00Z`);
@@ -88,7 +102,7 @@ export default function PrepBlogPostPage({ params }: { params: Params }) {
               </Text>
             </header>
             <div className="mt-8 border-t border-line/60 pt-8">
-              <ReactMarkdown remarkPlugins={[remarkGfm]} components={AMIRANT_COURSE_MD_COMPONENTS}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={BLOG_MD_COMPONENTS}>
                 {post.body}
               </ReactMarkdown>
             </div>

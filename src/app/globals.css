@@ -19,4 +19,24 @@
     background-color: rgba(30, 58, 95, 0.14);
     color: var(--color-ink);
   }
+
+  /* Keyboard focus: one visible ring for every interactive element (WCAG 2.4.7).
+     Mouse clicks do not trigger :focus-visible, so the look stays clean. */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent-rgb));
+    outline-offset: 2px;
+  }
+
+  /* WCAG 2.3.3: honour the OS "reduce motion" setting for every animation and
+     transition, including the lesson step and chat-dot keyframes. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

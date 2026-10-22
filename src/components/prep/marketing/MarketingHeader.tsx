@@ -18,11 +18,9 @@ export function MarketingHeader() {
         dir="ltr"
         className="flex min-h-[4rem] items-center justify-between gap-8 py-3"
       >
-        <Link
-          href={PREP_BASE}
-          className="shrink-0 transition-opacity hover:opacity-85"
-          aria-label="PREPARE - דף הבית"
-        >
+        {/* No aria-label: the wordmark + Hebrew subtitle are the visible text and
+            WCAG 2.5.3 wants the accessible name to contain it. */}
+        <Link href={PREP_BASE} className="shrink-0 transition-opacity hover:opacity-85" title="דף הבית">
           <PrepBrandLogo size="nav" />
         </Link>
         <MarketingNav />

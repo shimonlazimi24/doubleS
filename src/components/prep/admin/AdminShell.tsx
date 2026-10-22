@@ -65,7 +65,8 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </nav>
 
         {/* Main content */}
-        <main className="min-w-0 flex-1 overflow-auto p-4 sm:p-8">{children}</main>
+        {/* A <div>, not <main>: the /prep layout already owns the page's single main landmark. */}
+        <div className="min-w-0 flex-1 overflow-auto p-4 sm:p-8">{children}</div>
       </div>
     </div>
   );
