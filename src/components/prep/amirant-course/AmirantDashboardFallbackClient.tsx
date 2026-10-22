@@ -44,7 +44,7 @@ export function AmirantDashboardFallbackClient() {
                 {weak.length ? (
                   weak.map((x) => <li key={x}>{AMIRANT_TOPIC_LABEL_HE[x]}</li>)
                 ) : (
-                  <li className="text-muted">אין נושאים חלשים בולטים 👏</li>
+                  <li className="text-muted">אין נושאים חלשים בולטים</li>
                 )}
               </ul>
             </div>

@@ -370,9 +370,9 @@ export function AmirantPlacementQuizClient({
               </ul>
             </div>
             <ul className="space-y-1.5 text-sm text-muted">
-              <li>⏱️ משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות - הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
-              <li>🔁 אפשר לנווט בין שאלות ולשנות תשובות עד סיום המבחן.</li>
-              <li>🎯 אין ציון עובר - המטרה היא למפות את נקודת הפתיחה שלך.</li>
+              <li>משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות - הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
+              <li>אפשר לנווט בין שאלות ולשנות תשובות עד סיום המבחן.</li>
+              <li>אין ציון עובר - המטרה היא למפות את נקודת הפתיחה שלך.</li>
             </ul>
             <button
               type="button"

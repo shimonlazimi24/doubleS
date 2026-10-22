@@ -59,7 +59,6 @@ export default async function QuestionsPage() {
 
       {questions.length === 0 ? (
         <div className="text-center py-20 text-muted">
-          <div className="text-4xl mb-4">❓</div>
           <p>אין שאלות עדיין</p>
           <Link href="/prep/admin/questions/new" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
             צור שאלה ראשונה
