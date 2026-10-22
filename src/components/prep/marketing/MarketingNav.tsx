@@ -28,7 +28,8 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "relative inline-flex min-h-10 items-center px-1 text-sm font-medium transition-colors",
+        // 44px tap target on phones (WCAG 2.5.5); the desktop row keeps its height.
+        "relative inline-flex min-h-11 items-center px-1 text-sm font-medium transition-colors lg:min-h-10",
         active ? "text-ink" : "text-muted hover:text-ink",
       )}
     >
@@ -60,14 +61,14 @@ export function MarketingNav() {
       {/* לא מחוברים: ה-middleware מפנה ישר ל-Google; מחוברים: פרטים אישיים ומנוי. */}
       <Link
         href={`${PREP_BASE}/settings`}
-        className="inline-flex min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink"
+        className="inline-flex min-h-11 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:min-h-10"
       >
         אזור אישי
       </Link>
       <ButtonLink
         href={`${PREP_BASE}/amirant/course`}
         variant="primary"
-        className="min-h-10 px-5 text-sm shadow-cta"
+        className="min-h-11 px-5 text-sm shadow-cta lg:min-h-10"
       >
         כניסה לקורס
       </ButtonLink>

@@ -18,6 +18,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "./quiz/QuizOptionContent";
+import { QuizOptionButton, QuizOptionGroup } from "./quiz/QuizOptionGroup";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { PremiumMarkdownBody } from "./premium/PremiumMarkdownBody";
 import { QuestionExplanation } from "./quiz/QuestionExplanation";
@@ -196,18 +197,20 @@ export function AmirantPracticeSetClient({
                       />
                     ) : null}
                     <div className="space-y-4">
-                      <p className="font-medium text-ink" dir="ltr" style={{ textAlign: "left" }}>
+                      <p className="font-medium text-ink" dir="ltr" lang="en" style={{ textAlign: "left" }}>
                         {amirantExamQuestionPromptForDisplay(q.prompt)}
                       </p>
-                      <ul className="space-y-2">
+                      <QuizOptionGroup label={`אפשרויות תשובה לשאלה ${idx + 1}`} className="space-y-2">
                         {q.options.map((opt, optIndex) => (
-                          <li key={opt.id}>
-                            <button
-                              type="button"
+                          <div key={opt.id}>
+                            <QuizOptionButton
+                              checked={answers[id] === opt.id}
+                              index={optIndex}
+                              anyChecked={answers[id] != null}
                               disabled={submitted || submitting}
                               onClick={() => setAnswers((p) => ({ ...p, [id]: opt.id }))}
                               className={cn(
-                                "w-full rounded-control border px-4 py-3 text-start text-sm transition",
+                                "min-h-11 w-full rounded-control border px-4 py-3 text-start text-sm transition",
                                 answers[id] === opt.id
                                   ? "border-primary bg-primary/10 font-semibold text-primary"
                                   : "border-line/80 bg-paper hover:border-primary/40",
@@ -235,10 +238,10 @@ export function AmirantPracticeSetClient({
                                         : "idle"
                                 }
                               />
-                            </button>
-                          </li>
+                            </QuizOptionButton>
+                          </div>
                         ))}
-                      </ul>
+                      </QuizOptionGroup>
                       {submitted && graded?.explanation ? (
                         <QuestionExplanation markdown={graded.explanation} isCorrect={Boolean(graded.isCorrect)} />
                       ) : null}

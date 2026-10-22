@@ -20,7 +20,7 @@ test("placement quiz: intro screen, fixed 15 questions, normalized score, no rev
   await expect(page.getByLabel("זמן שנותר")).toBeVisible();
 
   for (let i = 0; i < 15; i++) {
-    await page.locator("li > button").first().click();
+    await page.getByRole("radio").first().click();
     if (i === 12) {
       // שאלות הבנת הנקרא - קטע קריאה מוצג
       await expect(page.getByText("הבנת הנקרא")).toBeVisible();

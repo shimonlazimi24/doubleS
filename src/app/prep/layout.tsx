@@ -43,8 +43,18 @@ export default function PrepRootLayout({ children }: { children: React.ReactNode
         <PrepUtmCapture />
       </Suspense>
       <div dir="rtl" className="flex min-h-screen flex-col">
+        {/* Skip link (WCAG 2.4.1): visually hidden until it receives keyboard focus;
+            z above the sticky headers (z-[100]) so it is never covered. */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[200] focus:rounded-control focus:bg-primary focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lift"
+        >
+          דילוג לתוכן הראשי
+        </a>
         <MarketingHeader />
-        <main className="relative z-0 isolate min-w-0 flex-1">{children}</main>
+        <main id="main" tabIndex={-1} className="relative z-0 isolate min-w-0 flex-1 outline-none">
+          {children}
+        </main>
         <MarketingFooter />
       </div>
     </>

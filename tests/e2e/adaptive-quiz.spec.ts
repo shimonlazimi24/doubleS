@@ -7,7 +7,7 @@ test("adaptive quiz full demo flow ends in analytics/dashboard/review", async ({
 
   await expect(page.getByText("שאלה 1 מתוך")).toBeVisible();
   for (let i = 0; i < 16; i++) {
-    await page.locator("li > button").first().click();
+    await page.getByRole("radio").first().click();
     if (i < 15) {
       await page.getByRole("button", { name: "הבא" }).click();
     }

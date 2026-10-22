@@ -1,7 +1,7 @@
 import { cn } from "@/lib/design-system/cn";
 
 export const buttonBase =
-  "inline-flex items-center justify-center rounded-control text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50";
+  "inline-flex items-center justify-center rounded-control text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
 
 export const buttonVariantClass = {
   primary: cn(

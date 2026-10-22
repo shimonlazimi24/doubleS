@@ -20,6 +20,7 @@ import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/Pr
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "../quiz/QuizOptionContent";
 import { QuestionExplanation } from "../quiz/QuestionExplanation";
+import { QuizOptionButton, QuizOptionGroup } from "../quiz/QuizOptionGroup";
 import { displayOptions, newAttemptSeed } from "@/lib/amirant-course/question-bank/display-order";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
@@ -161,7 +162,7 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
           return (
             <li key={q.id} className="space-y-3">
               {passage ? (
-                <div className="rounded-2xl border border-line/70 bg-surface-low p-4" dir="ltr">
+                <div className="rounded-2xl border border-line/70 bg-surface-low p-4" dir="ltr" lang="en">
                   {passage.title ? (
                     <p className="mb-2 text-sm font-semibold text-ink">{passage.title}</p>
                   ) : null}
@@ -178,25 +179,27 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
                   <span className="me-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary" dir="rtl">
                     {qi + 1}
                   </span>
-                  {amirantExamQuestionPromptForDisplay(q.prompt)}
+                  <span lang="en">{amirantExamQuestionPromptForDisplay(q.prompt)}</span>
                 </p>
-                <ul className="mt-4 space-y-2">
+                <QuizOptionGroup label={`אפשרויות תשובה לשאלה ${qi + 1}`} className="mt-4 space-y-2">
                   {displayOptions(q, attemptSeed).map((opt, optIndex) => {
                     const chosen = selected === opt.id;
                     const showAsCorrect = checked && correctOptionId != null && opt.id === correctOptionId;
                     const showAsWrong =
                       checked && chosen && correctOptionId != null && opt.id !== correctOptionId;
                     return (
-                      <li key={opt.id}>
-                        <button
-                          type="button"
+                      <div key={opt.id}>
+                        <QuizOptionButton
+                          checked={chosen}
+                          index={optIndex}
+                          anyChecked={selected != null}
                           disabled={checked || checking}
                           onClick={() =>
                             setAnswers((prev) => ({ ...prev, [q.id]: opt.id }))
                           }
                           dir="ltr"
                           className={cn(
-                            "w-full rounded-xl border px-4 py-3 text-start text-sm transition disabled:cursor-default",
+                            "min-h-11 w-full rounded-xl border px-4 py-3 text-start text-sm transition disabled:cursor-default",
                             showAsCorrect
                               ? "border-emerald-500 bg-emerald-50 font-semibold text-emerald-900"
                               : showAsWrong
@@ -219,11 +222,11 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
                                     : "idle"
                             }
                           />
-                        </button>
-                      </li>
+                        </QuizOptionButton>
+                      </div>
                     );
                   })}
-                </ul>
+                </QuizOptionGroup>
                 {checked && graded?.explanation ? (
                   <QuestionExplanation markdown={graded.explanation} isCorrect={Boolean(graded.isCorrect)} />
                 ) : null}

@@ -301,7 +301,8 @@ export function PremiumLessonWorkspace({
           </div>
         ) : null}
 
-        <main
+        {/* A <div>, not <main>: the /prep layout already owns the page's single main landmark. */}
+        <div
           id="amirant-lesson-pulse"
           className="mx-auto min-h-0 w-full min-w-0 max-w-[75rem] lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-8 lg:px-6"
         >
@@ -317,7 +318,7 @@ export function PremiumLessonWorkspace({
                 <button
                   type="button"
                   onClick={() => setOutlineOpen(true)}
-                  className="inline-flex min-h-10 items-center gap-2 rounded border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:bg-surface-low"
+                  className="inline-flex min-h-11 items-center gap-2 rounded border border-line bg-paper px-4 text-sm font-semibold text-primary transition hover:bg-surface-low"
                   aria-haspopup="dialog"
                   aria-expanded={outlineOpen}
                 >
@@ -392,7 +393,7 @@ export function PremiumLessonWorkspace({
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

@@ -23,6 +23,7 @@ export const PREP_SITEMAP_PAGES: readonly {
   { path: "/prep/contact", lastModified: "2026-08-20", changeFrequency: "yearly", priority: 0.4 },
   { path: "/prep/terms", lastModified: "2026-08-20", changeFrequency: "yearly", priority: 0.3 },
   { path: "/prep/privacy", lastModified: "2026-08-20", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/prep/accessibility", lastModified: "2026-10-22", changeFrequency: "yearly", priority: 0.3 },
 ];
 
 export type SitemapPost = { slug: string; date: string; updated?: string };

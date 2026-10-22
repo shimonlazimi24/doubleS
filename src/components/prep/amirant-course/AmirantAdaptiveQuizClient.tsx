@@ -39,6 +39,8 @@ import { AmirantNextBestActionCard } from "@/components/prep/amirant-course/Amir
 import { Card, CardBody, CardTitle, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "./quiz/QuizOptionContent";
+import { QuizOptionButton, QuizOptionGroup } from "./quiz/QuizOptionGroup";
+import { QuizTimeAnnouncer } from "./quiz/QuizTimeAnnouncer";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { getAmirantTopicLinks } from "@/lib/amirant-course/next-best-action";
@@ -638,25 +640,34 @@ export function AmirantAdaptiveQuizClient({
         <Text as="p" variant="labelAccent" className="text-primary">
           שאלה {currentIndex + 1} מתוך {manifestQuiz.questionCount} · מותאם לרמה שלך
         </Text>
-        <span className="font-mono text-lg font-bold text-ink">{formatClock(timeLeftSec)}</span>
+        <span role="timer" aria-label="זמן שנותר" className="font-mono text-lg font-bold text-ink">
+          {formatClock(timeLeftSec)}
+        </span>
+        <QuizTimeAnnouncer secondsLeft={timeLeftSec} />
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <nav aria-label="מעבר בין שאלות" className="mt-4 flex flex-wrap gap-2">
         {Array.from({ length: manifestQuiz.questionCount }, (_, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setCurrentIndex(i)}
+            aria-current={currentIndex === i ? "true" : undefined}
             className={cn(
-              "min-w-9 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition",
+              "min-h-11 min-w-11 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition sm:min-h-0 sm:min-w-9",
               currentIndex === i ? "bg-primary text-white" : "bg-paper text-muted ring-1 ring-line",
             )}
           >
             {i + 1}
-            {answers[i] ? " ✓" : ""}
+            {answers[i] ? (
+              <>
+                <span aria-hidden="true"> ✓</span>
+                <span className="sr-only">, נענתה</span>
+              </>
+            ) : null}
           </button>
         ))}
-      </div>
+      </nav>
 
       {!currentQ && (
         <Card className="mt-6 p-6">
@@ -680,18 +691,20 @@ export function AmirantAdaptiveQuizClient({
                 />
               ) : null}
               <div className="space-y-6">
-                <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
+                <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" lang="en" style={{ textAlign: "left" }}>
                   {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
                 </p>
-                <ul className="space-y-2">
+                <QuizOptionGroup className="space-y-2">
                   {currentQ.options.map((opt, optIndex) => (
-                    <li key={opt.id}>
-                      <button
-                        type="button"
+                    <div key={opt.id}>
+                      <QuizOptionButton
+                        checked={answers[currentIndex] === opt.id}
+                        index={optIndex}
+                        anyChecked={answers[currentIndex] != null}
                         disabled={gradingIndex === currentIndex}
                         onClick={() => setAnswerForIndex(currentIndex, opt.id)}
                         className={cn(
-                          "w-full rounded-control border px-4 py-3 text-start text-sm transition",
+                          "min-h-11 w-full rounded-control border px-4 py-3 text-start text-sm transition",
                           answers[currentIndex] === opt.id
                             ? "border-primary bg-primary/10 font-semibold text-primary"
                             : "border-line/80 bg-paper hover:border-primary/40",
@@ -703,10 +716,10 @@ export function AmirantAdaptiveQuizClient({
                           label={opt.label}
                           state={answers[currentIndex] === opt.id ? "selected" : "idle"}
                         />
-                      </button>
-                    </li>
+                      </QuizOptionButton>
+                    </div>
                   ))}
-                </ul>
+                </QuizOptionGroup>
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -714,7 +727,7 @@ export function AmirantAdaptiveQuizClient({
                 type="button"
                 disabled={currentIndex <= 0}
                 onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
-                className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-primary disabled:opacity-40"
+                className="min-h-11 rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-primary disabled:opacity-40"
               >
                 הקודם
               </button>
@@ -722,7 +735,7 @@ export function AmirantAdaptiveQuizClient({
                 type="button"
                 disabled={answers[currentIndex] == null || currentIndex >= manifestQuiz.questionCount - 1}
                 onClick={() => setCurrentIndex((i) => Math.min(manifestQuiz.questionCount - 1, i + 1))}
-                className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
+                className="min-h-11 rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-40"
               >
                 שאלה הבאה
               </button>
@@ -730,7 +743,7 @@ export function AmirantAdaptiveQuizClient({
                 type="button"
                 onClick={() => finalize("manual")}
                 disabled={answers.some((a) => a == null)}
-                className="rounded-control border-2 border-primary bg-paper px-4 py-2 text-sm font-semibold text-primary disabled:opacity-40"
+                className="min-h-11 rounded-control border-2 border-primary bg-paper px-4 py-2 text-sm font-semibold text-primary disabled:opacity-40"
               >
                 סיום מבחן
               </button>

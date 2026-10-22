@@ -24,7 +24,7 @@ export function QuizOptionContent({
 }) {
   const letter = String.fromCharCode(65 + index);
   return (
-    <span className="flex items-baseline gap-2.5" dir="ltr">
+    <span className="flex items-baseline gap-2.5" dir="ltr" lang="en">
       <span
         aria-hidden
         className={cn(

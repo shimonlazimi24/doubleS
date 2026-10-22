@@ -13,6 +13,7 @@ const footerLinks = [
   { href: `${PREP_BASE}/pricing`, label: "מחירים" },
   { href: `${PREP_BASE}/terms`, label: "תקנון שימוש" },
   { href: `${PREP_BASE}/privacy`, label: "מדיניות פרטיות" },
+  { href: `${PREP_BASE}/accessibility`, label: "הצהרת נגישות" },
 ] as const;
 
 export function MarketingFooter() {
@@ -27,9 +28,14 @@ export function MarketingFooter() {
           <PrepBrandLogo size="footer" />
           <p className="mt-4 text-sm leading-relaxed text-muted">{PREP_BRAND_TAGLINE_HE}</p>
         </div>
-        <nav aria-label="תחתית האתר" className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted">
+        <nav aria-label="תחתית האתר" className="flex flex-wrap gap-x-8 gap-y-1 text-sm text-muted sm:gap-y-3">
           {footerLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-primary">
+            // 44px tap height on phones (WCAG 2.5.5); same visual row on wider screens.
+            <Link
+              key={item.href}
+              href={item.href}
+              className="inline-flex min-h-11 items-center transition hover:text-primary sm:min-h-0"
+            >
               {item.label}
             </Link>
           ))}
