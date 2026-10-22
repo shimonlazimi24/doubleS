@@ -4,8 +4,11 @@
  */
 const RATES: Record<string, { input: number; output: number }> = {
   "gpt-4o-mini": { input: 0.15, output: 0.6 },
+  "gpt-4.1-mini": { input: 0.4, output: 1.6 },
+  "gpt-5-mini": { input: 0.25, output: 2 },
   "text-embedding-3-small": { input: 0.02, output: 0 },
   "text-embedding-3-large": { input: 0.13, output: 0 },
+  "gemini-2.5-flash": { input: 0.3, output: 2.5 },
   "gemini-1.5-pro": { input: 1.25, output: 5 },
   "gemini-1.5-pro-latest": { input: 1.25, output: 5 },
 };
@@ -26,13 +29,18 @@ export function estimateAiCost(params: {
   const m = normalizeModel(params.model);
   let rates = RATES[m];
   if (!rates) {
-    if (m.includes("gpt-4o-mini") || m.includes("gpt-4.1") || m.includes("gpt-4o")) {
+    if (m.includes("gpt-4.1")) {
+      rates = RATES["gpt-4.1-mini"];
+    } else if (m.includes("gpt-5")) {
+      rates = RATES["gpt-5-mini"];
+    } else if (m.includes("gpt-4o-mini") || m.includes("gpt-4o")) {
       rates = RATES["gpt-4o-mini"];
-    }
-    else if (m.includes("gemini") || m.includes("models/gemini")) {
+    } else if (m.includes("gemini-2") || m.includes("flash")) {
+      rates = RATES["gemini-2.5-flash"];
+    } else if (m.includes("gemini") || m.includes("models/gemini")) {
       rates = RATES["gemini-1.5-pro"];
     } else {
-      rates = params.provider === "openai" ? RATES["gpt-4o-mini"] : RATES["gemini-1.5-pro"];
+      rates = params.provider === "openai" ? RATES["gpt-4.1-mini"] : RATES["gemini-2.5-flash"];
     }
   }
   if (!rates) return 0;

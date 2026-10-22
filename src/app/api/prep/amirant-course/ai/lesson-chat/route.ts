@@ -17,7 +17,11 @@ export async function POST(req: Request) {
   }
 
   const { requestIp, sessionId } = getAiRequestMeta(req);
-  const { data: { user } } = await client.auth.getUser();
+  // Auth lookup and body parsing do not depend on each other - overlap them.
+  const [{ data: { user } }, bodyResult] = await Promise.all([
+    client.auth.getUser(),
+    req.json().then((body: unknown) => ({ ok: true as const, body })).catch(() => ({ ok: false as const })),
+  ]);
 
   // העוזר הוא פיצ'ר בתשלום (וה-RAG שלו מעוגן בתוכן הקורס המלא) - בפרודקשן
   // נדרש מנוי פעיל. ב-dev/preview הדגלים (שממילא כבויים בפרודקשן) פותחים אותו.
@@ -59,14 +63,11 @@ export async function POST(req: Request) {
     }
   }
 
-  let body: unknown;
-  try {
-    body = await req.json();
-  } catch {
+  if (!bodyResult.ok) {
     return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400, headers: { "Content-Type": "application/json" } });
   }
 
-  const parsed = amirantChatbotRequestSchema.safeParse(body);
+  const parsed = amirantChatbotRequestSchema.safeParse(bodyResult.body);
   if (!parsed.success) {
     return new Response(JSON.stringify({ error: "Invalid body", details: parsed.error.issues }), {
       status: 400,
@@ -93,8 +94,15 @@ export async function POST(req: Request) {
         );
         send({ t: "done", d: result });
       } catch (error) {
-        const message = error instanceof Error ? error.message : "Lesson chat failed";
-        send({ t: "err", e: message });
+        // Raw reason goes to the server log; the learner gets Hebrew copy.
+        console.error("[lesson-chat] failed:", error instanceof Error ? error.message : String(error));
+        const tooLong = error instanceof Error && /exceed limit/i.test(error.message);
+        send({
+          t: "err",
+          e: tooLong
+            ? "ההודעה או ההקשר ארוכים מדי לעוזר. קצרו את השאלה ונסו שוב."
+            : "העוזר לא הצליח לענות כרגע. נסו שוב בעוד רגע.",
+        });
       } finally {
         controller.close();
       }

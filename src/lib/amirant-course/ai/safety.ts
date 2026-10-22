@@ -38,6 +38,64 @@ function collectAllowedNumbers(snapshots: unknown[]): Set<string> {
   return set;
 }
 
+/**
+ * Prompt-injection / role-override attempts. The assistant is a paid course feature:
+ * a learner asking it to "ignore the instructions" or dump its system prompt gets a
+ * short Hebrew refusal without a model call.
+ */
+const INJECTION_PATTERNS: RegExp[] = [
+  /ignore\s+(?:all\s+|the\s+|your\s+)?(?:previous|prior|above|earlier)\s+(?:instructions|prompts?|rules)/i,
+  /disregard\s+(?:all\s+|the\s+|your\s+)?(?:previous|prior|above)\s+(?:instructions|rules)/i,
+  /(?:reveal|show|print|repeat|dump|output)\s+(?:me\s+)?(?:your|the)\s+(?:system\s+prompt|hidden\s+prompt|instructions|rules)/i,
+  /\bsystem\s*prompt\b/i,
+  /\byou\s+are\s+now\s+(?:a|an|in)\b/i,
+  /\b(?:DAN|developer)\s+mode\b/i,
+  /jailbreak/i,
+  /(?:תתעלם|התעלם|התעלמי|תתעלמי)\s+מ(?:כל\s+)?(?:ה)?הוראות/,
+  /(?:הצג|תראה|תראי|גלה|תגלה)\s+(?:לי\s+)?את\s+(?:ה)?(?:הנחיות|הוראות)\s+(?:של\s+)?(?:ה)?(?:מערכת|שלך)/,
+  /(?:פרומפט|prompt)\s+(?:ה)?מערכת/i,
+  /מעכשיו\s+את[הם]?\s+(?:לא\s+)?(?:עוזר|בוט|מודל)/,
+];
+
+export type LearnerMessageScreen =
+  | { ok: true }
+  | { ok: false; reason: "injection"; answerHe: string };
+
+/** Returns a deterministic Hebrew answer for messages that try to override the assistant. */
+export function screenLearnerMessage(text: string): LearnerMessageScreen {
+  const t = String(text ?? "");
+  if (INJECTION_PATTERNS.some((re) => re.test(t))) {
+    return {
+      ok: false,
+      reason: "injection",
+      answerHe:
+        "אני עוזר הלימוד של קורס האמירנ״ט ועונה רק על שאלות שקשורות ללימוד: תוכן השיעור, שאלות תרגול, אסטרטגיה ואוצר מילים. על מה בשיעור לעזור?",
+    };
+  }
+  return { ok: true };
+}
+
+/**
+ * Personal data the learner might paste by accident: Israeli ID (9 digits), payment
+ * card numbers, phone numbers, email addresses. Redacted before the prompt and before
+ * the insight log. Four-digit-or-shorter numbers (scores, years) are untouched.
+ */
+const PII_PATTERNS: Array<{ re: RegExp; label: string }> = [
+  { re: /\b(?:\d[ -]?){13,19}\b/g, label: "[כרטיס הוסר]" },
+  { re: /\b\d{9}\b/g, label: "[ת.ז. הוסרה]" },
+  { re: /(?:\+972|0)(?:[ -]?\d){8,9}\b/g, label: "[טלפון הוסר]" },
+  { re: /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, label: "[אימייל הוסר]" },
+];
+
+export function redactPersonalData(text: string): string {
+  let out = String(text ?? "");
+  for (const { re, label } of PII_PATTERNS) {
+    re.lastIndex = 0;
+    out = out.replace(re, label);
+  }
+  return out;
+}
+
 export function validateAiGroundedNumericClaims(params: {
   texts: string[];
   allowedSnapshots: unknown[];
