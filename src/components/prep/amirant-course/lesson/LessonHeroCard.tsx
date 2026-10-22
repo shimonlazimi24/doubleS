@@ -28,6 +28,20 @@ function ClockIcon({ className }: { className?: string }) {
 }
 
 /**
+ * An excerpt cut mid-sentence ends with "…"; show it up to its last full
+ * sentence instead, and never with doubled end punctuation.
+ */
+export function endOnSentence(text: string): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (!/[…]$|\.{3}$/.test(t)) return t.replace(/([.!?])[.…]+$/, "$1");
+  const body = t.replace(/[.…\s]+$/, "");
+  const lastEnd = Math.max(body.lastIndexOf(". "), body.lastIndexOf("! "), body.lastIndexOf("? "));
+  if (lastEnd > 40) return body.slice(0, lastEnd + 1).trim();
+  if (/[.!?]$/.test(body)) return body;
+  return body + ".";
+}
+
+/**
  * First content card: short intro + primary CTA - all on white, calm premium course style.
  */
 export function LessonHeroCard({
@@ -44,14 +58,14 @@ export function LessonHeroCard({
   surface = "card",
   omitTitle = false,
 }: Props) {
-  const blurb = (intro || defaultIntroFallback).trim();
+  const blurb = endOnSentence((intro || defaultIntroFallback).trim());
   const shell =
     surface === "workspace"
       ? "bg-transparent p-0 [direction:rtl] [text-align:start] shadow-none"
       : "rounded-2xl border border-gray-200 bg-white p-6 shadow-sm [direction:rtl] [text-align:start] sm:p-8";
   return (
     <div className={cn(shell, className)} lang="he">
-      {omitTitle ? <span className="sr-only">{title}</span> : null}
+      {/* With omitTitle the page's H1 already names the lesson; nothing to repeat here. */}
       {!omitTitle ? (
         <h2
           className={cn(

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useAmirantCourseProgress } from "./AmirantCourseProgressProvider";
 import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { lessonNameInModule } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 
 type Props = { lessonId: string; lessonTitle: string; className?: string };
 
@@ -34,7 +35,7 @@ export function AmirantLessonTrackIsland({ lessonId, lessonTitle, className }: P
           סימון כהושלם
         </button>
       )}
-      <span className="sr-only">{lessonTitle}</span>
+      <span className="sr-only">{lessonNameInModule(lessonTitle)}</span>
     </div>
   );
 }
