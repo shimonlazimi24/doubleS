@@ -46,7 +46,7 @@ export type LessonGroup = {
   lessons: ManifestLesson[];
 };
 
-const PRACTICE_UNIT = /^lesson\.(sc\.test|rephrase\.set|reading\.passage|listening\.test|reform\.wf)-(\d+)$/;
+const PRACTICE_UNIT = /^lesson\.(sc\.test|rephrase\.set|reading\.passage|listening\.test|writing\.task|reform\.wf)-(\d+)$/;
 
 function practiceGroupKey(lesson: ManifestLesson): string | null {
   const m = lesson.id.match(PRACTICE_UNIT);
@@ -56,6 +56,7 @@ function practiceGroupKey(lesson: ManifestLesson): string | null {
   if (kind === "sc.test" || kind === "rephrase.set") return n > 10 ? "review" : "practice";
   if (kind === "reading.passage") return "passages";
   if (kind === "listening.test") return "listening";
+  if (kind === "writing.task") return "writing";
   return "wf";
 }
 
@@ -65,6 +66,7 @@ const GROUP_TITLES: Record<string, string> = {
   passages: "קטעי תרגול לפי רמה",
   listening: "מבחני האזנה",
   wf: "מבחני יצירת מילה",
+  writing: "מטלות כתיבה",
   sims: "סימולציות",
 };
 
@@ -82,7 +84,7 @@ export function groupModuleLessons(mod: ManifestModule): LessonGroup[] {
   }
   const groups: LessonGroup[] = [];
   if (guide.length) groups.push({ key: "guide", title: byKey.size ? "השיטה" : "שיעורים", lessons: guide });
-  for (const key of ["practice", "review", "passages", "listening", "wf", "sims"]) {
+  for (const key of ["practice", "review", "passages", "listening", "wf", "writing", "sims"]) {
     const lessons = byKey.get(key);
     if (lessons?.length) groups.push({ key, title: GROUP_TITLES[key], lessons });
   }

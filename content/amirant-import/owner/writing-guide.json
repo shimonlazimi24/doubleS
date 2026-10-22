@@ -1,0 +1,655 @@
+{
+  "exam": {
+    "wordRange": [
+      90,
+      120
+    ],
+    "minutes": 12,
+    "targetWords": 105,
+    "dimensions": [
+      {
+        "id": "content",
+        "titleHe": "תוכן וארגון"
+      },
+      {
+        "id": "language",
+        "titleHe": "שפה: עושר ודיוק"
+      }
+    ],
+    "levels": [
+      {
+        "id": "low",
+        "titleHe": "נמוכה"
+      },
+      {
+        "id": "mid",
+        "titleHe": "בינונית"
+      },
+      {
+        "id": "high",
+        "titleHe": "גבוהה"
+      }
+    ],
+    "minWordsForGrading": 50,
+    "notesHe": [
+      "בחלק הכתיבה יש משימה אחת בלבד: שאלת דעה או שאלת בחירה שאפשר לענות עליה מתוך ידע כללי וניסיון אישי.",
+      "אורך: 90–120 מילים. זמן: 12 דקות. התשובה מוקלדת במחשב.",
+      "ציון אוטומטי בשני ממדים, וכל ממד מקבל אחת משלוש רמות: נמוכה, בינונית או גבוהה.",
+      "ממד 1 – תוכן וארגון: האם התשובה עונה על השאלה, מציגה עמדה ברורה ומנמקת אותה בסדר הגיוני.",
+      "ממד 2 – עושר ודיוק של השפה והדקדוק: מגוון מילים ומבני משפט, ונכונות הדקדוק, האיות והפיסוק. אותיות גדולות, סימני פיסוק, מילות קישור ומשפטים מורכבים – כל אלה נלקחים בחשבון.",
+      "זהו פרק ניסיוני שמחליף שני פרקים ניסיוניים אחרים במבחן.",
+      "תשובה קצרה מדי מקבלת רמה נמוכה. לכן כדאי לכוון לכ-105 מילים, באמצע הטווח.",
+      "תשובה שסוטה מהנושא אינה עונה על השאלה, ולכן צפויה לפגוע קשות בממד התוכן והארגון. בבדיקת התרגולים כאן, תשובה שלא עונה על השאלה או שיש בה פחות מ-50 מילים מקבלת לכל היותר רמה נמוכה."
+    ]
+  },
+  "highLevelChecklistHe": [
+    "תוכן וארגון: התשובה עונה בדיוק על השאלה שנשאלה, על כל חלקיה.",
+    "תוכן וארגון: העמדה או הבחירה ברורה כבר במשפט הראשון.",
+    "תוכן וארגון: יש לפחות שתי סיבות, וכל סיבה מפותחת בהסבר או בדוגמה.",
+    "תוכן וארגון: הסדר הגיוני, ומילות קישור מובילות מחלק לחלק (First of all, In addition, However).",
+    "תוכן וארגון: משפט הסיכום חוזר על העמדה במילים אחרות, בלי להוסיף סיבה חדשה.",
+    "שפה: אוצר מילים מגוון, בלי לחזור שוב ושוב על מילים כמו good, very ו-thing.",
+    "שפה: לצד משפטים פשוטים יש גם משפטים מורכבים עם המילים because, although, which או if.",
+    "שפה: דקדוק מדויק: זמנים, התאמה בין הנושא לפועל, ומיליות (a, an, the).",
+    "שפה: אותיות גדולות ופיסוק נכונים: המילה I, תחילת כל משפט, ונקודה בסוף כל משפט.",
+    "שפה: משלב ענייני, בלי סלנג ובלי קיצורים של צ'אט (gonna, u)."
+  ],
+  "plan": {
+    "notesHe": [
+      "2 דקות – תכנון: לקרוא את השאלה פעמיים, לזהות מה בדיוק נשאל, לבחור עמדה ולהחליט על שתי סיבות ועל דוגמה לכל אחת.",
+      "8 דקות – כתיבה: לכתוב לפי תבנית 4 החלקים ותקציב המילים, בלי לעצור כדי לחפש את המילה המושלמת.",
+      "2 דקות – בדיקה: לעבור על הבדיקה האחרונה שבסוף הדף ולתקן.",
+      "תבנית 4 החלקים ותקציב המילים:",
+      "פתיחה (כ-20 מילים): העמדה או הבחירה, במילים של השאלה.",
+      "סיבה ראשונה (כ-35 מילים): משפט שמציג את הסיבה, הסבר ודוגמה מהחיים.",
+      "סיבה שנייה (כ-35 מילים): סיבה נוספת, שונה מהראשונה, גם היא עם הסבר ודוגמה.",
+      "סיכום (כ-15 מילים): חזרה על העמדה במילים אחרות.",
+      "בסך הכול כ-105 מילים: מרווח בטוח מעל 90 ומתחת ל-120.",
+      "עדיף שתי סיבות מפותחות מאשר ארבע סיבות ברשימה."
+    ]
+  },
+  "phrases": {
+    "notesHe": [
+      "הביטויים מסודרים לפי התפקיד שלהם בתשובה. ביטוי ברמה בסיסית (basic) בטוח לשימוש בכל רמה; ביטוי ברמה מתקדמת (advanced) מוסיף עושר לשוני, בתנאי שמשתמשים בו נכון.",
+      "מספיקים 4–5 ביטויים מגוונים בתשובה אחת. אין צורך לדחוס יותר.",
+      "אחרי ביטוי שפותח משפט (However, In addition) בא פסיק."
+    ],
+    "groups": [
+      {
+        "roleHe": "הבעת עמדה",
+        "phrases": [
+          {
+            "en": "In my opinion, …",
+            "he": "לדעתי, …",
+            "whenHe": "פתיחה פשוטה בשאלת דעה",
+            "level": "basic"
+          },
+          {
+            "en": "I believe that …",
+            "he": "אני מאמין/ה ש…",
+            "whenHe": "עמדה ברורה, לגיוון במקום הצירוף In my opinion",
+            "level": "basic"
+          },
+          {
+            "en": "If I had to choose, I would pick …",
+            "he": "אם הייתי צריך/ה לבחור, הייתי בוחר/ת ב…",
+            "whenHe": "פתיחה בשאלת בחירה",
+            "level": "basic"
+          },
+          {
+            "en": "I strongly agree that …",
+            "he": "אני מסכים/ה לגמרי ש…",
+            "whenHe": "כשהשאלה מציגה טענה ושואלת אם מסכימים איתה",
+            "level": "basic"
+          },
+          {
+            "en": "As I see it, …",
+            "he": "כפי שאני רואה את זה, …",
+            "whenHe": "פתיחת עמדה בניסוח פחות שגרתי",
+            "level": "advanced"
+          },
+          {
+            "en": "I am firmly convinced that …",
+            "he": "אני משוכנע/ת לחלוטין ש…",
+            "whenHe": "עמדה נחרצת במשלב גבוה",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "סיבה ראשונה",
+        "phrases": [
+          {
+            "en": "First of all, …",
+            "he": "קודם כול, …",
+            "whenHe": "פתיחת הסיבה הראשונה",
+            "level": "basic"
+          },
+          {
+            "en": "The main reason is that …",
+            "he": "הסיבה העיקרית היא ש…",
+            "whenHe": "הסיבה החזקה ביותר, מיד אחרי העמדה",
+            "level": "basic"
+          },
+          {
+            "en": "To begin with, …",
+            "he": "ראשית, …",
+            "whenHe": "לגיוון במקום הצירוף First of all",
+            "level": "basic"
+          },
+          {
+            "en": "Above all, …",
+            "he": "מעל לכול, …",
+            "whenHe": "כשהסיבה הראשונה היא גם החשובה ביותר",
+            "level": "advanced"
+          },
+          {
+            "en": "The primary reason is that …",
+            "he": "הסיבה המרכזית היא ש…",
+            "whenHe": "ניסוח גבוה של הצירוף The main reason",
+            "level": "advanced"
+          },
+          {
+            "en": "What matters most to me is that …",
+            "he": "מה שהכי חשוב לי הוא ש…",
+            "whenHe": "סיבה אישית בשאלת בחירה",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "הוספת סיבה",
+        "phrases": [
+          {
+            "en": "In addition, …",
+            "he": "בנוסף, …",
+            "whenHe": "פתיחת הסיבה השנייה",
+            "level": "basic"
+          },
+          {
+            "en": "Another reason is that …",
+            "he": "סיבה נוספת היא ש…",
+            "whenHe": "מעבר ברור לסיבה השנייה",
+            "level": "basic"
+          },
+          {
+            "en": "Moreover, …",
+            "he": "יתרה מזו, …",
+            "whenHe": "סיבה שמחזקת את הטענה, במשלב גבוה",
+            "level": "advanced"
+          },
+          {
+            "en": "Furthermore, …",
+            "he": "נוסף על כך, …",
+            "whenHe": "לגיוון, כדי לא לחזור על המילה Moreover",
+            "level": "advanced"
+          },
+          {
+            "en": "What is more, …",
+            "he": "ויותר מזה, …",
+            "whenHe": "נקודה חזקה עוד יותר מהקודמת",
+            "level": "advanced"
+          },
+          {
+            "en": "not only … but also …",
+            "he": "לא רק … אלא גם …",
+            "whenHe": "שני יתרונות במשפט אחד",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "מתן דוגמה",
+        "phrases": [
+          {
+            "en": "For example, …",
+            "he": "למשל, …",
+            "whenHe": "דוגמה במשפט נפרד, אחרי הטענה",
+            "level": "basic"
+          },
+          {
+            "en": "For instance, …",
+            "he": "לדוגמה, …",
+            "whenHe": "לגיוון במקום הצירוף For example",
+            "level": "basic"
+          },
+          {
+            "en": "such as …",
+            "he": "כמו …",
+            "whenHe": "דוגמאות בתוך המשפט, לפני שמות עצם",
+            "level": "basic"
+          },
+          {
+            "en": "Last year, for example, I …",
+            "he": "בשנה שעברה, למשל, …",
+            "whenHe": "דוגמה אישית מהניסיון",
+            "level": "basic"
+          },
+          {
+            "en": "To illustrate this point, …",
+            "he": "כדי להמחיש את הנקודה הזאת, …",
+            "whenHe": "פתיחת דוגמה מפורטת, במשלב גבוה",
+            "level": "advanced"
+          },
+          {
+            "en": "A case in point is …",
+            "he": "דוגמה מובהקת לכך היא …",
+            "whenHe": "דוגמה אחת שמוכיחה את הטענה",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "ניגוד",
+        "phrases": [
+          {
+            "en": "However, …",
+            "he": "עם זאת, …",
+            "whenHe": "בתחילת משפט, עם פסיק אחריו",
+            "level": "basic"
+          },
+          {
+            "en": "…, but …",
+            "he": "…, אבל …",
+            "whenHe": "ניגוד בתוך משפט אחד, עם פסיק לפני המילה but",
+            "level": "basic"
+          },
+          {
+            "en": "On the other hand, …",
+            "he": "מצד שני, …",
+            "whenHe": "הצגת הצד השני בהשוואה",
+            "level": "basic"
+          },
+          {
+            "en": "In contrast, …",
+            "he": "לעומת זאת, …",
+            "whenHe": "הבדל חד בין שני דברים",
+            "level": "advanced"
+          },
+          {
+            "en": "…, whereas …",
+            "he": "…, ואילו …",
+            "whenHe": "ניגוד בין שני חלקים של אותו משפט",
+            "level": "advanced"
+          },
+          {
+            "en": "Unlike …, …",
+            "he": "בניגוד ל…, …",
+            "whenHe": "השוואה לפני שם עצם",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "ויתור והפרכה",
+        "phrases": [
+          {
+            "en": "Although …, …",
+            "he": "אף על פי ש…, …",
+            "whenHe": "הודאה בטענה הנגדית והעמדה העיקרית במשפט אחד",
+            "level": "basic"
+          },
+          {
+            "en": "It is true that …; however, …",
+            "he": "נכון ש…; עם זאת, …",
+            "whenHe": "הודאה קצרה ומיד אחריה חזרה לעמדה",
+            "level": "basic"
+          },
+          {
+            "en": "Some people argue that …, but …",
+            "he": "יש הטוענים ש…, אבל …",
+            "whenHe": "הצגת הדעה הנגדית לפני ההפרכה",
+            "level": "basic"
+          },
+          {
+            "en": "Admittedly, …",
+            "he": "אמנם, …",
+            "whenHe": "הודאה בחיסרון של העמדה, במשלב גבוה",
+            "level": "advanced"
+          },
+          {
+            "en": "While it is true that …, …",
+            "he": "אף שנכון ש…, …",
+            "whenHe": "ויתור והפרכה במשפט מורכב אחד",
+            "level": "advanced"
+          },
+          {
+            "en": "Even so, …",
+            "he": "ועדיין, …",
+            "whenHe": "פתיחת ההפרכה אחרי ההודאה",
+            "level": "advanced"
+          },
+          {
+            "en": "Despite …, …",
+            "he": "למרות …, …",
+            "whenHe": "לפני שם עצם או צורת ‎-ing‎, לא לפני משפט שלם",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "סיבה ותוצאה",
+        "phrases": [
+          {
+            "en": "because …",
+            "he": "כי …, מפני ש…",
+            "whenHe": "לפני משפט שלם (נושא ופועל)",
+            "level": "basic"
+          },
+          {
+            "en": "because of …",
+            "he": "בגלל …",
+            "whenHe": "לפני שם עצם בלבד",
+            "level": "basic"
+          },
+          {
+            "en": "As a result, …",
+            "he": "כתוצאה מכך, …",
+            "whenHe": "פתיחת משפט שמתאר תוצאה",
+            "level": "basic"
+          },
+          {
+            "en": "That is why …",
+            "he": "זו הסיבה ש…",
+            "whenHe": "קישור בין סיבה למסקנה",
+            "level": "basic"
+          },
+          {
+            "en": "Therefore, …",
+            "he": "לכן, …",
+            "whenHe": "מסקנה הגיונית, במשלב גבוה",
+            "level": "advanced"
+          },
+          {
+            "en": "Due to …, …",
+            "he": "עקב …, …",
+            "whenHe": "לפני שם עצם, במשלב גבוה",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "הסתייגות וריכוך",
+        "phrases": [
+          {
+            "en": "In most cases, …",
+            "he": "ברוב המקרים, …",
+            "whenHe": "הכללה זהירה במקום המילה always",
+            "level": "basic"
+          },
+          {
+            "en": "This may help …",
+            "he": "זה עשוי לעזור …",
+            "whenHe": "טענה שלא תמיד נכונה, בלי הגזמה",
+            "level": "basic"
+          },
+          {
+            "en": "It seems to me that …",
+            "he": "נראה לי ש…",
+            "whenHe": "עמדה מנומסת ולא נחרצת",
+            "level": "basic"
+          },
+          {
+            "en": "People tend to …",
+            "he": "אנשים נוטים ל…",
+            "whenHe": "תיאור של נטייה כללית, לא של חוק",
+            "level": "advanced"
+          },
+          {
+            "en": "It could be argued that …",
+            "he": "אפשר לטעון ש…",
+            "whenHe": "הצגת טענה בזהירות",
+            "level": "advanced"
+          },
+          {
+            "en": "to some extent",
+            "he": "במידה מסוימת",
+            "whenHe": "תשובה לשאלה מסוג to what extent",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "סיכום",
+        "phrases": [
+          {
+            "en": "In conclusion, …",
+            "he": "לסיכום, …",
+            "whenHe": "פתיחת המשפט האחרון",
+            "level": "basic"
+          },
+          {
+            "en": "To sum up, …",
+            "he": "לסיכום הדברים, …",
+            "whenHe": "לגיוון במקום הצירוף In conclusion",
+            "level": "basic"
+          },
+          {
+            "en": "For these reasons, …",
+            "he": "מסיבות אלה, …",
+            "whenHe": "סיכום שמפנה לשתי הסיבות",
+            "level": "basic"
+          },
+          {
+            "en": "All in all, …",
+            "he": "בסך הכול, …",
+            "whenHe": "סיכום כללי בפתיחת המשפט האחרון",
+            "level": "basic"
+          },
+          {
+            "en": "Taking everything into account, …",
+            "he": "בהתחשב בכל השיקולים, …",
+            "whenHe": "סיכום אחרי שהוצגו שני הצדדים",
+            "level": "advanced"
+          },
+          {
+            "en": "This is why I firmly believe that …",
+            "he": "זו הסיבה שאני משוכנע/ת ש…",
+            "whenHe": "חזרה נחרצת על העמדה בסוף",
+            "level": "advanced"
+          }
+        ]
+      }
+    ]
+  },
+  "openingsAndClosings": {
+    "notesHe": [
+      "יש להשלים את החסר (___) במילים מתוך השאלה, כך שכבר במשפט הראשון ברור שהתשובה עונה על השאלה שנשאלה.",
+      "כדאי לבחור מראש תבנית פתיחה אחת ותבנית סיום אחת ולתרגל אותן, כדי לא לבזבז זמן בתחילת הכתיבה."
+    ],
+    "groups": [
+      {
+        "roleHe": "פתיחה לשאלת בחירה",
+        "phrases": [
+          {
+            "en": "If I had the chance to ___, I would choose ___ because ___.",
+            "he": "אם הייתה לי הזדמנות ל___, הייתי בוחר/ת ב___ כי ___.",
+            "whenHe": "בחירה וסיבה כבר במשפט הראשון",
+            "level": "basic"
+          },
+          {
+            "en": "For me, the best choice would be ___, because it would allow me to ___.",
+            "he": "בשבילי, הבחירה הטובה ביותר תהיה ___, כי היא תאפשר לי ___.",
+            "whenHe": "בחירה שמבוססת על תועלת אישית",
+            "level": "basic"
+          },
+          {
+            "en": "Given the choice between ___ and ___, I would prefer ___ for two main reasons.",
+            "he": "אילו ניתנה לי בחירה בין ___ ל___, הייתי מעדיף/ה את ___ משתי סיבות עיקריות.",
+            "whenHe": "בחירה בין שתי אפשרויות; מכינה את הקורא לשתי הסיבות",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "פתיחה לשאלת דעה",
+        "phrases": [
+          {
+            "en": "I strongly agree that ___, mainly because ___.",
+            "he": "אני מסכים/ה לגמרי ש___, בעיקר מפני ש___.",
+            "whenHe": "טענה שצריך להסכים איתה או להתנגד לה",
+            "level": "basic"
+          },
+          {
+            "en": "While some people believe that ___, I am convinced that ___.",
+            "he": "אף שיש הסבורים ש___, אני משוכנע/ת ש___.",
+            "whenHe": "נושא שנוי במחלוקת: הצד השני ומיד אחריו העמדה",
+            "level": "advanced"
+          },
+          {
+            "en": "In my view, ___ has more advantages than disadvantages, especially when it comes to ___.",
+            "he": "לדעתי, ל___ יש יותר יתרונות מחסרונות, במיוחד בכל הנוגע ל___.",
+            "whenHe": "שאלה על יתרונות וחסרונות",
+            "level": "advanced"
+          }
+        ]
+      },
+      {
+        "roleHe": "סיום",
+        "phrases": [
+          {
+            "en": "For these reasons, I would definitely choose ___.",
+            "he": "מסיבות אלה, הייתי בוחר/ת בלי ספק ב___.",
+            "whenHe": "סיום לשאלת בחירה",
+            "level": "basic"
+          },
+          {
+            "en": "In conclusion, I firmly believe that ___, since ___.",
+            "he": "לסיכום, אני משוכנע/ת ש___, מפני ש___.",
+            "whenHe": "סיום לשאלת דעה: העמדה במילים חדשות וסיבה בקצרה",
+            "level": "advanced"
+          },
+          {
+            "en": "All in all, although ___, the benefits of ___ clearly outweigh the drawbacks.",
+            "he": "בסך הכול, אף ש___, היתרונות של ___ גוברים בבירור על החסרונות.",
+            "whenHe": "סיום אחרי ויתור והפרכה",
+            "level": "advanced"
+          }
+        ]
+      }
+    ]
+  },
+  "upgrades": {
+    "notesHe": [
+      "המטרה היא להראות עושר לשוני, לא להחליף כל מילה. 2–3 שדרוגים טבעיים בתשובה אחת מספיקים.",
+      "כשלא בטוחים במשמעות של מילה גבוהה או בצירוף שלה, עדיף להשאיר את המילה הפשוטה: טעות פוגעת בדיוק."
+    ],
+    "rows": [
+      {
+        "insteadOf": "very good",
+        "write": "highly beneficial",
+        "noteHe": "כשמדובר בתועלת: highly beneficial for students"
+      },
+      {
+        "insteadOf": "a lot of time",
+        "write": "a great deal of time",
+        "noteHe": "רק לפני שם עצם שאי אפשר לספור (time, money)"
+      },
+      {
+        "insteadOf": "a lot of people",
+        "write": "a large number of people",
+        "noteHe": "לפני שם עצם ברבים שאפשר לספור"
+      },
+      {
+        "insteadOf": "I think",
+        "write": "I believe / I would argue",
+        "noteHe": "הצירוף I would argue מתאים לטענה בשאלת דעה"
+      },
+      {
+        "insteadOf": "because",
+        "write": "since / as",
+        "noteHe": "לגיוון בלבד; בשאר המשפטים המילה because בסדר גמור"
+      },
+      {
+        "insteadOf": "but",
+        "write": "however / yet",
+        "noteHe": "המילה However פותחת משפט חדש, עם פסיק אחריה"
+      },
+      {
+        "insteadOf": "important",
+        "write": "essential / crucial",
+        "noteHe": "כשהדבר הכרחי באמת, לא רק חשוב"
+      },
+      {
+        "insteadOf": "bad for our health",
+        "write": "harmful to our health",
+        "noteHe": "חשוב לשים לב למילת היחס: harmful to"
+      },
+      {
+        "insteadOf": "get experience",
+        "write": "gain experience",
+        "noteHe": "צירוף קבוע; גם gain knowledge"
+      },
+      {
+        "insteadOf": "many things",
+        "write": "many factors / aspects",
+        "noteHe": "כשמדובר בשיקולים או בהיבטים של נושא, במקום המילה הכללית things"
+      },
+      {
+        "insteadOf": "improve a lot",
+        "write": "improve significantly",
+        "noteHe": "תואר הפועל significantly בא אחרי הפועל"
+      },
+      {
+        "insteadOf": "kids",
+        "write": "children",
+        "noteHe": "בכתיבה רשמית: children"
+      }
+    ]
+  },
+  "commonErrors": {
+    "notesHe": [
+      "רוב הטעויות האלה נובעות מתרגום ישיר מעברית. בכל שורה: הניסוח השגוי, הניסוח הנכון וכלל קצר."
+    ],
+    "rows": [
+      {
+        "insteadOf": "I am agree with this idea.",
+        "write": "I agree with this idea.",
+        "noteHe": "המילה agree היא פועל, ולכן אין לפניה את הפועל am."
+      },
+      {
+        "insteadOf": "It's depend on the person.",
+        "write": "It depends on the person.",
+        "noteHe": "הפועל depend בא בלי הפועל is, ובגוף שלישי יחיד מקבל את הסיומת ‎-s‎."
+      },
+      {
+        "insteadOf": "In the modern life, everyone needs car.",
+        "write": "In modern life, everyone needs a car.",
+        "noteHe": "שם עצם נספר ביחיד צריך את המילית a/an; לפני מושג כללי (modern life) אין צורך במילית the."
+      },
+      {
+        "insteadOf": "My brother work in a bank.",
+        "write": "My brother works in a bank.",
+        "noteHe": "בהווה פשוט, אחרי הכינויים he/she/it או שם עצם ביחיד, הפועל מקבל את הסיומת ‎-s‎."
+      },
+      {
+        "insteadOf": "I study English since two years.",
+        "write": "I have been studying English for two years.",
+        "noteHe": "משך זמן: for; נקודת התחלה: since 2024; פעולה שעדיין נמשכת: הזמן present perfect continuous (have been studying)."
+      },
+      {
+        "insteadOf": "This option is more better.",
+        "write": "This option is much better.",
+        "noteHe": "המילה better כבר מביעה השוואה; לחיזוק באה המילה much, ולא המילה more."
+      },
+      {
+        "insteadOf": "Last year i joined a club.",
+        "write": "Last year I joined a club.",
+        "noteHe": "המילה I נכתבת תמיד באות גדולה, גם באמצע משפט."
+      },
+      {
+        "insteadOf": "I love running, it keeps me healthy.",
+        "write": "I love running because it keeps me healthy.",
+        "noteHe": "פסיק לבדו לא מחבר שני משפטים שלמים: יש לשים נקודה או מילת קישור (because, and, so)."
+      }
+    ]
+  },
+  "finalCheckHe": [
+    "מענה ועמדה: התשובה עונה בדיוק על השאלה שנשאלה, והעמדה ברורה כבר במשפט הראשון.",
+    "מבנה: פתיחה, שתי סיבות עם הסבר או דוגמה, ומשפט סיכום.",
+    "אורך: בין 90 ל-120 מילים.",
+    "מילות קישור: מעבר ברור בין החלקים (First of all, In addition, In conclusion).",
+    "אותיות גדולות ופיסוק: המילה I ותחילת כל משפט באות גדולה, נקודה בסוף כל משפט, ואין שני משפטים שמחוברים בפסיק בלבד.",
+    "דקדוק: מיליות (a, an, the), הסיומת ‎-s‎ בגוף שלישי, והצורה I agree בלי המילה am."
+  ]
+}

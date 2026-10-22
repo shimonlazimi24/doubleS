@@ -903,10 +903,88 @@
           "quizId": "quiz-reform-2"
         },
         {
-          "id": "lesson.reform.09",
-          "title": "דוגמאות וכתיבה (7.9)",
+          "id": "lesson.writing.task-01",
+          "title": "מטלת כתיבה 1",
           "kind": "text",
-          "estimatedMinutes": 30
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-02",
+          "title": "מטלת כתיבה 2",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-03",
+          "title": "מטלת כתיבה 3",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-04",
+          "title": "מטלת כתיבה 4",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-05",
+          "title": "מטלת כתיבה 5",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-06",
+          "title": "מטלת כתיבה 6",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-07",
+          "title": "מטלת כתיבה 7",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-08",
+          "title": "מטלת כתיבה 8",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-09",
+          "title": "מטלת כתיבה 9",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-10",
+          "title": "מטלת כתיבה 10",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-11",
+          "title": "מטלת כתיבה 11",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-12",
+          "title": "מטלת כתיבה 12",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-13",
+          "title": "מטלת כתיבה 13",
+          "kind": "text",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "lesson.writing.task-14",
+          "title": "מטלת כתיבה 14",
+          "kind": "text",
+          "estimatedMinutes": 15
         }
       ],
       "practiceSets": [

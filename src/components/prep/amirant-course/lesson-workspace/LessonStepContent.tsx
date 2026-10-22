@@ -20,6 +20,7 @@ const KIND_LABEL: Record<WorkspaceStepKind, string> = {
   warning: "שים לב",
   quick_check: "בדיקה קצרה",
   inline_questions: "תרגול אינטראקטיבי",
+  writing_task: "מטלת כתיבה",
   summary: "סיכום והמשך",
   practice_cta: "סיום",
 };
