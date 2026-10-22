@@ -12,15 +12,7 @@ const LINKS = [
   { href: `${PREP_BASE}/about`, label: "אודות" },
 ] as const;
 
-function NavLink({
-  href,
-  label,
-  exact,
-}: {
-  href: string;
-  label: string;
-  exact?: boolean;
-}) {
+function NavLink({ href, label, exact }: { href: string; label: string; exact?: boolean }) {
   const pathname = usePathname();
   const active = exact ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 
@@ -35,43 +27,48 @@ function NavLink({
     >
       {label}
       <span
-        className={cn(
-          "absolute inset-x-1 -bottom-0.5 h-0.5 rounded-full bg-accent transition-opacity",
-          active ? "opacity-100" : "opacity-0",
-        )}
+        className={cn("absolute inset-x-1 -bottom-0.5 h-0.5 rounded-full bg-accent transition-opacity", active ? "opacity-100" : "opacity-0")}
         aria-hidden
       />
     </Link>
   );
 }
 
+/**
+ * Two groups so the phone header is two tidy rows: logo and the course button
+ * on the first, the page links on the second. On desktop both sit in one row.
+ * The header is LTR (Latin wordmark); the nav is RTL so the reading order is
+ * בית ← אמירנט ← אודות ← אזור אישי ← כניסה לקורס.
+ */
 export function MarketingNav() {
   return (
-    // ההדר עצמו LTR (לוגו לטיני) - ה-nav חוזר ל-RTL כדי שסדר הקריאה יהיה נכון:
-    // בית ← אמירנט ← אודות ← אזור אישי ← כניסה לקורס (ה-CTA בקצה השמאלי)
-    <nav
-      dir="rtl"
-      aria-label="ניווט ראשי"
-      className="flex flex-wrap items-center gap-x-6 gap-y-2 lg:gap-x-8"
-    >
-      {/* תפריט «קורסים» הוסר - קורס חי אחד; יוחזר כשיהיו כמה (הקטלוג נשאר ב-/prep/courses) */}
-      {LINKS.map((item) => (
-        <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
-      ))}
-      {/* לא מחוברים: ה-middleware מפנה ישר ל-Google; מחוברים: פרטים אישיים ומנוי. */}
-      <Link
-        href={`${PREP_BASE}/settings`}
-        className="inline-flex min-h-11 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:min-h-10"
+    <>
+      <div dir="rtl" className="order-2 flex items-center gap-x-4 lg:order-3">
+        <Link
+          href={`${PREP_BASE}/settings`}
+          className="hidden min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:inline-flex"
+        >
+          אזור אישי
+        </Link>
+        <ButtonLink href={`${PREP_BASE}/amirant/course`} variant="primary" className="min-h-10 !rounded px-4 text-sm lg:px-5">
+          כניסה לקורס
+        </ButtonLink>
+      </div>
+      <nav
+        dir="rtl"
+        aria-label="ניווט ראשי"
+        className="order-3 flex w-full items-center gap-x-6 border-t border-line/60 lg:order-2 lg:ms-auto lg:w-auto lg:border-0 lg:gap-x-8"
       >
-        אזור אישי
-      </Link>
-      <ButtonLink
-        href={`${PREP_BASE}/amirant/course`}
-        variant="primary"
-        className="min-h-11 px-5 text-sm shadow-cta lg:min-h-10"
-      >
-        כניסה לקורס
-      </ButtonLink>
-    </nav>
+        {LINKS.map((item) => (
+          <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
+        ))}
+        <Link
+          href={`${PREP_BASE}/settings`}
+          className="ms-auto inline-flex min-h-11 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:hidden"
+        >
+          אזור אישי
+        </Link>
+      </nav>
+    </>
   );
 }

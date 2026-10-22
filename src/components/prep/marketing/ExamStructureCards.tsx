@@ -1,36 +1,40 @@
 import { EXAM_STRUCTURE } from "@/lib/prep/marketing/content";
+import { SectionPanel } from "./SectionPanel";
 
 function metaParts(meta: string): { questions: string; minutes: string } {
   const [questions = "", minutes = ""] = meta.split("·").map((x) => x.trim());
   return { questions, minutes };
 }
 
-/** מפרט המבחן כטבלת עובדות שטוחה - לא שלושה כרטיסים זהים. */
+/** The three question types side by side: the figures first, then what the type asks. */
 export function ExamStructureTable() {
   return (
-    <div className="max-w-3xl">
-      <ul>
+    <div>
+      <ul className="grid gap-6 md:grid-cols-3">
         {EXAM_STRUCTURE.parts.map((part) => {
           const { questions, minutes } = metaParts(part.meta);
           return (
-            <li
-              key={part.title}
-              className="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-1 border-t border-line/70 py-4 first:border-t-0 sm:grid-cols-[11rem_1fr_auto]"
-            >
-              <h3 className="text-base font-semibold text-ink">{part.title}</h3>
-              <p className="col-span-2 text-sm leading-relaxed text-muted sm:col-span-1 sm:col-start-2">
-                {part.body}
-              </p>
-              <p className="row-start-1 text-sm tabular-nums text-primary sm:col-start-3" dir="rtl">
-                <span className="font-semibold">{questions}</span>
-                <span className="text-muted"> · {minutes}</span>
-              </p>
+            <li key={part.title}>
+              <SectionPanel className="h-full p-6 text-right">
+                <h3 className="text-lg font-bold text-ink">{part.title}</h3>
+                <dl className="mt-4 grid grid-cols-2 gap-4 border-y border-line/70 py-4">
+                  <div>
+                    <dd className="text-2xl font-extrabold tabular-nums tracking-tight text-primary">{questions.replace(/\D+$/, "")}</dd>
+                    <dt className="text-sm text-muted">שאלות בפרק</dt>
+                  </div>
+                  <div>
+                    <dd className="text-2xl font-extrabold tabular-nums tracking-tight text-primary">{minutes.replace(/\D+/g, "")}</dd>
+                    <dt className="text-sm text-muted">דקות לפרק</dt>
+                  </div>
+                </dl>
+                <p className="mt-4 text-[15px] leading-relaxed text-muted">{part.body}</p>
+              </SectionPanel>
             </li>
           );
         })}
       </ul>
-      <p className="border-t border-line/70 pt-3 text-xs text-muted">
-        הפרקים חוזרים לאורך המבחן ברמת קושי מסתגלת - בקורס מתרגלים כל סוג בנפרד ואז יחד בסימולציה.
+      <p className="mt-5 max-w-3xl text-sm leading-relaxed text-muted">
+        הפרקים חוזרים לאורך המבחן ברמת קושי מסתגלת. בקורס מתרגלים כל סוג בנפרד ואז יחד בסימולציה.
       </p>
     </div>
   );
