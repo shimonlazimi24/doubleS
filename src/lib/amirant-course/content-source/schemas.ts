@@ -5,6 +5,7 @@ const topicSchema = z.enum([
   "sentence_completion",
   "rephrasing",
   "reading_comprehension",
+  "listening",
 ]);
 
 const moduleSlugSchema = z.enum([
@@ -161,6 +162,8 @@ export const passageSourceItemSchema = z.object({
   passageId: z.string().min(1),
   title: z.string().default(""),
   bodyMarkdown: z.string().min(1),
+  /** Shown only after the learner has checked: a listening clip's transcript. */
+  revealMarkdown: z.string().optional(),
   sourceTag: z.string().default(""),
 });
 

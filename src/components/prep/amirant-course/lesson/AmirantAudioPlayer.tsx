@@ -109,9 +109,7 @@ export function AmirantAudioPlayer({ audioRef, title, className }: Props) {
           {displayTitle}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-muted">
-          השמע לא נטען. בינתיים השתמשו בתמליל למטה —{" "}
-          <strong className="font-medium text-ink">קראו פעם אחת</strong> (או שתיים לכל
-          היותר), ואז ענו בלי לחזור לתמליל.
+          השמע לא זמין כרגע. אם יש תמליל בהמשך, קראו אותו פעם אחת ואז ענו בלי לחזור אליו.
         </p>
       </div>
     );

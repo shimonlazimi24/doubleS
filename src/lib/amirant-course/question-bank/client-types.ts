@@ -12,7 +12,13 @@
 import type { QuestionPoolItem } from "@/lib/learning-intelligence/adaptive";
 import type { BankQuestionPublic } from "./public-bank";
 
-export type ClientPassage = { id: string; title?: string; bodyMarkdown: string };
+export type ClientPassage = {
+  id: string;
+  title?: string;
+  bodyMarkdown: string;
+  /** A listening clip's transcript: rendered only once the answers are checked. */
+  revealMarkdown?: string;
+};
 
 /** Questions plus the reading passages they point at — what one page or one fetch carries. */
 export type ClientQuestionSet = {

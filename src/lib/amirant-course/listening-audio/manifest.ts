@@ -3,6 +3,8 @@
  * קבצי M4A ב־`public/amirant-listening/` (TTS לתרגול עד הקלטת אולפן).
  */
 
+import { OWNER_LISTENING_CLIPS } from "./owner-clips";
+
 export type ListeningAudioClip = {
   id: string;
   title: string;
@@ -57,7 +59,7 @@ export const LISTENING_AUDIO_CLIPS: ListeningAudioClip[] = [
   },
 ];
 
-const byId = new Map(LISTENING_AUDIO_CLIPS.map((c) => [c.id, c]));
+const byId = new Map([...LISTENING_AUDIO_CLIPS, ...OWNER_LISTENING_CLIPS].map((c) => [c.id, c]));
 
 export function getListeningAudioClip(id: string): ListeningAudioClip | null {
   return byId.get(id.trim()) ?? null;

@@ -8,7 +8,7 @@ import { PLAN_DAYS, PLAN_LABELS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plan
  * Server only (the bank is not shipped to the browser).
  */
 
-const PRACTICE_UNIT = /^lesson\.(sc\.test|rephrase\.set|reading\.passage|reform\.wf)-\d+$/;
+const PRACTICE_UNIT = /^lesson\.(sc\.test|rephrase\.set|reading\.passage|listening\.test|reform\.wf)-\d+$/;
 
 const lessons = AMIRANT_PREPARATION_MANIFEST.modules.flatMap((m) => m.lessons);
 
