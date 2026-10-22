@@ -52,7 +52,7 @@ export default function PrepRootLayout({ children }: { children: React.ReactNode
           דילוג לתוכן הראשי
         </a>
         <MarketingHeader />
-        <main id="main" tabIndex={-1} className="relative z-0 isolate min-w-0 flex-1 outline-none">
+        <main id="main" tabIndex={-1} className="relative z-0 isolate min-w-0 flex-1 overflow-x-clip outline-none">
           {children}
         </main>
         <MarketingFooter />
