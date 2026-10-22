@@ -43,7 +43,7 @@ import { formatClock } from "@/lib/amirant-course/format-clock";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { getAmirantTopicLinks } from "@/lib/amirant-course/next-best-action";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
-import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
+import { dispatchBankQuestionContext } from "@/lib/amirant-course/question-bank/dispatch-question-context";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
@@ -222,14 +222,11 @@ export function AmirantAdaptiveQuizClient({
   const currentId = questionIds[currentIndex];
   const currentQ = currentId ? getPublicBankQuestion(currentId) : undefined;
 
+  const currentSelected = answers[currentIndex] ?? null;
   useEffect(() => {
     if (!currentQ) return;
-    dispatchAmirantQuestionContext({
-      questionText: amirantExamQuestionPromptForDisplay(currentQ.prompt),
-      topic: currentQ.topicSlug,
-      questionType: currentQ.topicSlug,
-    });
-  }, [currentQ]);
+    dispatchBankQuestionContext({ question: currentQ, timed: true, selectedOptionId: currentSelected });
+  }, [currentQ, currentSelected]);
 
   const levelAtIndex = useMemo(() => {
     const effectiveStart: DifficultyLevel =

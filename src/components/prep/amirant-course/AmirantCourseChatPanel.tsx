@@ -31,6 +31,25 @@ function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; tex
     .map((m) => ({ role: m.role, text: m.text.slice(0, 600) }));
 }
 
+/**
+ * The on-screen block the server grounds on. Mirrors `lessonChatActiveContextSchema`
+ * limits; the answer key is never part of it (the server resolves it by `questionId`).
+ */
+function buildActiveContextPayload(cq: AmirantQuestionContextDetail): Record<string, unknown> {
+  return {
+    kind: cq.kind ?? (cq.options?.length ? "quiz_question" : "lesson_step"),
+    text: cq.questionText.slice(0, 2500),
+    stepLabel: cq.stepLabel?.slice(0, 120),
+    questionId: cq.questionId?.slice(0, 80),
+    questionType: cq.questionType?.slice(0, 40),
+    options: cq.options?.slice(0, 6).map((o) => ({ id: o.id.slice(0, 8), label: o.label.slice(0, 400) })),
+    passageText: cq.passageText?.slice(0, 4000),
+    timed: cq.timed,
+    answered: cq.answered,
+    selectedOptionId: cq.selectedOptionId ?? undefined,
+  };
+}
+
 const STARTER_PROMPTS = [
   "איך כדאי לגשת לשאלות השלמת משפטים?",
   "מה ההבדל בין רמות הקושי במבחן?",
@@ -98,7 +117,10 @@ export function AmirantCourseChatPanel({
         const body: Record<string, unknown> = { ...payload, userMessage: t };
         if (activeLessonId) body.lessonId = activeLessonId;
         const cq = currentQuestionRef.current;
-        if (cq?.questionText && !body.activeQuestionText) body.activeQuestionText = cq.questionText.slice(0, 800);
+        if (cq?.questionText) {
+          body.activeQuestionText = cq.questionText.slice(0, 800);
+          body.activeContext = buildActiveContextPayload(cq);
+        }
         if (cq?.topic && !body.topic) body.topic = cq.topic;
         // היסטוריית השיחה (בלי ההודעה הנוכחית שכבר ב-userMessage)
         const history = buildHistoryPayload(messagesRef.current);
@@ -232,6 +254,9 @@ export function AmirantCourseChatPanel({
     return () => window.removeEventListener(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, h);
   }, []);
 
+  // Timed unit and no answer yet: the server would refuse anyway; do not offer the button.
+  const revealLocked = Boolean(currentQuestion?.timed) && currentQuestion?.answered !== true;
+
   const inner = (
     <>
       <Text as="h2" variant="headlineSm" className={cn(compact && "text-base")}>
@@ -339,20 +364,26 @@ export function AmirantCourseChatPanel({
         >
           רמז נוסף
         </button>
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() => void sendWithPayload({
-            userMessage: currentQuestion
-              ? `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`
-              : "גלה את התשובה (עם נימוקים מהחומר).",
-            clientAction: "reveal",
-            topic: currentQuestion?.topic,
-          })}
-        >
-          גלה תשובה
-        </button>
+        {revealLocked ? (
+          <span className="px-1 text-xs text-muted" title="במבחן מתוזמן הפתרון נפתח אחרי שעונים">
+            הפתרון ייפתח אחרי שתענו
+          </span>
+        ) : (
+          <button
+            type="button"
+            className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+            disabled={loading}
+            onClick={() => void sendWithPayload({
+              userMessage: currentQuestion
+                ? `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`
+                : "גלה את התשובה (עם נימוקים מהחומר).",
+              clientAction: "reveal",
+              topic: currentQuestion?.topic,
+            })}
+          >
+            גלה תשובה
+          </button>
+        )}
         <button
           type="button"
           className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"

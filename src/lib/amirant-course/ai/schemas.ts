@@ -19,13 +19,36 @@ export const chatHistoryTurnSchema = z.object({
   text: z.string().min(1).max(600),
 });
 
+/**
+ * What is on the learner's screen right now. The browser never sends an answer key;
+ * for a bank question it sends `questionId` and the server looks the key up only
+ * when the learner has already answered (or the unit is not timed).
+ */
+export const lessonChatActiveContextSchema = z.object({
+  kind: z.enum(["lesson_step", "quiz_question"]),
+  text: z.string().min(1).max(2500),
+  stepLabel: z.string().max(120).optional(),
+  questionId: z.string().max(80).optional(),
+  questionType: z.string().max(40).optional(),
+  options: z
+    .array(z.object({ id: z.string().max(8), label: z.string().max(400) }))
+    .max(6)
+    .optional(),
+  passageText: z.string().max(4000).optional(),
+  timed: z.boolean().optional(),
+  answered: z.boolean().optional(),
+  selectedOptionId: z.string().max(8).nullable().optional(),
+});
+export type LessonChatActiveContext = z.infer<typeof lessonChatActiveContextSchema>;
+
 export const lessonChatRequestSchema = z.object({
   /** אופציונלי - בלי `lessonId` מחפשים הקשר לרוחב כל קורס ההכנה (RAG). */
   lessonId: z.string().min(1).optional(),
   topic: z.string().optional(),
   userMessage: z.string().min(1).max(1500),
-  /** Plain-text content of the step/question currently visible on screen - injected by the client. */
+  /** Legacy plain-text form of the on-screen content; superseded by `activeContext`. */
   activeQuestionText: z.string().max(800).optional(),
+  activeContext: lessonChatActiveContextSchema.optional(),
   /** התורות האחרונים בשיחה (עד 8) - בלעדיהם שאלות המשך נענות בלי הקשר. */
   history: z.array(chatHistoryTurnSchema).max(8).optional(),
 });

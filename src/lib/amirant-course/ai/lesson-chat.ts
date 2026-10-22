@@ -1,5 +1,5 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { runAmirantChatbot } from "./chatbot";
+import { runAmirantChatbot, redactChatRequest } from "./chatbot";
 import { AI_PROMPT_VERSION } from "./prompts";
 import { amirantChatbotRequestSchema } from "./chatbot/schemas";
 import { lessonChatResponseSchema, type LessonChatResponse } from "./schemas";
@@ -20,7 +20,8 @@ export async function runLessonChatAi(
 
   if (userId) {
     const parsed = amirantChatbotRequestSchema.safeParse(raw);
-    const req = parsed.success ? parsed.data : null;
+    // The log keeps the redacted request only - never a pasted ID / card / phone number.
+    const req = parsed.success ? redactChatRequest(parsed.data) : null;
     // Fire-and-forget insight log - don't await so it doesn't block the response
     void client.from("amirant_ai_insights").insert({
       user_id: userId,
@@ -28,7 +29,7 @@ export async function runLessonChatAi(
       model,
       prompt_version: AI_PROMPT_VERSION,
       input_refs: output.references?.map((r) => ({ chunkId: r.chunkId, lessonId: r.lessonId, topic: r.topic })) ?? [],
-      input_payload: { request: req ?? raw },
+      input_payload: { request: req ?? { invalid: true } },
       output_payload: output,
     });
   }

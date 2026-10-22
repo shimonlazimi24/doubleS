@@ -22,6 +22,7 @@ import {
   getPublicBankQuestion,
 } from "@/lib/amirant-course/question-bank/client-bank";
 import { buildSimulationSectionQuestionIds } from "@/lib/amirant-course/session/build-simulation-section";
+import { dispatchBankQuestionContext } from "@/lib/amirant-course/question-bank/dispatch-question-context";
 import { gradeBatchAnswers, gradeCheckAnswer } from "@/lib/amirant-course/grade-client";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
@@ -390,6 +391,16 @@ export function AmirantCourseSimulationClient({ simId }: { simId: string }) {
   useEffect(() => {
     questionEnteredAtRef.current = Date.now();
   }, [run?.focusIndex, run?.sectionIndex, run?.kind]);
+
+  // Keep the floating chat on the focused question (the simulation never had this before).
+  const focusedQid = run?.questionIds[run.focusIndex];
+  const focusedSelected = focusedQid ? run?.answers[focusedQid] ?? null : null;
+  useEffect(() => {
+    if (phase !== "running" || !focusedQid) return;
+    const q = getPublicBankQuestion(focusedQid);
+    if (!q) return;
+    dispatchBankQuestionContext({ question: q, timed: true, selectedOptionId: focusedSelected });
+  }, [phase, focusedQid, focusedSelected]);
 
   useEffect(() => {
     if (!run) return;
