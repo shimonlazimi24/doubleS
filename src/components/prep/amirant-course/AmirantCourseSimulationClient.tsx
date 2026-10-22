@@ -31,6 +31,8 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { Card, CardBody, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "./quiz/QuizOptionContent";
+import { QuizOptionButton, QuizOptionGroup } from "./quiz/QuizOptionGroup";
+import { QuizTimeAnnouncer } from "./quiz/QuizTimeAnnouncer";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { AmirantVideoEmbed } from "./lesson/AmirantVideoEmbed";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
@@ -507,25 +509,34 @@ export function AmirantCourseSimulationClient({
             <Text as="p" variant="labelAccent" className="text-primary">
               {sectionLabel}
             </Text>
-            <span className="font-mono text-lg font-bold text-ink">{formatClock(run.timeLeftSec)}</span>
+            <span role="timer" aria-label="זמן שנותר" className="font-mono text-lg font-bold text-ink">
+              {formatClock(run.timeLeftSec)}
+            </span>
+            <QuizTimeAnnouncer secondsLeft={run.timeLeftSec} />
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <nav aria-label="מעבר בין שאלות" className="flex flex-wrap gap-2">
             {run.questionIds.map((qid, i) => (
               <button
                 key={qid}
                 type="button"
                 onClick={() => setRun((p) => (p ? { ...p, focusIndex: i } : p))}
+                aria-current={run.focusIndex === i ? "true" : undefined}
                 className={cn(
-                  "min-w-9 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition",
+                  "min-h-11 min-w-11 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition sm:min-h-0 sm:min-w-9",
                   run.focusIndex === i ? "bg-primary text-white" : "bg-paper text-muted ring-1 ring-line",
                 )}
               >
                 {i + 1}
-                {run.answers[qid] ? " ✓" : ""}
+                {run.answers[qid] ? (
+                  <>
+                    <span aria-hidden="true"> ✓</span>
+                    <span className="sr-only">, נענתה</span>
+                  </>
+                ) : null}
               </button>
             ))}
-          </div>
+          </nav>
 
           {(() => {
             const qid = run.questionIds[run.focusIndex];
@@ -538,17 +549,19 @@ export function AmirantCourseSimulationClient({
                     שאלה {run.focusIndex + 1} מתוך {run.questionIds.length} בפרק
                   </Text>
                   <QuizPassagePanel passage={q.passageId ? passagesByIdRef.current.get(q.passageId) : undefined} />
-                  <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" style={{ textAlign: "left" }}>
+                  <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" lang="en" style={{ textAlign: "left" }}>
                     {amirantExamQuestionPromptForDisplay(q.prompt)}
                   </p>
-                  <ul className="space-y-2">
+                  <QuizOptionGroup className="space-y-2">
                     {q.options.map((opt, optIndex) => (
-                      <li key={opt.id}>
-                        <button
-                          type="button"
+                      <div key={opt.id}>
+                        <QuizOptionButton
+                          checked={run.answers[q.id] === opt.id}
+                          index={optIndex}
+                          anyChecked={run.answers[q.id] != null}
                           onClick={() => setAnswer(q.id, opt.id)}
                           className={cn(
-                            "w-full rounded-control border px-4 py-3 text-start text-sm transition",
+                            "min-h-11 w-full rounded-control border px-4 py-3 text-start text-sm transition",
                             run.answers[q.id] === opt.id
                               ? "border-primary bg-primary/10 font-semibold text-primary"
                               : "border-line/80 bg-paper hover:border-primary/40",
@@ -559,14 +572,14 @@ export function AmirantCourseSimulationClient({
                             label={opt.label}
                             state={run.answers[q.id] === opt.id ? "selected" : "idle"}
                           />
-                        </button>
-                      </li>
+                        </QuizOptionButton>
+                      </div>
                     ))}
-                  </ul>
+                  </QuizOptionGroup>
                   <button
                     type="button"
                     onClick={() => finishSection()}
-                    className="rounded-control bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-card"
+                    className="min-h-11 rounded-control bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow-card"
                   >
                     סיום פרק והמשך
                   </button>
