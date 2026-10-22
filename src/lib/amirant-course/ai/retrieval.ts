@@ -154,6 +154,102 @@ function mapVectorRow(
   };
 }
 
+const BANK_TOPIC_SLUGS = new Set(["vocabulary", "sentence_completion", "rephrasing", "reading_comprehension"]);
+
+/** Only these values exist in `course_content_chunks.topic`; anything else is a UI label, not a filter. */
+export function isBankTopicSlug(topic: string | undefined | null): topic is string {
+  return typeof topic === "string" && BANK_TOPIC_SLUGS.has(topic.trim());
+}
+
+export type RetrievalFilter = { lessonId?: string; topic?: string };
+
+/**
+ * Which filters to query for the lesson chat, highest priority first.
+ *
+ * The index has two kinds of rows: lesson chunks (`lesson_id` set, `topic` null) and
+ * question chunks (`topic` set, `lesson_id` null). A query with both filters can never
+ * match, so the plan never combines them. The course-wide query is always included so
+ * the caller can run everything in parallel and fill the remaining slots.
+ */
+export function planLessonChatRetrieval(params: {
+  lessonId?: string;
+  topic?: string;
+  activeKind?: "lesson_step" | "quiz_question";
+}): RetrievalFilter[] {
+  const lessonId = params.lessonId?.trim() || undefined;
+  const topic = isBankTopicSlug(params.topic) ? params.topic.trim() : undefined;
+  const plan: RetrievalFilter[] = [];
+  if (params.activeKind === "quiz_question") {
+    if (topic) plan.push({ topic });
+    if (lessonId) plan.push({ lessonId });
+  } else {
+    if (lessonId) plan.push({ lessonId });
+    if (topic) plan.push({ topic });
+  }
+  plan.push({});
+  return plan;
+}
+
+/**
+ * Merges per-filter results in plan order: all rows of the first filter come first, then
+ * the next filter fills what is left, deduplicated by chunk id. Keeps `topK` rows.
+ */
+export function mergeRetrievedChunks(resultsInPlanOrder: RetrievedChunk[][], topK: number): RetrievedChunk[] {
+  const seen = new Set<string>();
+  const out: RetrievedChunk[] = [];
+  const last = resultsInPlanOrder.length - 1;
+  // Filtered passes may use at most topK-2 slots when a later (course-wide) pass exists,
+  // so a wrong lesson filter cannot crowd out a strong hit from elsewhere in the course.
+  const reservedForLast = last > 0 ? Math.min(2, Math.max(0, topK - 1)) : 0;
+  resultsInPlanOrder.forEach((rows, i) => {
+    const cap = i === last ? topK : topK - reservedForLast;
+    for (const row of rows) {
+      if (out.length >= cap) break;
+      if (seen.has(row.id)) continue;
+      seen.add(row.id);
+      out.push(row);
+    }
+  });
+  return out;
+}
+
+/**
+ * Lesson chat retrieval: one embedding, all planned filters in parallel, merged by priority.
+ * Latency is one RPC round-trip instead of a serial cascade of up to four.
+ */
+export async function retrieveForLessonChat(
+  client: SupabaseClient,
+  params: {
+    query: string;
+    questionContext?: string;
+    lessonId?: string;
+    topic?: string;
+    activeKind?: "lesson_step" | "quiz_question";
+    precomputedEmbedding?: number[];
+    topK?: number;
+  },
+): Promise<RetrievedChunk[]> {
+  const topK = clampRagTopK(params.topK);
+  const plan = planLessonChatRetrieval(params);
+  // The caller already tried to embed once. Without a vector, skip straight to the filtered
+  // text fallback instead of letting every pass re-request (and re-time-out) an embedding.
+  const haveVector = Boolean(params.precomputedEmbedding?.length);
+  const results = await Promise.all(
+    plan.map((f) =>
+      retrieveCourseChunks(client, {
+        query: haveVector ? params.query : undefined,
+        questionContext: haveVector ? params.questionContext : undefined,
+        lessonId: f.lessonId,
+        topic: f.topic,
+        precomputedEmbedding: params.precomputedEmbedding,
+        topK,
+        operation: "lesson_chat",
+      }).catch(() => [] as RetrievedChunk[]),
+    ),
+  );
+  return mergeRetrievedChunks(results, topK);
+}
+
 export type AiUserStatsSnapshot = {
   topicRollups: Array<{
     topic: string;
@@ -252,16 +348,21 @@ export async function retrieveCourseChunks(
           }),
         );
       }
-      return await textFallbackTable(client, params, topK, op, min);
+      return await textFallbackTable(retrievalClient, params, topK, op, min);
     } catch {
-      return await textFallbackTable(client, params, topK, op, min);
+      return await textFallbackTable(retrievalClient, params, topK, op, min);
     }
   }
 
   // No embedding text: browse by lesson/topic
-  return await textFallbackTable(client, params, topK, op, min);
+  return await textFallbackTable(retrievalClient, params, topK, op, min);
 }
 
+/**
+ * Non-vector fallback (embedding failed or the index has no vector for the filter).
+ * Only meaningful with a lesson/topic filter: the rows are ordered by recency, not
+ * relevance, so a course-wide unfiltered fallback would feed random chunks to the model.
+ */
 async function textFallbackTable(
   client: SupabaseClient,
   params: RetrieveCourseChunksParams,
@@ -269,6 +370,10 @@ async function textFallbackTable(
   operation: string | undefined,
   _min: number,
 ): Promise<RetrievedChunk[]> {
+  if (!params.lessonId && !params.topic) {
+    logRagRetrieval({ operation, minSimilarity: _min, topK, items: [] });
+    return [];
+  }
   let q = client
     .from("course_content_chunks")
     .select("id, lesson_id, topic, chunk_text")
