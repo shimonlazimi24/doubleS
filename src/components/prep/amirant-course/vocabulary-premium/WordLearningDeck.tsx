@@ -141,7 +141,9 @@ export function WordLearningDeck({
           יודע/ת
         </button>
       </div>
-      <p className="text-center text-[11px] text-slate-400">שוב = היום · קשה = בקרוב · יודע/ת = חזרה מרווחת</p>
+      <p className="text-center text-xs text-slate-500">
+        «שוב» מחזיר את המילה עוד היום, «קשה» בעוד יום-יומיים, «יודע/ת» בעוד כמה ימים.
+      </p>
 
       <nav
         className="rounded-xl border border-stone-200/70 bg-stone-50/50 px-3 py-2.5"
@@ -160,9 +162,6 @@ export function WordLearningDeck({
 
           </button>
         </div>
-        <p className="mt-2 text-center text-[11px] leading-snug text-slate-400">
-          להמשך השיעור (שקופית הבאה) — הכפתור הכחול למטה
-        </p>
       </nav>
 
       <details className="text-center">

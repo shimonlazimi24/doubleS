@@ -127,7 +127,9 @@ export function buildCuratedUnit1WelcomeSteps(flow: UnifiedFlowItem[], pageIntro
     : null;
   const welcomePayloadClosing: WelcomeStepPayload = { step: "closing", data: parseClosingPremium(closingBody) };
 
-  const openCardBody = welcomePayloadOpen.data.intro + (welcomePayloadOpen.data.highlight ? "\n\n" + welcomePayloadOpen.data.highlight : "");
+  const openCardBody = [welcomePayloadOpen.data.intro, welcomePayloadOpen.data.highlight, welcomePayloadOpen.data.after]
+    .filter(Boolean)
+    .join("\n\n");
 
   const steps: BuiltWorkspaceStep[] = [];
 

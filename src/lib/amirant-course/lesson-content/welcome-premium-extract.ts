@@ -7,7 +7,8 @@ export type CourseUnitRow = { n: string; title: string };
 export type GoldenRule = { n: number; text: string };
 export type ExamQuestionTypeRow = { n: string; type: string; count: string; time: string };
 
-export type OpenPremiumData = { intro: string; highlight: string };
+/** `intro` leads into the highlighted sentence; `after` follows it. */
+export type OpenPremiumData = { intro: string; highlight: string; after: string };
 export type WhyPremiumData = { lede: string; goal: string; scoreRows: ScoreRangeRow[] };
 export type WhatPremiumData = { units: CourseUnitRow[]; bonusTitle: string; bonusItems: string[] };
 export type SuccessPremiumData = { rules: GoldenRule[] };
@@ -46,11 +47,21 @@ function stripFences(s: string): string {
   return s.replace(/\r\n/g, "\n").replace(/^---+\s*$/gm, "").trim();
 }
 
+/**
+ * Drops the document's own metadata (duration, file count, prerequisite) and
+ * the "מסמך 1.1" title. The page intro arrives as plain text with the bold and
+ * line breaks already removed, so each field is matched up to the next field
+ * or the end of the sentence, bold or not.
+ */
 export function stripUnitMeta(s: string): string {
   let t = s.replace(/\r\n/g, "\n");
-  const block =
-    /(?:^|\n)(?:\*\*משך יחידה משוער:\*\*[^\n]*\n?)(?:\*\*קבצים ביחידה:\*\*[^\n]*\n?)?(?:\*\*רמה נדרשת:\*\*[^\n]*\n?)?/g;
-  t = t.replace(block, "\n");
+  const fields = "משך יחידה משוער|קבצים ביחידה|רמה נדרשת";
+  const field = new RegExp(
+    `(?:\\*\\*)?(?:${fields}):(?:\\*\\*)?[^\\n]*?(?=\\s*(?:\\*\\*)?(?:${fields}):|\\s*(?:#+\\s*)?(?:📘\\s*)?מסמך\\s*1\\.1|\\n|$)`,
+    "g",
+  );
+  t = t.replace(field, "");
+  t = t.replace(/(?:#+\s*)?(?:📘\s*)?מסמך\s*1\.1:?\s*ברוכים הבאים לקורס!?/g, "");
   t = t.replace(/(?:^|\n)#{1,6}\s*Unit\s*1:.*\n?/gim, "\n");
   t = stripFences(t);
   return t.replace(/\n{3,}/g, "\n\n").trim();
@@ -94,9 +105,10 @@ export function parseOpenPremium(pageIntro: string, meva: string[], welcome: str
   const segs = [pageIntro, ...meva, ...welcome].map((p) => stripUnitMeta(p).trim()).filter(Boolean);
   const combined = dedupeParagraphs(segs.join("\n\n"));
   const { before, quote, after } = extractBlockquote(combined);
-  if (!quote) return { intro: combined, highlight: "" };
-  const intro = dedupeParagraphs([before, after].filter(Boolean).join("\n\n").replace(/\n{2,}/g, "\n\n").trim());
-  return { intro, highlight: quote };
+  if (!quote) return { intro: combined, highlight: "", after: "" };
+  // The sentence before the quote announces it ("אני רוצה לומר משהו חשוב:"),
+  // so the quote must stay between the two halves rather than after both.
+  return { intro: dedupeParagraphs(before), highlight: quote, after: dedupeParagraphs(after) };
 }
 
 export function parseWhyPremium(whyBody: string): WhyPremiumData {
@@ -288,6 +300,6 @@ export function parseClosingPremium(closingBody: string): ClosingPremiumData {
     nextItems,
     giftTitle: "מתנת פתיחה",
     giftItems: giftItems.filter((x) => x.length > 0),
-    closing: cm?.[0]?.trim() ?? "בהצלחה! אני איתכם לכל אורך הדרך. 🍀",
+    closing: (cm?.[0]?.trim() ?? "בהצלחה! אני איתכם לכל אורך הדרך.").replace(/\s*🍀\s*$/, ""),
   };
 }

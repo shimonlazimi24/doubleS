@@ -59,43 +59,19 @@ function RoadmapTableTaskRow({ r, isLast }: { r: RoadmapTableRow; isLast: boolea
   );
 }
 
-/** טבלה קומפקטית אחת במקום כרטיס-לכל-שבוע (משוב: "כרטיסיות" מנפחות עמוד בלי מידע). */
-function RoadmapTrackingCards({ payload }: { payload: RoadmapStepPayload["tracking"] }) {
+/**
+ * The source document ends with a blank table for the learner to fill in by
+ * hand ("_/7", "__"). On screen the progress page does that, so one sentence
+ * replaces the empty grid.
+ */
+function RoadmapTrackingNote({ payload }: { payload: RoadmapStepPayload["tracking"] }) {
   if (!payload?.rows?.length) return null;
-  const headers = payload.headers ?? [];
   return (
-    <div className="space-y-3 [direction:rtl] [text-align:start]">
+    <div className="[direction:rtl] [text-align:start]">
       <h3 className={amirantPremiumTypo.sectionTitle}>מעקב אישי</h3>
-      <div className="overflow-x-auto rounded-2xl border border-stone-200/80 bg-white">
-        <table className="w-full border-collapse text-sm [direction:rtl]" aria-label="מעקב אישי">
-          <thead className="bg-stone-50/80">
-            <tr>
-              {headers.map((h, i) => (
-                <th
-                  key={i}
-                  className="border-b border-stone-200/70 px-3 py-2 text-start font-semibold text-slate-700"
-                >
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {payload.rows.map((row, ri) => (
-              <tr key={ri} className="odd:bg-white even:bg-stone-50/40">
-                {row.map((cell, ci) => (
-                  <td
-                    key={ci}
-                    className="border-b border-stone-100 px-3 py-2 text-start align-top leading-6 text-slate-800 last:border-b-0"
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <p className="mt-2 text-lg leading-8 text-slate-800 [text-wrap:pretty]">
+        בסוף כל שבוע בדקו כמה ימי לימוד הושלמו ומה היה הציון במבחן התרגול. ההתקדמות נשמרת בדף «ההתקדמות שלי».
+      </p>
     </div>
   );
 }
@@ -121,7 +97,7 @@ export function RoadmapWorkspaceBody({ mode, payload }: Props) {
             </div>
           ) : null}
         </div>
-        <RoadmapTrackingCards payload={payload.tracking} />
+        <RoadmapTrackingNote payload={payload.tracking} />
       </div>
     );
   }

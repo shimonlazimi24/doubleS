@@ -17,7 +17,7 @@ export default async function AmirantCourseDashboardPage() {
         <Card>
           <CardBody className="p-6">
             <Text as="p" variant="body">
-              Supabase לא מוגדר כרגע.
+              הנתונים לא זמינים כרגע. נסו שוב מאוחר יותר.
             </Text>
           </CardBody>
         </Card>

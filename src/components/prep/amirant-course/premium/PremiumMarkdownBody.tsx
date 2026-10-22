@@ -16,6 +16,7 @@ import {
 import { AmirantVideoEmbed } from "@/components/prep/amirant-course/lesson/AmirantVideoEmbed";
 import { AmirantAudioPlayer } from "@/components/prep/amirant-course/lesson/AmirantAudioPlayer";
 import { splitBodyOnMediaShortcodes } from "@/lib/amirant-course/lesson-content/media-shortcodes";
+import { listInlineOptions, stripOrnaments } from "@/lib/amirant-course/lesson-content/strip-ornaments";
 
 const baseCompact: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
@@ -211,7 +212,9 @@ const lessonProse: Components = {
 type Props = { body: string; className?: string; variant?: "default" | "card" | "lesson" };
 
 export function PremiumMarkdownBody({ body, className, variant = "default" }: Props) {
-  const cleanBody = isolateFillInBlanks(stripTaskListCheckboxes(stripHtmlAnchorNoise(body)));
+  const cleanBody = isolateFillInBlanks(
+    listInlineOptions(stripOrnaments(stripTaskListCheckboxes(stripHtmlAnchorNoise(body)))),
+  );
   if (!cleanBody.trim()) {
     return null;
   }
