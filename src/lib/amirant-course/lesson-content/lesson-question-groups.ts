@@ -104,6 +104,18 @@ export function getLessonQuestionGroup(lessonId: string): LessonQuestionGroup | 
  * 45 seconds each, as in the exam). Not bank questions; see
  * `word-formation/word-formation.server.ts`.
  */
+/**
+ * Writing lessons: the content owner's tasks (one question, 90–120 words,
+ * 12 minutes), graded on the server. Not bank questions; see
+ * `writing/writing-tasks.server.ts`.
+ */
+export const WRITING_LESSONS: Record<string, { taskId: string; timeLimitSec: number }> = Object.fromEntries(
+  Array.from({ length: 14 }, (_, i) => {
+    const id = String(i + 1).padStart(2, "0");
+    return [`lesson.writing.task-${id}`, { taskId: `writing-task-${id}`, timeLimitSec: 12 * 60 }];
+  }),
+);
+
 export const WORD_FORMATION_LESSONS: Record<string, { test: number; timeLimitSec: number }> = Object.fromEntries(
   Array.from({ length: 10 }, (_, i) => [
     `lesson.reform.wf-${String(i + 1).padStart(2, "0")}`,

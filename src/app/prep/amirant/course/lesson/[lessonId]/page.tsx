@@ -21,8 +21,10 @@ import {
   getLessonQuestionGroup,
   SIMULATION_LESSON_RUNTIME,
   WORD_FORMATION_LESSONS,
+  WRITING_LESSONS,
 } from "@/lib/amirant-course/lesson-content/lesson-question-groups";
 import { getWordFormationTest } from "@/lib/amirant-course/word-formation/word-formation.server";
+import { getWritingGuide, getWritingTask } from "@/lib/amirant-course/writing/writing-tasks.server";
 import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
 import { splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
@@ -59,6 +61,8 @@ const LEGACY_LESSON_REDIRECT: Record<string, string> = {
   "lesson.rephrase.12": "lesson.rephrase.set-09",
   // The multiple-choice word-formation practice (7.5) was replaced by the owner's typed tests.
   "lesson.reform.05": "lesson.reform.wf-01",
+  // The example essays (7.9) were replaced by the owner's graded writing tasks.
+  "lesson.reform.09": "lesson.writing.task-01",
   // Likewise the eight sentence-completion quizzes and nine reading quizzes.
   "lesson.sc.04": "lesson.sc.test-01",
   "lesson.sc.05": "lesson.sc.test-02",
@@ -194,6 +198,8 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   const simulationRuntimeId = SIMULATION_LESSON_RUNTIME[params.lessonId] ?? null;
   const wordFormation = WORD_FORMATION_LESSONS[params.lessonId] ?? null;
   const wordFormationItems = wordFormation ? getWordFormationTest(wordFormation.test) : [];
+  const writingLesson = WRITING_LESSONS[params.lessonId] ?? null;
+  const writingTask = writingLesson ? getWritingTask(writingLesson.taskId) ?? null : null;
   const rawLessonBody = md?.ok
     ? stripMasachNumberingForDisplay(markdownBodyForLesson(md.body, content))
     : null;
@@ -240,7 +246,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
       flow = [...sectionItems, { kind: "gate" }];
     } else if (hit.lesson.id === "lesson.intro.roadmap") {
       flow = sectionItems;
-    } else if (questionGroup || simulationRuntimeId || wordFormation) {
+    } else if (questionGroup || simulationRuntimeId || wordFormation || writingTask) {
       // שיעורי תרגול/סימולציה: בלי gates - הסבר ואז שאלות אינטראקטיביות
       // A set whose markdown is only a short introduction (no `##` sections) is
       // already shown in full by the intro step; the single synthetic section
@@ -293,6 +299,11 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         wordFormation: wordFormationItems,
       },
     ];
+  }
+  if (writingTask) {
+    // The page is behind requireAmirantLessonAccess, so whoever reaches it may
+    // submit; the submit route checks the entitlement again on its own.
+    flow = [...flow, { kind: "writing", id: writingTask.id, task: writingTask, guide: getWritingGuide(), canSubmit: true }];
   }
   if (simulationRuntimeId) {
     flow = [

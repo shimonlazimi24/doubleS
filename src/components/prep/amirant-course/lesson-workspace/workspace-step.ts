@@ -1,4 +1,5 @@
 import type { WordFormationPublicItem } from "@/lib/amirant-course/word-formation/types";
+import type { WritingGuidePublic, WritingTaskPublic } from "@/lib/amirant-course/writing/types";
 import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
 import type { ClientPassage } from "@/lib/amirant-course/question-bank/client-types";
 import type { PremiumSectionVariant } from "@/lib/amirant-course/lesson-content/split-markdown-lesson";
@@ -38,6 +39,15 @@ export type UnifiedFlowItem =
       timeLimitSec?: number;
       /** Word formation: typed answers instead of options (questions stays empty). */
       wordFormation?: WordFormationPublicItem[];
+    }
+  | {
+      /** A writing task: editor, timer, server grading. */
+      kind: "writing";
+      id: string;
+      task: WritingTaskPublic;
+      guide: WritingGuidePublic;
+      /** Whether the grader runs for this learner (paid access). */
+      canSubmit: boolean;
     };
 
 /**
@@ -51,6 +61,7 @@ export type WorkspaceStepKind =
   | "warning"
   | "quick_check"
   | "inline_questions"
+  | "writing_task"
   | "summary"
   | "practice_cta";
 
@@ -87,6 +98,8 @@ export type BuiltWorkspaceStep = {
     timeLimitSec?: number;
     wordFormation?: WordFormationPublicItem[];
   };
+  /** The writing task step - payload from UnifiedFlowItem kind "writing". */
+  writing?: { task: WritingTaskPublic; guide: WritingGuidePublic; canSubmit: boolean };
 };
 
 const TRUNC = 40;
@@ -246,6 +259,17 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
           timeLimitSec: item.timeLimitSec,
           wordFormation: item.wordFormation,
         },
+      });
+      return;
+    }
+    if (item.kind === "writing") {
+      out.push({
+        id: `ws-writing-${i}`,
+        kind: "writing_task",
+        label: "המטלה",
+        flowIndex: i,
+        ...nil,
+        writing: { task: item.task, guide: item.guide, canSubmit: item.canSubmit },
       });
       return;
     }
