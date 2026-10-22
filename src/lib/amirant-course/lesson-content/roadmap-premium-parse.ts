@@ -3,6 +3,8 @@
  * for premium UI - same wording as source, no pedagogical changes.
  */
 
+import { stripPictographs } from "./strip-ornaments";
+
 export type RoadmapTableRow = { day: string; task: string; time: string };
 
 export type RoadmapWeekParsed = {
@@ -51,7 +53,7 @@ function formatWeekHoursFromTableRows(rows: RoadmapTableRow[]): string | undefin
   }
   if (total <= 0) return undefined;
   const rounded = Number.isInteger(total) ? String(total) : String(Math.round(total * 10) / 10);
-  return `⏱ ~${rounded} שעות`;
+  return `כ-${rounded} שעות`;
 }
 
 const GLOBAL_TOTAL = /\*\*סה["״]כ:?\*\*[^\n]*/;
@@ -150,7 +152,7 @@ export function parseMilestonesMarkdown(milestones: string): RoadmapMilestoneGro
         .trim();
       if (task && !/^#{1,6}/.test(task)) items.push(task);
     }
-    if (title && items.length) groups.push({ title, items });
+    if (title && items.length) groups.push({ title: stripPictographs(title), items: items.map(stripPictographs) });
   }
   return groups;
 }
@@ -194,7 +196,7 @@ export function buildRoadmapStructureIntroShort(sections: { title: string }[], p
   const lines: string[] = [];
   for (const f of matchFns) {
     const s = sections.find((x) => f(x.title));
-    if (s?.title) lines.push(s.title.replace(/\*\*/g, "").replace(/^#+\s+/, "").trim());
+    if (s?.title) lines.push(stripPictographs(s.title.replace(/\*\*/g, "").replace(/^#+\s+/, "")));
   }
   if (lines.length) return lines.join("\n");
   return shortIntroFromPageIntro(pageIntro, 400);

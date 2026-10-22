@@ -128,6 +128,11 @@ export function WelcomePremiumBody({ payload, stepId, onInteractionContinue, emb
             <PremiumMarkdownBody body={d.intro} variant="lesson" className="[&_p]:!text-lg [&_p]:!leading-8" />
           </IntroTextBlock>
           {d.highlight ? <LearningHighlight text={d.highlight} /> : null}
+          {d.after ? (
+            <IntroTextBlock>
+              <PremiumMarkdownBody body={d.after} variant="lesson" className="[&_p]:!text-lg [&_p]:!leading-8" />
+            </IntroTextBlock>
+          ) : null}
         </div>
       );
     }
