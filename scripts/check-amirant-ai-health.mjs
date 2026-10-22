@@ -54,8 +54,8 @@ const out = {
     hasGeminiKey: gemini,
     openAiKeyConfigured: openai,
     geminiKeyConfigured: gemini,
-    chatModelOpenAi: process.env.OPENAI_CHAT_MODEL?.trim() || "gpt-4o-mini",
-    chatModelGemini: process.env.GEMINI_CHAT_MODEL?.trim() || "gemini-1.5-pro",
+    chatModelOpenAi: process.env.OPENAI_CHAT_MODEL?.trim() || "gpt-4.1-mini",
+    chatModelGemini: process.env.GEMINI_CHAT_MODEL?.trim() || "gemini-2.5-flash",
     embeddingModel: process.env.OPENAI_EMBEDDING_MODEL?.trim() || "text-embedding-3-small",
   },
 };

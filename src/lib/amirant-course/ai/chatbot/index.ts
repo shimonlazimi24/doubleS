@@ -1,2 +1,2 @@
-export { runAmirantChatbot } from "./chatbot-router";
+export { runAmirantChatbot, redactChatRequest } from "./chatbot-router";
 export * from "./schemas";

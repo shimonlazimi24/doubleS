@@ -42,10 +42,12 @@ export const amirantChatbotResponseSchema = lessonChatResponseSchema;
 
 export type AmirantChatbotResponse = z.infer<typeof amirantChatbotResponseSchema>;
 
-// OpenAI structured output requires all fields required or .nullable() - no bare .optional()
+// OpenAI structured output requires all fields required or .nullable() - no bare .optional().
+// `answer` is the FIRST key on purpose: the model emits keys in schema order, so the
+// visible text starts streaming before any metadata is generated.
 export const amirantChatbotAiResponseSchema = z.object({
-  intent: z.enum(amirantChatIntentValues),
   answer: z.string().min(1),
+  intent: z.enum(amirantChatIntentValues),
   questionType: z
     .enum([
       "sentence_completion",

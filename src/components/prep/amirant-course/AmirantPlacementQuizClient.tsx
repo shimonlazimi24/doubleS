@@ -34,7 +34,7 @@ import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "./quiz/QuizOptionContent";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { useAmirantPersistence } from "./AmirantPersistenceProvider";
-import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
+import { dispatchBankQuestionContext } from "@/lib/amirant-course/question-bank/dispatch-question-context";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -138,14 +138,11 @@ export function AmirantPlacementQuizClient({
   const passage = form?.passageId ? loaded?.passagesById.get(form.passageId) : undefined;
   const isReadingSection = currentQ?.topicSlug === "reading_comprehension";
 
+  const currentSelected = answers[currentIndex] ?? null;
   useEffect(() => {
     if (!currentQ) return;
-    dispatchAmirantQuestionContext({
-      questionText: amirantExamQuestionPromptForDisplay(currentQ.prompt),
-      topic: currentQ.topicSlug,
-      questionType: currentQ.topicSlug,
-    });
-  }, [currentQ]);
+    dispatchBankQuestionContext({ question: currentQ, timed: true, selectedOptionId: currentSelected });
+  }, [currentQ, currentSelected]);
 
   useEffect(() => {
     questionEnteredAt.current = Date.now();

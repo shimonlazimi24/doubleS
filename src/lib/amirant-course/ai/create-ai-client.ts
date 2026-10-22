@@ -4,12 +4,15 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { zodResponseFormat } from "openai/helpers/zod";
 import {
   GEMINI_CHAT_MODEL,
+  getAiChatTimeoutMs,
   getGeminiApiKey,
   getOpenAiApiKey,
+  isOpenAiReasoningModel,
   OPENAI_CHAT_MODEL,
   resolveChatProvidersToTry,
   type AIChatProvider,
 } from "./ai-config";
+import { createAnswerStreamExtractor } from "./stream-json-answer";
 import { logAiError, logAiFailover, logAiRequest, logAiResponse } from "./ai-logger";
 import { buildUsagePayload, logAiUsage } from "./ai-usage";
 import { estimateTokenCountFromText } from "./ai-cost";
@@ -51,6 +54,26 @@ function assertWithinTokenBudget(systemPrompt: string, userPrompt: string): void
   }
 }
 
+/**
+ * Chat-completion parameters that work across model families: reasoning models reject
+ * `temperature`/`max_tokens`, every current model accepts `max_completion_tokens`.
+ */
+function openAiGenerationParams(maxOut: number, temperature: number): {
+  max_completion_tokens: number;
+  temperature?: number;
+  reasoning_effort?: "minimal";
+} {
+  if (isOpenAiReasoningModel(OPENAI_CHAT_MODEL)) {
+    return { max_completion_tokens: maxOut, reasoning_effort: "minimal" };
+  }
+  return { max_completion_tokens: maxOut, temperature };
+}
+
+function createOpenAiChatClient(key: string): OpenAI {
+  // One retry only: a second retry on a 40s timeout would leave the learner waiting over two minutes.
+  return new OpenAI({ apiKey: key, timeout: getAiChatTimeoutMs(), maxRetries: 1 });
+}
+
 function logUsageLine(params: {
   operation: string;
   provider: string;
@@ -80,7 +103,7 @@ async function runOpenAiStructured<T>(params: {
     throw new Error("OPENAI_API_KEY is missing");
   }
   assertWithinTokenBudget(params.systemPrompt, params.userPrompt);
-  const openai = new OpenAI({ apiKey: key });
+  const openai = createOpenAiChatClient(key);
   const started = Date.now();
   const promptChars = params.systemPrompt.length + params.userPrompt.length;
   logAiRequest({ operation: params.operation, provider: "openai", promptChars });
@@ -92,8 +115,7 @@ async function runOpenAiStructured<T>(params: {
       { role: "system", content: params.systemPrompt },
       { role: "user", content: params.userPrompt },
     ],
-    temperature: 0.2,
-    max_tokens: maxOut,
+    ...openAiGenerationParams(maxOut, 0.2),
     response_format: zodResponseFormat(params.schema, params.schemaName),
   });
 
@@ -306,7 +328,7 @@ export async function streamOpenAiJsonResponse<T>(params: {
   const key = getOpenAiApiKey();
   if (!key) throw new Error("OPENAI_API_KEY is missing");
   assertWithinTokenBudget(params.systemPrompt, params.userPrompt);
-  const openai = new OpenAI({ apiKey: key });
+  const openai = createOpenAiChatClient(key);
   logAiRequest({
     operation: params.operation,
     provider: "openai",
@@ -321,59 +343,27 @@ export async function streamOpenAiJsonResponse<T>(params: {
       { role: "system", content: params.systemPrompt },
       { role: "user", content: params.userPrompt },
     ],
-    // 0.4 - עברית טבעית יותר מ-0.2 בלי לאבד דיוק; 1100 טוקנים כדי שתשובות בעברית לא ייחתכו
-    temperature: 0.4,
-    max_tokens: Math.min(getMaxOutputTokens(), 1100),
+    // 0.4 - natural Hebrew without losing precision; 1100 tokens so Hebrew answers are not cut off
+    ...openAiGenerationParams(Math.min(getMaxOutputTokens(), 1100), 0.4),
     response_format: zodResponseFormat(params.schema, params.schemaName),
   });
 
-  let accumulated = "";
-  let answerStartIdx = -1;
-  let inAnswer = false;
-  let answerDone = false;
+  let outputChars = 0;
+  const extractor = createAnswerStreamExtractor();
 
   for await (const chunk of stream) {
     const delta = chunk.choices[0]?.delta?.content ?? "";
     if (!delta) continue;
-    accumulated += delta;
-
-    if (answerDone) continue;
-
-    // Locate the start of the "answer" JSON value once
-    if (answerStartIdx === -1) {
-      const marker = '"answer":"';
-      const idx = accumulated.indexOf(marker);
-      if (idx !== -1) {
-        answerStartIdx = idx + marker.length;
-        inAnswer = true;
-      }
-    }
-
-    if (inAnswer) {
-      const tail = accumulated.slice(answerStartIdx);
-      // Find the first unescaped closing quote that ends the answer value
-      let end = -1;
-      for (let i = 0; i < tail.length; i++) {
-        if (tail[i] === '"' && (i === 0 || tail[i - 1] !== '\\')) { end = i; break; }
-      }
-      const visibleLen = end === -1 ? tail.length : end;
-      // Determine how many characters were already emitted before this delta
-      const prevAccLen = accumulated.length - delta.length;
-      const prevEmitted = Math.max(0, prevAccLen - answerStartIdx);
-      const newChars = tail.slice(prevEmitted, visibleLen);
-      if (newChars) {
-        // מקף ארוך מוחלף גם בזרימה החיה - עקבי עם שאר המערכת
-        params.onToken(
-          newChars.replace(/\\n/g, "\n").replace(/\\"/g, '"').replace(/\\\\/g, "\\").replace(/—/g, "-"),
-        );
-      }
-      if (end !== -1) { inAnswer = false; answerDone = true; }
-    }
+    outputChars += delta.length;
+    if (extractor.done) continue;
+    const visible = extractor.push(delta);
+    // Em dash is replaced in the live stream too - consistent with the final answer
+    if (visible) params.onToken(visible.replace(/—/g, "-"));
   }
 
   const final = await stream.finalChatCompletion();
   const durationMs = Date.now() - started;
-  logAiResponse({ operation: params.operation, provider: "openai", model: OPENAI_CHAT_MODEL, durationMs, outputChars: accumulated.length });
+  logAiResponse({ operation: params.operation, provider: "openai", model: OPENAI_CHAT_MODEL, durationMs, outputChars });
 
   const parsed = final.choices[0]?.message?.parsed;
   if (parsed == null) throw new Error("Empty structured streaming output");

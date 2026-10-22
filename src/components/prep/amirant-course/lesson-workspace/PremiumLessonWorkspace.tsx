@@ -169,12 +169,15 @@ export function PremiumLessonWorkspace({
   // Notify the floating chat panel whenever the active step changes so it knows what's on screen
   useEffect(() => {
     if (!current?.card?.body?.trim()) return;
-    const plain = markdownishToPlain(current.card.body, 800).trim();
+    // 2,500 chars: enough for a full reading passage card; the server schema caps there too.
+    const plain = markdownishToPlain(current.card.body, 2500).trim();
     if (!plain) return;
     dispatchAmirantQuestionContext({
+      kind: "lesson_step",
       questionText: plain,
-      topic: current.label,
+      stepLabel: current.label,
       lessonId,
+      timed: false,
     });
   }, [activeIndex, lessonId]); // eslint-disable-line react-hooks/exhaustive-deps
 

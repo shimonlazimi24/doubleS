@@ -1,12 +1,14 @@
 import type { z } from "zod";
 import OpenAI from "openai";
-import { getOpenAiApiKey, OPENAI_EMBEDDING_MODEL } from "./ai-config";
+import { AI_EMBEDDING_TIMEOUT_MS, getOpenAiApiKey, OPENAI_EMBEDDING_MODEL } from "./ai-config";
 import { runStructuredAi } from "./create-ai-client";
 
 export { getOpenAiApiKey } from "./ai-config";
 
 /**
  * OpenAI text embeddings for RAG (`match_course_content_chunks`). Always uses `OPENAI_API_KEY`.
+ * Short timeout: the embedding sits before the first visible token; callers fall back to
+ * the lesson/topic text query when it fails.
  */
 export async function runEmbedding(input: {
   text: string;
@@ -16,7 +18,7 @@ export async function runEmbedding(input: {
   if (!key) {
     throw new Error("OPENAI_API_KEY is missing");
   }
-  const openai = new OpenAI({ apiKey: key });
+  const openai = new OpenAI({ apiKey: key, timeout: AI_EMBEDDING_TIMEOUT_MS, maxRetries: 1 });
   const model = input.model ?? OPENAI_EMBEDDING_MODEL;
   const res = await openai.embeddings.create({
     model,
