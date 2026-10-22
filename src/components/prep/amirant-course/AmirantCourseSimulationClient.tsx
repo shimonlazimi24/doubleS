@@ -428,10 +428,11 @@ export function AmirantCourseSimulationClient({
   const focusedSelected = focusedQid ? run?.answers[focusedQid] ?? null : null;
   useEffect(() => {
     if (phase !== "running" || !focusedQid) return;
-    const q = getPublicBankQuestion(focusedQid);
+    const q = getQuestion(focusedQid);
     if (!q) return;
-    dispatchBankQuestionContext({ question: q, timed: true, selectedOptionId: focusedSelected });
-  }, [phase, focusedQid, focusedSelected]);
+    const passage = q.passageId ? passagesByIdRef.current.get(q.passageId) : undefined;
+    dispatchBankQuestionContext({ question: q, passage, timed: true, selectedOptionId: focusedSelected });
+  }, [phase, focusedQid, focusedSelected, getQuestion]);
 
   useEffect(() => {
     if (!run) return;

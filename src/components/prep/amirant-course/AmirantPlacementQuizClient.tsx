@@ -141,8 +141,9 @@ export function AmirantPlacementQuizClient({
   const currentSelected = answers[currentIndex] ?? null;
   useEffect(() => {
     if (!currentQ) return;
-    dispatchBankQuestionContext({ question: currentQ, timed: true, selectedOptionId: currentSelected });
-  }, [currentQ, currentSelected]);
+    const own = currentQ.passageId ? loaded?.passagesById.get(currentQ.passageId) : undefined;
+    dispatchBankQuestionContext({ question: currentQ, passage: own, timed: true, selectedOptionId: currentSelected });
+  }, [currentQ, currentSelected, loaded]);
 
   useEffect(() => {
     questionEnteredAt.current = Date.now();

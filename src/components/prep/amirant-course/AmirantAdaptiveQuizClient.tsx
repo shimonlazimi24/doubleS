@@ -226,8 +226,9 @@ export function AmirantAdaptiveQuizClient({
   const currentSelected = answers[currentIndex] ?? null;
   useEffect(() => {
     if (!currentQ) return;
-    dispatchBankQuestionContext({ question: currentQ, timed: true, selectedOptionId: currentSelected });
-  }, [currentQ, currentSelected]);
+    const passage = currentQ.passageId ? passagesById.get(currentQ.passageId) : undefined;
+    dispatchBankQuestionContext({ question: currentQ, passage, timed: true, selectedOptionId: currentSelected });
+  }, [currentQ, currentSelected, passagesById]);
 
   const levelAtIndex = useMemo(() => {
     const effectiveStart: DifficultyLevel =
