@@ -1,13 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { AMIRANT_BANK_QUESTIONS, AMIRANT_GENERAL_BANK_QUESTIONS, getBankQuestionsByTag } from "./index";
 import {
+  AMIRANT_BANK_QUESTIONS,
   AMIRANT_BANK_QUESTIONS_PUBLIC,
-  AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC,
-  AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC,
-  getClientPassage,
-} from "./client-bank";
+  AMIRANT_GENERAL_BANK_QUESTIONS,
+  getBankQuestionsByTag,
+} from "./index";
+import { generalPoolForClient, simulationPoolForClient, toClientPassage } from "./for-client.server";
 import { isOwnerIndexTag, isOwnerSetQuestion } from "./reserved-tags";
 import { LESSON_QUESTION_GROUPS } from "../lesson-content/lesson-question-groups";
 import { AMIRNET_SYNC_LESSON_REGISTRY, AMIRNET_CONTENT_MODULES } from "../amirnet-content-sync";
@@ -61,9 +61,10 @@ describe.each(Object.entries(UNITS))("owner %s units", (topic, u) => {
   });
 
   it("are not in the general pool or the simulation's pool", () => {
+    const ownIds = new Set(own.map((q) => q.id));
     expect(AMIRANT_GENERAL_BANK_QUESTIONS.filter((q) => q.tags?.includes(u.tag))).toEqual([]);
-    expect(AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC.filter((q) => q.tags?.includes(u.tag))).toEqual([]);
-    expect(AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC.filter((q) => q.tags?.includes(u.tag))).toEqual([]);
+    expect(generalPoolForClient().filter((q) => ownIds.has(q.id))).toEqual([]);
+    expect(simulationPoolForClient().filter((q) => ownIds.has(q.id))).toEqual([]);
   });
 
   it("keep the owner's index on the server side only", () => {
@@ -74,9 +75,9 @@ describe.each(Object.entries(UNITS))("owner %s units", (topic, u) => {
 describe("owner reading passages", () => {
   it("every question points at a passage the browser can load, and each passage numbers its paragraphs", () => {
     for (const q of AMIRANT_BANK_QUESTIONS.filter((x) => x.tags?.includes("owner_rc"))) {
-      const p = getClientPassage(q.passageId ?? "");
+      const p = toClientPassage(q.passageId ?? "");
       expect(p, `${q.id} → ${q.passageId}`).toBeTruthy();
-      // The client strips the blockquote markers; paragraph numbers must survive.
+      // The blockquote markers are stripped on load; paragraph numbers must survive.
       expect(p!.bodyMarkdown.startsWith("(1) ")).toBe(true);
     }
   });
@@ -97,13 +98,16 @@ describe("the general pools keep what they had", () => {
     expect(n("sentence_completion")).toBeGreaterThanOrEqual(85);
     expect(n("rephrasing")).toBeGreaterThanOrEqual(100);
     expect(n("reading_comprehension")).toBeGreaterThanOrEqual(51);
-    expect(AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC.some((q) => q.tags?.includes("simulation"))).toBe(true);
-    expect(AMIRANT_SIMULATION_BANK_QUESTIONS_PUBLIC.filter((q) => isOwnerSetQuestion(q.tags))).toEqual([]);
+    const simPoolIds = new Set(simulationPoolForClient().map((q) => q.id));
+    const simulationRows = AMIRANT_BANK_QUESTIONS.filter((q) => q.tags?.includes("simulation"));
+    expect(simulationRows.length).toBeGreaterThan(0);
+    expect(simulationRows.every((q) => simPoolIds.has(q.id))).toBe(true);
+    expect(AMIRANT_BANK_QUESTIONS.filter((q) => simPoolIds.has(q.id) && isOwnerSetQuestion(q.tags))).toEqual([]);
   });
 });
 
 describe("the owner's private index stays on the server", () => {
-  it("is absent from the bank that ships to the browser", () => {
+  it("is absent from the public rows a page may serialise", () => {
     expect(AMIRANT_BANK_QUESTIONS_PUBLIC.flatMap((q) => (q.tags ?? []).filter(isOwnerIndexTag))).toEqual([]);
   });
 

@@ -4,6 +4,7 @@ import {
   generateWeakQuizRequestSchema,
   generateWeakTopicsQuiz,
 } from "@/lib/amirant-course/weak-quiz";
+import { AMIRANT_GENERAL_BANK_QUESTIONS } from "@/lib/amirant-course/question-bank";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
 
 async function loadRecentQuestionIds(userId: string): Promise<string[]> {
@@ -73,6 +74,7 @@ export async function POST(req: Request) {
   const result = generateWeakTopicsQuiz({
     input: parsed.data,
     recentQuestionIds,
+    bank: AMIRANT_GENERAL_BANK_QUESTIONS,
   });
 
   const now = new Date().toISOString();

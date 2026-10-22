@@ -1,10 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildSimulationSectionQuestionIds } from "./build-simulation-section";
-import {
-  AMIRANT_BANK_QUESTIONS_PUBLIC,
-  bankQuestionsPublicToPoolItems,
-  getPublicBankQuestion,
-} from "../question-bank/client-bank";
+import { AMIRANT_BANK_QUESTIONS_PUBLIC, getPublicBankQuestion } from "../question-bank";
+import { bankQuestionsPublicToPoolItems } from "../question-bank/client-types";
 import { AMIRANT_SIMULATIONS } from "../manifest";
 import {
   EXAM_SCORED_MINUTES,

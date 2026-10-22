@@ -26,6 +26,7 @@ import { getWordFormationTest } from "@/lib/amirant-course/word-formation/word-f
 import { stripQuestionSections } from "@/lib/amirant-course/lesson-content/strip-question-sections";
 import { splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 import { getBankQuestionsByTag } from "@/lib/amirant-course/question-bank";
+import { clientQuestionSetFor } from "@/lib/amirant-course/question-bank/for-client.server";
 import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@/lib/amirant-course/vocabulary/parse-vocabulary-markdown";
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
 import { attachAnswersToQuestions } from "@/lib/amirant-course/lesson-content/attach-answers-to-questions";
@@ -264,13 +265,17 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
   }
 
   if (questionGroup && hasInteractiveQuestions) {
+    // Only this lesson's questions reach the browser, and only after the access
+    // gate above: the owner's sets are the paid product.
+    const questionSet = clientQuestionSetFor(groupQuestions);
     flow = [
       ...flow,
       {
         kind: "questions",
         id: `inline-questions-${questionGroup.tag}`,
         title: "תרגול אינטראקטיבי",
-        questionIds: groupQuestions.map((q) => q.id),
+        questions: questionSet.questions,
+        passages: questionSet.passages,
         timeLimitSec: questionGroup.timeLimitSec,
       },
     ];
@@ -282,7 +287,8 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
         kind: "questions",
         id: `word-formation-${wordFormation.test}`,
         title: "יצירת מילה",
-        questionIds: [],
+        questions: [],
+        passages: [],
         timeLimitSec: wordFormation.timeLimitSec,
         wordFormation: wordFormationItems,
       },

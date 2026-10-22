@@ -433,7 +433,8 @@ function renderStepBody(p: RenderParams) {
       <LessonStepContent kind="inline_questions" showTopLabel={false} className="!min-h-0">
         <AmirantInlineQuestionsCard
           title={c.questions.title}
-          questionIds={c.questions.questionIds}
+          questions={c.questions.questions}
+          passages={c.questions.passages}
           timeLimitSec={c.questions.timeLimitSec}
           sessionLabel={p.title}
         />

@@ -9,7 +9,7 @@ import {
   recordSessionEnd,
   saveAnalytics,
 } from "@/lib/amirant-course";
-import { getPublicBankQuestion } from "@/lib/amirant-course/question-bank/client-bank";
+import type { ClientQuestionSet } from "@/lib/amirant-course/question-bank/client-types";
 import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/grade-client";
 import type { AmirantCourseAnalytics } from "@/lib/amirant-course/analytics/types";
 import { AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
@@ -63,15 +63,16 @@ function buildTopicImprovementLines(params: {
 
 export function AmirantPracticeSetClient({
   title,
-  questionIds,
+  questionSet,
   variant = "default",
 }: {
   title: string;
-  questionIds: string[];
+  /** The set's questions in display order, with their passages — from the server page or the questions API. */
+  questionSet: ClientQuestionSet;
   variant?: PracticeVariant;
 }) {
   const [answers, setAnswers] = useState<Record<string, string | null>>(() =>
-    Object.fromEntries(questionIds.map((id) => [id, null as string | null])),
+    Object.fromEntries(questionSet.questions.map((q) => [q.id, null as string | null])),
   );
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -85,12 +86,10 @@ export function AmirantPracticeSetClient({
     }
   }, []);
 
-  const rows = useMemo(
-    () =>
-      questionIds
-        .map((id) => ({ id, q: getPublicBankQuestion(id) }))
-        .filter((x): x is { id: string; q: NonNullable<ReturnType<typeof getPublicBankQuestion>> } => Boolean(x.q)),
-    [questionIds],
+  const rows = useMemo(() => questionSet.questions.map((q) => ({ id: q.id, q })), [questionSet]);
+  const passagesById = useMemo(
+    () => new Map(questionSet.passages.map((p) => [p.id, p])),
+    [questionSet],
   );
 
   const submit = useCallback(() => {
@@ -191,7 +190,7 @@ export function AmirantPracticeSetClient({
                   <div className={cn(q.passageId && "grid gap-6 lg:grid-cols-2 lg:items-start")}>
                     {q.passageId ? (
                       <QuizPassagePanel
-                        passageId={q.passageId}
+                        passage={passagesById.get(q.passageId)}
                         className="max-h-[min(70vh,32rem)] lg:sticky lg:top-24"
                       />
                     ) : null}

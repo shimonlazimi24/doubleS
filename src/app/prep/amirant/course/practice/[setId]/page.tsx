@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getManifestPracticeSet } from "@/lib/amirant-course";
 import { Container } from "@/components/ui";
 import { AmirantPracticeSetClient } from "@/components/prep/amirant-course/AmirantPracticeSetClient";
+import { clientQuestionSetForIds } from "@/lib/amirant-course/question-bank/for-client.server";
 import { requireAmirantFullAccess } from "@/lib/prep/amirant-course-access.server";
 
 type Props = { params: { setId: string } };
@@ -19,7 +20,7 @@ export default async function AmirantCoursePracticePage({ params }: Props) {
   if (!hit) notFound();
   return (
     <Container max="measureWide">
-      <AmirantPracticeSetClient title={hit.set.title} questionIds={hit.set.questionIds} />
+      <AmirantPracticeSetClient title={hit.set.title} questionSet={clientQuestionSetForIds(hit.set.questionIds)} />
     </Container>
   );
 }

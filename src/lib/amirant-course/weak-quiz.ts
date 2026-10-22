@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC } from "@/lib/amirant-course/question-bank/client-bank";
 import type { AmirantBankTopicSlug } from "@/lib/amirant-course/types/bank-question";
 import { clampDifficultyLevel } from "@/lib/amirant-course/difficulty-clamp";
 import type { BankQuestionPublic } from "@/lib/amirant-course/question-bank/public-bank";
@@ -131,8 +130,8 @@ function allocateCounts(topics: AmirantBankTopicSlug[]): Record<AmirantBankTopic
   } as Record<AmirantBankTopicSlug, number>;
 }
 
-/** What the picker needs from a question — none of it is the answer. */
-type PickableQuestion = Pick<BankQuestionPublic, "id" | "topicSlug" | "difficulty">;
+/** What the picker needs from a question — none of it is the answer, nor the text. */
+export type PickableQuestion = Pick<BankQuestionPublic, "id" | "topicSlug" | "difficulty">;
 
 function pickByLevel(
   questions: PickableQuestion[],
@@ -185,6 +184,13 @@ function pickByLevel(
 export function generateWeakTopicsQuiz(params: {
   input: GenerateWeakQuizRequest;
   recentQuestionIds: string[];
+  /**
+   * The general bank (no simulation questions, none of the owner's sets), in
+   * bank order. The server route passes the full bank; the browser fallback
+   * passes the id/topic/level pool its page was given. The picker is
+   * deterministic, so both build the same quiz from the same pool.
+   */
+  bank: readonly PickableQuestion[];
 }): GenerateWeakQuizResponse {
   const { input, recentQuestionIds } = params;
   const topics = pickWeakestTopics(input.learner_topic_stats);
@@ -197,10 +203,9 @@ export function generateWeakTopicsQuiz(params: {
   const used = new Set<string>();
   const questionIds: string[] = [];
 
-  // The public bank: same items in the same order as the full bank, minus the
-  // answer keys. This runs in the browser as a fallback, so it must not import
+  // This runs in the browser as a fallback, so this module must not import
   // `question-bank/index`, which would ship every answer to every learner.
-  const availableBank = AMIRANT_GENERAL_BANK_QUESTIONS_PUBLIC;
+  const availableBank = params.bank;
 
   for (const topic of topics) {
     const topicQuestions = availableBank.filter((q) => q.topicSlug === topic);

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { AMIRANT_BANK_QUESTIONS } from "./question-bank";
+import { AMIRANT_BANK_QUESTIONS, AMIRANT_GENERAL_BANK_QUESTIONS } from "./question-bank";
 import { generateWeakTopicsQuiz } from "./weak-quiz";
 
 function idsByTopic(topic: string, count: number): string[] {
@@ -42,6 +42,7 @@ describe("generateWeakTopicsQuiz", () => {
         ],
       },
       recentQuestionIds: [],
+      bank: AMIRANT_GENERAL_BANK_QUESTIONS,
     });
 
     expect(result.questionIds).toHaveLength(16);
@@ -83,6 +84,7 @@ describe("generateWeakTopicsQuiz", () => {
         ],
       },
       recentQuestionIds: recent,
+      bank: AMIRANT_GENERAL_BANK_QUESTIONS,
     });
 
     expect(result.questionIds).toHaveLength(16);
@@ -119,6 +121,7 @@ describe("generateWeakTopicsQuiz", () => {
         ],
       },
       recentQuestionIds: recent,
+      bank: AMIRANT_GENERAL_BANK_QUESTIONS,
     });
 
     expect(result.questionIds).toHaveLength(16);
