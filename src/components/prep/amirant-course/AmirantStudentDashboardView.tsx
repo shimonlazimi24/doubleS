@@ -50,7 +50,7 @@ export function AmirantStudentDashboardView({ data }: { data: StudentDashboardDa
         <p className="text-[15px] text-muted">
           {[
             action.progressLine,
-            hasAttempts ? `${attempts.length} בוחנים` : null,
+            hasAttempts ? (attempts.length === 1 ? "בוחן אחד" : `${attempts.length} בוחנים`) : null,
             avgAccuracy != null ? `דיוק ממוצע ${avgAccuracy}%` : null,
           ]
             .filter(Boolean)

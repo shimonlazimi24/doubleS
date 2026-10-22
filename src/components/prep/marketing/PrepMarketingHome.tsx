@@ -2,56 +2,39 @@ import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
 import { SiteVideoSlot } from "@/components/prep/SiteVideoSlot";
 import { getSiteVideos } from "@/lib/prep/site-settings.server";
 import { CTASection } from "@/components/prep/marketing/CTASection";
+import { CourseSyllabusTable } from "@/components/prep/marketing/CourseSyllabusTable";
 import { ExamStructureTable } from "@/components/prep/marketing/ExamStructureCards";
 import { HeroSection } from "@/components/prep/marketing/HeroSection";
 import { MarketingSection } from "@/components/prep/marketing/MarketingSection";
+import { PlansTable } from "@/components/prep/marketing/PlansTable";
 import { Container } from "@/components/ui";
-import {
-  EXAM_STRUCTURE,
-  HOW_IT_WORKS,
-  WHAT_YOU_GET,
-  WHY_IT_MATTERS,
-} from "@/lib/prep/marketing/content";
+import { EXAM_STRUCTURE, HOW_IT_WORKS, WHY_IT_MATTERS } from "@/lib/prep/marketing/content";
+import { COURSE_FACTS } from "@/lib/prep/marketing/course-facts";
 
 /**
- * דף הבית בשפה עריכתית: לכל סקשן צורה משלו (טבלת מפרט, מסלול ממוספר,
- * רשימות קו-שיער) - בלי גריד כרטיסיות אחיד שחוזר על עצמו ובלי רווחי ענק.
+ * The home page: what the course is, why the exam matters, how the course is
+ * built (the real syllabus), what the exam looks like, what it costs. Facts
+ * from the course itself, tables and lists, one real screenshot.
  */
 export async function PrepMarketingHome() {
   const videos = await getSiteVideos();
   return (
     <>
       <HeroSection />
-      <SiteVideoSlot
-        src={videos.home}
-        title="סרטון היכרות"
-        className="border-t border-line/70 bg-paper py-10 md:py-12"
-      />
+      <SiteVideoSlot src={videos.home} title="סרטון היכרות" className="border-t border-line bg-paper py-10 md:py-12" />
 
-      {/* למה זה חשוב - כותרת בצד, שלוש נקודות כרשימה שטוחה */}
-      <section id="why" className="border-t border-line/70 bg-paper py-10 md:py-14">
+      <section id="why" className="border-t border-line bg-paper py-12 md:py-16">
         <Container max="shell">
           <div className="grid gap-6 lg:grid-cols-[minmax(13rem,17rem)_1fr] lg:gap-12">
             <header className="text-right">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-                לפני התואר
-              </p>
-              <h2 className="text-2xl font-semibold leading-tight tracking-tight text-ink md:text-3xl">
-                {WHY_IT_MATTERS.title}
-              </h2>
-              <p className="mt-2 text-base leading-relaxed text-muted">
-                {WHY_IT_MATTERS.subtitle}
-              </p>
+              <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-[1.75rem]">{WHY_IT_MATTERS.title}</h2>
+              <p className="mt-2 text-base leading-relaxed text-muted">{WHY_IT_MATTERS.subtitle}</p>
             </header>
             <ul className="self-center">
               {WHY_IT_MATTERS.items.map((item) => (
-                <li
-                  key={item.title}
-                  className="border-t border-line/70 py-3.5 first:border-t-0 first:pt-0 last:pb-0"
-                >
+                <li key={item.title} className="border-t border-line/70 py-3.5 first:border-t-0 first:pt-0 last:pb-0">
                   <p className="text-base leading-relaxed text-ink">
-                    <span className="font-semibold">{item.title}.</span>{" "}
-                    <span className="text-muted">{item.body}</span>
+                    <span className="font-semibold">{item.title}.</span> <span className="text-muted">{item.body}</span>
                   </p>
                 </li>
               ))}
@@ -60,62 +43,39 @@ export async function PrepMarketingHome() {
         </Container>
       </section>
 
-      {/* מסלול הלמידה - ארבעה צעדים על קו, לא קופסאות */}
-      <MarketingSection
-        id="how"
-        eyebrow="מסלול הלמידה"
-        title={HOW_IT_WORKS.title}
-        subtitle={HOW_IT_WORKS.subtitle}
-        tone="canvas"
-      >
+      <MarketingSection id="how" title={HOW_IT_WORKS.title} subtitle={HOW_IT_WORKS.subtitle} tone="canvas">
         <ol className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-          {HOW_IT_WORKS.steps.map((step) => (
-            <li key={step.step} className="border-t-2 border-primary/15 pt-3 text-right">
-              <span className="font-mono text-sm font-semibold tabular-nums text-accent">
-                {step.step}
-              </span>
-              <h3 className="mt-1.5 text-base font-semibold text-ink">{step.title}</h3>
+          {HOW_IT_WORKS.steps.map((step, i) => (
+            <li key={step.title} className="border-t border-line pt-3 text-right">
+              <p className="text-sm text-muted">שלב {i + 1}</p>
+              <h3 className="mt-1 text-base font-bold text-ink">{step.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-muted">{step.body}</p>
             </li>
           ))}
         </ol>
       </MarketingSection>
 
-      {/* מבנה המבחן - מפרט עובדתי בשורות, כמו דף מידע רשמי */}
       <MarketingSection
-        id="exam"
-        eyebrow="אמירנט"
-        title={EXAM_STRUCTURE.title}
-        subtitle={EXAM_STRUCTURE.subtitle}
+        id="syllabus"
+        eyebrow={`${COURSE_FACTS.modules} מודולים · ${COURSE_FACTS.lessons} שיעורים · כ־${COURSE_FACTS.hours} שעות`}
+        title="מה יש בקורס"
+        subtitle="התוכנית המלאה, כפי שהיא מופיעה בתוך הקורס. יחידות התרגול מדורגות מקל ועד הקשה ביותר."
         tone="paper"
       >
-        <ExamStructureTable />
+        <div className="max-w-4xl">
+          <CourseSyllabusTable compact />
+        </div>
       </MarketingSection>
 
-      {/* מה מקבלים - רשימת "כלול בקורס" בשתי עמודות, בלי כרטיסים */}
-      <MarketingSection
-        id="includes"
-        eyebrow="בתוך הפלטפורמה"
-        title={WHAT_YOU_GET.title}
-        subtitle={WHAT_YOU_GET.subtitle}
-        tone="canvas"
-      >
-        <ul className="grid max-w-4xl gap-x-10 sm:grid-cols-2">
-          {WHAT_YOU_GET.features.map((f) => (
-            <li key={f.title} className="border-t border-line/70 py-3.5">
-              <p className="text-base leading-relaxed text-ink">
-                <span className="font-semibold">{f.title}.</span>{" "}
-                <span className="text-muted">{f.body}</span>
-              </p>
-            </li>
-          ))}
-        </ul>
+      <MarketingSection id="exam" title={EXAM_STRUCTURE.title} subtitle={EXAM_STRUCTURE.subtitle} tone="canvas">
+        <ExamStructureTable />
       </MarketingSection>
 
       <AIValueSection />
 
-      {/* קטלוג הקורסים הוסר מדף הבית (תמונות סטוק, קורס אחד חי) - נשאר ב-/prep/courses;
-          יוחזר כשיהיו כמה קורסים חיים עם ויז'ואלים אמיתיים */}
+      <MarketingSection id="plans" title="מחירים" subtitle="גישה מלאה לקורס לתקופה שבוחרים. בלי מנוי מתחדש." tone="paper">
+        <PlansTable />
+      </MarketingSection>
 
       <CTASection />
     </>

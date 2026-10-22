@@ -1,6 +1,4 @@
 export { AIValueSection } from "./AIValueSection";
-export { CoursePreviewCard } from "./CoursePreviewCard";
-export { ProductDashboardPreview } from "./ProductDashboardPreview";
 export { TrustIndicators } from "./TrustIndicators";
 export { MarketingNav } from "./MarketingNav";
 export { CTASection } from "./CTASection";
@@ -10,4 +8,3 @@ export { MarketingFooter } from "./MarketingFooter";
 export { MarketingHeader } from "./MarketingHeader";
 export { MarketingSection } from "./MarketingSection";
 export { PrepMarketingHome } from "./PrepMarketingHome";
-export { TrustChips } from "./TrustChips";
