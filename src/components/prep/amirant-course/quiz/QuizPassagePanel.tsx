@@ -15,7 +15,7 @@ export function QuizPassagePanel({ passage, className }: { passage?: ClientPassa
     <div
       dir="ltr"
       className={cn(
-        "max-h-72 overflow-y-auto rounded-xl border border-line/70 bg-surface-low p-4",
+        "max-h-72 overflow-y-auto rounded-md border border-line bg-surface-low p-4",
         className,
       )}
     >

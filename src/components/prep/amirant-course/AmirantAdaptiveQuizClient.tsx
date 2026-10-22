@@ -650,7 +650,7 @@ export function AmirantAdaptiveQuizClient({
             type="button"
             onClick={() => setCurrentIndex(i)}
             className={cn(
-              "rounded-full px-3 py-1.5 text-xs font-semibold transition",
+              "min-w-9 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition",
               currentIndex === i ? "bg-primary text-white" : "bg-paper text-muted ring-1 ring-line",
             )}
           >
