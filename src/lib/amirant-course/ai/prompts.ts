@@ -154,7 +154,7 @@ export function lessonChatSystemPrompt(): string {
     lessonChatExamples(),
     "",
     "OUTPUT",
-    "- JSON per the schema. `answer` is the learner-facing text (markdown allowed: **bold**, bullets).",
+    "- JSON per the schema. `answer` is the learner-facing text (markdown allowed: **bold**, bullets). Use real line breaks between points; never write the two characters backslash-n as text.",
     "- `references`: chunk IDs you actually relied on, from the context only. Empty when you relied on none.",
     "- `safeFallback`: true when you answered without the on-screen block or the chunks backing the substance.",
     "- `questionType`: the type you were helping with, or 'unknown'.",

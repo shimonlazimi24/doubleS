@@ -29,6 +29,15 @@ function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; tex
     .filter((m) => m.text.trim())
     .slice(-8)
     .map((m) => ({ role: m.role, text: m.text.slice(0, 600) }));
+
+/**
+ * The model sometimes writes the two characters "\n" inside its answer instead of a
+ * line break (seen in production: "טיפ: \n- יש לך..."). Those are not JSON escapes,
+ * so the stream decoder rightly leaves them; here they become real breaks.
+ */
+function unescapeModelText(text: string): string {
+  return text.replace(/\\n/g, "\n").replace(/\\t/g, " ");
+}
 }
 
 /**
@@ -151,7 +160,7 @@ export function AmirantCourseChatPanel({
           const chunk = pendingTok;
           pendingTok = "";
           setMessages((m) =>
-            m.map((msg) => (msg.id === assistantId ? { ...msg, text: msg.text + chunk } : msg)),
+            m.map((msg) => (msg.id === assistantId ? { ...msg, text: unescapeModelText(msg.text + chunk) } : msg)),
           );
         };
 
@@ -172,7 +181,7 @@ export function AmirantCourseChatPanel({
               const suffix = data.safeFallback ? "\n\n(מצב זהיר - מידע מוגבל/חסר.)" : "";
               const rec = typeof data.recommendedAction === "string" && data.recommendedAction.trim()
                 ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
-              const finalAnswer = (typeof data.answer === "string" ? data.answer : "") + suffix + rec;
+              const finalAnswer = unescapeModelText(typeof data.answer === "string" ? data.answer : "") + suffix + rec;
               setMessages((m) =>
                 m.map((msg) => msg.id === assistantId ? { ...msg, text: finalAnswer } : msg),
               );
