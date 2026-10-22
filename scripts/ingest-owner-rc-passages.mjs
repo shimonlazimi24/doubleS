@@ -21,7 +21,6 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import {
   LEVEL, OPTION_IDS, LETTER_REF,
   readOwnerIndex, readOwnerUnits, checkOwnerItem, resolvePrimaryMethod,
@@ -167,7 +166,6 @@ function main() {
   const keptP = allPassages.filter((p) => p.sourceTag !== TAG);
   fs.writeFileSync(PASSAGES, `${JSON.stringify([...keptP, ...passages], null, 2)}\n`);
   console.log(`Merged: questions.json ${bank.length} → ${kept.length + items.length}, passages.json ${allPassages.length} → ${keptP.length + passages.length}.`);
-  execFileSync("node", [path.join(root, "scripts/generate-questions-public.mjs")], { stdio: "inherit" });
   console.log("Next: npm run qa:amirant-content && npm run generate:course-manifest");
 }
 

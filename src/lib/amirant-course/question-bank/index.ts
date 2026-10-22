@@ -9,16 +9,10 @@ import { isReservedForItsUnit } from "./reserved-tags";
 import type { VocabQuizMode } from "./vocab-quiz-mode";
 export type { VocabQuizMode } from "./vocab-quiz-mode";
 export { amirantExamQuestionPromptForDisplay } from "./prompt-for-display";
-import {
-  getResolvedAmirantPassages,
-  getAmirantContentMode,
-  getResolvedAmirantQuestionBank,
-} from "../content-source/resolved-content";
+import { getResolvedAmirantPassages, getResolvedAmirantQuestionBank } from "../content-source/resolved-content";
 
 export { getResolvedAmirantPassages };
 export type { AmirantPassage } from "../content-source/resolved-content";
-
-export const AMIRANT_CONTENT_MODE: "production" | "demo" = getAmirantContentMode();
 
 /**
  * הבנק: שאלות אמיתיות מיובאות; שורות demo סינתטיות רק כמילוי לנושאים שחסרים

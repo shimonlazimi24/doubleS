@@ -1,15 +1,19 @@
 import type { AmirantContentSourceInput } from "./schemas";
+import { AMIRANT_QUESTION_SOURCE } from "./question-source";
 import lessonsJson from "../../../../content/amirant-import/source/lessons.json";
-import questionsJson from "../../../../content/amirant-import/source/questions.json";
 import practiceSetsJson from "../../../../content/amirant-import/source/practice-sets.json";
 import simulationsJson from "../../../../content/amirant-import/source/simulations.json";
 import aiRetrievalJson from "../../../../content/amirant-import/source/ai-retrieval.json";
 import syllabusMappingJson from "../../../../content/amirant-import/source/syllabus-mapping.json";
-import passagesJson from "../../../../content/amirant-import/source/passages.json";
 
 /**
- * Production authoring source (to be filled by content team).
- * Imported from real AMIRNET markdown corpus.
+ * The full authoring package, imported from the AMIRNET markdown corpus.
+ *
+ * **Build-time and tests only.** Besides the question bank this pulls in
+ * `lessons.json` (1.4MB) and `ai-retrieval.json` (0.4MB), which no request
+ * ever needs: the lesson bodies come from the markdown registry and the
+ * manifest is generated once by `scripts/generate-course-manifest.mjs`.
+ * Runtime code reads `question-source.ts` through `resolved-content.ts`.
  */
 export const AMIRANT_PRODUCTION_CONTENT_SOURCE: AmirantContentSourceInput = {
   meta: {
@@ -19,7 +23,7 @@ export const AMIRANT_PRODUCTION_CONTENT_SOURCE: AmirantContentSourceInput = {
     version: "v1",
   },
   lessons: lessonsJson as AmirantContentSourceInput["lessons"],
-  questions: questionsJson as AmirantContentSourceInput["questions"],
+  questions: AMIRANT_QUESTION_SOURCE.questions,
   practiceSets: practiceSetsJson as AmirantContentSourceInput["practiceSets"],
   simulationSections:
     simulationsJson as AmirantContentSourceInput["simulationSections"],
@@ -27,5 +31,5 @@ export const AMIRANT_PRODUCTION_CONTENT_SOURCE: AmirantContentSourceInput = {
   syllabusMapping:
     ((syllabusMappingJson as { parts?: unknown[] }).parts ??
       []) as AmirantContentSourceInput["syllabusMapping"],
-  passages: passagesJson as AmirantContentSourceInput["passages"],
+  passages: AMIRANT_QUESTION_SOURCE.passages,
 };

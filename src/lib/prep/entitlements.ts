@@ -9,6 +9,8 @@ export type CourseEntitlement = {
   courseSlug: string;
   accessType: CourseAccessType;
   active: boolean;
+  /** ISO timestamp when access ends; null for open-ended access. */
+  endsAt: string | null;
 };
 
 type EntitlementRow = {
@@ -53,18 +55,34 @@ export const getCourseEntitlement = cache(async function getCourseEntitlement(
     courseSlug: row.course_slug,
     accessType: row.access_type,
     active: isEntitlementActive(row),
+    endsAt: row.ends_at,
   };
 });
+
+export type AmirantAccess = {
+  hasFullAccess: boolean;
+  /** When the paid access ends, for the expiry notice; null when open-ended or without access. */
+  endsAt: string | null;
+};
+
+/** Full-access decision plus the entitlement's end date, from one entitlement read. */
+export async function getAmirantAccess(
+  client: SupabaseClient | null,
+  userId: string | null,
+): Promise<AmirantAccess> {
+  if (getPrepHasFullAccess()) return { hasFullAccess: true, endsAt: null };
+  if (!client || !userId) return { hasFullAccess: false, endsAt: null };
+  const ent = await getCourseEntitlement(client, userId, AMIRANT_PREPARATION_SLUG);
+  if (!ent?.active) return { hasFullAccess: false, endsAt: null };
+  const hasFullAccess = ent.accessType === "paid" || ent.accessType === "admin";
+  return { hasFullAccess, endsAt: hasFullAccess ? ent.endsAt : null };
+}
 
 export async function hasAmirantFullAccess(
   client: SupabaseClient | null,
   userId: string | null,
 ): Promise<boolean> {
-  if (getPrepHasFullAccess()) return true;
-  if (!client || !userId) return false;
-  const ent = await getCourseEntitlement(client, userId, AMIRANT_PREPARATION_SLUG);
-  if (!ent?.active) return false;
-  return ent.accessType === "paid" || ent.accessType === "admin";
+  return (await getAmirantAccess(client, userId)).hasFullAccess;
 }
 
 // ההענקה עצמה קורית ב-callback התשלום דרך grant_course_days (פונקציית SQL

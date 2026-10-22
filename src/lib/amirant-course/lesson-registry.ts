@@ -1,11 +1,15 @@
 import type { LessonContent } from "./types/content-blocks";
 import { AMIRNET_SYNC_LESSON_REGISTRY } from "./amirnet-content-sync";
-import { getResolvedAmirantProductionContent } from "./content-source/resolved-content";
 
 /**
- * Lesson bodies - **MVP: static registry**. Replace with CMS or `courses` / `lessons` tables
- * (JSON column for blocks) while keeping `lessonId` keys aligned with `AMIRANT_PREPARATION_MANIFEST`.
- * `amirnetMarkdownRel` - טעינה מ־`content/amirnet-course/`. blocks יכולים ללווה (למשל callout) או להישאר ריקים.
+ * Lesson bodies - a static registry keyed like `AMIRANT_PREPARATION_MANIFEST`.
+ * `amirnetMarkdownRel` points at a file under `content/amirnet-course/`; blocks
+ * may accompany it (a callout, say) or stay empty. A CMS row overrides an entry
+ * through `cms-override.server.ts`.
+ *
+ * Until 2026-10-22 this also ran the full authoring-package import on load,
+ * only to fall back to this registry every time (the package never passes its
+ * readiness gate). The import now runs at build time only (`manifest-source.ts`).
  */
 function L(
   lessonId: string,
@@ -21,8 +25,8 @@ function L(
   };
 }
 
-/** טקסט שיעור - בלוקי JSON, ו/או קובץ MD מהריפו. */
-const DEMO_LESSON_REGISTRY: Record<string, LessonContent> = {
+/** Lesson text: JSON blocks and/or a markdown file from the repo. */
+export const AMIRANT_LESSON_REGISTRY: Record<string, LessonContent> = {
   /** מסמך 1.1 - masach index 0 */
   "lesson.intro.welcome": L(
     "lesson.intro.welcome",
@@ -54,31 +58,10 @@ const DEMO_LESSON_REGISTRY: Record<string, LessonContent> = {
     [],
     "02_logistics_bureaucracy/unit_2_logistics_and_bureaucracy.md",
   ),
-  /** Legacy IDs - נשמרים ל-alias בדף השיעור */
-  "lesson.intro.doc-1-1": L(
-    "lesson.intro.doc-1-1",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    0,
-  ),
-  "lesson.intro.doc-1-2": L(
-    "lesson.intro.doc-1-2",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    1,
-  ),
-  "lesson.intro.doc-1-3": L(
-    "lesson.intro.doc-1-3",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    2,
-  ),
+  // The legacy `lesson.intro.doc-1-x` ids are redirected by the lesson page
+  // (LEGACY_LESSON_REDIRECT) before the registry is consulted, so they have no entry here.
   ...AMIRNET_SYNC_LESSON_REGISTRY,
 };
-
-const imported = getResolvedAmirantProductionContent();
-export const AMIRANT_LESSON_REGISTRY: Record<string, LessonContent> =
-  imported?.lessonRegistry ?? DEMO_LESSON_REGISTRY;
 
 export function getLessonContent(lessonId: string): LessonContent | undefined {
   return AMIRANT_LESSON_REGISTRY[lessonId];

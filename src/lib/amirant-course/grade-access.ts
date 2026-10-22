@@ -1,9 +1,9 @@
 /**
  * Who may grade what, and who may see the answer.
  *
- * The question bank's ids, stems and options ship to the browser
- * (`questions.public.json`), so the grade route is the only thing standing
- * between any visitor and the answer key. Until 2026-10-16 it revealed the
+ * A question's id, stem and options reach the browser (the server serialises
+ * them per page, see `question-bank/for-client.server.ts`), so the grade route
+ * is the only thing standing between any visitor and the answer key. Until 2026-10-16 it revealed the
  * correct option and the full explanation of any bank question to anyone who
  * asked, the owner's paid sets and the simulations included.
  *

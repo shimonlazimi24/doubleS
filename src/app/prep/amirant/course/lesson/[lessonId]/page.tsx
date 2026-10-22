@@ -31,7 +31,7 @@ import { parseVocabularyMarkdown, vocabularyBodyHasNumberedWordEntries } from "@
 import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
 import { attachAnswersToQuestions } from "@/lib/amirant-course/lesson-content/attach-answers-to-questions";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { requireAmirantLessonAccess } from "@/lib/prep/amirant-lesson-access.server";
+import { requireAmirantLessonAccess } from "@/lib/prep/amirant-course-access.server";
 import { AmirantCourseLessonScopeTracker } from "@/components/prep/amirant-course/AmirantCourseLessonScopeTracker";
 import { IntroPersonalRoadmapClient } from "@/components/prep/amirant-course/lesson-workspace/IntroPersonalRoadmapClient";
 import { AmirantPremiumLessonView, type UnifiedFlowItem } from "@/components/prep/amirant-course/premium/AmirantPremiumLessonView";

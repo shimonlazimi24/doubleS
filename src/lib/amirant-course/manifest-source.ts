@@ -13,10 +13,11 @@
 import { AMIRANT_PREPARATION_COURSE_ID, AMIRANT_PREPARATION_SLUG } from "./constants";
 import type { CourseManifest } from "./types/course-manifest";
 import { AMIRANT_SIMULATIONS } from "./simulations/definitions";
-import { getResolvedAmirantProductionContent } from "./content-source/resolved-content";
+import { getResolvedAmirantProductionContent } from "./content-source/resolved-package";
 import { AMIRNET_CONTENT_MODULES } from "./amirnet-content-sync";
 
-const DEMO_MANIFEST: CourseManifest = {
+/** The hand-authored course structure, used while the imported package fails its readiness gate. */
+const COURSE_MANIFEST: CourseManifest = {
   id: AMIRANT_PREPARATION_COURSE_ID,
   slug: AMIRANT_PREPARATION_SLUG,
   title: "הכנה לאמירנט",
@@ -95,5 +96,5 @@ const DEMO_MANIFEST: CourseManifest = {
 /** The manifest as derived from source. Prefer the generated JSON at runtime. */
 export function buildAmirantManifestFromSource(): CourseManifest {
   const imported = getResolvedAmirantProductionContent();
-  return imported?.courseManifest ?? DEMO_MANIFEST;
+  return imported?.courseManifest ?? COURSE_MANIFEST;
 }

@@ -22,8 +22,8 @@
  *
  * Usage:
  *   node scripts/fix-content-integrity.mjs [--dry-run]
- * Afterwards, regenerate the client bank:
- *   npm run generate:questions-public
+ * Afterwards, regenerate the course manifest:
+ *   npm run generate:course-manifest
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -397,7 +397,7 @@ function main() {
 
   fs.writeFileSync(QUESTIONS_PATH, `${JSON.stringify(questions, null, 2)}\n`);
   fs.writeFileSync(PASSAGES_PATH, `${JSON.stringify(passages, null, 2)}\n`);
-  console.log("\nWrote questions.json and passages.json. Run: npm run generate:questions-public");
+  console.log("\nWrote questions.json and passages.json. Run: npm run generate:course-manifest");
 }
 
 main();

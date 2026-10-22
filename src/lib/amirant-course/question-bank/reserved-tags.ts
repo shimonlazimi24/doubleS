@@ -32,11 +32,9 @@ export function isOwnerSetQuestion(tags: readonly string[] | undefined): boolean
 
 /**
  * Tags that carry the owner's private index (solving method, theme, top-tier
- * marker, review status). The index is headed "for owners, not for learners", and the public
- * bank is shipped to the browser, so these are removed when it is generated.
- * `scripts/generate-questions-public.mjs` keeps its own copy of this rule
- * (a plain .mjs cannot import TypeScript); `public-bank-parity.test.ts` checks
- * the generated file against this one.
+ * marker, review status). The index is headed "for owners, not for learners",
+ * so `toPublicBankQuestion` strips these tags from every row a page serialises
+ * for the browser; `owner-sets.test.ts` checks that none survive.
  */
 export function isOwnerIndexTag(tag: string): boolean {
   return (

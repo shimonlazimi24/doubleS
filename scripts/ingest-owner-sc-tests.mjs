@@ -255,7 +255,6 @@ function main() {
   const replaced = bank.length - kept.length;
   fs.writeFileSync(BANK, `${JSON.stringify([...kept, ...items], null, 2)}\n`);
   console.log(`Merged into questions.json: ${bank.length} → ${kept.length + items.length} (${replaced} earlier owner items replaced).`);
-  execFileSync("node", [path.join(root, "scripts/generate-questions-public.mjs")], { stdio: "inherit" });
   console.log("Next: npm run qa:amirant-content && npm run generate:course-manifest");
 }
 
