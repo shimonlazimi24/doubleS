@@ -340,59 +340,59 @@ export function AmirantCourseChatPanel({
         </div>
       )}
 
+      {/* Question actions only exist while a question is on screen; a content
+          slide gets the three general ones. */}
       <div className="flex flex-wrap items-center gap-1.5">
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() => void sendWithPayload({
-            userMessage: currentQuestion
-              ? `תן לי רמז לשאלה הזאת (בקצרה): "${currentQuestion.questionText.slice(0, 120)}"`
-              : "תן לי רמז לשאלה (בקצרה)",
-            clientAction: "hint",
-            topic: currentQuestion?.topic,
-            stagedHintContext: { questionType: currentQuestion?.questionType },
-          })}
-        >
-          תן לי רמז
-        </button>
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() =>
-            void sendWithPayload({
-              userMessage: "רמז נוסף",
-              clientAction: "next_hint",
-              topic: currentQuestion?.topic,
-              stagedHintContext: hintSession
-                ? { stage: hintSession.stage, questionType: hintSession.questionType ?? currentQuestion?.questionType }
-                : { stage: 2, questionType: currentQuestion?.questionType },
-            })
-          }
-        >
-          רמז נוסף
-        </button>
-        {revealLocked ? (
-          <span className="px-1 text-xs text-muted" title="במבחן מתוזמן הפתרון נפתח אחרי שעונים">
-            הפתרון ייפתח אחרי שתענו
-          </span>
-        ) : (
-          <button
-            type="button"
-            className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-            disabled={loading}
-            onClick={() => void sendWithPayload({
-              userMessage: currentQuestion
-                ? `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`
-                : "גלה את התשובה (עם נימוקים מהחומר).",
-              clientAction: "reveal",
-              topic: currentQuestion?.topic,
-            })}
-          >
-            גלה תשובה
-          </button>
-        )}
+        {currentQuestion ? (
+          <>
+            <button
+              type="button"
+              className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+              disabled={loading}
+              onClick={() => void sendWithPayload({
+                userMessage: `תן לי רמז לשאלה הזאת (בקצרה): "${currentQuestion.questionText.slice(0, 120)}"`,
+                clientAction: "hint",
+                topic: currentQuestion.topic,
+                stagedHintContext: { questionType: currentQuestion.questionType },
+              })}
+            >
+              רמז
+            </button>
+            {hintSession ? (
+              <button
+                type="button"
+                className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+                disabled={loading}
+                onClick={() =>
+                  void sendWithPayload({
+                    userMessage: "רמז נוסף",
+                    clientAction: "next_hint",
+                    topic: currentQuestion.topic,
+                    stagedHintContext: { stage: hintSession.stage, questionType: hintSession.questionType ?? currentQuestion.questionType },
+                  })
+                }
+              >
+                רמז נוסף
+              </button>
+            ) : null}
+            {revealLocked ? (
+              <span className="px-1 text-xs text-muted">הפתרון ייפתח אחרי שתענו</span>
+            ) : (
+              <button
+                type="button"
+                className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+                disabled={loading}
+                onClick={() => void sendWithPayload({
+                  userMessage: `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`,
+                  clientAction: "reveal",
+                  topic: currentQuestion.topic,
+                })}
+              >
+                פתרון
+              </button>
+            )}
+          </>
+        ) : null}
         <button
           type="button"
           className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
