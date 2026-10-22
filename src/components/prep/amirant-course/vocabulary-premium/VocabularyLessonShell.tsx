@@ -58,7 +58,7 @@ export function VocabularyLessonShell({ model, className, lessonId }: Vocabulary
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="חיפוש (אנגלית או עברית)…"
-          className="h-10 w-full max-w-sm rounded-full border border-line/80 bg-white px-4 text-sm text-[#0f2347] placeholder:text-slate-400 focus:border-sky-400/60 focus:outline-none focus:ring-2 focus:ring-sky-500/20 sm:w-72"
+          className="h-10 w-full max-w-sm rounded-md border border-line/80 bg-white px-4 text-sm text-[#0f2347] placeholder:text-slate-400 focus:border-sky-400/60 focus:outline-none focus:ring-2 focus:ring-sky-500/20 sm:w-72"
         />
       </div>
 

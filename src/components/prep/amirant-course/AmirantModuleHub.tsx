@@ -168,7 +168,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
                       <li key={ps.id}>
                         <Link
                           href={`${courseBase}/practice/${ps.id}`}
-                          className="inline-block rounded-full border border-line/80 bg-surface-low px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/5"
+                          className="inline-block rounded border border-line/80 bg-surface-low px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/5"
                         >
                           {ps.title}
                         </Link>
@@ -187,7 +187,7 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
                       <li key={q.id}>
                         <Link
                           href={`${courseBase}/quiz/${q.id}`}
-                          className="inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/15"
+                          className="inline-block rounded border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/15"
                         >
                           {q.title}
                         </Link>

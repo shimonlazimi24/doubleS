@@ -126,7 +126,7 @@ export function RoadmapMilestoneChecklist({ groups }: Props) {
               <span className="truncate text-sm font-semibold sm:text-base">{name}</span>
               <span
                 className={cn(
-                  "rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums",
+                  "rounded px-2.5 py-0.5 text-xs font-semibold tabular-nums",
                   complete
                     ? "bg-emerald-100 text-emerald-800"
                     : isActive

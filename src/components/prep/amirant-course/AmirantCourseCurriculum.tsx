@@ -159,7 +159,7 @@ export function AmirantCourseCurriculum({ modules }: { modules: ManifestModule[]
                     <Link
                       key={ps.id}
                       href={`${COURSE}/practice/${ps.id}`}
-                      className="rounded-full border border-line/80 bg-paper px-3 py-1 text-xs font-medium text-primary hover:bg-primary/5"
+                      className="rounded border border-line/80 bg-paper px-3 py-1 text-xs font-medium text-primary hover:bg-primary/5"
                     >
                       {ps.title}
                     </Link>
@@ -168,7 +168,7 @@ export function AmirantCourseCurriculum({ modules }: { modules: ManifestModule[]
                     <Link
                       key={q.id}
                       href={`${COURSE}/quiz/${q.id}`}
-                      className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary hover:bg-primary/15"
+                      className="rounded border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary hover:bg-primary/15"
                     >
                       {q.title}
                     </Link>
