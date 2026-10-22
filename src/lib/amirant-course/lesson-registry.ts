@@ -54,25 +54,8 @@ const DEMO_LESSON_REGISTRY: Record<string, LessonContent> = {
     [],
     "02_logistics_bureaucracy/unit_2_logistics_and_bureaucracy.md",
   ),
-  /** Legacy IDs - נשמרים ל-alias בדף השיעור */
-  "lesson.intro.doc-1-1": L(
-    "lesson.intro.doc-1-1",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    0,
-  ),
-  "lesson.intro.doc-1-2": L(
-    "lesson.intro.doc-1-2",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    1,
-  ),
-  "lesson.intro.doc-1-3": L(
-    "lesson.intro.doc-1-3",
-    [],
-    "01_welcome_and_intro/unit_1_complete_welcome_and_intro.md",
-    2,
-  ),
+  // The legacy `lesson.intro.doc-1-x` ids are redirected by the lesson page
+  // (LEGACY_LESSON_REDIRECT) before the registry is consulted, so they have no entry here.
   ...AMIRNET_SYNC_LESSON_REGISTRY,
 };
 

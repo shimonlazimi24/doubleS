@@ -12,25 +12,7 @@ function resolvedUnderRoot(absFile: string): boolean {
   return resolved === root || resolved.startsWith(root + path.sep);
 }
 
-/** רשימת כל קבצי ה־.md (נתיב יחסי מתוך שורש התיקייה). */
-export function listAmirnetMarkdownFiles(): string[] {
-  const root = getAmirnetContentRoot();
-  if (!fs.existsSync(root)) return [];
-  const out: string[] = [];
-  const walk = (dir: string, prefix: string) => {
-    for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (ent.name.startsWith(".")) continue;
-      const rel = prefix ? `${prefix}/${ent.name}` : ent.name;
-      const full = path.join(dir, ent.name);
-      if (ent.isDirectory()) walk(full, rel);
-      else if (ent.name.endsWith(".md")) out.push(rel.replace(/\\/g, "/"));
-    }
-  };
-  walk(root, "");
-  return out.sort((a, b) => a.localeCompare(b, "he"));
-}
-
-export function safeReadAmirnetMarkdown(
+function safeReadAmirnetMarkdown(
   slug: string[],
 ): { ok: true; body: string; rel: string } | { ok: false; reason: "not_found" | "bad_path" } {
   const joined = slug.join("/");
