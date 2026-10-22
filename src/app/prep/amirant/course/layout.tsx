@@ -3,6 +3,7 @@ import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
 import { AmirantCourseAssistantGate } from "@/components/prep/amirant-course/AmirantCourseAssistantGate";
 import { AmirantCourseProgressProvider } from "@/components/prep/amirant-course/AmirantCourseProgressProvider";
+import { AmirantExpiryBanner } from "@/components/prep/amirant-course/AmirantExpiryBanner";
 import { AmirantPersistenceProvider } from "@/components/prep/amirant-course/AmirantPersistenceProvider";
 import { CourseNav } from "@/components/prep/amirant-course/CourseNav";
 
@@ -26,6 +27,7 @@ export default function AmirantCourseLayout({ children }: { children: React.Reac
         <AmirantCourseProgressProvider>
           <div className="min-h-screen bg-paper">
             <CourseNav />
+            <AmirantExpiryBanner />
             {/* Full-bleed children (e.g. lesson workspace). Narrow pages wrap themselves in <Container max="measureWide">. */}
             <div className="w-full max-w-none pb-24">{children}</div>
             <AmirantCourseAssistantGate />

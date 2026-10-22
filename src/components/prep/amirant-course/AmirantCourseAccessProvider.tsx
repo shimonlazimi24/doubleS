@@ -3,11 +3,13 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { getBrowserUserId } from "@/lib/prep/supabase/browser-identity";
-import { hasAmirantFullAccess } from "@/lib/prep/entitlements";
+import { getAmirantAccess } from "@/lib/prep/entitlements";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 
 type AccessApi = {
   hasFullAccess: boolean;
+  /** ISO timestamp when paid access ends; null when open-ended, unknown or without access. */
+  endsAt: string | null;
   loading: boolean;
   userId: string | null;
   /** Re-check entitlement (e.g. after returning from checkout). */
@@ -16,6 +18,7 @@ type AccessApi = {
 
 const Ctx = createContext<AccessApi>({
   hasFullAccess: false,
+  endsAt: null,
   loading: true,
   userId: null,
   refreshAccess: async () => undefined,
@@ -24,6 +27,7 @@ const Ctx = createContext<AccessApi>({
 export function AmirantCourseAccessProvider({ children }: { children: ReactNode }) {
   const envFull = getPrepHasFullAccess();
   const [hasFullAccess, setHasFullAccess] = useState(envFull);
+  const [endsAt, setEndsAt] = useState<string | null>(null);
   const [loading, setLoading] = useState(!envFull);
   const [userId, setUserId] = useState<string | null>(null);
 
@@ -36,6 +40,7 @@ export function AmirantCourseAccessProvider({ children }: { children: ReactNode 
     const client = createPrepSupabaseBrowserClient();
     if (!client) {
       setHasFullAccess(false);
+      setEndsAt(null);
       setUserId(null);
       setLoading(false);
       return;
@@ -44,12 +49,14 @@ export function AmirantCourseAccessProvider({ children }: { children: ReactNode 
     if (!uid) {
       setUserId(null);
       setHasFullAccess(false);
+      setEndsAt(null);
       setLoading(false);
       return;
     }
-    const access = await hasAmirantFullAccess(client, uid);
+    const access = await getAmirantAccess(client, uid);
     setUserId(uid);
-    setHasFullAccess(access);
+    setHasFullAccess(access.hasFullAccess);
+    setEndsAt(access.endsAt);
     setLoading(false);
   }, [envFull]);
 
@@ -84,8 +91,8 @@ export function AmirantCourseAccessProvider({ children }: { children: ReactNode 
   }, [envFull, refreshAccess]);
 
   const value = useMemo(
-    () => ({ hasFullAccess, loading, userId, refreshAccess }),
-    [hasFullAccess, loading, userId, refreshAccess],
+    () => ({ hasFullAccess, endsAt, loading, userId, refreshAccess }),
+    [hasFullAccess, endsAt, loading, userId, refreshAccess],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
