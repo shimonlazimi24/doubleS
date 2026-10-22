@@ -19,6 +19,7 @@ import { gradeBatchAnswers, type GradeBatchItem } from "@/lib/amirant-course/gra
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { cn } from "@/lib/design-system/cn";
 import { QuizOptionContent } from "../quiz/QuizOptionContent";
+import { QuestionExplanation } from "../quiz/QuestionExplanation";
 import { displayOptions, newAttemptSeed } from "@/lib/amirant-course/question-bank/display-order";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
@@ -224,25 +225,7 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
                   })}
                 </ul>
                 {checked && graded?.explanation ? (
-                  // "הערת מורה" - קו עיפרון-אדום בשוליים, כמו סימון על דף בחינה
-                  <div
-                    className={cn(
-                      "mt-4 rounded-e-xl border-s-[3px] p-4 ps-4",
-                      graded?.isCorrect
-                        ? "border-emerald-600/70 bg-emerald-600/[0.05]"
-                        : "border-amber-500/80 bg-amber-500/[0.06]",
-                    )}
-                  >
-                    <p
-                      className={cn(
-                        "mb-1.5 text-[11px] font-bold tracking-wide",
-                        graded?.isCorrect ? "text-emerald-700" : "text-amber-700",
-                      )}
-                    >
-                      הסבר
-                    </p>
-                    <PremiumMarkdownBody body={graded.explanation} variant="card" />
-                  </div>
+                  <QuestionExplanation markdown={graded.explanation} isCorrect={Boolean(graded.isCorrect)} />
                 ) : null}
               </div>
             </li>

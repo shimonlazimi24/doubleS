@@ -23,7 +23,6 @@ import { AmirantLessonTrackIsland } from "../AmirantLessonTrackIsland";
 import { LessonStepContent } from "./LessonStepContent";
 import { LessonNavigationFooter } from "../lesson/ui/LessonNavigationFooter";
 import { LessonSyllabusRail } from "../lesson/LessonSyllabusRail";
-import { LessonAiHelpBlock } from "./LessonAiHelpBlock";
 import { CURATED_ROADMAP_LESSON_ID, isCuratedRoadmapClosingStep } from "./curated-unit1-roadmap-steps";
 import { RoadmapWorkspaceBody } from "./roadmap-workspace-body";
 import {
@@ -515,8 +514,7 @@ function renderStepBody(p: RenderParams) {
               flowIndex={c.flowIndex}
             />
           </div>
-          <div className="mt-6 space-y-5 border-t border-stone-100 pt-5">
-            <LessonAiHelpBlock />
+          <div className="mt-6 border-t border-stone-100 pt-5">
             <LessonFooterCTA
               courseHomeHref={p.courseHomeHref}
               practiceHref={p.practiceHref}
@@ -606,8 +604,7 @@ function renderStepBody(p: RenderParams) {
               <LessonKeyTakeawayClosing surface="embed" />
             </div>
           )}
-          <div className="mt-6 space-y-5 border-t border-stone-100 pt-5">
-            <LessonAiHelpBlock />
+          <div className="mt-6 border-t border-stone-100 pt-5">
             <LessonFooterCTA
               courseHomeHref={p.courseHomeHref}
               practiceHref={p.practiceHref}
@@ -622,32 +619,17 @@ function renderStepBody(p: RenderParams) {
       </LessonStepContent>
     );
   }
-  // רק צעד הסיכום האוטומטי (בלי כרטיס תוכן); סקשן אמיתי בסגנון key-takeaway
-  // חייב ליפול לענף c.card - אחרת גוף הסקשן (למשל טבלת הערכה עצמית) נעלם.
-  if (c.kind === "summary" && !c.card) {
-    return (
-      <LessonStepContent kind="summary" className="!min-h-0">
-        <LessonKeyTakeawayClosing surface="embed" />
-      </LessonStepContent>
-    );
-  }
-  if (c.kind === "ai_help") {
-    return (
-      <LessonStepContent kind="ai_help">
-        <LessonAiHelpBlock />
-      </LessonStepContent>
-    );
-  }
   if (c.kind === "practice_cta") {
     return (
-      <LessonStepContent kind="practice_cta" className="!min-h-0">
+      <LessonStepContent kind="practice_cta" showTopLabel={false} className="!min-h-0">
         <LessonFooterCTA
           courseHomeHref={p.courseHomeHref}
           practiceHref={p.practiceHref}
           quizHref={p.quizHref}
           nextLessonHref={p.nextLessonHref}
           nextLessonTitle={p.nextLessonTitle}
-          surface="embed"
+          surface="closing"
+          emphasizeNext
         />
       </LessonStepContent>
     );

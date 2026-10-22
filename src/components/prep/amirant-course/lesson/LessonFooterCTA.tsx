@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { splitLessonTitle } from "@/lib/amirant-course/lesson-content/module-lesson-groups";
 
 type Props = {
   courseHomeHref: string;
@@ -9,12 +9,27 @@ type Props = {
   nextLessonHref: string | null;
   nextLessonTitle: string | null;
   className?: string;
-  /** Use on lesson workspace main column (no second card). */
-  surface?: "card" | "embed";
-  /** מציג את "המשך לשיעור הבא" ככפתור ראשי מלא, ראשון בסדר. */
+  /**
+   * "embed": under a summary that already has its own heading.
+   * "closing": the lesson's last step; carries its own heading.
+   * "card": standalone on a page.
+   */
+  surface?: "card" | "embed" | "closing";
+  /** The next lesson is the primary action; practice and quiz become secondary links. */
   emphasizeNext?: boolean;
 };
 
+const primaryBtn =
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-control bg-primary px-5 text-sm font-semibold text-white transition hover:opacity-90";
+const secondaryBtn =
+  "inline-flex min-h-11 items-center justify-center rounded-control border border-line bg-paper px-5 text-sm font-medium text-ink transition hover:border-primary/40 hover:text-primary";
+const quietLink = "text-sm font-medium text-primary underline-offset-2 hover:underline";
+
+/**
+ * The lesson's closing actions. One primary button leads to the next unit,
+ * everything else is a secondary button or a plain link: no second heading,
+ * no card inside the step.
+ */
 export function LessonFooterCTA({
   courseHomeHref,
   practiceHref,
@@ -25,61 +40,49 @@ export function LessonFooterCTA({
   surface = "card",
   emphasizeNext = false,
 }: Props) {
-  const nextLessonLink =
-    nextLessonHref && nextLessonTitle ? (
-      <Link
-        href={nextLessonHref}
-        className={cn(
-          "inline-flex min-h-[2.75rem] flex-col items-stretch justify-center gap-0.5 rounded-xl px-5 py-2.5 text-start text-sm transition",
-          emphasizeNext
-            ? "bg-ink/90 text-white shadow-sm hover:bg-ink"
-            : "border border-gray-200 bg-white text-gray-900 hover:border-primary/35 hover:text-primary",
-        )}
-      >
-        <span className="font-medium">המשך לשיעור הבא</span>
-        <span className={cn("text-xs font-normal", emphasizeNext ? "text-white/70" : "text-muted")}>
-          {nextLessonTitle}
-        </span>
-      </Link>
-    ) : null;
+  const next = nextLessonTitle ? splitLessonTitle(nextLessonTitle) : null;
+  const nextLabel = next ? (next.level ? `${next.name} · ${next.level}` : next.name) : null;
+  const hasNext = Boolean(nextLessonHref && nextLabel);
+  const nextIsPrimary = hasNext && (emphasizeNext || (!practiceHref && !quizHref));
+
   const shell =
-    surface === "embed"
-      ? "border-0 border-t border-gray-200/80 bg-transparent p-0 pt-6 shadow-none [direction:rtl] [text-align:start] sm:pt-8"
-      : "rounded-2xl border border-gray-200 bg-white p-6 shadow-sm [direction:rtl] [text-align:start] sm:p-8";
+    surface === "card"
+      ? "rounded-surface border border-line bg-paper p-6 sm:p-8"
+      : surface === "closing"
+        ? "py-2"
+        : "";
+
   return (
-    <div className={cn(shell, className)} lang="he">
-      <h2 className="text-xl font-semibold text-gray-900 sm:text-2xl">השלבים הבאים</h2>
-      <p className="mt-2 text-base text-gray-600 sm:mt-3 sm:text-lg">תרגול או שיעור הבא - אפשר לבחור לפי הזמן הזמין.</p>
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-        {emphasizeNext ? nextLessonLink : null}
+    <div className={cn(shell, "[direction:rtl] [text-align:start]", className)} lang="he">
+      {surface === "closing" ? (
+        <>
+          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">סיימתם את השיעור</h2>
+          <p className="mt-2 text-base text-muted">
+            {hasNext ? "ממשיכים ליחידה הבאה, או חוזרים לתוכנית הקורס." : "חזרו לתוכנית הקורס לבחירת היחידה הבאה."}
+          </p>
+        </>
+      ) : null}
+      <div className={cn("flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center", surface === "closing" ? "mt-6" : "")}>
+        {hasNext ? (
+          <Link href={nextLessonHref!} className={nextIsPrimary ? primaryBtn : secondaryBtn}>
+            <span>הבא: {nextLabel}</span>
+            <span aria-hidden>←</span>
+          </Link>
+        ) : null}
         {practiceHref ? (
-          <Link
-            href={practiceHref}
-            className="inline-flex min-h-[2.75rem] items-center justify-center rounded-xl border border-primary/30 bg-white px-5 text-sm font-medium text-primary shadow-sm transition hover:border-primary/45 hover:bg-primary/[0.04]"
-          >
-            עבור לתרגול
+          <Link href={practiceHref} className={nextIsPrimary ? secondaryBtn : primaryBtn}>
+            תרגול
           </Link>
         ) : null}
         {quizHref ? (
-          <Link
-            href={quizHref}
-            className="inline-flex min-h-[2.75rem] items-center justify-center rounded-xl border border-gray-200 bg-ink/90 px-5 text-sm font-medium text-white shadow-sm transition hover:bg-ink"
-          >
+          <Link href={quizHref} className={secondaryBtn}>
             מבחן קצר
           </Link>
         ) : null}
-        {!emphasizeNext ? nextLessonLink : null}
-        {!practiceHref && !quizHref && !nextLessonHref ? (
-          <Text as="p" variant="bodySm" className="text-muted">
-            אין עדיין קישורי תרגול או בוחן מצורפים לשיעור זה.
-          </Text>
-        ) : null}
-      </div>
-      <p className="mt-4 text-xs text-muted">
-        <Link className="font-medium text-primary underline-offset-2 hover:underline" href={courseHomeHref}>
-          חזרה לתוכנית הקורס
+        <Link href={courseHomeHref} className={cn(quietLink, "sm:ms-2")}>
+          תוכנית הקורס
         </Link>
-      </p>
+      </div>
     </div>
   );
 }

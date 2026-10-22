@@ -21,8 +21,7 @@ const KIND_LABEL: Record<WorkspaceStepKind, string> = {
   quick_check: "בדיקה קצרה",
   inline_questions: "תרגול אינטראקטיבי",
   summary: "סיכום והמשך",
-  practice_cta: "המשך",
-  ai_help: "עזרה",
+  practice_cta: "סיום",
 };
 
 /** Step body; outer padding is provided by the workspace main column. */

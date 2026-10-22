@@ -51,8 +51,7 @@ export type WorkspaceStepKind =
   | "quick_check"
   | "inline_questions"
   | "summary"
-  | "practice_cta"
-  | "ai_help";
+  | "practice_cta";
 
 export type BuiltWorkspaceStep = {
   id: string;
@@ -183,9 +182,7 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
     return [
       { id: "ws-intro", kind: "intro", label: "מבוא", flowIndex: null, ...nil },
       { id: "ws-vocab", kind: "explanation", label: "אוצר מילים", flowIndex: null, ...nil },
-      { id: "ws-summary", kind: "summary", label: "סיכום והמשך", flowIndex: null, ...nil },
-      { id: "ws-ai", kind: "ai_help", label: "עזרה (AI)", flowIndex: null, ...nil },
-      { id: "ws-cta", kind: "practice_cta", label: "השלבים הבאים", flowIndex: null, ...nil },
+      { id: "ws-cta", kind: "practice_cta", label: "סיום השיעור", flowIndex: null, ...nil },
     ];
   }
 
@@ -241,11 +238,8 @@ export function buildLessonSteps(flow: UnifiedFlowItem[], opts: BuildLessonSteps
     });
   });
 
-  out.push(
-    { id: "ws-summary", kind: "summary", label: "סיכום והמשך", flowIndex: null, partIndex: null, partTotal: null },
-    { id: "ws-ai", kind: "ai_help", label: "עזרה (AI)", flowIndex: null, partIndex: null, partTotal: null },
-    { id: "ws-cta", kind: "practice_cta", label: "השלבים הבאים", flowIndex: null, partIndex: null, partTotal: null },
-  );
+  // No synthetic summary: a real summary section arrives as its own card step.
+  out.push({ id: "ws-cta", kind: "practice_cta", label: "סיום השיעור", flowIndex: null, partIndex: null, partTotal: null });
 
   return mergeFlowContentStepsForGranularity(out);
 }

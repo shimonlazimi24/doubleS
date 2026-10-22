@@ -24,7 +24,7 @@ function isEnoughContent(body: string | undefined): boolean {
 }
 
 function isSyntheticChrome(s: BuiltWorkspaceStep): boolean {
-  return s.id === "ws-summary" || s.id === "ws-ai" || s.id === "ws-cta";
+  return s.id === "ws-summary" || s.id === "ws-cta";
 }
 
 /** כרטיס שנפתח בכותרת markdown הוא תחילת תת-נושא - לא ממזגים אותו אל צעד קודם. */
