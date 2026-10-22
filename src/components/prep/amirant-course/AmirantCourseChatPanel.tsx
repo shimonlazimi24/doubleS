@@ -29,6 +29,7 @@ function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; tex
     .filter((m) => m.text.trim())
     .slice(-8)
     .map((m) => ({ role: m.role, text: m.text.slice(0, 600) }));
+}
 
 /**
  * The model sometimes writes the two characters "\n" inside its answer instead of a
@@ -37,7 +38,6 @@ function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; tex
  */
 function unescapeModelText(text: string): string {
   return text.replace(/\\n/g, "\n").replace(/\\t/g, " ");
-}
 }
 
 /**
