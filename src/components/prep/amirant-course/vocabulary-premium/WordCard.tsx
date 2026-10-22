@@ -31,7 +31,7 @@ export function WordCard({ word, className }: WordCardProps) {
           <div className="flex flex-wrap items-end gap-2">
             <h3 className="text-3xl font-semibold tracking-tight text-[#0f2347] sm:text-4xl">{word.word}</h3>
             {posDisplay ? (
-              <span className="mb-1 rounded-full border border-slate-200/90 bg-stone-50 px-2.5 py-0.5 text-sm font-medium text-slate-600">
+              <span className="mb-1 rounded border border-slate-200/90 bg-stone-50 px-2.5 py-0.5 text-sm font-medium text-slate-600">
                 {posDisplay}
               </span>
             ) : null}

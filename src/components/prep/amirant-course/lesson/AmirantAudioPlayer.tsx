@@ -106,7 +106,7 @@ export function AmirantAudioPlayer({ audioRef, title, className }: Props) {
         role="status"
       >
         <p className="text-sm font-medium text-ink" id={labelId}>
-          🎧 {displayTitle}
+          {displayTitle}
         </p>
         <p className="mt-1 text-sm leading-relaxed text-muted">
           השמע לא נטען. בינתיים השתמשו בתמליל למטה —{" "}
@@ -131,7 +131,7 @@ export function AmirantAudioPlayer({ audioRef, title, className }: Props) {
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <p className="text-sm font-semibold text-ink" id={labelId}>
-            🎧 {displayTitle}
+            {displayTitle}
           </p>
           <p className="mt-0.5 text-xs text-muted">
             {practiceMode

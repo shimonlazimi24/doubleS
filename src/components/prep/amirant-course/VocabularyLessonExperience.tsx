@@ -286,7 +286,7 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
     <div className="mt-2 space-y-4 [direction:rtl]">
       <div className="space-y-2">
         {/* בורר מצב קומפקטי - בלי כרטיס עוטף (DESIGN_GUIDELINES: אין קופסה בלי תפקיד) */}
-        <div className="inline-flex items-center rounded-full bg-stone-100/80 p-1" role="group" aria-label="אופן התרגול">
+        <div className="inline-flex items-center rounded-md bg-stone-100/80 p-1" role="group" aria-label="אופן התרגול">
           {(
             [
               { id: "read" as const, label: "למידה" },
@@ -301,7 +301,7 @@ export function VocabularyLessonExperience({ data, lessonId, title, estimatedMin
               onClick={() => setTab(t.id)}
               aria-pressed={tab === t.id}
               className={cn(
-                "min-h-9 rounded-full px-4 text-sm font-semibold transition",
+                "min-h-9 rounded px-4 text-sm font-semibold transition",
                 tab === t.id ? "bg-[#0f2347] text-white shadow-sm" : "text-slate-600 hover:text-[#0f2347]",
               )}
             >

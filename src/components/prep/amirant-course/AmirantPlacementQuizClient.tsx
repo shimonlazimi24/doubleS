@@ -350,29 +350,29 @@ export function AmirantPlacementQuizClient({
               מבחן קצר שממפה את רמת האנגלית הנוכחית שלך וקובע נקודת פתיחה מותאמת אישית לקורס.
               בסיום מקבלים טווח רמה משוער על סולם 50–150, משוקלל לפי רמת הקושי של השאלות, ופילוח לפי נושא. זו הערכה ללימוד — לא ציון רשמי.
             </Text>
-            <div className="rounded-2xl border border-line/70 bg-surface-low p-5">
+            <div className="rounded-md border border-line bg-surface-low p-5">
               <Text as="p" variant="labelAccent" className="text-primary">
                 מבנה המבחן
               </Text>
               <ul className="mt-3 space-y-2 text-sm text-ink">
                 <li className="flex items-center gap-2">
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">8</span>
+                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary/10 text-xs font-bold text-primary">8</span>
                   שאלות השלמת משפטים
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">4</span>
+                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary/10 text-xs font-bold text-primary">4</span>
                   שאלות ניסוח מחדש
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">3</span>
+                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded bg-primary/10 text-xs font-bold text-primary">3</span>
                   שאלות הבנת הנקרא - על קטע קריאה אחד
                 </li>
               </ul>
             </div>
             <ul className="space-y-1.5 text-sm text-muted">
-              <li>⏱️ משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות - הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
-              <li>🔁 אפשר לנווט בין שאלות ולשנות תשובות עד סיום המבחן.</li>
-              <li>🎯 אין ציון עובר - המטרה היא למפות את נקודת הפתיחה שלך.</li>
+              <li>משך המבחן: {Math.round((manifestQuiz.timeLimitSec ?? 1200) / 60)} דקות - הטיימר מתחיל רק אחרי הלחיצה על הכפתור.</li>
+              <li>אפשר לנווט בין שאלות ולשנות תשובות עד סיום המבחן.</li>
+              <li>אין ציון עובר - המטרה היא למפות את נקודת הפתיחה שלך.</li>
             </ul>
             <button
               type="button"
@@ -503,7 +503,7 @@ export function AmirantPlacementQuizClient({
             type="button"
             onClick={() => setCurrentIndex(i)}
             className={cn(
-              "rounded-full px-3 py-1.5 text-xs font-semibold transition",
+              "min-w-9 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition",
               currentIndex === i ? "bg-primary text-white" : "bg-paper text-muted ring-1 ring-line",
             )}
           >

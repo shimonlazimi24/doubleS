@@ -59,7 +59,6 @@ export default async function QuestionsPage() {
 
       {questions.length === 0 ? (
         <div className="text-center py-20 text-muted">
-          <div className="text-4xl mb-4">❓</div>
           <p>אין שאלות עדיין</p>
           <Link href="/prep/admin/questions/new" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
             צור שאלה ראשונה
@@ -92,7 +91,7 @@ export default async function QuestionsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${q.published ? "bg-green-500/20 text-green-400" : "bg-surface-low text-muted"}`}>
+                    <span className={`text-xs px-2 py-0.5 rounded font-medium ${q.published ? "bg-green-500/20 text-green-400" : "bg-surface-low text-muted"}`}>
                       {q.published ? "פורסם" : "טיוטה"}
                     </span>
                   </td>

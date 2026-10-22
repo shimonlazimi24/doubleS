@@ -147,7 +147,7 @@ export function PrepPricingPage() {
               }`}
             >
               {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-score px-3 py-1 text-[10px] font-bold text-primary">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded bg-score px-3 py-1 text-[10px] font-bold text-primary">
                   {plan.badge}
                 </span>
               )}

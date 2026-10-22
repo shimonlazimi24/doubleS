@@ -255,7 +255,7 @@ export function PremiumLessonWorkspace({
           <button
             type="button"
             onClick={() => setPassageOpen(true)}
-            className="fixed bottom-20 start-3 z-30 inline-flex min-h-10 items-center rounded-full border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-md backdrop-blur-sm transition hover:border-[#0f2347]/25 lg:hidden sm:start-5"
+            className="fixed bottom-20 start-3 z-30 inline-flex min-h-10 items-center rounded-md border border-stone-200/90 bg-white/95 px-4 text-sm font-semibold text-[#0f2347] shadow-md backdrop-blur-sm transition hover:border-[#0f2347]/25 lg:hidden sm:start-5"
             aria-haspopup="dialog"
             aria-expanded={passageOpen}
           >

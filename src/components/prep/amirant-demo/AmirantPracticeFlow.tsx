@@ -533,7 +533,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                           · {lesson.kind === "video" ? "וידאו" : lesson.kind === "text" ? "טקסט" : "מעורב"}
                         </span>
                         {lesson.id === AMIRANT_DEMO_QUIZ.lessonId && (
-                          <span className="mr-2 rounded-full bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary">
+                          <span className="mr-2 rounded bg-primary/15 px-2 py-0.5 text-xs font-semibold text-primary">
                             מבחן מערכת
                           </span>
                         )}
@@ -740,7 +740,7 @@ export function AmirantPracticeFlow({ embedded = false, shortQuizOnly = false }:
                 type="button"
                 onClick={() => setFullExam((p) => (p ? { ...p, focusIndex: i } : p))}
                 className={cn(
-                  "rounded-full px-3 py-1.5 text-xs font-semibold transition",
+                  "min-w-9 rounded px-2.5 py-1.5 text-xs font-semibold tabular-nums transition",
                   fullExam.focusIndex === i ? "bg-primary text-white" : "bg-paper text-muted ring-1 ring-line",
                 )}
               >

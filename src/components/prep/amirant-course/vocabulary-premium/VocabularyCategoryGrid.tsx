@@ -21,7 +21,7 @@ export function VocabularyCategoryGrid({ categories, selectedId, onSelect, class
 
   const pill = (selected: boolean) =>
     cn(
-      "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 text-sm transition",
+      "inline-flex min-h-9 items-center gap-1.5 rounded border px-3.5 text-sm transition",
       selected
         ? "border-[#0f2347] bg-[#0f2347] font-semibold text-white"
         : "border-line/80 bg-white text-slate-700 hover:border-primary/40 hover:text-primary",

@@ -142,7 +142,7 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
               onClick={() => setTimerRunning(true)}
               className="rounded-xl border border-primary/40 bg-paper px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary/5"
             >
-              ⏱️ התחל טיימר ({Math.round(timeLimitSec / 60)} דק׳)
+              התחל טיימר ({Math.round(timeLimitSec / 60)} דק׳)
             </button>
           )
         ) : null}
