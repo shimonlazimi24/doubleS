@@ -2,9 +2,9 @@ import { ButtonLink, Container } from "@/components/ui";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { COURSE_FACTS } from "@/lib/prep/marketing/course-facts";
+import { COURSE_PATH_STEPS } from "@/lib/prep/marketing/course-path";
 import { EXAM_STRUCTURE } from "@/lib/prep/marketing/content";
-import { HeroVideoBackground } from "@/components/prep/marketing/HeroVideoBackground";
-import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
+import { MarketingHero } from "@/components/prep/marketing/HeroSection";
 import { MarketingSection } from "@/components/prep/marketing/MarketingSection";
 import { ScoreBandsTable } from "@/components/prep/marketing/ScoreBandsTable";
 import { CoursePathSteps } from "@/components/prep/marketing/CoursePathSteps";
@@ -13,176 +13,118 @@ import { ExamStructureTable } from "@/components/prep/marketing/ExamStructureCar
 import { PlansTable } from "@/components/prep/marketing/PlansTable";
 import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
 import { FaqList } from "@/components/prep/marketing/FaqList";
-import { SectionPanel } from "@/components/prep/marketing/SectionPanel";
+import { Reveal } from "@/components/prep/marketing/motion/Reveal";
 import { AMIRANT_FAQ, AMIRANT_REFORM_SECTION, AMIRANT_WHO_FOR_SECTION } from "@/lib/prep/marketing/amirant-seo-content";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
 
-const PATH = [
-  {
-    title: "מבחן רמה",
-    body: "15 שאלות בסגנון המבחן: 8 השלמת משפטים, 4 ניסוח מחדש, 3 הבנת הנקרא. בסוף: הערכת רמה ונקודת התחלה בקורס.",
-    image: { src: "/prep/shots/placement.jpg", alt: "מבחן הרמה: שאלה 1 מתוך 15 עם ארבע אפשרויות וטיימר" },
-  },
-  {
-    title: "השיטה ואז תרגול לפי רמה",
-    body: "לכל חלק במבחן מדריך שיטה, המלכודות הנפוצות, ויחידות תרגול מדורגות מקל ועד הקשה ביותר, עם הסבר מלא לכל שאלה.",
-    image: { src: "/prep/shots/lesson.jpg", alt: "שיעור במדריך השיטות: שיטה 1, משפט לדוגמה וטבלת רמזים" },
-  },
-  {
-    title: "סימולציות מלאות",
-    body: `${COURSE_FACTS.simulations} מבחנים מלאים בתנאי זמן, ואחרי כל אחד דוח: מה נכון, מה לא, ומה לתרגל.`,
-    image: { src: "/prep/shots/course.jpg", alt: "תוכנית הקורס עם רשימת המודולים וההתקדמות בכל אחד" },
-  },
-] as const;
+function ProseSection({ s, tone }: { s: typeof AMIRANT_WHO_FOR_SECTION; tone: "paper" | "low" }) {
+  return (
+    <MarketingSection id={s.id} eyebrow={s.eyebrowHe} title={s.headingHe} tone={tone}>
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
+        <Reveal from="start" className="max-w-[38rem]">
+          {s.paragraphsHe.map((p) => (
+            <p key={p.slice(0, 40)} className="mb-5 text-[17px] leading-relaxed text-muted last:mb-0">
+              {p}
+            </p>
+          ))}
+        </Reveal>
+        {s.bulletsHe?.length ? (
+          <Reveal from="end" delay={120}>
+            <ul className="space-y-3">
+              {s.bulletsHe.map((b) => (
+                <li key={b} className="flex gap-3 text-[16px] leading-relaxed text-ink">
+                  <span aria-hidden className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        ) : null}
+      </div>
+    </MarketingSection>
+  );
+}
 
 /**
  * The Amirant course page for visitors: the real course under a navy shade,
  * what the exam is worth, what the course contains, what it costs.
  */
 export function PrepAmirantHub() {
-  const trust = [
-    { value: String(COURSE_FACTS.lessons), label: "שיעורים" },
-    { value: String(COURSE_FACTS.practiceUnits), label: "יחידות תרגול לפי רמה" },
-    { value: String(COURSE_FACTS.simulations), label: "סימולציות מלאות" },
-    { value: String(COURSE_FACTS.questions), label: "שאלות עם הסבר" },
-  ];
   return (
     <div dir="rtl" className="bg-paper">
-      <section className="relative flex min-h-[calc(100svh-6.5rem)] items-center text-white lg:min-h-[calc(100svh-4rem)]">
-        <HeroVideoBackground src="/prep/hero-bg.mp4" poster="/prep/hero-poster.jpg" />
-        <Container className="relative py-20 md:py-28">
-          <div className="max-w-[40rem] text-right">
-            <p className="mb-4 text-sm font-semibold text-white/80">קורס הכנה לאמירנט</p>
-            <h1 className="text-[2.4rem] font-extrabold leading-[1.1] tracking-tight md:text-[3.4rem]">
-              להגיע לפטור, או קרוב אליו, בלי קורסי השלמה מיותרים
-            </h1>
-            <p className="mt-5 max-w-[34rem] text-lg leading-relaxed text-white/85 md:text-xl">
-              שיעורי שיטה, יחידות תרגול מדורגות לכל חלק במבחן, סימולציות מלאות בזמן אמת, ועוזר שמסביר כל שאלה. הציון הרשמי נקבע
-              במבחן של מאל״ו; הקורס מכין אליו.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <ButtonLink
-                href={`${COURSE}/quiz/quiz-entry-diagnostic`}
-                variant="primary"
-                className="min-h-12 !rounded !bg-white px-7 text-[15px] font-bold !text-primary hover:!bg-white/90"
-              >
-                מבחן רמה חינם
-              </ButtonLink>
-              <ButtonLink
-                href={AMIRANT_CONTINUE_PATH}
-                variant="secondary"
-                className="min-h-12 !rounded !border-white/50 !bg-transparent px-7 text-[15px] !text-white hover:!bg-white/10"
-              >
-                למודול המבוא
-              </ButtonLink>
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-white/75">בלי כרטיס אשראי. 15 שאלות, הערכת רמה משוערת, לא ציון רשמי.</p>
-          </div>
-        </Container>
-      </section>
-      <section className="border-b border-line bg-paper">
-        <Container className="py-6 md:py-8">
-          <TrustIndicators items={trust} />
+      <MarketingHero
+        copy={{
+          eyebrow: "קורס הכנה לאמירנט",
+          headline: "להגיע לפטור, או קרוב אליו, בלי קורסי השלמה מיותרים",
+          subheadline:
+            "שיעורי שיטה, יחידות תרגול מדורגות לכל חלק במבחן, סימולציות מלאות בזמן אמת, האזנה, כתיבה, ועוזר שמסביר כל שאלה. הציון הרשמי נקבע במבחן של מאל״ו; הקורס מכין אליו.",
+          primary: { href: `${COURSE}/quiz/quiz-entry-diagnostic`, label: "מבחן רמה חינם" },
+          secondary: { href: AMIRANT_CONTINUE_PATH, label: "למודול המבוא" },
+          note: "בלי כרטיס אשראי. 15 שאלות, הערכת רמה משוערת, לא ציון רשמי.",
+        }}
+      />
+
+      <section id="scores" className="scroll-mt-20 bg-paper py-20 md:py-28">
+        <Container max="shell">
+          <ScoreBandsTable />
         </Container>
       </section>
 
-      <MarketingSection id="scores" title="כמה כל ציון שווה" subtitle="רמות המיון הרשמיות. כל מדרגה למעלה היא פחות קורסי אנגלית בתואר." tone="low">
-        <ScoreBandsTable />
+      <MarketingSection id="path" title="איך הקורס בנוי" subtitle="שלושה שלבים, באותו סדר שבו המבחן בודק. כל תמונה היא המסך האמיתי של הקורס." tone="low">
+        <CoursePathSteps steps={COURSE_PATH_STEPS} />
       </MarketingSection>
 
-      <MarketingSection id="path" title="איך הקורס בנוי" subtitle="שלושה שלבים, באותו סדר שבו המבחן בודק. כל תמונה היא המסך האמיתי." tone="paper">
-        <CoursePathSteps steps={PATH} />
-      </MarketingSection>
-
-      <MarketingSection id="syllabus" title="תוכנית הקורס" subtitle="כל מודול, מה יש בו וכמה זמן הוא לוקח. זו התוכנית שרואים בתוך הקורס." tone="low">
+      <MarketingSection
+        id="syllabus"
+        title="תוכנית הקורס"
+        subtitle={`${COURSE_FACTS.modules} מודולים, ${COURSE_FACTS.lessons} שיעורים, כ־${COURSE_FACTS.hours} שעות. זו התוכנית שרואים בתוך הקורס.`}
+        tone="paper"
+      >
         <CourseSyllabusTable />
       </MarketingSection>
 
-      <MarketingSection id="exam" title={EXAM_STRUCTURE.title} subtitle={EXAM_STRUCTURE.subtitle} tone="paper">
+      <MarketingSection id="exam" title={EXAM_STRUCTURE.title} subtitle={EXAM_STRUCTURE.subtitle} tone="navy">
         <ExamStructureTable />
       </MarketingSection>
 
       <AIValueSection />
 
-      <MarketingSection id={AMIRANT_WHO_FOR_SECTION.id} title={AMIRANT_WHO_FOR_SECTION.headingHe} tone="paper">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="max-w-[38rem]">
-            {AMIRANT_WHO_FOR_SECTION.paragraphsHe.map((p) => (
-              <p key={p.slice(0, 40)} className="mb-4 text-[17px] leading-relaxed text-muted last:mb-0">
-                {p}
-              </p>
-            ))}
-          </div>
-          {AMIRANT_WHO_FOR_SECTION.bulletsHe?.length ? (
-            <SectionPanel className="p-6">
-              <ul className="divide-y divide-line/70">
-                {AMIRANT_WHO_FOR_SECTION.bulletsHe.map((b) => (
-                  <li key={b} className="py-3 text-[15px] leading-relaxed text-ink first:pt-0 last:pb-0">
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </SectionPanel>
-          ) : null}
-        </div>
-      </MarketingSection>
+      <ProseSection s={AMIRANT_WHO_FOR_SECTION} tone="low" />
+      <ProseSection s={AMIRANT_REFORM_SECTION} tone="paper" />
 
-      <MarketingSection id={AMIRANT_REFORM_SECTION.id} eyebrow={AMIRANT_REFORM_SECTION.eyebrowHe} title={AMIRANT_REFORM_SECTION.headingHe} tone="low">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <div className="max-w-[38rem]">
-            {AMIRANT_REFORM_SECTION.paragraphsHe.map((p) => (
-              <p key={p.slice(0, 40)} className="mb-4 text-[17px] leading-relaxed text-muted last:mb-0">
-                {p}
-              </p>
-            ))}
-          </div>
-          {AMIRANT_REFORM_SECTION.bulletsHe?.length ? (
-            <SectionPanel className="p-6">
-              <ul className="divide-y divide-line/70">
-                {AMIRANT_REFORM_SECTION.bulletsHe.map((b) => (
-                  <li key={b} className="py-3 text-[15px] leading-relaxed text-ink first:pt-0 last:pb-0">
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </SectionPanel>
-          ) : null}
-        </div>
-      </MarketingSection>
-
-      <MarketingSection id="plans" title="מחירים" subtitle="גישה מלאה לקורס לתקופה שבוחרים. בלי מנוי מתחדש." tone="paper">
+      <MarketingSection id="plans" title="מחירים" subtitle="גישה מלאה לכל הקורס לתקופה שבוחרים. בלי מנוי מתחדש. מודול המבוא ומבחן הרמה חינם." tone="low">
         <PlansTable />
       </MarketingSection>
 
-      <MarketingSection id="faq" title="שאלות נפוצות" tone="low">
+      <MarketingSection id="faq" title="שאלות נפוצות" tone="paper">
         <FaqList items={AMIRANT_FAQ} />
       </MarketingSection>
 
-      <section id="demo" className="scroll-mt-20 bg-primary py-16 text-white md:py-24">
+      <section id="demo" className="scroll-mt-20 bg-primary py-24 text-white md:py-32">
         <Container max="shell">
-          <div className="max-w-2xl text-right">
-            <h2 className="text-[1.9rem] font-extrabold leading-[1.15] tracking-tight md:text-[2.4rem]">מתחילים במבחן רמה</h2>
-            <p className="mt-3 text-lg leading-relaxed text-white/80">
-              15 שאלות, כעשר דקות. בסוף: הערכת רמה משוערת, הנושאים החלשים, ומאיפה להתחיל בקורס. מודול המבוא פתוח גם הוא בלי תשלום.
+          <Reveal className="mx-auto max-w-[46rem] text-center">
+            <h2 className="text-[2.2rem] font-black leading-[1.12] tracking-tight md:text-[2.9rem]">מתחילים במבחן רמה. 15 שאלות, עשר דקות, בלי תשלום.</h2>
+            <p className="mx-auto mt-4 max-w-[38rem] text-lg leading-relaxed text-white/80 md:text-xl">
+              בסוף: הערכת רמה משוערת, הנושאים החלשים, ומאיפה להתחיל בקורס. מודול המבוא פתוח גם הוא בלי תשלום.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <ButtonLink
                 href={`${COURSE}/quiz/quiz-entry-diagnostic`}
                 variant="primary"
-                className="min-h-12 !rounded !bg-white px-7 text-[15px] font-bold !text-primary hover:!bg-white/90"
+                className="min-h-[3.25rem] !rounded !bg-white px-7 text-[16px] font-extrabold !text-primary hover:!bg-white/90"
               >
                 התחלת מבחן הרמה
               </ButtonLink>
               <ButtonLink
                 href={`${PREP_BASE}/pricing`}
                 variant="secondary"
-                className="min-h-12 !rounded !border-white/50 !bg-transparent px-7 text-[15px] !text-white hover:!bg-white/10"
+                className="min-h-[3.25rem] !rounded !border-white/55 !bg-transparent px-7 text-[16px] !text-white hover:!bg-white/10"
               >
                 לרכישת גישה
               </ButtonLink>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
     </div>

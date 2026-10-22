@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ButtonLink, Container, Heading, Text } from "@/components/ui";
 import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
+import { courseTrustItems } from "@/components/prep/marketing/HeroSection";
 import { AMIRANT_PREPARATION_MANIFEST, countManifestLessons } from "@/lib/amirant-course";
-import { MARKETING_HERO } from "@/lib/prep/marketing/content";
 import { SUPPORT_EMAIL } from "@/lib/prep/marketing-pages";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
@@ -90,7 +90,7 @@ export default function PrepAboutPage() {
             למוסדות בישראל. במקום ערימת חומרים בנינו קורס אחד מובנה: שיעורים בסדר ברור,
             תרגול אדפטיבי, סימולציות מלאות ועוזר AI בעברית. ממוקד, מדיד ובלי רעש.
           </Text>
-          <TrustIndicators items={MARKETING_HERO.trust} className="mt-10" />
+          <TrustIndicators items={courseTrustItems()} className="mt-10" />
         </Container>
       </header>
 

@@ -40,3 +40,21 @@
     }
   }
 }
+
+/* Marketing motion: content starts hidden and enters once it scrolls into
+   view (see components/prep/marketing/motion/Reveal). Reduced motion above
+   collapses the transitions, and Reveal also sets is-visible immediately. */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-up { transform: translateY(28px); }
+.reveal-start { transform: translateX(32px); }
+.reveal-end { transform: translateX(-32px); }
+.reveal-none { transform: none; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.scale-grow { transform-origin: left center; transform: scaleX(0.001); transition: transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms); }
+.is-visible .scale-grow { transform: scaleX(1); }

@@ -1,20 +1,5 @@
-import { MarketingSection } from "@/components/prep/marketing/MarketingSection";
-import { SectionPanel } from "./SectionPanel";
-
-const ROWS = [
-  {
-    title: "הסבר על השאלה שעל המסך",
-    body: "העוזר רואה את השאלה והאפשרויות שהלומד עובד עליהן עכשיו, ומסביר למה התשובה נכונה ולמה המסיחים לא, בעברית, עם המילים באנגלית.",
-  },
-  {
-    title: "תשובות מתוך חומר הקורס",
-    body: "ההסברים נשענים על המדריכים והשיעורים של הקורס, לא על ידע כללי. כשמשהו לא נמצא בקורס, העוזר אומר זאת.",
-  },
-  {
-    title: "לא מגלה תשובות למבחנים מתוזמנים",
-    body: "במבחני התרגול ובסימולציות העוזר מסביר רק אחרי שעניתם, כדי שהציון ישקף את הידע שלכם.",
-  },
-] as const;
+import { Container } from "@/components/ui";
+import { Reveal } from "./motion/Reveal";
 
 /** A real exchange from the course: the learner's question and the assistant's answer. */
 const SAMPLE = [
@@ -30,36 +15,39 @@ const SAMPLE = [
   },
 ] as const;
 
+/** The assistant shown as the conversation it is; the messages arrive one after another. */
 export function AIValueSection() {
   return (
-    <MarketingSection id="ai-coach" eyebrow="למנויים" title="עוזר בתוך השיעור" subtitle="שאלה על המשפט, על המילה או על השיטה, בלי לצאת מהשיעור." tone="low">
-      <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
-        <SectionPanel className="p-5 md:p-6">
-          <p className="mb-4 border-b border-line/70 pb-3 text-sm font-semibold text-muted">עוזר הקורס · מבחן תרגול 1, שאלה 2</p>
-          <ol className="space-y-3">
+    <section id="ai-coach" className="scroll-mt-20 bg-paper py-20 md:py-28">
+      <Container max="shell">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <Reveal from="start" className="text-right">
+            <p className="mb-2 text-sm font-semibold text-primary">למנויים</p>
+            <h2 className="text-[2.1rem] font-extrabold leading-[1.12] tracking-tight text-ink md:text-[2.6rem]">עוזר בתוך השיעור</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted md:text-xl">
+              רואה את השאלה שעל המסך ועונה מתוך חומר הקורס, בעברית, עם המילים באנגלית. במבחנים מתוזמנים מסביר רק אחרי שעניתם, כדי
+              שהציון ישקף את הידע שלכם.
+            </p>
+          </Reveal>
+          <ol className="flex flex-col gap-3.5" aria-label="דוגמה לשיחה עם העוזר">
             {SAMPLE.map((m, i) => (
-              <li
+              <Reveal
+                as="li"
                 key={i}
+                from={m.role === "user" ? "start" : "end"}
+                delay={i * 260}
                 className={
                   m.role === "user"
-                    ? "ms-10 rounded bg-primary/10 px-4 py-2.5 text-[15px] leading-relaxed text-ink"
-                    : "me-10 rounded border border-line/70 bg-paper px-4 py-2.5 text-[15px] leading-relaxed text-ink"
+                    ? "max-w-[80%] self-start rounded-md bg-surface-low px-4 py-3 text-[16px] leading-relaxed text-ink"
+                    : "max-w-[88%] self-end rounded-md border border-line bg-paper px-4 py-3 text-[16px] leading-relaxed text-ink"
                 }
               >
                 {m.text}
-              </li>
+              </Reveal>
             ))}
           </ol>
-        </SectionPanel>
-        <ul className="divide-y divide-line/70">
-          {ROWS.map((r) => (
-            <li key={r.title} className="py-5 first:pt-0">
-              <p className="text-lg font-bold text-ink">{r.title}</p>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-muted">{r.body}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </MarketingSection>
+        </div>
+      </Container>
+    </section>
   );
 }

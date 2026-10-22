@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
+import { Reveal } from "./motion/Reveal";
 
 type Props = {
   id?: string;
@@ -22,18 +23,18 @@ const tones = {
 /**
  * A section of the marketing pages: generous vertical room, a heading with a
  * short lead on a readable measure, then the content. Tone alternation does
- * the separating; no hairline between sections.
+ * the separating; nothing is boxed. The header reveals on scroll.
  */
 export function MarketingSection({ id, eyebrow, title, subtitle, children, className, tone = "paper" }: Props) {
   const navy = tone === "navy";
   return (
-    <section id={id} className={cn("scroll-mt-20 py-16 md:py-24", tones[tone], className)}>
+    <section id={id} className={cn("scroll-mt-20 py-20 md:py-28", tones[tone], className)}>
       <Container max="shell">
-        <header className="mb-10 max-w-[38rem] text-right md:mb-12">
+        <Reveal as="div" className="mb-12 max-w-[40rem] text-right md:mb-16">
           {eyebrow ? <p className={cn("mb-2 text-sm font-semibold", navy ? "text-white/70" : "text-primary")}>{eyebrow}</p> : null}
-          <h2 className="text-[1.9rem] font-extrabold leading-[1.15] tracking-tight md:text-[2.4rem]">{title}</h2>
-          {subtitle ? <p className={cn("mt-3 text-lg leading-relaxed", navy ? "text-white/80" : "text-muted")}>{subtitle}</p> : null}
-        </header>
+          <h2 className="text-[2.1rem] font-extrabold leading-[1.12] tracking-tight md:text-[2.6rem]">{title}</h2>
+          {subtitle ? <p className={cn("mt-4 text-lg leading-relaxed md:text-xl", navy ? "text-white/80" : "text-muted")}>{subtitle}</p> : null}
+        </Reveal>
         {children}
       </Container>
     </section>
