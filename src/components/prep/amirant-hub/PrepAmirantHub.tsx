@@ -11,6 +11,8 @@ import { CourseSyllabusTable } from "@/components/prep/marketing/CourseSyllabusT
 import { ExamStructureTable } from "@/components/prep/marketing/ExamStructureCards";
 import { PlansTable } from "@/components/prep/marketing/PlansTable";
 import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
+import { FaqList } from "@/components/prep/marketing/FaqList";
+import { AMIRANT_FAQ, AMIRANT_REFORM_SECTION, AMIRANT_WHO_FOR_SECTION } from "@/lib/prep/marketing/amirant-seo-content";
 
 const COURSE = `${PREP_BASE}/amirant/course`;
 
@@ -96,8 +98,33 @@ export function PrepAmirantHub() {
 
       <AIValueSection />
 
+      {[AMIRANT_WHO_FOR_SECTION, AMIRANT_REFORM_SECTION].map((s, i) => (
+        <MarketingSection key={s.id} id={s.id} eyebrow={s.eyebrowHe} title={s.headingHe} tone={i % 2 === 0 ? "paper" : "canvas"}>
+          <div className="max-w-3xl">
+            {s.paragraphsHe.map((p) => (
+              <p key={p.slice(0, 40)} className="mb-3 text-[15px] leading-relaxed text-muted last:mb-0">
+                {p}
+              </p>
+            ))}
+            {s.bulletsHe?.length ? (
+              <ul className="mt-4 border-t border-line">
+                {s.bulletsHe.map((b) => (
+                  <li key={b} className="border-b border-line/70 py-2.5 text-[15px] text-ink">
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        </MarketingSection>
+      ))}
+
       <MarketingSection id="plans" title="מחירים" subtitle="גישה מלאה לקורס לתקופה שבוחרים. בלי מנוי מתחדש." tone="paper">
         <PlansTable />
+      </MarketingSection>
+
+      <MarketingSection id="faq" title="שאלות נפוצות" tone="canvas">
+        <FaqList items={AMIRANT_FAQ} />
       </MarketingSection>
 
       <section id="demo" className="scroll-mt-20 border-t border-line bg-canvas py-12 md:py-16">
