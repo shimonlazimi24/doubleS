@@ -250,5 +250,185 @@
     "bytes": 589073,
     "model": "gpt-4o-mini-tts",
     "speed": 1.2
+  },
+  "LL-L3-0005": {
+    "seconds": 28.75,
+    "bytes": 204034,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0014": {
+    "seconds": 31.45,
+    "bytes": 220026,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0019": {
+    "seconds": 34.8,
+    "bytes": 231820,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0011": {
+    "seconds": 52.5,
+    "bytes": 350674,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0015": {
+    "seconds": 61.35,
+    "bytes": 401540,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0020": {
+    "seconds": 55.6,
+    "bytes": 369161,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0012": {
+    "seconds": 85.9,
+    "bytes": 543562,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0016": {
+    "seconds": 70.8,
+    "bytes": 463203,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0021": {
+    "seconds": 83.15,
+    "bytes": 538299,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0006": {
+    "seconds": 27.4,
+    "bytes": 197079,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0017": {
+    "seconds": 27.1,
+    "bytes": 195557,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0023": {
+    "seconds": 35.05,
+    "bytes": 241688,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0015": {
+    "seconds": 61.65,
+    "bytes": 400329,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0020": {
+    "seconds": 58.15,
+    "bytes": 383537,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0017": {
+    "seconds": 78.05,
+    "bytes": 505319,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0022": {
+    "seconds": 81.6,
+    "bytes": 517318,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0013": {
+    "seconds": 32.85,
+    "bytes": 226853,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0018": {
+    "seconds": 34.55,
+    "bytes": 238477,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0007": {
+    "seconds": 53.6,
+    "bytes": 358792,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0016": {
+    "seconds": 55.5,
+    "bytes": 364650,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0024": {
+    "seconds": 61.35,
+    "bytes": 405028,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0018": {
+    "seconds": 77.35,
+    "bytes": 501953,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0026": {
+    "seconds": 83.45,
+    "bytes": 533467,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0014": {
+    "seconds": 29.1,
+    "bytes": 207317,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0022": {
+    "seconds": 34.2,
+    "bytes": 233364,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0008": {
+    "seconds": 55.85,
+    "bytes": 371091,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0019": {
+    "seconds": 59,
+    "bytes": 386387,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0025": {
+    "seconds": 54,
+    "bytes": 359648,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0021": {
+    "seconds": 77.75,
+    "bytes": 503029,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0027": {
+    "seconds": 84.25,
+    "bytes": 530806,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
   }
 }
