@@ -1,0 +1,654 @@
+[
+  {
+    "id": "LL-L3-0005",
+    "level": 3,
+    "seconds": 30,
+    "words": 82,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, clear and friendly university-lecture tone, moderate pace (about 145 words per minute). Slight stress on 'but it's wrong' and on 'actually'; a natural rise on the question 'So where does the camel get its water?'; a short pause at [pause].",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Many people believe that a camel's hump is full of water. It's an idea that has proved remarkably tenacious, but it's wrong.   The hump is actually a store of fat. When food is hard to find, the camel slowly uses this fat for energy. So where does the camel get its water? Well, mostly it's very good at not losing any. Camels sweat very little, and their bodies lose far less water than ours do. That's how they survive long desert trips."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0014",
+    "level": 5,
+    "seconds": 30,
+    "words": 81,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral UK accent. Lecturer: male, about 45, lively and slightly amused university-lecture tone, moderate pace (about 150 words per minute). A natural rise on the opening question; a short pause at [pause]; slightly slower on 'the brain turns the signal down' and on the final sentence after 'In short'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why can't you tickle yourself? It may sound like a facetious question, but it tells us something important about the brain.   Research suggests that whenever you move, your brain predicts what that movement will feel like. When the touch then arrives exactly as expected, the brain turns the signal down. That's why your own fingers feel dull, while someone else's can feel intense: their touch can't be predicted. In short, the brain pays less attention to sensations it has already forecast."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0019",
+    "level": 6,
+    "seconds": 30,
+    "words": 87,
+    "speakers": "A: female researcher | B: male researcher",
+    "voice": "Neutral US accent for both speakers. A: female wildlife researcher, about 35, upbeat and confident at first, moderate pace (about 150 words per minute). B: male wildlife researcher, about 45, calm and doubtful, slightly slower, with stress on 'visits, not animals' and on 'hardly'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The cameras in the new reserve recorded twice as many foxes this year. Surely that means the population is recovering."
+      },
+      {
+        "speaker": "B",
+        "text": "I think you're conflating two things. A camera counts visits, not animals. If food has become scarce, the same few foxes may be roaming further and passing the cameras again and again."
+      },
+      {
+        "speaker": "A",
+        "text": "But the reserve has plenty of prey, doesn't it?"
+      },
+      {
+        "speaker": "B",
+        "text": "That's what we assumed last year, too.   Until we can tell individual foxes apart, the photos are hardly a cause for jubilation."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0011",
+    "level": 4,
+    "seconds": 60,
+    "words": 150,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 35, warm and lively university-lecture tone, moderate pace (about 150 words per minute). Pronounce capsaicin as 'kap-SAY-uh-sin'. A natural rise on the two questions; a short pause at each [pause]; stress on 'however' and slightly slower on the last sentence after 'In other words'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Let's talk about something many of you probably ate this week: chili peppers. Why do they feel hot?   The burning comes from a chemical called capsaicin. Inside your mouth there are nerve endings whose job is to warn you about dangerous heat. Capsaicin happens to switch on those very same nerve endings. So your brain gets the message 'fire', even though the temperature in your mouth hasn't changed at all. In fact, at the amounts found in food, capsaicin is fairly innocuous; it doesn't really burn or damage anything.   Now, why would a plant make such a chemical? One popular explanation looks at who eats the fruit. Mammals chew the seeds and destroy them, so the burning keeps them away. Birds, however, don't feel capsaicin at all. They swallow the seeds whole and spread them far and wide. In other words, the pepper's heat seems to choose its own customers."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0015",
+    "level": 5,
+    "seconds": 60,
+    "words": 155,
+    "speakers": "A: female student | B: male professor",
+    "voice": "Neutral US accent for both speakers. A: female undergraduate student, about 21, curious and a little doubtful, moderate pace (about 150 words per minute). B: male sociology professor, about 55, friendly and measured, slightly slower, with stress on 'far less clear' and on 'I wouldn't go that far'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I wanted to ask about the Hawthorne studies. Our textbook says the factory workers became more productive whether the lights were made brighter or dimmer, simply because they knew they were being watched."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the classic story, yes. In management courses it's treated as practically incontrovertible. But what do you make of it?"
+      },
+      {
+        "speaker": "A",
+        "text": "Honestly, it seemed too neat. If anything you change makes people work harder, how could you ever test anything?"
+      },
+      {
+        "speaker": "B",
+        "text": "Good instinct.   When researchers later went back to the original records, the pattern was far less clear. In one group, two workers were replaced partway through, and the pay system changed as well. Either of those could explain the rise."
+      },
+      {
+        "speaker": "A",
+        "text": "So the effect doesn't exist?"
+      },
+      {
+        "speaker": "B",
+        "text": "I wouldn't go that far. Being observed probably does change behavior somewhat. The trouble is that a vivid anecdote calcified into a law, and the messy evidence behind it was forgotten."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0020",
+    "level": 6,
+    "seconds": 60,
+    "words": 145,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 50, thoughtful and quietly ironic university-lecture tone, moderate pace (about 150 words per minute). A short pause at each [pause]; a natural rise on 'So why has the white ideal lasted so long?'; stress on 'not' and 'our' in the 'It's not that ... It's that' pair, and slightly slower on the final sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "When we picture ancient Greek sculpture, most of us imagine immaculate white marble. That image, it turns out, is largely our own creation.   Under ultraviolet light, many statues show faint traces of paint: blue eyes, red lips, clothing patterned in bright greens and yellows. Most of the color wore away over the centuries, and later collectors sometimes scrubbed off what little remained. So why has the white ideal lasted so long? Partly because Renaissance artists admired the bare stone they found and copied it, until whiteness came to stand for classical taste itself.   Today, when museums show painted reconstructions, visitors often find them garish, even slightly embarrassing. But notice what that reaction reveals. It's not that the Greeks lacked refinement. It's that our idea of refinement grew out of a misreading. Far from being timeless, the white ideal is a later habit of the eye."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0012",
+    "level": 4,
+    "seconds": 90,
+    "words": 232,
+    "speakers": "A: female student | B: male student",
+    "voice": "Neutral US accent for both speakers. A: female psychology student, about 21, energetic and practical, moderate pace (about 150 words per minute). B: male psychology student, about 22, friendly and thoughtful, slightly slower, with stress on 'the cards or the person' and on 'repeating isn't the same as understanding'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "So for our project, I was thinking we'd compare students who simply reread a chapter with students who practice with flashcards. We could just ask people in the library which method they use, and then give both groups a short quiz."
+      },
+      {
+        "speaker": "B",
+        "text": "That's quick, but I see a problem. People who choose flashcards might be different to begin with. Maybe they're more careful students in general. Then we wouldn't know whether it's the cards or the person."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair point. So we decide the method for them instead of letting them choose?"
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. We flip a coin for each volunteer, so both groups get a fair mix of people. And everyone should study the same short chapter, so the material is identical. Otherwise, a harder chapter could make one method look worse than it really is."
+      },
+      {
+        "speaker": "A",
+        "text": "Okay. What about the quiz, though? If we test them right after they study, the rereaders will probably do better, since they can repeat whole sentences almost verbatim."
+      },
+      {
+        "speaker": "B",
+        "text": "True. But repeating isn't the same as understanding.   What if we give two quizzes, one right away and one a week later, with questions that ask people to explain ideas, not just repeat facts?"
+      },
+      {
+        "speaker": "A",
+        "text": "I like that. Then we'd see whether any advantage actually lasts."
+      },
+      {
+        "speaker": "B",
+        "text": "And whether it comes from real understanding, or just from having the words still fresh in mind."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0016",
+    "level": 5,
+    "seconds": 90,
+    "words": 211,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 40, warm and engaging university-lecture tone, moderate pace (about 150 words per minute). Say the child's sentences in a light, childlike tone without changing voice; pronounce 'goed' as 'go-ed' (rhymes with 'showed'). A natural rise on 'has the child's English actually gotten worse?'; a short pause at each [pause]; slightly slower after 'In other words'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's something that baffles a lot of new parents. A two-year-old says, 'I went to the park,' perfectly correctly. A few months later, the same child says, 'I goed to the park.' So has the child's English actually gotten worse?   Not at all. This little slip is in fact a sign of progress. At first, the child has simply memorized 'went' as a separate word, the way you'd memorize a name. Then something changes. The child notices that most verbs form the past by adding the same ending: walk, walked; play, played. Once that pattern clicks, the child applies it everywhere, even to verbs that don't follow it.   Now, notice what this tells us. Nobody taught the child to say 'goed.' Adults don't say it, so it can't be simple imitation. The child has worked out a rule alone, and is now using it a little too exuberantly. Researchers often describe this as a U-shaped curve: performance starts high, dips, and then recovers. Eventually, the child learns that a handful of verbs are exceptions, and 'went' comes back, this time as a known exception to a known rule. In other words, these errors aren't a step backward. They show that the child has stopped merely copying and started building a grammar."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0021",
+    "level": 6,
+    "seconds": 90,
+    "words": 241,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 55, composed and wry university-lecture tone, moderate pace (about 150 words per minute). A short pause at each [pause]; stress on 'didn't lead' and 'followed' in 'Governments didn't lead this change; they followed it'; slightly slower on the last two sentences.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today we take it for granted that every clock in a region shows the same time. But for most of history, time was local. Noon was simply the moment the sun stood highest, so a town a little to the west kept a slightly later noon than its neighbor.   For centuries, nobody minded. Travel was slow, and a difference of a few minutes was inconsequential to anyone on horseback. The railways changed that. A timetable that had to juggle dozens of local times, one for every station, was a recipe for confusion. So the railway companies did something rather bold: they simply chose a single standard and ran their trains by it. In Britain, most lines adopted London time in the eighteen-forties. In the United States, the railroads divided the country into a few broad time zones in eighteen eighty-three.   Now, here's the point I want you to notice. Governments didn't lead this change; they followed it. In both countries, the law made standard time official only decades later, after most people were already living by it. And not everyone was won over at once. Some towns kept their own time for years, and a few public clocks were fitted with two minute hands, one for local time and one for the railway. So standard time wasn't handed down by scientists or lawmakers. It was a commercial convenience that gradually became so entrenched that we now mistake it for something natural."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0006",
+    "level": 3,
+    "seconds": 30,
+    "words": 84,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, warm and lively university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, a slight stress on 'aren't making any light', a short pause at [pause], and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Have you ever pointed a flashlight into a dark garden and seen a cat's eyes glow back at you? It can look eerie, almost ghostly. But the eyes aren't making any light of their own. At the back of the eye, many night animals have a thin layer that works like a mirror. Light that passes through once is bounced back for a second chance to be detected.   So the glow is simply reflected light, and it helps these animals see in the dark."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0017",
+    "level": 5,
+    "seconds": 30,
+    "words": 82,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral UK accent. Lecturer: male, about 55, dry and slightly amused university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'Which one do people spend?', a short pause at [pause], stress on 'Not the good one' and on 'oddly enough'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a puzzle from the history of money. Suppose two coins carry the same face value, but one is pure silver and the other holds only a modicum of silver, mixed with cheaper metal. Which one do people spend?   Not the good one. They hold on to the silver coin, or melt it down, and pay with the poor one. So, oddly enough, the worse coin ends up being the one that circulates, while the better coin quietly disappears from the market."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0023",
+    "level": 6,
+    "seconds": 30,
+    "words": 80,
+    "speakers": "A: female archaeologist | B: male archaeologist",
+    "voice": "Neutral US accent for both speakers. A: female archaeologist, about 35, enthusiastic and confident, moderate pace (about 150 words per minute). B: male archaeologist, about 50, calm and skeptical, slightly slower, with stress on 'Pots travel far more easily than people' and on 'not that anyone moved'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "We've uncovered a smattering of coastal-style bowls at the inland site, maybe forty pieces in all. To me, that suggests coastal families settled there."
+      },
+      {
+        "speaker": "B",
+        "text": "That seems a bit glib. Pots travel far more easily than people. Forty bowls could have come through trade alone."
+      },
+      {
+        "speaker": "A",
+        "text": "So what would change your mind?"
+      },
+      {
+        "speaker": "B",
+        "text": "Signs that daily life itself changed, like coastal-style houses or cooking hearths.   Until then, the bowls show contact between the two regions, not that anyone moved."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0015",
+    "level": 4,
+    "seconds": 60,
+    "words": 154,
+    "speakers": "A: male student | B: female physics professor",
+    "voice": "Neutral US accent for both speakers. A: male university student, about 20, curious and a little puzzled, moderate pace (about 150 words per minute). B: female physics professor, about 50, patient and clear, moderate pace, with stress on 'And they were', 'quickly' and 'slowly'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I tried something after your lecture on heat. I left a metal spoon and a wooden spoon on my desk overnight, and in the morning the metal one felt much colder. But you said they'd be at the same temperature."
+      },
+      {
+        "speaker": "B",
+        "text": "And they were. Both had settled at room temperature. What you felt wasn't the temperature of the spoons. It was how fast each one pulled heat out of your fingers."
+      },
+      {
+        "speaker": "A",
+        "text": "So the metal takes heat away faster?"
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. Metal is a good conductor, so it carries heat away from your skin quickly, and your skin cools. Wood is a poor conductor, so heat leaves your fingers slowly.   That's why a metal railing feels so glacial on a winter morning, almost icy, while a wooden bench beside it doesn't."
+      },
+      {
+        "speaker": "A",
+        "text": "Then my hand is really measuring heat flow, not temperature."
+      },
+      {
+        "speaker": "B",
+        "text": "That's it. Your skin is a fairly poor thermometer."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0020",
+    "level": 5,
+    "seconds": 60,
+    "words": 158,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 45, engaging and confident university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'So is the map simply wrong?', a short pause at [pause], stress on 'tool for sailors' and on 'the price', and a slower, firmer last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Take the world map most of us grew up with, drawn by Gerardus Mercator in the sixteenth century. On that map, Greenland looks about as big as Africa. In reality, Africa is roughly fourteen times larger. So is the map simply wrong? Not exactly.   Mercator wasn't trying to show the true size of countries. He was making a tool for sailors. On his map, a course that keeps the same compass direction appears as a straight line, so a navigator could plot a route with a ruler. To make that work, the map stretches places more and more toward the poles. That's why the lands near the poles look so swollen. In other words, the distortion isn't an aberration or a careless error; it's the price of a map built for steering ships. Every flat map has its flaws, because a round Earth can't be laid flat without distortion. The real question is which distortion suits your purpose."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0017",
+    "level": 4,
+    "seconds": 90,
+    "words": 226,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, clear and enthusiastic university-lecture tone, moderate pace (about 150 words per minute). Stress on 'doesn't just press down' and 'pushes outward', a short pause at [pause], a slower delivery on 'Now, this is the key point', and a firm last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today I want to look at a problem that medieval builders faced. Imagine you want a tall stone building with a high stone ceiling, what we call a vault. The trouble is that a heavy vault doesn't just press down. It also pushes outward, against the tops of the walls, and if nothing resists that push, the walls lean and the roof falls in. For centuries, the answer was to build very thick walls with only small windows, because every opening weakened the wall. The result was solid, but the inside was dark.   Then, in twelfth-century France, builders tried something different. Instead of making the wall carry the outward push, they moved the support outside the building. They built stone arms, called flying buttresses, that reach from the upper wall across to heavy columns of stone standing a little apart from it. Each buttress catches the push of the vault and carries it down to the ground outside. Now, this is the key point. Once the wall no longer had to hold up the roof on its own, it could be opened up. That's why Gothic cathedrals have those huge windows of colored glass, and why their interiors seem so ethereal, flooded with light and almost floating. So the buttresses we see on the outside aren't decoration. They're the reason the inside could be so bright."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0022",
+    "level": 5,
+    "seconds": 90,
+    "words": 225,
+    "speakers": "A: female history student | B: male history student",
+    "voice": "Neutral UK accent for both speakers. A: female graduate student, about 25, confident and quick, moderate pace (about 150 words per minute). B: male graduate student, about 27, thoughtful and measured, slightly slower, with stress on 'too much credit', 'stand for sounds' and 'starting point'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I'd argue the Rosetta Stone is what unlocked Egyptian hieroglyphs. The same text appears in hieroglyphs and in ancient Greek, which scholars could already read. If you can read one version, you can match it, word by word, against the other. That's a ready-made translation."
+      },
+      {
+        "speaker": "B",
+        "text": "It's a famous story, but I think it gives the stone too much credit. Scholars had copies of the text for about twenty years before anyone could actually read the hieroglyphs. The problem wasn't a lack of texts; it was a paucity of good ideas."
+      },
+      {
+        "speaker": "A",
+        "text": "Meaning what, exactly?"
+      },
+      {
+        "speaker": "B",
+        "text": "Well, for a long time people assumed each sign was a picture of an idea, not a sound. The real breakthrough came when Champollion showed that many signs stand for sounds, much like letters. It also helped that he knew Coptic, a late form of the Egyptian language, so he could guess how the words were pronounced."
+      },
+      {
+        "speaker": "A",
+        "text": "But without the Greek, he wouldn't have had a shred of evidence to test his guesses against."
+      },
+      {
+        "speaker": "B",
+        "text": "Agreed, the stone gave scholars the impetus, a target and a way to check their work.   I'm only saying it was a starting point. The decoding itself depended on a new idea about how the script worked."
+      },
+      {
+        "speaker": "A",
+        "text": "So, necessary, but not enough on its own."
+      },
+      {
+        "speaker": "B",
+        "text": "That's how I'd put it."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0013",
+    "level": 4,
+    "seconds": 30,
+    "words": 83,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, lively and clear university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'So what holds it there?', a short pause at [pause], and stress on 'almost nothing' and 'billions of them together'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Geckos are nimble climbers. A gecko can run straight up a glass window, or even hang upside down from a ceiling. So what holds it there? It isn't glue, and it isn't suction.   Its toes are covered with millions of tiny hairs, and each hair splits into even finer tips. These tips get so close to the surface that very weak forces between molecules start to pull. A single tip holds almost nothing, but billions of them together can hold the whole animal."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0018",
+    "level": 5,
+    "seconds": 30,
+    "words": 88,
+    "speakers": "A: female materials scientist | B: male materials scientist",
+    "voice": "Neutral US accent for both speakers. A: female researcher, about 30, curious and confident, moderate pace (about 150 words per minute). B: male researcher, about 45, calm and precise, slightly slower, with stress on 'doesn't hold up' and 'uneven'. A short pause at [pause]; A's 'Usually?' is a quick, surprised question.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Look at this pane from a seventeenth-century house. It's thicker at the bottom, so the glass must have been flowing down slowly for centuries."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the popular story, but it doesn't hold up. At room temperature, glass is far too stiff to sag like that, even over millions of years.   Old panes simply came out of the workshop uneven, and builders usually set the heavier edge at the bottom."
+      },
+      {
+        "speaker": "A",
+        "text": "Usually?"
+      },
+      {
+        "speaker": "B",
+        "text": "Some old panes are lopsided the other way, with the thick edge on top."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0007",
+    "level": 3,
+    "seconds": 60,
+    "words": 157,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral UK accent. Lecturer: male, about 50, warm and friendly university-lecture tone, moderate pace (about 150 words per minute). Read the three example words slowly, with a small gap after each. Rising intonation on 'Which words will they remember?', a short pause at [pause], and stress on 'first few', 'last few' and 'middle'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a simple test you can try on a friend. Read out a list of about fifteen mundane words, like chair, apple and window, and then ask your friend to write down as many as they can. Which words will they remember?   Most people recall the first few words best, because they had time to repeat them silently. They also recall the last few words, because those are still fresh in their minds when the list ends. It's the middle of the list that gets lost. Psychologists call this the serial position effect. Now, here's the interesting part. If your friend has to count backward for thirty seconds before writing, the last words fade away, but the first words stay. So the end of the list is held only for a short time, while the beginning has been stored more firmly. In other words, the start and the end of a list are remembered for different reasons."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0016",
+    "level": 4,
+    "seconds": 60,
+    "words": 150,
+    "speakers": "A: female student | B: male professor",
+    "voice": "Neutral US accent for both speakers. A: female undergraduate, about 21, puzzled at first and then quick and engaged, moderate pace (about 150 words per minute). B: male professor, about 55, patient and friendly, slightly slower, with stress on 'skill plus luck', 'doesn't carry over' and 'comparison group'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I'm a bit flummoxed by my project data. I gave a reaction-time test twice, a week apart, and the students who did best the first time mostly did worse the second time. Did they just stop trying?"
+      },
+      {
+        "speaker": "B",
+        "text": "Probably not. Think of any score as two parts: skill plus luck. The people at the top on day one were probably skilled, but they were also having a lucky day.   Luck doesn't carry over, so the second time, their scores drift back toward the average."
+      },
+      {
+        "speaker": "A",
+        "text": "And the weakest group should improve, then?"
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly, for the same reason. It's called regression to the mean. It isn't that people changed; extreme scores are partly chance."
+      },
+      {
+        "speaker": "A",
+        "text": "So if I'd trained the top group in between, I might have blamed the training."
+      },
+      {
+        "speaker": "B",
+        "text": "And with the bottom group, you'd think it worked wonders. That's why you need a comparison group."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0024",
+    "level": 6,
+    "seconds": 60,
+    "words": 154,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 50, dry and engaging storytelling tone, moderate pace (about 150 words per minute). Rising intonation on 'So was Hans really counting?', a short pause at [pause], 'Not quite' said slowly, and stress on 'without knowing', 'reading people' and 'not at sums'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "In the early nineteen-hundreds, a horse in Berlin known as Clever Hans became famous for doing arithmetic. Ask him what three plus two was, and he would tap his hoof five times. Experts examined him and found no sleight of hand; his owner wasn't cheating anyone. So was Hans really counting?   Not quite. A young psychologist noticed that Hans got the answer right only when the questioner knew it and stood where Hans could see them. As the taps neared the right number, the questioner's face and posture changed very slightly, and Hans simply stopped tapping at that cue. The questioners had no inkling that they were giving the answer away; they were doing it without knowing. Now, the lesson here isn't that Hans was stupid. He was remarkably good at reading people, just not at sums. And that's why, today, careful studies keep the person running a test from knowing the expected answer."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0018",
+    "level": 4,
+    "seconds": 90,
+    "words": 232,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 40, energetic and clear university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'How does it tell the difference?', a short pause at [pause], and stress on 'once', 'a second time' and 'counting'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today, let's look at one of the best-known plants in the world, the Venus flytrap. It grows wild in only a small area of wetlands in the southeastern United States, where the soil is very poor in nutrients. The plant still makes its own food from sunlight, like other plants, but it gets nitrogen and other nutrients from the insects it catches. Now, here's the puzzle. Snapping shut takes a lot of energy, and reopening an empty trap can take many hours. So a flytrap can't afford to squander that effort on a raindrop or a falling leaf. How does it tell the difference?   Inside each trap are a few tiny trigger hairs. If something touches a hair once, nothing happens. But if the hairs are touched a second time within about half a minute, the trap closes. A raindrop usually strikes once, while a crawling insect keeps moving and touches the hairs again. In other words, the plant is counting. And it doesn't stop there. Even after the trap shuts, the plant is finicky about its meal. The trap seals tightly and starts to digest only when the insect keeps struggling and touches the hairs several more times. The edges also leave small gaps at first, so very tiny insects can escape, because they wouldn't be worth the cost. So a plant with no brain still makes something like a decision."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0026",
+    "level": 6,
+    "seconds": 90,
+    "words": 222,
+    "speakers": "A: female developmental psychologist | B: male developmental psychologist",
+    "voice": "Neutral UK accent for both speakers. A: female researcher, about 35, confident and quick, moderate pace (about 150 words per minute). B: male researcher, about 50, measured and careful, slightly slower, with stress on 'misgivings', 'sensible bet' and 'narrower'. A short pause at [pause]; A's 'Weaker, but not gone' is firm, and her last line is conceding.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "It's one of the most lauded findings in psychology. Four-year-olds who could hold off eating one marshmallow to get two later went on to do better at school years afterward. That looks like a measure of self-control, plain and simple."
+      },
+      {
+        "speaker": "B",
+        "text": "I have some misgivings about that last part. In a later study, children first dealt with an adult who either kept a small promise, like bringing better crayons, or broke it. Then came the marshmallow test, with the same adult. The kids who'd met the reliable adult waited about four times as long."
+      },
+      {
+        "speaker": "A",
+        "text": "So waiting partly depends on whether the child believes the second treat will really come."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. For a child whose promises are often broken at home, eating now isn't weak will; it's a sensible bet.   And a larger follow-up, with a more varied group of children, found the link to later achievement much weaker, roughly half as strong, and smaller still once family background was taken into account."
+      },
+      {
+        "speaker": "A",
+        "text": "Weaker, but not gone. Part of the link survives, so I wouldn't throw the test out."
+      },
+      {
+        "speaker": "B",
+        "text": "Nor would I. My point is narrower. What the test measures is tangled up with the child's circumstances, so the story of pure willpower is overblown."
+      },
+      {
+        "speaker": "A",
+        "text": "Fair enough. Self-control matters, but so does having a reason to trust."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0014",
+    "level": 4,
+    "seconds": 30,
+    "words": 80,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, clear and friendly university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, light stress on 'helps a little' and a firmer 'isn't the main reason', a short pause at [pause], and slower delivery on 'bends sound waves back down toward us'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Have you ever noticed that a distant train sounds much closer at night? It's a perplexing effect, and most people assume the night is simply quieter. That helps a little, but it isn't the main reason.   After sunset, the ground cools quickly, so the air near it becomes cooler than the air above. Sound travels faster in warmer air, and this difference bends sound waves back down toward us. So instead of escaping upward, the sound stays near the ground."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0022",
+    "level": 6,
+    "seconds": 30,
+    "words": 86,
+    "speakers": "A: female linguist | B: male linguist",
+    "voice": "Neutral US accent for both speakers. A: female linguist, about 35, brisk and a little skeptical, moderate pace (about 150 words per minute), with a rising, slightly teasing tone on 'by now?'. B: male linguist, about 50, calm and exact, slightly slower, with stress on 'Not bogus', 'badly framed' and 'how the grammar works'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "You've heard the old claim that Inuit languages have hundreds of words for snow. Surely that's been shown to be bogus by now?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not bogus, just badly framed. Those languages build one long word out of many small parts, so a speaker can create endless words about snow, or about fish, or about anything else."
+      },
+      {
+        "speaker": "A",
+        "text": "So counting them misses the point."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the crux.   A huge count tells you how the grammar works. It doesn't tell you that snow fills people's minds."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0008",
+    "level": 3,
+    "seconds": 60,
+    "words": 158,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, warm and lively university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, short pauses at [pause], clear stress on 'direction' and 'distance', and a slower, firmer delivery on the last two sentences.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "How does a honeybee tell the other bees where to find flowers? Bees can't draw maps, and they can't point. For a long time, this was a real puzzle. The answer turned out to be a dance.   When a bee comes back to the hive from a good patch of flowers, she runs in a short straight line while shaking her body from side to side. Then she circles back and does it again, many times. The direction of that straight run shows the direction of the flowers, compared with the position of the sun. And the length of the run shows the distance. The longer she shakes, the farther away the food is.   The other bees stay close to her and pick up this information, and then they fly off to find the flowers. That's a staggering amount of information in a few seconds of movement. So the dance isn't a celebration. It's a set of directions."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0019",
+    "level": 5,
+    "seconds": 60,
+    "words": 160,
+    "speakers": "A: male student | B: female astronomy professor",
+    "voice": "Neutral US accent for both speakers. A: male undergraduate, about 20, polite and a little puzzled at first, then relieved, moderate pace (about 150 words per minute). B: female professor, about 50, patient and encouraging, slightly slower, with stress on 'don't support it', 'early January' and 'The tilt'. A short pause at [pause]; 'Two effects, one cause' is said slowly, as a summary.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I'm still confused about the seasons. I always thought summer comes when the Earth is closer to the Sun."
+      },
+      {
+        "speaker": "B",
+        "text": "It's a natural guess, but the numbers don't support it. Earth is actually closest to the Sun in early January, which is the middle of winter up here in the north. And the change in distance over the year is measly, only a few percent."
+      },
+      {
+        "speaker": "A",
+        "text": "Then what does cause summer?"
+      },
+      {
+        "speaker": "B",
+        "text": "The tilt. Earth's axis leans, so for part of the year our half of the planet leans toward the Sun.   Here, try this makeshift model, a desk lamp and an orange. When the light hits the orange straight on, a small patch gets all of it. When the orange tips away, the same light is spread over a wider area, so each spot gets less."
+      },
+      {
+        "speaker": "A",
+        "text": "So in summer the sunlight is more direct, and the days are longer, too."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. Two effects, one cause."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0025",
+    "level": 6,
+    "seconds": 60,
+    "words": 156,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, thoughtful and measured university-lecture tone, moderate pace (about 150 words per minute). Slight emphasis on 'once a measure becomes a target', short pauses at [pause], a light, almost amused tone on 'nobody here needs to be devious', and firm stress on 'isn't that numbers are useless' and 'the link'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a pattern that turns up in schools, hospitals and offices alike. A number starts out as a useful sign of something we care about. Then we reward people for raising that number, and it quietly stops telling us what we wanted to know. Economists sometimes put it this way: once a measure becomes a target, it stops being a good measure.   Take a school judged mainly by its students' test scores. Teachers spend more time on test practice, scores rise, and yet the skills the test was meant to sample may barely move. Notice that nobody here needs to be devious. People are simply responding, quite sensibly, to what they're rewarded for.   So the lesson isn't that numbers are useless, or that we should stop measuring. It's that heavy pressure on a single figure is injurious to the link between that figure and the thing behind it. Keep several measures, and keep looking past them."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0021",
+    "level": 5,
+    "seconds": 90,
+    "words": 222,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, engaging and slightly wry university-lecture tone, moderate pace (about 150 words per minute). Read the quoted line 'To be, or not to be, ay, there's the point' a little slower, as a quotation, with a brief pause before it. Short pauses at each [pause], light stress on 'though' and 'questioned', and a slower, firmer delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Most of us picture a famous play as a single, fixed text, the words exactly as the author wrote them. With Shakespeare's Hamlet, that picture runs into trouble. The play survives in three early printed versions, and they don't agree.   The earliest one is much shorter than the other two. Some speeches are missing, some characters have different names, and even the most famous line comes out strangely: To be, or not to be, ay, there's the point. For a long time, scholars treated this first version as a botched copy, full of errors. The usual theory was that it had been cobbled together from memory by an actor who had played a small part, and then passed to a printer.   More recently, though, that confident story has been questioned. The short version moves quickly and works well on stage, so some scholars think it may record a version cut down for performance, or perhaps an early draft that the author later expanded. Nobody can settle the question for certain.   But here's what has changed. Instead of hunting for the one true Hamlet and throwing the rest away, some modern editions now print all three versions, and treat them as possible stages in the life of a play. In other words, the text may never have been fixed in the first place."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0027",
+    "level": 6,
+    "seconds": 90,
+    "words": 221,
+    "speakers": "A: male primatologist | B: female primatologist",
+    "voice": "Neutral US accent for both speakers. A: male researcher, about 40, doubtful but fair-minded, moderate pace (about 150 words per minute), with a questioning rise on 'rather than learning?' and 'anything like that in chimps?'. B: female researcher, about 50, confident and precise, slightly slower, with stress on 'the same nuts and the same stones', 'just as well' and 'Not convincingly, no'. A short pause at [pause]; A's last line is relaxed and conciliatory.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I'm still not sure we should call it chimpanzee culture. Different groups do different things, sure, but that might just reflect where they live, different food, different materials lying around."
+      },
+      {
+        "speaker": "B",
+        "text": "That was a fair worry once. But take nut cracking. In parts of West Africa, chimps crack hard nuts with stone hammers. In forests just across a river, the same nuts and the same stones are there, and the chimps there don't crack them."
+      },
+      {
+        "speaker": "A",
+        "text": "Couldn't that be a fluke of history, or simply genes, rather than learning?"
+      },
+      {
+        "speaker": "B",
+        "text": "That's where the experiments come in.   In captive groups, researchers taught one chimp a way to open a puzzle box. Her method spread through her group. A neighboring group, started off with a different method, kept its own, even though the other method worked just as well. For me, that clinches it. These habits are picked up from others and passed along."
+      },
+      {
+        "speaker": "A",
+        "text": "All right, I'll grant that they learn traditions socially. But human culture builds on itself. Each generation improves on what it inherited. Is there anything like that in chimps?"
+      },
+      {
+        "speaker": "B",
+        "text": "Not convincingly, no. Their tool-using prowess is real, but no group seems to have added improvements over many generations."
+      },
+      {
+        "speaker": "A",
+        "text": "Then maybe we agree more than it seemed. Culture, yes, but not the kind that keeps growing."
+      }
+    ]
+  }
+]

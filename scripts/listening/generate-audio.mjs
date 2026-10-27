@@ -16,7 +16,7 @@
  *
  * Needs OPENAI_API_KEY in the environment (or .env.local). Never printed.
  *
- * Usage: node scripts/listening/generate-audio.mjs [--only LL-L3-0002] [--force] [--dry-run]
+ * Usage: node scripts/listening/generate-audio.mjs [--only LL-L3-0002] [--force] [--dry-run] [--clips <briefs.json>]
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -26,7 +26,10 @@ import { loadProjectEnv } from "../load-project-env.mjs";
 loadProjectEnv();
 
 const root = process.cwd();
-const CLIPS = path.join(root, "content/amirant-import/owner/listening-clips.json");
+const args = process.argv.slice(2);
+/** Another briefs file in the same shape, e.g. the simulation pool's clips (--clips <path>). */
+const clipsArg = args.includes("--clips") ? args[args.indexOf("--clips") + 1] : null;
+const CLIPS = clipsArg ? path.resolve(root, clipsArg) : path.join(root, "content/amirant-import/owner/listening-clips.json");
 const OUT_DIR = path.join(root, "public/prep/listening");
 const MANIFEST = path.join(OUT_DIR, "manifest.json");
 const SWIFT = path.join(root, "scripts/listening/encode-aac.swift");
@@ -37,7 +40,6 @@ const PAUSE_SEC = 0.8;
 /** Exam lecture pace (NITE's clips run about 30/60/90 s; the briefs ask ~150 wpm). */
 const TARGET_WPM = Number(process.env.LISTENING_TARGET_WPM || 160);
 
-const args = process.argv.slice(2);
 const FORCE = args.includes("--force");
 const DRY = args.includes("--dry-run");
 const only = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
