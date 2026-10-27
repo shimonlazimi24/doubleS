@@ -264,6 +264,13 @@ export function AmirantModuleHub({ module: mod, manifest, courseBase }: Props) {
             </Link>
             .
           </p>
+          <Link
+            href={`${courseBase}/simulation/adaptive`}
+            className="block rounded border border-primary bg-primary p-4 text-sm font-bold text-white transition hover:opacity-90"
+          >
+            סימולציה אדפטיבית · מבחן מלא שמותאם לתשובות שלכם, בלי שאלות חוזרות
+          </Link>
+          <p className="text-sm font-semibold text-muted">סימולציות קבועות</p>
           <ul className="space-y-2">
             {manifest.simulations.map((s) => (
               <li key={s.id}>
