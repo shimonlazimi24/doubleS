@@ -6,6 +6,7 @@ const topicSchema = z.enum([
   "rephrasing",
   "reading_comprehension",
   "listening",
+  "grammar",
 ]);
 
 const moduleSlugSchema = z.enum([

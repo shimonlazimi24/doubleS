@@ -44,6 +44,7 @@ export const AMIRANT_COURSE_COUNTS = {
   readingPassages: countLessonsById("lesson.reading.passage-"),
   wordFormationTests: countLessonsById("lesson.reform.wf-"),
   listeningTests: countLessonsById("lesson.listening.test-"),
+  grammarTests: countLessonsById("lesson.grammar.test-"),
   writingTasks: countLessonsById("lesson.writing.task-"),
   simulations: AMIRANT_PREPARATION_MANIFEST.simulations.length,
 } as const;
@@ -101,6 +102,7 @@ export const AMIRANT_WHATS_INSIDE_SECTION: AmirantSeoSection = {
     `${C.readingPassages} קטעי קריאה אקדמיים עם שאלות הבנת הנקרא`,
     `${C.wordFormationTests} מבחני יצירת מילה (Word Formation) לקראת פרקי הפיילוט`,
     `${C.listeningTests} מבחני האזנה (הרצאה או שיחה) עם קטעי שמע ותמליל אחרי הבדיקה`,
+    `${C.grammarTests} מבחני דקדוק בהקשר (Grammar in Context) בקצב הפרק האמיתי, עם הסבר ושיטה לכל שאלה`,
     `${C.writingTasks} מטלות כתיבה עם בדיקה בשני הממדים של המבחן, משוב וחיבורים לדוגמה בשלוש רמות`,
     `${C.simulations} סימולציות מלאות עם טיימר נפרד לכל פרק ודוח אישי בסיום`,
     "עוזר AI בעברית בגישה המלאה: רמזים, הסברים והמלצות המשך בהקשר השיעור",
@@ -178,7 +180,7 @@ export const AMIRANT_FAQ: readonly AmirantFaqItem[] = [
   },
   {
     q: "מה כולל קורס ההכנה לאמירנט של PREPARE?",
-    a: `${C.modules} מודולים ו-${C.lessons} שיעורים: אוצר מילים אקדמי, ${C.sentenceCompletionTests} מבחני תרגול בהשלמת משפטים, ${C.restatementSets} מקבצי ניסוח מחדש, ${C.readingPassages} קטעי קריאה, ${C.wordFormationTests} מבחני יצירת מילה, ${C.listeningTests} מבחני האזנה ו-${C.writingTasks} מטלות כתיבה עם בדיקה למודול הרפורמה, ${C.simulations} סימולציות מלאות עם טיימר לכל פרק, דשבורד התקדמות ועוזר AI בעברית בגישה המלאה.`,
+    a: `${C.modules} מודולים ו-${C.lessons} שיעורים: אוצר מילים אקדמי, ${C.sentenceCompletionTests} מבחני תרגול בהשלמת משפטים, ${C.restatementSets} מקבצי ניסוח מחדש, ${C.readingPassages} קטעי קריאה, ${C.wordFormationTests} מבחני יצירת מילה, ${C.listeningTests} מבחני האזנה, ${C.grammarTests} מבחני דקדוק בהקשר ו-${C.writingTasks} מטלות כתיבה עם בדיקה למודול הרפורמה, ${C.simulations} סימולציות מלאות עם טיימר לכל פרק, דשבורד התקדמות ועוזר AI בעברית בגישה המלאה.`,
   },
   {
     q: "כמה עולה הקורס, ולכמה זמן הגישה?",

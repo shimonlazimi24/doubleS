@@ -38,12 +38,13 @@ describe("course facts", () => {
     // The marketing figures the owner quotes in ads; a manifest change must fail here, not in Google.
     expect(c).toMatchObject({
       modules: 10,
-      lessons: 125,
+      lessons: 136,
       sentenceCompletionTests: 14,
       restatementSets: 14,
       readingPassages: 10,
       wordFormationTests: 10,
       listeningTests: 14,
+      grammarTests: 12,
       writingTasks: 14,
       simulations: 6,
     });

@@ -52128,5 +52128,1977 @@
       "quiz",
       "difficulty_6"
     ]
+  },
+  {
+    "questionId": "owner-gr-test-1-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 1,
+    "questionText": "My uncle ________ an alarm clock, because the birds outside his window wake him every morning.",
+    "options": [
+      {
+        "id": "a",
+        "label": "don't need"
+      },
+      {
+        "id": "b",
+        "label": "doesn't need"
+      },
+      {
+        "id": "c",
+        "label": "doesn't needs"
+      },
+      {
+        "id": "d",
+        "label": "not needs"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הנושא My uncle הוא גוף שלישי יחיד, ולכן בשלילה בהווה באה הצורה doesn't ואחריה פועל בצורת הבסיס: doesn't need (לא צריך).\n\n_My uncle is third person singular, so the negative is doesn't + base form: doesn't need._\n\n**הסבר מלא:** בזמן present simple יוצרים שלילה בעזרת פועל העזר do, ועם נושא בגוף שלישי יחיד, כמו My uncle (הדוד שלי), משתמשים בצורה doesn't. אחרי הצורה doesn't בא הפועל בצורת הבסיס, בלי הסיומת ‎-s‎, ולכן כותבים doesn't need (לא צריך). במשפט חיובי הפועל מקבל את הסיומת ‎-s‎ (My uncle needs), אבל במשפט שלילי הסיומת עוברת לפועל העזר does. הכלל: he/she/it + doesn't + פועל בצורת הבסיס.\n\nשיטה: מה בא אחרי המילה — מזהים קודם את הנושא My uncle, שדורש את הצורה doesn't, ואחרי הצורה doesn't בא תמיד פועל בצורת הבסיס, ולכן התשובה היא doesn't need.\n\n_What follows the word: My uncle needs doesn't, and doesn't is always followed by the base form: doesn't need._\n\n**למה לא האפשרויות האחרות**\n\ndon't need — הצורה don't need מתאימה לנושאים I, you, we ו-they, ואילו הנושא My uncle הוא גוף שלישי יחיד ודורש את הצורה doesn't.\n\n_don't goes with I, you, we and they; My uncle is third person singular and needs doesn't._\n\ndoesn't needs — בצורה doesn't needs סימן הגוף השלישי מופיע פעמיים: עם הנושא My uncle הסיומת כבר נמצאת בצורה doesn't, ולכן הפועל need נשאר בצורת הבסיס.\n\n_With My uncle, the -s is already in doesn't, so the verb after it stays in the base form need._\n\nnot needs — הצורה not needs מעתיקה את המבנה העברי \"לא צריך\", ואילו באנגלית השלילה של נושא כמו My uncle בזמן present simple נוצרת בעזרת פועל העזר doesn't ופועל בצורת הבסיס.\n\n_not needs copies the Hebrew; in the present simple, My uncle needs the helper doesn't + base form._\n\n_In the present simple, a negative with a third-person singular subject like My uncle uses doesn't + base form: doesn't need._\n\n**תשובה סופית: doesn't need**",
+    "distractorExplanations": {
+      "a": "הצורה don't need מתאימה לנושאים I, you, we ו-they, ואילו הנושא My uncle הוא גוף שלישי יחיד ודורש את הצורה doesn't.\n\ndon't goes with I, you, we and they; My uncle is third person singular and needs doesn't.",
+      "c": "בצורה doesn't needs סימן הגוף השלישי מופיע פעמיים: עם הנושא My uncle הסיומת כבר נמצאת בצורה doesn't, ולכן הפועל need נשאר בצורת הבסיס.\n\nWith My uncle, the -s is already in doesn't, so the verb after it stays in the base form need.",
+      "d": "הצורה not needs מעתיקה את המבנה העברי \"לא צריך\", ואילו באנגלית השלילה של נושא כמו My uncle בזמן present simple נוצרת בעזרת פועל העזר doesn't ופועל בצורת הבסיס.\n\nnot needs copies the Hebrew; in the present simple, My uncle needs the helper doesn't + base form."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-1",
+      "quiz",
+      "difficulty_1",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-1-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 1,
+    "questionText": "In the 1940s, some of the first computers ________ as large as a room and weighed several tons.",
+    "options": [
+      {
+        "id": "a",
+        "label": "was"
+      },
+      {
+        "id": "b",
+        "label": "are"
+      },
+      {
+        "id": "c",
+        "label": "were"
+      },
+      {
+        "id": "d",
+        "label": "been"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הביטוי In the 1940s מציין עבר, והנושא some of the first computers הוא ברבים, ולכן צריך את הצורה were (היו).\n\n_In the 1940s points to the past, and some of the first computers is plural, so the verb is were._\n\n**הסבר מלא:** הביטוי In the 1940s (בשנות הארבעים) והפועל weighed בהמשך המשפט מראים שמדובר בעבר, ולכן צריך צורת עבר של הפועל be. בעבר יש לפועל be שתי צורות: הצורה was לנושא ביחיד (I, he, she, it) והצורה were לנושא ברבים ולגוף you. הנושא some of the first computers (חלק מהמחשבים הראשונים) הוא ברבים, ולכן התשובה היא were (היו). הכלל: קודם בודקים את הזמן, ואחר כך את המספר של הנושא.\n\nשיטה: מילות זמן — מחפשים קודם את מילות הזמן: הביטוי In the 1940s והפועל weighed מצביעים על עבר, ואחר כך הנושא ברבים some of the first computers בוחר את הצורה were.\n\n_Time markers: Find the time marker first: In the 1940s and weighed mean past; the plural subject then gives were._\n\n**למה לא האפשרויות האחרות**\n\nwas — הצורה was היא צורת עבר נכונה, ואולם היא מתאימה רק לנושא ביחיד, ואילו הנושא some of the first computers הוא ברבים.\n\n_was is past but singular; some of the first computers is plural._\n\nare — הצורה are מתאימה לנושא ברבים, ואולם היא בזמן הווה, ואילו הביטוי In the 1940s והפועל weighed מדברים על עבר.\n\n_are is present, but In the 1940s and weighed describe the past._\n\nbeen — הצורה been היא הצורה השלישית (past participle), והיא באה רק אחרי פועל עזר כמו have, ולכן אינה יכולה לבוא לבדה אחרי הנושא some of the first computers.\n\n_been needs a helper such as have; it cannot follow some of the first computers on its own._\n\n_In the 1940s and weighed show the past, and some of the first computers is plural, so the past form of be is were._\n\n**תשובה סופית: were**",
+    "distractorExplanations": {
+      "a": "הצורה was היא צורת עבר נכונה, ואולם היא מתאימה רק לנושא ביחיד, ואילו הנושא some of the first computers הוא ברבים.\n\nwas is past but singular; some of the first computers is plural.",
+      "b": "הצורה are מתאימה לנושא ברבים, ואולם היא בזמן הווה, ואילו הביטוי In the 1940s והפועל weighed מדברים על עבר.\n\nare is present, but In the 1940s and weighed describe the past.",
+      "d": "הצורה been היא הצורה השלישית (past participle), והיא באה רק אחרי פועל עזר כמו have, ולכן אינה יכולה לבוא לבדה אחרי הנושא some of the first computers.\n\nbeen needs a helper such as have; it cannot follow some of the first computers on its own."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-1",
+      "quiz",
+      "difficulty_1",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-1-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 1,
+    "questionText": "Last summer my grandparents ________ across Portugal by train and sent us a postcard from every city.",
+    "options": [
+      {
+        "id": "a",
+        "label": "have traveled"
+      },
+      {
+        "id": "b",
+        "label": "traveled"
+      },
+      {
+        "id": "c",
+        "label": "travel"
+      },
+      {
+        "id": "d",
+        "label": "are traveling"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הביטוי Last summer מציין זמן שהסתיים, ולכן צריך את הזמן past simple, כלומר את הצורה traveled (נסעו, טיילו).\n\n_Last summer is a finished time, so the verb must be past simple: traveled._\n\n**הסבר מלא:** הביטוי Last summer (בקיץ שעבר) מציין זמן שהסתיים, ואחרי זמן כזה משתמשים בזמן past simple. גם הפועל sent בהמשך המשפט נמצא בזמן עבר, ולכן הצורה traveled (נסעו, טיילו) מתאימה לשני חלקי המשפט. הכלל: עם ביטויי זמן של עבר שהסתיים, כמו yesterday, last year או in 2010, משתמשים בזמן past simple ולא בזמן present perfect.\n\nשיטה: מילות זמן — קודם מחפשים את מילות הזמן במשפט: הביטוי Last summer והפועל sent מצביעים על עבר שהסתיים, ולכן צריך את הצורה בזמן past simple, כלומר traveled.\n\n_Time markers: Find the time marker first: Last summer and sent point to a finished past, so the answer is the past simple traveled._\n\n**למה לא האפשרויות האחרות**\n\nhave traveled — הזמן present perfect בצורה have traveled מקשר את העבר להווה, ולכן אינו יכול לבוא עם זמן שהסתיים כמו Last summer.\n\n_The present perfect have traveled cannot go with a finished time like Last summer._\n\ntravel — הצורה travel היא בזמן present simple, שמתאר הרגל בהווה, ואילו הביטוי Last summer והפועל sent מדברים על עבר.\n\n_travel is present simple, but Last summer and sent describe the past._\n\nare traveling — הצורה are traveling היא בזמן present continuous, שמתאר פעולה בהווה או תוכנית לעתיד, ולכן אינה מתאימה לביטוי Last summer, שמציין זמן שהסתיים.\n\n_are traveling describes the present or a future plan, not something that happened Last summer._\n\n_Last summer is a finished time and sent is past too, so the verb is past simple: traveled._\n\n**תשובה סופית: traveled**",
+    "distractorExplanations": {
+      "a": "הזמן present perfect בצורה have traveled מקשר את העבר להווה, ולכן אינו יכול לבוא עם זמן שהסתיים כמו Last summer.\n\nThe present perfect have traveled cannot go with a finished time like Last summer.",
+      "c": "הצורה travel היא בזמן present simple, שמתאר הרגל בהווה, ואילו הביטוי Last summer והפועל sent מדברים על עבר.\n\ntravel is present simple, but Last summer and sent describe the past.",
+      "d": "הצורה are traveling היא בזמן present continuous, שמתאר פעולה בהווה או תוכנית לעתיד, ולכן אינה מתאימה לביטוי Last summer, שמציין זמן שהסתיים.\n\nare traveling describes the present or a future plan, not something that happened Last summer."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-1",
+      "quiz",
+      "difficulty_1",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-1-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 2,
+    "questionText": "Right now, my older sister ________ a chocolate cake in the kitchen for tonight's dinner.",
+    "options": [
+      {
+        "id": "a",
+        "label": "bakes"
+      },
+      {
+        "id": "b",
+        "label": "was baking"
+      },
+      {
+        "id": "c",
+        "label": "is baking"
+      },
+      {
+        "id": "d",
+        "label": "bake"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הביטוי Right now מציין פעולה שקורית ממש עכשיו, ולכן צריך את הזמן present continuous: is baking (אופה עכשיו).\n\n_Right now marks an action in progress, so the verb is present continuous: is baking._\n\n**הסבר מלא:** הביטוי Right now (ממש עכשיו) מראה שהפעולה מתרחשת ברגע הדיבור, ולפעולה כזאת משתמשים בזמן present continuous: צורה של הפועל be ועוד פועל עם הסיומת ‎-ing‎. הנושא my older sister הוא ביחיד, ולכן כותבים is baking (אופה עכשיו). בעברית יש זמן הווה אחד, ולכן קל לבחור בזמן present simple, אבל הזמן הזה מתאר הרגל או עובדה קבועה, ולא עוגה אחת שנאפית ברגע זה. הכלל: לפעולה שמתרחשת ברגע הדיבור, עם ביטויים כמו right now ו-at the moment, משתמשים בזמן present continuous.\n\nשיטה: מילות זמן — מחפשים את מילות הזמן: הביטוי Right now מסמן פעולה שמתרחשת עכשיו, ולכן בוחרים בזמן present continuous, כלומר בצורה is baking.\n\n_Time markers: Spot the time marker: Right now signals an action in progress, so choose the present continuous is baking._\n\n**למה לא האפשרויות האחרות**\n\nbakes — הצורה bakes היא בזמן present simple, שמתאר הרגל או עובדה קבועה, ואילו הביטוי Right now מתאר פעולה אחת שמתרחשת ברגע זה.\n\n_bakes is present simple, for habits and facts, but Right now describes one action in progress._\n\nwas baking — הצורה was baking היא בזמן past continuous, שמתאר פעולה שהתרחשה בעבר, ולכן אינה מתאימה לביטוי Right now.\n\n_was baking is past, but Right now refers to the present moment._\n\nbake — הצורה bake היא צורת הבסיס, ולכן אינה מתאימה לנושא ביחיד כמו my older sister, וגם אינה מתארת פעולה שמתרחשת עכשיו (Right now).\n\n_bake does not agree with my older sister and does not show an action in progress._\n\n_Right now shows an action happening at the moment of speaking, so we use the present continuous: is baking._\n\n**תשובה סופית: is baking**",
+    "distractorExplanations": {
+      "a": "הצורה bakes היא בזמן present simple, שמתאר הרגל או עובדה קבועה, ואילו הביטוי Right now מתאר פעולה אחת שמתרחשת ברגע זה.\n\nbakes is present simple, for habits and facts, but Right now describes one action in progress.",
+      "b": "הצורה was baking היא בזמן past continuous, שמתאר פעולה שהתרחשה בעבר, ולכן אינה מתאימה לביטוי Right now.\n\nwas baking is past, but Right now refers to the present moment.",
+      "d": "הצורה bake היא צורת הבסיס, ולכן אינה מתאימה לנושא ביחיד כמו my older sister, וגם אינה מתארת פעולה שמתרחשת עכשיו (Right now).\n\nbake does not agree with my older sister and does not show an action in progress."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-1",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-2-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 1,
+    "questionText": "________ three small islands in the middle of the lake, and visitors can reach them by boat.",
+    "options": [
+      {
+        "id": "a",
+        "label": "There is"
+      },
+      {
+        "id": "b",
+        "label": "Have"
+      },
+      {
+        "id": "c",
+        "label": "There have"
+      },
+      {
+        "id": "d",
+        "label": "There are"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי החסר בא שם עצם ברבים, three small islands, ולכן צריך את הצירוף There are (יש), שמתאים לרבים.\n\n_The noun after the blank, three small islands, is plural, so the answer is There are._\n\n**הסבר מלא:** כדי לומר \"יש\" במובן של \"נמצא במקום\", משתמשים באנגלית בצירוף there is או בצירוף there are, ולא בפועל have. הבחירה ביניהם תלויה בשם העצם שבא אחריהם: לפני שם עצם ביחיד כותבים there is, ולפני שם עצם ברבים כותבים there are. כאן בא אחרי החסר הצירוף three small islands (שלושה איים קטנים), ולכן התשובה היא There are. הפועל have מציין שייכות (\"יש לי\"), ולכן הוא צריך נושא לפניו.\n\nשיטה: מה בא אחרי המילה — מסתכלים על מה שבא אחרי החסר: הצירוף three small islands הוא ברבים, ולכן צריך את הצירוף There are ולא את הצירוף There is.\n\n_What follows the word: Look at what follows the blank: three small islands is plural, so use There are._\n\n**למה לא האפשרויות האחרות**\n\nThere is — הצירוף There is בא לפני שם עצם ביחיד, ואילו אחרי החסר בא שם עצם ברבים, three small islands.\n\n_There is goes before a singular noun, but three small islands is plural._\n\nHave — הפועל Have הוא תרגום מילולי של \"יש\", ואולם הוא מציין שייכות וצריך נושא, ולכן אינו יכול לפתוח משפט שמתאר מה נמצא במקום מסוים, כמו בצירוף in the middle of the lake.\n\n_Have shows possession and needs a subject; to say what is in the middle of the lake, English uses there are._\n\nThere have — הצירוף There have מערבב את המבנה there are עם הפועל have, ולפני שם עצם כמו three small islands המבנה הנכון הוא המילה there ואחריה צורה של הפועל be.\n\n_There have mixes two structures; before three small islands, English uses there + a form of be._\n\n_To say that something exists somewhere, English uses there is + singular or there are + plural, not have; three small islands is plural, so the answer is There are._\n\n**תשובה סופית: There are**",
+    "distractorExplanations": {
+      "a": "הצירוף There is בא לפני שם עצם ביחיד, ואילו אחרי החסר בא שם עצם ברבים, three small islands.\n\nThere is goes before a singular noun, but three small islands is plural.",
+      "b": "הפועל Have הוא תרגום מילולי של \"יש\", ואולם הוא מציין שייכות וצריך נושא, ולכן אינו יכול לפתוח משפט שמתאר מה נמצא במקום מסוים, כמו בצירוף in the middle of the lake.\n\nHave shows possession and needs a subject; to say what is in the middle of the lake, English uses there are.",
+      "c": "הצירוף There have מערבב את המבנה there are עם הפועל have, ולפני שם עצם כמו three small islands המבנה הנכון הוא המילה there ואחריה צורה של הפועל be.\n\nThere have mixes two structures; before three small islands, English uses there + a form of be."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-2",
+      "quiz",
+      "difficulty_1",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-2-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 1,
+    "questionText": "A pet parrot ________ many words it hears at home, but it usually does not know their meaning.",
+    "options": [
+      {
+        "id": "a",
+        "label": "can repeat"
+      },
+      {
+        "id": "b",
+        "label": "can repeats"
+      },
+      {
+        "id": "c",
+        "label": "able to repeat"
+      },
+      {
+        "id": "d",
+        "label": "can to repeat"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** גם כשהנושא הוא A pet parrot (תוכי מחמד) בגוף שלישי יחיד, אחרי פועל העזר can בא פועל בצורת הבסיס, ולכן התשובה היא can repeat (יכול לחזור על).\n\n_Even with a singular subject like A pet parrot, can is followed by the base form: can repeat._\n\n**הסבר מלא:** המילה can (יכול) היא פועל עזר מודאלי, ואחריה בא תמיד פועל בצורת הבסיס, בלי המילה to ובלי הסיומות ‎-s‎ או ‎-ing‎. הנושא A pet parrot הוא בגוף שלישי יחיד, ולכן קל להוסיף את הסיומת ‎-s‎ כמו בפועל hears, אבל אחרי המילה can הפועל אינו משתנה. לכן כותבים can repeat (יכול לחזור על), בדיוק כמו בצירופים she can swim ו-it can fly.\n\nשיטה: מה בא אחרי המילה — אחרי המילה can בא תמיד פועל בצורת הבסיס, ולכן פוסלים כל צורה שיש בה את המילה to או את הסיומת ‎-s‎, ונשארת הצורה can repeat.\n\n_What follows the word: After can comes the base form, so drop every option with to or -s: can repeat._\n\n**למה לא האפשרויות האחרות**\n\ncan repeats — הצורה can repeats מוסיפה את הסיומת ‎-s‎ בגלל הנושא A pet parrot, ואולם אחרי פועל העזר can הפועל נשאר בצורת הבסיס.\n\n_A pet parrot is singular, but after can the verb stays in the base form, with no -s._\n\nable to repeat — בצורה able to repeat חסר הפועל is (בעברית אין פועל כזה בהווה), ולכן אחרי הנושא A pet parrot אין פועל והמשפט אינו שלם.\n\n_able to repeat has no verb: after A pet parrot it would need is (is able to repeat)._\n\ncan to repeat — הצורה can to repeat מעתיקה את המבנה העברי \"יכול ל-\", ואילו באנגלית אחרי פועל העזר can בא הפועל ישירות, בלי המילה to, גם עם נושא כמו A pet parrot.\n\n_can to repeat copies the Hebrew; with A pet parrot or any subject, can takes the verb directly, with no to._\n\n_can is a modal, so it is followed by the base form with no to and no -s, even after A pet parrot: can repeat._\n\n**תשובה סופית: can repeat**",
+    "distractorExplanations": {
+      "b": "הצורה can repeats מוסיפה את הסיומת ‎-s‎ בגלל הנושא A pet parrot, ואולם אחרי פועל העזר can הפועל נשאר בצורת הבסיס.\n\nA pet parrot is singular, but after can the verb stays in the base form, with no -s.",
+      "c": "בצורה able to repeat חסר הפועל is (בעברית אין פועל כזה בהווה), ולכן אחרי הנושא A pet parrot אין פועל והמשפט אינו שלם.\n\nable to repeat has no verb: after A pet parrot it would need is (is able to repeat).",
+      "d": "הצורה can to repeat מעתיקה את המבנה העברי \"יכול ל-\", ואילו באנגלית אחרי פועל העזר can בא הפועל ישירות, בלי המילה to, גם עם נושא כמו A pet parrot.\n\ncan to repeat copies the Hebrew; with A pet parrot or any subject, can takes the verb directly, with no to."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-2",
+      "quiz",
+      "difficulty_1",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-2-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 2,
+    "questionText": "Good readers often guess the meaning of a new word before ________ it up in a dictionary.",
+    "options": [
+      {
+        "id": "a",
+        "label": "to look"
+      },
+      {
+        "id": "b",
+        "label": "look"
+      },
+      {
+        "id": "c",
+        "label": "looks"
+      },
+      {
+        "id": "d",
+        "label": "looking"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי המילה before, כשאין אחריה נושא, בא פועל עם הסיומת ‎-ing‎, ולכן התשובה היא looking (לחפש, בצירוף look up).\n\n_After before with no subject, the verb takes -ing: looking._\n\n**הסבר מלא:** המילה before (לפני) יכולה לבוא לפני משפט עם נושא, כמו before they look, אבל כאן אין אחריה נושא, ולכן היא משמשת כמילת יחס. אחרי מילת יחס בא פועל עם הסיומת ‎-ing‎, ולכן כותבים before looking it up (לפני שמחפשים אותה במילון). בעברית אומרים \"לפני שמחפשים\", ולכן קל לבחור בצורה to look או בצורת הבסיס look. כך נוהגות גם מילות היחס after, without ו-instead of.\n\nשיטה: מה בא אחרי המילה — מסתכלים על המילה שלפני החסר: אחרי מילת היחס before, כשאין אחריה נושא, בא פועל עם הסיומת ‎-ing‎, ולכן התשובה היא looking.\n\n_What follows the word: Look at the word before the blank: the preposition before, with no subject after it, takes -ing: looking._\n\n**למה לא האפשרויות האחרות**\n\nto look — הצורה to look היא שם פועל, ואחרי מילת היחס before לא בא שם פועל אלא פועל עם הסיומת ‎-ing‎.\n\n_A preposition such as before takes -ing, not to + verb._\n\nlook — הצורה look היא צורת הבסיס, והיא יכולה לבוא אחרי המילה before רק כשיש נושא בין שתי המילים (before they look), ואילו כאן אין נושא.\n\n_look after before would need a subject (before they look); with no subject, use -ing._\n\nlooks — הצורה looks היא פועל בגוף שלישי יחיד, והיא צריכה נושא כמו he או she, ואילו אחרי המילה before במשפט אין נושא.\n\n_looks needs a singular subject, and there is none after before._\n\n_Here before has no subject after it, so it works as a preposition and takes the -ing form: looking._\n\n**תשובה סופית: looking**",
+    "distractorExplanations": {
+      "a": "הצורה to look היא שם פועל, ואחרי מילת היחס before לא בא שם פועל אלא פועל עם הסיומת ‎-ing‎.\n\nA preposition such as before takes -ing, not to + verb.",
+      "b": "הצורה look היא צורת הבסיס, והיא יכולה לבוא אחרי המילה before רק כשיש נושא בין שתי המילים (before they look), ואילו כאן אין נושא.\n\nlook after before would need a subject (before they look); with no subject, use -ing.",
+      "c": "הצורה looks היא פועל בגוף שלישי יחיד, והיא צריכה נושא כמו he או she, ואילו אחרי המילה before במשפט אין נושא.\n\nlooks needs a singular subject, and there is none after before."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-2",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-2-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 2,
+    "questionText": "Next Sunday, volunteers from our neighborhood ________ trees in the park near the river.",
+    "options": [
+      {
+        "id": "a",
+        "label": "are going to plant"
+      },
+      {
+        "id": "b",
+        "label": "going to planting"
+      },
+      {
+        "id": "c",
+        "label": "are going to planting"
+      },
+      {
+        "id": "d",
+        "label": "going to plant"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** לפני הצירוף going to צריך צורה של הפועל be שמתאימה לנושא volunteers, ואחרי המילה to בא פועל בצורת הבסיס, ולכן התשובה היא are going to plant (הולכים לשתול).\n\n_Before going to we need a form of be for volunteers, and after to the base form: are going to plant._\n\n**הסבר מלא:** לתוכנית לעתיד, כמו זו שמתוארת אחרי הביטוי Next Sunday (ביום ראשון הבא), משתמשים במבנה be going to ועוד פועל בצורת הבסיס. המבנה צריך שלושה חלקים: צורה של הפועל be שמתאימה לנושא (כאן הצורה are, כי הנושא volunteers הוא ברבים), הצירוף going to, ופועל בצורת הבסיס, בלי הסיומת ‎-ing‎. בעברית אומרים \"הולכים לשתול\" בלי פועל עזר, ולכן קל לשכוח את המילה are.\n\nשיטה: מה בא אחרי המילה — אחרי המילה to בצירוף going to בא פועל בצורת הבסיס, ולכן נפסלות שתי הצורות עם המילה planting; מבין השתיים שנשארות, רק בצורה are going to plant יש את הפועל be שהנושא volunteers צריך.\n\n_What follows the word: After to in going to comes the base form, which rules out planting; of the two left, only are going to plant has the be verb that volunteers needs._\n\n**למה לא האפשרויות האחרות**\n\ngoing to planting — בצורה going to planting יש שתי טעויות: חסר הפועל are אחרי הנושא volunteers, ואחרי המילה to בא פועל עם הסיומת ‎-ing‎ במקום צורת הבסיס.\n\n_going to planting has no are after volunteers, and it uses -ing after to instead of the base form._\n\nare going to planting — בצורה are going to planting הפועל are מתאים לנושא volunteers, ואולם אחרי המילה to במבנה going to בא פועל בצורת הבסיס plant, ולא פועל עם הסיומת ‎-ing‎.\n\n_are fits volunteers, but after going to the verb must be the base form plant, not planting._\n\ngoing to plant — בצורה going to plant חסר הפועל are, כמו במשפט העברי \"הולכים לשתול\", ולכן אחרי הנושא volunteers אין פועל עזר והמשפט אינו שלם.\n\n_going to plant drops are, as Hebrew does, so volunteers has no helping verb._\n\n_For a plan like the one for Next Sunday, use be going to + base form; with the plural volunteers, that is are going to plant._\n\n**תשובה סופית: are going to plant**",
+    "distractorExplanations": {
+      "b": "בצורה going to planting יש שתי טעויות: חסר הפועל are אחרי הנושא volunteers, ואחרי המילה to בא פועל עם הסיומת ‎-ing‎ במקום צורת הבסיס.\n\ngoing to planting has no are after volunteers, and it uses -ing after to instead of the base form.",
+      "c": "בצורה are going to planting הפועל are מתאים לנושא volunteers, ואולם אחרי המילה to במבנה going to בא פועל בצורת הבסיס plant, ולא פועל עם הסיומת ‎-ing‎.\n\nare fits volunteers, but after going to the verb must be the base form plant, not planting.",
+      "d": "בצורה going to plant חסר הפועל are, כמו במשפט העברי \"הולכים לשתול\", ולכן אחרי הנושא volunteers אין פועל עזר והמשפט אינו שלם.\n\ngoing to plant drops are, as Hebrew does, so volunteers has no helping verb."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-2",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-3-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 2,
+    "questionText": "Over a short distance, a cheetah can run much ________ a racehorse.",
+    "options": [
+      {
+        "id": "a",
+        "label": "faster from"
+      },
+      {
+        "id": "b",
+        "label": "more fast than"
+      },
+      {
+        "id": "c",
+        "label": "more fast from"
+      },
+      {
+        "id": "d",
+        "label": "faster than"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** כדי להשוות לצירוף a racehorse מוסיפים למילה הקצרה fast את הסיומת ‎-er‎, ואחרי הצורה faster באה המילה than, ולכן התשובה היא faster than (מהר יותר מ-).\n\n_To compare with a racehorse, the short word fast takes -er + than: faster than._\n\n**הסבר מלא:** המילה much לפני החסר מראה שמדובר בהשוואה בין הצ'יטה לבין סוס המרוץ (a racehorse), ולכן צריך צורת השוואה (comparative). למילה קצרה בת הברה אחת, כמו fast, מוסיפים את הסיומת ‎-er‎, ואת המילה more שומרים למילים ארוכות, כמו more dangerous. אחרי צורת ההשוואה באה המילה than (מאשר), גם כשבעברית אומרים \"מהיר מ-\", ולכן התשובה היא faster than (מהר יותר מ-).\n\nשיטה: מה בא אחרי המילה — אחרי צורת השוואה באה המילה than, ולכן נפסלות שתי הצורות עם המילה from; מבין השתיים שנשארות, המילה הקצרה fast מקבלת את הסיומת ‎-er‎ ולא את המילה more.\n\n_What follows the word: A comparative is followed by than, which rules out from; of the two left, the short word fast takes -er, not more._\n\n**למה לא האפשרויות האחרות**\n\nfaster from — הצורה faster from מתרגמת מילה במילה את \"מהיר מ-\", ואולם אחרי צורת השוואה, כמו זו שלפני a racehorse, באה המילה than ולא המילה from.\n\n_faster from copies the Hebrew; before a racehorse a comparative needs than, not from._\n\nmore fast than — הצורה more fast than משתמשת במילה more, שמתאימה למילים ארוכות, ואילו המילה הקצרה fast מקבלת את הסיומת ‎-er‎, גם אחרי המילה much.\n\n_more is for long words; the short word fast takes -er, even after much._\n\nmore fast from — בצורה more fast from יש שתי טעויות: המילה more אינה באה עם המילה הקצרה fast, ובהשוואה לצירוף a racehorse באה המילה than ולא המילה from.\n\n_more fast from has two errors: fast takes -er, and the comparison with a racehorse needs than._\n\n_A short word like fast takes -er, and a comparative is followed by than, so the cheetah runs faster than a racehorse._\n\n**תשובה סופית: faster than**",
+    "distractorExplanations": {
+      "a": "הצורה faster from מתרגמת מילה במילה את \"מהיר מ-\", ואולם אחרי צורת השוואה, כמו זו שלפני a racehorse, באה המילה than ולא המילה from.\n\nfaster from copies the Hebrew; before a racehorse a comparative needs than, not from.",
+      "b": "הצורה more fast than משתמשת במילה more, שמתאימה למילים ארוכות, ואילו המילה הקצרה fast מקבלת את הסיומת ‎-er‎, גם אחרי המילה much.\n\nmore is for long words; the short word fast takes -er, even after much.",
+      "c": "בצורה more fast from יש שתי טעויות: המילה more אינה באה עם המילה הקצרה fast, ובהשוואה לצירוף a racehorse באה המילה than ולא המילה from.\n\nmore fast from has two errors: fast takes -er, and the comparison with a racehorse needs than."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-3",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-3-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 2,
+    "questionText": "Swimmers ________ into the sea when a red flag is flying on the beach.",
+    "options": [
+      {
+        "id": "a",
+        "label": "should not to go"
+      },
+      {
+        "id": "b",
+        "label": "should not go"
+      },
+      {
+        "id": "c",
+        "label": "should not going"
+      },
+      {
+        "id": "d",
+        "label": "not should go"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי פועל העזר should והמילה not בא פועל בצורת הבסיס, בלי המילה to ובלי הסיומת ‎-ing‎, ולכן התשובה היא should not go (לא כדאי להיכנס).\n\n_After should not comes the base form, with no to and no -ing: should not go._\n\n**הסבר מלא:** המילה should (כדאי, צריך) היא פועל עזר מודאלי, ואחריה בא פועל בצורת הבסיס, בלי המילה to ובלי הסיומת ‎-ing‎. בשלילה הסדר הוא המילה should ואחריה המילה not, ולא להפך כמו בעברית \"לא צריך\", ולכן כותבים should not go (לא כדאי להיכנס). כך נוהג גם פועל העזר must, למשל must not go.\n\nשיטה: מה בא אחרי המילה — אחרי פועל עזר מודאלי כמו should בא פועל בצורת הבסיס, ולכן נפסלות הצורות עם המילה to או עם הסיומת ‎-ing‎, ומבין השתיים שנשארות המילה not באה אחרי המילה should.\n\n_What follows the word: A modal like should takes the base form, which rules out to and -ing; then not must come after should: should not go._\n\n**למה לא האפשרויות האחרות**\n\nshould not to go — הצורה should not to go מוסיפה את המילה to כמו בעברית \"לא צריך ללכת\", ואילו אחרי פועל העזר should בא הפועל בצורת הבסיס ישירות, ולכן לפני הצירוף into the sea כותבים should not go.\n\n_should takes the base form directly, so before into the sea the verb is go, not to go._\n\nshould not going — בצורה should not going בא אחרי פועל העזר should פועל עם הסיומת ‎-ing‎, ואילו לפני הצירוף into the sea צריך את הפועל בצורת הבסיס go.\n\n_A modal never takes -ing; before into the sea the base form go is needed._\n\nnot should go — בצורה not should go המילה not באה לפני המילה should, כמו בעברית \"לא צריך\", ואילו באנגלית המילה not באה אחרי פועל העזר, ולכן אחרי הנושא Swimmers כותבים should not.\n\n_In English not follows the modal, so after Swimmers the order is should not._\n\n_A modal such as should is followed by the base form, and not comes right after the modal: should not go._\n\n**תשובה סופית: should not go**",
+    "distractorExplanations": {
+      "a": "הצורה should not to go מוסיפה את המילה to כמו בעברית \"לא צריך ללכת\", ואילו אחרי פועל העזר should בא הפועל בצורת הבסיס ישירות, ולכן לפני הצירוף into the sea כותבים should not go.\n\nshould takes the base form directly, so before into the sea the verb is go, not to go.",
+      "c": "בצורה should not going בא אחרי פועל העזר should פועל עם הסיומת ‎-ing‎, ואילו לפני הצירוף into the sea צריך את הפועל בצורת הבסיס go.\n\nA modal never takes -ing; before into the sea the base form go is needed.",
+      "d": "בצורה not should go המילה not באה לפני המילה should, כמו בעברית \"לא צריך\", ואילו באנגלית המילה not באה אחרי פועל העזר, ולכן אחרי הנושא Swimmers כותבים should not.\n\nIn English not follows the modal, so after Swimmers the order is should not."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-3",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-3-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 2,
+    "questionText": "After a class trip to the city planetarium, my best friend decided ________ astronomy at university instead of law.",
+    "options": [
+      {
+        "id": "a",
+        "label": "to study"
+      },
+      {
+        "id": "b",
+        "label": "studying"
+      },
+      {
+        "id": "c",
+        "label": "to studying"
+      },
+      {
+        "id": "d",
+        "label": "study"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** אחרי הפועל decided (החליט) בא המבנה to ועוד פועל בצורת הבסיס, ולכן התשובה היא to study (ללמוד).\n\n_The verb decided is followed by to + base form, so the answer is to study._\n\n**הסבר מלא:** הפועל decide (להחליט) הוא אחד הפעלים שאחריהם בא שם פועל, כלומר המילה to ועוד פועל בצורת הבסיס, ולכן כותבים decided to study (החליט ללמוד). כך נוהגים גם הפעלים want, plan, hope ו-agree, למשל want to travel. לעומתם, אחרי פעלים כמו enjoy ו-finish בא פועל עם הסיומת ‎-ing‎, ולכן כדאי לזכור לכל פועל את המבנה שלו.\n\nשיטה: מה בא אחרי המילה — מסתכלים על המילה שלפני החסר: אחרי הפועל decided בא המבנה to ועוד פועל בצורת הבסיס, ולכן התשובה היא to study.\n\n_What follows the word: Look at the word before the blank: decided takes to + base form: to study._\n\n**למה לא האפשרויות האחרות**\n\nstudying — הצורה studying באה אחרי פעלים כמו enjoy או finish, ואילו אחרי הפועל decided בא המבנה to ועוד פועל בצורת הבסיס.\n\n_studying follows verbs like enjoy, but decided takes to + base form._\n\nto studying — הצורה to studying מתאימה רק לצירופים שבהם המילה to היא מילת יחס, כמו הצירוף look forward to, ואילו אחרי הפועל decided המילה to היא חלק משם הפועל, ואחריה בא פועל בצורת הבסיס.\n\n_to + -ing fits only where to is a preposition (look forward to); after decided, to is followed by the base form._\n\nstudy — הצורה study היא צורת הבסיס בלי המילה to, והיא באה אחרי פועל עזר כמו can או will, ולא אחרי הפועל decided.\n\n_The bare form study follows modals like can, not decided, which needs to._\n\n_decide, like want, plan and hope, is followed by to + base form, so the answer is to study._\n\n**תשובה סופית: to study**",
+    "distractorExplanations": {
+      "b": "הצורה studying באה אחרי פעלים כמו enjoy או finish, ואילו אחרי הפועל decided בא המבנה to ועוד פועל בצורת הבסיס.\n\nstudying follows verbs like enjoy, but decided takes to + base form.",
+      "c": "הצורה to studying מתאימה רק לצירופים שבהם המילה to היא מילת יחס, כמו הצירוף look forward to, ואילו אחרי הפועל decided המילה to היא חלק משם הפועל, ואחריה בא פועל בצורת הבסיס.\n\nto + -ing fits only where to is a preposition (look forward to); after decided, to is followed by the base form.",
+      "d": "הצורה study היא צורת הבסיס בלי המילה to, והיא באה אחרי פועל עזר כמו can או will, ולא אחרי הפועל decided.\n\nThe bare form study follows modals like can, not decided, which needs to."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-3",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-3-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 3,
+    "questionText": "The retired chemist ________ the weekend workshops at the science museum shows children how to grow large crystals from salt and sugar.",
+    "options": [
+      {
+        "id": "a",
+        "label": "which runs"
+      },
+      {
+        "id": "b",
+        "label": "runs"
+      },
+      {
+        "id": "c",
+        "label": "who she runs"
+      },
+      {
+        "id": "d",
+        "label": "who runs"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** הצירוף The retired chemist מתאר אדם, ולכן משפט הזיקה נפתח במילה who, בלי כינוי גוף נוסף: who runs (שמנהלת).\n\n_The retired chemist is a person, so the relative clause needs who, with no extra pronoun: who runs._\n\n**הסבר מלא:** הצירוף The retired chemist מתאר אדם, ולכן משפט הזיקה שמוסיף עליו מידע נפתח במילה who (ש-) ולא במילה which, שמתאימה לחפצים ולבעלי חיים. המילה who היא עצמה הנושא של משפט הזיקה, ולכן אין להוסיף אחריה כינוי גוף כמו she, גם אם בעברית אומרים \"שהיא מנהלת\". לכן הצורה הנכונה היא who runs (שמנהלת), והפועל הראשי של המשפט כולו נשאר הפועל shows.\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי מנהל את הסדנאות: הצירוף The retired chemist מתאר אדם, ולכן המילה who מחליפה אותו בתור הנושא של משפט הזיקה, בלי כינוי גוף נוסף, והפועל shows נשאר הפועל הראשי.\n\n_Who does what? Active or passive: Ask who runs the workshops: The retired chemist, a person, so who is the subject of the relative clause, and shows stays the main verb._\n\n**למה לא האפשרויות האחרות**\n\nwhich runs — המילה which מתאימה לחפצים ולבעלי חיים, ואילו הצירוף The retired chemist מתאר אדם, ולכן צריך את המילה who.\n\n_which is for things and animals; The retired chemist is a person, so who is needed._\n\nruns — בלי מילת זיקה יש לנושא The retired chemist שני פעלים ראשיים, הפועל runs והפועל shows, וזה מבנה שגוי.\n\n_Without who, The retired chemist has two main verbs, runs and shows, which is ungrammatical._\n\nwho she runs — המילה who כבר משמשת נושא של משפט הזיקה שמתאר את הצירוף The retired chemist, ולכן כינוי הגוף she מיותר, והוא תרגום מילולי של \"שהיא מנהלת\".\n\n_who is already the subject of the clause about The retired chemist, so adding she repeats the subject, a direct copy of the Hebrew._\n\n_The retired chemist is a person, so the relative clause starts with who, which is its subject; no extra pronoun is added: who runs._\n\n**תשובה סופית: who runs**",
+    "distractorExplanations": {
+      "a": "המילה which מתאימה לחפצים ולבעלי חיים, ואילו הצירוף The retired chemist מתאר אדם, ולכן צריך את המילה who.\n\nwhich is for things and animals; The retired chemist is a person, so who is needed.",
+      "b": "בלי מילת זיקה יש לנושא The retired chemist שני פעלים ראשיים, הפועל runs והפועל shows, וזה מבנה שגוי.\n\nWithout who, The retired chemist has two main verbs, runs and shows, which is ungrammatical.",
+      "c": "המילה who כבר משמשת נושא של משפט הזיקה שמתאר את הצירוף The retired chemist, ולכן כינוי הגוף she מיותר, והוא תרגום מילולי של \"שהיא מנהלת\".\n\nwho is already the subject of the clause about The retired chemist, so adding she repeats the subject, a direct copy of the Hebrew."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-3",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-4-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 2,
+    "questionText": "The small town ________ a pumpkin festival every October since 1972, and it now attracts visitors from all over the region.",
+    "options": [
+      {
+        "id": "a",
+        "label": "holds"
+      },
+      {
+        "id": "b",
+        "label": "has held"
+      },
+      {
+        "id": "c",
+        "label": "is holding"
+      },
+      {
+        "id": "d",
+        "label": "held"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף since 1972 מתאר פעולה שהתחילה בעבר ונמשכת עד היום (now), ולכן צריך את הזמן present perfect: has held (קיימה ועדיין מקיימת).\n\n_since 1972 links a past starting point to now, so the verb must be present perfect: has held._\n\n**הסבר מלא:** המילה since (מאז) עם נקודת זמן כמו 1972 מתארת פעולה שהתחילה בעבר ועדיין נמשכת, ובמקרה כזה משתמשים בזמן present perfect: פועל העזר has ואחריו צורת V3, כלומר has held (קיימה ועדיין מקיימת). בעברית אומרים \"העיירה מקיימת פסטיבל מאז 1972\" בזמן הווה, ולכן קל לבחור בטעות בזמן present simple או בזמן present continuous. הכלל: עם המילה since ונקודת זמן, או עם המילה for ומשך זמן, כשהפעולה נמשכת עד היום, משתמשים בזמן present perfect.\n\nשיטה: מילות זמן — מחפשים את מילת הזמן: הצירוף since 1972 מסמן נקודת התחלה בעבר שנמשכת עד עכשיו (now), ולכן בוחרים את הזמן present perfect: has held.\n\n_Time markers: Find the time marker: since 1972 marks a starting point that runs up to now, so choose the present perfect has held._\n\n**למה לא האפשרויות האחרות**\n\nholds — הצורה holds היא בזמן present simple, והזמן הזה אינו יכול לבוא עם הצירוף since 1972, גם אם בעברית אומרים \"מקיימת מאז\".\n\n_The present simple holds cannot go with since 1972, even though Hebrew uses the present here._\n\nis holding — הצורה is holding היא בזמן present continuous, שמתאר פעולה שקורית ברגע זה, והזמן הזה אינו יכול לבוא עם הצירוף since 1972.\n\n_The present continuous is holding describes an action happening right now and cannot go with since 1972._\n\nheld — הצורה held היא בזמן past simple, שמתאר פעולה שהסתיימה, ואילו הצירוף since 1972 והמילה now מראים שהפסטיבל נמשך עד היום.\n\n_The past simple held describes a finished action, but since 1972 and now show that the festival goes on._\n\n_since 1972 marks a past starting point that continues to now, so the verb is present perfect: has held._\n\n**תשובה סופית: has held**",
+    "distractorExplanations": {
+      "a": "הצורה holds היא בזמן present simple, והזמן הזה אינו יכול לבוא עם הצירוף since 1972, גם אם בעברית אומרים \"מקיימת מאז\".\n\nThe present simple holds cannot go with since 1972, even though Hebrew uses the present here.",
+      "c": "הצורה is holding היא בזמן present continuous, שמתאר פעולה שקורית ברגע זה, והזמן הזה אינו יכול לבוא עם הצירוף since 1972.\n\nThe present continuous is holding describes an action happening right now and cannot go with since 1972.",
+      "d": "הצורה held היא בזמן past simple, שמתאר פעולה שהסתיימה, ואילו הצירוף since 1972 והמילה now מראים שהפסטיבל נמשך עד היום.\n\nThe past simple held describes a finished action, but since 1972 and now show that the festival goes on."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-4",
+      "quiz",
+      "difficulty_2",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-4-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 3,
+    "questionText": "When the students finish ________ their first drafts, the teacher asks them to swap papers with a partner and mark anything that is unclear.",
+    "options": [
+      {
+        "id": "a",
+        "label": "to write"
+      },
+      {
+        "id": "b",
+        "label": "writing"
+      },
+      {
+        "id": "c",
+        "label": "written"
+      },
+      {
+        "id": "d",
+        "label": "write"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי הפועל finish (לסיים) בא פועל בצורת ‎-ing‎ ולא בצורת to + פועל, ולכן התשובה היא writing (לכתוב).\n\n_The verb finish is followed by an -ing form, not to + verb, so the answer is writing._\n\n**הסבר מלא:** הפועל finish (לסיים) הוא אחד הפעלים שאחריהם בא פועל בצורת ‎-ing‎, ולכן כותבים finish writing (לסיים לכתוב). בעברית אומרים \"לסיים לכתוב\" עם שם פועל, ולכן קל לבחור בטעות בצורה to write. המשפט עצמו מראה את ההבדל: אחרי הפועל asks בא דווקא הצירוף to swap, כי פעלים שונים מקבלים אחריהם צורות שונות, ואת הצורה שבאה אחרי כל פועל כדאי ללמוד יחד איתו.\n\nשיטה: מה בא אחרי המילה — מסתכלים על המילה שלפני החסר: אחרי הפועל finish בא פועל בצורת ‎-ing‎ ישירות, ולכן התשובה היא writing.\n\n_What follows the word: Look at the word before the blank: finish takes an -ing form directly, so the answer is writing._\n\n**למה לא האפשרויות האחרות**\n\nto write — הצורה to write היא תרגום של \"לסיים לכתוב\", ואילו פועל שבא אחרי הפועל finish הוא תמיד בצורת ‎-ing‎.\n\n_to write copies the Hebrew; a verb after finish is always an -ing form._\n\nwritten — הצורה written היא צורת V3, והיא באה אחרי פועל העזר have או be, ולא ישירות אחרי הפועל finish.\n\n_written is a past participle; it follows have or be, not finish._\n\nwrite — הצורה write היא צורת הבסיס, והיא באה אחרי פועל עזר כמו can, ולא אחרי הפועל finish.\n\n_The base form write follows a modal such as can, not the verb finish._\n\n_finish is followed by an -ing form, so the answer is writing (finish writing); compare asks them to swap, where ask takes to + verb._\n\n**תשובה סופית: writing**",
+    "distractorExplanations": {
+      "a": "הצורה to write היא תרגום של \"לסיים לכתוב\", ואילו פועל שבא אחרי הפועל finish הוא תמיד בצורת ‎-ing‎.\n\nto write copies the Hebrew; a verb after finish is always an -ing form.",
+      "c": "הצורה written היא צורת V3, והיא באה אחרי פועל העזר have או be, ולא ישירות אחרי הפועל finish.\n\nwritten is a past participle; it follows have or be, not finish.",
+      "d": "הצורה write היא צורת הבסיס, והיא באה אחרי פועל עזר כמו can, ולא אחרי הפועל finish.\n\nThe base form write follows a modal such as can, not the verb finish."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-4",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-4-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 3,
+    "questionText": "Every year, millions of tulip bulbs ________ from the Netherlands to gardeners in dozens of countries around the world.",
+    "options": [
+      {
+        "id": "a",
+        "label": "are exported"
+      },
+      {
+        "id": "b",
+        "label": "exporting"
+      },
+      {
+        "id": "c",
+        "label": "export"
+      },
+      {
+        "id": "d",
+        "label": "are exporting"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** פקעות הצבעונים (tulip bulbs) אינן מייצאות דבר אלא מיוצאות, והצירוף Every year מציין פעולה חוזרת, ולכן צריך סביל בזמן הווה: are exported (מיוצאות).\n\n_The tulip bulbs do not export anything, and Every year marks a regular action, so the present simple passive are exported is needed._\n\n**הסבר מלא:** הצירוף millions of tulip bulbs הוא הנושא של המשפט, והפקעות הן מה שמיוצא ולא מי שמייצא, ולכן צריך צורת סביל (passive): פועל העזר are ואחריו צורת V3. הצירוף Every year מציין פעולה שחוזרת על עצמה, ולכן הסביל בא בזמן present simple: are exported (מיוצאות). הכלל: כשהנושא מקבל את הפעולה, צריך את הפועל be בזמן המתאים ואחריו צורת V3, גם כשלא כתוב במשפט מי עשה את הפעולה.\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עושה את הפעולה: אנשים מייצאים את הפקעות, והצירוף tulip bulbs רק מקבל את הפעולה, ולכן בוחרים את הסביל are exported.\n\n_Who does what? Active or passive: Ask who does the action: people export the bulbs, and the tulip bulbs receive it, so choose the passive are exported._\n\n**למה לא האפשרויות האחרות**\n\nexporting — הצורה exporting לבדה אינה פועל שלם, כי חסר לפניה פועל עזר, ולכן לנושא millions of tulip bulbs לא נשאר פועל בכלל.\n\n_exporting alone is not a full verb, so millions of tulip bulbs is left with no verb._\n\nexport — הצורה export היא צורה פעילה, כאילו הצירוף tulip bulbs מייצא משהו בעצמו, ואילו הפקעות הן מה שמיוצא.\n\n_export is active, as if the tulip bulbs exported something themselves._\n\nare exporting — הצורה are exporting היא צורה פעילה בזמן present continuous, ולכן גם היא מציגה את הצירוף tulip bulbs כמי שמייצא ולא כמה שמיוצא.\n\n_are exporting is active too: it makes the tulip bulbs the exporters, not the goods._\n\n_People export the tulip bulbs, so the verb is passive, and Every year calls for the present simple: are exported._\n\n**תשובה סופית: are exported**",
+    "distractorExplanations": {
+      "b": "הצורה exporting לבדה אינה פועל שלם, כי חסר לפניה פועל עזר, ולכן לנושא millions of tulip bulbs לא נשאר פועל בכלל.\n\nexporting alone is not a full verb, so millions of tulip bulbs is left with no verb.",
+      "c": "הצורה export היא צורה פעילה, כאילו הצירוף tulip bulbs מייצא משהו בעצמו, ואילו הפקעות הן מה שמיוצא.\n\nexport is active, as if the tulip bulbs exported something themselves.",
+      "d": "הצורה are exporting היא צורה פעילה בזמן present continuous, ולכן גם היא מציגה את הצירוף tulip bulbs כמי שמייצא ולא כמה שמיוצא.\n\nare exporting is active too: it makes the tulip bulbs the exporters, not the goods."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-4",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-4-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 3,
+    "questionText": "The tomatoes on our balcony were not yet ________, so we left them on the plants for a few more days of sunshine.",
+    "options": [
+      {
+        "id": "a",
+        "label": "enough ripe to pick"
+      },
+      {
+        "id": "b",
+        "label": "ripe enough to picking"
+      },
+      {
+        "id": "c",
+        "label": "enough ripe for picking"
+      },
+      {
+        "id": "d",
+        "label": "ripe enough to pick"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי הצירוף were not yet בא שם תואר, והמילה enough (מספיק) באה אחריו ולפני המילה to וצורת בסיס: ripe enough to pick (בשלות מספיק לקטיף).\n\n_After were not yet, enough follows the adjective and is followed by to + base form: ripe enough to pick._\n\n**הסבר מלא:** המילה enough (מספיק) באה אחרי שם התואר ולא לפניו, אף שבעברית אפשר לומר גם \"מספיק בשלות\", ולכן כותבים ripe enough. אחרי הצירוף הזה באה המילה to ופועל בצורת בסיס, ולכן הצורה המלאה היא ripe enough to pick (בשלות מספיק כדי לקטוף). הכלל: שם תואר, אחריו המילה enough ואחריה המילה to וצורת בסיס, ובאותו אופן המילה too, שם תואר, המילה to וצורת בסיס, למשל too hot to drink.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא לפני המילה enough ומה בא אחריה: לפניה שם התואר ripe, ואחריה המילה to וצורת בסיס, ולכן רק הצורה ripe enough to pick בנויה נכון בשני הצדדים.\n\n_What follows the word: Check what comes before and after enough: the adjective goes before it, and to + base form after it, so ripe enough to pick._\n\n**למה לא האפשרויות האחרות**\n\nenough ripe to pick — בצורה enough ripe to pick המילה enough באה לפני שם התואר, כמו בעברית, ואילו אחרי הצירוף were not yet כותבים קודם את שם התואר ורק אחריו את המילה enough.\n\n_enough must follow the adjective after were not yet: ripe enough, not enough ripe._\n\nripe enough to picking — בצורה ripe enough to picking סדר המילים אחרי הצירוף were not yet נכון, אך המילה to כאן היא חלק משם הפועל, ולכן אחריה בא פועל בצורת בסיס ולא בצורת ‎-ing‎.\n\n_The order after were not yet is right, but to here is part of the infinitive, so it takes the base form, not -ing._\n\nenough ripe for picking — בצורה enough ripe for picking המילה enough שוב באה לפני שם התואר, ולכן הצורה שגויה אחרי הצירוף were not yet, למרות שהצירוף for picking לבדו אפשרי אחרי הצירוף ripe enough.\n\n_enough again comes before the adjective, so this is wrong after were not yet, even though for picking alone is possible after ripe enough._\n\n_enough follows the adjective and is followed by to + base form: ripe enough to pick, not enough ripe._\n\n**תשובה סופית: ripe enough to pick**",
+    "distractorExplanations": {
+      "a": "בצורה enough ripe to pick המילה enough באה לפני שם התואר, כמו בעברית, ואילו אחרי הצירוף were not yet כותבים קודם את שם התואר ורק אחריו את המילה enough.\n\nenough must follow the adjective after were not yet: ripe enough, not enough ripe.",
+      "b": "בצורה ripe enough to picking סדר המילים אחרי הצירוף were not yet נכון, אך המילה to כאן היא חלק משם הפועל, ולכן אחריה בא פועל בצורת בסיס ולא בצורת ‎-ing‎.\n\nThe order after were not yet is right, but to here is part of the infinitive, so it takes the base form, not -ing.",
+      "c": "בצורה enough ripe for picking המילה enough שוב באה לפני שם התואר, ולכן הצורה שגויה אחרי הצירוף were not yet, למרות שהצירוף for picking לבדו אפשרי אחרי הצירוף ripe enough.\n\nenough again comes before the adjective, so this is wrong after were not yet, even though for picking alone is possible after ripe enough."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-4",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-5-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 3,
+    "questionText": "Many beginners avoid ________ the new language in public at first, because they worry that every small mistake will sound foolish.",
+    "options": [
+      {
+        "id": "a",
+        "label": "to speak"
+      },
+      {
+        "id": "b",
+        "label": "from speaking"
+      },
+      {
+        "id": "c",
+        "label": "speak"
+      },
+      {
+        "id": "d",
+        "label": "speaking"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי הפועל avoid (להימנע) בא פועל בצורת ‎-ing‎ ישירות, בלי מילת יחס, ולכן התשובה היא speaking (לדבר).\n\n_The verb avoid takes an -ing form directly, with no preposition, so the answer is speaking._\n\n**הסבר מלא:** הפועל avoid (להימנע) הוא אחד הפעלים שאחריהם בא פועל בצורת ‎-ing‎ ולא בצורת to + פועל, ולכן כותבים avoid speaking. בעברית אומרים \"להימנע מלדבר\", ולכן קל לטעות ולהוסיף את מילת היחס from או את המילה to. כך נוהגים גם הפעלים enjoy, keep, finish ו-mind, למשל enjoy reading ו-keep trying.\n\nשיטה: מה בא אחרי המילה — מסתכלים על המילה שלפני החסר: אחרי הפועל avoid בא פועל בצורת ‎-ing‎ ישירות, בלי מילת יחס ובלי המילה to, ולכן התשובה היא speaking.\n\n_What follows the word: Look at the word before the blank: avoid takes an -ing form directly, with no to and no preposition, so the answer is speaking._\n\n**למה לא האפשרויות האחרות**\n\nto speak — הצורה to speak היא שם פועל (to + פועל), והפועל avoid אינו מקבל אחריו שם פועל אלא רק צורת ‎-ing‎.\n\n_avoid is followed by an -ing form, never by to + verb._\n\nfrom speaking — הצורה from speaking היא תרגום מילולי של \"להימנע מ-\", ואחרי הפועל avoid בא פועל בצורת ‎-ing‎ ישירות, בלי מילת היחס from.\n\n_from speaking copies the Hebrew; avoid takes the -ing form directly, with no from._\n\nspeak — הצורה speak היא צורת הבסיס, והיא באה אחרי פועל עזר כמו can או will, ולא אחרי הפועל avoid.\n\n_The base form speak follows a modal such as can or will, not the verb avoid._\n\n_avoid is followed directly by an -ing form, so the answer is speaking (avoid speaking)._\n\n**תשובה סופית: speaking**",
+    "distractorExplanations": {
+      "a": "הצורה to speak היא שם פועל (to + פועל), והפועל avoid אינו מקבל אחריו שם פועל אלא רק צורת ‎-ing‎.\n\navoid is followed by an -ing form, never by to + verb.",
+      "b": "הצורה from speaking היא תרגום מילולי של \"להימנע מ-\", ואחרי הפועל avoid בא פועל בצורת ‎-ing‎ ישירות, בלי מילת היחס from.\n\nfrom speaking copies the Hebrew; avoid takes the -ing form directly, with no from.",
+      "c": "הצורה speak היא צורת הבסיס, והיא באה אחרי פועל עזר כמו can או will, ולא אחרי הפועל avoid.\n\nThe base form speak follows a modal such as can or will, not the verb avoid."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-5",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-5-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 3,
+    "questionText": "If the snow ________ on the mountain until April, the ski season will last two weeks longer than usual.",
+    "options": [
+      {
+        "id": "a",
+        "label": "will stay"
+      },
+      {
+        "id": "b",
+        "label": "stays"
+      },
+      {
+        "id": "c",
+        "label": "would stay"
+      },
+      {
+        "id": "d",
+        "label": "stayed"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** החלק the ski season will last מראה שזהו תנאי אמיתי לעתיד, ובו אחרי המילה If בא הזמן present simple, ולכן התשובה היא stays (יישאר).\n\n_With will last in the main clause, this is a real future condition, so the If clause takes the present simple: stays._\n\n**הסבר מלא:** המשפט מתאר תנאי אפשרי בעתיד: אם השלג יישאר על ההר עד אפריל, עונת הסקי תימשך שבועיים יותר מהרגיל, והחלק השני משתמש בצורה will last. בתנאי כזה (first conditional) בא אחרי המילה If הזמן present simple, ובחלק השני באה המילה will ועוד פועל בצורת הבסיס. לכן כותבים If the snow stays (אם השלג יישאר), אף שבעברית אומרים \"אם יישאר\" בזמן עתיד. הכלל: בתנאי מסוג זה לא באה המילה will בחלק שמתחיל במילה If, גם כשמדברים על העתיד.\n\nשיטה: סוג המחבר קובע את המבנה — המחבר If והצורה will last בחלק השני מסמנים תנאי לעתיד, ובמבנה הזה בא אחרי המילה If הזמן present simple: stays.\n\n_The connector decides the structure: If plus will last in the main clause signals a first conditional, so the If clause takes the present simple: stays._\n\n**למה לא האפשרויות האחרות**\n\nwill stay — הצורה will stay מתרגמת את העברית \"אם יישאר\", ואילו בתנאי לעתיד כמו זה, שבחלקו השני באה הצורה will last, לא באה המילה will אחרי המילה If.\n\n_will stay copies the Hebrew future; with will last in the main clause, the If clause takes the present simple._\n\nwould stay — הצורה would stay שייכת לחלק הראשי של תנאי דמיוני, ואילו כאן החלק הראשי הוא the ski season will last, ובחלק שמתחיל במילה If בא הזמן present simple.\n\n_would belongs in the main clause of an imagined condition, not after If in a real one with will last._\n\nstayed — הצורה stayed בזמן עבר מתאימה לתנאי דמיוני שבחלקו הראשי באה המילה would, ולכן אינה מתאימה לחלק הראשי the ski season will last, שמתאר אפשרות אמיתית בעתיד.\n\n_stayed goes with would in an imagined condition; with will last in the main clause, the present simple is needed._\n\n_This is a real future condition (will last in the main clause), so the If clause uses the present simple, not will: stays._\n\n**תשובה סופית: stays**",
+    "distractorExplanations": {
+      "a": "הצורה will stay מתרגמת את העברית \"אם יישאר\", ואילו בתנאי לעתיד כמו זה, שבחלקו השני באה הצורה will last, לא באה המילה will אחרי המילה If.\n\nwill stay copies the Hebrew future; with will last in the main clause, the If clause takes the present simple.",
+      "c": "הצורה would stay שייכת לחלק הראשי של תנאי דמיוני, ואילו כאן החלק הראשי הוא the ski season will last, ובחלק שמתחיל במילה If בא הזמן present simple.\n\nwould belongs in the main clause of an imagined condition, not after If in a real one with will last.",
+      "d": "הצורה stayed בזמן עבר מתאימה לתנאי דמיוני שבחלקו הראשי באה המילה would, ולכן אינה מתאימה לחלק הראשי the ski season will last, שמתאר אפשרות אמיתית בעתיד.\n\nstayed goes with would in an imagined condition; with will last in the main clause, the present simple is needed."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-5",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-5-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 3,
+    "questionText": "Before the cable car opened in 1960, people from the mountain village ________ for almost three hours to reach the market in the valley.",
+    "options": [
+      {
+        "id": "a",
+        "label": "use to walk"
+      },
+      {
+        "id": "b",
+        "label": "are used to walking"
+      },
+      {
+        "id": "c",
+        "label": "used to walk"
+      },
+      {
+        "id": "d",
+        "label": "used to walking"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הצירוף Before the cable car opened in 1960 מתאר הרגל בעבר שכבר הסתיים, ולכן צריך את המבנה used to וצורת בסיס: used to walk (נהגו ללכת).\n\n_Before the cable car opened in 1960 describes a past habit that has ended, so we need used to + base form: used to walk._\n\n**הסבר מלא:** המבנה used to וצורת בסיס (נהג ל-) מתאר הרגל או מצב בעבר שכבר הסתיים, כמו כאן: לפני שהרכבל נפתח (Before the cable car opened in 1960), אנשי הכפר הלכו ברגל כמעט שלוש שעות. במובן הזה בא אחרי הצירוף used to פועל בצורת בסיס, ולכן הצורה הנכונה היא used to walk (נהגו ללכת). את המבנה הזה אין לבלבל עם המבנה be used to וצורת ‎-ing‎, שפירושו \"להיות רגיל ל-\" ושיש בו פועל העזר be.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי הצירוף used to: כשאין לפניו פועל העזר be, הוא מתאר הרגל בעבר ואחריו בא פועל בצורת בסיס, ולכן הצורה היא used to walk.\n\n_What follows the word: Check what follows used to: without be, it marks a past habit and takes the base form, so used to walk._\n\n**למה לא האפשרויות האחרות**\n\nuse to walk — בצורה use to walk חסרה הסיומת ‎-d‎, ובמשפט חיובי על העבר, כמו משפט שנפתח בצירוף Before the cable car opened in 1960, כותבים used to.\n\n_In a positive sentence about the past (Before the cable car opened in 1960), the form is used to, with -d._\n\nare used to walking — הצורה are used to walking פירושה \"רגילים ללכת\" בזמן הווה, והיא אינה מתאימה להרגל שהסתיים לפני שהרכבל נפתח (Before the cable car opened in 1960).\n\n_are used to walking means 'are accustomed to walking' in the present, which clashes with Before the cable car opened in 1960._\n\nused to walking — בלי פועל העזר be הצירוף used to מתאר הרגל בעבר ואחריו בא פועל בצורת בסיס, ולכן הצורה walking שגויה אחרי הנושא people from the mountain village.\n\n_Without be, used to marks a past habit and takes the base form, so walking is wrong after people from the mountain village._\n\n_used to + base form describes a past habit that has ended (Before the cable car opened in 1960), so the answer is used to walk; be used to + -ing means 'be accustomed to'._\n\n**תשובה סופית: used to walk**",
+    "distractorExplanations": {
+      "a": "בצורה use to walk חסרה הסיומת ‎-d‎, ובמשפט חיובי על העבר, כמו משפט שנפתח בצירוף Before the cable car opened in 1960, כותבים used to.\n\nIn a positive sentence about the past (Before the cable car opened in 1960), the form is used to, with -d.",
+      "b": "הצורה are used to walking פירושה \"רגילים ללכת\" בזמן הווה, והיא אינה מתאימה להרגל שהסתיים לפני שהרכבל נפתח (Before the cable car opened in 1960).\n\nare used to walking means 'are accustomed to walking' in the present, which clashes with Before the cable car opened in 1960.",
+      "d": "בלי פועל העזר be הצירוף used to מתאר הרגל בעבר ואחריו בא פועל בצורת בסיס, ולכן הצורה walking שגויה אחרי הנושא people from the mountain village.\n\nWithout be, used to marks a past habit and takes the base form, so walking is wrong after people from the mountain village."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-5",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-5-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 4,
+    "questionText": "Hummingbirds beat their wings at ________ speeds that the moving air makes a soft humming sound, which gives the birds their English name.",
+    "options": [
+      {
+        "id": "a",
+        "label": "such high"
+      },
+      {
+        "id": "b",
+        "label": "so high"
+      },
+      {
+        "id": "c",
+        "label": "too high"
+      },
+      {
+        "id": "d",
+        "label": "such a high"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** אחרי החסר בא שם העצם ברבים speeds ואחריו המילה that, ולכן צריך את המילה such ותואר בלי המילה a: such high (גבוהות כל כך).\n\n_A plural noun (speeds) and a that clause follow the blank, so we need such + adjective with no a: such high._\n\n**הסבר מלא:** המבנה so/such … that מציג תוצאה: הכנפיים נעות מהר כל כך, ולכן האוויר משמיע זמזום. כשאחרי התואר בא שם עצם (speeds), משתמשים במילה such, ואילו המילה so באה לפני תואר שאין אחריו שם עצם (so fast that). המילה a באה רק לפני שם עצם ביחיד (such a high speed), ולכן לפני שם העצם ברבים speeds כותבים את הצירוף such high בלי המילה a.\n\nשיטה: סוג המחבר קובע את המבנה — רואים את המילה that אחרי החסר ומזהים את המבנה so/such … that; שם העצם speeds שאחרי החסר מכריע לטובת המילה such, וצורת הרבים מוציאה את המילה a.\n\n_The connector decides the structure: Spot that and the so/such … that pattern; the noun speeds calls for such, and the plural rules out a._\n\n**למה לא האפשרויות האחרות**\n\nso high — המילה so באה לפני תואר שאין אחריו שם עצם, ולכן אינה מתאימה כאן, כשאחרי החסר בא שם העצם speeds.\n\n_so goes before an adjective on its own, not before an adjective + noun like speeds._\n\ntoo high — המילה too (יותר מדי) אינה יוצרת עם המילה that מבנה של תוצאה, וגם אינה באה לפני תואר ושם עצם כמו speeds.\n\n_too does not form a result pattern with that, and it cannot come before an adjective + noun like speeds._\n\nsuch a high — המילה a באה רק לפני שם עצם ביחיד, ואילו שם העצם speeds הוא ברבים, ולכן צריך את המילה such בלי המילה a.\n\n_a goes only with a singular noun, but speeds is plural, so such takes no a here._\n\n_A noun (speeds) follows, so the result pattern is such + adjective + noun + that; with a plural noun there is no a._\n\n**תשובה סופית: such high**",
+    "distractorExplanations": {
+      "b": "המילה so באה לפני תואר שאין אחריו שם עצם, ולכן אינה מתאימה כאן, כשאחרי החסר בא שם העצם speeds.\n\nso goes before an adjective on its own, not before an adjective + noun like speeds.",
+      "c": "המילה too (יותר מדי) אינה יוצרת עם המילה that מבנה של תוצאה, וגם אינה באה לפני תואר ושם עצם כמו speeds.\n\ntoo does not form a result pattern with that, and it cannot come before an adjective + noun like speeds.",
+      "d": "המילה a באה רק לפני שם עצם ביחיד, ואילו שם העצם speeds הוא ברבים, ולכן צריך את המילה such בלי המילה a.\n\na goes only with a singular noun, but speeds is plural, so such takes no a here."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-5",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-6-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 3,
+    "questionText": "The town's only cinema, a cavernous old building near the harbor, is closed this month because its seats ________ with wider, more comfortable ones.",
+    "options": [
+      {
+        "id": "a",
+        "label": "are being replaced"
+      },
+      {
+        "id": "b",
+        "label": "have been replacing"
+      },
+      {
+        "id": "c",
+        "label": "are replaced"
+      },
+      {
+        "id": "d",
+        "label": "are replacing"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הצירוף is closed this month מתאר עבודה שנמשכת עכשיו, והמושבים (its seats) מוחלפים ואינם מחליפים, ולכן צריך סביל מתמשך: are being replaced (מוחלפים).\n\n_is closed this month shows work in progress, and its seats receive the action, so the present continuous passive are being replaced is correct._\n\n**הסבר מלא:** הצירוף is closed this month בחלק הראשי של המשפט מראה שהעבודה נמשכת ממש בתקופה הזאת, ולכן גם בחלק שאחרי המילה because צריך זמן מתמשך (present continuous). הצירוף its seats הוא מה שמוחלף ולא מי שמחליף, ולכן צריך גם סביל. סביל מתמשך בנוי מפועל העזר be, מהמילה being ומצורת V3, ולכן התשובה היא are being replaced (נמצאים בתהליך החלפה).\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עושה את הפעולה: פועלים מחליפים את המושבים, והצירוף its seats רק מקבל את הפעולה, ולכן צריך סביל, והצירוף this month בוחר מבין צורות הסביל את הצורה המתמשכת are being replaced.\n\n_Who does what? Active or passive: Ask who does the action: workers replace the seats, so the verb is passive, and this month picks the continuous form: are being replaced._\n\n**למה לא האפשרויות האחרות**\n\nhave been replacing — הצורה have been replacing היא צורה פעילה, כאילו הצירוף its seats מחליף משהו בעצמו, ולכן חסרה כאן צורת הסביל.\n\n_have been replacing is active, as if its seats were doing the replacing._\n\nare replaced — הצורה are replaced היא סביל בזמן present simple, שמתאר פעולה קבועה או חוזרת, ואילו הצירוף is closed this month מתאר עבודה זמנית שנמשכת עכשיו.\n\n_are replaced is present simple, used for regular actions, but is closed this month describes temporary work in progress._\n\nare replacing — הצורה are replacing היא צורה פעילה בזמן present continuous, ולכן גם היא מציגה את הצירוף its seats כמי שמחליף ולא כמה שמוחלף.\n\n_are replacing is active too: it makes its seats the ones replacing, not the ones replaced._\n\n_The work is going on this month, and the seats receive the action, so we need be + being + past participle: are being replaced._\n\n**תשובה סופית: are being replaced**\n\n**מילים לשינון:** cavernous [KAV-er-nus] – ענק וחלול, דמוי מערה",
+    "distractorExplanations": {
+      "b": "הצורה have been replacing היא צורה פעילה, כאילו הצירוף its seats מחליף משהו בעצמו, ולכן חסרה כאן צורת הסביל.\n\nhave been replacing is active, as if its seats were doing the replacing.",
+      "c": "הצורה are replaced היא סביל בזמן present simple, שמתאר פעולה קבועה או חוזרת, ואילו הצירוף is closed this month מתאר עבודה זמנית שנמשכת עכשיו.\n\nare replaced is present simple, used for regular actions, but is closed this month describes temporary work in progress.",
+      "d": "הצורה are replacing היא צורה פעילה בזמן present continuous, ולכן גם היא מציגה את הצירוף its seats כמי שמחליף ולא כמה שמוחלף.\n\nare replacing is active too: it makes its seats the ones replacing, not the ones replaced."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-6",
+      "quiz",
+      "difficulty_3",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-6-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 4,
+    "questionText": "________ most other fish, whose skeletons are made of bone, sharks and rays are supported by a light, flexible frame of cartilage.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Even though"
+      },
+      {
+        "id": "b",
+        "label": "In opposite to"
+      },
+      {
+        "id": "c",
+        "label": "While"
+      },
+      {
+        "id": "d",
+        "label": "In contrast to"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי החסר בא הצירוף השמני most other fish, והפועל are made שייך למשפט הזיקה של המילה whose, ולכן צריך מילת יחס: In contrast to (בניגוד ל־).\n\n_most other fish is a noun phrase (are made belongs to the whose clause), so a preposition is needed: In contrast to._\n\n**הסבר מלא:** אחרי החסר בא הצירוף השמני most other fish, והפועל are made שייך למשפט הזיקה whose skeletons are made of bone, ולכן אין כאן משפט עם נושא ונשוא משלו. לפני צירוף שמני באה מילת יחס של ניגוד, כמו In contrast to (בניגוד ל־), ולא מחבר כמו While או Even though, שאחריו בא משפט עם נשוא. הצירוף In opposite to הוא תרגום מילולי מעברית ואינו קיים באנגלית.\n\nשיטה: סוג המחבר קובע את המבנה — בודקים מה בא אחרי החסר: הצירוף השמני most other fish, שהפועל are made אינו שלו, ולכן צריך מילת יחס, ומבין מילות היחס רק הצירוף In contrast to קיים באנגלית.\n\n_The connector decides the structure: Check what follows the blank: a noun phrase, since are made belongs to the whose clause, so a preposition is needed, and only In contrast to is real English._\n\n**למה לא האפשרויות האחרות**\n\nEven though — המחבר Even though (למרות ש־) צריך משפט עם נושא ונשוא, ואילו הפועל are made שייך למשפט הזיקה whose skeletons are made of bone ולא לצירוף most other fish.\n\n_Even though needs a clause, but are made belongs to the whose clause, so most other fish has no verb of its own._\n\nWhile — המחבר While (בעוד ש־) מציג ניגוד בין שני משפטים ולכן צריך אחריו נושא ונשוא, ואילו אחרי החסר בא רק הצירוף השמני most other fish.\n\n_While links two clauses, but only the noun phrase most other fish follows it here._\n\nIn opposite to — הצירוף In opposite to הוא תרגום מילולי של בניגוד ל־ ואינו קיים באנגלית, ולכן לפני הצירוף most other fish כותבים את הצירוף In contrast to או את המילה Unlike.\n\n_In opposite to is a word-for-word translation from Hebrew; before most other fish English uses In contrast to or Unlike._\n\n_most other fish is a noun phrase (are made belongs to the whose clause), so the preposition In contrast to is needed; In opposite to is not English._\n\n**תשובה סופית: In contrast to**",
+    "distractorExplanations": {
+      "a": "המחבר Even though (למרות ש־) צריך משפט עם נושא ונשוא, ואילו הפועל are made שייך למשפט הזיקה whose skeletons are made of bone ולא לצירוף most other fish.\n\nEven though needs a clause, but are made belongs to the whose clause, so most other fish has no verb of its own.",
+      "c": "המחבר While (בעוד ש־) מציג ניגוד בין שני משפטים ולכן צריך אחריו נושא ונשוא, ואילו אחרי החסר בא רק הצירוף השמני most other fish.\n\nWhile links two clauses, but only the noun phrase most other fish follows it here.",
+      "b": "הצירוף In opposite to הוא תרגום מילולי של בניגוד ל־ ואינו קיים באנגלית, ולכן לפני הצירוף most other fish כותבים את הצירוף In contrast to או את המילה Unlike.\n\nIn opposite to is a word-for-word translation from Hebrew; before most other fish English uses In contrast to or Unlike."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-6",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-6-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 4,
+    "questionText": "By the time potatoes first reached Europe in the sixteenth century, farmers in the Andes ________ them for thousands of years.",
+    "options": [
+      {
+        "id": "a",
+        "label": "have grown"
+      },
+      {
+        "id": "b",
+        "label": "grew"
+      },
+      {
+        "id": "c",
+        "label": "had grown"
+      },
+      {
+        "id": "d",
+        "label": "were growing"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הצירוף By the time potatoes first reached Europe קובע נקודה בעבר, והגידול נמשך עד אליה, ולכן צריך את הזמן past perfect: had grown (גידלו כבר).\n\n_By the time potatoes first reached Europe sets a past point, and the farming lasted up to it, so the past perfect had grown is needed._\n\n**הסבר מלא:** הצירוף By the time (עד ש־) עם הפועל reached בזמן past simple קובע נקודה בעבר: הרגע שבו תפוחי האדמה הגיעו לאירופה. הגידול בהרי האנדים התחיל אלפי שנים קודם ונמשך עד אותה נקודה, והצירוף for thousands of years מציין את המשך הזה. לכן צריך את הזמן past perfect, כלומר המילה had ואחריה צורת V3: had grown (גידלו כבר). הכלל: פעולה שקרתה או נמשכה עד נקודה אחרת בעבר באה בזמן past perfect, ולא בזמן past simple או present perfect.\n\nשיטה: מילות זמן — מחפשים את מילות הזמן: הצירוף By the time עם הפועל reached קובע נקודה בעבר, והצירוף for thousands of years מראה פעולה שנמשכה עד אליה, ולכן הזמן הוא past perfect.\n\n_Time markers: Find the time markers: By the time + reached sets a past point, and for thousands of years shows an action lasting up to it, so use the past perfect._\n\n**למה לא האפשרויות האחרות**\n\nhave grown — הצורה have grown בזמן present perfect מחברת את הפעולה להווה, ואילו הצירוף By the time potatoes first reached Europe מודד את הזמן עד נקודה בעבר.\n\n_have grown links the action to the present, but By the time potatoes first reached Europe measures time up to a past point._\n\ngrew — הצורה grew בזמן past simple אינה מבטאת פעולה שנמשכה for thousands of years עד הנקודה בעבר שקובע הצירוף By the time.\n\n_grew cannot show an action that lasted for thousands of years up to the past point set by By the time._\n\nwere growing — הצורה were growing בזמן past continuous מתארת פעולה שהייתה באמצעה ברגע אחד, ולכן אינה באה עם משך כמו for thousands of years עד הנקודה שקובע הצירוף By the time.\n\n_were growing shows an action in progress at one moment, so it cannot take a duration like for thousands of years up to the point set by By the time._\n\n_By the time + a past verb sets a past point, and the farming lasted for thousands of years up to it, so the past perfect had grown is correct._\n\n**תשובה סופית: had grown**",
+    "distractorExplanations": {
+      "a": "הצורה have grown בזמן present perfect מחברת את הפעולה להווה, ואילו הצירוף By the time potatoes first reached Europe מודד את הזמן עד נקודה בעבר.\n\nhave grown links the action to the present, but By the time potatoes first reached Europe measures time up to a past point.",
+      "b": "הצורה grew בזמן past simple אינה מבטאת פעולה שנמשכה for thousands of years עד הנקודה בעבר שקובע הצירוף By the time.\n\ngrew cannot show an action that lasted for thousands of years up to the past point set by By the time.",
+      "d": "הצורה were growing בזמן past continuous מתארת פעולה שהייתה באמצעה ברגע אחד, ולכן אינה באה עם משך כמו for thousands of years עד הנקודה שקובע הצירוף By the time.\n\nwere growing shows an action in progress at one moment, so it cannot take a duration like for thousands of years up to the point set by By the time."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-6",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-6-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 4,
+    "questionText": "If Wilhelm Roentgen ________ an otherworldly glow on a nearby screen in 1895, he might never have made the discovery that earned him the first Nobel Prize in Physics.",
+    "options": [
+      {
+        "id": "a",
+        "label": "would not have noticed"
+      },
+      {
+        "id": "b",
+        "label": "had not noticed"
+      },
+      {
+        "id": "c",
+        "label": "does not notice"
+      },
+      {
+        "id": "d",
+        "label": "has not noticed"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף he might never have made מציג תוצאה דמיונית בעבר, ולכן אחרי המילה If בא הזמן past perfect: had not noticed (לו לא היה מבחין).\n\n_he might never have made shows an unreal past result, so the If clause takes the past perfect: had not noticed._\n\n**הסבר מלא:** זהו תנאי מסוג שלישי: הוא מתאר עבר שלא קרה, כי רנטגן אכן הבחין בזוהר ואכן זכה בפרס. בחלק הראשי בא הצירוף might never have made, כלומר המילה might ואחריה המילה have וצורת V3, ובחלק שמתחיל במילה If בא הזמן past perfect: had not noticed (לו לא היה מבחין). המילה would אינה באה אחרי המילה If בתנאי כזה, והשנה in 1895 מוציאה את זמני ההווה.\n\nשיטה: סוג המחבר קובע את המבנה — מזהים את המבנה: הצירוף might never have made בחלק הראשי מסמן תנאי מסוג שלישי, ולכן אחרי המילה If בא הזמן past perfect ולא המילה would.\n\n_The connector decides the structure: Identify the pattern: might never have made in the main clause signals a third conditional, so the If clause takes the past perfect, not would._\n\n**למה לא האפשרויות האחרות**\n\nwould not have noticed — הצירוף would not have noticed מתאים לחלק הראשי של תנאי מסוג שלישי, ואילו בחלק שמתחיל במילה If בא בתנאי כזה הזמן past perfect ולא המילה would.\n\n_would not have noticed belongs in the main clause; in a third conditional, the If clause takes had + past participle._\n\ndoes not notice — הצורה does not notice בזמן present simple מתאימה לתנאי אמיתי בהווה, ואילו השנה in 1895 והצירוף might never have made מציינים עבר דמיוני.\n\n_does not notice is present, but in 1895 and might never have made point to an unreal past._\n\nhas not noticed — הצורה has not noticed בזמן present perfect אינה באה עם שנה שהסתיימה כמו in 1895, וגם אינה יוצרת תנאי דמיוני בעבר.\n\n_has not noticed cannot go with a finished time like in 1895, and it does not form an unreal past condition._\n\n_The main clause he might never have made describes an unreal past, so the If clause needs the past perfect had not noticed; would does not follow If here._\n\n**תשובה סופית: had not noticed**\n\n**מילים לשינון:** otherworldly [uh-ther-WURLD-lee /ˌʌðərˈwɜrldli/] – מוזר ועל-טבעי, כאילו אינו מן העולם הזה",
+    "distractorExplanations": {
+      "a": "הצירוף would not have noticed מתאים לחלק הראשי של תנאי מסוג שלישי, ואילו בחלק שמתחיל במילה If בא בתנאי כזה הזמן past perfect ולא המילה would.\n\nwould not have noticed belongs in the main clause; in a third conditional, the If clause takes had + past participle.",
+      "c": "הצורה does not notice בזמן present simple מתאימה לתנאי אמיתי בהווה, ואילו השנה in 1895 והצירוף might never have made מציינים עבר דמיוני.\n\ndoes not notice is present, but in 1895 and might never have made point to an unreal past.",
+      "d": "הצורה has not noticed בזמן present perfect אינה באה עם שנה שהסתיימה כמו in 1895, וגם אינה יוצרת תנאי דמיוני בעבר.\n\nhas not noticed cannot go with a finished time like in 1895, and it does not form an unreal past condition."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-6",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-7-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 4,
+    "questionText": "Someone ________ the window open last night, because this morning the papers on my desk were scattered all over the floor.",
+    "options": [
+      {
+        "id": "a",
+        "label": "must have left"
+      },
+      {
+        "id": "b",
+        "label": "must to have left"
+      },
+      {
+        "id": "c",
+        "label": "must leave"
+      },
+      {
+        "id": "d",
+        "label": "must had left"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הניירות הפזורים (were scattered all over the floor) הם ראיה להסקה על העבר (last night), ולכן צריך את המבנה must have וצורת V3: must have left (ודאי השאיר).\n\n_The scattered papers are evidence about last night, so we need must + have + past participle: must have left._\n\n**הסבר מלא:** המבנה must have וצורת V3 מתאר הסקה בטוחה על העבר: \"ודאי קרה ש...\". כאן הראיה היא הניירות הפזורים על הרצפה (the papers on my desk were scattered all over the floor), וההסקה היא על מה שקרה בלילה (last night), ולכן הצורה הנכונה היא must have left (ודאי השאיר). אחרי המילה must בא תמיד פועל בצורת בסיס, ולכן כותבים את הצורה have ולא את הצורה had, ואין להוסיף את המילה to. הצורה left היא צורת V3 של הפועל leave.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי המילה must: תמיד צורת בסיס בלי המילה to, ולכן הצורה have, ואחרי המילה have בא פועל בצורת V3. ההסקה היא על מה שקרה בלילה (last night), ולכן צריך את המבנה must have ולא את הצורה must leave, והתשובה היא must have left.\n\n_What follows the word: Check what follows must: a base form with no to, so have, then a past participle; since the deduction is about last night, must leave is out: must have left._\n\n**למה לא האפשרויות האחרות**\n\nmust to have left — הצורה must to have left מוסיפה את המילה to בהשפעת העברית (\"חייב ל-\"), ואילו אחרי המילה must בא פועל בצורת בסיס ישירות, גם בהסקה על מה שקרה בלילה (last night).\n\n_must is never followed by to; the deduction about last night is must have left._\n\nmust leave — הצורה must leave מתאימה לחובה או להסקה בהווה או בעתיד, ואילו כאן ההסקה היא על מה שקרה בלילה (last night), ולכן צריך את המבנה must have וצורת V3.\n\n_must leave is about the present or future, but the deduction here is about last night, so it needs must have + past participle._\n\nmust had left — הצורה must had left מסמנת את העבר פעמיים, ואילו אחרי המילה must בא תמיד פועל בצורת בסיס, ולכן גם בהסקה על מה שקרה בלילה (last night) כותבים את הצורה have.\n\n_must always takes a base form, so even for last night it is have, not had._\n\n_The scattered papers show what happened last night, so we use must have + past participle: must have left; must leave would refer to the present, and must never takes to or had._\n\n**תשובה סופית: must have left**",
+    "distractorExplanations": {
+      "b": "הצורה must to have left מוסיפה את המילה to בהשפעת העברית (\"חייב ל-\"), ואילו אחרי המילה must בא פועל בצורת בסיס ישירות, גם בהסקה על מה שקרה בלילה (last night).\n\nmust is never followed by to; the deduction about last night is must have left.",
+      "c": "הצורה must leave מתאימה לחובה או להסקה בהווה או בעתיד, ואילו כאן ההסקה היא על מה שקרה בלילה (last night), ולכן צריך את המבנה must have וצורת V3.\n\nmust leave is about the present or future, but the deduction here is about last night, so it needs must have + past participle.",
+      "d": "הצורה must had left מסמנת את העבר פעמיים, ואילו אחרי המילה must בא תמיד פועל בצורת בסיס, ולכן גם בהסקה על מה שקרה בלילה (last night) כותבים את הצורה have.\n\nmust always takes a base form, so even for last night it is have, not had."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-7",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-7-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 4,
+    "questionText": "The woven sandals, which ________ in a dry cave in Oregon in 1938, are among the oldest shoes ever found.",
+    "options": [
+      {
+        "id": "a",
+        "label": "were discovered"
+      },
+      {
+        "id": "b",
+        "label": "had discovered"
+      },
+      {
+        "id": "c",
+        "label": "have been discovered"
+      },
+      {
+        "id": "d",
+        "label": "discovered"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הסנדלים (The woven sandals) הם מה שהתגלה ולא מי שגילה, והשנה in 1938 מציינת עבר שהסתיים, ולכן הצורה היא were discovered (התגלו).\n\n_The sandals did not discover anything, and in 1938 is a finished time, so the past simple passive were discovered is needed._\n\n**הסבר מלא:** המילה which מחליפה את הצירוף The woven sandals, והסנדלים הם מה שהתגלה ולא מי שגילה, ולכן צריך צורת סביל (passive): הפועל be ואחריו צורת V3. השנה in 1938 מציינת זמן שהסתיים, ולכן גם הסביל צריך להיות בזמן past simple ובצורת רבים: were discovered (התגלו). הכלל: במשפט זיקה כדאי לבדוק אם שם העצם שהמילה which מחליפה עושה את הפעולה או מקבל אותה.\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עשה את הפעולה: הצירוף The woven sandals לא גילה דבר אלא התגלה, ולכן צריך סביל, והשנה in 1938 בוחרת מבין צורות הסביל את הזמן past simple: were discovered.\n\n_Who does what? Active or passive: Ask who did the action: someone found the sandals, so the verb is passive, and in 1938 makes it past simple: were discovered._\n\n**למה לא האפשרויות האחרות**\n\ndiscovered — הצורה discovered אחרי המילה which היא צורה פעילה, כאילו הצירוף The woven sandals גילה משהו בעצמו, ולכן חסר פועל העזר were של הסביל.\n\n_After which, discovered is active, as if The woven sandals discovered something; the passive needs were._\n\nhad discovered — הצורה had discovered היא צורה פעילה בזמן past perfect, ולכן גם היא מציגה את הצירוף The woven sandals כמי שגילה ולא כמה שהתגלה.\n\n_had discovered is active too: it makes The woven sandals the discoverers, not the thing found._\n\nhave been discovered — הצורה have been discovered היא אמנם סבילה, אך הזמן present perfect אינו יכול לבוא עם שנה שהסתיימה כמו in 1938.\n\n_have been discovered is passive, but the present perfect cannot go with a finished time like in 1938._\n\n_Someone found the sandals, so the verb is passive, and in 1938 is a finished time, so it is past simple: were discovered._\n\n**תשובה סופית: were discovered**",
+    "distractorExplanations": {
+      "d": "הצורה discovered אחרי המילה which היא צורה פעילה, כאילו הצירוף The woven sandals גילה משהו בעצמו, ולכן חסר פועל העזר were של הסביל.\n\nAfter which, discovered is active, as if The woven sandals discovered something; the passive needs were.",
+      "b": "הצורה had discovered היא צורה פעילה בזמן past perfect, ולכן גם היא מציגה את הצירוף The woven sandals כמי שגילה ולא כמה שהתגלה.\n\nhad discovered is active too: it makes The woven sandals the discoverers, not the thing found.",
+      "c": "הצורה have been discovered היא אמנם סבילה, אך הזמן present perfect אינו יכול לבוא עם שנה שהסתיימה כמו in 1938.\n\nhave been discovered is passive, but the present perfect cannot go with a finished time like in 1938."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-7",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-7-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 4,
+    "questionText": "Since its first edition in 1865, the famous children's novel about a girl who follows a white rabbit down a hole ________ into more than a hundred languages.",
+    "options": [
+      {
+        "id": "a",
+        "label": "was translated"
+      },
+      {
+        "id": "b",
+        "label": "is being translated"
+      },
+      {
+        "id": "c",
+        "label": "has been translated"
+      },
+      {
+        "id": "d",
+        "label": "has translated"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הצירוף Since its first edition in 1865 מחייב את הזמן present perfect, והספר הוא מה שמתורגם ולא מי שמתרגם, ולכן צריך סביל: has been translated (תורגם).\n\n_Since its first edition in 1865 needs the present perfect, and the novel is translated by others, so the passive has been translated is correct._\n\n**הסבר מלא:** שתי החלטות קובעות כאן את הצורה. ההחלטה הראשונה היא הזמן: הצירוף Since its first edition in 1865 מתאר פעולה שהתחילה בעבר ונמשכת עד היום, ולכן צריך את הזמן present perfect. ההחלטה השנייה היא בין פעיל לסביל: הנושא the famous children's novel רחוק מהחסר, כי ביניהם בא משפט הזיקה who follows a white rabbit down a hole, והספר הוא מה שמתורגם ולא מי שמתרגם, ולכן צריך סביל. סביל בזמן present perfect בנוי מהצירוף has been ומצורת V3, ולכן התשובה היא has been translated (תורגם).\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עושה את הפעולה: מתרגמים תרגמו את הספר, והצירוף the famous children's novel רק מקבל את הפעולה, ולכן צריך סביל, והצירוף Since its first edition in 1865 בוחר מבין צורות הסביל את הצורה has been translated.\n\n_Who does what? Active or passive: Ask who does the action: translators translate the novel, so the verb is passive, and Since its first edition in 1865 picks the present perfect: has been translated._\n\n**למה לא האפשרויות האחרות**\n\nwas translated — הצורה was translated היא אמנם סבילה, אך הזמן past simple אינו יכול לבוא עם הצירוף Since its first edition in 1865.\n\n_was translated is passive, but the past simple cannot go with Since its first edition in 1865._\n\nis being translated — הצורה is being translated היא סביל בזמן present continuous, והזמן הזה אינו יכול לבוא עם הצירוף Since its first edition in 1865.\n\n_is being translated is present continuous, which cannot go with Since its first edition in 1865._\n\nhas translated — הצורה has translated היא בזמן הנכון, אך היא פעילה, כאילו הצירוף the famous children's novel תרגם משהו בעצמו.\n\n_has translated has the right tense but is active, as if the famous children's novel did the translating._\n\n_Since its first edition in 1865 calls for the present perfect, and the novel receives the action, so the verb is present perfect passive: has been translated._\n\n**תשובה סופית: has been translated**",
+    "distractorExplanations": {
+      "a": "הצורה was translated היא אמנם סבילה, אך הזמן past simple אינו יכול לבוא עם הצירוף Since its first edition in 1865.\n\nwas translated is passive, but the past simple cannot go with Since its first edition in 1865.",
+      "b": "הצורה is being translated היא סביל בזמן present continuous, והזמן הזה אינו יכול לבוא עם הצירוף Since its first edition in 1865.\n\nis being translated is present continuous, which cannot go with Since its first edition in 1865.",
+      "d": "הצורה has translated היא בזמן הנכון, אך היא פעילה, כאילו הצירוף the famous children's novel תרגם משהו בעצמו.\n\nhas translated has the right tense but is active, as if the famous children's novel did the translating."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-7",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-7-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 5,
+    "questionText": "________ the shortage of rehearsal time that had worried the conductor for weeks, the amateur orchestra played with remarkable panache on opening night.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Although"
+      },
+      {
+        "id": "b",
+        "label": "In spite"
+      },
+      {
+        "id": "c",
+        "label": "Despite"
+      },
+      {
+        "id": "d",
+        "label": "Even if"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** אחרי החסר בא צירוף שמני (the shortage of rehearsal time) ולא משפט עם נושא ונשוא, ולכן צריך את מילת היחס Despite (למרות), שבאה בלי of.\n\n_A noun phrase (the shortage of rehearsal time), not a clause, follows the blank, so the preposition Despite is needed._\n\n**הסבר מלא:** אחרי החסר בא הצירוף השמני the shortage of rehearsal time, והפועל had worried שייך למשפט הזיקה שמתחיל במילה that, ולכן אין כאן משפט עם נושא ונשוא משלו. לפני צירוף שמני באה מילת יחס כמו Despite (למרות), ולא מחבר כמו Although, שאחריו בא משפט עם נשוא (או צורה מקוצרת שמתארת את הנושא של המשפט הראשי, כמו Although tired). הצירוף in spite תקין רק עם המילה of, ואילו המילה Despite באה תמיד בלי of.\n\nשיטה: סוג המחבר קובע את המבנה — בודקים מה בא אחרי החסר: יש כאן צירוף שמני (the shortage of rehearsal time) ולא משפט, ולכן צריך מילת יחס, ומבין מילות היחס רק המילה Despite תקינה בלי of.\n\n_The connector decides the structure: Check what follows the blank: a noun phrase, not a clause, so a preposition is needed, and Despite takes no of._\n\n**למה לא האפשרויות האחרות**\n\nAlthough — המחבר Although צריך כאן משפט עם נושא ונשוא, ואילו הפועל had worried שייך למשפט הזיקה that had worried the conductor for weeks ולא לצירוף the shortage of rehearsal time.\n\n_Although needs a clause, but had worried belongs to the that clause, so the shortage of rehearsal time has no verb of its own._\n\nEven if — המחבר Even if (גם אם) מציג תנאי וצריך כאן משפט שלם, ואילו אחרי החסר בא רק הצירוף השמני the shortage of rehearsal time.\n\n_Even if introduces a condition and needs a clause, but only the noun phrase the shortage of rehearsal time follows._\n\nIn spite — הצירוף In spite חסר את המילה of, ולכן לפני הצירוף the shortage of rehearsal time אפשר לכתוב רק In spite of או Despite.\n\n_In spite needs of before a noun phrase like the shortage of rehearsal time._\n\n_the shortage of rehearsal time is a noun phrase (had worried belongs to the that clause), so the answer is the preposition Despite; In spite would need of._\n\n**תשובה סופית: Despite**\n\n**מילים לשינון:** panache [puh-NASH] – ביטחון וסגנון מרשים, הדר",
+    "distractorExplanations": {
+      "a": "המחבר Although צריך כאן משפט עם נושא ונשוא, ואילו הפועל had worried שייך למשפט הזיקה that had worried the conductor for weeks ולא לצירוף the shortage of rehearsal time.\n\nAlthough needs a clause, but had worried belongs to the that clause, so the shortage of rehearsal time has no verb of its own.",
+      "d": "המחבר Even if (גם אם) מציג תנאי וצריך כאן משפט שלם, ואילו אחרי החסר בא רק הצירוף השמני the shortage of rehearsal time.\n\nEven if introduces a condition and needs a clause, but only the noun phrase the shortage of rehearsal time follows.",
+      "b": "הצירוף In spite חסר את המילה of, ולכן לפני הצירוף the shortage of rehearsal time אפשר לכתוב רק In spite of או Despite.\n\nIn spite needs of before a noun phrase like the shortage of rehearsal time."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-7",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-8-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 4,
+    "questionText": "If the human eye ________ able to see ultraviolet light, many flowers that look plain to us would show the bright patterns that bees use to find nectar.",
+    "options": [
+      {
+        "id": "a",
+        "label": "would be"
+      },
+      {
+        "id": "b",
+        "label": "is"
+      },
+      {
+        "id": "c",
+        "label": "will be"
+      },
+      {
+        "id": "d",
+        "label": "were"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** הצירוף would show בחלק הראשי מסמן מצב דמיוני בהווה, ולכן בחלק שאחרי המילה If בא זמן עבר: were (הייתה).\n\n_would show in the main clause marks an imaginary present situation, so the If clause takes the past form were._\n\n**הסבר מלא:** במשפט תנאי על מצב דמיוני בהווה (second conditional) בא בחלק של המילה If זמן עבר, ובחלק הראשי בא הצירוף would ופועל בצורת בסיס. כאן החלק הראשי הוא would show, והמצב דמיוני, כי עין האדם באמת אינה רואה אור אולטרה-סגול; לכן החסר צריך להיות בעבר: were (הייתה). בעברית אומרים \"אילו העין הייתה מסוגלת\", ולכן קל לבחור בטעות בצורה would be, אבל באנגלית, בתנאי מסוג זה, המילה would אינה באה בחלק של המילה If. במבנה הזה משתמשים בצורה were גם עם נושא ביחיד, כמו the human eye.\n\nשיטה: סוג המחבר קובע את המבנה — המחבר If יחד עם הצירוף would show בחלק השני קובע את המבנה: תנאי דמיוני בהווה, ולכן בחלק של המילה If בא זמן עבר, were, בלי המילה would ובלי המילה will.\n\n_The connector decides the structure: If plus would show in the other clause sets the structure: an imaginary present, so the If clause takes the past were, with no would or will._\n\n**למה לא האפשרויות האחרות**\n\nwould be — הצורה would be היא תרגום של \"הייתה\", אך בתנאי דמיוני כזה המילה would באה בחלק הראשי (would show) ולא בחלק שאחרי המילה If.\n\n_In an imaginary condition like this, would belongs in the main clause (would show), not after If._\n\nis — הצורה is מתאימה לתנאי אפשרי במציאות (first conditional), ואילו הצירוף would show בחלק הראשי מחייב זמן עבר בחלק של המילה If.\n\n_is fits a real condition, but would show requires a past form after If._\n\nwill be — הצורה will be אינה באה בחלק של המילה If בתנאי כזה, והיא גם אינה מתאימה לצירוף would show בחלק הראשי.\n\n_will does not go after If in a conditional like this, and it clashes with would show._\n\n_This is an imaginary present situation (would show), so the If clause takes the past form were; in this kind of conditional, would and will do not go in the If clause._\n\n**תשובה סופית: were**",
+    "distractorExplanations": {
+      "a": "הצורה would be היא תרגום של \"הייתה\", אך בתנאי דמיוני כזה המילה would באה בחלק הראשי (would show) ולא בחלק שאחרי המילה If.\n\nIn an imaginary condition like this, would belongs in the main clause (would show), not after If.",
+      "b": "הצורה is מתאימה לתנאי אפשרי במציאות (first conditional), ואילו הצירוף would show בחלק הראשי מחייב זמן עבר בחלק של המילה If.\n\nis fits a real condition, but would show requires a past form after If.",
+      "c": "הצורה will be אינה באה בחלק של המילה If בתנאי כזה, והיא גם אינה מתאימה לצירוף would show בחלק הראשי.\n\nwill does not go after If in a conditional like this, and it clashes with would show."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-8",
+      "quiz",
+      "difficulty_4",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-8-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 5,
+    "questionText": "In 1990, the engineers announced that the new tunnel under the river ________ within five years, but the first trains did not run through it until 1998.",
+    "options": [
+      {
+        "id": "a",
+        "label": "will open"
+      },
+      {
+        "id": "b",
+        "label": "would open"
+      },
+      {
+        "id": "c",
+        "label": "has opened"
+      },
+      {
+        "id": "d",
+        "label": "opens"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הפועל announced בזמן עבר מעביר את התחזית לדיבור עקיף, ולכן המילה will הופכת למילה would: would open (ייפתח).\n\n_After announced (past), the reported prediction shifts back from will to would: would open._\n\n**הסבר מלא:** בדיבור עקיף אחרי פועל אומר בעבר, כמו הפועל announced, הזמנים נסוגים צעד אחד אחורה: המילה will הופכת למילה would, וזמן הווה הופך לזמן עבר. המהנדסים אמרו בשנת 1990 \"המנהרה תיפתח בתוך חמש שנים\" (will open), ובדיבור עקיף הצורה הזאת הופכת לצורה would open. כאן אי אפשר להשאיר את המילה will, כי כל התקופה כבר עברה: הרכבות הראשונות נסעו במנהרה רק בשנת 1998 (until 1998).\n\nשיטה: מילות זמן — מחפשים את מילות הזמן: הצירוף In 1990 והפועל announced מציבים את ההודעה בעבר, והצירוף until 1998 מראה שגם התחזית כבר שייכת לעבר, ולכן המילה will נסוגה לצורה would open.\n\n_Time markers: Find the time markers: In 1990 and announced put the report in the past, and until 1998 shows the prediction is past too, so will shifts back to would open._\n\n**למה לא האפשרויות האחרות**\n\nwill open — הצורה will open משאירה את התחזית בזמן עתיד, ואילו אחרי הפועל announced, כשכל התקופה כבר עברה (until 1998), המילה will הופכת למילה would.\n\n_will open keeps the future, but after announced, with the whole period now past (until 1998), will becomes would._\n\nhas opened — הצורה has opened מתארת משהו שכבר קרה, והיא סותרת את הצירוף within five years, שמתאר זמן עתידי מבחינת ההודעה.\n\n_has opened reports something already done, which clashes with within five years, a future time for the speakers._\n\nopens — הצורה opens היא בזמן present simple, והיא אינה נסוגה לעבר אחרי הפועל announced, כפי שנדרש בדיבור עקיף על תחזית שזמנה כבר עבר.\n\n_opens is present simple and does not shift back after announced, as reported speech about a past prediction requires._\n\n_In reported speech after a past verb like announced, will shifts back to would; the whole story is past (In 1990, until 1998), so the answer is would open._\n\n**תשובה סופית: would open**",
+    "distractorExplanations": {
+      "a": "הצורה will open משאירה את התחזית בזמן עתיד, ואילו אחרי הפועל announced, כשכל התקופה כבר עברה (until 1998), המילה will הופכת למילה would.\n\nwill open keeps the future, but after announced, with the whole period now past (until 1998), will becomes would.",
+      "c": "הצורה has opened מתארת משהו שכבר קרה, והיא סותרת את הצירוף within five years, שמתאר זמן עתידי מבחינת ההודעה.\n\nhas opened reports something already done, which clashes with within five years, a future time for the speakers.",
+      "d": "הצורה opens היא בזמן present simple, והיא אינה נסוגה לעבר אחרי הפועל announced, כפי שנדרש בדיבור עקיף על תחזית שזמנה כבר עבר.\n\nopens is present simple and does not shift back after announced, as reported speech about a past prediction requires."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-8",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-8-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 5,
+    "questionText": "Before restoring the derelict windmill, the village council had ________ by a team of engineers, who found its wooden frame still sound.",
+    "options": [
+      {
+        "id": "a",
+        "label": "inspected the building"
+      },
+      {
+        "id": "b",
+        "label": "the building inspect"
+      },
+      {
+        "id": "c",
+        "label": "the building inspected"
+      },
+      {
+        "id": "d",
+        "label": "the building to inspect"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** הבדיקה נעשתה בידי אחרים (by a team of engineers), ולכן אחרי המילה had בא המבנה הסיבתי, מושא ואחריו צורת V3: the building inspected (דאגה שהמבנה ייבדק).\n\n_Others did the inspecting (by a team of engineers), so had takes the causative pattern object + past participle: the building inspected._\n\n**הסבר מלא:** המבנה הסיבתי have something done (לדאוג שמישהו אחר יעשה משהו) בנוי מהפועל have, מהמושא ומצורת V3: המועצה לא בדקה את המבנה בעצמה, אלא דאגה שהוא ייבדק. הצירוף by a team of engineers מראה מי ביצע את הבדיקה, ולכן המושא the building בא לפני הצורה inspected. בצורה had inspected the building המועצה היא שבודקת בעצמה, ואז אין מקום לצירוף by a team of engineers.\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עשה את הפעולה: לפי הצירוף by a team of engineers המהנדסים בדקו ולא המועצה, ולכן אחרי המילה had בא המושא ואחריו צורת V3.\n\n_Who does what? Active or passive: Ask who did the action: by a team of engineers shows the engineers inspected, not the council, so had + object + past participle is needed._\n\n**למה לא האפשרויות האחרות**\n\ninspected the building — יחד עם המילה had נוצר כאן הזמן past perfect בצורה פעילה, כאילו המועצה בדקה בעצמה, ולכן אין מקום לצירוף by a team of engineers.\n\n_With had, this is an active past perfect (the council inspected), which leaves no room for by a team of engineers._\n\nthe building inspect — פועל בצורת בסיס אחרי המושא הופך את המבנה לבודק עצמו, ואילו הצירוף by a team of engineers מראה שהמבנה הוא מה שנבדק.\n\n_A base form after the object makes the building the inspector, but by a team of engineers shows it was inspected._\n\nthe building to inspect — המבנה של מושא ואחריו המילה to אינו המבנה הסיבתי שבא אחרי המילה had, והצירוף by a team of engineers מחייב כאן צורת V3 סבילה.\n\n_Object + to + verb is not the causative pattern after had, and by a team of engineers needs a past participle._\n\n_The council had others do the work (by a team of engineers), so the causative had the building inspected (object + past participle) is correct._\n\n**תשובה סופית: the building inspected**\n\n**מילים לשינון:** derelict [DER-uh-likt /ˈdɛrəlɪkt/] – נטוש ומוזנח, הרוס למחצה",
+    "distractorExplanations": {
+      "a": "יחד עם המילה had נוצר כאן הזמן past perfect בצורה פעילה, כאילו המועצה בדקה בעצמה, ולכן אין מקום לצירוף by a team of engineers.\n\nWith had, this is an active past perfect (the council inspected), which leaves no room for by a team of engineers.",
+      "b": "פועל בצורת בסיס אחרי המושא הופך את המבנה לבודק עצמו, ואילו הצירוף by a team of engineers מראה שהמבנה הוא מה שנבדק.\n\nA base form after the object makes the building the inspector, but by a team of engineers shows it was inspected.",
+      "d": "המבנה של מושא ואחריו המילה to אינו המבנה הסיבתי שבא אחרי המילה had, והצירוף by a team of engineers מחייב כאן צורת V3 סבילה.\n\nObject + to + verb is not the causative pattern after had, and by a team of engineers needs a past participle."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-8",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-8-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 5,
+    "questionText": "In inhospitable deserts, the seeds of many wildflowers can lie hidden in the dry soil for years, but they will sprout within days ________ enough to soak the ground.",
+    "options": [
+      {
+        "id": "a",
+        "label": "unless it will rain"
+      },
+      {
+        "id": "b",
+        "label": "provided that it rains"
+      },
+      {
+        "id": "c",
+        "label": "unless it rains"
+      },
+      {
+        "id": "d",
+        "label": "provided that it will rain"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הנביטה תוך ימים ספורים (they will sprout within days) תלויה בכך שיורד גשם, ולכן צריך את המחבר provided that (בתנאי ש־) עם הזמן present simple: provided that it rains.\n\n_Rain is the condition for they will sprout within days, so we need provided that + present simple: provided that it rains._\n\n**הסבר מלא:** המחבר provided that (בתנאי ש־) מציג תנאי שבלעדיו הדבר לא יקרה, ואילו המחבר unless (אלא אם) פירושו if … not. הזרעים נובטים רק כשיורד גשם, ולכן המשמעות מחייבת את המחבר provided that, ולא את המחבר unless, שהיה אומר שהם נובטים כשאין גשם. כמו אחרי המילה if, גם אחרי המחברים האלה בא תנאי לעתיד בזמן present simple (it rains) ולא עם המילה will.\n\nשיטה: סוג המחבר קובע את המבנה — בודקים שני דברים: לפי המשמעות, הגשם הוא התנאי לנביטה, ולכן המחבר הוא provided that; ולפי המבנה, בפסוקית תנאי על אירוע עתידי בא הזמן present simple ולא המילה will.\n\n_The connector decides the structure: Check two things: meaning (rain is the condition for sprouting, so provided that) and form (a condition clause about a future event takes the present simple, not will)._\n\n**למה לא האפשרויות האחרות**\n\nunless it will rain — המחבר unless (אלא אם) הופך את התנאי, כאילו הזרעים נובטים within days דווקא כשאין גשם, וגם המילה will אינה באה בפסוקית תנאי על אירוע עתידי כמו גשם.\n\n_unless reverses the condition (sprouting within days without rain), and will does not belong in a condition clause about a future event like rain._\n\nunless it rains — המחבר unless פירושו if … not, ולכן המשפט היה אומר שהזרעים נובטים within days כשאין גשם, ואילו הצירוף in the dry soil for years מראה שבלי מים הם רק ממתינים.\n\n_unless means if … not, so the seeds would sprout without rain, but in the dry soil for years shows they only wait when it is dry._\n\nprovided that it will rain — המחבר provided that מתאים לתנאי של they will sprout within days, ואולם בפסוקית תנאי על אירוע עתידי בא הזמן present simple, ולכן המילה will אינה יכולה לבוא בה.\n\n_provided that fits the meaning, but a condition clause about a future event takes the present simple, not will, even though they will sprout within days is about the future._\n\n_Rain is the condition for sprouting, so provided that (not unless = if not) is needed, and a condition clause takes the present simple: provided that it rains._\n\n**תשובה סופית: provided that it rains**\n\n**מילים לשינון:** inhospitable [in-hah-SPIT-uh-bul /ˌɪnhɑˈspɪtəbəl/] – קשה מאוד למחיה, עוין לחיים (על מקום או אקלים)",
+    "distractorExplanations": {
+      "a": "המחבר unless (אלא אם) הופך את התנאי, כאילו הזרעים נובטים within days דווקא כשאין גשם, וגם המילה will אינה באה בפסוקית תנאי על אירוע עתידי כמו גשם.\n\nunless reverses the condition (sprouting within days without rain), and will does not belong in a condition clause about a future event like rain.",
+      "c": "המחבר unless פירושו if … not, ולכן המשפט היה אומר שהזרעים נובטים within days כשאין גשם, ואילו הצירוף in the dry soil for years מראה שבלי מים הם רק ממתינים.\n\nunless means if … not, so the seeds would sprout without rain, but in the dry soil for years shows they only wait when it is dry.",
+      "d": "המחבר provided that מתאים לתנאי של they will sprout within days, ואולם בפסוקית תנאי על אירוע עתידי בא הזמן present simple, ולכן המילה will אינה יכולה לבוא בה.\n\nprovided that fits the meaning, but a condition clause about a future event takes the present simple, not will, even though they will sprout within days is about the future."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-8",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-9-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 5,
+    "questionText": "Not only ________ entirely by hand in the small workshop, but it is also tuned and played by a notoriously unsparing inspector before it is shipped.",
+    "options": [
+      {
+        "id": "a",
+        "label": "each guitar is built"
+      },
+      {
+        "id": "b",
+        "label": "is each guitar built"
+      },
+      {
+        "id": "c",
+        "label": "does each guitar build"
+      },
+      {
+        "id": "d",
+        "label": "is each guitar building"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף Not only בפתיחת המשפט מחייב היפוך (פועל עזר לפני הנושא), והגיטרה אינה בונה אלא נבנית ביד (by hand), ולכן התשובה היא is each guitar built (כל גיטרה נבנית).\n\n_The opening Not only requires inversion, and a guitar is built by hand (passive), so the answer is is each guitar built._\n\n**הסבר מלא:** כשהמשפט נפתח בצירוף Not only והוא חל על כל הפסוקית, חייבים היפוך כמו בשאלה: פועל העזר בא לפני הנושא. כאן החלק השני (but it is also tuned and played) מוסיף עובדה נוספת על אותה גיטרה, ולכן ההיפוך חובה. הגיטרה אינה עושה את הפעולה אלא מקבלת אותה, ולכן צריך סביל: הפועל is וצורת V3, כלומר הצורה is each guitar built (כל גיטרה נבנית). בסביל, פועל העזר שעובר לפני הנושא הוא הפועל is עצמו, ולא הפועל does.\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: הצירוף Not only בפתיחה מחייב היפוך, ולכן נפסלת הצורה שבה הנושא בא ראשון. שלב 2: הגיטרה מקבלת את הפעולה (by hand), ולכן צריך סביל עם הפועל is וצורת V3, והתשובה היא is each guitar built.\n\n_The connector decides the structure: Step 1: the opening Not only requires inversion. Step 2: a guitar is built by hand, so the verb is passive: is each guitar built._\n\n**למה לא האפשרויות האחרות**\n\neach guitar is built — בצורה each guitar is built הנושא בא לפני הפועל כמו בעברית, ואילו הצירוף Not only בפתיחת המשפט, שהמשכו הוא הצירוף but it is also tuned, מחייב היפוך של פועל העזר והנושא.\n\n_each guitar is built keeps normal word order, but an opening Not only (continued by but it is also tuned) requires inversion._\n\ndoes each guitar build — בצורה does each guitar build יש היפוך, אך היא פעילה, כאילו הגיטרה בונה משהו, ואילו הגיטרה נבנית ביד (by hand), ולכן צריך סביל עם הפועל is ולא פועל העזר does.\n\n_does each guitar build is active, as if the guitar built something, but it is built by hand, so the passive with is is needed._\n\nis each guitar building — בצורה is each guitar building הפועל פעיל בזמן הווה מתמשך, כאילו הגיטרה בונה, ואילו הצירופים by hand ו-is also tuned מראים שהגיטרה מקבלת את הפעולה, ולכן צריך צורת V3.\n\n_is each guitar building is active (the guitar would be building something), but by hand and is also tuned show that it receives the action: built._\n\n_An opening Not only that applies to the whole clause requires inversion, and the guitar receives the action (by hand, is also tuned), so the inverted passive is is each guitar built._\n\n**תשובה סופית: is each guitar built**\n\n**מילים לשינון:** unsparing [un-SPAIR-ing] – שאינו חוסך בביקורת, קפדן וחמור",
+    "distractorExplanations": {
+      "a": "בצורה each guitar is built הנושא בא לפני הפועל כמו בעברית, ואילו הצירוף Not only בפתיחת המשפט, שהמשכו הוא הצירוף but it is also tuned, מחייב היפוך של פועל העזר והנושא.\n\neach guitar is built keeps normal word order, but an opening Not only (continued by but it is also tuned) requires inversion.",
+      "c": "בצורה does each guitar build יש היפוך, אך היא פעילה, כאילו הגיטרה בונה משהו, ואילו הגיטרה נבנית ביד (by hand), ולכן צריך סביל עם הפועל is ולא פועל העזר does.\n\ndoes each guitar build is active, as if the guitar built something, but it is built by hand, so the passive with is is needed.",
+      "d": "בצורה is each guitar building הפועל פעיל בזמן הווה מתמשך, כאילו הגיטרה בונה, ואילו הצירופים by hand ו-is also tuned מראים שהגיטרה מקבלת את הפעולה, ולכן צריך צורת V3.\n\nis each guitar building is active (the guitar would be building something), but by hand and is also tuned show that it receives the action: built."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-9",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-9-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 5,
+    "questionText": "Not until the eighteenth century ________ a common sight on English dinner tables; a century earlier, many people had mocked them as an effete foreign fashion.",
+    "options": [
+      {
+        "id": "a",
+        "label": "forks became"
+      },
+      {
+        "id": "b",
+        "label": "did forks became"
+      },
+      {
+        "id": "c",
+        "label": "forks did become"
+      },
+      {
+        "id": "d",
+        "label": "did forks become"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** הצירוף Not until בתחילת המשפט מחייב היפוך, כלומר את המילה did לפני הנושא, ואחרי המילה did בא הפועל בצורת בסיס: did forks become (רק אז נעשו המזלגות).\n\n_A fronted Not until needs inversion with did before the subject, and did takes the base form: did forks become._\n\n**הסבר מלא:** כשמשפט מתחיל בצירוף שלילי כמו Not until (רק כאשר, לא לפני), החלק הראשי בא בהיפוך: פועל העזר בא לפני הנושא, כמו בשאלה. בזמן past simple פועל העזר הוא did, ואחריו באים הנושא forks והפועל בצורת בסיס, ולכן התשובה היא did forks become ולא הצורה became. בלי הצירוף Not until בתחילת המשפט היה נכון לכתוב את המשפט forks did not become common until the eighteenth century.\n\nשיטה: סוג המחבר קובע את המבנה — רואים את הצירוף Not until בתחילת המשפט ומחפשים היפוך: פועל העזר did לפני הנושא, ואחריו פועל בצורת בסיס.\n\n_The connector decides the structure: See Not until at the start and look for inversion: did before the subject, then the base form._\n\n**למה לא האפשרויות האחרות**\n\nforks became — אחרי הצירוף Not until the eighteenth century בתחילת המשפט חייב לבוא היפוך, ואילו בצורה forks became הנושא בא לפני הפועל כמו במשפט רגיל.\n\n_After a fronted Not until the eighteenth century, inversion is required, but forks became keeps normal word order._\n\ndid forks became — ההיפוך עם המילה did נכון אחרי הצירוף Not until the eighteenth century, ואולם אחרי המילה did בא הפועל בצורת בסיס (become) ולא בזמן עבר.\n\n_The inversion after Not until the eighteenth century is right, but did takes the base form become, not became._\n\nforks did become — בצורה forks did become המילה did באה אחרי הנושא, ולכן אין כאן ההיפוך שהצירוף Not until בתחילת המשפט מחייב.\n\n_In forks did become, did follows the subject, so there is no inversion after Not until._\n\n_A sentence that opens with Not until inverts the auxiliary and the subject, so did forks become (base form after did) is correct._\n\n**תשובה סופית: did forks become**\n\n**מילים לשינון:** effete [ih-FEET /ɪˈfit/] – מעודן ומתגנדר יתר על המידה, מלאכותי וחסר כוח",
+    "distractorExplanations": {
+      "a": "אחרי הצירוף Not until the eighteenth century בתחילת המשפט חייב לבוא היפוך, ואילו בצורה forks became הנושא בא לפני הפועל כמו במשפט רגיל.\n\nAfter a fronted Not until the eighteenth century, inversion is required, but forks became keeps normal word order.",
+      "b": "ההיפוך עם המילה did נכון אחרי הצירוף Not until the eighteenth century, ואולם אחרי המילה did בא הפועל בצורת בסיס (become) ולא בזמן עבר.\n\nThe inversion after Not until the eighteenth century is right, but did takes the base form become, not became.",
+      "c": "בצורה forks did become המילה did באה אחרי הנושא, ולכן אין כאן ההיפוך שהצירוף Not until בתחילת המשפט מחייב.\n\nIn forks did become, did follows the subject, so there is no inversion after Not until."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-9",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-9-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 5,
+    "questionText": "Watching their lawns turn brown in the August heat, many first-time gardeners wish they ________ drought-tolerant shrubs last spring instead of luxuriant but thirsty grass.",
+    "options": [
+      {
+        "id": "a",
+        "label": "would plant"
+      },
+      {
+        "id": "b",
+        "label": "will plant"
+      },
+      {
+        "id": "c",
+        "label": "have planted"
+      },
+      {
+        "id": "d",
+        "label": "had planted"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** אחרי המילה wish הפועל זז זמן אחד אחורה, והצירוף last spring מציין עבר, ולכן צריך את הזמן past perfect: had planted (הלוואי ששתלו).\n\n_After wish, a regret about the past (last spring) takes the past perfect: had planted._\n\n**הסבר מלא:** המילה wish מבטאת משאלה שאינה מציאותית, ולכן הפועל שאחריה זז זמן אחד אחורה: משאלה על ההווה באה בזמן past simple, ומשאלה על העבר באה בזמן past perfect. הצירוף last spring מראה שהגננים מצטערים על משהו שלא עשו בעבר, ולכן הצורה היא had planted (הלוואי ששתלו). המילה would אחרי המילה wish מבטאת רצון לשינוי בעתיד, והמילה will אינה באה אחרי המילה wish, ולכן אף אחת מהן אינה מבטאת חרטה על העבר.\n\nשיטה: מילות זמן — מחפשים את מילת הזמן: הצירוף last spring מציין עבר, ואחרי המילה wish עבר הופך לזמן past perfect.\n\n_Time markers: Find the time marker: last spring is past, and after wish the past becomes the past perfect._\n\n**למה לא האפשרויות האחרות**\n\nwould plant — הצירוף would plant אחרי המילה wish מבטא רצון לשינוי בעתיד, ואילו הצירוף last spring מציין חרטה על העבר.\n\n_wish + would asks for a future change, but last spring shows regret about the past._\n\nwill plant — המילה will אינה באה אחרי המילה wish, וגם אינה יכולה לציין זמן עבר כמו last spring.\n\n_will does not follow wish, and it cannot refer to last spring._\n\nhave planted — הצורה have planted בזמן present perfect אינה באה אחרי המילה wish, וגם אינה באה עם זמן שהסתיים כמו last spring.\n\n_have planted cannot follow wish, and the present perfect cannot go with a finished time like last spring._\n\n_wish moves the verb one tense back, and last spring is past, so the past perfect had planted expresses the regret._\n\n**תשובה סופית: had planted**\n\n**מילים לשינון:** luxuriant [lug-ZHOOR-ee-unt /lʌɡˈʒʊriənt/] – שופע, עבות, צומח בשפע",
+    "distractorExplanations": {
+      "a": "הצירוף would plant אחרי המילה wish מבטא רצון לשינוי בעתיד, ואילו הצירוף last spring מציין חרטה על העבר.\n\nwish + would asks for a future change, but last spring shows regret about the past.",
+      "b": "המילה will אינה באה אחרי המילה wish, וגם אינה יכולה לציין זמן עבר כמו last spring.\n\nwill does not follow wish, and it cannot refer to last spring.",
+      "c": "הצורה have planted בזמן present perfect אינה באה אחרי המילה wish, וגם אינה באה עם זמן שהסתיים כמו last spring.\n\nhave planted cannot follow wish, and the present perfect cannot go with a finished time like last spring."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-9",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-9-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 6,
+    "questionText": "Little ________ that the sketch she had bought for two dollars among the bric-a-brac of a flea market was an early study by a famous painter.",
+    "options": [
+      {
+        "id": "a",
+        "label": "the shopper suspected"
+      },
+      {
+        "id": "b",
+        "label": "the shopper did suspect"
+      },
+      {
+        "id": "c",
+        "label": "did the shopper suspect"
+      },
+      {
+        "id": "d",
+        "label": "did the shopper suspected"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** המילה Little בפתיחה, במשמעות של כלל לא, מחייבת היפוך עם פועל העזר did, ואחרי המילה did בא פועל בצורת בסיס, ולכן התשובה היא did the shopper suspect (הקונה כלל לא חשדה).\n\n_A fronted Little (meaning not at all) requires inversion with did, and did takes the base form: did the shopper suspect._\n\n**הסבר מלא:** כשהמילה Little פותחת משפט במשמעות של כלל לא, היא מתנהגת כמו מילת שלילה ומחייבת היפוך כמו בשאלה. בזמן past simple פועל העזר של ההיפוך הוא did, ואחריו בא הפועל בצורת בסיס, ולכן הצורה הנכונה היא did the shopper suspect (הקונה כלל לא חשדה). העבר מסומן פעם אחת בלבד, במילה did, וזה מתאים לזמן העבר של הפועל was בהמשך המשפט.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי המילה Little בפתיחה: פועל עזר ואחריו הנושא, ואחרי המילה did בא פועל בצורת בסיס, ולכן התשובה היא did the shopper suspect.\n\n_What follows the word: Check what follows: after a fronted Little comes an auxiliary + subject, and after did comes the base form: did the shopper suspect._\n\n**למה לא האפשרויות האחרות**\n\nthe shopper suspected — בצורה the shopper suspected הסדר רגיל כמו בעברית, ואילו המילה Little בפתיחת המשפט פועלת כמילת שלילה ומחייבת היפוך עם פועל עזר.\n\n_the shopper suspected keeps normal word order, but a fronted Little acts as a negative and requires inversion._\n\nthe shopper did suspect — בצורה the shopper did suspect יש פועל עזר, אך הוא בא אחרי הנושא, ואילו אחרי המילה Little בפתיחה פועל העזר חייב לבוא לפני הנושא.\n\n_the shopper did suspect has an auxiliary, but after a fronted Little it must come before the subject._\n\ndid the shopper suspected — בצורה did the shopper suspected יש היפוך, אך העבר מסומן בה פעמיים, ואילו אחרי פועל העזר did שבא אחרי המילה Little הפועל חוזר לצורת הבסיס.\n\n_did the shopper suspected marks the past twice; after did (following Little) the verb takes the base form suspect._\n\n_A fronted negative Little requires question-style inversion; in the past the auxiliary is did, followed by the base form: did the shopper suspect._\n\n**תשובה סופית: did the shopper suspect**\n\n**מילים לשינון:** bric-a-brac [BRIK-uh-brak] – מיני חפצי נוי קטנים וישנים בעלי ערך מועט",
+    "distractorExplanations": {
+      "a": "בצורה the shopper suspected הסדר רגיל כמו בעברית, ואילו המילה Little בפתיחת המשפט פועלת כמילת שלילה ומחייבת היפוך עם פועל עזר.\n\nthe shopper suspected keeps normal word order, but a fronted Little acts as a negative and requires inversion.",
+      "b": "בצורה the shopper did suspect יש פועל עזר, אך הוא בא אחרי הנושא, ואילו אחרי המילה Little בפתיחה פועל העזר חייב לבוא לפני הנושא.\n\nthe shopper did suspect has an auxiliary, but after a fronted Little it must come before the subject.",
+      "d": "בצורה did the shopper suspected יש היפוך, אך העבר מסומן בה פעמיים, ואילו אחרי פועל העזר did שבא אחרי המילה Little הפועל חוזר לצורת הבסיס.\n\ndid the shopper suspected marks the past twice; after did (following Little) the verb takes the base form suspect."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-9",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-10-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 5,
+    "questionText": "Some health researchers argue that it is high time office workers ________ regular breaks to stand up and stretch during long, stultifying afternoons at their desks.",
+    "options": [
+      {
+        "id": "a",
+        "label": "were given"
+      },
+      {
+        "id": "b",
+        "label": "will give"
+      },
+      {
+        "id": "c",
+        "label": "were giving"
+      },
+      {
+        "id": "d",
+        "label": "will be given"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** אחרי הצירוף it is high time בא פועל בזמן עבר, והעובדים (office workers) מקבלים את ההפסקות ולא נותנים אותן, ולכן צריך סביל בעבר: were given (שיינתנו להם).\n\n_After it is high time, the verb goes into the past, and office workers receive the breaks, so the past passive were given is needed._\n\n**הסבר מלא:** אחרי הצירוף it is (high) time ונושא משלו בא הפועל בזמן past simple, אף שהמשמעות היא שהגיע הזמן לשינוי עכשיו או בעתיד. העובדים (office workers) אינם נותנים את ההפסקות אלא מקבלים אותן, ולכן צריך סביל: המילה were ואחריה צורת V3, כלומר were given (שיינתנו להם). המילה will אינה באה אחרי הצירוף it is high time, וצורה פעילה כמו were giving הופכת את העובדים לנותני ההפסקות.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי הצירוף it is high time: נושא ואחריו פועל בזמן עבר; ואז שואלים מי עושה מה, והעובדים מקבלים את ההפסקות, ולכן הצורה סבילה: were given.\n\n_What follows the word: Check what follows it is high time: a subject + a past verb; then ask who does what: the workers receive the breaks, so the form is passive: were given._\n\n**למה לא האפשרויות האחרות**\n\nwill give — המילה will אינה באה אחרי הצירוף it is high time, וגם הצורה הפעילה הופכת את office workers לנותני ההפסקות.\n\n_will cannot follow it is high time, and the active form makes office workers the givers of the breaks._\n\nwere giving — הצורה were giving בזמן עבר מתאימה לצירוף it is high time, ואולם היא פעילה, כאילו office workers נותנים את ההפסקות במקום לקבל אותן.\n\n_were giving has the right past form after it is high time, but it is active, as if office workers gave the breaks._\n\nwill be given — הצורה will be given אמנם סבילה, ואולם המילה will אינה באה אחרי הצירוף it is high time, שאחריו בא פועל בזמן עבר.\n\n_will be given is passive, but it is high time takes a past verb, not will._\n\n_it is high time + a subject takes a past verb, and the workers receive the breaks, so the past passive were given is correct._\n\n**תשובה סופית: were given**\n\n**מילים לשינון:** stultifying [STUL-tuh-fy-ing /ˈstʌltəˌfaɪɪŋ/] – משמים ומקהה, מדכא כל חיוניות ומחשבה",
+    "distractorExplanations": {
+      "b": "המילה will אינה באה אחרי הצירוף it is high time, וגם הצורה הפעילה הופכת את office workers לנותני ההפסקות.\n\nwill cannot follow it is high time, and the active form makes office workers the givers of the breaks.",
+      "c": "הצורה were giving בזמן עבר מתאימה לצירוף it is high time, ואולם היא פעילה, כאילו office workers נותנים את ההפסקות במקום לקבל אותן.\n\nwere giving has the right past form after it is high time, but it is active, as if office workers gave the breaks.",
+      "d": "הצורה will be given אמנם סבילה, ואולם המילה will אינה באה אחרי הצירוף it is high time, שאחריו בא פועל בזמן עבר.\n\nwill be given is passive, but it is high time takes a past verb, not will."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-10",
+      "quiz",
+      "difficulty_5",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-10-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-active-passive",
+    "difficultyLevel": 6,
+    "questionText": "________ decades searching old orchards for forgotten apple varieties, one irrepressible amateur fruit hunter has saved dozens of them from disappearing for good.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Having spent"
+      },
+      {
+        "id": "b",
+        "label": "Had spent"
+      },
+      {
+        "id": "c",
+        "label": "Spent"
+      },
+      {
+        "id": "d",
+        "label": "Having been spent"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** לחלק שלפני הפסיק אין נושא, והנושא של המשפט הראשי (one irrepressible amateur fruit hunter) הוא מי שבילה את השנים, ולכן צריך צורה פעילה: Having spent (לאחר שבילה).\n\n_The opening clause has no subject, and one irrepressible amateur fruit hunter did the searching, so an active participle is needed: Having spent._\n\n**הסבר מלא:** החלק שלפני הפסיק הוא פסוקית בינונית (participle clause): אין בה נושא, והנושא שלה הוא הנושא של המשפט הראשי, one irrepressible amateur fruit hunter. צייד הפירות הוא מי שבילה עשרות שנים בחיפוש, ולכן הצורה פעילה, והמילה Having ואחריה צורת V3 מראה שהפעולה קרתה לפני הפעולה של המשפט הראשי: Having spent (לאחר שבילה). פועל בזמן עבר, כמו Had spent, צריך נושא משלו, ולכן אינו יכול לפתוח משפט בלי נושא.\n\nשיטה: מי עושה מה? פעיל או סביל — שואלים מי עשה את הפעולה: הנושא one irrepressible amateur fruit hunter הוא מי שבילה את השנים בחיפוש, ולכן צריך צורה פעילה בלי נושא משלה: Having spent.\n\n_Who does what? Active or passive: Ask who did the action: one irrepressible amateur fruit hunter spent the decades, so the participle is active and has no subject of its own: Having spent._\n\n**למה לא האפשרויות האחרות**\n\nHad spent — הצורה Had spent היא פועל בזמן past perfect שצריך נושא משלו, ואילו לחלק שמתחיל במילה decades אין נושא, והנושא one irrepressible amateur fruit hunter שייך למשפט הראשי.\n\n_Had spent is a finite verb that needs its own subject, but the opening clause has none; one irrepressible amateur fruit hunter belongs to the main clause._\n\nSpent — הצורה Spent בפתיחת משפט היא צורת V3 סבילה, ולכן אינה יכולה לקבל מושא כמו decades ואינה מתארת את מה שעשה one irrepressible amateur fruit hunter.\n\n_An opening Spent is a passive participle, so it cannot take an object like decades or describe what one irrepressible amateur fruit hunter did._\n\nHaving been spent — הצורה Having been spent סבילה, ולכן אינה יכולה לקבל מושא כמו decades, ואילו הנושא one irrepressible amateur fruit hunter הוא מי שעשה את הפעולה.\n\n_Having been spent is passive, so it cannot take the object decades, and one irrepressible amateur fruit hunter did the action._\n\n_The opening clause has no subject, and the fruit hunter did the action before the main verb, so the active perfect participle Having spent is needed._\n\n**תשובה סופית: Having spent**\n\n**מילים לשינון:** irrepressible [ir-ih-PRES-uh-bul /ˌɪrɪˈprɛsəbəl/] – שאי אפשר לעצור או לרסן אותו, שופע מרץ והתלהבות",
+    "distractorExplanations": {
+      "b": "הצורה Had spent היא פועל בזמן past perfect שצריך נושא משלו, ואילו לחלק שמתחיל במילה decades אין נושא, והנושא one irrepressible amateur fruit hunter שייך למשפט הראשי.\n\nHad spent is a finite verb that needs its own subject, but the opening clause has none; one irrepressible amateur fruit hunter belongs to the main clause.",
+      "c": "הצורה Spent בפתיחת משפט היא צורת V3 סבילה, ולכן אינה יכולה לקבל מושא כמו decades ואינה מתארת את מה שעשה one irrepressible amateur fruit hunter.\n\nAn opening Spent is a passive participle, so it cannot take an object like decades or describe what one irrepressible amateur fruit hunter did.",
+      "d": "הצורה Having been spent סבילה, ולכן אינה יכולה לקבל מושא כמו decades, ואילו הנושא one irrepressible amateur fruit hunter הוא מי שעשה את הפעולה.\n\nHaving been spent is passive, so it cannot take the object decades, and one irrepressible amateur fruit hunter did the action."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-10",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M3"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-10-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "Not only ________ being frozen nearly solid for two weeks last winter, but it also regained a steady heartbeat within hours of thawing, a feat of almost preternatural resilience.",
+    "options": [
+      {
+        "id": "a",
+        "label": "the frog survived"
+      },
+      {
+        "id": "b",
+        "label": "did the frog survive"
+      },
+      {
+        "id": "c",
+        "label": "has the frog survived"
+      },
+      {
+        "id": "d",
+        "label": "does the frog survive"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** המילים Not only בפתיחת המשפט מחייבות היפוך (פועל עזר לפני הנושא), והביטוי last winter מחייב עבר, ולכן הצורה היא did the frog survive (הצפרדע שרדה).\n\n_Here the opening Not only requires inversion, and last winter requires the past, so the answer is did the frog survive._\n\n**הסבר מלא:** כשהמשפט נפתח במילים Not only והן חלות על כל הפסוקית (ולא על הנושא בלבד), חייבים היפוך כמו בשאלה: פועל עזר, אחריו הנושא ואחריו הפועל. הביטוי last winter מציין זמן שהסתיים, ולכן פועל העזר הוא did והפועל חוזר לצורת הבסיס survive: did the frog survive (הצפרדע שרדה). גם הפועל regained בחלק השני של המשפט נמצא בזמן עבר, וזה מאשר את הבחירה.\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: המילים Not only בפתיחת המשפט מחייבות היפוך, ולכן נפסלת הצורה שאין בה פועל עזר לפני הנושא. שלב 2: הביטוי last winter בוחר בזמן עבר, ולכן פועל העזר הוא did.\n\n_The connector decides the structure: Step 1: here the opening Not only applies to the whole clause, so it needs inversion (auxiliary before the subject). Step 2: last winter needs the past, so the auxiliary is did._\n\n**למה לא האפשרויות האחרות**\n\nthe frog survived — הצורה the frog survived נשמעת טבעית אחרי המילים Not only, כי סדר הנושא והפועל בה רגיל כמו בעברית, אבל כאן המילים Not only חלות על כל הפסוקית, כי ההמשך but it also regained מוסיף עובדה נוספת על אותה צפרדע, ולכן חייבים היפוך, כלומר פועל עזר לפני הנושא.\n\n_the frog survived keeps normal word order, but here Not only applies to the whole clause (but it also regained adds a second fact about the frog), so inversion is required._\n\nhas the frog survived — הצורה has the frog survived היא בזמן present perfect, ולכן אינה יכולה לבוא עם זמן שהסתיים כמו last winter.\n\n_has the frog survived is present perfect, which cannot go with a finished time like last winter._\n\ndoes the frog survive — הצורה does the frog survive היא בזמן present simple, ואילו הביטוי last winter והפועל regained מציינים עבר.\n\n_does the frog survive is present, but last winter and regained are past._\n\n_An opening Not only that applies to the whole clause requires question-style inversion, and last winter (with regained) requires the past, so the answer is did the frog survive._\n\n**תשובה סופית: did the frog survive**\n\n**מילים לשינון:** preternatural [pree-ter-NACH-er-ul] – חורג מהטבעי, כמעט על-טבעי",
+    "distractorExplanations": {
+      "a": "הצורה the frog survived נשמעת טבעית אחרי המילים Not only, כי סדר הנושא והפועל בה רגיל כמו בעברית, אבל כאן המילים Not only חלות על כל הפסוקית, כי ההמשך but it also regained מוסיף עובדה נוספת על אותה צפרדע, ולכן חייבים היפוך, כלומר פועל עזר לפני הנושא.\n\nthe frog survived keeps normal word order, but here Not only applies to the whole clause (but it also regained adds a second fact about the frog), so inversion is required.",
+      "c": "הצורה has the frog survived היא בזמן present perfect, ולכן אינה יכולה לבוא עם זמן שהסתיים כמו last winter.\n\nhas the frog survived is present perfect, which cannot go with a finished time like last winter.",
+      "d": "הצורה does the frog survive היא בזמן present simple, ואילו הביטוי last winter והפועל regained מציינים עבר.\n\ndoes the frog survive is present, but last winter and regained are past."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-10",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-10-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "Hardly ________ the last row of sunflower seeds when a flock of impish crows began pecking them out of the soil.",
+    "options": [
+      {
+        "id": "a",
+        "label": "the farmers had planted"
+      },
+      {
+        "id": "b",
+        "label": "have the farmers planted"
+      },
+      {
+        "id": "c",
+        "label": "the farmers planted"
+      },
+      {
+        "id": "d",
+        "label": "had the farmers planted"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** המילה Hardly בפתיחת המשפט מחייבת היפוך, ולפני המילה when והפועל began האירוע הראשון בא בזמן past perfect, ולכן התשובה היא had the farmers planted (החקלאים רק סיימו לשתול).\n\n_A fronted Hardly requires inversion, and with when and the past began the first event takes the past perfect: had the farmers planted._\n\n**הסבר מלא:** כשהמילה Hardly (אך, בקושי) פותחת את המשפט, חייבים היפוך: פועל העזר בא לפני הנושא. במבנה Hardly ... when מתארים שני אירועים בעבר שבאו מיד זה אחרי זה: הראשון (השתילה) בא בזמן past perfect, והשני בא בזמן past simple, כמו הפועל began. לכן הצורה הנכונה היא had the farmers planted (החקלאים רק סיימו לשתול, וכבר...). אפשר לכתוב גם בלי היפוך, אבל אז המילה hardly באה אחרי פועל העזר: The farmers had hardly planted.\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: המילה Hardly בפתיחה מחייבת היפוך, ולכן נפסלות הצורות שבהן הנושא בא ראשון. שלב 2: הפועל began בעבר, ולכן הפעולה שקדמה לו באה בזמן past perfect, כלומר עם פועל העזר had.\n\n_The connector decides the structure: Step 1: a fronted Hardly forces inversion. Step 2: the action before began takes the past perfect: had the farmers planted._\n\n**למה לא האפשרויות האחרות**\n\nthe farmers had planted — בצורה the farmers had planted הזמן נכון, אך הנושא בא לפני פועל העזר, ואילו המילה Hardly בפתיחת המשפט מחייבת היפוך.\n\n_the farmers had planted has the right tense, but a fronted Hardly requires inversion._\n\nhave the farmers planted — בצורה have the farmers planted יש היפוך, אך היא בזמן present perfect, ואילו הפועל began מציב את שני האירועים בעבר, ולכן האירוע הראשון בא בזמן past perfect.\n\n_have the farmers planted is present perfect, but began places both events in the past, so the earlier one needs had._\n\nthe farmers planted — בצורה the farmers planted אין פועל עזר ואין היפוך, ואילו המילה Hardly בפתיחה, יחד עם המילה when, מחייבת פועל עזר לפני הנושא ואת הזמן past perfect.\n\n_the farmers planted has neither inversion nor the past perfect that a fronted Hardly with when requires._\n\n_A fronted Hardly needs inversion, and in Hardly ... when the first past event takes the past perfect while the second (began) is past simple: had the farmers planted._\n\n**תשובה סופית: had the farmers planted**\n\n**מילים לשינון:** impish [IM-pish] – שובב, קונדסי",
+    "distractorExplanations": {
+      "a": "בצורה the farmers had planted הזמן נכון, אך הנושא בא לפני פועל העזר, ואילו המילה Hardly בפתיחת המשפט מחייבת היפוך.\n\nthe farmers had planted has the right tense, but a fronted Hardly requires inversion.",
+      "b": "בצורה have the farmers planted יש היפוך, אך היא בזמן present perfect, ואילו הפועל began מציב את שני האירועים בעבר, ולכן האירוע הראשון בא בזמן past perfect.\n\nhave the farmers planted is present perfect, but began places both events in the past, so the earlier one needs had.",
+      "c": "בצורה the farmers planted אין פועל עזר ואין היפוך, ואילו המילה Hardly בפתיחה, יחד עם המילה when, מחייבת פועל עזר לפני הנושא ואת הזמן past perfect.\n\nthe farmers planted has neither inversion nor the past perfect that a fronted Hardly with when requires."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-10",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-11-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "Many insect-eating bats locate their prey with remarkable acuity by listening for echoes of their own calls, ________ most fruit bats rely mainly on eyesight and smell.",
+    "options": [
+      {
+        "id": "a",
+        "label": "unlike"
+      },
+      {
+        "id": "b",
+        "label": "whereas"
+      },
+      {
+        "id": "c",
+        "label": "on the contrary"
+      },
+      {
+        "id": "d",
+        "label": "however"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** אחרי החסר בא משפט שלם עם נושא ונשוא (most fruit bats rely), ולכן צריך מחבר שמקשר בין שני משפטים מנוגדים: whereas (ואילו).\n\n_A full clause (most fruit bats rely) follows the blank, so a contrast conjunction is needed: whereas._\n\n**הסבר מלא:** אחרי החסר בא משפט שלם, עם הנושא most fruit bats והנשוא rely, ולכן צריך מחבר (conjunction) שמקשר אותו למשפט הראשון ומציג ניגוד: whereas (ואילו, בעוד ש־). מילת היחס unlike באה לפני צירוף שמני בלבד, ואילו המילים however ו־on the contrary הן תוארי פועל, ולכן אינן מחברות שני משפטים בפסיק. הצירוף on the contrary (להפך) גם אינו משווה בין שני דברים, אלא דוחה טענה קודמת.\n\nשיטה: סוג המחבר קובע את המבנה — בודקים מה בא אחרי החסר: נושא ונשוא (most fruit bats rely), כלומר משפט שלם, ולכן צריך מחבר, ומבין האפשרויות רק המילה whereas היא מחבר של ניגוד.\n\n_The connector decides the structure: Check what follows the blank: a subject and a verb (most fruit bats rely), so a conjunction is needed, and only whereas is a contrast conjunction._\n\n**למה לא האפשרויות האחרות**\n\nunlike — מילת היחס unlike באה לפני צירוף שמני בלבד, ולכן הצירוף most fruit bats היה הופך למושא שלה, והנשוא rely היה נשאר בלי נושא.\n\n_unlike takes only a noun phrase, so most fruit bats would become its object and rely would be left without a subject._\n\non the contrary — הצירוף on the contrary (להפך) דוחה טענה קודמת ואינו מחבר, ולכן אינו יכול לחבר בפסיק את המשפט most fruit bats rely mainly on eyesight and smell ולהשוות בין שני סוגי עטלפים.\n\n_on the contrary rejects a previous claim and is not a conjunction, so it cannot join most fruit bats rely mainly on eyesight and smell with a comma or compare two kinds of bats._\n\nhowever — המילה however במשמעות של ניגוד היא תואר פועל ולא מחבר, ולכן אינה יכולה לחבר בפסיק את המשפט most fruit bats rely mainly on eyesight and smell למשפט הראשון.\n\n_however is an adverb, not a conjunction, so it cannot join most fruit bats rely mainly on eyesight and smell to the first clause with a comma._\n\n_A full clause (most fruit bats rely) follows the comma, so the contrast conjunction whereas is needed; unlike takes a noun phrase, and however and on the contrary are adverbs._\n\n**תשובה סופית: whereas**\n\n**מילים לשינון:** acuity [uh-KYOO-ih-tee /əˈkjuəti/] – חדות (של חוש כמו שמיעה או ראייה, או של מחשבה)",
+    "distractorExplanations": {
+      "a": "מילת היחס unlike באה לפני צירוף שמני בלבד, ולכן הצירוף most fruit bats היה הופך למושא שלה, והנשוא rely היה נשאר בלי נושא.\n\nunlike takes only a noun phrase, so most fruit bats would become its object and rely would be left without a subject.",
+      "c": "הצירוף on the contrary (להפך) דוחה טענה קודמת ואינו מחבר, ולכן אינו יכול לחבר בפסיק את המשפט most fruit bats rely mainly on eyesight and smell ולהשוות בין שני סוגי עטלפים.\n\non the contrary rejects a previous claim and is not a conjunction, so it cannot join most fruit bats rely mainly on eyesight and smell with a comma or compare two kinds of bats.",
+      "d": "המילה however במשמעות של ניגוד היא תואר פועל ולא מחבר, ולכן אינה יכולה לחבר בפסיק את המשפט most fruit bats rely mainly on eyesight and smell למשפט הראשון.\n\nhowever is an adverb, not a conjunction, so it cannot join most fruit bats rely mainly on eyesight and smell to the first clause with a comma."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-11",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-11-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "________ the veteran goalkeeper's almost clairvoyant save in the final seconds, the underdogs would have lost the championship match to their far richer rivals.",
+    "options": [
+      {
+        "id": "a",
+        "label": "Had it not been for"
+      },
+      {
+        "id": "b",
+        "label": "Had not it been for"
+      },
+      {
+        "id": "c",
+        "label": "If it had not been"
+      },
+      {
+        "id": "d",
+        "label": "Would it not have been for"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** התוצאה בעבר (would have lost the championship match) מחייבת את הצירוף הקבוע Had it not been for (אלמלא), שבו המילה not באה אחרי המילה it והמילה for חובה.\n\n_The past result (would have lost the championship match) calls for the fixed inversion Had it not been for, with not after it and for included._\n\n**הסבר מלא:** הצירוף Had it not been for (אלמלא) הוא צורת היפוך פורמלית של הצירוף If it had not been for, והוא מתאים לתוצאה בעבר כמו would have lost the championship match. בהיפוך המילה had באה לפני המילה it, והמילה not באה אחרי המילה it, ואחרי הצירוף באה תמיד המילה for ואחריה צירוף שמני. לתנאי בהווה משתמשים בצורה המקבילה Were it not for, עם תוצאה כמו would lose.\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: התוצאה would have lost בעבר, ולכן הצירוף הוא Had it not been for. שלב 2: בודקים את הסדר: המילה had, אחריה המילה it, ואחריה המילה not, ובסוף המילה for לפני הצירוף השמני.\n\n_The connector decides the structure: Step 1: the past result would have lost calls for Had it not been for. Step 2: check the order: had + it + not, and for before the noun phrase._\n\n**למה לא האפשרויות האחרות**\n\nHad not it been for — בצורה Had not it been for המילה not באה לפני כינוי הגוף it, ואילו בהיפוך המלא היא באה אחריו (רק בצורה המקוצרת Hadn't it היא נצמדת לפועל העזר), ולכן לפני הצירוף the veteran goalkeeper's almost clairvoyant save כותבים Had it not been for.\n\n_Had not it puts not before the pronoun; in full inversion not follows it (Had it not been for) before the veteran goalkeeper's almost clairvoyant save._\n\nIf it had not been — בצורה If it had not been חסרה המילה for, ובלעדיה הצירוף השמני the veteran goalkeeper's almost clairvoyant save אינו מתחבר למבנה התנאי.\n\n_If it had not been lacks for, so the noun phrase the veteran goalkeeper's almost clairvoyant save has no link to the condition._\n\nWould it not have been for — בצורה Would it not have been for המילה would נכנסת לחלק של התנאי, ואילו המילה would שייכת רק לתוצאה (would have lost the championship match).\n\n_Would it not have been for puts would in the condition, but would belongs only in the result (would have lost the championship match)._\n\n_Had it not been for + noun phrase is the inverted form of If it had not been for and fits a past result (would have lost the championship match); not follows it, and for is required._\n\n**תשובה סופית: Had it not been for**\n\n**מילים לשינון:** clairvoyant [klair-VOY-unt] – רואה את הנולד, כאילו יודע מראש מה יקרה",
+    "distractorExplanations": {
+      "b": "בצורה Had not it been for המילה not באה לפני כינוי הגוף it, ואילו בהיפוך המלא היא באה אחריו (רק בצורה המקוצרת Hadn't it היא נצמדת לפועל העזר), ולכן לפני הצירוף the veteran goalkeeper's almost clairvoyant save כותבים Had it not been for.\n\nHad not it puts not before the pronoun; in full inversion not follows it (Had it not been for) before the veteran goalkeeper's almost clairvoyant save.",
+      "c": "בצורה If it had not been חסרה המילה for, ובלעדיה הצירוף השמני the veteran goalkeeper's almost clairvoyant save אינו מתחבר למבנה התנאי.\n\nIf it had not been lacks for, so the noun phrase the veteran goalkeeper's almost clairvoyant save has no link to the condition.",
+      "d": "בצורה Would it not have been for המילה would נכנסת לחלק של התנאי, ואילו המילה would שייכת רק לתוצאה (would have lost the championship match).\n\nWould it not have been for puts would in the condition, but would belongs only in the result (would have lost the championship match)."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-11",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-11-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 6,
+    "questionText": "Astronomers in ancient Babylon recorded eclipses on clay tablets with exemplary care, and if they ________, scientists today would know far less about how Earth's rotation has slowed.",
+    "options": [
+      {
+        "id": "a",
+        "label": "did not do so"
+      },
+      {
+        "id": "b",
+        "label": "would not have done so"
+      },
+      {
+        "id": "c",
+        "label": "have not done so"
+      },
+      {
+        "id": "d",
+        "label": "had not done so"
+      }
+    ],
+    "correctOptionId": "d",
+    "explanation": "**הסבר קצר:** המשפט קובע שהאסטרונומים אכן תיעדו (recorded eclipses), ולכן התנאי ההפוך לעובדה בעבר בא בזמן past perfect, עם תוצאה בהווה (scientists today would know), והתשובה היא had not done so (אילו לא עשו זאת).\n\n_They recorded eclipses, so the opposite past condition takes the past perfect, while the result is present (scientists today would know): had not done so._\n\n**הסבר מלא:** זהו תנאי מעורב: התנאי הדמיוני נוגע לעבר, והתוצאה הדמיונית נוגעת להווה. החלק הראשון קובע שהאסטרונומים בבבל העתיקה אכן תיעדו ליקויים (recorded eclipses), ולכן תנאי שהפוך לעובדה בעבר בא בזמן past perfect, כלומר הצורה had not done so (אילו לא עשו זאת). התוצאה בהווה (scientists today would know) באה במבנה would וצורת בסיס, ובפסוקית if של תנאי כזה אין משתמשים במילה would.\n\nשיטה: מילות זמן — מסמנים את הזמנים: הצירוף in ancient Babylon והפועל recorded מציבים את התנאי בעבר, והמילה today מציבה את התוצאה בהווה; תנאי דמיוני על העבר בא בזמן past perfect, ולכן התשובה היא had not done so.\n\n_Time markers: Mark the times: in ancient Babylon and recorded put the condition in the past, today puts the result in the present; an unreal past condition takes the past perfect: had not done so._\n\n**למה לא האפשרויות האחרות**\n\ndid not do so — הצורה did not do so מתאימה לתנאי דמיוני בהווה, ואילו כאן התנאי הפוך לעובדה שהתרחשה בעבר (recorded eclipses), ולכן צריך את הזמן past perfect.\n\n_did not do so suits an unreal present, but this condition reverses a past fact (recorded eclipses), so it needs the past perfect._\n\nwould not have done so — הצורה would not have done so מכניסה את המילה would לפסוקית התנאי, ואילו המילה would שייכת רק לתוצאה (scientists today would know).\n\n_would not have done so puts would in the if clause, but would belongs only in the result (scientists today would know)._\n\nhave not done so — הצורה have not done so היא בזמן present perfect, ואילו התנאי עוסק בפעולה שהסתיימה בבבל העתיקה (in ancient Babylon), והתוצאה would know מחייבת תנאי דמיוני ולא תנאי ממשי.\n\n_have not done so is present perfect, but the condition is about a finished past (in ancient Babylon), and would know needs an unreal condition._\n\n_A mixed conditional: the unreal condition reverses a past fact (they recorded eclipses), so it takes the past perfect, and the result is present (scientists today would know): had not done so._\n\n**תשובה סופית: had not done so**\n\n**מילים לשינון:** exemplary [ig-ZEM-pluh-ree /ɪɡˈzɛmpləri/] – מופתי, טוב כל כך שראוי לשמש דוגמה לאחרים",
+    "distractorExplanations": {
+      "a": "הצורה did not do so מתאימה לתנאי דמיוני בהווה, ואילו כאן התנאי הפוך לעובדה שהתרחשה בעבר (recorded eclipses), ולכן צריך את הזמן past perfect.\n\ndid not do so suits an unreal present, but this condition reverses a past fact (recorded eclipses), so it needs the past perfect.",
+      "b": "הצורה would not have done so מכניסה את המילה would לפסוקית התנאי, ואילו המילה would שייכת רק לתוצאה (scientists today would know).\n\nwould not have done so puts would in the if clause, but would belongs only in the result (scientists today would know).",
+      "c": "הצורה have not done so היא בזמן present perfect, ואילו התנאי עוסק בפעולה שהסתיימה בבבל העתיקה (in ancient Babylon), והתוצאה would know מחייבת תנאי דמיוני ולא תנאי ממשי.\n\nhave not done so is present perfect, but the condition is about a finished past (in ancient Babylon), and would know needs an unreal condition."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-11",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M1"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-11-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 6,
+    "questionText": "Although the sales team wanted something catchier, the self-effacing novelist told her editor that she would rather ________ the plain one-word title she had chosen.",
+    "options": [
+      {
+        "id": "a",
+        "label": "the publisher to keep"
+      },
+      {
+        "id": "b",
+        "label": "the publisher keeping"
+      },
+      {
+        "id": "c",
+        "label": "the publisher kept"
+      },
+      {
+        "id": "d",
+        "label": "the publisher will keep"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** כשאחרי הצירוף would rather בא נושא שונה מהנושא she, הפועל בא בזמן עבר אף שהכוונה להווה או לעתיד, ולכן התשובה היא the publisher kept (שההוצאה תשמור).\n\n_When would rather is followed by a subject different from she, the verb takes a past form with present or future meaning: the publisher kept._\n\n**הסבר מלא:** המבנה would rather (מעדיף ש...) מתנהג בשתי דרכים: כשהנושא זהה, בא אחריו פועל בצורת בסיס (she would rather keep the title), וכשבא אחריו נושא אחר, הפועל בא בזמן עבר. הזמן העבר כאן אינו מציין עבר אלא משאלה לגבי ההווה או העתיד, בדומה למבנה I wish you were, ולכן התשובה היא the publisher kept (שההוצאה תשמור). אחרי הצירוף would rather אין מבנה עם המילה to ואין צורת ‎-ing‎, ואילו המבנה עם המילה to שייך לפועל prefer (prefer the publisher to keep).\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי הצירוף would rather: אם בא נושא חדש, כמו the publisher, הפועל שאחריו בא בזמן עבר, ולכן הצורה kept.\n\n_What follows the word: Check what follows would rather: a new subject (the publisher) takes a past-form verb: kept._\n\n**למה לא האפשרויות האחרות**\n\nthe publisher to keep — בצורה the publisher to keep יש מבנה של הפועל prefer, ואילו אחרי הצירוף would rather לא בא מבנה עם המילה to, אלא נושא ופועל בזמן עבר.\n\n_the publisher to keep is the pattern of prefer; after would rather a new subject takes a past-form verb._\n\nthe publisher keeping — בצורה the publisher keeping אין פועל נטוי, ואילו אחרי הצירוף would rather בא נושא עם פועל בזמן עבר.\n\n_the publisher keeping has no finite verb, but would rather + a new subject needs a past-form verb._\n\nthe publisher will keep — בצורה the publisher will keep יש זמן עתיד בהשפעת העברית (שההוצאה תשמור), ואילו אחרי הצירוף would rather משאלה לגבי העתיד באה בזמן עבר.\n\n_the publisher will keep copies the Hebrew future, but after would rather a wish about the future takes the past form._\n\n_would rather + a different subject takes a past-form verb with present or future meaning (as in I wish you were), so the answer is the publisher kept; the pattern with to belongs to prefer._\n\n**תשובה סופית: the publisher kept**\n\n**מילים לשינון:** self-effacing [self-ih-FAY-sing] – צנוע, נמנע מלמשוך תשומת לב לעצמו",
+    "distractorExplanations": {
+      "a": "בצורה the publisher to keep יש מבנה של הפועל prefer, ואילו אחרי הצירוף would rather לא בא מבנה עם המילה to, אלא נושא ופועל בזמן עבר.\n\nthe publisher to keep is the pattern of prefer; after would rather a new subject takes a past-form verb.",
+      "b": "בצורה the publisher keeping אין פועל נטוי, ואילו אחרי הצירוף would rather בא נושא עם פועל בזמן עבר.\n\nthe publisher keeping has no finite verb, but would rather + a new subject needs a past-form verb.",
+      "d": "בצורה the publisher will keep יש זמן עתיד בהשפעת העברית (שההוצאה תשמור), ואילו אחרי הצירוף would rather משאלה לגבי העתיד באה בזמן עבר.\n\nthe publisher will keep copies the Hebrew future, but after would rather a wish about the future takes the past form."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-11",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M2"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-12-q1",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "No sooner ________ above the new library's entrance than a sharp-eyed child noticed, to the staff's consternation, that the word 'Library' lacked its first 'r'.",
+    "options": [
+      {
+        "id": "a",
+        "label": "had the sign been unveiled"
+      },
+      {
+        "id": "b",
+        "label": "the sign had been unveiled"
+      },
+      {
+        "id": "c",
+        "label": "had the sign unveiled"
+      },
+      {
+        "id": "d",
+        "label": "had been unveiled the sign"
+      }
+    ],
+    "correctOptionId": "a",
+    "explanation": "**הסבר קצר:** הצירוף No sooner בפתיחה מחייב היפוך שבו רק פועל העזר הראשון עובר לפני הנושא, והשלט אינו חושף אלא נחשף, ולכן התשובה היא had the sign been unveiled (השלט רק נחשף).\n\n_A fronted No sooner inverts only the first auxiliary, and the sign is unveiled by someone (passive): had the sign been unveiled._\n\n**הסבר מלא:** אחרי הצירוף No sooner בפתיחת המשפט חייבים היפוך, ובהיפוך רק פועל העזר הראשון (had) עובר לפני הנושא, ושאר צירוף הפועל נשאר אחריו. השלט אינו חושף דבר אלא נחשף בידי מישהו, ולכן צריך סביל בזמן past perfect, כלומר הצורה had been unveiled. יחד מתקבלת הצורה had the sign been unveiled (השלט רק נחשף, וכבר...), והחלק השני של המבנה מתחיל במילה than ובא בזמן past simple, כמו הפועל noticed.\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: הצירוף No sooner מחייב היפוך שבו רק המילה had באה לפני הנושא. שלב 2: השלט מקבל את הפעולה, ולכן צריך סביל עם הצירוף been unveiled.\n\n_The connector decides the structure: Step 1: No sooner forces inversion of the first auxiliary only (had). Step 2: the sign receives the action, so the verb is passive: been unveiled._\n\n**למה לא האפשרויות האחרות**\n\nthe sign had been unveiled — בצורה the sign had been unveiled הסביל והזמן נכונים, אך אין בה היפוך, ואילו הצירוף No sooner בפתיחת המשפט מחייב פועל עזר לפני הנושא.\n\n_the sign had been unveiled has the right voice and tense, but a fronted No sooner requires inversion._\n\nhad the sign unveiled — בצורה had the sign unveiled יש היפוך, אך היא פעילה, כאילו השלט חשף משהו, ואילו את השלט שמעל הכניסה (above the new library's entrance) חשפו אנשים, ולכן צריך סביל עם המילה been.\n\n_had the sign unveiled is active, as if the sign unveiled something, but the sign above the new library's entrance was unveiled by people: been unveiled._\n\nhad been unveiled the sign — בצורה had been unveiled the sign כל צירוף הפועל עובר לפני הנושא, כמו בעברית (נחשף השלט), ואילו אחרי הצירוף No sooner רק פועל העזר הראשון עובר לפני הנושא.\n\n_had been unveiled the sign moves the whole verb before the subject, but after No sooner only the first auxiliary moves._\n\n_A fronted No sooner inverts only the first auxiliary (had), and the sign receives the action, so the passive past perfect is needed: had the sign been unveiled, followed by than and the past simple noticed._\n\n**תשובה סופית: had the sign been unveiled**\n\n**מילים לשינון:** consternation [kon-ster-NAY-shun] – מבוכה ודאגה, תדהמה מבוהלת",
+    "distractorExplanations": {
+      "b": "בצורה the sign had been unveiled הסביל והזמן נכונים, אך אין בה היפוך, ואילו הצירוף No sooner בפתיחת המשפט מחייב פועל עזר לפני הנושא.\n\nthe sign had been unveiled has the right voice and tense, but a fronted No sooner requires inversion.",
+      "c": "בצורה had the sign unveiled יש היפוך, אך היא פעילה, כאילו השלט חשף משהו, ואילו את השלט שמעל הכניסה (above the new library's entrance) חשפו אנשים, ולכן צריך סביל עם המילה been.\n\nhad the sign unveiled is active, as if the sign unveiled something, but the sign above the new library's entrance was unveiled by people: been unveiled.",
+      "d": "בצורה had been unveiled the sign כל צירוף הפועל עובר לפני הנושא, כמו בעברית (נחשף השלט), ואילו אחרי הצירוף No sooner רק פועל העזר הראשון עובר לפני הנושא.\n\nhad been unveiled the sign moves the whole verb before the subject, but after No sooner only the first auxiliary moves."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-12",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4",
+      "l6-top"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-12-q2",
+    "topic": "grammar",
+    "subtopic": "grammar-what-follows",
+    "difficultyLevel": 6,
+    "questionText": "The imperious head chef insisted that every knife ________ by hand and dried at once rather than left to soak in the sink overnight.",
+    "options": [
+      {
+        "id": "a",
+        "label": "to be washed"
+      },
+      {
+        "id": "b",
+        "label": "being washed"
+      },
+      {
+        "id": "c",
+        "label": "be washed"
+      },
+      {
+        "id": "d",
+        "label": "should wash"
+      }
+    ],
+    "correctOptionId": "c",
+    "explanation": "**הסבר קצר:** אחרי הצירוף insisted that (התעקש ש...) בא פועל בצורת בסיס בלי המילה to, והסכין נשטפת (and dried), ולכן התשובה היא be washed (שתישטף).\n\n_After insisted that, a demand takes the bare base form (subjunctive), and the knife receives the action (and dried): be washed._\n\n**הסבר מלא:** אחרי פעלים של דרישה כמו insist, demand ו-recommend, הפסוקית שמתחילה במילה that באה בצורת הבסיס של הפועל (subjunctive), בלי המילה to, בלי הסיומת ‎-s‎ ובלי קשר לזמן של הפועל הראשי. הסכין אינה שוטפת אלא נשטפת, ולכן צריך סביל: המילה be וצורת V3, כלומר be washed (שתישטף), והמילה dried שאחריה מקבילה למילה washed. באנגלית הבריטית אפשר לכתוב גם את הצורה should be washed, אבל לא את הצורה should wash, שהיא צורה פעילה.\n\nשיטה: מה בא אחרי המילה — בודקים מה בא אחרי הצירוף insisted that: פועל בצורת בסיס בלי המילה to, ואז בודקים מי עושה את הפעולה: הסכין נשטפת, ולכן התשובה היא be washed.\n\n_What follows the word: Check what follows insisted that: a bare base form with no to; then ask who does the action: the knife is washed, so be washed._\n\n**למה לא האפשרויות האחרות**\n\nto be washed — בצורה to be washed הסביל נכון, אך אחרי הצירוף insisted that לא באה המילה to, אלא פועל בצורת בסיס בלבד.\n\n_to be washed is passive, but after insisted that the verb is a bare base form with no to._\n\nbeing washed — בצורה being washed אין פועל נטוי, ולכן הפסוקית that every knife נשארת בלי נשוא, ואילו אחרי הצירוף insisted that צריך פועל בצורת בסיס.\n\n_being washed leaves the that every knife clause with no verb; after insisted that it needs the base form be._\n\nshould wash — בצורה should wash המילה should אפשרית אחרי הצירוף insisted that באנגלית הבריטית, אך הצורה פעילה, כאילו הסכין שוטפת, ואילו המילה dried שאחריה מראה שהסכין מקבלת את הפעולה.\n\n_should wash is active, as if the knife washed something; dried shows the knife receives the action (only should be washed would work)._\n\n_After insisted that (a demand), the verb takes the bare base form whatever the tense of insisted; the knife receives the action (dried), so the answer is the passive be washed._\n\n**תשובה סופית: be washed**\n\n**מילים לשינון:** imperious [im-PEER-ee-us] – שתלטני, מצווה ומצפה לציות",
+    "distractorExplanations": {
+      "a": "בצורה to be washed הסביל נכון, אך אחרי הצירוף insisted that לא באה המילה to, אלא פועל בצורת בסיס בלבד.\n\nto be washed is passive, but after insisted that the verb is a bare base form with no to.",
+      "b": "בצורה being washed אין פועל נטוי, ולכן הפסוקית that every knife נשארת בלי נשוא, ואילו אחרי הצירוף insisted that צריך פועל בצורת בסיס.\n\nbeing washed leaves the that every knife clause with no verb; after insisted that it needs the base form be.",
+      "d": "בצורה should wash המילה should אפשרית אחרי הצירוף insisted that באנגלית הבריטית, אך הצורה פעילה, כאילו הסכין שוטפת, ואילו המילה dried שאחריה מראה שהסכין מקבלת את הפעולה.\n\nshould wash is active, as if the knife washed something; dried shows the knife receives the action (only should be washed would work)."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-12",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M2",
+      "l6-top"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-12-q3",
+    "topic": "grammar",
+    "subtopic": "grammar-time-markers",
+    "difficultyLevel": 6,
+    "questionText": "Because the mountain hut supplied blankets, the motley group of climbers ________ their sleeping bags on last month's ascent, so they left them in the van.",
+    "options": [
+      {
+        "id": "a",
+        "label": "needn't have carried"
+      },
+      {
+        "id": "b",
+        "label": "didn't need to carry"
+      },
+      {
+        "id": "c",
+        "label": "needn't to carry"
+      },
+      {
+        "id": "d",
+        "label": "don't need to carry"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** הצירוף so they left them in the van מראה שהשקים לא נלקחו, ולכן התשובה היא didn't need to carry (לא היו צריכים לשאת, ולא נשאו), ולא צורה שמשמעה שנשאו לשווא.\n\n_so they left them in the van shows the bags were not carried, so the answer is didn't need to carry, not a form meaning they carried them for nothing._\n\n**הסבר מלא:** המבנה didn't need to וצורת בסיס אומר שהפעולה לא הייתה נחוצה, ובדרך כלל גם לא נעשתה. לעומתו, המבנה needn't have וצורת V3 אומר שהפעולה נעשתה אף שלא הייתה נחוצה, כלומר נעשתה לשווא. כאן המטפסים השאירו את השקים ברכב (so they left them in the van), כלומר לא נשאו אותם, ולכן התשובה היא didn't need to carry (לא היו צריכים לשאת). הצירוף last month's ascent מציב את הסיפור בעבר, ולכן גם הצורה don't need to carry אינה מתאימה.\n\nשיטה: מילות זמן — שלב 1: הצירוף last month's ascent מציב את הפעולה בעבר, ולכן נפסלות הצורות בהווה. שלב 2: בודקים אם הפעולה נעשתה: המטפסים השאירו את השקים ברכב (left them in the van), ולכן הצורה didn't need to carry ולא הצורה needn't have carried.\n\n_Time markers: Step 1: last month's ascent sets the past. Step 2: ask whether the action happened: they left them in the van, so didn't need to carry, not needn't have carried._\n\n**למה לא האפשרויות האחרות**\n\nneedn't have carried — הצורה needn't have carried אומרת שהמטפסים נשאו את השקים לשווא, ואילו הצירוף so they left them in the van מראה שהשקים כלל לא נלקחו לטיפוס.\n\n_needn't have carried means they carried the bags for nothing, but so they left them in the van shows they never took them._\n\nneedn't to carry — בצורה needn't to carry נוספה המילה to בהשפעת העברית, ואילו אחרי המילה needn't בא פועל בצורת בסיס, וגם הזמן ההווה אינו מתאים לצירוף last month's ascent.\n\n_needn't takes a bare base form with no to, and its present time does not fit last month's ascent._\n\ndon't need to carry — הצורה don't need to carry היא בזמן הווה, ואילו הצירוף last month's ascent והפועל left מציבים את הסיפור בעבר.\n\n_don't need to carry is present, but last month's ascent and left are past._\n\n_didn't need to + base form says an action was unnecessary (and here not done: so they left them in the van); needn't have + past participle would mean they carried the bags for nothing._\n\n**תשובה סופית: didn't need to carry**\n\n**מילים לשינון:** motley [MOT-lee] – מגוון ומשונה, מורכב מסוגים שאינם מתאימים זה לזה",
+    "distractorExplanations": {
+      "a": "הצורה needn't have carried אומרת שהמטפסים נשאו את השקים לשווא, ואילו הצירוף so they left them in the van מראה שהשקים כלל לא נלקחו לטיפוס.\n\nneedn't have carried means they carried the bags for nothing, but so they left them in the van shows they never took them.",
+      "c": "בצורה needn't to carry נוספה המילה to בהשפעת העברית, ואילו אחרי המילה needn't בא פועל בצורת בסיס, וגם הזמן ההווה אינו מתאים לצירוף last month's ascent.\n\nneedn't takes a bare base form with no to, and its present time does not fit last month's ascent.",
+      "d": "הצורה don't need to carry היא בזמן הווה, ואילו הצירוף last month's ascent והפועל left מציבים את הסיפור בעבר.\n\ndon't need to carry is present, but last month's ascent and left are past."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-12",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M1",
+      "l6-top"
+    ]
+  },
+  {
+    "questionId": "owner-gr-test-12-q4",
+    "topic": "grammar",
+    "subtopic": "grammar-connectors",
+    "difficultyLevel": 6,
+    "questionText": "Only after ________ a sliver of the pockmarked stone under a microscope did the museum announce that the farmer's old doorstop was in fact a meteorite.",
+    "options": [
+      {
+        "id": "a",
+        "label": "had the curators examined"
+      },
+      {
+        "id": "b",
+        "label": "the curators had examined"
+      },
+      {
+        "id": "c",
+        "label": "did the curators examine"
+      },
+      {
+        "id": "d",
+        "label": "the curators have examined"
+      }
+    ],
+    "correctOptionId": "b",
+    "explanation": "**הסבר קצר:** ההיפוך אחרי הצירוף Only after כבר מופיע בפסוקית הראשית (did the museum announce), ולכן בפסוקית הזמן הסדר רגיל והזמן הוא past perfect: the curators had examined (האוצרים בדקו).\n\n_After Only after + a clause, the inversion goes in the main clause (did the museum announce), so the time clause keeps normal order: the curators had examined._\n\n**הסבר מלא:** כשהמשפט נפתח בצירוף Only after ואחריו פסוקית זמן, ההיפוך אינו בא בפסוקית הזמן עצמה אלא בפסוקית הראשית שאחריה, וכאן הוא כבר מופיע בצירוף did the museum announce. לכן בפסוקית שאחרי המילה after הנושא בא לפני הפועל כרגיל. הבדיקה קדמה להודעה שנמסרה בעבר, ולכן מתאים הזמן past perfect, כלומר הצורה the curators had examined (האוצרים בדקו קודם לכן).\n\nשיטה: סוג המחבר קובע את המבנה — שלב 1: לאתר את ההיפוך בפסוקית הראשית (did the museum announce), ולכן נפסלות הצורות שיש בהן היפוך בפסוקית הזמן. שלב 2: הבדיקה קדמה להודעה שבעבר, ולכן הצורה had examined ולא הצורה have examined.\n\n_The connector decides the structure: Step 1: the inversion is already in the main clause (did the museum announce), so the after clause keeps normal order. Step 2: the examination came before a past announcement: had examined._\n\n**למה לא האפשרויות האחרות**\n\nhad the curators examined — בצורה had the curators examined הזמן נכון, אך ההיפוך שייך לפסוקית הראשית, שכבר מתחילה בצירוף did the museum announce, ולכן בפסוקית שאחרי המילה after הסדר רגיל.\n\n_had the curators examined has the right tense, but the inversion belongs in the main clause, which already has did the museum announce._\n\ndid the curators examine — בצורה did the curators examine ההיפוך מופיע בפסוקית הזמן, ואילו המבנה Only after מחייב היפוך רק בפסוקית הראשית, שכבר מתחילה בצירוף did the museum announce.\n\n_did the curators examine inverts the time clause, but Only after inverts only the main clause, which already has did the museum announce._\n\nthe curators have examined — בצורה the curators have examined הסדר נכון, אך הזמן present perfect אינו מתאים לפעולה שקדמה להודעה שבעבר (did the museum announce).\n\n_the curators have examined is present perfect, which cannot describe an action before a past one like did the museum announce._\n\n_With Only after + a clause, the inversion goes in the main clause (did the museum announce); the after clause keeps normal order and, being earlier, takes the past perfect: the curators had examined._\n\n**תשובה סופית: the curators had examined**\n\n**מילים לשינון:** pockmarked [POK-markt] – מחורר ומלא שקעים קטנים",
+    "distractorExplanations": {
+      "a": "בצורה had the curators examined הזמן נכון, אך ההיפוך שייך לפסוקית הראשית, שכבר מתחילה בצירוף did the museum announce, ולכן בפסוקית שאחרי המילה after הסדר רגיל.\n\nhad the curators examined has the right tense, but the inversion belongs in the main clause, which already has did the museum announce.",
+      "c": "בצורה did the curators examine ההיפוך מופיע בפסוקית הזמן, ואילו המבנה Only after מחייב היפוך רק בפסוקית הראשית, שכבר מתחילה בצירוף did the museum announce.\n\ndid the curators examine inverts the time clause, but Only after inverts only the main clause, which already has did the museum announce.",
+      "d": "בצורה the curators have examined הסדר נכון, אך הזמן present perfect אינו מתאים לפעולה שקדמה להודעה שבעבר (did the museum announce).\n\nthe curators have examined is present perfect, which cannot describe an action before a past one like did the museum announce."
+    },
+    "estimatedTimeSec": 60,
+    "tags": [
+      "owner_gr",
+      "shuffle-safe",
+      "owner-gr-test-12",
+      "quiz",
+      "difficulty_6",
+      "method:GR-M4",
+      "l6-top"
+    ]
   }
 ]

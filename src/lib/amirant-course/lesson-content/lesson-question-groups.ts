@@ -21,6 +21,8 @@ const OWNER_SC_TEST_TIME_SEC = 8 * 60;
 const OWNER_RC_SEC_PER_QUESTION = 3 * 60;
 /** A listening test: three clips and five questions in seven minutes, as in the exam section. */
 const OWNER_LS_TEST_TIME_SEC = 7 * 60;
+/** A grammar-in-context test: four questions in four minutes, as in the exam section. */
+const OWNER_GR_TEST_TIME_SEC = 4 * 60;
 
 export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   // -- השלמת משפטים --
@@ -80,6 +82,19 @@ export const LESSON_QUESTION_GROUPS: Record<string, LessonQuestionGroup> = {
   "lesson.listening.test-12": { tag: "owner-ls-test-12", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
   "lesson.listening.test-13": { tag: "owner-ls-test-13", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
   "lesson.listening.test-14": { tag: "owner-ls-test-14", timeLimitSec: OWNER_LS_TEST_TIME_SEC },
+  // -- דקדוק בהקשר: the content owner's tests (4 questions, 1 minute each) --
+  "lesson.grammar.test-01": { tag: "owner-gr-test-1", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-02": { tag: "owner-gr-test-2", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-03": { tag: "owner-gr-test-3", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-04": { tag: "owner-gr-test-4", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-05": { tag: "owner-gr-test-5", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-06": { tag: "owner-gr-test-6", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-07": { tag: "owner-gr-test-7", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-08": { tag: "owner-gr-test-8", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-09": { tag: "owner-gr-test-9", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-10": { tag: "owner-gr-test-10", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-11": { tag: "owner-gr-test-11", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
+  "lesson.grammar.test-12": { tag: "owner-gr-test-12", timeLimitSec: OWNER_GR_TEST_TIME_SEC },
   // -- סימולציות (שאלותיהן בבנק, כולל קטעי קריאה) --
   "lesson.sim.04": { tag: "simulation-1-baseline", timeLimitSec: 39 * 60 },
   "lesson.sim.05": { tag: "simulation-2-warmup", timeLimitSec: 39 * 60 },

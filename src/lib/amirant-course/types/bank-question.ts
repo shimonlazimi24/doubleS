@@ -6,7 +6,9 @@ export type AmirantBankTopicSlug =
   | "rephrasing"
   | "reading_comprehension"
   /** הבנת הנשמע: the owner's listening tests only; never drawn into quizzes. */
-  | "listening";
+  | "listening"
+  /** דקדוק בהקשר: the owner's grammar-in-context tests only; never drawn into quizzes. */
+  | "grammar";
 
 export interface BankQuestionOption {
   id: string;

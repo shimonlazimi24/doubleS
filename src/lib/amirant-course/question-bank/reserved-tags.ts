@@ -13,7 +13,7 @@
  * diverge and `public-bank-parity.test.ts` fails.
  */
 /** The adaptive simulation pool is the owner's too: met only inside an adaptive attempt. */
-export const OWNER_SET_TAGS = ["owner_sc", "owner_rs", "owner_rc", "owner_ls", "owner_sim_pool"] as const;
+export const OWNER_SET_TAGS = ["owner_sc", "owner_rs", "owner_rc", "owner_ls", "owner_gr", "owner_sim_pool"] as const;
 export const RESERVED_UNIT_TAGS = ["simulation", ...OWNER_SET_TAGS] as const;
 
 export function isReservedForItsUnit(tags: readonly string[] | undefined): boolean {

@@ -105,7 +105,7 @@
 - [7.4 מדריך Word Formation](./07_new_reform_audio_writing/7.4_word_formation_guide.md)
 - [7.5 2 מבחני Word Formation](./07_new_reform_audio_writing/7.5_word_formation_practice.md)
 - [7.6 מדריך Grammar](./07_new_reform_audio_writing/7.6_grammar_in_context_guide.md)
-- [7.7 2 מבחני Grammar](./07_new_reform_audio_writing/7.7_grammar_practice.md)
+- 12 מבחני דקדוק בהקשר של מורה הקורס (`owner_grammar/grammar_test_01..12.md`, השאלות בבנק); 7.7 הישן נשאר על הדיסק ואינו שיעור
 - [7.8 מדריך Writing](./07_new_reform_audio_writing/7.8_writing_guide.md)
 - [7.9 מאמרי דוגמה ותרגול](./07_new_reform_audio_writing/7.9_writing_examples_and_practice.md)
 

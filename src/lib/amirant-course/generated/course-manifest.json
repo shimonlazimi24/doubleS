@@ -890,10 +890,76 @@
           "estimatedMinutes": 30
         },
         {
-          "id": "lesson.reform.07",
-          "title": "תרגול grammar (7.7)",
+          "id": "lesson.grammar.test-01",
+          "title": "מבחן דקדוק בהקשר 1 (קל)",
           "kind": "text",
-          "estimatedMinutes": 30
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-02",
+          "title": "מבחן דקדוק בהקשר 2 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-03",
+          "title": "מבחן דקדוק בהקשר 3 (קל)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-04",
+          "title": "מבחן דקדוק בהקשר 4 (קל-בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-05",
+          "title": "מבחן דקדוק בהקשר 5 (קל-בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-06",
+          "title": "מבחן דקדוק בהקשר 6 (בינוני)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-07",
+          "title": "מבחן דקדוק בהקשר 7 (בינוני-קשה)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-08",
+          "title": "מבחן דקדוק בהקשר 8 (בינוני-קשה)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-09",
+          "title": "מבחן דקדוק בהקשר 9 (קשה)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-10",
+          "title": "מבחן דקדוק בהקשר 10 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-11",
+          "title": "מבחן דקדוק בהקשר 11 (קשה מאוד)",
+          "kind": "text",
+          "estimatedMinutes": 6
+        },
+        {
+          "id": "lesson.grammar.test-12",
+          "title": "מבחן דקדוק בהקשר 12 (הקשה ביותר)",
+          "kind": "text",
+          "estimatedMinutes": 6
         },
         {
           "id": "lesson.reform.08",

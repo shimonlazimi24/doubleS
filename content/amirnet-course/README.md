@@ -310,7 +310,8 @@ amirnet_course/
 │   ├── 7.4_word_formation_guide.md
 │   ├── 7.5_word_formation_practice.md          (2 מבחנים)
 │   ├── 7.6_grammar_in_context_guide.md
-│   ├── 7.7_grammar_practice.md                 (2 מבחנים)
+│   ├── 7.7_grammar_practice.md                 (ישן, לא שיעור; הוחלף ב-owner_grammar/)
+│   ├── owner_grammar/grammar_test_01..12.md    (12 מבחני דקדוק בהקשר, השאלות בבנק)
 │   ├── 7.8_writing_guide.md
 │   └── 7.9_writing_examples_and_practice.md    (5 מאמרי דוגמה)
 │

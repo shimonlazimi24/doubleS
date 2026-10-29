@@ -24,6 +24,7 @@ const UNITS: Record<string, Unit> = {
   sentence_completion: { tag: "owner_sc", prefix: "owner-sc-test-", lessonPrefix: "lesson.sc.test-", count: 14, perUnit: [8] },
   rephrasing: { tag: "owner_rs", prefix: "owner-rs-set-", lessonPrefix: "lesson.rephrase.set-", count: 14, perUnit: [4] },
   reading_comprehension: { tag: "owner_rc", prefix: "owner-rc-passage-", lessonPrefix: "lesson.reading.passage-", count: 10, perUnit: [5, 6] },
+  grammar: { tag: "owner_gr", prefix: "owner-gr-test-", lessonPrefix: "lesson.grammar.test-", count: 12, perUnit: [4] },
 };
 
 const pad = (n: number) => String(n).padStart(2, "0");
