@@ -20,6 +20,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "PREPARE - הכנה ללימודים אקדמיים",
   description: "PREPARE - הכנה ממוקדת למבחני אנגלית אקדמיים: אמירנט (פעיל) ו-TOEFL (בקרוב).",
+  // Google Search Console ownership (URL-prefix property https://getprepared.academy/).
+  verification: { google: "fq_F--jYarYVGrqzwdEXTP4KtTr6RXporvAR3Ci1RUo" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

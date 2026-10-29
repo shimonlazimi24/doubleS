@@ -19,6 +19,10 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // The domain root is the marketing home. A config redirect sends a real
+      // 308 + Location; the old page-level redirect() was prerendered and served
+      // as a 307 with an HTML body and no Location header, which crawlers drop.
+      { source: "/", destination: "/prep", permanent: true },
       // Legacy slug → hub (the hub is a single scroll page; #demo hosts the sample quiz).
       { source: "/prep/amirant/info", destination: "/prep/amirant", permanent: false },
       { source: "/prep/amirant/info/:path*", destination: "/prep/amirant", permanent: false },
