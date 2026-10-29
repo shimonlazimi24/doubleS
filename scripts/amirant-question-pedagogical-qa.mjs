@@ -262,6 +262,7 @@ function evaluateQuestion(q, stemFrequency) {
     "what is the main idea of the passage",
     "what is the main idea of this passage",
     "what is the main purpose of the passage",
+    "what is the passage mainly about",
     "which of the following best expresses the main idea of the passage",
     "what is the lecture mainly about",
     "what is the conversation mainly about",

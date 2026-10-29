@@ -430,5 +430,131 @@
     "bytes": 530806,
     "model": "gpt-4o-mini-tts",
     "speed": 1
+  },
+  "LL-L3-0009": {
+    "seconds": 27.55,
+    "bytes": 198126,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0010": {
+    "seconds": 30.5,
+    "bytes": 212210,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0011": {
+    "seconds": 52.5,
+    "bytes": 349523,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0012": {
+    "seconds": 59.05,
+    "bytes": 384246,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0013": {
+    "seconds": 81.9,
+    "bytes": 530169,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L3-0014": {
+    "seconds": 82.45,
+    "bytes": 525343,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0019": {
+    "seconds": 29.7,
+    "bytes": 211203,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0020": {
+    "seconds": 30.2,
+    "bytes": 213557,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0021": {
+    "seconds": 31.1,
+    "bytes": 216080,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0022": {
+    "seconds": 52.3,
+    "bytes": 350799,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0023": {
+    "seconds": 55.9,
+    "bytes": 367760,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0024": {
+    "seconds": 77.2,
+    "bytes": 501543,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L4-0025": {
+    "seconds": 73.9,
+    "bytes": 471130,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0023": {
+    "seconds": 33.3,
+    "bytes": 233029,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0024": {
+    "seconds": 27.55,
+    "bytes": 199429,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0025": {
+    "seconds": 33.45,
+    "bytes": 230939,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0026": {
+    "seconds": 52.85,
+    "bytes": 354317,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0027": {
+    "seconds": 60.55,
+    "bytes": 396412,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0028": {
+    "seconds": 80.95,
+    "bytes": 522642,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L5-0029": {
+    "seconds": 84.55,
+    "bytes": 541520,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
+  },
+  "LL-L6-0028": {
+    "seconds": 28.3,
+    "bytes": 204048,
+    "model": "gpt-4o-mini-tts",
+    "speed": 1
   }
 }

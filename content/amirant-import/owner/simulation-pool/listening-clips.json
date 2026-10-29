@@ -650,5 +650,495 @@
         "text": "Then maybe we agree more than it seemed. Culture, yes, but not the kind that keeps growing."
       }
     ]
+  },
+  {
+    "id": "LL-L3-0009",
+    "level": 3,
+    "seconds": 30,
+    "words": 81,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, warm and lively university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'Why so many?', a short pause at [pause], and slower, firmer delivery on 'aren't spares' and the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "We have one heart, and so do cats, birds and fish, so you might be surprised to learn that an octopus has three. Why so many? Well, two of them are small, and they have one job: pushing blood through the gills, where it picks up oxygen. The third heart then sends that fresh blood around the rest of the body.   So the extra hearts aren't spares in case one fails. Each heart simply handles a different part of the trip."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0010",
+    "level": 3,
+    "seconds": 30,
+    "words": 85,
+    "speakers": "A: female student | B: male student",
+    "voice": "Neutral US accent for both speakers. A: female undergraduate, about 21, surprised and excited at first, then thoughtful, moderate pace (about 150 words per minute). B: male undergraduate, about 22, calm and explanatory, slightly slower, with stress on 'Taller, yes, but', 'searching for it' and 'instead of'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Look at the seedlings we kept in the dark cupboard. They're taller than the ones on the windowsill!"
+      },
+      {
+        "speaker": "B",
+        "text": "Taller, yes, but look how pale they are, and those frail stems can barely hold them up."
+      },
+      {
+        "speaker": "A",
+        "text": "So why grow so fast without light?"
+      },
+      {
+        "speaker": "B",
+        "text": "Because they're searching for it. A seedling in the dark spends its energy stretching upward, hoping to reach the light, instead of building strong stems and green leaves."
+      },
+      {
+        "speaker": "A",
+        "text": "So the height is a sign of trouble, not health."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0011",
+    "level": 3,
+    "seconds": 60,
+    "words": 151,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, engaging and confident university-lecture tone, moderate pace (about 150 words per minute). A short pause at [pause], a lift in energy on 'Now, this is the bold part', and slower, firmer delivery on 'Instead, he left a gap' and on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "When chemists first tried to arrange the elements in a table, they kept running into the same problem: the pattern didn't quite work. In 1869, the Russian chemist Dmitri Mendeleev found a way around it. He lined the elements up by weight and put those that behaved alike in the same column. But where the pattern broke down, he didn't force an element into the wrong place. Instead, he left a gap.   Now, this is the bold part. Mendeleev was adamant that those gaps were not mistakes. He insisted they belonged to elements that nobody had found yet, and he even described what those elements would be like. Not everyone was convinced. Then, over the next twenty years or so, three of them were discovered, and they matched his descriptions closely. So the gaps turned out to be the table's greatest strength. They showed that it could predict, not just organize."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0012",
+    "level": 3,
+    "seconds": 60,
+    "words": 155,
+    "speakers": "A: male student | B: female professor",
+    "voice": "Neutral US accent for both speakers. A: male undergraduate, about 20, curious and openly surprised, moderate pace (about 150 words per minute). B: female psychology professor, about 50, friendly and clear, slightly slower, with stress on 'About half', 'that's the point', 'store very little' and 'not of vision'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, can I ask about the study you mentioned in class? The one where a stranger stops someone to ask for directions."
+      },
+      {
+        "speaker": "B",
+        "text": "Sure. While they're talking, two workers carry a large door between them. Behind the door, the stranger is swapped for a different person."
+      },
+      {
+        "speaker": "A",
+        "text": "And people really didn't notice?"
+      },
+      {
+        "speaker": "B",
+        "text": "About half of them didn't. They kept giving directions to a completely new person, utterly oblivious to the change."
+      },
+      {
+        "speaker": "A",
+        "text": "That's hard to believe. Weren't they looking right at him?"
+      },
+      {
+        "speaker": "B",
+        "text": "They were, and that's the point. We feel as if we take in every detail of a scene, but we actually store very little.   Our brains keep only what seems important at the moment, like the fact that this person needs help, and fill in the rest."
+      },
+      {
+        "speaker": "A",
+        "text": "So it's not that their eyesight was poor."
+      },
+      {
+        "speaker": "B",
+        "text": "Not at all. It's a limit of attention and memory, not of vision."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0013",
+    "level": 3,
+    "seconds": 90,
+    "words": 227,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 45, calm and clear university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, a short pause at each [pause], stress on 'But in most limestone caves', 'very weak acid' and 'the same water also builds things', and slower, firmer delivery on the last two sentences.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Today I want to answer a question that visitors to large caves often ask: what dug out all this space? It's natural to imagine an underground river roaring through the rock and grinding it away. But in most limestone caves, the real work was done much more quietly, by rainwater.   Here's how it happens. As rain soaks down through the soil, it picks up carbon dioxide. That turns the water into a very weak acid, not strong enough to hurt your skin, but strong enough to dissolve limestone, slowly. The water seeps into small cracks in the rock, and over thousands of years it widens them, little by little, into passages and chambers. In the end, a whole subterranean world of tunnels can lie beneath an ordinary-looking field. Now, the same water also builds things. When a drop hanging from the roof of a cave loses some of its carbon dioxide into the air, it can no longer hold all of the limestone it dissolved, so it leaves a tiny ring of mineral behind. Drop after drop, ring after ring, those deposits grow into the long, icicle-shaped stalactites that hang from cave roofs.   So a limestone cave is really the work of chemistry rather than force. The water first takes the rock away, and then, in the very same cave, it slowly gives some of it back."
+      }
+    ]
+  },
+  {
+    "id": "LL-L3-0014",
+    "level": 3,
+    "seconds": 90,
+    "words": 225,
+    "speakers": "A: female student | B: male student",
+    "voice": "Neutral US accent for both speakers. A: female graduate student, about 26, confident and precise, moderate pace (about 150 words per minute). B: male graduate student, about 24, interested and quick to draw conclusions, moderate pace. A stresses 'Not really', 'centuries after', 'didn't make iron' and 'Well, not entirely'. A short pause at [pause].",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The reading for today argues that Norse sailors reached North America about five hundred years before Columbus. What did you make of it?"
+      },
+      {
+        "speaker": "B",
+        "text": "I found it convincing, but I wondered why historians took so long to accept it. The old Norse sagas describe a voyage west to a land they called Vinland. Wasn't that enough?"
+      },
+      {
+        "speaker": "A",
+        "text": "Not really. The sagas were written down centuries after the events, and they mix travel with legend. For a long time, many scholars treated them as fanciful tales, interesting stories rather than reliable records."
+      },
+      {
+        "speaker": "B",
+        "text": "So what changed their minds?"
+      },
+      {
+        "speaker": "A",
+        "text": "A site in Newfoundland, in eastern Canada. In the 1960s, archaeologists dug up the remains of several buildings there, and they were built in the Norse style, with walls of turf.   They also found iron nails and a spot where iron had been worked. The local people of that time didn't make iron, so the most likely explanation was Norse visitors."
+      },
+      {
+        "speaker": "B",
+        "text": "And they dated the site?"
+      },
+      {
+        "speaker": "A",
+        "text": "Yes, to around the year one thousand, which fits the sagas quite well."
+      },
+      {
+        "speaker": "B",
+        "text": "So the sagas weren't just legends after all."
+      },
+      {
+        "speaker": "A",
+        "text": "Well, not entirely. The site proves that Norse sailors were there. It doesn't prove that every detail of the sagas is true. The stories needed hard evidence on the ground before historians could trust them."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0019",
+    "level": 4,
+    "seconds": 30,
+    "words": 85,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral UK accent. Lecturer: male, about 35, lively and clear university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, a short pause at [pause], and stress on 'although it doesn't actually break the grease down', 'two ends' and 'carry those drops away'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Why can't plain water wash grease off a pan? Oil and water don't mix, so the water just slides over that obstinate film of grease. Soap solves the problem, although it doesn't actually break the grease down. Each soap molecule has two ends. One end is drawn to water, while the other is drawn to oil.   So the oily ends bury themselves in the grease and surround tiny drops of it, while the other ends face outward, and water can then carry those drops away."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0020",
+    "level": 4,
+    "seconds": 30,
+    "words": 85,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, clear and lively university-lecture tone, moderate pace (about 150 words per minute). Light, inviting delivery on the opening sentence, a short pause at [pause], and slower, firmer delivery on the last two sentences, with stress on 'don't weaken' and 'move'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "When you drive across a long bridge, listen for a soft thump every so often. That sound comes from the joints, narrow, unobtrusive strips of metal that most drivers never notice. They look like a flaw in the road, but they're there on purpose. Steel and concrete grow slightly longer when they warm up and shorter when they cool.   Without these gaps, a bridge would push against itself on hot days and crack. So the joints don't weaken the bridge. They let it move safely."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0021",
+    "level": 4,
+    "seconds": 30,
+    "words": 89,
+    "speakers": "A: female student | B: male student",
+    "voice": "Neutral US accent for both speakers; natural conversation rhythm, about 150 words per minute.\nA: female astronomy student, about 20, curious and relaxed; a questioning lift on 'And a planet?'.\nB: male astronomy student, about 22, calm and explanatory; gentle stress on 'isn't really', a short pause at [pause], and slower, firmer delivery on his last sentence, with stress on 'size' and 'not how bright'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I assumed planets barely twinkle because they're brighter than stars."
+      },
+      {
+        "speaker": "B",
+        "text": "Brightness isn't really the reason. A star is so far away that its light reaches us from a single tiny point, and that thin beam gets buffeted by the moving air above us, so it flickers."
+      },
+      {
+        "speaker": "A",
+        "text": "And a planet?"
+      },
+      {
+        "speaker": "B",
+        "text": "A planet shows up as a small disk, so its light comes from many points at once, and their flickers average out.   So what matters is the size of the image, not how bright it is."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0022",
+    "level": 4,
+    "seconds": 60,
+    "words": 152,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, warm and steady university-lecture tone, moderate pace (about 150 words per minute). A short pause at each [pause], a lift of interest on 'Now, here's the odd thing', stress on 'yet' in the next sentence, and slower, firmer delivery on the last two sentences.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "For centuries, farmers in many parts of Europe followed a simple rule: if a field grew clover or beans one year, plant wheat there the next. The wheat came up taller and fuller. Those farmers were astute observers, but they had no idea why the rule worked.   The answer came in the late eighteen hundreds, and it lies underground. Every plant needs nitrogen to grow. Now, here's the odd thing. The air around us is mostly nitrogen, yet most plants can't use it in that form. Clover and beans get help. Their roots carry small swellings, and inside those swellings live bacteria that turn nitrogen from the air into a form plants can absorb. When the clover dies or is plowed back into the soil, that nitrogen stays behind for the next crop.   So the old rule wasn't luck. It was real science, found by practice long before anyone could explain it."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0023",
+    "level": 4,
+    "seconds": 60,
+    "words": 165,
+    "speakers": "A: female graduate student | B: male graduate student",
+    "voice": "Neutral US accent for both speakers; natural seminar-discussion rhythm, about 150 words per minute.\nA: female sociology graduate student, about 26, curious and a little skeptical; a puzzled tone on 'That seems backwards to me' and a questioning lift on her last line.\nB: male sociology graduate student, about 28, thoughtful and friendly; a short pause at [pause], stress on 'where' and 'not how much', and a measured, qualifying tone on 'I wouldn't go that far'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I just read that classic study of how people found their jobs. Among those who heard about a job through someone they knew, most heard from people they saw only now and then, not from close friends. That seems backwards to me."
+      },
+      {
+        "speaker": "B",
+        "text": "It surprised me too, at first. But think about who your close friends are. They usually know the same people you know and hear the same news you hear."
+      },
+      {
+        "speaker": "A",
+        "text": "So by the time they hear about an opening, I've probably heard about it as well."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. A casual acquaintance moves in different circles, so that's who brings you news from outside your own group.   The salient point is where the information comes from, not how much the person cares about you."
+      },
+      {
+        "speaker": "A",
+        "text": "Then close friends don't matter much for finding work?"
+      },
+      {
+        "speaker": "B",
+        "text": "I wouldn't go that far. Close friends may be more eager to help. The study just shows that distant contacts often carry news your friends never hear."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0024",
+    "level": 4,
+    "seconds": 90,
+    "words": 227,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral UK accent. Lecturer: female, about 50, engaging and unhurried university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on 'So how does it find the way?', a short pause at each [pause], stress on 'two different senses' and on 'switch to smell', and slower, summing-up delivery on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a puzzle that kept naturalists busy for a long time. A young salmon hatches in a small stream, swims down to the sea, and spends a few years in the open ocean, often thousands of kilometers from home. Then, when it's ready to breed, it makes a grueling journey back, swimming upstream against strong currents. And in most cases, it ends up in the very stream where it hatched. So how does it find the way?   It seems the fish relies on two different senses, one for each stage of the trip. Out in the open ocean, there are no landmarks, so researchers think salmon read the Earth's magnetic field, which differs slightly from place to place along the coast. That gets them to roughly the right stretch of coast. But to pick one stream out of hundreds, they switch to smell. Every stream carries its own blend of scents from the soil and plants along its banks, and young salmon memorize that blend before they leave. In a well-known series of experiments, researchers blocked the noses of some returning fish. Those fish chose streams almost at random, while fish that could still smell mostly returned home.   So the salmon's homing, which can seem almost unerring, depends on a kind of map for the long distance and a memory of smell for the last few kilometers."
+      }
+    ]
+  },
+  {
+    "id": "LL-L4-0025",
+    "level": 4,
+    "seconds": 90,
+    "words": 218,
+    "speakers": "A: female ecologist | B: male ecologist",
+    "voice": "Neutral US accent for both speakers; natural academic-conversation rhythm, about 150 words per minute.\nA: female ecologist, about 38, precise and thoughtful; a careful, weighing tone on 'it may well be right. But there's a complication', a short pause at [pause], and stress on 'no louder' in her conditional sentence.\nB: male ecologist, about 45, relaxed and at first confident in the usual story; a slower, realizing tone on 'So the higher pitch might be a side effect', and a measured, cautious delivery on his last turn.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I've finished going through the recordings. Birds of the same species sing at a noticeably higher pitch in the city parks than in the forest."
+      },
+      {
+        "speaker": "B",
+        "text": "That fits the usual story, doesn't it? Traffic makes a low, steady din, so a higher song stands out against it. The birds are adjusting so they can be heard."
+      },
+      {
+        "speaker": "A",
+        "text": "That's the obvious explanation, and it may well be right. But there's a complication. When birds sing louder, their songs naturally rise in pitch at the same time. And city birds have to sing louder just to be heard over the noise."
+      },
+      {
+        "speaker": "B",
+        "text": "So the higher pitch might be a side effect of shouting, rather than a separate change."
+      },
+      {
+        "speaker": "A",
+        "text": "Exactly. And that matters, because raising the pitch on its own may not help much. Singing louder could be doing most of the work."
+      },
+      {
+        "speaker": "B",
+        "text": "Then how do we tell the two apart?"
+      },
+      {
+        "speaker": "A",
+        "text": "We'd have to measure loudness as well as pitch.   If city birds still sing higher when they're no louder than forest birds, then the pitch change is doing something on its own."
+      },
+      {
+        "speaker": "B",
+        "text": "Getting reliable loudness readings in a busy park will be a formidable job, but I agree it's worth doing. Until then, I'd be careful about calling the higher pitch an adaptation."
+      },
+      {
+        "speaker": "A",
+        "text": "Agreed."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0023",
+    "level": 5,
+    "seconds": 30,
+    "words": 79,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 50, calm and precise university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, stress on 'never changes' and on 'by contrast', a short pause at [pause], and slower, balanced delivery on the last sentence, with stress on 'childhood' and 'later life'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "How can archaeologists tell whether someone buried in a village actually grew up there? Part of the answer lies in chemistry. Local rock leaves a faint chemical trace in the water and crops of each region, and that trace ends up in our bodies. Now, tooth enamel forms in childhood and never changes afterward. Bone, by contrast, is rebuilt in a slow, ceaseless cycle, so it reflects recent years.   Teeth, then, speak of childhood, and bone of later life."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0024",
+    "level": 5,
+    "seconds": 30,
+    "words": 79,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 45, lively but measured university-lecture tone, moderate pace (about 150 words per minute). Slight stress on 'use most' and 'shortest', a light, amused delivery on the two examples (Omnibus, bus; telephone, phone), a short pause at [pause], rising intonation on 'Why?', and a slower, balanced last sentence with stress on 'more' and 'less'.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Here's a pattern found in almost every language that's been studied: the words people use most tend to be the shortest. And when a long word becomes common, speakers often cut it down. Omnibus turned into bus, and telephone into phone.   Why? Speakers are frugal with effort. They save it on the words they say all day, and spend it where a word is rare. In short, the more a word is used, the less of it we say."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0025",
+    "level": 5,
+    "seconds": 30,
+    "words": 83,
+    "speakers": "A: female physics student | B: male physics student",
+    "voice": "Neutral US accent for both speakers; natural lab-conversation rhythm, about 150 words per minute.\nA: female physics student, about 22, curious and slightly surprised; a confident tone on her first turn and a puzzled, rising tone on 'Then why do people slip at all?'.\nB: male physics student, about 23, calm and explanatory; stress on 'barely moves' and on 'of its own', a short pause at [pause], and a lighter, more tentative delivery on 'Still, the full picture is murky.'",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "I always thought ice was slippery because your weight melts a thin film of water under your shoes."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the textbook story, but the numbers don't support it. A shoe spreads your weight so widely that the melting point barely moves."
+      },
+      {
+        "speaker": "A",
+        "text": "Then why do people slip at all?"
+      },
+      {
+        "speaker": "B",
+        "text": "Because ice seems to carry a watery layer of its own, even before anyone steps on it.   Moving feet add a little melting through friction. Still, the full picture is murky."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0026",
+    "level": 5,
+    "seconds": 60,
+    "words": 158,
+    "speakers": "Lecturer (male)",
+    "voice": "Neutral US accent. Lecturer: male, about 55, warm, storytelling university-lecture tone, moderate pace (about 150 words per minute). Rising intonation on the opening question, a short pause at each [pause], stress on 'straight down' and on 'did cast', a slower, step-by-step delivery on the reasoning about parallel rays and 'a fiftieth', a candid tone on 'Honestly, we can't say', and stress on 'reasoning' and 'not the final number' at the end.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "How do you measure the whole Earth without leaving home?   More than two thousand years ago, a scholar in Alexandria named Eratosthenes heard that at noon on the longest day of the year, the sun shone straight down a deep well in Syene, far to the south. In Alexandria, at the same hour, a tall column did cast a short shadow, so the light was arriving at a slightly oblique angle, about seven degrees. Now, the sun is so far away that its rays arrive almost parallel, so that small difference had to come from the curve of the Earth. Seven degrees is about a fiftieth of a circle, so the distance between the towns had to be a fiftieth of the way around the planet.   How close did he get? Honestly, we can't say, because nobody knows exactly how long his unit of distance was. What makes the work remarkable is the reasoning, not the final number."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0027",
+    "level": 5,
+    "seconds": 60,
+    "words": 168,
+    "speakers": "A: female student | B: male professor",
+    "voice": "Neutral US accent for both speakers; natural office-hours rhythm, about 150 words per minute.\nA: female anthropology student, about 21, polite but skeptical and engaged; a doubtful tone on 'I'm still not sold', stress on 'timing' and 'much later', and a thoughtful, working-it-out delivery on 'So the fires might have been there all along'.\nB: male anthropology professor, about 55, patient and even-handed; a step-by-step explaining tone on his first turn, a frank, conceding tone on 'I won't pretend otherwise', a short pause at [pause], and a calm, balanced delivery on 'plausible, not proven'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "Professor, I'm still not sold on the cooking idea from your lecture. How could heating food make our brains bigger?"
+      },
+      {
+        "speaker": "B",
+        "text": "Think about energy. The brain is costly to run: it uses about a fifth of our energy at rest. Cooked food is softer and easier to digest, so we get more energy from each meal, and the body can manage with a smaller gut. That spare energy could support a bigger brain."
+      },
+      {
+        "speaker": "A",
+        "text": "But the timing bothers me. Brains and teeth changed nearly two million years ago, and the telltale signs of regular fire, like hearths, show up much later."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the strongest objection, and I won't pretend otherwise.   Supporters do have a rejoinder: ash and charcoal rarely survive that long, so the gap may reflect what gets preserved rather than what actually happened."
+      },
+      {
+        "speaker": "A",
+        "text": "So the fires might have been there all along, and we just can't see them."
+      },
+      {
+        "speaker": "B",
+        "text": "Possibly. But that isn't support, either. For now, the idea is plausible, not proven."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0028",
+    "level": 5,
+    "seconds": 90,
+    "words": 215,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 50, clear and engaging university-lecture tone, moderate pace (about 150 words per minute). A short pause at each [pause]; an amused, slightly incredulous rising tone on 'Talking trees?'; stress on 'often do prepare' and on 'calling for help'; a more careful, weighing delivery from 'should we call this communication?' onward, with stress on 'own distant leaves' and 'listening in', and a wry, summing-up tone on the last sentence.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "When a caterpillar starts chewing on a leaf, the plant can't run away. But it isn't helpless either. Many plants respond by releasing airborne chemicals, some of the same compounds that give freshly cut grass its smell.   What happens next is the interesting part. In the early nineteen-eighties, a few researchers reported that trees near damaged trees seemed to strengthen their own defenses, as if they'd been warned. The claim was met with disdain. Talking trees? It sounded like wishful thinking, and the first studies were small. Since then, though, careful experiments have shown that undamaged plants exposed to these chemicals often do prepare, making their leaves harder to digest before any insect arrives. Some of the chemicals also attract wasps that lay their eggs inside caterpillars, so a plant beset by hungry insects is, in effect, calling for help.   Now, should we call this communication? I'd be cautious. It's hard to see what a plant gains by warning its competitors. A likelier story is that the signal evolved to reach the plant's own distant leaves, since air can carry it faster than the stem can. The neighbors, in other words, may simply be listening in. So yes, plants respond to each other's chemical alarms, but the word talking probably gives them too much credit."
+      }
+    ]
+  },
+  {
+    "id": "LL-L5-0029",
+    "level": 5,
+    "seconds": 90,
+    "words": 226,
+    "speakers": "A: female psychology student | B: male psychology student",
+    "voice": "Neutral US accent for both speakers; natural seminar rhythm, about 150 words per minute.\nA: female psychology graduate student, about 26, articulate and lively; a slightly weary tone on 'pure drudgery', a confident explaining tone on the usual explanation, a working-it-out delivery on 'So no inner tension', and a measured, concluding tone on her last line, with stress on 'but not, by itself, why'.\nB: male psychology graduate student, about 27, relaxed and thoughtful; stress on 'one dollar' and 'twenty', a short pause at each [pause], a gently challenging tone on 'I'm not sure we need the discomfort at all', and an even, balanced delivery on 'each one fits different situations better'.",
+    "script": [
+      {
+        "speaker": "A",
+        "text": "The study we read for today still surprises me. People spent an hour on pointless tasks, like turning pegs on a board, pure drudgery. Then they were paid to tell the next participant that it had been fun."
+      },
+      {
+        "speaker": "B",
+        "text": "Right, and some got one dollar while others got twenty. Afterward, the one-dollar group rated the tasks as more enjoyable. That's the opposite of what you'd expect."
+      },
+      {
+        "speaker": "A",
+        "text": "Not if you accept the usual explanation. Saying something you don't believe feels uncomfortable. If you were paid twenty dollars, the money explains the lie. But a meager dollar can't justify it, so the easiest way to ease the discomfort is to decide the task wasn't so bad after all."
+      },
+      {
+        "speaker": "B",
+        "text": "That's the textbook account, but I'm not sure we need the discomfort at all.   Imagine watching a stranger praise a dull task for a single dollar. You'd conclude they must have liked it. Maybe the participants simply judged themselves the same way, by looking at what they'd just done."
+      },
+      {
+        "speaker": "A",
+        "text": "So no inner tension, just people reading their own behavior the way an outsider would."
+      },
+      {
+        "speaker": "B",
+        "text": "Exactly. Both accounts predict the same result, which is why the debate lasted so long.   Later studies suggest that each one fits different situations better."
+      },
+      {
+        "speaker": "A",
+        "text": "Then the study shows that small rewards can shift attitudes, but not, by itself, why."
+      }
+    ]
+  },
+  {
+    "id": "LL-L6-0028",
+    "level": 6,
+    "seconds": 30,
+    "words": 80,
+    "speakers": "Lecturer (female)",
+    "voice": "Neutral US accent. Lecturer: female, about 40, crisp and slightly playful university-lecture tone, moderate pace (about 150 words per minute). An inviting tone on 'Take a long list', a reasonable, expectant tone on 'You might expect', a short, firm 'It doesn't.', stress on 'a third' and 'one time in twenty', a short pause at [pause], and stress on 'far too evenly' and 'very evenness' at the end.",
+    "script": [
+      {
+        "speaker": null,
+        "text": "Take a long list of real-world numbers, say, the populations of towns or the sums in a company's accounts, and look only at the first digit. You might expect each digit from one to nine to lead about equally often. It doesn't. Ones lead nearly a third of the time, nines barely one time in twenty.   Curiously, people who concoct figures tend to spread those first digits far too evenly, and that very evenness is what auditors learn to notice."
+      }
+    ]
   }
 ]

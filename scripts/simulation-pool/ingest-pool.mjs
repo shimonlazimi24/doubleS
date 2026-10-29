@@ -271,10 +271,26 @@ for (const [secs, levels] of Object.entries(raw.listening_by_length)) {
 // transcript text. A passage-bound stem such as "What is the main purpose of
 // the passage?" repeats by the exam's design, so for those the passage is
 // what must be new.
+// A wave that contains every item of an earlier wave (the owner's final
+// POOL file is wave 1 plus the additions) supersedes it: the earlier wave's
+// file, index entry, bank rows and passages are retired so no item exists
+// twice under two ids.
+const index = fs.existsSync(INDEX) ? JSON.parse(fs.readFileSync(INDEX, "utf8")) : { waves: [] };
+const newIds = new Set(items.map((it) => it.id));
+const retired = index.waves.filter((w) => {
+  if (w.simId === simId) return false;
+  const file = path.join(POOL_DIR, w.file);
+  if (!fs.existsSync(file)) return false;
+  const old = JSON.parse(fs.readFileSync(file, "utf8"));
+  return old.items.length > 0 && old.items.every((it) => newIds.has(it.id));
+});
+const retiredTags = new Set(retired.map((w) => `owner-sim-pool-${w.simId.toLowerCase()}`));
+const isRetired = (tags) => (tags ?? []).some((t) => retiredTags.has(t));
+
 const bank = JSON.parse(fs.readFileSync(BANK, "utf8"));
-const others = bank.filter((q) => !(q.tags ?? []).includes(waveTag));
+const others = bank.filter((q) => !(q.tags ?? []).includes(waveTag) && !isRetired(q.tags));
 const allP = JSON.parse(fs.readFileSync(PASSAGES, "utf8"));
-const keptP = allP.filter((p) => p.sourceTag !== waveTag && p.sourceTag !== TAG && !p.passageId.startsWith("simpool-"));
+const keptP = allP.filter((p) => p.sourceTag !== waveTag && !retiredTags.has(p.sourceTag));
 const norm = (s) => String(s ?? "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const otherIds = new Set(others.map((q) => q.questionId));
 const otherStems = new Map(others.filter((q) => !q.passageId).map((q) => [norm(q.questionText), q.questionId]));
@@ -306,8 +322,8 @@ const wave = {
 fs.mkdirSync(POOL_DIR, { recursive: true });
 fs.writeFileSync(path.join(POOL_DIR, `${simId}.json`), `${JSON.stringify(wave, null, 2)}\n`);
 
-const index = fs.existsSync(INDEX) ? JSON.parse(fs.readFileSync(INDEX, "utf8")) : { waves: [] };
-index.waves = index.waves.filter((w) => w.simId !== simId);
+for (const w of retired) fs.rmSync(path.join(POOL_DIR, w.file), { force: true });
+index.waves = index.waves.filter((w) => w.simId !== simId && !retired.includes(w));
 index.waves.push({
   simId,
   file: `${simId}.json`,
@@ -328,6 +344,7 @@ fs.writeFileSync(PASSAGES, `${JSON.stringify([...keptP, ...passageRows], null, 2
 const byType = {};
 for (const it of items) byType[it.type] = (byType[it.type] ?? 0) + 1;
 console.log(`${simId}: ${items.length} items, ${questionCount} questions (${Object.entries(byType).map(([k, v]) => `${k} ${v}`).join(", ")})`);
+if (retired.length) console.log(`retired wave${retired.length > 1 ? "s" : ""} ${retired.map((w) => w.simId).join(", ")} (every item is in ${simId})`);
 console.log(`questions.json ${bank.length} → ${others.length + bankRows.length}; passages.json ${allP.length} → ${keptP.length + passageRows.length}; ${briefs.length} clip briefs`);
 console.log(overlap.length ? `TEXT OVERLAP with practice bank (${overlap.length}):\n  ${overlap.join("\n  ")}` : "no question text overlaps the practice bank");
 console.log("Next: node scripts/listening/generate-audio.mjs --clips content/amirant-import/owner/simulation-pool/listening-clips.json; node scripts/listening/ingest-listening-tests.mjs; npm run generate:course-manifest");
