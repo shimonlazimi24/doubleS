@@ -72,18 +72,89 @@ export const EXAM_QUESTION_SHARE: Record<ExamSectionType, number> = {
   reading_comprehension: 5,
 };
 
+export type ExamPilotType = {
+  id: "listening_lecture" | "listening_continuation" | "word_formation" | "grammar_in_context" | "writing";
+  labelHe: string;
+  minutes: number;
+  /** As published; the lecture section has 1–2 questions per clip, so a range. */
+  questionsHe: string;
+  formatHe: string;
+};
+
 /**
- * Unscored pilot segments (post-April-2026 reform). Deliberately expressed as a
- * range: their number and content vary between candidates, and none of them
- * affects the reported score.
+ * Experimental (pilot) sections, as published by NITE on the AMIRNET
+ * instructions page (checked 2026-10-31). The exam has 7 or 8 sections:
+ * sections 1–6 are the scored part; an 8-section exam ends with two
+ * experimental sections drawn from four types (the type cannot be chosen and
+ * both may be the same type); a 7-section exam ends with one writing task.
+ * Scoring (NITE FAQ): a wrong answer does not lower the score; correct answers
+ * can raise it by up to 2 points.
  */
 export const EXAM_PILOT = {
   segmentsMin: 1,
   segmentsMax: 2,
-  maxMinutes: 12,
-  /** Skills that have been observed in pilot segments; none is scored. */
-  skillsHe: ["הבנת הנשמע", "תצורת מילים", "דקדוק בהקשר", "משימת כתיבה"],
-  writingWordsHe: "כ-100–150 מילים",
+  /** Two experimental sections take 6–14 minutes together; the writing task takes 12. */
+  minMinutes: 6,
+  maxMinutes: 14,
+  writingMinutes: 12,
+  bonusPointsMax: 2,
+  scoringHe: "טעות בפרקי הניסוי אינה פוגעת בציון; תשובות נכונות יכולות להעלות אותו בעד 2 נקודות",
+  /** Skills tested in experimental sections. */
+  skillsHe: ["הבנת הנשמע", "יצירת מילה", "דקדוק בהקשר", "מטלת כתיבה"],
+  /**
+   * NITE does not publish a word count for the writing task; the exam screen
+   * shows a word counter with a minimum and a maximum. The course trains for
+   * 90–120 words, which stays inside the counter's range.
+   */
+  writingWordsHe: "אורך המילים אינו מפורסם רשמית; במסך המבחן יש מונה מילים עם מינימום ומקסימום",
+  types: [
+    {
+      id: "listening_lecture",
+      labelHe: "הבנת הנשמע: הרצאה או שיחה",
+      minutes: 7,
+      questionsHe: "3 קטעים (כ-30, 60 ו-90 שניות), 1–2 שאלות לקטע",
+      formatHe: "מאזינים לקטע ועונים על שאלות על מה שנאמר",
+    },
+    {
+      id: "listening_continuation",
+      labelHe: "השלמת קטע שמע",
+      minutes: 4,
+      questionsHe: "4 קטעים של כ-20 שניות",
+      formatHe: "מאזינים לקטע קצר ובוחרים את ההמשך המתאים",
+    },
+    {
+      id: "word_formation",
+      labelHe: "יצירת מילה",
+      minutes: 3,
+      questionsHe: "4 שאלות",
+      formatHe: "בונים את הצורה הנכונה של מילה מתוך מילת בסיס, בהקלדה",
+    },
+    {
+      id: "grammar_in_context",
+      labelHe: "דקדוק בהקשר",
+      minutes: 4,
+      questionsHe: "4 שאלות",
+      formatHe: "בוחרים את הצורה הדקדוקית שמשלימה משפט",
+    },
+    {
+      id: "writing",
+      labelHe: "מטלת כתיבה",
+      minutes: 12,
+      questionsHe: "מטלה אחת",
+      formatHe: "כותבים פסקה קצרה על נושא נתון, בהקלדה; במקום שני פרקי ניסוי",
+    },
+  ] as readonly ExamPilotType[],
+} as const;
+
+/** Registration facts from nite.org.il (checked 2026-10-31). */
+export const EXAM_REGISTRATION = {
+  feeIls: 315,
+  changeDateFeeIls: 142,
+  /** Minimum days between two sittings; counted from the day after the exam. */
+  retakeMinDays: 35,
+  /** Scores appear in the personal area within this many days. */
+  scoreWithinDays: 10,
+  registrationUrl: "https://www.nite.org.il/other-tests/amirnet/registration-procedures/",
 } as const;
 
 export const EXAM_TOTAL_MINUTES = {
@@ -135,10 +206,17 @@ export const EXAM_REFORM = {
  */
 export const EXAM_FACTS_VERIFICATION = {
   sourceUrl: EXAM_AUTHORITY.url,
+  /** Pages read for the 2026-10-31 check. */
+  sourceUrls: [
+    "https://www.nite.org.il/other-tests/amirnet/",
+    "https://www.nite.org.il/other-tests/amirnet/tips",
+    "https://www.nite.org.il/other-tests/amirnet/faq",
+    "https://www.nite.org.il/other-tests/amirnet/registration-procedures/online-registration/",
+  ],
   /** ISO date on which a human last verified this file against the source. */
-  checkedOn: "2026-08-20",
+  checkedOn: "2026-10-31",
   /** Set to false while any figure above is awaiting confirmation. */
-  confirmedAgainstOfficialSource: false,
+  confirmedAgainstOfficialSource: true,
   noteHe:
     "המבנה כאן משקף את הפרסום הידוע נכון לתאריך הבדיקה. מבחן אדפטיבי — מספר הפריטים בפועל עשוי להשתנות בין נבחנים.",
 } as const;

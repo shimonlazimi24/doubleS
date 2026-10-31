@@ -140,7 +140,7 @@ export const AMIRANT_REFORM_SECTION: AmirantSeoSection = {
   eyebrowHe: `רפורמת ${EXAM_REFORM.dateHe}`,
   headingHe: "מה השתנה במבחן ב-2026, ומה זה אומר על ההכנה",
   paragraphsHe: [
-    `מ${EXAM_REFORM.dateHe} כל נבחן יכול להפעיל הקראת טקסט (Text-to-Speech) לכל קטע במבחן, ללא אישור מיוחד. בנוסף נוספו ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי (עד ${EXAM_PILOT.maxMinutes} דקות) שאינם נספרים בציון: ${EXAM_PILOT.skillsHe.join(", ")}.`,
+    `מ${EXAM_REFORM.dateHe} כל נבחן יכול להפעיל הקראת טקסט (Text-to-Speech) לכל קטע במבחן, ללא אישור מיוחד. בנוסף נוספו ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי (${EXAM_PILOT.minMinutes}–${EXAM_PILOT.maxMinutes} דקות, או מטלת כתיבה של ${EXAM_PILOT.writingMinutes} דקות): ${EXAM_PILOT.skillsHe.join(", ")}. ${EXAM_PILOT.scoringHe}.`,
     `החלק המנוקד נשאר כפי שהיה - ${EXAM_SCORED_QUESTION_COUNT} שאלות ב-${EXAM_SCORED_MINUTES} דקות של השלמת משפטים, ניסוח מחדש והבנת הנקרא - ושם נקבע הציון. בקורס יש מודול רפורמה שלם (מדריכי Listening, יצירת מילה, דקדוק בהקשר וכתיבה) לצד הליבה הקלאסית, כדי שלא יפתיעו אתכם ביום המבחן.`,
   ],
 };
@@ -168,7 +168,7 @@ export const AMIRANT_FAQ: readonly AmirantFaqItem[] = [
   },
   {
     q: "כמה שאלות יש באמירנט וכמה זמן הוא נמשך?",
-    a: `${EXAM_SCORED_QUESTION_COUNT} שאלות מנוקדות ב-${EXAM_SCORED_SEGMENTS.length} פרקים (${EXAM_SCORED_MINUTES} דקות): ${EXAM_QUESTION_SHARE.sentence_completion} השלמת משפטים, ${EXAM_QUESTION_SHARE.rephrasing} ניסוח מחדש וקטע קריאה עם ${rcSegment?.questionCount ?? EXAM_QUESTION_SHARE.reading_comprehension} שאלות. בנוסף ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי שאינם נספרים בציון, עד ${EXAM_PILOT.maxMinutes} דקות. בסך הכול כ-${EXAM_TOTAL_MINUTES.min}-${EXAM_TOTAL_MINUTES.max} דקות.`,
+    a: `${EXAM_SCORED_QUESTION_COUNT} שאלות מנוקדות ב-${EXAM_SCORED_SEGMENTS.length} פרקים (${EXAM_SCORED_MINUTES} דקות): ${EXAM_QUESTION_SHARE.sentence_completion} השלמת משפטים, ${EXAM_QUESTION_SHARE.rephrasing} ניסוח מחדש וקטע קריאה עם ${rcSegment?.questionCount ?? EXAM_QUESTION_SHARE.reading_comprehension} שאלות. בנוסף ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי של ${EXAM_PILOT.minMinutes}–${EXAM_PILOT.maxMinutes} דקות, שטעות בהם אינה פוגעת בציון. בסך הכול כ-${EXAM_TOTAL_MINUTES.min + EXAM_PILOT.minMinutes}-${EXAM_TOTAL_MINUTES.max} דקות.`,
   },
   {
     q: "מה ציון עובר באמירנט?",
@@ -176,7 +176,7 @@ export const AMIRANT_FAQ: readonly AmirantFaqItem[] = [
   },
   {
     q: "מה השתנה ברפורמת אמירנט 2026?",
-    a: `מ${EXAM_REFORM.dateHe} יש הקראת טקסט (Text-to-Speech) לכל נבחן, ונוספו פרקי ניסוי של ${EXAM_PILOT.skillsHe.join(", ")} שאינם נספרים בציון. החלק המנוקד - השלמת משפטים, ניסוח מחדש והבנת הנקרא - לא השתנה.`,
+    a: `מ${EXAM_REFORM.dateHe} יש הקראת טקסט (Text-to-Speech) לכל נבחן, ונוספו פרקי ניסוי של ${EXAM_PILOT.skillsHe.join(", ")}: טעות בהם אינה פוגעת בציון, ותשובות נכונות יכולות להוסיף עד ${EXAM_PILOT.bonusPointsMax} נקודות. החלק המנוקד - השלמת משפטים, ניסוח מחדש והבנת הנקרא - לא השתנה.`,
   },
   {
     q: "מה כולל קורס ההכנה לאמירנט של PREPARE?",
