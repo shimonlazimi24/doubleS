@@ -58,7 +58,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["expensive", "effective", "harmful", "useless"],
     correct: 1,
     explanationHe:
-      "Although מסמן ניגוד. מה מנוגד לסירוב לקחת תרופה? משהו טוב ויעיל. effective יוצרת ניגוד חזק: מסרבים לקחת דבר שעובד. סירוב לדבר מזיק (harmful) או חסר ערך (useless) הוא הגיוני ולא ניגוד, ו-expensive יוצרת ניגוד חלש בלבד.",
+      "Although (\"למרות ש\") מסמנת ניגוד: התרופה הייתה טובה, ובכל זאת חולים סירבו לקחת אותה. לכן התשובה היא effective (\"יעילה\"). אם התרופה הייתה מזיקה (harmful) או חסרת תועלת (useless), הסירוב היה מובן, ואין ניגוד. expensive (\"יקרה\") לא יוצרת ניגוד ברור.",
   },
   {
     id: "sc-2",
@@ -69,7 +69,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["accepted", "announced", "published", "questioned"],
     correct: 3,
     explanationHe:
-      "הרמז: which had expected different results. הקהילה ציפתה לתוצאות אחרות, ולכן פקפקה בממצאים. accepted, announced ו-published נשמעות מחקריות, אבל רק questioned מתאימה לציפיות שנכזבו. בודקים לפי ההקשר הספציפי, לא לפי הנושא הכללי.",
+      "הרמז במשפט: which had expected different results (\"שציפתה לתוצאות אחרות\"). מי שציפו לתוצאות אחרות מטילים ספק בממצאים, ולכן התשובה היא questioned (\"הטילו ספק\"). accepted, announced ו-published מתאימות לנושא של מחקר, אבל לא לרמז במשפט.",
   },
   {
     id: "sc-3",
@@ -80,7 +80,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["affect", "effect", "result", "cause"],
     correct: 1,
     explanationHe:
-      "אחרי a significant חייב לבוא שם עצם. affect הוא פועל; effect הוא שם עצם, וגם הצירוף הקבוע have an effect on. result הוא שם עצם, אבל have a result on אינו צירוף טבעי; cause מדבר על מה שגרם לחוק, לא על מה שיקרה בגללו.",
+      "אחרי a significant צריך שם עצם. affect היא פועל, ולכן לא מתאימה. effect היא שם עצם, ו-have an effect on (\"להשפיע על\") הוא צירוף קבוע. result היא שם עצם, אבל באנגלית לא אומרים have a result on. cause (\"סיבה\") מתארת את מה שגרם למשהו, לא את מה שהחוק ישפיע עליו.",
   },
   {
     id: "rs-1",
@@ -96,7 +96,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     ],
     correct: 1,
     explanationHe:
-      "although = despite, complicated = complexity, completed = finished. אפשרות (B) שומרת על הניגוד ועל הסיום בזמן. (A) סותרת את המקור, (C) מוסיפה מידע שלא היה בו (took longer), ו-(D) סותרת: הצוות כן סיים.",
+      "באפשרות (B) כל חלק של המשפט המקורי נשמר: although הפכה ל-despite (שתיהן \"למרות\"), complicated הפכה ל-complexity, ו-completed הפכה ל-finished. (A) אומרת שהפרויקט לא היה מסובך, וזה סותר את המקור. (C) מוסיפה שהפרויקט התארך, וזה לא נאמר. (D) אומרת שהצוות לא סיים, אבל הוא סיים.",
   },
   {
     id: "rs-2",
@@ -112,7 +112,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     ],
     correct: 3,
     explanationHe:
-      "Had it not been for X הוא היפוך של משפט תנאי שלישי: אילו לא היה עיכוב, היינו מגיעים בזמן. אפשרות (D) שומרת על אותו תנאי ועל אותה תוצאה. (A) אומרת שהגענו בזמן, וזה סותר; (B) נכונה בפועל אבל משמיטה את התנאי; (C) סותרת את unexpected.",
+      "Had it not been for the delay פירושו \"אלמלא העיכוב\": אילו לא היה עיכוב, היינו מגיעים בזמן. (D) אומרת בדיוק את זה: בלי העיכוב היינו מגיעים בזמן. (A) אומרת שהגענו בזמן, וזה סותר את המקור. (B) נכונה, אבל לא אומרת שבלי העיכוב היינו מגיעים בזמן. (C) אומרת שציפינו לעיכוב, אבל במקור הוא היה unexpected (\"לא צפוי\").",
   },
   {
     id: "rc-1",
@@ -130,7 +130,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     ],
     correct: 1,
     explanationHe:
-      "הקטע מציג בעיה, גישה מוגבלת לשטחים ירוקים בערים, ואת הפארקים הקטנים כפתרון שמטרתו רווחת התושבים. ערך נדל״ן, החלפת פארקים גדולים ותיירות לא מוזכרים בקטע, ותשובה שלא נמצאת בטקסט אינה נכונה גם אם היא נשמעת הגיונית.",
+      "הקטע מציג בעיה: לתושבי ערים אין מספיק גישה לשטחים ירוקים. הפארקים הקטנים הם הפתרון, והמטרה שלהם היא לשפר את הרווחה של התושבים. ערך של דירות, החלפה של פארקים גדולים ותיירות לא מוזכרים בקטע. תשובה שלא כתובה בקטע היא לא נכונה, גם אם היא נשמעת הגיונית.",
   },
   {
     id: "rc-2",
@@ -148,7 +148,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     ],
     correct: 1,
     explanationHe:
-      "שאלת הסקה: הקטע אומר שערים מתחילות להוסיף שטחים ירוקים קטנים, ומכאן הכרה גוברת בערך של טבע לבריאות. (A) הפוך; (C) מכלילה: סינגפור וקופנהגן הן דוגמאות, לא בלעדיות; (D) לא מוזכר דבר על גנים פרטיים.",
+      "זו שאלת מסקנה. הקטע אומר שערים התחילו להוסיף שטחים ירוקים קטנים, ומכאן אפשר להסיק שמבינים יותר ויותר את החשיבות של טבע לרווחה. (A) אומרת את ההפך. (C) הופכת דוגמה לכלל: סינגפור וקופנהגן הן רק דוגמאות. (D) מדברת על גינות פרטיות, שלא מוזכרות בקטע.",
   },
   {
     id: "ls-1",
@@ -161,7 +161,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["Platform 2", "The café", "Platform 4", "Outside the station"],
     correct: 2,
     explanationHe:
-      "שאלת פרט: המקום נאמר במפורש, may wait on Platform 4. בית הקפה הוא מסיח: הוא מוזכר בקטע, אבל כמקום לקפה ולא כמקום המתנה. עונים על מה שנאמר, לא על מה שנשמע הגיוני.",
+      "זו שאלת פרט, והתשובה נאמרת במפורש: may wait on Platform 4 (\"אפשר לחכות ברציף 4\"). בית הקפה הוא מלכודת: הוא מוזכר בקטע, אבל כמקום שבו מחלקים קפה, לא כמקום ההמתנה. עונים לפי מה שנאמר, לא לפי מה שנשמע הגיוני.",
   },
   {
     id: "wf-1",
@@ -172,7 +172,7 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["construct", "construction", "constructive"],
     correct: 1,
     explanationHe:
-      "אחרי The ולפני of צריך שם עצם. construct הוא פועל, constructive הוא תואר; construct + ‎-ion = construction. הצעד הראשון בכל שאלת יצירת מילה הוא חלק הדיבר לפי המיקום, ורק אחריו הסיומת.",
+      "אחרי The ולפני of צריך שם עצם. construct היא פועל ו-constructive היא שם תואר. מוסיפים ל-construct את הסיומת ‎-ion ומקבלים את שם העצם construction (\"בנייה\"). בכל שאלה כזו, קודם מבינים איזה סוג מילה חסר, ורק אחר כך בוחרים סיומת.",
   },
   {
     id: "gr-1",
@@ -183,11 +183,11 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     options: ["finished", "had finished"],
     correct: 1,
     explanationHe:
-      "שיטת מילות הזמן: By the time ואחריו פעולה בעבר (arrived) מסמנים פעולה שהסתיימה לפני פעולה אחרת בעבר, כלומר past perfect: had finished.",
+      "By the time (\"עד ש\") עם פעולה בעבר (arrived) מראה שהארוחה הסתיימה לפני שהגעתי. פעולה שהסתיימה לפני פעולה אחרת בעבר נכתבת ב-past perfect: had finished.",
   },
 ] as const;
 
 export const SAMPLE_QUESTIONS_INTRO_HE = [
-  "עשר שאלות מתוך מדריכי השיטות של קורס ההכנה, מכל סוגי הפרקים של האמירנט: שלושת הפרקים המנוקדים ושלושה מפרקי הניסוי של 2026. בלי טיימר ובלי הרשמה. פותרים, פותחים את התשובה, וקוראים את ההסבר.",
-  "השאלות כאן הן דוגמאות ממדריכי הקורס ולא ממבחני התרגול המדורגים או מהסימולציות, כדי שאלה יישארו חדשים למי שמתרגלים בקורס. הציון הרשמי נקבע רק במבחן מאל״ו.",
+  "עשר שאלות מתוך מדריכי השיטות של הקורס, מכל סוגי הפרקים של האמירנט: שלושת סוגי השאלות שקובעים את הציון, ושלושה מפרקי הניסוי של 2026. בלי שעון ובלי הרשמה. פותרים, פותחים את התשובה וקוראים את ההסבר.",
+  "השאלות לקוחות ממדריכי הקורס, ולא ממבחני התרגול או מהסימולציות, כדי שאלה יישארו חדשים למי שלומדים בקורס. הציון הרשמי נקבע רק במבחן של מאל״ו.",
 ] as const;

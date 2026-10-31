@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import fs from "node:fs";
+import path from "node:path";
+import Image from "next/image";
 import { ButtonLink, Container, Heading, Text } from "@/components/ui";
 import { TrustIndicators } from "@/components/prep/marketing/TrustIndicators";
 import { courseTrustItems } from "@/components/prep/marketing/HeroSection";
@@ -53,21 +56,35 @@ const COURSE_FEATURES = [
 /** שלושת עקרונות השיטה - מנוסחים גם במדריך «ציון עובר באמירנט» בבלוג. */
 const METHOD_PRINCIPLES = [
   {
-    step: "01",
+    step: "1",
     title: "לומדים את סוגי השאלות",
     body: "לא «אנגלית כללית» - לכל סוג שאלה יש שיטת פתרון ומלכודות קבועות.",
   },
   {
-    step: "02",
+    step: "2",
     title: "מתרגלים עם טיימר",
     body: "עם שעון, עם לחץ, עם סימולציות מלאות - תרגול בסגנון יום המבחן.",
   },
   {
-    step: "03",
+    step: "3",
     title: "מנתחים כל טעות",
     body: "הציון עולה כשמבינים למה טעיתם, לא כשפותרים עוד ועוד.",
   },
 ] as const;
+
+
+/**
+ * The people behind the course. A portrait is shown only when its file exists
+ * under public/prep/team at build time, so a missing photo never breaks the page.
+ */
+const TEAM = [
+  { name: "שמעון לזימי", role: "מייסד שותף", photo: "/prep/team/shimon.jpg" },
+  { name: "שחר ציגלר", role: "מייסד שותף", photo: "/prep/team/shahar.jpg" },
+] as const;
+
+function hasPublicFile(publicPath: string): boolean {
+  return fs.existsSync(path.join(process.cwd(), "public", publicPath));
+}
 
 export default function PrepAboutPage() {
   return (
@@ -81,8 +98,7 @@ export default function PrepAboutPage() {
       {/* ── Hero קומפקטי: קיקר, הצהרת עיקרון, פס נתונים ── */}
       <header className="border-b border-line bg-paper">
         <Container max="readable" className="py-10 md:py-14">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">מי אנחנו</p>
-          <Heading level={1} className="mt-3 max-w-[26ch]">
+          <Heading level={1} className="max-w-[26ch]">
             מבחן אנגלית הוא מיומנות - ומיומנות מתאמנים עליה
           </Heading>
           <Text as="p" variant="bodyLg" className="mt-4 max-w-[52ch]">
@@ -97,8 +113,7 @@ export default function PrepAboutPage() {
       {/* ── מה בקורס: שתי עמודות עם שורות קו-שיער - בלי כרטיסים ── */}
       <section className="py-12 md:py-16">
         <Container max="readable">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">התוכנית</p>
-          <Heading level={2} as="h2" className="mt-2 text-2xl md:text-3xl">
+          <Heading level={2} as="h2" className="text-2xl md:text-3xl">
             מה בקורס ההכנה לאמירנט
           </Heading>
           <ul className="mt-8 grid gap-x-10 sm:grid-cols-2">
@@ -117,8 +132,7 @@ export default function PrepAboutPage() {
       {/* ── השיטה: שלושה עקרונות ממוספרים על קו - לא קופסאות ── */}
       <section className="border-t border-line bg-paper py-12 md:py-16">
         <Container max="readable">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">השיטה</p>
-          <Heading level={2} as="h2" className="mt-2 text-2xl md:text-3xl">
+          <Heading level={2} as="h2" className="text-2xl md:text-3xl">
             איך אנחנו עובדים
           </Heading>
           <Text as="p" variant="body" className="mt-2 max-w-[52ch]">
@@ -126,15 +140,47 @@ export default function PrepAboutPage() {
           </Text>
           <ol className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-3">
             {METHOD_PRINCIPLES.map((p) => (
-              <li key={p.step} className="border-t-2 border-primary/15 pt-3">
-                <span className="font-mono text-sm font-semibold tabular-nums text-accent">
-                  {p.step}
-                </span>
-                <h3 className="mt-1.5 text-base font-semibold text-ink">{p.title}</h3>
+              <li key={p.step} className="border-t border-line pt-3">
+                <h3 className="text-base font-semibold text-ink">
+                  {p.title}
+                </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted">{p.body}</p>
               </li>
             ))}
           </ol>
+        </Container>
+      </section>
+
+      {/* Who is behind the course: names and portraits, no cards. */}
+      <section className="border-t border-line py-12 md:py-16">
+        <Container max="readable">
+          <Heading level={2} as="h2" className="text-2xl md:text-3xl">
+            מי מאחורי PREPARE
+          </Heading>
+          <Text as="p" variant="body" className="mt-2 max-w-[52ch]">
+            שני מייסדים, קורס אחד. התוכן נכתב ונבדק אצלנו, והשיטות הן אלה שמופיעות בכל שיעור.
+          </Text>
+          <ul className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            {TEAM.map((person) => {
+              const showPhoto = hasPublicFile(person.photo);
+              return (
+                <li key={person.name} className="border-t border-line pt-5">
+                  {showPhoto ? (
+                    <Image
+                      src={person.photo}
+                      alt={person.name}
+                      width={480}
+                      height={600}
+                      sizes="(min-width: 640px) 240px, 60vw"
+                      className="h-auto w-40 rounded object-cover sm:w-48"
+                    />
+                  ) : null}
+                  <p className="mt-4 text-lg font-semibold text-ink">{person.name}</p>
+                  <p className="text-sm text-muted">{person.role}</p>
+                </li>
+              );
+            })}
+          </ul>
         </Container>
       </section>
 

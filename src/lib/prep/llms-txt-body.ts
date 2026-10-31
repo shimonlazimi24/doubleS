@@ -75,12 +75,12 @@ ${AMIRANT_PLAN_FACTS.map((p) => `- גישה ל${p.labelHe} (${p.days} ימים):
 - Sentence Completion (השלמת משפטים): ${EXAM_QUESTION_SHARE.sentence_completion} שאלות
 - Restatement (ניסוח מחדש): ${EXAM_QUESTION_SHARE.rephrasing} שאלות
 - Reading Comprehension (הבנת הנקרא): קטע + ${rc?.questionCount ?? EXAM_QUESTION_SHARE.reading_comprehension} שאלות
-- ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי (לא נספרים בציון): עד ${EXAM_PILOT.maxMinutes} דקות; מיומנויות שנצפו: ${EXAM_PILOT.skillsHe.join(", ")}
+- ${EXAM_PILOT.segmentsMin}-${EXAM_PILOT.segmentsMax} פרקי ניסוי: שני פרקים של ${EXAM_PILOT.minMinutes}–${EXAM_PILOT.maxMinutes} דקות יחד, או מטלת כתיבה אחת של ${EXAM_PILOT.writingMinutes} דקות; סוגים: ${EXAM_PILOT.skillsHe.join(", ")}; ${EXAM_PILOT.scoringHe}
 - משך כולל: כ-${EXAM_TOTAL_MINUTES.min}-${EXAM_TOTAL_MINUTES.max} דקות
 - המבחן אדפטיבי: רמת השאלות מסתגלת לביצועים
 - סולם ציונים: ${EXAM_SCORE_SCALE.min}-${EXAM_SCORE_SCALE.max}. אין ציון נכשל רשמי; כל מוסד קובע סף משלו
 ${EXAM_SCORE_BANDS.map((b) => `- ${b.min}-${b.max}: ${b.levelHe} - ${b.meaningHe}`).join("\n")}
-- מרפורמת ${EXAM_REFORM.dateHe} (${EXAM_REFORM.isoDate}): הקראת טקסט (Text-to-Speech) לכל נבחן, ופרקי ניסוי חדשים שאינם נספרים בציון
+- מרפורמת ${EXAM_REFORM.dateHe} (${EXAM_REFORM.isoDate}): הקראת טקסט (Text-to-Speech) לכל נבחן, ופרקי ניסוי חדשים (טעות בהם אינה פוגעת בציון; תשובות נכונות יכולות להוסיף עד ${EXAM_PILOT.bonusPointsMax} נקודות)
 - מקור רשמי: ${EXAM_FACTS_VERIFICATION.sourceUrl} (נתוני המבחן נבדקו מול הפרסום הידוע ב-${EXAM_FACTS_VERIFICATION.checkedOn}; במבחן אדפטיבי מספר הפריטים בפועל עשוי להשתנות בין נבחנים)`);
 
   sections.push(`## שאלות נפוצות

@@ -260,7 +260,7 @@ export function parseExamPremium(examReform: string): ExamPremiumData {
     nameLabel: "שם המבחן",
     nameText: nameText || "אמירנ״ט",
     structureTitle: "מבנה המבחן (2026)",
-    structureBullets: structureBullets.length ? structureBullets : ["6 סגמנטים מנוקדים – 23 שאלות | 39 דקות", "1-2 סגמנטי ניסוי (לא מנוקדים) – עד 12 דקות"],
+    structureBullets: structureBullets.length ? structureBullets : ["6 סגמנטים מנוקדים – 23 שאלות | 39 דקות", "פרקי ניסוי – 6–14 דקות, או מטלת כתיבה של 12 דקות (יכולים רק להוסיף עד 2 נקודות)"],
     durationLine,
     questionTableTitle: "סוגי השאלות",
     questionRows: qRows.filter((r) => r.type),
