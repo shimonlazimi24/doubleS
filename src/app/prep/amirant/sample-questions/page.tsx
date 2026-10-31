@@ -57,7 +57,7 @@ export default function AmirantSampleQuestionsPage() {
             <caption className="sr-only">מה יש בעמוד</caption>
             <tbody>
               <tr className="border-t border-line">
-                <th scope="row" className="py-2 pe-4 text-start font-semibold text-ink">מהפרקים המנוקדים</th>
+                <th scope="row" className="py-2 pe-4 text-start font-semibold text-ink">מהפרקים שקובעים את הציון</th>
                 <td className="py-2 tabular-nums text-muted">{scored} שאלות: השלמת משפטים, ניסוח מחדש, הבנת הנקרא</td>
               </tr>
               <tr className="border-y border-line">
