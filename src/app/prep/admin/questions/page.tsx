@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { AdminNotice, AdminPageHeader } from "@/components/prep/admin/admin-ui";
+import { QUESTION_TOPIC_LABELS } from "@/lib/prep/admin/question-payload";
+
+export const dynamic = "force-dynamic";
 
 type Question = {
   id: string;
@@ -9,95 +14,77 @@ type Question = {
   prompt: string;
 };
 
-async function getQuestions(): Promise<Question[]> {
+async function getQuestions(): Promise<{ rows: Question[]; error: string | null }> {
   const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return [];
-  const { data } = await supabase
+  if (!supabase) return { rows: [], error: "Supabase לא מוגדר בסביבה הזו." };
+  const { data, error } = await supabase
     .from("cms_questions")
     .select("id, topic_slug, difficulty, published, prompt")
     .order("topic_slug")
-    .order("difficulty");
-  return (data ?? []) as Question[];
+    .order("difficulty")
+    .limit(1000);
+  if (error) return { rows: [], error: "קריאת השאלות נכשלה." };
+  return { rows: (data ?? []) as Question[], error: null };
 }
 
-const TOPIC_LABELS: Record<string, string> = {
-  vocabulary: "Vocabulary",
-  sentence_completion: "Sentence Completion",
-  rephrasing: "Restatement",
-  reading_comprehension: "Reading",
-};
+export const metadata: Metadata = { title: "בנק שאלות | PREPARE admin" };
 
 export default async function QuestionsPage() {
-  const questions = await getQuestions();
+  const { rows, error } = await getQuestions();
 
   return (
-    <div dir="rtl" className="max-w-4xl">
-      <div
-        className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
-        role="status"
-      >
-        <p className="font-medium text-amber-50">שאלות CMS לא מחוברות לחידונים החיים</p>
-        <p className="mt-1 text-amber-100/90">
-          החידונים והסימולציות משתמשים בבנק השאלות המיובא. עריכה כאן לא משפיעה על התרגול של
-          התלמידים — אפשר להשאיר לניסויים פנימיים בלבד.
-        </p>
-      </div>
-
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">בנק שאלות (CMS)</h1>
-          <p className="text-muted text-sm mt-1">{questions.length} שאלות · לא פעיל בחידונים</p>
-        </div>
-        <Link
-          href="/prep/admin/questions/new"
-          className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary"
-          title="לא משפיע על חידונים חיים"
-        >
-          + שאלה (ניסוי)
-        </Link>
-      </div>
-
-      {questions.length === 0 ? (
-        <div className="text-center py-20 text-muted">
-          <p>אין שאלות עדיין</p>
-          <Link href="/prep/admin/questions/new" className="text-blue-400 hover:underline text-sm mt-2 inline-block">
-            צור שאלה ראשונה
+    <div dir="rtl" className="max-w-4xl space-y-6">
+      <AdminPageHeader
+        title="בנק שאלות ניסיוני"
+        subtitle={`${rows.length} שאלות`}
+        actions={
+          <Link
+            href="/prep/admin/questions/new"
+            className="inline-flex min-h-11 items-center rounded-control border border-line bg-paper px-4 text-sm font-semibold text-ink transition hover:border-primary"
+          >
+            שאלה חדשה
           </Link>
-        </div>
+        }
+      />
+
+      <AdminNotice tone="warning">
+        הבנק הזה לא מחובר לחידונים ולסימולציות, שרצים על בנק השאלות המיובא. עריכה כאן לא משנה את מה
+        שהתלמידים מתרגלים.
+      </AdminNotice>
+
+      {error ? (
+        <AdminNotice tone="error">{error}</AdminNotice>
+      ) : rows.length === 0 ? (
+        <p className="border-y border-line py-8 text-center text-sm text-muted">אין שאלות.</p>
       ) : (
-        <div className="border border-line rounded-xl overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="overflow-x-auto border-y border-line">
+          <table className="w-full min-w-[40rem] text-sm">
             <thead>
-              <tr className="border-b border-line bg-paper">
-                <th className="text-right px-4 py-3 font-medium text-muted">שאלה</th>
-                <th className="text-right px-4 py-3 font-medium text-muted">נושא</th>
-                <th className="text-right px-4 py-3 font-medium text-muted">קושי</th>
-                <th className="text-right px-4 py-3 font-medium text-muted">סטטוס</th>
-                <th className="px-4 py-3"></th>
+              <tr className="border-b border-line text-xs text-muted">
+                <th scope="col" className="py-2 pe-4 text-start font-medium">שאלה</th>
+                <th scope="col" className="py-2 pe-4 text-start font-medium">נושא</th>
+                <th scope="col" className="py-2 pe-4 text-start font-medium">קושי</th>
+                <th scope="col" className="py-2 text-start font-medium">מצב</th>
               </tr>
             </thead>
-            <tbody>
-              {questions.map((q) => (
-                <tr key={q.id} className="border-b border-line/50 hover:bg-paper/50 transition">
-                  <td className="px-4 py-3 max-w-xs">
-                    <p className="truncate text-xs text-muted" dir="ltr">{q.prompt}</p>
+            <tbody className="divide-y divide-line/70">
+              {rows.map((q) => (
+                <tr key={q.id}>
+                  <td className="max-w-sm py-2 pe-4">
+                    <Link
+                      href={`/prep/admin/questions/${encodeURIComponent(q.id)}`}
+                      className="block min-h-11 truncate py-2.5 text-ink hover:text-primary"
+                      dir="ltr"
+                      style={{ textAlign: "right" }}
+                    >
+                      {q.prompt}
+                    </Link>
                   </td>
-                  <td className="px-4 py-3">
-                    <span className="text-xs bg-surface-low px-2 py-0.5 rounded">{TOPIC_LABELS[q.topic_slug] ?? q.topic_slug}</span>
+                  <td className="whitespace-nowrap py-2 pe-4 text-muted">
+                    {QUESTION_TOPIC_LABELS[q.topic_slug as keyof typeof QUESTION_TOPIC_LABELS] ?? q.topic_slug}
                   </td>
-                  <td className="px-4 py-3">
-                    <span className={`text-xs font-mono px-2 py-0.5 rounded ${q.difficulty <= 2 ? "bg-green-900/40 text-green-400" : q.difficulty <= 4 ? "bg-yellow-900/40 text-yellow-400" : "bg-red-900/40 text-red-400"}`}>
-                      {q.difficulty}/6
-                    </span>
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className={`text-xs px-2 py-0.5 rounded font-medium ${q.published ? "bg-green-500/20 text-green-400" : "bg-surface-low text-muted"}`}>
-                      {q.published ? "פורסם" : "טיוטה"}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-right">
-                    <Link href={`/prep/admin/questions/${q.id}`} className="text-blue-400 hover:underline text-xs">עריכה</Link>
-                  </td>
+                  <td className="py-2 pe-4 tabular-nums text-muted">{q.difficulty} מתוך 6</td>
+                  <td className="py-2 text-muted">{q.published ? "פורסם" : "טיוטה"}</td>
                 </tr>
               ))}
             </tbody>

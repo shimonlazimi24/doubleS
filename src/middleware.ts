@@ -96,10 +96,17 @@ async function handleAdminRequest(req: NextRequest): Promise<NextResponse> {
     return res;
   }
   const { user } = await getPrepUserFromMiddleware(req);
-  if (!user || !isPrepAdminUser(user)) {
+  if (!user) {
     const login = new URL("/prep/login", req.url);
     login.searchParams.set("next", req.nextUrl.pathname);
     const redirect = NextResponse.redirect(login);
+    setNoStore(redirect);
+    return redirect;
+  }
+  if (!isPrepAdminUser(user)) {
+    // Not back to login: the login form forwards a signed-in visitor to `next`,
+    // which was this page, and the two redirected to each other forever.
+    const redirect = NextResponse.redirect(new URL("/prep/admin-denied", req.url));
     setNoStore(redirect);
     return redirect;
   }

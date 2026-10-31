@@ -13,7 +13,7 @@ export default async function AdminSettingsPage() {
     <div dir="rtl" className="max-w-2xl space-y-6">
       <AdminPageHeader
         title="סרטונים"
-        subtitle="סרטוני פתיחה בעמוד הבית ובעמוד הקורס. שינוי כאן משפיע על האתר מיד."
+        subtitle="סרטוני הפתיחה בעמוד הבית ובעמוד הקורס. אחרי שמירה העמודים מתעדכנים תוך כמה דקות."
       />
       <AdminVideoSettings initial={videos} />
     </div>

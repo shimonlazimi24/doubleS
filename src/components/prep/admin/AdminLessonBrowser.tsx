@@ -3,14 +3,13 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/design-system/cn";
+import { AdminInput, AdminSegmented } from "./admin-ui";
 
 /**
- * Finding one lesson among 78.
+ * Finding one lesson among the whole course.
  *
- * The list used to render every module expanded: 78 rows, ~12,000px of scroll,
- * no search and no filter. Editing `lesson.vocab.14` meant scrolling past
- * everything before it. Now the page opens as ten module rows, search matches
- * title or id across all of them, and a module opens only when it is relevant.
+ * The page opens as one row per module; search matches title or id across all
+ * of them, and a module opens only when it is relevant.
  */
 
 export type AdminLessonRow = {
@@ -32,7 +31,7 @@ type StatusFilter = "all" | "edited" | "draft";
 const STATUS_LABEL: Record<AdminLessonRow["status"], string> = {
   published: "פורסם",
   draft: "טיוטה",
-  default: "ערוך",
+  default: "מקבצי הקורס",
 };
 
 const STATUS_DOT: Record<AdminLessonRow["status"], string> = {
@@ -83,32 +82,15 @@ export function AdminLessonBrowser({ modules }: { modules: AdminLessonModule[] }
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <input
+        <AdminInput
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="חיפוש לפי שם שיעור או מזהה…"
+          placeholder="חיפוש לפי שם שיעור או מזהה"
           aria-label="חיפוש שיעור"
-          className="min-w-0 flex-1 rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-primary focus:outline-none"
+          className="min-w-0 flex-1 basis-56"
         />
-        <div className="flex gap-1" role="group" aria-label="סינון לפי מצב">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              onClick={() => setFilter(f.id)}
-              aria-pressed={filter === f.id}
-              className={cn(
-                "rounded-control px-3 py-2 text-sm transition",
-                filter === f.id
-                  ? "bg-primary text-white"
-                  : "border border-line bg-paper text-muted hover:text-ink",
-              )}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
+        <AdminSegmented label="סינון לפי מצב" options={FILTERS} value={filter} onChange={setFilter} />
       </div>
 
       {searching ? (
@@ -121,7 +103,7 @@ export function AdminLessonBrowser({ modules }: { modules: AdminLessonModule[] }
         </p>
       ) : null}
 
-      <div className="divide-y divide-line rounded-surface border border-line bg-paper">
+      <div className="divide-y divide-line border-y border-line">
         {visible.map((mod) => {
           const open = searching || openIds.includes(mod.id);
           const edited = mod.lessons.filter((l) => l.status !== "default").length;
@@ -136,7 +118,7 @@ export function AdminLessonBrowser({ modules }: { modules: AdminLessonModule[] }
                 }
                 aria-expanded={open}
                 disabled={searching}
-                className="flex w-full items-center gap-3 px-4 py-3 text-start transition hover:bg-surface-low disabled:cursor-default"
+                className="flex min-h-12 w-full items-center gap-3 px-2 py-3 text-start transition hover:bg-surface-low disabled:cursor-default"
               >
                 <span
                   aria-hidden
@@ -160,7 +142,7 @@ export function AdminLessonBrowser({ modules }: { modules: AdminLessonModule[] }
                     <li key={lesson.id}>
                       <Link
                         href={lesson.href}
-                        className="flex items-center gap-3 px-4 py-2.5 transition hover:bg-surface-low"
+                        className="flex min-h-12 items-center gap-3 py-2.5 pe-2 ps-8 transition hover:bg-surface-low"
                       >
                         <span
                           aria-hidden
@@ -187,13 +169,13 @@ export function AdminLessonBrowser({ modules }: { modules: AdminLessonModule[] }
 
       <div className="flex flex-wrap gap-4 text-[11px] text-muted">
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-emerald-500" /> פורסם — מוצג לתלמידים
+          <span aria-hidden className="h-2 w-2 rounded-full bg-emerald-500" /> פורסם: מוצג לתלמידים
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-amber-500" /> טיוטה — רק אתה רואה
+          <span aria-hidden className="h-2 w-2 rounded-full bg-amber-500" /> טיוטה: נשמרה, התלמידים עדיין רואים את קבצי הקורס
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full bg-line" /> ברירת מחדל — התוכן מהריפו
+          <span aria-hidden className="h-2 w-2 rounded-full bg-line" /> בלי עריכה: התוכן מקבצי הקורס
         </span>
       </div>
     </div>

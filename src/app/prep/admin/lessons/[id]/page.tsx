@@ -1,74 +1,63 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { getManifestLesson } from "@/lib/amirant-course/manifest";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { AdminNotice, AdminPageHeader } from "@/components/prep/admin/admin-ui";
 import { LessonEditor } from "@/components/prep/admin/LessonEditor";
-import { getLessonContent } from "@/lib/amirant-course/lesson-registry";
-import { readAmirantCourseMarkdownSource } from "@/lib/prep/amirnet-materials.server";
-import { splitMarkdownByMasachH1 } from "@/lib/amirant-course/content-source/split-markdown-masach";
+import { getLessonStaticMarkdown } from "@/lib/prep/admin/lesson-static-markdown.server";
 
-function getStaticMarkdown(lessonId: string): string {
-  const content = getLessonContent(lessonId);
-  if (!content) return "";
-  if (content.amirnetMarkdownRel) {
-    const md = readAmirantCourseMarkdownSource(content.amirnetMarkdownRel);
-    if (!md.ok) return "";
-    if (content.amirnetMarkdownSectionIndex !== undefined) {
-      const parts = splitMarkdownByMasachH1(md.body);
-      return parts[content.amirnetMarkdownSectionIndex] ?? md.body;
-    }
-    return md.body;
-  }
-  return "";
-}
+export const dynamic = "force-dynamic";
 
 export default async function EditLessonPage({ params }: { params: { id: string } }) {
+  const id = decodeURIComponent(params.id);
+  const hit = getManifestLesson(id);
   const supabase = createPrepSupabaseServerClient();
-  if (!supabase) notFound();
 
-  const { data: lesson } = await supabase
-    .from("cms_lessons")
-    .select("*")
-    .eq("id", params.id)
-    .single();
-
-  // If no CMS entry yet, pre-load static markdown
-  const staticMarkdown = getStaticMarkdown(params.id);
-
-  if (lesson) {
+  if (!supabase) {
+    if (!hit) notFound();
     return (
-      <LessonEditor
-        initial={{
-          id: lesson.id,
-          title: lesson.title,
-          kind: lesson.kind,
-          module_id: lesson.module_id ?? "",
-          // Show CMS content; fall back to static if CMS body is empty
-          body_markdown: lesson.body_markdown?.trim() ? lesson.body_markdown : staticMarkdown,
-          video_url: lesson.video_url ?? "",
-          estimated_minutes: lesson.estimated_minutes ?? 10,
-          sort_order: lesson.sort_order ?? 0,
-          published: lesson.published ?? false,
-        }}
-        cmsExists
-      />
+      <div dir="rtl" className="max-w-2xl space-y-6">
+        <AdminPageHeader title="עריכת שיעור" />
+        <AdminNotice tone="error">Supabase לא מוגדר בסביבה הזו, ולכן אי אפשר לטעון או לשמור עריכות.</AdminNotice>
+      </div>
     );
   }
 
-  // No CMS entry - pre-fill from static registry
-  if (!staticMarkdown) notFound();
+  const { data: lesson, error } = await supabase.from("cms_lessons").select("*").eq("id", id).maybeSingle();
 
-  // Get lesson title from manifest
-  const { getManifestLesson } = await import("@/lib/amirant-course");
-  const hit = getManifestLesson(params.id);
+  if (error) {
+    return (
+      <div dir="rtl" className="max-w-2xl space-y-6">
+        <AdminPageHeader title="עריכת שיעור" />
+        <AdminNotice tone="error">קריאת השיעור נכשלה. רעננו את הדף; אם זה חוזר, בדקו שטבלת cms_lessons קיימת.</AdminNotice>
+      </div>
+    );
+  }
 
+  if (!lesson) {
+    if (!hit) notFound();
+    // No override yet: same as a first edit.
+    redirect(`/prep/admin/lessons/new?id=${encodeURIComponent(id)}`);
+  }
+
+  const staticMarkdown = getLessonStaticMarkdown(id);
   return (
     <LessonEditor
+      cmsExists
+      orphan={!hit}
+      staticMarkdown={staticMarkdown}
       initial={{
-        id: params.id,
-        title: hit?.lesson.title ?? params.id,
-        module_id: hit?.module.id ?? "",
-        body_markdown: staticMarkdown,
+        id: lesson.id,
+        title: lesson.title,
+        kind: lesson.kind,
+        module_id: lesson.module_id ?? "",
+        // An empty CMS body means "text from the course files"; show that text, and the
+        // editor sends it back empty unless it was actually changed.
+        body_markdown: lesson.body_markdown?.trim() ? lesson.body_markdown : staticMarkdown,
+        video_url: lesson.video_url ?? "",
+        estimated_minutes: lesson.estimated_minutes ?? 10,
+        sort_order: lesson.sort_order ?? 0,
+        published: lesson.published ?? false,
       }}
-      cmsExists={false}
     />
   );
 }

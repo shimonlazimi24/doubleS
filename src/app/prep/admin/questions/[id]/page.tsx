@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { QuestionForm } from "@/components/prep/admin/QuestionForm";
 
+export const dynamic = "force-dynamic";
+
 export default async function EditQuestionPage({ params }: { params: { id: string } }) {
   const supabase = createPrepSupabaseServerClient();
   if (!supabase) notFound();
@@ -9,8 +11,8 @@ export default async function EditQuestionPage({ params }: { params: { id: strin
   const { data: q } = await supabase
     .from("cms_questions")
     .select("*")
-    .eq("id", params.id)
-    .single();
+    .eq("id", decodeURIComponent(params.id))
+    .maybeSingle();
 
   if (!q) notFound();
 

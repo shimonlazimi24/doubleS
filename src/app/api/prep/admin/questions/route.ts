@@ -1,45 +1,26 @@
-import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { NextResponse } from "next/server";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
-
-async function requireAdmin() {
-  const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return null;
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user || !isPrepAdminUser(user)) return null;
-  return supabase;
-}
+import { adminDbError, adminError, readJsonBody, requirePrepAdmin } from "@/lib/prep/admin-api.server";
+import { parseQuestionId, parseQuestionPayload } from "@/lib/prep/admin/question-payload";
 
 export async function POST(req: Request) {
-  const supabase = await requireAdmin();
-  if (!supabase) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  const gate = await requirePrepAdmin();
+  if (!gate.ok) return gate.response;
 
-  const body = await req.json();
-  const { id, topic_slug, subtopic_slug, prompt, options, correct_option_id, explanation, difficulty, published } = body;
+  const body = await readJsonBody(req);
+  if (typeof body !== "object" || body === null) return adminError("גוף הבקשה אינו JSON תקין", 400);
 
-  if (!id?.trim() || !prompt?.trim()) {
-    return NextResponse.json({ error: "id ו-prompt הם שדות חובה" }, { status: 400 });
-  }
-  if (!Array.isArray(options) || options.length !== 4) {
-    return NextResponse.json({ error: "נדרשות בדיוק 4 אפשרויות תשובה" }, { status: 400 });
-  }
+  const id = parseQuestionId((body as { id?: unknown }).id);
+  if (!id) return adminError("מזהה לא תקין: אותיות לטיניות קטנות, ספרות, נקודה או מקף", 400);
 
-  const { data, error } = await supabase
+  const parsed = parseQuestionPayload(body);
+  if (!parsed.ok) return adminError(parsed.error, 400);
+
+  const { data, error } = await gate.supabase
     .from("cms_questions")
-    .insert({
-      id: id.trim(),
-      topic_slug,
-      subtopic_slug: subtopic_slug || null,
-      prompt,
-      options,
-      correct_option_id,
-      explanation: explanation || null,
-      difficulty: difficulty ?? 3,
-      published: published ?? false,
-    })
+    .insert({ id, ...parsed.row })
     .select("id")
     .single();
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) return adminDbError("questions", error);
   return NextResponse.json({ id: data.id });
 }

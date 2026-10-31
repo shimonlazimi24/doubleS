@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
 import { PLAN_LABELS } from "@/lib/prep/pricing-plans";
+import { AdminNotice, AdminPageHeader } from "@/components/prep/admin/admin-ui";
 
 export const metadata: Metadata = { title: "תשלומים | PREPARE admin" };
 export const dynamic = "force-dynamic";
@@ -82,8 +83,14 @@ async function loadPayments(): Promise<{ rows: PaymentRow[]; emails: Map<string,
   const rows = (data ?? []) as PaymentRow[];
   const emails = new Map<string, string>();
   if (rows.length > 0) {
-    const { data: users } = await service.auth.admin.listUsers({ page: 1, perPage: 1000 });
-    for (const user of users?.users ?? []) if (user.email) emails.set(user.id, user.email);
+    // Paged: with one page of 1000, buyers past the thousandth sign-up showed as a bare id.
+    const wanted = new Set(rows.map((r) => r.user_id));
+    for (let page = 1; page <= 10 && emails.size < wanted.size; page++) {
+      const { data: users } = await service.auth.admin.listUsers({ page, perPage: 1000 });
+      const batch = users?.users ?? [];
+      for (const user of batch) if (user.email && wanted.has(user.id)) emails.set(user.id, user.email);
+      if (batch.length < 1000) break;
+    }
   }
   return { rows, emails, error: null };
 }
@@ -97,29 +104,27 @@ export default async function AdminPaymentsPage() {
 
   return (
     <div dir="rtl" className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold text-ink">תשלומים</h1>
-        <p className="mt-1 text-sm text-muted">
-          {rows.length} ניסיונות אחרונים · {paid} שולמו · {failed} נכשלו · {stale} נשארו ממתינים בלי callback
-        </p>
-      </div>
+      <AdminPageHeader
+        title="תשלומים"
+        subtitle={`${rows.length} ניסיונות אחרונים${rows.length === 100 ? " (מוצגים 100 האחרונים)" : ""} · ${paid} שולמו · ${failed} נכשלו · ${stale} נשארו ממתינים בלי callback`}
+      />
 
       {error ? (
-        <p className="rounded-surface border border-line bg-paper p-4 text-sm text-ink">{error}</p>
+        <AdminNotice tone="error">{error}</AdminNotice>
       ) : rows.length === 0 ? (
-        <p className="text-sm text-muted">עוד לא נוצר אף ניסיון תשלום.</p>
+        <p className="border-y border-line py-8 text-center text-sm text-muted">עוד לא נוצר אף ניסיון תשלום.</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-sm">
+        <div className="overflow-x-auto border-y border-line">
+          <table className="w-full min-w-[48rem] border-collapse text-sm">
             <thead>
-              <tr className="border-b border-line text-start text-xs font-bold text-muted">
-                <th className="py-2 pe-3 text-start">נוצר</th>
-                <th className="py-2 pe-3 text-start">מייל</th>
-                <th className="py-2 pe-3 text-start">תוכנית</th>
-                <th className="py-2 pe-3 text-start">₪</th>
-                <th className="py-2 pe-3 text-start">מצב</th>
-                <th className="py-2 pe-3 text-start">Hyp</th>
-                <th className="py-2 pe-3 text-start">מה קרה</th>
+              <tr className="border-b border-line text-start text-xs font-medium text-muted">
+                <th scope="col" className="py-2 pe-3 text-start">נוצר</th>
+                <th scope="col" className="py-2 pe-3 text-start">מייל</th>
+                <th scope="col" className="py-2 pe-3 text-start">תוכנית</th>
+                <th scope="col" className="py-2 pe-3 text-start">סכום (₪)</th>
+                <th scope="col" className="py-2 pe-3 text-start">מצב</th>
+                <th scope="col" className="py-2 pe-3 text-start">Hyp</th>
+                <th scope="col" className="py-2 pe-3 text-start">מה קרה</th>
               </tr>
             </thead>
             <tbody>

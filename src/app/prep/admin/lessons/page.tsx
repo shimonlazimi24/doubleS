@@ -1,4 +1,5 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import { AdminNotice, AdminPageHeader } from "@/components/prep/admin/admin-ui";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import {
@@ -7,13 +8,14 @@ import {
   type AdminLessonRow,
 } from "@/components/prep/admin/AdminLessonBrowser";
 
-async function getCmsLessonsMap(): Promise<Map<string, { published: boolean }>> {
-  const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return new Map();
-  const { data } = await supabase.from("cms_lessons").select("id, published");
+async function getCmsLessonsMap(): Promise<{ map: Map<string, { published: boolean }>; error: string | null }> {
   const map = new Map<string, { published: boolean }>();
+  const supabase = createPrepSupabaseServerClient();
+  if (!supabase) return { map, error: "Supabase לא מוגדר בסביבה הזו, ולכן לא ידוע אילו שיעורים נערכו." };
+  const { data, error } = await supabase.from("cms_lessons").select("id, published");
+  if (error) return { map, error: "קריאת השיעורים הערוכים נכשלה. המצב שמוצג כאן אינו מעודכן." };
   for (const row of data ?? []) map.set(row.id, { published: row.published });
-  return map;
+  return { map, error: null };
 }
 
 function seedLessonHref(moduleId: string, id: string, title: string): string {
@@ -21,8 +23,10 @@ function seedLessonHref(moduleId: string, id: string, title: string): string {
   return `/prep/admin/lessons/new?${params.toString()}`;
 }
 
+export const metadata: Metadata = { title: "שיעורים | PREPARE admin" };
+
 export default async function LessonsPage() {
-  const cmsMap = await getCmsLessonsMap();
+  const { map: cmsMap, error } = await getCmsLessonsMap();
   const manifest = AMIRANT_PREPARATION_MANIFEST;
 
   const modules: AdminLessonModule[] = manifest.modules.map((mod) => ({
@@ -54,20 +58,11 @@ export default async function LessonsPage() {
 
   return (
     <div dir="rtl" className="max-w-3xl space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold text-ink">עריכת הקורס</h1>
-          <p className="mt-1 text-sm text-muted">
-            {totalLessons} שיעורים · {editedCount} עם תוכן מותאם
-          </p>
-        </div>
-        <Link
-          href="/prep/admin/lessons/new"
-          className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
-        >
-          שיעור חדש
-        </Link>
-      </div>
+      <AdminPageHeader
+        title="שיעורים"
+        subtitle={`${totalLessons} שיעורים בקורס · ${editedCount} עם גרסה ערוכה. שיעור חדש נוסף בקבצי הקורס, לא כאן: עמוד השיעור מציג רק שיעורים שקיימים בהם.`}
+      />
+      {error ? <AdminNotice tone="warning">{error}</AdminNotice> : null}
 
       <AdminLessonBrowser modules={modules} />
     </div>

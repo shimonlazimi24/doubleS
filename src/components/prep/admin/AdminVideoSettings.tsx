@@ -19,11 +19,15 @@ const SLOTS = Object.entries(SITE_VIDEO_SLOTS) as [
 
 export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
   const [videos, setVideos] = useState<SiteVideos>(initial);
+  // What the server holds. Comparing against the `initial` prop kept the form
+  // "dirty" after a successful save, so the success line never showed and the
+  // unsaved-changes warning stayed up.
+  const [baseline, setBaseline] = useState<SiteVideos>(initial);
   const [error, setError] = useState<string | null>(null);
   const [saved, setSaved] = useState(false);
   const [isPending, startTransition] = useTransition();
 
-  const dirty = SLOTS.some(([slot]) => videos[slot] !== initial[slot]);
+  const dirty = SLOTS.some(([slot]) => videos[slot] !== baseline[slot]);
 
   function save() {
     setError(null);
@@ -35,14 +39,17 @@ export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(videos),
         });
-        const data = (await res.json()) as { error?: string };
+        const data = (await res.json().catch(() => ({}))) as { error?: string; videos?: SiteVideos };
         if (!res.ok) {
-          setError(data.error ?? "השמירה נכשלה");
+          setError(data.error ?? `השמירה נכשלה (${res.status})`);
           return;
         }
+        const stored = data.videos ?? videos;
+        setVideos(stored);
+        setBaseline(stored);
         setSaved(true);
       } catch {
-        setError("שגיאת רשת");
+        setError("שגיאת רשת. השינויים לא נשמרו.");
       }
     });
   }
@@ -50,7 +57,7 @@ export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
   return (
     <div className="space-y-6">
       {error ? <AdminNotice tone="error">{error}</AdminNotice> : null}
-      {saved && !dirty ? <AdminNotice tone="success">נשמר. רעננו את הדף כדי לראות.</AdminNotice> : null}
+      {saved && !dirty ? <AdminNotice tone="success">נשמר. העמודים הציבוריים מתעדכנים תוך כמה דקות (מטמון CDN).</AdminNotice> : null}
 
       {SLOTS.map(([slot, meta]) => (
         <AdminSection key={slot} title={meta.label} description={meta.hint}>
@@ -83,17 +90,17 @@ export function AdminVideoSettings({ initial }: { initial: SiteVideos }) {
               <AmirantVideoEmbed src={videos[slot]} title={meta.label} />
             </div>
           ) : (
-            <p className="text-xs text-muted">ריק — הסרטון לא יוצג באתר.</p>
+            <p className="text-xs text-muted">ריק: הסרטון לא יוצג באתר.</p>
           )}
         </AdminSection>
       ))}
 
-      <div className="flex items-center gap-3 border-t border-line pt-4">
+      <div className="flex flex-wrap items-center gap-3 border-t border-line pt-4">
         <AdminButton tone="primary" onClick={save} disabled={isPending || !dirty}>
           {isPending ? "שומר…" : "שמור"}
         </AdminButton>
         {dirty ? (
-          <span className="text-xs text-muted">יש שינויים שלא נשמרו — גם קובץ שהועלה מופיע באתר רק אחרי שמירה</span>
+          <span className="text-xs text-muted">יש שינויים שלא נשמרו. גם קובץ שהועלה מופיע באתר רק אחרי שמירה.</span>
         ) : null}
       </div>
     </div>

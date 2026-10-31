@@ -2,6 +2,15 @@
 
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import {
+  AdminButton,
+  AdminField,
+  AdminInput,
+  AdminNotice,
+  AdminPageHeader,
+  AdminSelect,
+  AdminTextarea,
+} from "./admin-ui";
 
 type Option = { id: string; text: string };
 
@@ -17,11 +26,12 @@ export type QuestionFormData = {
   published: boolean;
 };
 
+/** Kept local (not imported from question-payload) so zod stays out of the browser bundle. */
 const TOPICS = [
-  { value: "vocabulary", label: "Vocabulary - אוצר מילים" },
-  { value: "sentence_completion", label: "Sentence Completion" },
-  { value: "rephrasing", label: "Restatement / Rephrasing" },
-  { value: "reading_comprehension", label: "Reading Comprehension" },
+  { value: "vocabulary", label: "אוצר מילים" },
+  { value: "sentence_completion", label: "השלמת משפטים" },
+  { value: "rephrasing", label: "ניסוח מחדש" },
+  { value: "reading_comprehension", label: "הבנת הנקרא" },
 ];
 
 const DEFAULT_OPTIONS: Option[] = [
@@ -51,180 +61,183 @@ export function QuestionForm({ initial }: { initial?: Partial<QuestionFormData> 
     options: initial?.options?.length ? initial.options : DEFAULT_OPTIONS,
   });
   const [error, setError] = useState<string | null>(null);
+  const [saved, setSaved] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const isNew = !initial?.id;
 
   function setField<K extends keyof QuestionFormData>(key: K, value: QuestionFormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
+    setSaved(false);
   }
 
   function setOption(idx: number, text: string) {
-    setForm((f) => {
-      const options = f.options.map((o, i) => (i === idx ? { ...o, text } : o));
-      return { ...f, options };
-    });
+    setForm((f) => ({ ...f, options: f.options.map((o, i) => (i === idx ? { ...o, text } : o)) }));
+    setSaved(false);
   }
 
-  async function handleSave(mode: "keep" | "publish" | "unpublish") {
+  function handleSave(mode: "keep" | "publish" | "unpublish") {
     setError(null);
-    const payload = { ...form };
-    if (mode === "publish") payload.published = true;
-    if (mode === "unpublish") payload.published = false;
+    setSaved(false);
+    const published = mode === "publish" ? true : mode === "unpublish" ? false : form.published;
+    const payload = { ...form, published };
 
-    if (!payload.prompt.trim()) { setError("שאלה היא שדה חובה"); return; }
-    if (payload.options.some((o) => !o.text.trim())) { setError("כל 4 אפשרויות התשובה חייבות להיות מלאות"); return; }
+    if (!payload.prompt.trim()) return setError("חסר נוסח השאלה");
+    if (payload.options.some((o) => !o.text.trim())) return setError("כל ארבע התשובות חייבות להיות מלאות");
 
-    const url = isNew ? "/api/prep/admin/questions" : `/api/prep/admin/questions/${form.id}`;
-    const method = isNew ? "POST" : "PATCH";
-
+    const url = isNew ? "/api/prep/admin/questions" : `/api/prep/admin/questions/${encodeURIComponent(form.id)}`;
     startTransition(async () => {
       try {
         const res = await fetch(url, {
-          method,
+          method: isNew ? "POST" : "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
+        const data = (await res.json().catch(() => ({}))) as { error?: string; id?: string };
         if (!res.ok) {
-          const { error: msg } = await res.json().catch(() => ({ error: "שגיאה" }));
-          setError(msg ?? "שגיאה");
+          setError(data.error ?? `השמירה נכשלה (${res.status})`);
           return;
         }
-        const { id } = await res.json();
-        setForm((f) => ({ ...f, published: payload.published }));
-        if (isNew && id) {
-          router.push(`/prep/admin/questions/${id}`);
-        } else {
-          router.refresh();
-        }
+        setForm((f) => ({ ...f, published }));
+        setSaved(true);
+        if (isNew && data.id) router.replace(`/prep/admin/questions/${encodeURIComponent(data.id)}`);
+        else router.refresh();
       } catch {
-        setError("שגיאת רשת");
+        setError("שגיאת רשת. השאלה לא נשמרה.");
       }
     });
   }
 
-  async function handleDelete() {
-    if (!confirm("למחוק את השאלה לצמיתות?")) return;
+  function handleDelete() {
+    if (!confirm("למחוק את השאלה? אי אפשר לבטל.")) return;
     startTransition(async () => {
-      const res = await fetch(`/api/prep/admin/questions/${form.id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const { error: msg } = await res.json().catch(() => ({ error: "מחיקה נכשלה" }));
-        setError(msg ?? "מחיקה נכשלה");
-        return;
+      try {
+        const res = await fetch(`/api/prep/admin/questions/${encodeURIComponent(form.id)}`, { method: "DELETE" });
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        if (!res.ok) {
+          setError(data.error ?? "המחיקה נכשלה");
+          return;
+        }
+        router.push("/prep/admin/questions");
+        router.refresh();
+      } catch {
+        setError("שגיאת רשת. השאלה לא נמחקה.");
       }
-      router.push("/prep/admin/questions");
     });
   }
 
   return (
-    <div className="max-w-2xl" dir="rtl">
-      <div
-        className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-100"
-        role="status"
-      >
-        שאלות CMS לא מחוברות לחידונים החיים — השמירה כאן לא משפיעה על תרגול התלמידים.
+    <div className="max-w-2xl space-y-6" dir="rtl">
+      <AdminPageHeader
+        title={isNew ? "שאלה חדשה" : "עריכת שאלה"}
+        subtitle={
+          !isNew ? (
+            <span dir="ltr" className="font-mono text-xs">
+              {form.id}
+            </span>
+          ) : undefined
+        }
+        actions={
+          <>
+            {!isNew ? (
+              <AdminButton tone="danger" onClick={handleDelete} disabled={isPending}>
+                מחיקה
+              </AdminButton>
+            ) : null}
+            {form.published ? (
+              <AdminButton
+                onClick={() => {
+                  if (confirm("לבטל את הפרסום?")) handleSave("unpublish");
+                }}
+                disabled={isPending}
+              >
+                ביטול פרסום
+              </AdminButton>
+            ) : (
+              <AdminButton onClick={() => handleSave("keep")} disabled={isPending}>
+                שמירת טיוטה
+              </AdminButton>
+            )}
+            <AdminButton tone="primary" onClick={() => handleSave("publish")} disabled={isPending}>
+              {isPending ? "שומר…" : form.published ? "שמירה ופרסום" : "פרסום"}
+            </AdminButton>
+          </>
+        }
+      />
+
+      <AdminNotice tone="warning">
+        הבנק הזה לא מחובר לחידונים ולסימולציות. שמירה כאן לא משנה את מה שהתלמידים מתרגלים.
+      </AdminNotice>
+
+      <div aria-live="polite" className="empty:hidden">
+        {error ? <AdminNotice tone="error">{error}</AdminNotice> : null}
+        {saved && !error ? <AdminNotice tone="success">נשמר.</AdminNotice> : null}
       </div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">{isNew ? "שאלה חדשה (ניסוי)" : "עריכת שאלה (ניסוי)"}</h1>
-          {!isNew && <p className="text-muted text-xs mt-1 font-mono">{form.id}</p>}
-        </div>
-        <div className="flex gap-2">
-          {!isNew && (
-            <button onClick={handleDelete} className="text-xs text-red-400 hover:text-red-300 px-3 py-1.5 border border-red-900 rounded-lg">
-              מחק
-            </button>
-          )}
-          <button onClick={() => handleSave("keep")} disabled={isPending} className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary disabled:opacity-50">
-            שמור
-          </button>
-          {form.published && (
-            <button
-              onClick={() => {
-                if (confirm("לבטל את הפרסום?")) handleSave("unpublish");
-              }}
-              disabled={isPending}
-              className="px-4 py-2 text-sm border border-amber-700 text-amber-200 rounded-lg disabled:opacity-50"
-            >
-              בטל פרסום
-            </button>
-          )}
-          <button onClick={() => handleSave("publish")} disabled={isPending} className="px-4 py-2 text-sm bg-primary text-white font-medium rounded-lg hover:opacity-90 disabled:opacity-50">
-            {form.published ? "עדכן ופרסם" : "פרסם"}
-          </button>
-        </div>
-      </div>
 
-      {error && (
-        <div className="mb-4 px-4 py-3 bg-red-900/40 border border-red-700 rounded-lg text-sm text-red-300">{error}</div>
-      )}
+      {isNew ? (
+        <AdminField label="מזהה" required hint="אותיות לטיניות קטנות, ספרות, נקודה או מקף. לא ניתן לשנות אחרי השמירה.">
+          <AdminInput value={form.id} onChange={(e) => setField("id", e.target.value)} placeholder="q.vocab.101" dir="ltr" />
+        </AdminField>
+      ) : null}
 
-      {isNew && (
-        <div className="mb-4">
-          <label className="block text-xs text-muted mb-1">מזהה (ID) *</label>
-          <input value={form.id} onChange={(e) => setField("id", e.target.value)} placeholder="q.vocab.101" dir="ltr"
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none" />
-        </div>
-      )}
-
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <label className="block text-xs text-muted mb-1">נושא *</label>
-          <select value={form.topic_slug} onChange={(e) => setField("topic_slug", e.target.value)}
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none">
-            {TOPICS.map((t) => <option key={t.value} value={t.value}>{t.label}</option>)}
-          </select>
-        </div>
-        <div>
-          <label className="block text-xs text-muted mb-1">רמת קושי (1=קל, 6=קשה)</label>
-          <div className="flex gap-2">
-            {[1, 2, 3, 4, 5, 6].map((d) => (
-              <button key={d} type="button" onClick={() => setField("difficulty", d)}
-                className={`flex-1 py-2 rounded-lg text-sm font-medium transition ${form.difficulty === d ? "bg-blue-600 text-white" : "bg-surface-low text-muted hover:bg-surface-low"}`}>
-                {d}
-              </button>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <AdminField label="נושא" required>
+          <AdminSelect value={form.topic_slug} onChange={(e) => setField("topic_slug", e.target.value)}>
+            {TOPICS.map((t) => (
+              <option key={t.value} value={t.value}>
+                {t.label}
+              </option>
             ))}
-          </div>
-        </div>
+          </AdminSelect>
+        </AdminField>
+        <AdminField label="רמת קושי" hint="1 קל, 6 קשה">
+          <AdminSelect value={form.difficulty} onChange={(e) => setField("difficulty", Number(e.target.value))}>
+            {[1, 2, 3, 4, 5, 6].map((d) => (
+              <option key={d} value={d}>
+                {d}
+              </option>
+            ))}
+          </AdminSelect>
+        </AdminField>
       </div>
 
-      <div className="mb-4">
-        <label className="block text-xs text-muted mb-1">תת-נושא (אופציונלי)</label>
-        <input value={form.subtopic_slug} onChange={(e) => setField("subtopic_slug", e.target.value)} placeholder="verbs, adjectives, ..."
-          className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none" />
-      </div>
+      <AdminField label="תת-נושא">
+        <AdminInput value={form.subtopic_slug} onChange={(e) => setField("subtopic_slug", e.target.value)} dir="ltr" />
+      </AdminField>
 
-      <div className="mb-4">
-        <label className="block text-xs text-muted mb-1">השאלה / המשפט *</label>
-        <textarea value={form.prompt} onChange={(e) => setField("prompt", e.target.value)} rows={4}
-          placeholder="The scientist was known for her _______ approach to problem-solving, often finding creative solutions where others saw only obstacles."
-          dir="ltr"
-          className="w-full bg-surface-low border border-line rounded-lg px-3 py-3 text-sm text-white placeholder:text-muted font-mono focus:outline-none focus:border-blue-500 resize-y" />
-      </div>
+      <AdminField label="השאלה" required>
+        <AdminTextarea value={form.prompt} onChange={(e) => setField("prompt", e.target.value)} rows={4} dir="ltr" />
+      </AdminField>
 
-      <div className="mb-4">
-        <label className="block text-xs text-muted mb-2">אפשרויות תשובה - לחץ על הנכונה</label>
-        <div className="space-y-2">
-          {form.options.map((opt, idx) => (
-            <div key={opt.id} className="flex gap-3 items-center">
-              <button type="button" onClick={() => setField("correct_option_id", opt.id)}
-                className={`w-8 h-8 shrink-0 rounded-full text-xs font-bold border-2 transition ${form.correct_option_id === opt.id ? "bg-green-500 border-green-500 text-white" : "border-line text-muted hover:border-line"}`}>
+      <fieldset className="space-y-2">
+        <legend className="mb-1 text-xs font-medium text-muted">תשובות. סמנו את הנכונה.</legend>
+        {form.options.map((opt, idx) => (
+          <div key={opt.id} className="flex items-center gap-3">
+            <label className="flex min-h-11 shrink-0 items-center gap-2 text-sm text-ink">
+              <input
+                type="radio"
+                name="correct"
+                checked={form.correct_option_id === opt.id}
+                onChange={() => setField("correct_option_id", opt.id)}
+                className="h-4 w-4 accent-primary"
+              />
+              <span dir="ltr" className="w-4 font-semibold">
                 {opt.id.toUpperCase()}
-              </button>
-              <input value={opt.text} onChange={(e) => setOption(idx, e.target.value)} placeholder={`אפשרות ${opt.id.toUpperCase()}`} dir="ltr"
-                className="flex-1 bg-surface-low border border-line rounded-lg px-3 py-2 text-sm text-white placeholder:text-muted focus:outline-none focus:border-blue-500" />
-            </div>
-          ))}
-        </div>
-        <p className="text-xs text-muted mt-2">לחץ על הכפתור העגול לסמן את התשובה הנכונה (ירוק)</p>
-      </div>
+              </span>
+            </label>
+            <AdminInput
+              aria-label={`תשובה ${opt.id.toUpperCase()}`}
+              value={opt.text}
+              onChange={(e) => setOption(idx, e.target.value)}
+              dir="ltr"
+            />
+          </div>
+        ))}
+      </fieldset>
 
-      <div>
-        <label className="block text-xs text-muted mb-1">הסבר לתשובה (יוצג אחרי מענה)</label>
-        <textarea value={form.explanation} onChange={(e) => setField("explanation", e.target.value)} rows={3} dir="ltr"
-          placeholder="The word 'innovative' means..."
-          className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none resize-y" />
-      </div>
+      <AdminField label="הסבר לתשובה">
+        <AdminTextarea value={form.explanation} onChange={(e) => setField("explanation", e.target.value)} rows={3} dir="auto" />
+      </AdminField>
     </div>
   );
 }

@@ -1,57 +1,81 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { cn } from "@/lib/design-system/cn";
+import type { AccessState, AdminLearnerRow } from "@/lib/prep/admin/learner-rows";
+import { AdminButton, AdminInput, AdminSegmented } from "./admin-ui";
 
-export type AdminLearnerRow = {
-  userId: string;
-  email: string;
-  examDate: string;
-  institution: string;
-  field: string;
-  firstTime: string;
-  dailyStudyTime: string;
-  heardAbout: string;
-  completedAt: string;
-  paid: boolean;
-  accessEndsAt: string | null;
+type AccessFilter = "all" | "paid" | "unpaid";
+type OnboardingFilter = "all" | "done" | "missing";
+
+const ACCESS_FILTERS: { id: AccessFilter; label: string }[] = [
+  { id: "all", label: "הכול" },
+  { id: "paid", label: "בתשלום" },
+  { id: "unpaid", label: "בלי גישה" },
+];
+
+const ONBOARDING_FILTERS: { id: OnboardingFilter; label: string }[] = [
+  { id: "all", label: "הכול" },
+  { id: "done", label: "מילאו שאלון" },
+  { id: "missing", label: "לא מילאו" },
+];
+
+const ACCESS_LABEL: Record<AccessState, string> = {
+  paid: "בתשלום",
+  admin: "אדמין",
+  expired: "פג תוקף",
+  none: "אין",
 };
 
-type PaidFilter = "all" | "paid" | "unpaid";
+const PAGE = 100;
 
-const FILTERS: { id: PaidFilter; label: string }[] = [
-  { id: "all", label: "הכול" },
-  { id: "paid", label: "שילמו" },
-  { id: "unpaid", label: "לא שילמו" },
-];
+function day(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso.length === 10 ? `${iso}T12:00:00` : iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString("he-IL", { day: "2-digit", month: "2-digit", year: "2-digit" });
+}
 
-const COLUMNS = [
-  "מייל",
-  "תאריך מבחן",
-  "מוסד",
-  "תחום",
-  "ניסיון קודם",
-  "זמן לימוד יומי",
-  "מאיפה הגיעו",
-  "מילא/ה",
-  "גישה",
-];
+function examLabel(row: AdminLearnerRow): string {
+  if (!row.onboardedAt) return "";
+  if (row.examDateUnknown || !row.examDate) return "טרם נקבע";
+  return day(row.examDate);
+}
+
+function accessLabel(row: AdminLearnerRow): string {
+  const label = ACCESS_LABEL[row.access];
+  return row.accessEndsAt && row.access !== "none" ? `${label} · עד ${day(row.accessEndsAt)}` : label;
+}
 
 function toCsv(rows: AdminLearnerRow[]): string {
+  const header = [
+    "מייל",
+    "נרשם",
+    "כניסה אחרונה",
+    "מילא שאלון",
+    "תאריך מבחן",
+    "ניסיון קודם",
+    "זמן לימוד יומי",
+    "מוסד",
+    "תחום",
+    "מאיפה הגיעו",
+    "גישה",
+  ];
   const escape = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
-  const lines = [COLUMNS.map(escape).join(",")];
+  const lines = [header.map(escape).join(",")];
   for (const r of rows) {
     lines.push(
       [
         r.email,
-        r.examDate,
-        r.institution,
-        r.field,
+        day(r.signedUpAt),
+        day(r.lastSignInAt),
+        day(r.onboardedAt),
+        examLabel(r),
         r.firstTime,
         r.dailyStudyTime,
+        r.institution,
+        r.field,
         r.heardAbout,
-        r.completedAt,
-        r.paid ? `שילם${r.accessEndsAt ? ` (עד ${r.accessEndsAt})` : ""}` : "לא שילם",
+        accessLabel(r),
       ]
         .map(escape)
         .join(","),
@@ -62,21 +86,26 @@ function toCsv(rows: AdminLearnerRow[]): string {
 
 export function AdminLearnerTable({ rows }: { rows: AdminLearnerRow[] }) {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<PaidFilter>("all");
+  const [access, setAccess] = useState<AccessFilter>("all");
+  const [onboarding, setOnboarding] = useState<OnboardingFilter>("all");
+  const [shown, setShown] = useState(PAGE);
+
+  // Old sign-ups answered a longer questionnaire; show those columns only when someone did.
+  const hasLegacy = useMemo(() => rows.some((r) => r.institution || r.field || r.heardAbout), [rows]);
 
   const trimmed = query.trim().toLowerCase();
   const visible = useMemo(
     () =>
       rows.filter((row) => {
-        if (filter === "paid" && !row.paid) return false;
-        if (filter === "unpaid" && row.paid) return false;
+        const paid = row.access === "paid" || row.access === "admin";
+        if (access === "paid" && !paid) return false;
+        if (access === "unpaid" && paid) return false;
+        if (onboarding === "done" && !row.onboardedAt) return false;
+        if (onboarding === "missing" && row.onboardedAt) return false;
         if (!trimmed) return true;
-        return [row.email, row.institution, row.field, row.heardAbout]
-          .join(" ")
-          .toLowerCase()
-          .includes(trimmed);
+        return [row.email, row.institution, row.field].join(" ").toLowerCase().includes(trimmed);
       }),
-    [rows, trimmed, filter],
+    [rows, trimmed, access, onboarding],
   );
 
   function downloadCsv() {
@@ -89,84 +118,102 @@ export function AdminLearnerTable({ rows }: { rows: AdminLearnerRow[] }) {
     URL.revokeObjectURL(url);
   }
 
+  const page = visible.slice(0, shown);
+
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <input
+        <AdminInput
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="חיפוש לפי מייל, מוסד או תחום…"
-          aria-label="חיפוש נרשם"
-          className="min-w-0 flex-1 rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-primary focus:outline-none"
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setShown(PAGE);
+          }}
+          placeholder="חיפוש לפי מייל"
+          aria-label="חיפוש נרשם לפי מייל"
+          className="min-w-0 flex-1 basis-56"
         />
-        <div className="flex gap-1" role="group" aria-label="סינון לפי תשלום">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              onClick={() => setFilter(f.id)}
-              aria-pressed={filter === f.id}
-              className={cn(
-                "rounded-control px-3 py-2 text-sm transition",
-                filter === f.id
-                  ? "bg-primary text-white"
-                  : "border border-line bg-paper text-muted hover:text-ink",
-              )}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-        <button
-          type="button"
-          onClick={downloadCsv}
-          disabled={visible.length === 0}
-          className="rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink transition hover:border-primary disabled:opacity-40"
-        >
+        <AdminSegmented
+          label="סינון לפי גישה"
+          options={ACCESS_FILTERS}
+          value={access}
+          onChange={(v) => {
+            setAccess(v);
+            setShown(PAGE);
+          }}
+        />
+        <AdminSegmented
+          label="סינון לפי שאלון"
+          options={ONBOARDING_FILTERS}
+          value={onboarding}
+          onChange={(v) => {
+            setOnboarding(v);
+            setShown(PAGE);
+          }}
+        />
+        <AdminButton onClick={downloadCsv} disabled={visible.length === 0}>
           ייצוא CSV
-        </button>
+        </AdminButton>
       </div>
 
+      <p className="text-xs text-muted" aria-live="polite">
+        {visible.length === rows.length
+          ? `${rows.length} חשבונות`
+          : `${visible.length} מתוך ${rows.length} חשבונות`}
+      </p>
+
       {visible.length === 0 ? (
-        <p className="rounded-surface border border-line bg-paper p-6 text-center text-sm text-muted">
-          {rows.length === 0 ? "עוד אף אחד לא מילא את השאלון." : "אין נרשמים תואמים."}
+        <p className="border-y border-line py-8 text-center text-sm text-muted">
+          {rows.length === 0 ? "עוד אף אחד לא נרשם." : "אין חשבונות שמתאימים לסינון."}
         </p>
       ) : (
-        <div className="overflow-x-auto rounded-surface border border-line bg-paper">
-          <table className="w-full min-w-[60rem] text-start text-sm">
+        <div className="overflow-x-auto border-y border-line">
+          <table className="w-full min-w-[52rem] text-sm">
             <thead>
-              <tr className="border-b border-line bg-surface-low text-xs text-muted">
-                {COLUMNS.map((c) => (
-                  <th key={c} className="whitespace-nowrap px-3 py-2 text-start font-medium">
-                    {c}
-                  </th>
-                ))}
+              <tr className="border-b border-line text-xs text-muted">
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">מייל</th>
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">נרשם</th>
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">שאלון</th>
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">מבחן</th>
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">פעם ראשונה</th>
+                <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">זמן ביום</th>
+                {hasLegacy ? (
+                  <th scope="col" className="whitespace-nowrap py-2 pe-4 text-start font-medium">מוסד · תחום</th>
+                ) : null}
+                <th scope="col" className="whitespace-nowrap py-2 text-start font-medium">גישה</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line/70">
-              {visible.map((row) => (
-                <tr key={row.userId} className="align-top transition hover:bg-surface-low">
-                  <td className="px-3 py-2 text-ink" dir="ltr">
-                    {row.email}
+              {page.map((row) => (
+                <tr key={row.userId} className="align-top">
+                  <td className="py-2.5 pe-4 text-ink" dir="ltr" style={{ textAlign: "right" }}>
+                    {row.email || row.userId.slice(0, 8)}
                   </td>
-                  <td className="whitespace-nowrap px-3 py-2 tabular-nums text-ink">{row.examDate}</td>
-                  <td className="px-3 py-2 text-ink">{row.institution}</td>
-                  <td className="px-3 py-2 text-ink">{row.field}</td>
-                  <td className="px-3 py-2 text-muted">{row.firstTime}</td>
-                  <td className="px-3 py-2 text-muted">{row.dailyStudyTime}</td>
-                  <td className="px-3 py-2 text-muted">{row.heardAbout || "—"}</td>
-                  <td className="whitespace-nowrap px-3 py-2 tabular-nums text-muted">
-                    {row.completedAt}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-2">
-                    {row.paid ? (
-                      <span className="text-emerald-700">
-                        שילם{row.accessEndsAt ? ` · עד ${row.accessEndsAt}` : ""}
-                      </span>
+                  <td className="whitespace-nowrap py-2.5 pe-4 tabular-nums text-muted">{day(row.signedUpAt)}</td>
+                  <td className="whitespace-nowrap py-2.5 pe-4 tabular-nums">
+                    {row.onboardedAt ? (
+                      <span className="text-muted">{day(row.onboardedAt)}</span>
                     ) : (
-                      <span className="text-muted">לא שילם</span>
+                      <span className="text-ink">לא מילא</span>
                     )}
+                  </td>
+                  <td className="whitespace-nowrap py-2.5 pe-4 tabular-nums text-ink">{examLabel(row)}</td>
+                  <td className="py-2.5 pe-4 text-muted">{row.firstTime}</td>
+                  <td className="whitespace-nowrap py-2.5 pe-4 text-muted">{row.dailyStudyTime}</td>
+                  {hasLegacy ? (
+                    <td className="py-2.5 pe-4 text-muted">
+                      {[row.institution, row.field].filter(Boolean).join(" · ")}
+                    </td>
+                  ) : null}
+                  <td
+                    className={
+                      row.access === "paid" || row.access === "admin"
+                        ? "whitespace-nowrap py-2.5 font-semibold text-ink"
+                        : "whitespace-nowrap py-2.5 text-muted"
+                    }
+                  >
+                    {accessLabel(row)}
                   </td>
                 </tr>
               ))}
@@ -174,6 +221,12 @@ export function AdminLearnerTable({ rows }: { rows: AdminLearnerRow[] }) {
           </table>
         </div>
       )}
+
+      {visible.length > shown ? (
+        <AdminButton onClick={() => setShown((n) => n + PAGE)}>
+          עוד {Math.min(PAGE, visible.length - shown)} מתוך {visible.length - shown} שנותרו
+        </AdminButton>
+      ) : null}
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { AdminShell } from "@/components/prep/admin/AdminShell";
 
+export const metadata = { title: "ניהול | PREPARE admin", robots: { index: false, follow: false } };
+
 /**
  * גייט שרת לאדמין - הגנת עומק בנוסף ל-middleware (שגם בודק is_admin).
  * לא-אדמין מנותב ל-login לפני שהעמוד מרונדר בכלל.
@@ -12,9 +14,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!isPrepAuthBypassEnabled()) {
     const client = createPrepSupabaseServerClient();
     const user = client ? (await client.auth.getUser()).data.user : null;
-    if (!user || !isPrepAdminUser(user)) {
-      redirect("/prep/login?next=/prep/admin");
-    }
+    if (!user) redirect("/prep/login?next=/prep/admin");
+    if (!isPrepAdminUser(user)) redirect("/prep/admin-denied");
   }
   return <AdminShell>{children}</AdminShell>;
 }

@@ -1,8 +1,7 @@
 import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { isPrepAdminUser } from "@/lib/prep/admin-auth";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
+import { requirePrepAdmin } from "@/lib/prep/admin-api.server";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
 import { SITE_VIDEOS_SETTINGS_KEY } from "@/lib/prep/site-settings";
@@ -28,16 +27,9 @@ const BodySchema = z.object({
 });
 
 export async function PUT(req: Request) {
-  const client = createPrepSupabaseServerClient();
-  if (!client) {
-    return NextResponse.json({ error: "Supabase לא מוגדר" }, { status: 500 });
-  }
-  const {
-    data: { user },
-  } = await client.auth.getUser();
-  if (!user || !isPrepAdminUser(user)) {
-    return NextResponse.json({ error: "אין הרשאה" }, { status: 403 });
-  }
+  const gate = await requirePrepAdmin();
+  if (!gate.ok) return gate.response;
+  const { user } = gate;
 
   const service = getPrepSupabaseServiceClient();
   const keyStatus = assertServiceRoleKeyForWrites("admin/settings");

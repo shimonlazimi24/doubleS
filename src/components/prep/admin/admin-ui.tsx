@@ -56,7 +56,44 @@ export function AdminField({
 }
 
 const CONTROL =
-  "w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none disabled:opacity-60";
+  "min-h-11 w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/15 disabled:opacity-60";
+
+/** A row of mutually exclusive filter buttons (e.g. paid / unpaid). */
+export function AdminSegmented<T extends string>({
+  label,
+  options,
+  value,
+  onChange,
+}: {
+  label: string;
+  options: { id: T; label: string }[];
+  value: T;
+  onChange: (id: T) => void;
+}) {
+  return (
+    <div className="flex" role="group" aria-label={label}>
+      {options.map((o, i) => (
+        <button
+          key={o.id}
+          type="button"
+          onClick={() => onChange(o.id)}
+          aria-pressed={value === o.id}
+          className={cn(
+            "min-h-11 border border-line px-3 text-sm transition focus-visible:relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary/50",
+            i > 0 && "-ms-px",
+            i === 0 && "rounded-s-control",
+            i === options.length - 1 && "rounded-e-control",
+            value === o.id
+              ? "relative z-[1] border-primary bg-primary text-white"
+              : "bg-paper text-muted hover:text-ink",
+          )}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export function AdminInput(props: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={cn(CONTROL, props.className)} />;
@@ -82,13 +119,15 @@ const TONE: Record<ButtonTone, string> = {
 export function AdminButton({
   tone = "secondary",
   className,
+  type = "button",
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { tone?: ButtonTone }) {
   return (
     <button
+      type={type}
       {...props}
       className={cn(
-        "rounded-control px-4 py-2 text-sm font-semibold transition disabled:opacity-50",
+        "inline-flex min-h-11 items-center justify-center rounded-control px-4 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/50 disabled:cursor-not-allowed disabled:opacity-50",
         TONE[tone],
         className,
       )}

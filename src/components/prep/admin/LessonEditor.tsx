@@ -3,12 +3,13 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course/manifest";
+import { bodyToSave } from "@/lib/prep/admin/lesson-body";
 import {
   AdminButton,
   AdminField,
   AdminInput,
   AdminNotice,
-  AdminSection,
+  AdminPageHeader,
   AdminSelect,
   AdminTextarea,
 } from "./admin-ui";
@@ -30,10 +31,7 @@ export type LessonFormData = {
  * values like "vocabulary" while the course modules are "mod-vocab", so a lesson
  * saved from here was attached to a module that does not exist.
  */
-const TOPICS = [
-  { value: "", label: "- בחר מודול -" },
-  ...AMIRANT_PREPARATION_MANIFEST.modules.map((m) => ({ value: m.id, label: m.title })),
-];
+const MODULES = AMIRANT_PREPARATION_MANIFEST.modules.map((m) => ({ value: m.id, label: m.title }));
 
 const EMPTY: LessonFormData = {
   id: "",
@@ -47,16 +45,22 @@ const EMPTY: LessonFormData = {
   published: false,
 };
 
-/** שיעורים עם חוויית צעדים "curated" - שינוי כותרות H2 עלול לשבור את סיווג הצעדים. */
+/** Lessons with a curated step flow: renaming their H2 headings can break the step split. */
 const CURATED_LESSON_IDS = new Set(["lesson.intro.welcome", "lesson.intro.roadmap"]);
 
 export function LessonEditor({
   initial,
   cmsExists = false,
+  orphan = false,
+  staticMarkdown = "",
 }: {
   initial?: Partial<LessonFormData>;
-  /** True only when a cms_lessons row already exists (not just a manifest id prefill). */
+  /** True only when a cms_lessons row already exists (not just a manifest prefill). */
   cmsExists?: boolean;
+  /** A CMS row whose id is no longer in the course: learners cannot reach it. */
+  orphan?: boolean;
+  /** The lesson's text from the course files, to tell an edit from an untouched prefill. */
+  staticMarkdown?: string;
 }) {
   const router = useRouter();
   const [form, setForm] = useState<LessonFormData>({ ...EMPTY, ...initial });
@@ -65,259 +69,252 @@ export function LessonEditor({
   const [success, setSuccess] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  const isNew = !cmsExists;
-  const isCurated = Boolean(form.id) && CURATED_LESSON_IDS.has(form.id);
+  const isCurated = CURATED_LESSON_IDS.has(form.id);
+  const showsText = form.kind === "text" || form.kind === "mixed";
+  const showsVideo = form.kind === "video" || form.kind === "mixed";
+  const usesCourseText = Boolean(staticMarkdown.trim()) && !bodyToSave(form.body_markdown, staticMarkdown);
 
   function set<K extends keyof LessonFormData>(key: K, value: LessonFormData[K]) {
     setForm((f) => ({ ...f, [key]: value }));
+    setSuccess(null);
   }
 
-  async function handleSave(mode: "keep" | "publish" | "unpublish") {
+  function handleSave(mode: "keep" | "publish" | "unpublish") {
     setError(null);
     setSuccess(null);
-    const payload = { ...form };
-    if (mode === "publish") payload.published = true;
-    if (mode === "unpublish") payload.published = false;
-    // mode === "keep" → leave published as currently edited in form
-
-    const url = isNew ? "/api/prep/admin/lessons" : `/api/prep/admin/lessons/${form.id}`;
-    const method = isNew ? "POST" : "PATCH";
+    const published = mode === "publish" ? true : mode === "unpublish" ? false : form.published;
+    const payload = {
+      ...form,
+      published,
+      body_markdown: showsText ? bodyToSave(form.body_markdown, staticMarkdown) : "",
+      video_url: showsVideo ? form.video_url : "",
+    };
 
     startTransition(async () => {
       try {
-        const res = await fetch(url, {
-          method,
+        // PATCH upserts, so the first save and every later one take the same path.
+        const res = await fetch(`/api/prep/admin/lessons/${encodeURIComponent(form.id)}`, {
+          method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
         if (!res.ok) {
-          const { error: msg } = await res.json().catch(() => ({ error: "שגיאה לא ידועה" }));
-          setError(msg ?? "שגיאה");
+          setError(data.error ?? `השמירה נכשלה (${res.status})`);
           return;
         }
-        const data = await res.json();
-        setForm((f) => ({ ...f, published: payload.published }));
-        setSuccess(payload.published ? "נשמר ופורסם" : "נשמר");
-        if (isNew && data.id) {
-          router.push(`/prep/admin/lessons/${data.id}`);
+        setForm((f) => ({ ...f, published }));
+        setSuccess(published ? "נשמר ופורסם. התלמידים רואים את הגרסה הזו." : "נשמר כטיוטה. התלמידים עדיין רואים את קבצי הקורס.");
+        if (!cmsExists) {
+          router.replace(`/prep/admin/lessons/${encodeURIComponent(form.id)}`);
         } else {
           router.refresh();
         }
       } catch {
-        setError("שגיאת רשת");
+        setError("שגיאת רשת. השינויים לא נשמרו.");
       }
     });
   }
 
-  async function handleDelete() {
-    if (!confirm("למחוק את השיעור לצמיתות?")) return;
+  function handleDelete() {
+    if (!confirm("למחוק את הגרסה הערוכה? השיעור יחזור לתוכן מקבצי הקורס. אי אפשר לבטל.")) return;
+    setError(null);
     startTransition(async () => {
-      const res = await fetch(`/api/prep/admin/lessons/${form.id}`, { method: "DELETE" });
-      if (!res.ok) {
-        const { error: msg } = await res.json().catch(() => ({ error: "מחיקה נכשלה" }));
-        setError(msg ?? "מחיקה נכשלה");
-        return;
+      try {
+        const res = await fetch(`/api/prep/admin/lessons/${encodeURIComponent(form.id)}`, { method: "DELETE" });
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        if (!res.ok) {
+          setError(data.error ?? "המחיקה נכשלה");
+          return;
+        }
+        router.push("/prep/admin/lessons");
+        router.refresh();
+      } catch {
+        setError("שגיאת רשת. הגרסה הערוכה לא נמחקה.");
       }
-      router.push("/prep/admin/lessons");
     });
   }
+
+  const status = !cmsExists ? "בלי עריכה" : form.published ? "פורסם" : "טיוטה";
 
   return (
-    <div className="max-w-5xl" dir="rtl">
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold">{isNew ? "שיעור חדש" : "עריכת שיעור"}</h1>
-          {!isNew && (
-            <p className="mt-1 font-mono text-xs text-muted">
+    <div className="max-w-5xl space-y-6" dir="rtl">
+      <AdminPageHeader
+        title={form.title || "עריכת שיעור"}
+        subtitle={
+          <span className="flex flex-wrap items-center gap-x-3">
+            <span dir="ltr" className="font-mono text-xs">
               {form.id}
-              {" · "}
+            </span>
+            <span>{status}</span>
+            {!orphan ? (
               <a
-                href={`/prep/amirant/course/lesson/${form.id}`}
+                href={`/prep/amirant/course/lesson/${encodeURIComponent(form.id)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary underline-offset-2 hover:underline"
+                className="inline-flex min-h-11 items-center text-primary underline-offset-2 hover:underline"
               >
-                צפה באתר
+                לשיעור באתר
               </a>
-            </p>
-          )}
-        </div>
-        <div className="flex gap-2 items-center">
-          {!isNew && (
-            <button onClick={handleDelete} className="rounded-control border border-red-300 px-3 py-2 text-sm font-semibold text-red-700 transition hover:bg-red-50">
-              מחק
-            </button>
-          )}
-          <button
-            onClick={() => handleSave("keep")}
-            disabled={isPending}
-            className="rounded-control border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary disabled:opacity-50"
-          >
-            שמור
-          </button>
-          {form.published && (
-            <button
-              onClick={() => {
-                if (confirm("לבטל את הפרסום? השיעור יחזור לטיוטה.")) handleSave("unpublish");
-              }}
-              disabled={isPending}
-              className="rounded-control border border-amber-400 px-4 py-2 text-sm font-semibold text-amber-800 transition hover:bg-amber-50 disabled:opacity-50"
-            >
-              בטל פרסום
-            </button>
-          )}
-          <button
-            onClick={() => handleSave("publish")}
-            disabled={isPending}
-            className="rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
-          >
-            {form.published ? "עדכן ופרסם" : "פרסם"}
-          </button>
-        </div>
+            ) : null}
+          </span>
+        }
+        actions={
+          <>
+            {cmsExists ? (
+              <AdminButton tone="danger" onClick={handleDelete} disabled={isPending}>
+                מחיקת העריכה
+              </AdminButton>
+            ) : null}
+            {form.published ? (
+              <AdminButton
+                onClick={() => {
+                  if (confirm("לבטל את הפרסום? התלמידים יחזרו לראות את התוכן מקבצי הקורס.")) handleSave("unpublish");
+                }}
+                disabled={isPending}
+              >
+                ביטול פרסום
+              </AdminButton>
+            ) : (
+              <AdminButton onClick={() => handleSave("keep")} disabled={isPending || orphan}>
+                שמירת טיוטה
+              </AdminButton>
+            )}
+            <AdminButton tone="primary" onClick={() => handleSave("publish")} disabled={isPending || orphan}>
+              {isPending ? "שומר…" : form.published ? "שמירה ופרסום" : "פרסום"}
+            </AdminButton>
+          </>
+        }
+      />
+
+      <div aria-live="polite" className="space-y-3 empty:hidden">
+        {error ? <AdminNotice tone="error">{error}</AdminNotice> : null}
+        {success ? <AdminNotice tone="success">{success}</AdminNotice> : null}
       </div>
 
-      {error && (
-        <div className="mb-4 rounded-surface border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
-          {error}
-        </div>
-      )}
-      {success && (
-        <div className="mb-4 rounded-surface border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
-          {success}
-        </div>
-      )}
+      {orphan ? (
+        <AdminNotice tone="warning">
+          המזהה הזה כבר לא קיים בקורס, ולכן אף תלמיד לא יכול להגיע לשיעור. אפשר רק למחוק את הרשומה.
+        </AdminNotice>
+      ) : null}
 
-      {isCurated && (
-        <div className="mb-4 rounded-surface border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          לשיעור זה יש חוויית צעדים מובנית. שינוי כותרות (##) עלול לפרק את חלוקת הצעדים - עדיף לערוך את
-          הטקסט בתוך הסעיפים בלי לשנות כותרות. אפשר גם לפרסם רק «וידאו לשיעור» ולהשאיר את התוכן ריק.
-        </div>
-      )}
+      {isCurated ? (
+        <AdminNotice tone="warning">
+          לשיעור הזה יש חלוקה מובנית לצעדים לפי כותרות ##. שינוי כותרת עלול לפרק את הצעדים; ערכו את הטקסט
+          שבתוך הסעיפים. אפשר גם לבחור «סרטון בלבד» ולהשאיר את הטקסט מקבצי הקורס.
+        </AdminNotice>
+      ) : null}
 
-      {/* Metadata row */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
-        <div className="col-span-2">
-          <label className="mb-1 block text-xs font-medium text-muted">כותרת השיעור *</label>
-          <input
-            value={form.title}
-            onChange={(e) => set("title", e.target.value)}
-            placeholder="למשל: מילים שכיחות - פעלים"
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
-          />
-        </div>
-        {isNew && (
-          <div>
-            <label className="mb-1 block text-xs font-medium text-muted">מזהה (ID) *</label>
-            <input
-              value={form.id}
-              onChange={(e) => set("id", e.target.value)}
-              placeholder="lesson.vocab.10"
-              dir="ltr"
-              className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
-            />
-          </div>
-        )}
-        <div>
-          <label className="mb-1 block text-xs font-medium text-muted">מודול</label>
-          <select
-            value={form.module_id}
-            onChange={(e) => set("module_id", e.target.value)}
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
-          >
-            {TOPICS.map((t) => (
-              <option key={t.value} value={t.value}>{t.label}</option>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <AdminField label="כותרת השיעור" required className="sm:col-span-2">
+          <AdminInput value={form.title} onChange={(e) => set("title", e.target.value)} maxLength={200} />
+        </AdminField>
+        <AdminField label="מודול">
+          <AdminSelect value={form.module_id} onChange={(e) => set("module_id", e.target.value)}>
+            <option value="">ללא</option>
+            {MODULES.map((m) => (
+              <option key={m.value} value={m.value}>
+                {m.label}
+              </option>
             ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-3 gap-4 mb-6">
-        <div>
-          <label className="mb-1 block text-xs font-medium text-muted">סוג שיעור</label>
-          <select
+          </AdminSelect>
+        </AdminField>
+        <AdminField label="סוג">
+          <AdminSelect
             value={form.kind}
             onChange={(e) => set("kind", e.target.value as LessonFormData["kind"])}
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
           >
-            <option value="text">טקסט בלבד</option>
+            <option value="text">טקסט</option>
             <option value="video">סרטון בלבד</option>
-            <option value="mixed">טקסט + סרטון</option>
-          </select>
-        </div>
-        <div>
-          <label className="mb-1 block text-xs font-medium text-muted">זמן משוער (דקות)</label>
-          <input
+            <option value="mixed">טקסט וסרטון</option>
+          </AdminSelect>
+        </AdminField>
+        <AdminField label="זמן משוער (דקות)">
+          <AdminInput
             type="number"
+            inputMode="numeric"
+            min={1}
+            max={600}
             value={form.estimated_minutes}
-            onChange={(e) => set("estimated_minutes", parseInt(e.target.value) || 10)}
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
+            onChange={(e) => set("estimated_minutes", Number(e.target.value))}
           />
-        </div>
-        <div>
-          <label className="mb-1 block text-xs font-medium text-muted">סדר תצוגה</label>
-          <input
+        </AdminField>
+        <AdminField label="סדר תצוגה" hint="משמש רק לשיעורים ערוכים; הסדר בקורס נקבע בקבצי הקורס.">
+          <AdminInput
             type="number"
+            inputMode="numeric"
+            min={0}
             value={form.sort_order}
-            onChange={(e) => set("sort_order", parseInt(e.target.value) || 0)}
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
+            onChange={(e) => set("sort_order", Number(e.target.value))}
           />
-        </div>
+        </AdminField>
+        {showsVideo ? (
+          <AdminField label="קישור לסרטון" required className="sm:col-span-2" hint="YouTube, Vimeo או קובץ, בכתובת https://">
+            <AdminInput
+              value={form.video_url}
+              onChange={(e) => set("video_url", e.target.value)}
+              placeholder="https://www.youtube.com/watch?v=..."
+              dir="ltr"
+              type="url"
+            />
+          </AdminField>
+        ) : null}
       </div>
 
-      {(form.kind === "video" || form.kind === "mixed") && (
-        <div className="mb-6">
-          <label className="mb-1 block text-xs font-medium text-muted">קישור סרטון (YouTube / URL)</label>
-          <input
-            value={form.video_url}
-            onChange={(e) => set("video_url", e.target.value)}
-            placeholder="https://www.youtube.com/watch?v=..."
-            dir="ltr"
-            className="w-full rounded-control border border-line bg-paper px-3 py-2 text-sm text-ink placeholder:text-muted transition focus:border-primary focus:outline-none"
-          />
-        </div>
-      )}
-
-      {/* Markdown editor */}
-      {(form.kind === "text" || form.kind === "mixed") && (
-        <div>
-          <div className="flex items-center gap-4 mb-2">
-            <label className="text-xs font-medium text-muted">תוכן השיעור (Markdown)</label>
-            <button
-              type="button"
-              onClick={() => setPreview((p) => !p)}
-              className="text-xs font-medium text-primary hover:underline"
-            >
-              {preview ? "עריכה" : "תצוגה מקדימה"}
-            </button>
+      {showsText ? (
+        <section className="space-y-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-sm font-semibold text-ink">
+              תוכן השיעור (Markdown)
+              <span className="ms-2 font-normal text-muted">
+                {usesCourseText ? "זהה לקבצי הקורס" : staticMarkdown.trim() ? "נערך" : ""}
+              </span>
+            </h2>
+            <div className="flex items-center gap-1">
+              {staticMarkdown.trim() && !usesCourseText ? (
+                <AdminButton
+                  tone="quiet"
+                  onClick={() => {
+                    if (confirm("להחזיר את הטקסט לגרסה מקבצי הקורס? השינויים בתיבה יימחקו.")) {
+                      set("body_markdown", staticMarkdown);
+                    }
+                  }}
+                >
+                  החזרה לטקסט המקורי
+                </AdminButton>
+              ) : null}
+              <AdminButton tone="quiet" onClick={() => setPreview((p) => !p)} aria-pressed={preview}>
+                {preview ? "חזרה לעריכה" : "תצוגה מקדימה"}
+              </AdminButton>
+            </div>
           </div>
 
           {preview ? (
-            <div className="prose prose-sm min-h-96 max-w-none overflow-auto rounded-surface border border-line bg-paper p-5 text-ink">
+            <div className="prose prose-sm min-h-96 max-w-none overflow-auto border-y border-line py-5 text-ink">
               <MarkdownPreview source={form.body_markdown} />
             </div>
           ) : (
-            <textarea
+            <AdminTextarea
+              aria-label="תוכן השיעור"
               value={form.body_markdown}
               onChange={(e) => set("body_markdown", e.target.value)}
-              placeholder={"# כותרת השיעור\n\nתוכן בפורמט Markdown...\n\n## תת-כותרת\n\n- נקודה ראשונה\n- נקודה שנייה\n\n**טקסט מודגש** ו-*טקסט נטוי*"}
-              // Course content is Hebrew with English examples inside it. A hard
-              // LTR box scrambled every Hebrew line; "auto" lets each line take
-              // its own direction from its first strong character.
+              // Course content is Hebrew with English examples inside it. A hard LTR
+              // box scrambled every Hebrew line; "auto" lets each line pick its direction.
               dir="auto"
               rows={28}
-              className="w-full resize-y rounded-surface border border-line bg-paper px-4 py-4 font-mono text-sm leading-relaxed text-ink placeholder:text-muted focus:border-primary focus:outline-none"
+              className="font-mono"
             />
           )}
-          <p className="mt-2 text-xs text-muted">
-            תומך ב-Markdown מלא: כותרות, **מודגש**, *נטוי*, רשימות, טבלאות, קוד, ציטוטים
+          <p className="text-xs text-muted">
+            כותרות (#, ##), **מודגש**, *נטוי*, רשימות וטבלאות. התצוגה המקדימה מקורבת; הקובע הוא עמוד השיעור באתר.
           </p>
-        </div>
-      )}
+        </section>
+      ) : null}
     </div>
   );
 }
 
-// Safe markdown preview — escape HTML first, then apply limited markdown.
+// Safe markdown preview: escape HTML first, then apply a small subset of markdown.
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -328,7 +325,7 @@ function escapeHtml(s: string): string {
 }
 
 function MarkdownPreview({ source }: { source: string }) {
-  if (!source.trim()) return <p className="italic text-muted">אין תוכן להצגה</p>;
+  if (!source.trim()) return <p className="text-muted">אין תוכן להצגה</p>;
   const escaped = escapeHtml(source);
   const html = escaped
     .replace(/^### (.+)$/gm, "<h3>$1</h3>")
@@ -341,5 +338,5 @@ function MarkdownPreview({ source }: { source: string }) {
     .replace(/\n\n/g, "</p><p>")
     .replace(/^/, "<p>")
     .replace(/$/, "</p>");
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  return <div dir="auto" dangerouslySetInnerHTML={{ __html: html }} />;
 }

@@ -1,44 +1,39 @@
-import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { NextResponse } from "next/server";
-import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
-
-async function requireAdmin() {
-  const supabase = createPrepSupabaseServerClient();
-  if (!supabase) return null;
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user || !isPrepAdminUser(user)) return null;
-  return supabase;
-}
+import { adminDbError, adminError, readJsonBody, requirePrepAdmin } from "@/lib/prep/admin-api.server";
+import { parseQuestionPayload } from "@/lib/prep/admin/question-payload";
 
 export async function PATCH(req: Request, { params }: { params: { id: string } }) {
-  const supabase = await requireAdmin();
-  if (!supabase) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  const gate = await requirePrepAdmin();
+  if (!gate.ok) return gate.response;
 
-  const body = await req.json();
-  const { topic_slug, subtopic_slug, prompt, options, correct_option_id, explanation, difficulty, published } = body;
+  const body = await readJsonBody(req);
+  if (body === undefined) return adminError("גוף הבקשה אינו JSON תקין", 400);
 
-  const { error } = await supabase
+  const parsed = parseQuestionPayload(body);
+  if (!parsed.ok) return adminError(parsed.error, 400);
+
+  const { data, error } = await gate.supabase
     .from("cms_questions")
-    .update({ topic_slug, subtopic_slug: subtopic_slug || null, prompt, options, correct_option_id, explanation: explanation || null, difficulty, published })
-    .eq("id", params.id);
+    .update(parsed.row)
+    .eq("id", params.id)
+    .select("id");
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ ok: true });
+  if (error) return adminDbError("questions", error);
+  if (!data?.length) return adminError("השאלה לא נמצאה", 404);
+  return NextResponse.json({ ok: true, id: params.id });
 }
 
 export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
-  const supabase = await requireAdmin();
-  if (!supabase) return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  const gate = await requirePrepAdmin();
+  if (!gate.ok) return gate.response;
 
-  const { data, error } = await supabase
+  const { data, error } = await gate.supabase
     .from("cms_questions")
     .delete()
     .eq("id", params.id)
     .select("id");
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  if (!data?.length) {
-    return NextResponse.json({ error: "השאלה לא נמצאה או שאין הרשאה למחוק" }, { status: 404 });
-  }
+  if (error) return adminDbError("questions", error);
+  if (!data?.length) return adminError("השאלה לא נמצאה", 404);
   return NextResponse.json({ ok: true });
 }
