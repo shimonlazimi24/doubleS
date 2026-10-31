@@ -9,6 +9,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 const LINKS = [
   { href: PREP_BASE, label: "בית", exact: true },
   { href: `${PREP_BASE}/amirant`, label: "אמירנט" },
+  { href: `${PREP_BASE}/blog`, label: "מדריכים" },
   { href: `${PREP_BASE}/about`, label: "אודות" },
 ] as const;
 

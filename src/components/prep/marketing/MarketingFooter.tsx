@@ -8,6 +8,7 @@ import { PREP_BRAND_LATIN, PREP_BRAND_TAGLINE_HE } from "@/lib/prep/brand";
 import { PREP_BASE, isPrepAppChromePath } from "@/lib/prep/constants";
 
 const footerLinks = [
+  { href: `${PREP_BASE}/blog`, label: "מדריכים" },
   { href: `${PREP_BASE}/about`, label: "אודות" },
   { href: `${PREP_BASE}/contact`, label: "יצירת קשר" },
   { href: `${PREP_BASE}/pricing`, label: "מחירים" },
