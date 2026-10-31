@@ -18,7 +18,7 @@ export function SampleQuestionList({ questions }: { questions: readonly SampleQu
             <span aria-hidden> · </span>
             {q.sectionHe}
             <span aria-hidden> · </span>
-            {q.scored ? "נספר בציון" : "אינו נספר בציון"}
+            {q.scored ? "קובע את הציון" : "פרק ניסוי: יכול רק להוסיף"}
           </p>
 
           {q.context ? (

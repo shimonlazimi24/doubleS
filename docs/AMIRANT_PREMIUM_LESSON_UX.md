@@ -25,7 +25,7 @@
 ## 3. AI integration (existing `lesson-chat` + RAG)
 
 - `src/lib/prep/amirant-lesson-coach-events.ts` - `window` event `amirant:course:coach-prompt` with `{ userMessage, autoSend? }`.
-- `AmirantCourseChatPanel` listens, prefills input, optionally auto-sends; `AmirantCourseFloatingChat` opens the panel on the same event.
+- `assistant/AmirantCourseAssistantProvider` owns the conversation (`use-assistant-chat.ts`): it listens, prefills the composer, optionally auto-sends, and opens the assistant on the same event. `assistant/AmirantCourseAssistantFrame` places it: a side column at the start edge on wide screens, a bottom sheet on phones; the "עוזר" text button lives in `CourseNav`.
 - Prompts in `LessonAiCoachBlock` stress: **course RAG only**, no invented exam facts, short actionable answers.
 - `LessonQuickCheck` “צריך הסבר נוסף” sends a grounded help request with `autoSend: true`.
 

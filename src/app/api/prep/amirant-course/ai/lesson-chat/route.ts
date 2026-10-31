@@ -12,14 +12,17 @@ function sseEvent(data: unknown): string {
 
 export async function POST(req: Request) {
   const client = createPrepSupabaseServerClient();
-  if (!client) {
+  // Without Supabase there is no sign-in and no entitlement, so in production this is
+  // a misconfiguration. Local dev opens the assistant by flag; it then runs as a guest
+  // (no RAG, no learner stats) instead of failing every message.
+  if (!client && !getPrepShowCourseAssistant() && !getPrepHasFullAccess()) {
     return new Response(JSON.stringify({ error: "Supabase not configured" }), { status: 500, headers: { "Content-Type": "application/json" } });
   }
 
   const { requestIp, sessionId } = getAiRequestMeta(req);
   // Auth lookup and body parsing do not depend on each other - overlap them.
   const [{ data: { user } }, bodyResult] = await Promise.all([
-    client.auth.getUser(),
+    client ? client.auth.getUser() : Promise.resolve({ data: { user: null } }),
     req.json().then((body: unknown) => ({ ok: true as const, body })).catch(() => ({ ok: false as const })),
   ]);
 
@@ -28,7 +31,7 @@ export async function POST(req: Request) {
   const assistantAllowed =
     getPrepShowCourseAssistant() ||
     getPrepHasFullAccess() ||
-    (user ? await hasAmirantFullAccess(client, user.id) : false);
+    (user && client ? await hasAmirantFullAccess(client, user.id) : false);
   if (!assistantAllowed) {
     return new Response(
       JSON.stringify({
@@ -87,7 +90,7 @@ export async function POST(req: Request) {
       try {
         const result = await runLessonChatAi(
           client,
-          user?.id ?? null,
+          client ? user?.id ?? null : null,
           parsed.data,
           { requestIp, sessionId },
           (delta) => send({ t: "tok", v: delta }),

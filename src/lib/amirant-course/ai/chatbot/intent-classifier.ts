@@ -1,11 +1,23 @@
 import type { AmirantChatbotRequest, AmirantChatIntent, AmirantClientAction, AmirantQuestionType } from "./schemas";
 
-const RE_HINT = /(?:^|\s)(?:תנו?\s*לי\s*רמז|תן\s*לי\s*רמז|רמז\s*ראשון|רמז)(?:\s|$)/i;
-const RE_NEXT = /(?:^|\s)(?:רמז\s*נוסף|עוד\s*רמז|next\s*hint|another\s*hint)(?:\s|$)/i;
-const RE_REVEAL = /(?:^|\s)(?:גלה\s*תשובה|לגלות\s*תשובה|reveal|full\s*answer|התשובה\s*המלאה|תשובה\s*מלאה)(?:\s|$)/i;
-const RE_VOCAB_ACTION = /(?:^|\s)(?:בדוק\s*מילה|אוצר\s*מילים|vocab(?:ulary)?\s*check)(?:\s|$)/i;
-const RE_PERF = /(?:^|\s)(?:נתח\s*(?:את\s*)?הביצועים|ביצועים\s*שלי|my\s*performance|analytics|ניתוח\s*ביצועים)(?:\s|$)/i;
-const RE_REC = /(?:^|\s)(?:מה\s*כדאי\s*לי|מה\s*לעשות\s*עכשיו|what\s*should\s*i\s*do|recommend|המלצ)(?:\s|$)/i;
+// A phrase boundary that also accepts punctuation: "בדוק מילה: reluctant" and
+// "מה התשובה?" must match the same as the bare phrase. `\s` alone missed the colon
+// and the question mark, so the typed form of the assistant's own example failed.
+const EDGE_START = String.raw`(?:^|[\s:,.!?"'(])`;
+const EDGE_END = String.raw`(?=$|[\s:,.!?"')])`;
+const phrase = (alts: string, flags = "i") => new RegExp(`${EDGE_START}(?:${alts})${EDGE_END}`, flags);
+
+const RE_HINT = phrase(String.raw`תנו?\s*לי\s*רמז|תן\s*לי\s*רמז|רמז\s*ראשון|רמז`);
+const RE_NEXT = phrase(String.raw`רמז\s*נוסף|עוד\s*רמז|next\s*hint|another\s*hint`);
+// "מה התשובה" - the learner wants the key, so the server may block it on a timed unit
+// instead of silently answering with a stage-1 hint. "למה התשובה היא ב" stays question
+// help: the boundary before "מה" is a letter there.
+const RE_REVEAL = phrase(
+  String.raw`גלה\s*תשובה|לגלות\s*תשובה|reveal|full\s*answer|התשובה\s*המלאה|תשובה\s*מלאה|מה\s*התשובה(?:\s*הנכונה)?|איזו\s*תשובה\s*נכונה|מהי\s*התשובה|what(?:'s|\s*is)\s*the\s*(?:correct\s*|right\s*)?answer|correct\s*answer`,
+);
+const RE_VOCAB_ACTION = phrase(String.raw`בדוק\s*מילה|בדיקת\s*מילה|אוצר\s*מילים|vocab(?:ulary)?\s*check`);
+const RE_PERF = phrase(String.raw`נתח\s*(?:את\s*)?הביצועים|ביצועים\s*שלי|my\s*performance|analytics|ניתוח\s*ביצועים`);
+const RE_REC = phrase(String.raw`מה\s*כדאי\s*לי|מה\s*לעשות\s*עכשיו|מה\s*כדאי\s*עכשיו|what\s*should\s*i\s*do|recommend|המלצ`);
 /**
  * לוגיסטיקה = הרשמה/עלות/מועדים/מבנה רשמי בלבד. מילים כלליות כמו "מבחן"/"ציון"/"אמירנט"
  * מופיעות גם בשאלות תוכן ("איך ניגשים לשאלות במבחן?") - אסור שיחטפו את ה-intent.

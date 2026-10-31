@@ -13,6 +13,7 @@ import {
   type AIChatProvider,
 } from "./ai-config";
 import { createAnswerStreamExtractor } from "./stream-json-answer";
+import { createLineBreakNormalizer } from "./model-text";
 import { logAiError, logAiFailover, logAiRequest, logAiResponse } from "./ai-logger";
 import { buildUsagePayload, logAiUsage } from "./ai-usage";
 import { estimateTokenCountFromText } from "./ai-cost";
@@ -324,6 +325,7 @@ export async function streamOpenAiJsonResponse<T>(params: {
   schema: z.ZodType<T>;
   schemaName: string;
   onToken: (delta: string) => void;
+  usageLog?: RunStructuredAiParams<T>["usageLog"];
 }): Promise<T> {
   const key = getOpenAiApiKey();
   if (!key) throw new Error("OPENAI_API_KEY is missing");
@@ -346,10 +348,22 @@ export async function streamOpenAiJsonResponse<T>(params: {
     // 0.4 - natural Hebrew without losing precision; 1100 tokens so Hebrew answers are not cut off
     ...openAiGenerationParams(Math.min(getMaxOutputTokens(), 1100), 0.4),
     response_format: zodResponseFormat(params.schema, params.schemaName),
+    // The final chunk then carries token counts, so the streamed path is costed
+    // like the structured one instead of disappearing from the usage log.
+    stream_options: { include_usage: true },
   });
 
   let outputChars = 0;
+  let firstTokenMs: number | null = null;
   const extractor = createAnswerStreamExtractor();
+  const breaks = createLineBreakNormalizer();
+  const emit = (raw: string) => {
+    // Em dash and literal "\n" pairs are fixed in the live stream too - consistent with the final answer
+    const visible = raw.replace(/—/g, "-");
+    if (!visible) return;
+    if (firstTokenMs == null) firstTokenMs = Date.now() - started;
+    params.onToken(visible);
+  };
 
   for await (const chunk of stream) {
     const delta = chunk.choices[0]?.delta?.content ?? "";
@@ -357,13 +371,26 @@ export async function streamOpenAiJsonResponse<T>(params: {
     outputChars += delta.length;
     if (extractor.done) continue;
     const visible = extractor.push(delta);
-    // Em dash is replaced in the live stream too - consistent with the final answer
-    if (visible) params.onToken(visible.replace(/—/g, "-"));
+    if (visible) emit(breaks.push(visible));
   }
+  emit(breaks.flush());
 
   const final = await stream.finalChatCompletion();
   const durationMs = Date.now() - started;
-  logAiResponse({ operation: params.operation, provider: "openai", model: OPENAI_CHAT_MODEL, durationMs, outputChars });
+  const model = final.model ?? OPENAI_CHAT_MODEL;
+  logAiResponse({ operation: params.operation, provider: "openai", model, durationMs, outputChars, firstTokenMs });
+  const u = final.usage;
+  logUsageLine({
+    operation: params.operation,
+    provider: "openai",
+    model,
+    inputTokens: u?.prompt_tokens ?? estimateTokenCountFromText(params.systemPrompt + params.userPrompt),
+    outputTokens: u?.completion_tokens ?? estimateTokenCountFromText(JSON.stringify(final.choices[0]?.message?.parsed ?? "")),
+    durationMs,
+    userId: params.usageLog?.userId,
+    sessionId: params.usageLog?.sessionId,
+    requestIp: params.usageLog?.requestIp,
+  });
 
   const parsed = final.choices[0]?.message?.parsed;
   if (parsed == null) throw new Error("Empty structured streaming output");

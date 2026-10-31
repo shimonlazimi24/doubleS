@@ -23,6 +23,7 @@ import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { PremiumMarkdownBody } from "./premium/PremiumMarkdownBody";
 import { QuestionExplanation } from "./quiz/QuestionExplanation";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
+import { dispatchBankQuestionContext } from "@/lib/amirant-course/question-bank/dispatch-question-context";
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 
@@ -92,6 +93,20 @@ export function AmirantPracticeSetClient({
   const passagesById = useMemo(
     () => new Map(questionSet.passages.map((p) => [p.id, p])),
     [questionSet],
+  );
+
+  // The set shows every question at once, so "the question on screen" for the
+  // assistant is the one the learner last touched. Untimed: the key may be used.
+  const focusQuestion = useCallback(
+    (q: ClientQuestionSet["questions"][number], selectedOptionId: string | null | undefined) => {
+      dispatchBankQuestionContext({
+        question: q,
+        passage: q.passageId ? passagesById.get(q.passageId) : undefined,
+        timed: false,
+        selectedOptionId,
+      });
+    },
+    [passagesById],
   );
 
   const submit = useCallback(() => {
@@ -183,7 +198,7 @@ export function AmirantPracticeSetClient({
           const graded = gradeById[id];
           const correctOptionId = graded?.correctOptionId ?? null;
           return (
-            <li key={id}>
+            <li key={id} onFocusCapture={() => focusQuestion(q, answers[id])} onPointerDownCapture={() => focusQuestion(q, answers[id])}>
               <Card>
                 <CardBody className="space-y-4 p-6">
                   <Text as="p" variant="caption" className="text-muted">
@@ -208,7 +223,10 @@ export function AmirantPracticeSetClient({
                               index={optIndex}
                               anyChecked={answers[id] != null}
                               disabled={submitted || submitting}
-                              onClick={() => setAnswers((p) => ({ ...p, [id]: opt.id }))}
+                              onClick={() => {
+                                setAnswers((p) => ({ ...p, [id]: opt.id }));
+                                focusQuestion(q, opt.id);
+                              }}
                               className={cn(
                                 "min-h-11 w-full rounded-control border px-4 py-3 text-start text-sm transition",
                                 answers[id] === opt.id

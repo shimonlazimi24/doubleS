@@ -218,7 +218,8 @@ export function mergeRetrievedChunks(resultsInPlanOrder: RetrievedChunk[][], top
  * Latency is one RPC round-trip instead of a serial cascade of up to four.
  */
 export async function retrieveForLessonChat(
-  client: SupabaseClient,
+  /** `null` when Supabase is not configured (local dev): nothing to retrieve from. */
+  client: SupabaseClient | null,
   params: {
     query: string;
     questionContext?: string;
@@ -229,6 +230,8 @@ export async function retrieveForLessonChat(
     topK?: number;
   },
 ): Promise<RetrievedChunk[]> {
+  const retrievalClient = getPrepSupabaseServiceClient() ?? client;
+  if (!retrievalClient) return [];
   const topK = clampRagTopK(params.topK);
   const plan = planLessonChatRetrieval(params);
   // The caller already tried to embed once. Without a vector, skip straight to the filtered
@@ -236,7 +239,7 @@ export async function retrieveForLessonChat(
   const haveVector = Boolean(params.precomputedEmbedding?.length);
   const results = await Promise.all(
     plan.map((f) =>
-      retrieveCourseChunks(client, {
+      retrieveCourseChunks(retrievalClient, {
         query: haveVector ? params.query : undefined,
         questionContext: haveVector ? params.questionContext : undefined,
         lessonId: f.lessonId,

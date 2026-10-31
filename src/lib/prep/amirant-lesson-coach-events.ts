@@ -41,7 +41,17 @@ export function dispatchAmirantCourseCoach(detail: AmirantCourseCoachEventDetail
   window.dispatchEvent(new CustomEvent(AMIRANT_COURSE_COACH_EVENT, { detail }));
 }
 
+let lastQuestionContext: { detail: AmirantQuestionContextDetail; path: string } | null = null;
+
 export function dispatchAmirantQuestionContext(detail: AmirantQuestionContextDetail): void {
   if (typeof window === "undefined") return;
+  // Kept for listeners that mount later: the page dispatches from a child effect,
+  // which runs before the assistant's own effect subscribes.
+  lastQuestionContext = { detail, path: window.location.pathname };
   window.dispatchEvent(new CustomEvent(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, { detail }));
+}
+
+/** The most recent on-screen block, if it was dispatched for `path`. */
+export function getLastAmirantQuestionContext(path: string): AmirantQuestionContextDetail | null {
+  return lastQuestionContext && lastQuestionContext.path === path ? lastQuestionContext.detail : null;
 }

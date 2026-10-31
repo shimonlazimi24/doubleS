@@ -13,6 +13,15 @@ import { QuizOptionButton, QuizOptionGroup } from "./quiz/QuizOptionGroup";
 import { QuizTimeAnnouncer } from "./quiz/QuizTimeAnnouncer";
 import { QuizPassagePanel } from "./quiz/QuizPassagePanel";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
+import { dispatchAmirantQuestionContext } from "@/lib/prep/amirant-lesson-coach-events";
+import type { ClientQuestion, PoolItemType } from "@/lib/amirant-course/simulations/adaptive/types";
+
+/** Pool section types in the bank's vocabulary - the assistant's retrieval filter and hint staging use those. */
+const POOL_TYPE_TO_BANK_TOPIC: Partial<Record<PoolItemType, string>> = {
+  sentence_completion: "sentence_completion",
+  restatement: "rephrasing",
+  reading_set: "reading_comprehension",
+};
 
 const COURSE_BASE = `${PREP_BASE}/amirant/course`;
 const API = "/api/prep/amirant-course/simulation/adaptive";
@@ -123,6 +132,33 @@ export function AmirantAdaptiveSimulationClient({ attempts, persistent }: { atte
   }, [answers, busy, phase, secondsLeft, section, sectionKey, submit]);
 
   const singleQuestion = section?.plan.mode === "single" ? section.questions[0] ?? null : null;
+
+  // Tells the course assistant which question is on screen. Timed: the key stays
+  // hidden until the learner has chosen. In a set, the question last touched counts.
+  const tellAssistant = useCallback(
+    (q: ClientQuestion, selected: string | null | undefined) => {
+      if (!section) return;
+      const passage = q.passageId ? section.passages.find((p) => p.id === q.passageId) : undefined;
+      dispatchAmirantQuestionContext({
+        kind: "quiz_question",
+        questionText: amirantExamQuestionPromptForDisplay(q.stem),
+        questionId: q.questionId,
+        topic: POOL_TYPE_TO_BANK_TOPIC[section.plan.type],
+        questionType: POOL_TYPE_TO_BANK_TOPIC[section.plan.type] ?? section.plan.type,
+        options: q.options.map((o) => ({ id: o.id, label: o.label })),
+        passageText: passage?.bodyMarkdown.slice(0, 4000),
+        timed: true,
+        answered: selected != null,
+        selectedOptionId: selected ?? null,
+      });
+    },
+    [section],
+  );
+  const singleSelected = singleQuestion ? answers[singleQuestion.questionId] ?? null : null;
+  useEffect(() => {
+    if (phase !== "running" || !singleQuestion) return;
+    tellAssistant(singleQuestion, singleSelected);
+  }, [phase, singleQuestion, singleSelected, tellAssistant]);
   const singleWord = section?.plan.mode === "single" ? section.wordFormation[0] ?? null : null;
   const essayWords = useMemo(() => countWords(essay), [essay]);
 
@@ -429,7 +465,12 @@ export function AmirantAdaptiveSimulationClient({ attempts, persistent }: { atte
               <div key={p.id} className="space-y-4">
                 <QuizPassagePanel passage={{ id: p.id, title: p.title, bodyMarkdown: p.bodyMarkdown }} className="max-h-none" />
                 {qs.map((q, qi) => (
-                  <div key={q.questionId} className="space-y-2">
+                  <div
+                    key={q.questionId}
+                    className="space-y-2"
+                    onFocusCapture={() => tellAssistant(q, answers[q.questionId])}
+                    onPointerDownCapture={() => tellAssistant(q, answers[q.questionId])}
+                  >
                     <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" lang="en" style={{ textAlign: "left" }}>
                       <span className="me-2 text-sm text-muted">{section.questions.indexOf(q) + 1}.</span>
                       {amirantExamQuestionPromptForDisplay(q.stem)}
@@ -441,7 +482,10 @@ export function AmirantAdaptiveSimulationClient({ attempts, persistent }: { atte
                             checked={answers[q.questionId] === opt.id}
                             index={i}
                             anyChecked={answers[q.questionId] != null}
-                            onClick={() => setAnswers((a) => ({ ...a, [q.questionId]: opt.id }))}
+                            onClick={() => {
+                              setAnswers((a) => ({ ...a, [q.questionId]: opt.id }));
+                              tellAssistant(q, opt.id);
+                            }}
                             className={cn(
                               "min-h-11 w-full rounded border px-4 py-3 text-start text-sm transition",
                               answers[q.questionId] === opt.id ? "border-primary bg-primary/10 font-semibold text-primary" : "border-line/80 bg-paper hover:border-primary/40",

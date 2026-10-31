@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { AmirantCourseAccessProvider } from "@/components/prep/amirant-course/AmirantCourseAccessProvider";
-import { AmirantCourseAssistantGate } from "@/components/prep/amirant-course/AmirantCourseAssistantGate";
+import { AmirantCourseAssistantFrame } from "@/components/prep/amirant-course/assistant/AmirantCourseAssistantFrame";
+import { AmirantCourseAssistantProvider } from "@/components/prep/amirant-course/assistant/AmirantCourseAssistantProvider";
 import { AmirantCourseProgressProvider } from "@/components/prep/amirant-course/AmirantCourseProgressProvider";
 import { AmirantExpiryBanner } from "@/components/prep/amirant-course/AmirantExpiryBanner";
 import { AmirantPersistenceProvider } from "@/components/prep/amirant-course/AmirantPersistenceProvider";
@@ -17,21 +18,26 @@ export const metadata: Metadata = {
  * entitlement here (two round trips to the database) just to decide whether
  * to show the assistant, and because a layout renders before its page, every
  * page under /course waited for that before its own loading state could show.
- * The assistant is now gated in the browser (AmirantCourseAssistantGate); the
- * tester entitlement moved to the lesson access gate.
+ * The assistant is gated in the browser (AmirantCourseAssistantProvider); the
+ * tester entitlement moved to the lesson access gate. On wide screens the
+ * assistant is a column beside the page (AmirantCourseAssistantFrame), so the
+ * provider wraps the header too: its "עוזר" button lives there.
  */
 export default function AmirantCourseLayout({ children }: { children: React.ReactNode }) {
   return (
     <AmirantPersistenceProvider>
       <AmirantCourseAccessProvider>
         <AmirantCourseProgressProvider>
-          <div className="min-h-screen bg-paper">
-            <CourseNav />
-            <AmirantExpiryBanner />
-            {/* Full-bleed children (e.g. lesson workspace). Narrow pages wrap themselves in <Container max="measureWide">. */}
-            <div className="w-full max-w-none pb-24">{children}</div>
-            <AmirantCourseAssistantGate />
-          </div>
+          <AmirantCourseAssistantProvider>
+            <div className="min-h-screen bg-paper">
+              <CourseNav />
+              <AmirantExpiryBanner />
+              {/* Full-bleed children (e.g. lesson workspace). Narrow pages wrap themselves in <Container max="measureWide">. */}
+              <AmirantCourseAssistantFrame>
+                <div className="w-full max-w-none pb-24">{children}</div>
+              </AmirantCourseAssistantFrame>
+            </div>
+          </AmirantCourseAssistantProvider>
         </AmirantCourseProgressProvider>
       </AmirantCourseAccessProvider>
     </AmirantPersistenceProvider>

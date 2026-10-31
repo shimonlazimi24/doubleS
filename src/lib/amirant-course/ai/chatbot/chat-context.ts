@@ -14,6 +14,12 @@ export type AnswerKeyLookup = (questionId: string) => { correctOptionId: string;
 export function resolveActiveContextForPrompt(
   ctx: LessonChatActiveContext | undefined,
   lookupKey: AnswerKeyLookup,
+  /**
+   * Staged hints (stages 1-3) never carry the key, even on untimed practice where
+   * it would otherwise be allowed: a model that can see "correct = (a)" lets it slip
+   * into a hint.
+   */
+  options: { staged?: boolean } = {},
 ): LessonChatActiveContextForPrompt | undefined {
   if (!ctx) return undefined;
   const base: LessonChatActiveContextForPrompt = {
@@ -27,7 +33,7 @@ export function resolveActiveContextForPrompt(
     answered: ctx.answered,
     selectedOptionId: ctx.selectedOptionId,
   };
-  if (ctx.kind !== "quiz_question" || !ctx.questionId) return base;
+  if (ctx.kind !== "quiz_question" || !ctx.questionId || options.staged) return base;
   const keyAllowed = !ctx.timed || ctx.answered === true;
   if (!keyAllowed) return base;
   const key = lookupKey(ctx.questionId);
@@ -37,6 +43,26 @@ export function resolveActiveContextForPrompt(
 /** The learner wants the key for a timed question they have not answered yet. */
 export function isRevealBlocked(ctx: LessonChatActiveContext | undefined): boolean {
   return ctx?.kind === "quiz_question" && ctx.timed === true && ctx.answered !== true;
+}
+
+/**
+ * Whether the staged-hint prompt (one clue per stage, never the answer) applies.
+ *
+ * It belongs to an unanswered question on screen. An explicit hint request keeps it
+ * even without one. Everywhere else it would be wrong: a strategy question with no
+ * question on screen was being cut down to a single stage-1 clue, and an answered
+ * question got "never give the answer" layered over "use the key" - the model then
+ * refused to explain the learner's own mistake.
+ */
+export function shouldUseStagedHelp(params: {
+  intent: string;
+  wantsReveal: boolean;
+  active: LessonChatActiveContext | undefined;
+}): boolean {
+  if (params.wantsReveal) return false;
+  if (params.intent === "staged_hint") return true;
+  if (params.intent !== "question_help") return false;
+  return params.active?.kind === "quiz_question" && params.active.answered !== true;
 }
 
 export const REVEAL_BLOCKED_ANSWER_HE =

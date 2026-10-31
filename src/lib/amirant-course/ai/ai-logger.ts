@@ -23,6 +23,8 @@ export function logAiResponse(params: {
   model: string;
   durationMs: number;
   outputChars: number;
+  /** Streaming only: time to the first visible answer character. */
+  firstTokenMs?: number | null;
 }): void {
   safeJsonLine({ event: "ai_response", ...params });
 }

@@ -6,6 +6,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { useAmirantCourseProgressOptional } from "./AmirantCourseProgressProvider";
 import { cn } from "@/lib/design-system/cn";
+import { CourseNavAssistantButton } from "./assistant/CourseNavAssistantButton";
 
 const BASE = `${PREP_BASE}/amirant/course`;
 
@@ -64,16 +65,19 @@ export function CourseNav() {
             })}
           </nav>
         </div>
-        {done != null ? (
-          <div className="hidden items-center gap-3 text-xs text-muted sm:flex" aria-label="התקדמות בקורס">
-            <span className="tabular-nums">
-              {done} מתוך {lessons.length} שיעורים
-            </span>
-            <span className="h-1 w-28 bg-surface-high" aria-hidden>
-              <span className="block h-full bg-primary" style={{ width: `${Math.round((done / lessons.length) * 100)}%` }} />
-            </span>
-          </div>
-        ) : null}
+        <div className="flex h-full items-center gap-5 sm:gap-7">
+          {done != null ? (
+            <div className="hidden items-center gap-3 text-xs text-muted sm:flex" aria-label="התקדמות בקורס">
+              <span className="tabular-nums">
+                {done} מתוך {lessons.length} שיעורים
+              </span>
+              <span className="h-1 w-28 bg-surface-high" aria-hidden>
+                <span className="block h-full bg-primary" style={{ width: `${Math.round((done / lessons.length) * 100)}%` }} />
+              </span>
+            </div>
+          ) : null}
+          <CourseNavAssistantButton />
+        </div>
       </div>
     </header>
   );
