@@ -24,6 +24,7 @@ import { QuizOptionButton, QuizOptionGroup } from "../quiz/QuizOptionGroup";
 import { displayOptions, newAttemptSeed } from "@/lib/amirant-course/question-bank/display-order";
 import { formatClock } from "@/lib/amirant-course/format-clock";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
+import { dispatchBankQuestionContext } from "@/lib/amirant-course/question-bank/dispatch-question-context";
 
 type Props = {
   title: string;
@@ -58,6 +59,20 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
   }, [timerRunning, checked]);
 
   const answeredCount = questions.filter((q) => answers[q.id]).length;
+
+  // Every question is on screen at once, so the assistant follows the one the learner
+  // last touched. A clocked set keeps the key hidden until that question is answered.
+  const focusQuestion = useCallback(
+    (q: BankQuestionPublic, selectedOptionId: string | null | undefined) => {
+      dispatchBankQuestionContext({
+        question: q,
+        passage: q.passageId ? passagesById.get(q.passageId) : undefined,
+        timed: timeLimitSec != null && !checked,
+        selectedOptionId,
+      });
+    },
+    [passagesById, timeLimitSec, checked],
+  );
 
   const check = useCallback(() => {
     if (checking || questions.length === 0) return;
@@ -160,7 +175,12 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
           const isCorrect = checked && graded?.isCorrect === true;
           const isWrong = checked && selected != null && graded?.isCorrect === false;
           return (
-            <li key={q.id} className="space-y-3">
+            <li
+              key={q.id}
+              className="space-y-3"
+              onFocusCapture={() => focusQuestion(q, selected)}
+              onPointerDownCapture={() => focusQuestion(q, selected)}
+            >
               {passage ? (
                 <div className="rounded-2xl border border-line/70 bg-surface-low p-4" dir="ltr" lang="en">
                   {passage.title ? (
@@ -200,9 +220,10 @@ export function AmirantInlineQuestionsCard({ title, questions, passages, timeLim
                           index={optIndex}
                           anyChecked={selected != null}
                           disabled={checked || checking}
-                          onClick={() =>
-                            setAnswers((prev) => ({ ...prev, [q.id]: opt.id }))
-                          }
+                          onClick={() => {
+                            setAnswers((prev) => ({ ...prev, [q.id]: opt.id }));
+                            focusQuestion(q, opt.id);
+                          }}
                           dir="ltr"
                           className={cn(
                             "min-h-11 w-full rounded-xl border px-4 py-3 text-start text-sm transition disabled:cursor-default",

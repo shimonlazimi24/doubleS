@@ -11,6 +11,7 @@ import {
   retrieveForLessonChat,
 } from "../retrieval";
 import { runEmbedding } from "../openai-client";
+import { normalizeModelLineBreaks } from "../model-text";
 import { normalizeChunkReferences } from "../reference-utils";
 import { redactPersonalData, screenLearnerMessage, validateAiGroundedNumericClaims } from "../safety";
 import { logAiSafetyValidationFailure } from "../ai-usage";
@@ -35,6 +36,7 @@ import {
   buildLearnerProfileText,
   isRevealBlocked,
   resolveActiveContextForPrompt,
+  shouldUseStagedHelp,
   REVEAL_BLOCKED_ANSWER_HE,
 } from "./chat-context";
 
@@ -117,7 +119,8 @@ export function redactChatRequest(request: AmirantChatbotRequest): AmirantChatbo
 }
 
 export async function runAmirantChatbot(
-  client: SupabaseClient,
+  /** `null` only in local dev without Supabase: the request runs as a guest without RAG. */
+  client: SupabaseClient | null,
   userId: string | null,
   raw: unknown,
   logCtx?: AiRequestLogContext,
@@ -140,6 +143,17 @@ export async function runAmirantChatbot(
     questionTypeFromClient !== "unknown" ? questionTypeFromClient : questionTypeInferred;
 
   const { stage, isNext } = resolveStagedStage(request, intent);
+  const wantsReveal = explicitReveal || intent === "reveal_answer" || stage >= 4;
+
+  // Timed unit, learner has not chosen: the key is withheld on the server and no model call is made.
+  if (wantsReveal && isRevealBlocked(active)) {
+    return deterministicReply({
+      intent: "reveal_answer",
+      answer: REVEAL_BLOCKED_ANSWER_HE,
+      questionType,
+      safeFallback: false,
+    });
+  }
 
   // Only real bank topic slugs are retrieval filters; a lesson step label is not.
   const topicFilter = isBankTopicSlug(request.topic) ? request.topic : active?.questionType && isBankTopicSlug(active.questionType) ? active.questionType : undefined;
@@ -164,15 +178,6 @@ export async function runAmirantChatbot(
     request.userMessage.length < 60 && lastUserTurn ? `${lastUserTurn}\n${request.userMessage}` : request.userMessage;
 
   const vectorText = buildVectorQueryText({ query: retrievalQuery, questionContext });
-
-  // Parallel: learner stats + quiz snapshot + embedding - none depends on another.
-  const [userStats, quizSnapshot, embeddingResult] = await Promise.all([
-    userId ? loadAiUserStatsSnapshot(client, userId) : Promise.resolve(EMPTY_USER_STATS),
-    userId ? loadAiQuizSnapshot(client, userId) : Promise.resolve(null),
-    vectorText.trim() ? runEmbedding({ text: vectorText }).catch(() => null) : Promise.resolve(null),
-  ]);
-  const precomputedEmbedding = embeddingResult?.embedding;
-  const learnerProfileText = buildLearnerProfileText(userStats, quizSnapshot, Boolean(userId));
 
   if (intent === "vocabulary_lookup" || (request.clientAction === "vocab_lookup" && request.vocabularyWord)) {
     const w =
@@ -207,7 +212,7 @@ export async function runAmirantChatbot(
   }
 
   if (intent === "performance_analysis") {
-    if (!userId) {
+    if (!userId || !client) {
       return deterministicReply({
         intent: "performance_analysis",
         answer: "לניתוח ביצועים (נושאים חלשים, דיוק, מבחנים אחרונים) צריך חשבון מחובר. התחברו ונסו שוב.",
@@ -230,7 +235,7 @@ export async function runAmirantChatbot(
   }
 
   if (intent === "recommendation") {
-    if (!userId) {
+    if (!userId || !client) {
       return deterministicReply({
         intent: "recommendation",
         answer: "המלצה ממוקדת (מבחן, שיעור, מיקוד) עובדת הכי טוב אחרי התחברות - אז אפשר לקרוא את מסלול הלמידה שלכם. בינתיים: בחרו נושא שפחות בטוחים בו, עשו מבחן אדפטיבי קצר, וחזרו לשיעור הראשי בנושא הזה.",
@@ -253,17 +258,15 @@ export async function runAmirantChatbot(
     });
   }
 
-  const wantsReveal = explicitReveal || intent === "reveal_answer" || stage >= 4;
-
-  // Timed unit, learner has not chosen: the key is withheld on the server and no model call is made.
-  if (wantsReveal && isRevealBlocked(active)) {
-    return deterministicReply({
-      intent: "reveal_answer",
-      answer: REVEAL_BLOCKED_ANSWER_HE,
-      questionType,
-      safeFallback: false,
-    });
-  }
+  // Only the model path needs the learner profile and the embedding; the deterministic
+  // replies above return before paying for them.
+  const [userStats, quizSnapshot, embeddingResult] = await Promise.all([
+    userId && client ? loadAiUserStatsSnapshot(client, userId) : Promise.resolve(EMPTY_USER_STATS),
+    userId && client ? loadAiQuizSnapshot(client, userId) : Promise.resolve(null),
+    vectorText.trim() ? runEmbedding({ text: vectorText }).catch(() => null) : Promise.resolve(null),
+  ]);
+  const precomputedEmbedding = embeddingResult?.embedding;
+  const learnerProfileText = buildLearnerProfileText(userStats, quizSnapshot, Boolean(userId));
 
   const chunks = await retrieveForLessonChat(client, {
     query: retrievalQuery,
@@ -277,8 +280,7 @@ export async function runAmirantChatbot(
   const chunkContextBlocks = chunks.map((c) => formatContextLine(c));
   const chunkIds = chunks.map((c) => c.id);
 
-  const inStagedHelp = intent === "staged_hint" || intent === "question_help";
-  const useStaged = inStagedHelp && !wantsReveal;
+  const useStaged = shouldUseStagedHelp({ intent, wantsReveal, active });
   const promptStage4 = wantsReveal;
   const timedUnanswered = isRevealBlocked(active);
 
@@ -311,10 +313,14 @@ export async function runAmirantChatbot(
 
   const systemPrompt = [lessonChatSystemPrompt(), systemExtra].join("");
 
-  const activeForPrompt = resolveActiveContextForPrompt(active, (id) => {
-    const q = getBankQuestion(id);
-    return q ? { correctOptionId: q.correctOptionId, explanation: q.explanation } : undefined;
-  });
+  const activeForPrompt = resolveActiveContextForPrompt(
+    active,
+    (id) => {
+      const q = getBankQuestion(id);
+      return q ? { correctOptionId: q.correctOptionId, explanation: q.explanation } : undefined;
+    },
+    { staged: useStaged },
+  );
 
   const userLine = [`Intent: ${outIntent}`, useStaged ? `staged-hint stage ${stage} (isNext: ${isNext})` : ""]
     .filter(Boolean)
@@ -350,8 +356,9 @@ export async function runAmirantChatbot(
         schema: amirantChatbotAiResponseSchema,
         schemaName: "amirant_chatbot",
         onToken,
+        usageLog: { userId: userId ?? undefined, sessionId: logCtx?.sessionId, requestIp: logCtx?.requestIp },
       });
-      parsed = { ...result, intent: outIntent, answer: result.answer.replace(/—/g, "-") };
+      parsed = { ...result, intent: outIntent, answer: normalizeModelLineBreaks(result.answer.replace(/—/g, "-")) };
     } else {
       // Non-streaming structured output path (default)
       const ai = await runStructuredAi({
@@ -363,7 +370,7 @@ export async function runAmirantChatbot(
         cacheContext: { userQuery: request.userMessage + outIntent + String(stage), chunkIds },
         usageLog: { userId: userId ?? undefined, sessionId: logCtx?.sessionId, requestIp: logCtx?.requestIp },
       });
-      parsed = { ...ai.output, intent: outIntent, answer: ai.output.answer.replace(/—/g, "-") };
+      parsed = { ...ai.output, intent: outIntent, answer: normalizeModelLineBreaks(ai.output.answer.replace(/—/g, "-")) };
     }
     // Numbers the model may repeat: the learner's own data, what is on screen, the course
     // chunks it was given, and the exam facts. Anything else is treated as invented.

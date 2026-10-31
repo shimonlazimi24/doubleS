@@ -1,371 +1,203 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Card, CardBody, Text } from "@/components/ui";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type FormEvent, type KeyboardEvent, type RefObject } from "react";
+import { Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
+import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import {
-  AMIRANT_COURSE_COACH_EVENT,
-  AMIRANT_COURSE_QUESTION_CONTEXT_EVENT,
-  type AmirantCourseCoachEventDetail,
-  type AmirantQuestionContextDetail,
-} from "@/lib/prep/amirant-lesson-coach-events";
-import { heApiError } from "@/lib/prep/he-api-error";
-
-type Msg = { role: "user" | "assistant"; text: string; id: string };
-
-type LessonChatClientPayload = {
-  userMessage: string;
-  lessonId?: string;
-  clientAction?: "auto" | "hint" | "next_hint" | "reveal" | "vocab_lookup" | "performance" | "recommend";
-  stagedHintContext?: { stage?: number; questionType?: string };
-  vocabularyWord?: string;
-  topic?: string;
-};
-
-/** עד 8 תורות אחרונים, חתוכים ל-600 תווים - כדי שהעוזר יזכור את השיחה. */
-function buildHistoryPayload(messages: Msg[]): { role: "user" | "assistant"; text: string }[] {
-  return messages
-    .filter((m) => m.text.trim())
-    .slice(-8)
-    .map((m) => ({ role: m.role, text: m.text.slice(0, 600) }));
-}
-
-/**
- * The model sometimes writes the two characters "\n" inside its answer instead of a
- * line break (seen in production: "טיפ: \n- יש לך..."). Those are not JSON escapes,
- * so the stream decoder rightly leaves them; here they become real breaks.
- */
-function unescapeModelText(text: string): string {
-  return text.replace(/\\n/g, "\n").replace(/\\t/g, " ");
-}
-
-/**
- * The on-screen block the server grounds on. Mirrors `lessonChatActiveContextSchema`
- * limits; the answer key is never part of it (the server resolves it by `questionId`).
- */
-function buildActiveContextPayload(cq: AmirantQuestionContextDetail): Record<string, unknown> {
-  return {
-    kind: cq.kind ?? (cq.options?.length ? "quiz_question" : "lesson_step"),
-    text: cq.questionText.slice(0, 2500),
-    stepLabel: cq.stepLabel?.slice(0, 120),
-    questionId: cq.questionId?.slice(0, 80),
-    questionType: cq.questionType?.slice(0, 40),
-    options: cq.options?.slice(0, 6).map((o) => ({ id: o.id.slice(0, 8), label: o.label.slice(0, 400) })),
-    passageText: cq.passageText?.slice(0, 4000),
-    timed: cq.timed,
-    answered: cq.answered,
-    selectedOptionId: cq.selectedOptionId ?? undefined,
-  };
-}
+  ASSISTANT_MESSAGE_MAX,
+  remainingCounter,
+  truncateStem,
+  type AssistantMessage,
+} from "@/lib/prep/amirant-course-assistant/chat-client";
+import { useAmirantCourseAssistant } from "./assistant/AmirantCourseAssistantProvider";
 
 const STARTER_PROMPTS = [
   "איך כדאי לגשת לשאלות השלמת משפטים?",
   "מה ההבדל בין רמות הקושי במבחן?",
-  "תן לי טיפ לניהול זמן במבחן",
+  "איך מנהלים את הזמן במבחן?",
 ];
 
-type HintSession = { stage: number; questionType?: string };
+/** Plain text buttons: the row's hairlines do the separating, not borders or fills. */
+const textButton =
+  "inline-flex min-h-11 items-center px-3 text-sm font-semibold text-primary transition-colors hover:bg-surface-low focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent disabled:cursor-default disabled:text-muted-2 disabled:hover:bg-transparent";
+
+const linkButton =
+  "inline-flex min-h-11 items-center text-start text-[15px] leading-6 text-primary underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:text-muted-2 disabled:no-underline";
 
 export type AmirantCourseChatPanelProps = {
-  /** מזהה שיעור ל־RAG; בלי - שאלות לרוחב הקורס */
-  activeLessonId?: string | null;
-  /** שורה קצרה מעל הצ'אט (למשל \"מיקוד: …\") */
-  contextHint?: string;
-  /** כותרת; ברירה - עוזר הקורס */
-  title?: string;
+  /** Side sheet (desktop) or bottom sheet (phone) - same content, different chrome. */
+  variant: "side" | "sheet";
+  onClose: () => void;
+  /** The composer, so the opener can move focus into it. */
+  inputRef: RefObject<HTMLTextAreaElement>;
   className?: string;
-  /** פאנל צף - פחות padding / צל */
-  compact?: boolean;
 };
 
-export function AmirantCourseChatPanel({
-  activeLessonId,
-  contextHint,
-  title = "עוזר הקורס (AI)",
-  className,
-  compact,
-}: AmirantCourseChatPanelProps) {
-  const [messages, setMessages] = useState<Msg[]>([]);
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [hintSession, setHintSession] = useState<HintSession | null>(null);
-  const [currentQuestion, setCurrentQuestion] = useState<AmirantQuestionContextDetail | null>(null);
-  // Ref so sendWithPayload (memoized on loading/activeLessonId) can always read the latest value
-  const currentQuestionRef = useRef<AmirantQuestionContextDetail | null>(null);
-  useEffect(() => { currentQuestionRef.current = currentQuestion; }, [currentQuestion]);
-  // בזמן השליחה ה-ref עוד לא כולל את ההודעה החדשה - בדיוק ההיסטוריה שרוצים לשלוח
-  const messagesRef = useRef<Msg[]>([]);
-  useEffect(() => { messagesRef.current = messages; }, [messages]);
+export function AmirantCourseChatPanel({ variant, onClose, inputRef, className }: AmirantCourseChatPanelProps) {
+  const { chat, lessonOnScreen, activeLessonId } = useAmirantCourseAssistant();
+  const { messages, loading, streamingId, error, hintSession, currentQuestion, draft, setDraft, send, sendText, retry } = chat;
+  const [contextHidden, setContextHidden] = useState(false);
+  const [vocabOpen, setVocabOpen] = useState(false);
+  const [vocabWord, setVocabWord] = useState("");
+  const vocabRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = usePrefersReducedMotion();
 
-  const scrollToBottom = useCallback(() => {
-    listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" });
-  }, []);
+  // A turn the learner just sent always comes into view; while the answer streams,
+  // the thread follows it unless the learner scrolled up to read something earlier.
+  const lastUserTurnId = [...messages].reverse().find((m) => m.role === "user")?.id ?? null;
+  const seenUserTurn = useRef<string | null>(null);
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const newTurn = lastUserTurnId !== seenUserTurn.current;
+    seenUserTurn.current = lastUserTurnId;
+    const nearBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 120;
+    if (newTurn || nearBottom) el.scrollTo({ top: el.scrollHeight, behavior: reducedMotion ? "auto" : "smooth" });
+  }, [messages, lastUserTurnId, reducedMotion]);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, loading, scrollToBottom]);
+    if (vocabOpen) vocabRef.current?.focus();
+  }, [vocabOpen]);
 
-  const sendWithPayload = useCallback(
-    async (payload: LessonChatClientPayload) => {
-      const t = payload.userMessage.trim();
-      if (!t || loading) return;
-      setError(null);
-      const userMsg: Msg = { id: `u-${Date.now()}`, role: "user", text: t };
-      setMessages((m) => [...m, userMsg]);
-      setInput("");
-      setLoading(true);
+  const submitVocab = (e: FormEvent) => {
+    e.preventDefault();
+    const w = vocabWord.trim();
+    if (!w) return;
+    setVocabOpen(false);
+    setVocabWord("");
+    void send({ userMessage: `בדיקת מילה: ${w}`, displayText: `בדיקת מילה: ${w}`, clientAction: "vocab_lookup", vocabularyWord: w });
+  };
 
-      const assistantId = `a-${Date.now()}`;
-      // Placeholder message that we'll update with streamed tokens
-      setMessages((m) => [...m, { id: assistantId, role: "assistant", text: "" }]);
-
-      try {
-        const body: Record<string, unknown> = { ...payload, userMessage: t };
-        if (activeLessonId) body.lessonId = activeLessonId;
-        const cq = currentQuestionRef.current;
-        if (cq?.questionText) {
-          body.activeQuestionText = cq.questionText.slice(0, 800);
-          body.activeContext = buildActiveContextPayload(cq);
-        }
-        if (cq?.topic && !body.topic) body.topic = cq.topic;
-        // היסטוריית השיחה (בלי ההודעה הנוכחית שכבר ב-userMessage)
-        const history = buildHistoryPayload(messagesRef.current);
-        if (history.length) body.history = history;
-
-        const res = await fetch("/api/prep/amirant-course/ai/lesson-chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        });
-
-        if (!res.ok || !res.body) {
-          const data = await res.json() as { error?: string };
-          setMessages((m) => m.filter((msg) => msg.id !== assistantId));
-          setError(heApiError(data.error, "הבקשה נכשלה."));
-          return;
-        }
-
-        const reader = res.body.getReader();
-        const decoder = new TextDecoder();
-        let buffer = "";
-        let pendingTok = "";
-        let rafId: number | null = null;
-
-        const flushTok = () => {
-          rafId = null;
-          if (!pendingTok) return;
-          const chunk = pendingTok;
-          pendingTok = "";
-          setMessages((m) =>
-            m.map((msg) => (msg.id === assistantId ? { ...msg, text: unescapeModelText(msg.text + chunk) } : msg)),
-          );
-        };
-
-        const processLine = (line: string) => {
-          if (!line.startsWith("data: ")) return;
-          try {
-            const event = JSON.parse(line.slice(6)) as { t: string; v?: string; d?: Record<string, unknown>; e?: string };
-            if (event.t === "tok" && event.v) {
-              pendingTok += event.v;
-              if (rafId == null) rafId = window.requestAnimationFrame(flushTok);
-            } else if (event.t === "done" && event.d) {
-              if (rafId != null) {
-                window.cancelAnimationFrame(rafId);
-                rafId = null;
-              }
-              flushTok();
-              const data = event.d;
-              const suffix = data.safeFallback ? "\n\n(מצב זהיר - מידע מוגבל/חסר.)" : "";
-              const rec = typeof data.recommendedAction === "string" && data.recommendedAction.trim()
-                ? `\n\n**המלצה:** ${data.recommendedAction}` : "";
-              const finalAnswer = unescapeModelText(typeof data.answer === "string" ? data.answer : "") + suffix + rec;
-              setMessages((m) =>
-                m.map((msg) => msg.id === assistantId ? { ...msg, text: finalAnswer } : msg),
-              );
-              if (data.nextHintAvailable && (Number(data.hintStage) || 0) < 3) {
-                setHintSession({ stage: (Number(data.hintStage) || 1) + 1, questionType: typeof data.questionType === "string" ? data.questionType : undefined });
-              } else if (data.hintStage === 4) {
-                setHintSession(null);
-              }
-            } else if (event.t === "err") {
-              if (rafId != null) window.cancelAnimationFrame(rafId);
-              setMessages((m) => m.filter((msg) => msg.id !== assistantId));
-              setError(heApiError(event.e, "שגיאה."));
-            }
-          } catch {
-            // ignore malformed SSE line
-          }
-        };
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          buffer += decoder.decode(value, { stream: true });
-          const lines = buffer.split("\n");
-          buffer = lines.pop() ?? "";
-          for (const line of lines) {
-            if (line.trim()) processLine(line);
-          }
-        }
-        if (rafId != null) {
-          window.cancelAnimationFrame(rafId);
-          flushTok();
-        }
-      } catch {
-        setMessages((m) => m.filter((msg) => msg.id !== assistantId));
-        setError("שגיאת רשת.");
-      } finally {
-        setLoading(false);
-      }
-    },
-    [loading, activeLessonId],
-  );
-
-  const sendWithText = useCallback(
-    (raw: string) => {
-      setHintSession(null);
-      return void sendWithPayload({ userMessage: raw, clientAction: "auto" });
-    },
-    [sendWithPayload],
-  );
-
-  const send = useCallback(async () => {
-    await sendWithText(input);
-  }, [input, sendWithText]);
-
-  useEffect(() => {
-    const h = (e: Event) => {
-      const d = (e as CustomEvent<AmirantCourseCoachEventDetail>).detail;
-      if (!d?.userMessage?.trim()) return;
-      setError(null);
-      if (d.autoSend) {
-        setInput(d.userMessage);
-        window.setTimeout(() => {
-          void sendWithText(d.userMessage);
-        }, 50);
-        return;
-      }
-      setInput(d.userMessage);
-    };
-    window.addEventListener(AMIRANT_COURSE_COACH_EVENT, h);
-    return () => window.removeEventListener(AMIRANT_COURSE_COACH_EVENT, h);
-  }, [sendWithText]);
-
-  useEffect(() => {
-    const h = (e: Event) => {
-      const d = (e as CustomEvent<AmirantQuestionContextDetail>).detail;
-      if (d) setCurrentQuestion(d);
-    };
-    window.addEventListener(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, h);
-    return () => window.removeEventListener(AMIRANT_COURSE_QUESTION_CONTEXT_EVENT, h);
-  }, []);
-
-  // Timed unit and no answer yet: the server would refuse anyway; do not offer the button.
+  const hasConversation = messages.length > 0;
+  // Hints and the solution belong to a question; a content slide gets only the general actions.
+  const questionOnScreen = currentQuestion?.kind === "quiz_question" || Boolean(currentQuestion?.options?.length);
+  // Timed unit and no answer yet: the server would refuse anyway; say so instead of offering it.
   const revealLocked = Boolean(currentQuestion?.timed) && currentQuestion?.answered !== true;
 
-  const inner = (
-    <>
-      <Text as="h2" variant="headlineSm" className={cn(compact && "text-base")}>
-        {title}
-      </Text>
-      {contextHint ? (
-        <Text as="p" variant="caption" className="text-muted">
-          {contextHint}
-        </Text>
-      ) : null}
+  const generalActions = (
+    <GeneralActions
+      disabled={loading}
+      onVocab={() => setVocabOpen(true)}
+      onPerformance={() => void send({ userMessage: "נתח את הביצועים שלי", displayText: "הביצועים שלי", clientAction: "performance" })}
+      onRecommend={() => void send({ userMessage: "מה כדאי לי לעשות עכשיו?", displayText: "מה כדאי עכשיו", clientAction: "recommend" })}
+    />
+  );
 
-      <div
-        ref={listRef}
-        className={cn(
-          "space-y-3 overflow-y-auto rounded-control border border-line/50 bg-surface-low/40 p-3 text-sm",
-          compact ? "max-h-[min(50vh,320px)]" : "max-h-[min(40vh,360px)]",
-        )}
-      >
-        {messages.length === 0 ? (
-          <div className="space-y-2.5">
-            <p className="text-muted">
-              {activeLessonId
-                ? "שאלו על תוכן השיעור: ניסוח, אסטרטגיה, או נקודה שלא הובנה."
-                : "שאלו כל נושא הקשור לקורס (מבחן, מודול, תרגול). ניסוח ספציפי עוזר."}
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {STARTER_PROMPTS.map((q) => (
-                <button
-                  key={q}
-                  type="button"
-                  disabled={loading}
-                  onClick={() => void sendWithText(q)}
-                  className="rounded-full border border-primary/25 bg-paper px-3 py-1.5 text-xs text-primary transition hover:bg-primary/5"
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
-          </div>
-        ) : null}
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={cn(
-              "rounded-lg px-3 py-2 leading-relaxed",
-              msg.role === "user" ? "ms-8 bg-primary/10 text-ink" : "me-8 border border-line/60 bg-paper text-ink",
-            )}
-          >
-            {msg.role === "assistant" ? (
-              msg.text ? (
-                <PremiumMarkdownBody body={msg.text} variant="card" />
-              ) : (
-                <span className="inline-flex gap-1 text-muted" aria-label="העוזר מקליד">
-                  <span className="animate-bounce">·</span>
-                  <span className="animate-bounce [animation-delay:120ms]">·</span>
-                  <span className="animate-bounce [animation-delay:240ms]">·</span>
-                </span>
-              )
-            ) : (
-              <span className="whitespace-pre-line">{msg.text}</span>
-            )}
-          </div>
-        ))}
+  return (
+    <div className={cn("flex h-full min-h-0 flex-col bg-paper text-ink", className)} dir="rtl" lang="he">
+      {/* Header: the product label and the one control. The sheet adds its handle above this. */}
+      <div className="flex h-14 shrink-0 items-center justify-between border-b border-line ps-5 pe-2">
+        <div className="flex items-baseline gap-3">
+          <span className="text-[13px] font-extrabold tracking-wide text-primary" aria-hidden>
+            PREPARE
+          </span>
+          <Text as="h2" variant="title" className="text-base">
+            עוזר הקורס
+          </Text>
+        </div>
+        <button type="button" onClick={onClose} className={textButton} aria-label="סגירת עוזר הקורס">
+          סגירה
+        </button>
       </div>
 
-      {error ? <p className="text-sm text-red-600 dark:text-red-400">{error}</p> : null}
-
-      {currentQuestion && (
-        <div className="rounded-lg border border-line/40 bg-surface-low/60 px-3 py-2 text-xs text-muted">
-          <span className="font-semibold text-ink/70">שאלה נוכחית: </span>
-          {currentQuestion.questionText.slice(0, 80)}{currentQuestion.questionText.length > 80 ? "…" : ""}
+      {currentQuestion ? (
+        <div className="flex shrink-0 items-start justify-between gap-3 border-b border-line ps-5 pe-2 py-1.5">
+          {contextHidden ? (
+            <Text as="p" variant="caption" className="py-2.5">
+              על המסך: מוסתר
+            </Text>
+          ) : (
+            <Text as="p" variant="caption" className="min-w-0 truncate py-2.5" title={truncateStem(currentQuestion.questionText, 300)}>
+              <span className="text-ink/70">על המסך: </span>
+              <span dir="auto">{truncateStem(currentQuestion.questionText, 160)}</span>
+            </Text>
+          )}
+          <button
+            type="button"
+            onClick={() => setContextHidden((v) => !v)}
+            className={cn(textButton, "shrink-0 text-xs")}
+            aria-pressed={contextHidden}
+          >
+            {contextHidden ? "הצג" : "הסתר"}
+          </button>
         </div>
-      )}
+      ) : null}
 
-      {/* Question actions only exist while a question is on screen; a content
-          slide gets the three general ones. */}
-      <div className="flex flex-wrap items-center gap-1.5">
-        {currentQuestion ? (
-          <>
+      {/* The thread */}
+      <div
+        ref={listRef}
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions text"
+        aria-label="השיחה עם העוזר"
+        className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 py-5 [-webkit-overflow-scrolling:touch]"
+      >
+        {!hasConversation ? (
+          <div className="space-y-6">
+            <Text as="p" variant="body" className="text-[15px] leading-7">
+              {lessonOnScreen
+                ? "שאלו על השיעור הפתוח: ניסוח, אסטרטגיה, או נקודה שלא הובנה."
+                : activeLessonId
+                  ? "שאלו על השיעור האחרון שנפתח, או על כל נושא בקורס."
+                  : "שאלו על המבחן, על שאלה שעל המסך, או על נושא מהקורס."}
+            </Text>
+            <ul className="space-y-1">
+              {STARTER_PROMPTS.map((q) => (
+                <li key={q}>
+                  <button type="button" disabled={loading} onClick={() => void sendText(q)} className={linkButton}>
+                    {q}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-line pt-4">
+              <Text as="p" variant="caption" className="mb-1">
+                עוד אפשרויות
+              </Text>
+              {generalActions}
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {messages.map((m) => (
+              <Turn key={m.id} message={m} streaming={m.id === streamingId} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Question actions: one row, hairlines between, text only. */}
+      {currentQuestion && questionOnScreen ? (
+        <div className="flex shrink-0 items-stretch border-t border-line">
+          <div className="flex min-w-0 flex-1 items-stretch divide-x divide-x-reverse divide-line">
             <button
               type="button"
-              className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+              className={cn(textButton, "px-4")}
               disabled={loading}
-              onClick={() => void sendWithPayload({
-                userMessage: `תן לי רמז לשאלה הזאת (בקצרה): "${currentQuestion.questionText.slice(0, 120)}"`,
-                clientAction: "hint",
-                topic: currentQuestion.topic,
-                stagedHintContext: { questionType: currentQuestion.questionType },
-              })}
+              onClick={() =>
+                void send({
+                  userMessage: `תן לי רמז לשאלה הזאת (בקצרה): "${truncateStem(currentQuestion.questionText, 120)}"`,
+                  displayText: "רמז",
+                  clientAction: "hint",
+                  topic: currentQuestion.topic,
+                  stagedHintContext: { questionType: currentQuestion.questionType },
+                })
+              }
             >
               רמז
             </button>
             {hintSession ? (
               <button
                 type="button"
-                className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+                className={cn(textButton, "px-4")}
                 disabled={loading}
                 onClick={() =>
-                  void sendWithPayload({
+                  void send({
                     userMessage: "רמז נוסף",
+                    displayText: "רמז נוסף",
                     clientAction: "next_hint",
                     topic: currentQuestion.topic,
                     stagedHintContext: { stage: hintSession.stage, questionType: hintSession.questionType ?? currentQuestion.questionType },
@@ -376,100 +208,248 @@ export function AmirantCourseChatPanel({
               </button>
             ) : null}
             {revealLocked ? (
-              <span className="px-1 text-xs text-muted">הפתרון ייפתח אחרי שתענו</span>
+              <span className="inline-flex min-h-11 items-center px-4 text-sm text-muted-2">הפתרון ייפתח אחרי שתענו</span>
             ) : (
               <button
                 type="button"
-                className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
+                className={cn(textButton, "px-4")}
                 disabled={loading}
-                onClick={() => void sendWithPayload({
-                  userMessage: `גלה את התשובה לשאלה הזאת עם הסבר: "${currentQuestion.questionText.slice(0, 120)}"`,
-                  clientAction: "reveal",
-                  topic: currentQuestion.topic,
-                })}
+                onClick={() =>
+                  void send({
+                    userMessage: `גלה את התשובה לשאלה הזאת עם הסבר: "${truncateStem(currentQuestion.questionText, 120)}"`,
+                    displayText: "פתרון",
+                    clientAction: "reveal",
+                    topic: currentQuestion.topic,
+                  })
+                }
               >
                 פתרון
               </button>
             )}
-          </>
-        ) : null}
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() => {
-            const w = window.prompt("איזו מילה (אנגלית) לבדיקה מול מאגר אוצר המילים?", "")?.trim();
-            if (!w) return;
-            void sendWithPayload({
-              userMessage: `בדיקת מילה: ${w}`,
-              clientAction: "vocab_lookup",
-              vocabularyWord: w,
-            });
-          }}
-        >
-          בדוק מילה
-        </button>
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() => void sendWithPayload({ userMessage: "נתח את הביצועים שלי", clientAction: "performance" })}
-        >
-          ביצועים
-        </button>
-        <button
-          type="button"
-          className="rounded-md border border-line/60 bg-paper/90 px-2 py-1 text-xs text-ink/90 hover:border-primary/30 disabled:opacity-50"
-          disabled={loading}
-          onClick={() => void sendWithPayload({ userMessage: "מה כדאי לי לעשות עכשיו?", clientAction: "recommend" })}
-        >
-          מה לעשות
-        </button>
-      </div>
+          </div>
+          {hasConversation ? <MoreDisclosure>{generalActions}</MoreDisclosure> : null}
+        </div>
+      ) : hasConversation ? (
+        <div className="flex shrink-0 justify-end border-t border-line">
+          <MoreDisclosure>{generalActions}</MoreDisclosure>
+        </div>
+      ) : null}
 
-      <div className="flex gap-2">
-        <input
-          type="text"
-          dir="rtl"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault();
-              void send();
-            }
-          }}
-          placeholder="שאלה…"
-          className="min-h-11 min-w-0 flex-1 rounded-control border border-line/70 bg-paper px-3 text-sm text-ink placeholder:text-muted"
-          aria-label="הודעה לעוזר"
-          disabled={loading}
-        />
-        <button
-          type="button"
-          onClick={() => void send()}
-          disabled={!input.trim() || loading}
-          className="shrink-0 rounded-control bg-primary px-4 py-2 text-sm font-semibold text-white disabled:opacity-45"
-        >
-          שליחה
-        </button>
-      </div>
-    </>
-  );
+      {vocabOpen ? (
+        <form onSubmit={submitVocab} className="flex shrink-0 items-end gap-2 border-t border-line px-4 py-3">
+          <label className="min-w-0 flex-1">
+            <Text as="span" variant="caption" className="mb-1 block">
+              מילה באנגלית לבדיקה מול מאגר אוצר המילים
+            </Text>
+            <input
+              ref={vocabRef}
+              type="text"
+              dir="ltr"
+              lang="en"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
+              maxLength={80}
+              value={vocabWord}
+              onChange={(e) => setVocabWord(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  e.stopPropagation();
+                  setVocabOpen(false);
+                }
+              }}
+              className="min-h-11 w-full rounded-control border border-line bg-paper px-3 text-[15px] text-ink placeholder:text-muted-2 focus:border-primary focus:outline-none"
+              placeholder="reluctant"
+            />
+          </label>
+          <button type="submit" disabled={!vocabWord.trim() || loading} className={textButton}>
+            בדיקה
+          </button>
+          <button type="button" onClick={() => setVocabOpen(false)} className={cn(textButton, "text-muted")}>
+            ביטול
+          </button>
+        </form>
+      ) : null}
 
-  if (compact) {
-    return (
-      <div
-        className={cn("flex max-h-[85vh] flex-col overflow-hidden rounded-2xl border border-line/80 bg-paper shadow-2xl", className)}
-      >
-        <div className="space-y-2.5 overflow-y-auto p-4">{inner}</div>
-      </div>
-    );
-  }
-
-  return (
-    <Card className={cn("border-primary/15", className)}>
-      <CardBody className="space-y-3 p-5">{inner}</CardBody>
-    </Card>
+      <Composer
+        inputRef={inputRef}
+        value={draft}
+        onChange={setDraft}
+        onSend={() => void sendText(draft)}
+        disabled={loading}
+        error={error}
+        onRetry={() => void retry()}
+        variant={variant}
+      />
+    </div>
   );
 }
 
+function Turn({ message, streaming }: { message: AssistantMessage; streaming: boolean }) {
+  if (message.role === "user") {
+    return (
+      <div className="ms-8 rounded bg-surface-low px-3.5 py-2.5 text-[15px] leading-7 text-ink">
+        <p className="whitespace-pre-line [overflow-wrap:anywhere]" dir="auto">
+          {message.text}
+        </p>
+      </div>
+    );
+  }
+  return (
+    <div className="me-2">
+      <p className="mb-1 text-[11px] font-bold tracking-wide text-muted-2" aria-hidden>
+        PREPARE
+      </p>
+      {message.text ? (
+        <div className="text-[15px] leading-7 [&_li]:text-[15px] [&_li]:leading-7 [&_p]:text-[15px] [&_p]:leading-7">
+          <PremiumMarkdownBody body={message.text} variant="card" />
+          {streaming ? <StreamCaret /> : null}
+        </div>
+      ) : (
+        <p className="text-[15px] leading-7 text-muted">
+          כותב…
+          <span className="sr-only">העוזר מכין תשובה</span>
+        </p>
+      )}
+    </div>
+  );
+}
+
+function StreamCaret() {
+  return <span aria-hidden className="ms-0.5 inline-block h-4 w-px translate-y-[3px] bg-ink/60 motion-safe:animate-pulse" />;
+}
+
+function GeneralActions({
+  disabled,
+  onVocab,
+  onPerformance,
+  onRecommend,
+}: {
+  disabled: boolean;
+  onVocab: () => void;
+  onPerformance: () => void;
+  onRecommend: () => void;
+}) {
+  return (
+    <ul className="divide-y divide-line">
+      <li>
+        <button type="button" disabled={disabled} onClick={onVocab} className={linkButton}>
+          בדיקת מילה
+        </button>
+      </li>
+      <li>
+        <button type="button" disabled={disabled} onClick={onPerformance} className={linkButton}>
+          הביצועים שלי
+        </button>
+      </li>
+      <li>
+        <button type="button" disabled={disabled} onClick={onRecommend} className={linkButton}>
+          מה כדאי עכשיו
+        </button>
+      </li>
+    </ul>
+  );
+}
+
+/** The general actions once a conversation exists: behind a plain text disclosure. */
+function MoreDisclosure({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="relative shrink-0 border-s border-line">
+      <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className={cn(textButton, "px-4")}>
+        {open ? "סגירה" : "עוד"}
+      </button>
+      {open ? (
+        <div className="absolute bottom-full end-0 z-10 mb-px w-56 border border-line bg-paper px-4 py-1">
+          <div onClick={() => setOpen(false)}>{children}</div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function Composer({
+  inputRef,
+  value,
+  onChange,
+  onSend,
+  disabled,
+  error,
+  onRetry,
+  variant,
+}: {
+  inputRef: RefObject<HTMLTextAreaElement>;
+  value: string;
+  onChange: (v: string) => void;
+  onSend: () => void;
+  disabled: boolean;
+  error: string | null;
+  onRetry: () => void;
+  variant: "side" | "sheet";
+}) {
+  const remaining = remainingCounter(value.length);
+  const canSend = Boolean(value.trim()) && !disabled;
+
+  // Grows with the text up to four lines, then scrolls.
+  const grow = useCallback(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    el.style.height = `${Math.min(el.scrollHeight, 120)}px`;
+  }, [inputRef]);
+  useLayoutEffect(grow, [value, grow]);
+
+  const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+      e.preventDefault();
+      if (canSend) onSend();
+    }
+  };
+
+  return (
+    <div className={cn("shrink-0 border-t border-line px-4 pt-3", variant === "sheet" ? "pb-[max(0.75rem,env(safe-area-inset-bottom))]" : "pb-3")}>
+      <div className="flex items-end gap-2">
+        <label className="min-w-0 flex-1">
+          <span className="sr-only">הודעה לעוזר</span>
+          <textarea
+            ref={inputRef}
+            rows={1}
+            dir="auto"
+            value={value}
+            maxLength={ASSISTANT_MESSAGE_MAX}
+            onChange={(e) => onChange(e.target.value)}
+            onKeyDown={onKeyDown}
+            placeholder="כתבו שאלה…"
+            aria-describedby={error ? "amirant-assistant-error" : undefined}
+            aria-invalid={error ? true : undefined}
+            className="block max-h-[120px] min-h-11 w-full resize-none rounded-control border border-line bg-paper px-3 py-2.5 text-[15px] leading-6 text-ink placeholder:text-muted-2 focus:border-primary focus:outline-none disabled:text-muted"
+          />
+        </label>
+        <button type="button" onClick={onSend} disabled={!canSend} className={cn(textButton, "shrink-0")}>
+          שליחה
+        </button>
+      </div>
+      <div className="mt-1.5 flex min-h-5 items-start justify-between gap-3">
+        {error ? (
+          <p id="amirant-assistant-error" role="alert" className="text-sm leading-5 text-pen">
+            {error}{" "}
+            <button type="button" onClick={onRetry} className="font-semibold text-primary underline underline-offset-4">
+              נסו שוב
+            </button>
+          </p>
+        ) : variant === "side" ? (
+          <Text as="p" variant="caption" className="text-xs">
+            Enter לשליחה, Shift+Enter לשורה חדשה
+          </Text>
+        ) : (
+          <span />
+        )}
+        {remaining != null ? (
+          <Text as="p" variant="caption" className={cn("shrink-0 text-xs tabular-nums", remaining === 0 && "text-pen")} aria-live="polite">
+            נותרו {remaining}
+          </Text>
+        ) : null}
+      </div>
+    </div>
+  );
+}

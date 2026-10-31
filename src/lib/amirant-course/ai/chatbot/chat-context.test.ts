@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildLearnerProfileText, isRevealBlocked, resolveActiveContextForPrompt } from "./chat-context";
+import { buildLearnerProfileText, isRevealBlocked, resolveActiveContextForPrompt, shouldUseStagedHelp } from "./chat-context";
 
 const key = (id: string) => (id === "q1" ? { correctOptionId: "c", explanation: "why" } : undefined);
 
@@ -24,6 +24,17 @@ describe("resolveActiveContextForPrompt", () => {
   it("attaches the key for untimed practice", () => {
     const out = resolveActiveContextForPrompt({ kind: "quiz_question", text: "Q", questionId: "q1", timed: false }, key);
     expect(out?.answerKey?.correctOptionId).toBe("c");
+  });
+
+  it("withholds the key while hints are staged, even on untimed practice", () => {
+    const out = resolveActiveContextForPrompt(
+      { kind: "quiz_question", text: "Q", questionId: "q1", timed: false, answered: true },
+      () => {
+        throw new Error("must not be called");
+      },
+      { staged: true },
+    );
+    expect(out?.answerKey).toBeUndefined();
   });
 
   it("lesson steps pass through without a key lookup", () => {
@@ -66,5 +77,32 @@ describe("buildLearnerProfileText", () => {
   it("has fixed copy for guests and for signed-in learners without history", () => {
     expect(buildLearnerProfileText({ topicRollups: [], adaptiveState: [] }, null, false)).toBe("guest - no history.");
     expect(buildLearnerProfileText({ topicRollups: [], adaptiveState: [] }, null, true)).toBe("signed in - no quiz history yet.");
+  });
+});
+
+describe("shouldUseStagedHelp", () => {
+  const unanswered = { kind: "quiz_question" as const, text: "Q", timed: true, answered: false };
+  const answered = { kind: "quiz_question" as const, text: "Q", timed: true, answered: true };
+  const step = { kind: "lesson_step" as const, text: "T" };
+
+  it("stages help for an unanswered question on screen", () => {
+    expect(shouldUseStagedHelp({ intent: "question_help", wantsReveal: false, active: unanswered })).toBe(true);
+  });
+
+  it("an explicit hint request is staged even without a question on screen", () => {
+    expect(shouldUseStagedHelp({ intent: "staged_hint", wantsReveal: false, active: undefined })).toBe(true);
+  });
+
+  it("a strategy question with no question on screen gets a full answer, not a stage-1 clue", () => {
+    expect(shouldUseStagedHelp({ intent: "question_help", wantsReveal: false, active: undefined })).toBe(false);
+    expect(shouldUseStagedHelp({ intent: "question_help", wantsReveal: false, active: step })).toBe(false);
+  });
+
+  it("an answered question is explained in full (the key is allowed there)", () => {
+    expect(shouldUseStagedHelp({ intent: "question_help", wantsReveal: false, active: answered })).toBe(false);
+  });
+
+  it("a reveal is never staged", () => {
+    expect(shouldUseStagedHelp({ intent: "staged_hint", wantsReveal: true, active: unanswered })).toBe(false);
   });
 });
