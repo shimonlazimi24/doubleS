@@ -22,7 +22,7 @@ function NavLink({ href, label, exact }: { href: string; label: string; exact?: 
       href={href}
       className={cn(
         // 44px tap target on phones (WCAG 2.5.5); the desktop row keeps its height.
-        "relative inline-flex min-h-11 items-center px-1 text-sm font-medium transition-colors lg:min-h-10",
+        "relative inline-flex min-h-11 items-center whitespace-nowrap px-1 text-sm font-medium transition-colors lg:min-h-10",
         active ? "text-ink" : "text-muted hover:text-ink",
       )}
     >
@@ -58,14 +58,14 @@ export function MarketingNav() {
       <nav
         dir="rtl"
         aria-label="ניווט ראשי"
-        className="order-3 flex w-full items-center gap-x-6 border-t border-line/60 lg:order-2 lg:ms-auto lg:w-auto lg:border-0 lg:gap-x-8"
+        className="order-3 flex w-full items-center gap-x-4 border-t border-line/60 sm:gap-x-6 lg:order-2 lg:ms-auto lg:w-auto lg:border-0 lg:gap-x-8"
       >
         {LINKS.map((item) => (
           <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
         ))}
         <Link
           href={`${PREP_BASE}/settings`}
-          className="ms-auto inline-flex min-h-11 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:hidden"
+          className="ms-auto inline-flex min-h-11 items-center whitespace-nowrap px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:hidden"
         >
           אזור אישי
         </Link>
