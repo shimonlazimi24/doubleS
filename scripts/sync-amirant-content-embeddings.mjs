@@ -87,10 +87,59 @@ function blockToText(block) {
   return `${block.title ?? ""}\n${block.body ?? ""}`.trim();
 }
 
+const SYNC_REGISTRY_PATH = path.join(ROOT, "src", "lib", "amirant-course", "amirnet-content-sync.ts");
+const MARKDOWN_ROOT = path.join(ROOT, "content", "amirnet-course");
+const MANIFEST_PATH = path.join(ROOT, "src", "lib", "amirant-course", "generated", "course-manifest.json");
+/** Simulation pool items are met cold inside a simulation; their explanations must never be retrievable. */
+const NEVER_INDEX_TAGS = new Set(["owner_sim_pool"]);
+const MARKDOWN_CHUNK_CHARS = 3500;
+
+/**
+ * Lesson id → markdown path pairs, read from the course's own registry so the
+ * index covers every lesson the course shows (lessons.json only has the
+ * original 29). Parsed as text because this script runs without the TS loader.
+ */
+function readMarkdownLessonRegistry() {
+  if (!fs.existsSync(SYNC_REGISTRY_PATH)) return [];
+  const src = fs.readFileSync(SYNC_REGISTRY_PATH, "utf8");
+  return Array.from(src.matchAll(/\[\s*"(lesson\.[^"]+)"\s*,\s*"([^"]+\.md)"\s*\]/g), (m) => ({ lessonId: m[1], file: m[2] }));
+}
+
+function manifestTitles() {
+  if (!fs.existsSync(MANIFEST_PATH)) return new Map();
+  const manifest = readJson(MANIFEST_PATH);
+  const titles = new Map();
+  for (const mod of manifest.modules ?? []) {
+    for (const lesson of mod.lessons ?? []) titles.set(lesson.id, { title: lesson.title, moduleSlug: mod.id ?? mod.slug ?? null });
+  }
+  return titles;
+}
+
+/** Splits markdown on level-2/3 headings, then packs sections into chunks of at most MARKDOWN_CHUNK_CHARS. */
+function splitMarkdown(md) {
+  const sections = md.split(/\n(?=#{2,3} )/g).map((s) => s.trim()).filter(Boolean);
+  const out = [];
+  let current = "";
+  for (const section of sections) {
+    if (current && current.length + section.length + 2 > MARKDOWN_CHUNK_CHARS) {
+      out.push(current);
+      current = "";
+    }
+    if (section.length > MARKDOWN_CHUNK_CHARS) {
+      for (let i = 0; i < section.length; i += MARKDOWN_CHUNK_CHARS) out.push(section.slice(i, i + MARKDOWN_CHUNK_CHARS));
+      continue;
+    }
+    current = current ? `${current}\n\n${section}` : section;
+  }
+  if (current) out.push(current);
+  return out;
+}
+
 function buildChunks() {
   const lessons = readJson(LESSONS_PATH);
   const questions = readJson(QUESTIONS_PATH);
   const chunks = [];
+  const indexedLessonIds = new Set(lessons.map((l) => String(l.lessonId ?? "").trim()).filter(Boolean));
 
   for (const lesson of lessons) {
     const lessonId = String(lesson.lessonId ?? "").trim();
@@ -120,10 +169,30 @@ function buildChunks() {
     });
   }
 
+  const titles = manifestTitles();
+  for (const { lessonId, file } of readMarkdownLessonRegistry()) {
+    if (indexedLessonIds.has(lessonId)) continue;
+    const abs = path.join(MARKDOWN_ROOT, file);
+    if (!fs.existsSync(abs)) continue;
+    const md = sanitizeText(fs.readFileSync(abs, "utf8"));
+    const meta = titles.get(lessonId) ?? { title: lessonId, moduleSlug: null };
+    splitMarkdown(md).forEach((part, i) => {
+      chunks.push({
+        sourceKey: `lesson_md:${lessonId}:${i}`,
+        moduleSlug: meta.moduleSlug,
+        lessonId,
+        topic: null,
+        chunkText: `${meta.title}\n\n${part}`.slice(0, 4000),
+        metadata: { source_kind: "lesson_text", lessonId, moduleSlug: meta.moduleSlug, part: i },
+      });
+    });
+  }
+
   for (const question of questions) {
     const questionId = String(question.questionId ?? "").trim();
     const explanation = String(question.explanation ?? "").trim();
     if (!questionId || !explanation) continue;
+    if ((question.tags ?? []).some((t) => NEVER_INDEX_TAGS.has(t))) continue;
     const topic = String(question.topic ?? "").trim() || null;
     const prompt = String(question.questionText ?? "").trim();
     const text = [prompt, `Explanation: ${explanation}`]
