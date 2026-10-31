@@ -3,6 +3,10 @@ import { PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { EXAM_SCORED_QUESTION_COUNT } from "@/lib/amirant-course/exam-facts";
 import { buildLlmsTxtBody } from "@/lib/prep/llms-txt-body";
+import { buildLlmsFullTxtBody } from "@/lib/prep/llms-full-txt-body";
+import { listBlogPosts } from "@/lib/prep/blog.server";
+import { blogInternalLinks, blogTopicOf, blogWordCount } from "@/lib/prep/blog-meta";
+import { SAMPLE_QUESTIONS } from "@/lib/prep/marketing/sample-questions";
 import {
   AMIRANT_COURSE_COUNTS,
   AMIRANT_FAQ,
@@ -15,6 +19,7 @@ import {
   articleJsonLd,
   breadcrumbJsonLd,
   organizationJsonLd,
+  sampleQuestionsQuizJsonLd,
   websiteJsonLd,
   type JsonLdObject,
 } from "./json-ld";
@@ -183,6 +188,90 @@ describe("sitemap", () => {
 
   it("drops the blog index when there are no posts", () => {
     expect(buildPrepSitemap(BASE, []).map((e) => e.url)).not.toContain(`${BASE}/prep/blog`);
+  });
+});
+
+describe("guides", () => {
+  const posts = listBlogPosts();
+
+  it("ships the seven guides and the three original posts", () => {
+    const slugs = posts.map((p) => p.slug);
+    for (const s of [
+      "what-is-amirant",
+      "amirant-passing-score",
+      "amirant-reform-2026",
+      "amirant-exam-structure-2026",
+      "amirant-vs-amir",
+      "amirant-listening-section",
+      "amirant-writing-task",
+      "amirant-grammar-in-context",
+      "amirant-word-formation",
+      "how-long-to-prepare-for-amirant",
+    ]) {
+      expect(slugs).toContain(s);
+    }
+  });
+
+  it("every post fits the SERP, is dated, keyworded, long enough and links inward", () => {
+    for (const p of posts) {
+      const full = `${p.title}${TITLE_SUFFIX}`;
+      expect(full.length, `${p.slug} title: ${full}`).toBeLessThanOrEqual(TITLE_MAX);
+      expect(p.description.length, `${p.slug} description`).toBeLessThanOrEqual(DESCRIPTION_MAX);
+      expect(p.description.length, `${p.slug} description too short`).toBeGreaterThanOrEqual(50);
+      expect(p.date, `${p.slug} date`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      if (p.updated) expect(p.updated >= p.date, `${p.slug} updated before date`).toBe(true);
+      expect(p.keywords.length, `${p.slug} keywords`).toBeGreaterThanOrEqual(3);
+      expect(blogWordCount(p.body), `${p.slug} words`).toBeGreaterThanOrEqual(800);
+      const links = blogInternalLinks(p.body);
+      expect(links, `${p.slug} internal links`).toContain("/prep/amirant");
+      expect(links.some((l) => l.startsWith("/prep/blog/")), `${p.slug} sibling guide link`).toBe(true);
+      expect(p.body, `${p.slug} sources line`).toContain("nite.org.il");
+      // Emoji live in the astral planes (surrogate pairs) or the misc-symbols block.
+      expect(`${p.title}${p.description}${p.body}`, `${p.slug} emoji`).not.toMatch(/[\uD83C-\uD83E][\uDC00-\uDFFF]|[☀-➿]/);
+      expect(p.body, `${p.slug} singular address`).not.toMatch(/(^|\s)(שלך|אתה|תוכל|תוכלי|תרצה|תרצי)(\s|$|[,.])/);
+    }
+  });
+
+  it("every sibling link points at a post that exists", () => {
+    const slugs = new Set(posts.map((p) => p.slug));
+    for (const p of posts) {
+      for (const l of blogInternalLinks(p.body).filter((l) => l.startsWith("/prep/blog/"))) {
+        expect(slugs.has(l.replace("/prep/blog/", "")), `${p.slug} -> ${l}`).toBe(true);
+      }
+    }
+  });
+
+  it("every post files under a topic, and titles are unique", () => {
+    for (const p of posts) expect(blogTopicOf(p.slug).id, p.slug).not.toBe("other");
+    expect(new Set(posts.map((p) => p.title)).size).toBe(posts.length);
+    expect(new Set(posts.map((p) => p.description)).size).toBe(posts.length);
+  });
+
+  it("the sample questions page is in the sitemap and in page-meta, with a Quiz that mirrors the list", () => {
+    const urls = buildPrepSitemap(BASE, []).map((e) => e.url);
+    expect(urls).toContain(`${BASE}/prep/amirant/sample-questions`);
+    expect(PREP_PAGE_META.sampleQuestions.title).toContain("אמירנט");
+    expect(SAMPLE_QUESTIONS.length).toBeGreaterThanOrEqual(8);
+    expect(SAMPLE_QUESTIONS.length).toBeLessThanOrEqual(10);
+    for (const q of SAMPLE_QUESTIONS) expect(q.correct, q.id).toBeLessThan(q.options.length);
+    const quiz = roundTrip(sampleQuestionsQuizJsonLd(BASE));
+    const parts = quiz.hasPart as Array<{ name: string; acceptedAnswer: { text: string } }>;
+    expect(parts.map((p) => p.name)).toEqual(SAMPLE_QUESTIONS.map((q) => q.stem));
+    expect(parts.map((p) => p.acceptedAnswer.text)).toEqual(SAMPLE_QUESTIONS.map((q) => q.options[q.correct]));
+  });
+
+  it("llms-full.txt carries every guide in full and llms.txt points at it", () => {
+    const full = buildLlmsFullTxtBody(BASE, posts);
+    for (const p of posts) {
+      expect(full).toContain(`## ${p.title}`);
+      expect(full).toContain(`${BASE}/prep/blog/${p.slug}`);
+      // The markdown link to the hub becomes an absolute URL in parentheses.
+      expect(full).toContain(`(${BASE}/prep/amirant)`);
+    }
+    expect(full).not.toMatch(/\]\(\/prep/);
+    const short = buildLlmsTxtBody(BASE, posts);
+    expect(short).toContain(`${BASE}/llms-full.txt`);
+    expect(short).toContain(`${BASE}/prep/amirant/sample-questions`);
   });
 });
 

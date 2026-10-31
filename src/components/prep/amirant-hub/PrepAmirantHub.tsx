@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ButtonLink, Container } from "@/components/ui";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
@@ -107,6 +108,13 @@ export function PrepAmirantHub() {
             <h2 className="text-[2.2rem] font-black leading-[1.12] tracking-tight md:text-[2.9rem]">מתחילים במבחן רמה. 15 שאלות, עשר דקות, בלי תשלום.</h2>
             <p className="mx-auto mt-4 max-w-[38rem] text-lg leading-relaxed text-white/80 md:text-xl">
               בסוף: הערכת רמה משוערת, הנושאים החלשים, ומאיפה להתחיל בקורס. מודול המבוא פתוח גם הוא בלי תשלום.
+            </p>
+            <p className="mx-auto mt-3 max-w-[38rem] text-[16px] leading-relaxed text-white/70">
+              רוצים לראות קודם איך השאלות נראות?{" "}
+              <Link href={`${PREP_BASE}/amirant/sample-questions`} className="font-semibold text-white underline-offset-4 hover:underline">
+                עשר שאלות לדוגמה עם תשובות
+              </Link>
+              , בלי הרשמה.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <ButtonLink

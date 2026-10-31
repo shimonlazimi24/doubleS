@@ -14,10 +14,12 @@ export const PREP_SITEMAP_PAGES: readonly {
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
   priority: number;
 }[] = [
-  { path: "/prep", lastModified: "2026-10-22", changeFrequency: "weekly", priority: 1.0 },
-  { path: "/prep/amirant", lastModified: "2026-10-22", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/prep", lastModified: "2026-10-31", changeFrequency: "weekly", priority: 1.0 },
+  { path: "/prep/amirant", lastModified: "2026-10-31", changeFrequency: "weekly", priority: 0.95 },
+  { path: "/prep/amirant/sample-questions", lastModified: "2026-10-31", changeFrequency: "monthly", priority: 0.8 },
   { path: "/prep/pricing", lastModified: "2026-10-22", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/prep/blog", lastModified: "2026-07-22", changeFrequency: "weekly", priority: 0.75 },
+  // The index follows its newest post (see buildPrepSitemap), so this date only matters while it is newer.
+  { path: "/prep/blog", lastModified: "2026-07-22", changeFrequency: "weekly", priority: 0.8 },
   { path: "/prep/courses", lastModified: "2026-07-12", changeFrequency: "monthly", priority: 0.5 },
   { path: "/prep/about", lastModified: "2026-08-20", changeFrequency: "monthly", priority: 0.6 },
   { path: "/prep/contact", lastModified: "2026-08-20", changeFrequency: "yearly", priority: 0.4 },

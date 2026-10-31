@@ -4,7 +4,7 @@ export const PREP_MARKETING_TITLES: Record<PrepMarketingSlug, string> = {
   toefl: "TOEFL",
   amirant: "אמירנט",
   pricing: "מחירים",
-  blog: "בלוג",
+  blog: "מדריכים",
   about: "אודות",
   contact: "יצירת קשר",
   privacy: "מדיניות פרטיות",
@@ -143,7 +143,7 @@ const FALLBACK_INTROS: Partial<Record<PrepMarketingSlug, string>> = {
   login: "מעבר לעמוד ההתחברות…",
   amirant: "עמוד אמירנט הראשי מוביל ישירות לקורס ההכנה המלא.",
   toefl: "קורס ההכנה ל-TOEFL בפיתוח - בקרוב. בינתיים, קורס ההכנה לאמירנט פתוח ופעיל.",
-  blog: "מאמרים, טיפים ועדכונים על מבחן האמירנט - בקרוב.",
+  blog: "מדריכים להכנה לאמירנט, כתובים מחומר הקורס.",
 };
 
 /** גוף פשוט לסלאגים בלי תוכן מובנה (toefl/blog). */

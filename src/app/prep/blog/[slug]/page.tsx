@@ -5,11 +5,13 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { getBlogPost, listBlogPosts } from "@/lib/prep/blog.server";
+import { blogReadingMinutes, blogTopicOf } from "@/lib/prep/blog-meta";
+import { formatHeDate } from "@/lib/prep/format-he-date";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
 import { JsonLdScript, articleJsonLd, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
 import { prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { AMIRANT_COURSE_MD_COMPONENTS } from "@/components/prep/amirant-course/AmirantCourseMarkdownFromRepo";
-import { Container, PageLayout, Text } from "@/components/ui";
+import { ButtonLink, Container, PageLayout } from "@/components/ui";
 
 const siteUrl = getPublicSiteUrl();
 
@@ -46,21 +48,20 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 const BLOG_MD_COMPONENTS: Components = {
   ...AMIRANT_COURSE_MD_COMPONENTS,
   h2: ({ children }) => (
-    <h2 className="mb-3 mt-8 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
+    <h2 className="mb-3 mt-10 border-b border-line/60 pb-2 text-2xl font-bold text-ink first:mt-0">{children}</h2>
   ),
   h3: ({ children }) => <h3 className="mb-2 mt-6 text-xl font-semibold text-ink first:mt-0">{children}</h3>,
   h4: ({ children }) => <h4 className="mb-2 mt-4 text-lg font-semibold text-ink">{children}</h4>,
 };
 
-function formatHeDate(iso: string): string {
-  const d = new Date(`${iso}T00:00:00Z`);
-  if (Number.isNaN(d.getTime())) return "";
-  return d.toLocaleDateString("he-IL", { day: "numeric", month: "long", year: "numeric" });
-}
-
 export default function PrepBlogPostPage({ params }: { params: Params }) {
   const post = getBlogPost(params.slug);
   if (!post) notFound();
+
+  const topic = blogTopicOf(post.slug);
+  const siblings = listBlogPosts()
+    .filter((p) => p.slug !== post.slug && blogTopicOf(p.slug).id === topic.id)
+    .slice(0, 3);
 
   return (
     <div className="bg-paper">
@@ -77,52 +78,84 @@ export default function PrepBlogPostPage({ params }: { params: Params }) {
       <JsonLdScript
         data={breadcrumbJsonLd(siteUrl, [
           { name: "PREPARE", path: PREP_BASE },
-          { name: "בלוג", path: `${PREP_BASE}/blog` },
+          { name: "מדריכים", path: `${PREP_BASE}/blog` },
           { name: post.title, path: `${PREP_BASE}/blog/${post.slug}` },
         ])}
       />
       <PageLayout pad="lg">
         <Container max="measure">
-          <Link
-            href={`${PREP_BASE}/blog`}
-            className="text-xs font-semibold uppercase tracking-[0.16em] text-primary transition hover:text-primary-hover"
-          >
-            כל המאמרים
+          <Link href={`${PREP_BASE}/blog`} className="text-sm font-semibold text-primary transition hover:text-primary-hover">
+            מדריכים
           </Link>
           <article dir="rtl" lang="he" className="mt-6">
             <header>
-              <Text as="p" variant="caption" className="text-muted">
-                {formatHeDate(post.date)}
-              </Text>
-              <h1 className="mt-2 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
+              <p className="text-sm tabular-nums text-muted-2">
+                <time dateTime={post.date}>{formatHeDate(post.date)}</time>
+                {post.updated && post.updated !== post.date ? (
+                  <>
+                    <span aria-hidden> · </span>
+                    עודכן <time dateTime={post.updated}>{formatHeDate(post.updated)}</time>
+                  </>
+                ) : null}
+                <span aria-hidden> · </span>
+                {blogReadingMinutes(post.body)} דקות קריאה
+              </p>
+              <h1 className="mt-3 text-[2rem] font-extrabold leading-[1.15] tracking-tight text-ink md:text-[2.5rem]">
                 {post.title}
               </h1>
-              <Text as="p" variant="body" className="mt-3 max-w-readable text-muted">
-                {post.description}
-              </Text>
+              <p className="mt-4 max-w-readable text-lg leading-relaxed text-muted">{post.description}</p>
             </header>
-            <div className="mt-8 border-t border-line/60 pt-8">
+            <div className="mt-8 border-t border-line pt-8">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={BLOG_MD_COMPONENTS}>
                 {post.body}
               </ReactMarkdown>
             </div>
           </article>
-          <div className="mt-12 rounded-2xl border border-line/70 bg-white p-6 text-center">
-            <Text as="p" variant="body" className="font-semibold text-ink">
-              רוצים לדעת מאיפה אתם מתחילים?
-            </Text>
-            <Text as="p" variant="bodySm" className="mt-1 text-muted">
-              מבחן רמה קצר בחינם - ותוכנית הכנה שנבנית סביב התוצאה שלכם.
-            </Text>
-            <Link
-              href={`${PREP_BASE}/amirant`}
-              className="mt-4 inline-flex min-h-11 items-center rounded-control bg-primary px-6 text-sm font-bold text-white transition hover:bg-primary-hover"
-            >
-              לקורס ההכנה לאמירנט
-            </Link>
-          </div>
+
+          {siblings.length ? (
+            <nav aria-labelledby="more-guides" className="mt-14">
+              <h2 id="more-guides" className="text-[15px] font-bold text-muted">
+                עוד ב{topic.titleHe}
+              </h2>
+              <ul className="mt-3 border-t border-line" role="list">
+                {siblings.map((p) => (
+                  <li key={p.slug} className="border-b border-line">
+                    <Link href={`${PREP_BASE}/blog/${p.slug}`} className="group block py-4">
+                      <p className="text-[1.1rem] font-bold leading-snug text-ink transition group-hover:text-primary">{p.title}</p>
+                      <p className="mt-1 text-[15px] leading-relaxed text-muted">{p.description}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : null}
         </Container>
       </PageLayout>
+
+      <section className="bg-primary py-16 text-white md:py-20">
+        <Container max="measure" className="text-center">
+          <h2 className="text-[1.75rem] font-black leading-[1.12] tracking-tight md:text-[2.2rem]">רוצים לדעת מאיפה אתם מתחילים?</h2>
+          <p className="mx-auto mt-3 max-w-[34rem] text-lg leading-relaxed text-white/80">
+            מבחן רמה קצר בחינם, ותוכנית הכנה שנבנית סביב התוצאה.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink
+              href={`${PREP_BASE}/amirant`}
+              variant="primary"
+              className="min-h-[3.25rem] !rounded !bg-white px-7 text-[16px] font-extrabold !text-primary hover:!bg-white/90"
+            >
+              לקורס ההכנה לאמירנט
+            </ButtonLink>
+            <ButtonLink
+              href={`${PREP_BASE}/amirant/sample-questions`}
+              variant="secondary"
+              className="min-h-[3.25rem] !rounded !border-white/55 !bg-transparent px-7 text-[16px] !text-white hover:!bg-white/10"
+            >
+              שאלות לדוגמה
+            </ButtonLink>
+          </div>
+        </Container>
+      </section>
     </div>
   );
 }

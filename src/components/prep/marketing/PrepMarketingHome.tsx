@@ -1,5 +1,7 @@
 import { AIValueSection } from "@/components/prep/marketing/AIValueSection";
+import { GuidesSection } from "@/components/prep/marketing/GuidesSection";
 import { SiteVideoSlot } from "@/components/prep/SiteVideoSlot";
+import { listBlogPosts } from "@/lib/prep/blog.server";
 import { getSiteVideos } from "@/lib/prep/site-settings.server";
 import { CTASection } from "@/components/prep/marketing/CTASection";
 import { CoursePathSteps } from "@/components/prep/marketing/CoursePathSteps";
@@ -17,10 +19,11 @@ import { COURSE_PATH_STEPS } from "@/lib/prep/marketing/course-path";
 /**
  * The home page: the real course under a navy shade, the figures, why the
  * score matters, how the course is built (with real screenshots), the
- * syllabus, the exam, the assistant, the prices. Nothing boxed.
+ * syllabus, the exam, the assistant, the newest guides, the prices. Nothing boxed.
  */
 export async function PrepMarketingHome() {
   const videos = await getSiteVideos();
+  const guides = listBlogPosts().slice(0, 4);
   return (
     <>
       <HeroSection />
@@ -50,6 +53,8 @@ export async function PrepMarketingHome() {
       </MarketingSection>
 
       <AIValueSection />
+
+      <GuidesSection guides={guides} />
 
       <MarketingSection id="plans" title="מחירים" subtitle="גישה מלאה לכל הקורס לתקופה שבוחרים. בלי מנוי מתחדש. מודול המבוא ומבחן הרמה חינם." tone="low">
         <PlansTable />

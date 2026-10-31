@@ -8,6 +8,7 @@ import {
   AMIRANT_FAQ,
   AMIRANT_PLAN_FACTS,
 } from "@/lib/prep/marketing/amirant-seo-content";
+import { SAMPLE_QUESTIONS } from "@/lib/prep/marketing/sample-questions";
 
 export type JsonLdPrimitive = string | number | boolean | null;
 export type JsonLdValue = JsonLdPrimitive | JsonLdObject | JsonLdValue[];
@@ -154,6 +155,38 @@ export function amirantFaqJsonLd(): JsonLdObject {
       "@type": "Question",
       name: q,
       acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  };
+}
+
+/**
+ * Quiz schema for the public sample questions: each item is a multiple-choice
+ * Question whose accepted answer the page shows behind a disclosure, so the
+ * markup never claims an answer a visitor cannot see.
+ */
+export function sampleQuestionsQuizJsonLd(baseUrl: string): JsonLdObject {
+  const url = `${baseUrl}/prep/amirant/sample-questions`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "@id": `${url}#quiz`,
+    name: "שאלות לדוגמה מהאמירנט",
+    url,
+    inLanguage: "he-IL",
+    isAccessibleForFree: true,
+    educationalLevel: "HigherEducation",
+    about: { "@type": "Thing", name: "אמירנט" },
+    provider: organizationRef(baseUrl),
+    hasPart: SAMPLE_QUESTIONS.map((q) => ({
+      "@type": "Question",
+      eduQuestionType: "Multiple choice",
+      name: q.stem,
+      ...(q.context ? { text: `${q.context}\n\n${q.stem}` } : {}),
+      learningResourceType: q.sectionHe,
+      acceptedAnswer: { "@type": "Answer", text: q.options[q.correct]!, comment: { "@type": "Comment", text: q.explanationHe } },
+      suggestedAnswer: q.options
+        .filter((_, i) => i !== q.correct)
+        .map((text) => ({ "@type": "Answer", text })),
     })),
   };
 }

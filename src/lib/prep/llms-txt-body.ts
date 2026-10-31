@@ -87,15 +87,20 @@ ${EXAM_SCORE_BANDS.map((b) => `- ${b.min}-${b.max}: ${b.levelHe} - ${b.meaningHe
 ${AMIRANT_FAQ.map((f) => `**${f.q}**\n${f.a}`).join("\n\n")}`);
 
   if (posts.length) {
-    sections.push(`## מדריכים בבלוג (${prep}/blog)
-${posts.map((p) => `- [${p.title}](${prep}/blog/${p.slug}) - ${p.description}`).join("\n")}`);
+    sections.push(`## מדריכים (${prep}/blog)
+${posts.map((p) => `- [${p.title}](${prep}/blog/${p.slug}) - ${p.description}`).join("\n")}
+הטקסט המלא של כל המדריכים בקובץ אחד: ${baseUrl}/llms-full.txt`);
   }
+
+  sections.push(`## שאלות לדוגמה (${prep}/amirant/sample-questions)
+עשר שאלות מכל סוגי הפרקים, עם התשובה וההסבר לכל שאלה, בלי הרשמה ובלי טיימר. מתוך מדריכי השיטות של הקורס; לא מתוך מבחני התרגול או הסימולציות.`);
 
   sections.push(`## קישורים מרכזיים
 - דף הבית: ${prep}
 - דף הקורס: ${prep}/amirant
+- שאלות לדוגמה: ${prep}/amirant/sample-questions
 - מחירים: ${prep}/pricing
-- בלוג ומדריכים: ${prep}/blog
+- מדריכים: ${prep}/blog
 - אודות: ${prep}/about
 - יצירת קשר: ${prep}/contact
 - תקנון: ${prep}/terms
