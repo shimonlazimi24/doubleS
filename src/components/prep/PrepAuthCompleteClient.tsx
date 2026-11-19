@@ -9,7 +9,7 @@ import { PREP_BASE } from "@/lib/prep/constants";
 import { Container } from "@/components/ui";
 
 function safeNext(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) return AMIRANT_CONTINUE_PATH;
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) return AMIRANT_CONTINUE_PATH;
   return raw;
 }
 

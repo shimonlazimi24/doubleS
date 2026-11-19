@@ -1,18 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { PREP_BASE } from "@/lib/prep/constants";
 
 /** «ניהול חשבון» - פעולות שקטות בתחתית העמוד, בלי כפתורים מאיימים. */
 export function PrepSettingsClient() {
-  const router = useRouter();
-
   async function signOut() {
     const client = createPrepSupabaseBrowserClient();
-    if (client) await client.auth.signOut();
-    router.push(`${PREP_BASE}/login`);
-    router.refresh();
+    // scope "local": the library default is "global", which revokes the session
+    // on every other device and browser as well.
+    if (client) await client.auth.signOut({ scope: "local" });
+    // Full navigation, so nothing held in memory from this account survives.
+    window.location.assign(`${PREP_BASE}/login`);
   }
 
   return (

@@ -23,7 +23,7 @@ const ERROR_MESSAGES: Record<string, string> = {
 const CONFIG_UNAVAILABLE_MSG = "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות, או פנו לתמיכה.";
 
 function safeReturnPath(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) {
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) {
     return AMIRANT_CONTINUE_PATH;
   }
   return raw;

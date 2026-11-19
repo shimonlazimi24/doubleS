@@ -22,8 +22,29 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 let inFlight: Promise<string | null> | null = null;
 let cached: { userId: string | null } | null = null;
+let listening = false;
+
+/**
+ * Another tab can sign out or switch account while this one stays open. The
+ * cached id would then belong to the previous account while the token belongs
+ * to the new one, and every query would come back empty (paid access shown as
+ * locked, progress gone). Reload so the tab starts again as the current user.
+ */
+function followSession(client: SupabaseClient): void {
+  if (listening) return;
+  listening = true;
+  client.auth.onAuthStateChange((event, session) => {
+    if (event !== "SIGNED_IN" && event !== "SIGNED_OUT") return;
+    const nextId = session?.user?.id ?? null;
+    const previous = cached?.userId ?? null;
+    cached = null;
+    inFlight = null;
+    if (previous && previous !== nextId) window.location.reload();
+  });
+}
 
 export async function getBrowserUserId(client: SupabaseClient): Promise<string | null> {
+  followSession(client);
   if (cached) return cached.userId;
   if (inFlight) return inFlight;
 

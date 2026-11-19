@@ -19,7 +19,7 @@ export function AdminSignOutButton({
 
   async function signOut() {
     const env = getPrepSupabasePublishableEnv();
-    if (env) await createBrowserClient(env.url, env.anonKey).auth.signOut();
+    if (env) await createBrowserClient(env.url, env.anonKey).auth.signOut({ scope: "local" });
     router.push(next ? `/prep/login?next=${encodeURIComponent(next)}` : "/prep/login");
     router.refresh();
   }

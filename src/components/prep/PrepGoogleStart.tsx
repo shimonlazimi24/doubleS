@@ -11,7 +11,7 @@ import { PrepGoogleSignInButton } from "@/components/prep/PrepGoogleSignInButton
 import { Text } from "@/components/ui";
 
 function safeNextPath(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || raw.startsWith("//")) {
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) {
     return AMIRANT_CONTINUE_PATH;
   }
   return raw;

@@ -77,7 +77,7 @@ export function PrepPricingPage() {
   useEffect(() => {
     trackEvent("view_pricing", {});
     // Remember intended destination for post-checkout (Hyp callback → success page).
-    if (nextAfterPay && nextAfterPay.startsWith("/") && !nextAfterPay.startsWith("//")) {
+    if (nextAfterPay && nextAfterPay.startsWith("/") && !/^\/[\/\\]|\\/.test(nextAfterPay)) {
       try {
         sessionStorage.setItem("prep_checkout_next", nextAfterPay);
       } catch {

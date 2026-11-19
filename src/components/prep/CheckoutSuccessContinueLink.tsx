@@ -13,7 +13,7 @@ export function CheckoutSuccessContinueLink() {
   useEffect(() => {
     try {
       const next = sessionStorage.getItem("prep_checkout_next");
-      if (next && next.startsWith("/") && !next.startsWith("//")) {
+      if (next && next.startsWith("/") && !/^\/[\/\\]|\\/.test(next)) {
         setHref(next);
         sessionStorage.removeItem("prep_checkout_next");
       }
