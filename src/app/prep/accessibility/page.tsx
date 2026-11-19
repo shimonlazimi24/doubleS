@@ -91,7 +91,7 @@ export default function PrepAccessibilityPage() {
             href={PREP_BASE}
             className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
           >
-            חזרה ל־{PREP_PRODUCT_NAME}
+            חזרה לדף הבית
           </Link>
           <Text as="p" variant="labelAccent" className="mt-6 text-accent">
             נגישות

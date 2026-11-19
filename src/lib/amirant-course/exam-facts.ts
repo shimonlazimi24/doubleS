@@ -158,7 +158,7 @@ export const EXAM_REGISTRATION = {
 } as const;
 
 export const EXAM_TOTAL_MINUTES = {
-  min: EXAM_SCORED_MINUTES,
+  min: EXAM_SCORED_MINUTES + EXAM_PILOT.minMinutes,
   max: EXAM_SCORED_MINUTES + EXAM_PILOT.maxMinutes,
 } as const;
 

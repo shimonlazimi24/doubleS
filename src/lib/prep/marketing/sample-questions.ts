@@ -106,13 +106,13 @@ export const SAMPLE_QUESTIONS: readonly SampleQuestion[] = [
     stem: "Original: Had it not been for the unexpected delay, we would have arrived on time.",
     options: [
       "We arrived on time, even though there was a delay.",
-      "The delay caused us to arrive late.",
+      "The delay was shorter than we had feared.",
       "We had anticipated the delay and planned accordingly.",
       "Without the delay, we would have been punctual.",
     ],
     correct: 3,
     explanationHe:
-      "Had it not been for the delay פירושו \"אלמלא העיכוב\": אילו לא היה עיכוב, היינו מגיעים בזמן. (D) אומרת בדיוק את זה: בלי העיכוב היינו מגיעים בזמן. (A) אומרת שהגענו בזמן, וזה סותר את המקור. (B) נכונה, אבל לא אומרת שבלי העיכוב היינו מגיעים בזמן. (C) אומרת שציפינו לעיכוב, אבל במקור הוא היה unexpected (\"לא צפוי\").",
+      "Had it not been for the delay פירושו \"אלמלא העיכוב\": אילו לא היה עיכוב, היינו מגיעים בזמן. (D) אומרת בדיוק את זה: בלי העיכוב היינו מגיעים בזמן. (A) אומרת שהגענו בזמן, וזה סותר את המקור. (B) מדברת על אורך העיכוב, והמקור לא אומר עליו דבר. (C) אומרת שציפינו לעיכוב, אבל במקור הוא היה unexpected (\"לא צפוי\").",
   },
   {
     id: "rc-1",

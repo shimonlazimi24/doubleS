@@ -10,7 +10,7 @@ export type PlanId = "week" | "two_weeks" | "month";
 
 const SHARED_FEATURES = [
   "כל המודולים + 6 סימולציות מלאות",
-  "בוחנים אדפטיביים לפי הרמה שלך",
+  "תרגול אדפטיבי לפי הרמה שלכם",
   "עוזר AI בגישה המלאה",
   "דשבורד התקדמות אישי",
 ];
@@ -34,7 +34,7 @@ export const PLANS: {
     label: "שבועיים",
     duration: `${PLAN_DAYS.two_weeks} ימים`,
     price: PLAN_PRICES_NIS.two_weeks!,
-    badge: "הנבחר",
+    badge: "מומלץ",
     features: SHARED_FEATURES,
   },
   { id: "month", label: "חודש", duration: `${PLAN_DAYS.month} ימים`, price: PLAN_PRICES_NIS.month!, features: SHARED_FEATURES },

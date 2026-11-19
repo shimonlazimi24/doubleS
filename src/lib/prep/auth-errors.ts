@@ -21,55 +21,32 @@ export function mapSupabaseAuthError(input: AuthErrorInput): string {
   const m = message.toLowerCase();
   const c = code.toLowerCase();
 
-  if (c === "over_email_send_rate_limit" || m.includes("over_email_send_rate_limit")) {
-    return [
-      "Supabase חסם שליחת מיילי התחברות זמנית (מגבלת אבטחה - גם אם לא קיבלתם מייל קודם).",
-      "המתינו כ־60 דקות, או התחברו עם Google למטה.",
-      "לפיתוח תכוף: ב-Supabase → Authentication → Rate Limits / SMTP מותאם (ראו docs/SUPABASE_AUTH_SETUP.md).",
-    ].join(" ");
-  }
+  const unavailable = "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות או כתבו ל-support@getprepared.academy.";
 
-  if (m.includes("email rate limit") || status === 429) {
-    return "יותר מדי בקשות התחברות בקצרה. המתינו כשעה או השתמשו ב-Google.";
-  }
-
-  if (m.includes("provider is not enabled") || m.includes("unsupported provider")) {
-    return [
-      "התחברות עם Google לא מופעלת בפרויקט Supabase.",
-      "בלוח Supabase: Authentication → Providers → Google → Enable, והזינו Client ID ו-Secret מ-Google Cloud.",
-      "ראו docs/SUPABASE_AUTH_SETUP.md בפרויקט.",
-    ].join(" ");
-  }
-
-  if (m.includes("redirect") && m.includes("url")) {
-    const origin = typeof window !== "undefined" ? window.location.origin : "https://your-domain";
-    return [
-      "כתובת החזרה (redirect) לא מורשית.",
-      "הוסיפו ב-Supabase → Authentication → URL Configuration את:",
-      `${origin}/prep/auth/complete`,
-    ].join(" ");
-  }
-
-  if (m.includes("signup is disabled") || c === "signup_disabled") {
-    return "הרשמה חדשה כבויה ב-Supabase. הפעילו Sign-ups ב-Authentication → Providers → Email.";
-  }
-
-  if (m.includes("invalid api key") || c === "invalid_api_key") {
-    return "מפתח Supabase שגוי ב-Vercel. השתמשו ב-anon JWT (eyJ…) מטאב Legacy, לא sb_publishable.";
+  if (
+    c === "over_email_send_rate_limit" ||
+    m.includes("over_email_send_rate_limit") ||
+    m.includes("email rate limit") ||
+    status === 429
+  ) {
+    return "שלחנו יותר מדי מיילים לכתובת הזו. נסו שוב בעוד שעה, או התחברו עם Google.";
   }
 
   if (m.includes("email address") && m.includes("invalid")) {
     return "כתובת הדוא״ל לא תקינה.";
   }
 
-  if (m.includes("error sending confirmation email") || m.includes("smtp")) {
-    return [
-      "שליחת המייל נכשלה ב-Supabase.",
-      "בדקו Authentication → SMTP / Email templates, או הגדירו ספק דוא״ל (Resend, SendGrid).",
-    ].join(" ");
+  if (m.includes("expired") || m.includes("otp") || (m.includes("token") && m.includes("invalid"))) {
+    return "הקוד שגוי או שפג תוקפו. בקשו קוד חדש ונסו שוב.";
   }
 
-  return message || "שגיאת התחברות. נסו שוב או פנו לתמיכה.";
+  // Configuration faults (provider off, redirect not allowed, bad key, SMTP):
+  // the learner cannot act on the cause, so it goes to the console, not the screen.
+  if (message) {
+    // eslint-disable-next-line no-console -- surfaced to error monitoring via console capture
+    console.error(`[auth] ${code || status || "error"}: ${message}`);
+  }
+  return unavailable;
 }
 
 export { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";

@@ -31,7 +31,7 @@ export function CourseSyllabusTable({ compact = false }: { compact?: boolean }) 
                 {!compact && MODULE_BLURB[mod.id] ? `${MODULE_BLURB[mod.id]} ` : null}
                 {units.length ? `${units.join(", ")}. ` : null}
                 <span className="tabular-nums">
-                  {mod.lessons.length} שיעורים · {hours(minutes)}
+                  {mod.lessons.length === 1 ? "שיעור אחד" : `${mod.lessons.length} שיעורים`} · {hours(minutes)}
                 </span>
               </p>
             </div>

@@ -77,7 +77,7 @@ export default async function PrepSettingsPage() {
       <Container max="measure" className="py-8 md:py-12">
         <Heading level={1}>אזור אישי</Heading>
         <Text as="p" variant="bodySm" className="mt-2">
-          הפרטים, המנוי וההתקדמות שלכם - במקום אחד.
+          הפרטים, הגישה וההתקדמות שלכם - במקום אחד.
         </Text>
 
         <div className="mt-8 space-y-9">

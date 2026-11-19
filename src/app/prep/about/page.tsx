@@ -8,6 +8,7 @@ import { courseTrustItems } from "@/components/prep/marketing/HeroSection";
 import { AMIRANT_PREPARATION_MANIFEST, countManifestLessons } from "@/lib/amirant-course";
 import { SUPPORT_EMAIL } from "@/lib/prep/marketing-pages";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { COURSE_FACTS } from "@/lib/prep/marketing/course-facts";
 import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
 import { PREP_PAGE_META, prepOpenGraph } from "@/lib/prep/seo/page-meta";
 import { getPublicSiteUrl } from "@/lib/prep/site-url";
@@ -33,7 +34,7 @@ const COURSE_FEATURES = [
   },
   {
     lead: "תרגול אדפטיבי",
-    detail: "יותר מ־500 שאלות עם הסבר על התשובה - רמת הקושי מסתגלת לביצועים שלכם.",
+    detail: `${COURSE_FACTS.questions.toLocaleString("he-IL")} שאלות עם הסבר על התשובה. רמת הקושי מסתגלת לביצועים שלכם.`,
   },
   {
     lead: "סימולציות מלאות",

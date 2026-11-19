@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
+import { PREP_BASE } from "@/lib/prep/constants";
 import { PrepPricingPage } from "@/components/prep/PrepPricingPage";
 import { Container, Heading, Text } from "@/components/ui";
 import { JsonLdScript, breadcrumbJsonLd } from "@/lib/prep/seo/json-ld";
@@ -33,7 +33,7 @@ export default function PricingRoutePage() {
           href={PREP_BASE}
           className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
         >
-          חזרה ל־{PREP_PRODUCT_NAME}
+          חזרה לדף הבית
         </Link>
         <Heading level={1} className="mt-5">
           מחירים לקורס ההכנה לאמירנט

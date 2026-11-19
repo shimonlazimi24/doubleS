@@ -63,7 +63,7 @@ export default async function CheckoutSuccessPage({
     },
     unknown: {
       title: "לא מצאנו את פרטי הרכישה",
-      body: "אם שילמתם, הגישה מופיעה בעמוד «המנוי שלי». אם היא לא שם, כתבו לנו ונבדוק.",
+      body: "אם שילמתם, הגישה מופיעה בעמוד «הגישה שלי». אם היא לא שם, כתבו לנו ונבדוק.",
     },
   }[state];
 
@@ -118,7 +118,7 @@ export default async function CheckoutSuccessPage({
             href={`${PREP_BASE}/settings`}
             className="inline-flex min-h-12 items-center justify-center rounded-control border border-line px-6 text-sm font-semibold text-primary"
           >
-            המנוי שלי
+            הגישה שלי
           </Link>
         </div>
 

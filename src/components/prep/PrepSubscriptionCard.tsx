@@ -36,7 +36,7 @@ export function PrepSubscriptionCard({ subscription }: { subscription: Subscript
   const remaining = daysLeft(subscription.endsAt);
   return (
     <section dir="rtl">
-      <h2 className="text-lg font-bold text-primary">מנוי וגישה</h2>
+      <h2 className="text-lg font-bold text-primary">גישה לקורס</h2>
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 rounded-md border border-line/80 bg-paper px-5 py-4">
         {subscription.active ? (
@@ -61,7 +61,7 @@ export function PrepSubscriptionCard({ subscription }: { subscription: Subscript
         ) : (
           <>
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-ink">אין מנוי פעיל</p>
+              <p className="text-sm font-semibold text-ink">אין גישה פעילה</p>
               <p className="mt-1 text-sm text-muted">
                 רכשו גישה כדי לפתוח את כל הקורס, הסימולציות והעוזר האישי.
               </p>

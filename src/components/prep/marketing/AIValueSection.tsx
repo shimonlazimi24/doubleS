@@ -22,7 +22,7 @@ export function AIValueSection() {
       <Container max="shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal from="start" className="text-right">
-            <p className="mb-2 text-sm font-semibold text-primary">למנויים</p>
+            <p className="mb-2 text-sm font-semibold text-primary">בגישה המלאה</p>
             <h2 className="text-[2.1rem] font-extrabold leading-[1.12] tracking-tight text-ink md:text-[2.6rem]">עוזר בתוך השיעור</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted md:text-xl">
               רואה את השאלה שעל המסך ועונה מתוך חומר הקורס, בעברית, עם המילים באנגלית. במבחנים מתוזמנים מסביר רק אחרי שעניתם, כדי

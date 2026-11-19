@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { PREP_BASE, PREP_PRODUCT_NAME } from "@/lib/prep/constants";
+import { PREP_BASE } from "@/lib/prep/constants";
 import { PrepLoginForm } from "@/components/prep/PrepLoginForm";
 import { Container, Heading, Text } from "@/components/ui";
 import { PREP_PAGE_META } from "@/lib/prep/seo/page-meta";
@@ -24,7 +24,7 @@ export default function PrepLoginPage() {
           href={PREP_BASE}
           className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
         >
-          חזרה ל־{PREP_PRODUCT_NAME}
+          חזרה לדף הבית
         </Link>
         <Heading level={1} className="mt-5">
           התחברות
