@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 type Props = {
@@ -39,8 +40,8 @@ export function HeroVideoBackground({ src, poster, shade = 0.86 }: Props) {
 
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden bg-primary">
-      {/* eslint-disable-next-line @next/next/no-img-element -- full-bleed poster, sized by CSS */}
-      <img src={poster} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover blur-[3px]" />
+      {/* Through next/image: the poster is the first large paint on a phone, and the raw file is 170KB. */}
+      <Image src={poster} alt="" fill priority sizes="100vw" quality={60} className="scale-105 object-cover blur-[3px]" />
       {allowed ? (
         <video
           ref={ref}
