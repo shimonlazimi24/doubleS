@@ -16,6 +16,16 @@ import {
 } from "@/lib/prep/onboarding/gate";
 import { getPrepUserFromMiddleware } from "@/lib/prep/supabase/middleware";
 
+/**
+ * A redirect built in middleware starts with no cookies. If the session was
+ * refreshed while reading the user, the new tokens live on `from`; without
+ * copying them the browser keeps a refresh token that has already been used.
+ */
+function carryCookies(from: NextResponse, to: NextResponse): NextResponse {
+  from.cookies.getAll().forEach((cookie) => to.cookies.set(cookie));
+  return to;
+}
+
 function setNoStore(res: NextResponse): void {
   res.headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate, max-age=0");
 }
@@ -53,7 +63,7 @@ async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextRes
     login.searchParams.set("next", req.nextUrl.pathname + req.nextUrl.search);
     const redirect = NextResponse.redirect(login);
     setNoStore(redirect);
-    return redirect;
+    return carryCookies(response, redirect);
   }
 
   if (isPrepOnboardingGatedPath(req.nextUrl.pathname) && supabase) {
@@ -81,7 +91,7 @@ async function handlePrepAuthenticatedRequest(req: NextRequest): Promise<NextRes
       );
       const redirect = NextResponse.redirect(onboarding);
       setNoStore(redirect);
-      return redirect;
+      return carryCookies(response, redirect);
     }
   }
 
@@ -95,24 +105,23 @@ async function handleAdminRequest(req: NextRequest): Promise<NextResponse> {
     setNoStore(res);
     return res;
   }
-  const { user } = await getPrepUserFromMiddleware(req);
+  const { user, response } = await getPrepUserFromMiddleware(req);
   if (!user) {
     const login = new URL("/prep/login", req.url);
     login.searchParams.set("next", req.nextUrl.pathname);
     const redirect = NextResponse.redirect(login);
     setNoStore(redirect);
-    return redirect;
+    return carryCookies(response, redirect);
   }
   if (!isPrepAdminUser(user)) {
     // Not back to login: the login form forwards a signed-in visitor to `next`,
     // which was this page, and the two redirected to each other forever.
     const redirect = NextResponse.redirect(new URL("/prep/admin-denied", req.url));
     setNoStore(redirect);
-    return redirect;
+    return carryCookies(response, redirect);
   }
-  const res = NextResponse.next();
-  setNoStore(res);
-  return res;
+  setNoStore(response);
+  return response;
 }
 
 /** `/prep/*` Supabase session + learning routes `/lesson`, `/quiz`, `/results`. */

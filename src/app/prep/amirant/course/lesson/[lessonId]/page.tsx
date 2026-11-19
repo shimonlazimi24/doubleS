@@ -126,6 +126,10 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
 
   const hit = getManifestLesson(params.lessonId);
   if (!hit) notFound();
+  // Start the content read while access is checked: two independent round trips
+  // to the database. Nothing is rendered unless the access check passes.
+  const contentPromise = getLessonContentWithCmsOverride(params.lessonId);
+  contentPromise.catch(() => undefined);
   await requireAmirantLessonAccess(params.lessonId);
   const courseEntry = getAmirantCourseLessonEntry(params.lessonId);
   if (!courseEntry) notFound();
@@ -169,7 +173,7 @@ export default async function AmirantCourseLessonPage({ params }: Props) {
     );
   }
 
-  const { content, source: contentSource, videoUrl: cmsVideoUrl } = await getLessonContentWithCmsOverride(params.lessonId);
+  const { content, source: contentSource, videoUrl: cmsVideoUrl } = await contentPromise;
   if (!content) notFound();
   const isCmsOverride = contentSource === "cms";
   // CMS override: body_markdown is injected as cmsMarkdown

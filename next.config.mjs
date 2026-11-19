@@ -55,4 +55,13 @@ export default withSentryConfig(nextConfig, {
   project: process.env.SENTRY_PROJECT,
   silent: true,
   disableLogger: true,
+  // Errors only in the browser: replay and tracing code are not used, and they
+  // were most of the shared chunk every visitor downloads.
+  bundleSizeOptimizations: {
+    excludeDebugStatements: true,
+    excludeReplayIframe: true,
+    excludeReplayShadowDom: true,
+    excludeReplayWorker: true,
+    excludeTracing: true,
+  },
 });

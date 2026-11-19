@@ -42,6 +42,9 @@ export async function getPrepUserFromMiddleware(request: NextRequest): Promise<{
         return request.cookies.getAll();
       },
       setAll(cookiesToSet: CookieToSet[]) {
+        // Refreshed tokens go onto the request too, so the page rendered by this
+        // same request reads the new session and does not refresh a second time.
+        cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
         supabaseResponse = NextResponse.next({
           request: { headers: request.headers },
         });

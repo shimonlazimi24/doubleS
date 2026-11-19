@@ -27,6 +27,7 @@ import type { ManifestQuiz } from "@/lib/amirant-course/types/course-manifest";
 import { AMIRANT_TOPIC_LABEL_HE } from "@/lib/amirant-course/topic-labels";
 import { examScoreBand } from "@/lib/amirant-course/exam-facts";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { trackEvent } from "@/lib/prep/analytics";
 import { showPrepToast } from "@/lib/prep/show-prep-toast";
 import { PremiumMarkdownBody } from "@/components/prep/amirant-course/premium/PremiumMarkdownBody";
 import { Card, CardBody, Text } from "@/components/ui";
@@ -302,6 +303,7 @@ export function AmirantPlacementQuizClient({
             (a, b) => a.correct / a.total - b.correct / b.total,
           ),
         });
+        trackEvent("placement_complete", { score_pct: scorePercent });
         setPhase("results");
       };
 

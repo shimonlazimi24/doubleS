@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Button, Text } from "@/components/ui";
 import { cn } from "@/lib/design-system/cn";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { trackEvent } from "@/lib/prep/analytics";
 import { formatDateHe } from "@/lib/prep/format-date-he";
 import {
   DAILY_STUDY_LABELS,
@@ -238,6 +239,7 @@ export function PrepOnboardingWizard({
       if (res.ok) {
         writeLocal({ draft: null, completed: data.configured === false ? payload : null });
         movedRef.current = true;
+        if (!editing) trackEvent("onboarding_complete", {});
         // No router.refresh() here: the page redirects away once onboarding is
         // complete, which yanked the learner off this confirmation mid-read.
         setDone(true);
@@ -250,7 +252,7 @@ export function PrepOnboardingWizard({
     } finally {
       setSubmitting(false);
     }
-  }, [buildPayload]);
+  }, [buildPayload, editing]);
 
   function onNext(e?: React.FormEvent) {
     e?.preventDefault();

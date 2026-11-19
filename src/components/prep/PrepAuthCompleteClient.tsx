@@ -6,6 +6,7 @@ import type { AuthError, EmailOtpType } from "@supabase/supabase-js";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { trackEvent } from "@/lib/prep/analytics";
 import { Container } from "@/components/ui";
 
 function safeNext(raw: string | null): string {
@@ -68,7 +69,10 @@ export function PrepAuthCompleteClient() {
           const {
             data: { session: existing },
           } = await client.auth.getSession();
-          if (existing) {
+          // An email link carries its own identity: with a token_hash we always
+          // verify it, so a link for another account is not silently ignored in
+          // favour of whoever happened to be signed in.
+          if (existing && !tokenHash) {
             if (!cancelled) router.replace(next);
             return;
           }
@@ -128,6 +132,12 @@ export function PrepAuthCompleteClient() {
         } = await client.auth.getSession();
         if (sessionError) throw sessionError;
         if (!session) throw new Error("no_session_after_exchange");
+
+        // GA4's recommended names: sign_up for an account created in this flow, login otherwise.
+        const createdMs = Date.parse(session.user.created_at ?? "");
+        const isNew = Number.isFinite(createdMs) && Date.now() - createdMs < 5 * 60_000;
+        const method = searchParams.get("token_hash") ? "email" : "google";
+        trackEvent(isNew ? "sign_up" : "login", { method });
 
         if (!cancelled) router.replace(next);
       } catch (err) {
