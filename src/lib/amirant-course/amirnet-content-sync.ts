@@ -235,7 +235,7 @@ const SENT: ManifestModule = {
       quizId: "quiz-sc",
     },
     { id: "lesson.sc.02", title: "4.3 - מלכודות נפוצות", kind: "text", estimatedMinutes: 25, quizId: "quiz-sc-2" },
-    { id: "lesson.sc.03", title: "סרטון הדרכה - 5 שיטות (תסריט / וידאו)", kind: "video", estimatedMinutes: 15 },
+    { id: "lesson.sc.03", title: "5 שיטות פתרון - סיכום מהיר", kind: "video", estimatedMinutes: 15 },
     { id: "lesson.sc.test-01", title: "מבחן תרגול 1 (קל)", kind: "text", estimatedMinutes: 10 },
     { id: "lesson.sc.test-02", title: "מבחן תרגול 2 (קל-בינוני)", kind: "text", estimatedMinutes: 10 },
     { id: "lesson.sc.test-03", title: "מבחן תרגול 3 (בינוני)", kind: "text", estimatedMinutes: 10 },
