@@ -38,8 +38,44 @@ type StepResponse = {
 async function call(body: Record<string, unknown>): Promise<StepResponse> {
   const res = await fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
   const json = (await res.json().catch(() => ({}))) as StepResponse;
-  if (!res.ok) throw new Error(json.error ?? "הפעולה נכשלה");
+  if (!res.ok) throw new StepError(json.error ?? "הפעולה נכשלה", res.status);
   return json;
+}
+
+class StepError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+  }
+}
+
+/* A running attempt survives a refresh or an accidental back: the signed token
+ * and the current step are kept for this tab only. The clock keeps running while
+ * the page is away, as it would in the exam. */
+const RESUME_KEY = "prep_adaptive_sim_v1";
+
+type Saved = { token: string; section: ClientSection; savedAt: number };
+
+function saveRun(token: string | null, section: ClientSection | null) {
+  try {
+    if (token && section) sessionStorage.setItem(RESUME_KEY, JSON.stringify({ token, section, savedAt: Date.now() } satisfies Saved));
+    else sessionStorage.removeItem(RESUME_KEY);
+  } catch {
+    /* storage blocked: the simulation works, it just does not survive a refresh */
+  }
+}
+
+function readRun(): Saved | null {
+  try {
+    const raw = sessionStorage.getItem(RESUME_KEY);
+    if (!raw) return null;
+    const saved = JSON.parse(raw) as Saved;
+    return saved?.token && saved.section ? saved : null;
+  } catch {
+    return null;
+  }
 }
 
 const LEVEL_HE = { low: "נמוכה", mid: "בינונית", high: "גבוהה" } as const;
@@ -75,15 +111,28 @@ export function AmirantAdaptiveSimulationClient({ attempts, persistent }: { atte
       ]);
       setToken(null);
       setSection(null);
+      saveRun(null, null);
       setPhase("summary");
       return;
     }
+    saveRun(r.token, r.section);
     setToken(r.token);
     setSection(r.section);
     setSecondsLeft(r.section?.secondsLeft ?? 0);
     setAnswers({});
     setTyped("");
     setEssay("");
+    setPhase("running");
+  }, []);
+
+  // Pick up an attempt that was running in this tab before a refresh.
+  useEffect(() => {
+    const saved = readRun();
+    if (!saved) return;
+    const elapsed = Math.floor((Date.now() - saved.savedAt) / 1000);
+    setToken(saved.token);
+    setSection(saved.section);
+    setSecondsLeft(Math.max(0, (saved.section.secondsLeft ?? 0) - elapsed));
     setPhase("running");
   }, []);
 
@@ -110,6 +159,14 @@ export function AmirantAdaptiveSimulationClient({ attempts, persistent }: { atte
         applyStep(r);
       } catch (e) {
         showPrepToast(e instanceof Error ? e.message : "הפעולה נכשלה", { tone: "error" });
+        // The server no longer accepts this attempt (expired or already finished):
+        // drop it, or a refresh would resume a dead run forever.
+        if (e instanceof StepError && e.status === 409) {
+          saveRun(null, null);
+          setToken(null);
+          setSection(null);
+          setPhase("intro");
+        }
       } finally {
         setBusy(false);
       }

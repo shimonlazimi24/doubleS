@@ -45,9 +45,6 @@ export async function POST(req: Request) {
   if (!(await checkAiRouteRateLimit({ key: rateKey, route: "adaptive-sim", maxRequests: 120, windowMs: 60_000 }))) {
     return NextResponse.json({ error: "יותר מדי בקשות. המתינו רגע." }, { status: 429 });
   }
-  if (!(await hasAmirantFullAccess(client, userId))) {
-    return NextResponse.json({ error: "הסימולציה זמינה בגישה המלאה לקורס." }, { status: 403 });
-  }
   if (!poolIsAvailable()) {
     return NextResponse.json({ error: "מאגר הסימולציות עדיין לא נטען." }, { status: 503 });
   }
@@ -61,6 +58,13 @@ export async function POST(req: Request) {
   const parsed = bodySchema.safeParse(json);
   if (!parsed.success) return NextResponse.json({ error: "בקשה לא תקינה" }, { status: 400 });
   const body = parsed.data;
+
+  // Access is checked when a simulation starts. A running attempt may finish even
+  // if the plan runs out mid-exam: the token is signed, bound to this user, and
+  // every section has its own clock, so it cannot be stretched into free access.
+  if (body.action === "start" && !(await hasAmirantFullAccess(client, userId))) {
+    return NextResponse.json({ error: "הסימולציה זמינה בגישה המלאה לקורס." }, { status: 403 });
+  }
 
   const { store, userKey, persistent } = getAdaptiveAttemptStore(client, userId);
 
