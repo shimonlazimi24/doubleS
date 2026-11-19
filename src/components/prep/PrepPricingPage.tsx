@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { readUtmParams, trackEvent } from "@/lib/prep/analytics";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { PLAN_DAYS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
+import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 
 export type PlanId = "week" | "two_weeks" | "month";
 
@@ -70,14 +71,40 @@ export function PrepPricingPage() {
   const checkoutState = searchParams.get("checkout");
   const nextAfterPay = searchParams.get("next");
 
-  const [selected, setSelected] = useState<PlanId>("two_weeks");
+  // A signed-out visitor who picked a plan comes back from login with it in the URL.
+  const planFromUrl = PLANS.find((p) => p.id === searchParams.get("plan"))?.id;
+  const [selected, setSelected] = useState<PlanId>(planFromUrl ?? "two_weeks");
+  // Extensions are sold only to learners who already bought a plan.
+  const [hasPaidPlan, setHasPaidPlan] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const client = createPrepSupabaseBrowserClient();
+    if (!client) return;
+    void (async () => {
+      const {
+        data: { user },
+      } = await client.auth.getUser();
+      if (!user || cancelled) return;
+      const { data } = await client
+        .from("course_entitlements")
+        .select("user_id")
+        .eq("user_id", user.id)
+        .eq("access_type", "paid")
+        .limit(1);
+      if (!cancelled && data && data.length > 0) setHasPaidPlan(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     trackEvent("view_pricing", {});
     // Remember intended destination for post-checkout (Hyp callback → success page).
-    if (nextAfterPay && nextAfterPay.startsWith("/") && !/^\/[\/\\]|\\/.test(nextAfterPay)) {
+    if (nextAfterPay && nextAfterPay.startsWith("/") && !/^\/[\/\\]|[\\\x00-\x1f]/.test(nextAfterPay)) {
       try {
         sessionStorage.setItem("prep_checkout_next", nextAfterPay);
       } catch {
@@ -85,6 +112,16 @@ export function PrepPricingPage() {
       }
     }
   }, [nextAfterPay]);
+
+  // Back from the payment page: the browser may restore this page from its
+  // back/forward cache with the button still busy.
+  useEffect(() => {
+    function onPageShow(event: PageTransitionEvent) {
+      if (event.persisted) setBusy(false);
+    }
+    window.addEventListener("pageshow", onPageShow);
+    return () => window.removeEventListener("pageshow", onPageShow);
+  }, []);
 
   function selectPlan(planId: PlanId) {
     setSelected(planId);
@@ -94,7 +131,6 @@ export function PrepPricingPage() {
   async function startCheckout(planId: string) {
     setError(null);
     setBusy(true);
-    trackEvent("begin_checkout", { plan: planId });
     try {
       const res = await fetch("/api/prep/checkout", {
         method: "POST",
@@ -104,20 +140,26 @@ export function PrepPricingPage() {
       const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
       if (res.status === 401) {
         // Signed-out visitor (the pricing page is public): sign in, then come back here.
-        const back = `${window.location.pathname}${window.location.search}`;
+        const backParams = new URLSearchParams(window.location.search);
+        if (PLANS.some((p) => p.id === planId)) backParams.set("plan", planId);
+        const query = backParams.toString();
+        const back = `${window.location.pathname}${query ? `?${query}` : ""}`;
         window.location.href = `${PREP_BASE}/login?next=${encodeURIComponent(back)}`;
         return;
       }
       if (!res.ok || !data.url) {
         trackEvent("checkout_failed", { plan: planId, stage: "create" });
         setError(data.error ?? "לא ניתן לפתוח תשלום. התחברו קודם או פנו לתמיכה.");
+        setBusy(false);
         return;
       }
+      // Counted only once a payment page really exists. The button stays busy
+      // while the browser leaves for Hyp, so a second tap cannot open another order.
+      trackEvent("begin_checkout", { plan: planId });
       window.location.href = data.url;
     } catch {
       trackEvent("checkout_failed", { plan: planId, stage: "network" });
       setError("שגיאת רשת. נסו שוב.");
-    } finally {
       setBusy(false);
     }
   }
@@ -203,23 +245,25 @@ export function PrepPricingPage() {
         )}
       </div>
 
-      {/* הארכת גישה - שורה שטוחה מופרדת בקו-שיער */}
-      <div className="border-t border-line pt-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">כבר יש לכם גישה? הארכה בלי לאבד התקדמות</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {EXTENSION_PLANS.map((ext) => (
-            <button
-              key={ext.id}
-              type="button"
-              disabled={busy}
-              onClick={() => void startCheckout(ext.id)}
-              className="rounded-lg border border-line bg-surface-low px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary/40 hover:bg-white disabled:opacity-50"
-            >
-              {ext.label} - ₪{ext.price}
-            </button>
-          ))}
+      {/* Access extension: a flat row, shown only to learners who already bought a plan */}
+      {hasPaidPlan ? (
+        <div className="border-t border-line pt-6">
+          <p className="text-sm font-semibold text-ink">הארכת גישה, בלי לאבד התקדמות</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {EXTENSION_PLANS.map((ext) => (
+              <button
+                key={ext.id}
+                type="button"
+                disabled={busy}
+                onClick={() => void startCheckout(ext.id)}
+                className="rounded-lg border border-line bg-surface-low px-4 py-2 text-sm font-semibold text-ink transition hover:border-primary/40 hover:bg-white disabled:opacity-50"
+              >
+                {ext.label} - ₪{ext.price}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : null}
 
       {/* Fine print */}
       <div className="space-y-1 pt-2 text-center text-xs text-muted-2">

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 type Props = { searchParams: { next?: string; edit?: string } };
 
 function safeNext(raw: string | undefined): string {
-  return raw?.startsWith("/") && !/^\/[\/\\]|\\/.test(raw) ? raw : `${PREP_BASE}/amirant/course`;
+  return raw?.startsWith("/") && !/^\/[\/\\]|[\\\x00-\x1f]/.test(raw) ? raw : `${PREP_BASE}/amirant/course`;
 }
 
 function asOption<T extends readonly string[]>(options: T, v: unknown): T[number] | "" {

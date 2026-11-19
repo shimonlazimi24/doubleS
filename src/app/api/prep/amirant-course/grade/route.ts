@@ -80,7 +80,7 @@ export async function POST(req: Request) {
     userId = user?.id ?? null;
   }
   const rateKey = userId ? `u:${userId}` : `i:${requestIp}`;
-  if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade", maxRequests: client ? 60 : 30 }))) {
+  if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade", maxRequests: userId ? 60 : 240 }))) {
     return NextResponse.json({ error: TOO_MANY }, { status: 429 });
   }
 
@@ -123,9 +123,11 @@ export async function POST(req: Request) {
     if (freeBatchShapeError(questionIds)) {
       return NextResponse.json({ error: "בקשה לא תקינה" }, { status: 400 });
     }
-    // A free batch is one placement test finalized: a few per ten minutes is plenty
-    // for a real learner and slows anyone trying options one batch at a time.
-    if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade-free", windowMs: 10 * 60_000, maxRequests: 10 }))) {
+    // A free batch is one placement test finalized. Anonymous visitors are keyed
+    // by IP, and ad traffic arrives in bursts behind shared carrier and campus
+    // addresses, so the ceiling leaves room for many learners on one IP while
+    // still slowing anyone trying options one batch at a time.
+    if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade-free", windowMs: 10 * 60_000, maxRequests: 60 }))) {
       return NextResponse.json({ error: TOO_MANY }, { status: 429 });
     }
   }

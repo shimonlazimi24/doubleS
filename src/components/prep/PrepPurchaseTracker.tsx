@@ -21,7 +21,7 @@ export function PrepPurchaseTracker({
     } catch {
       /* sessionStorage חסום - עדיין שולחים */
     }
-    trackEvent("purchase", { plan: planId, value: amountNis, currency: "ILS", order: orderRef });
+    trackEvent("purchase", { plan: planId, value: amountNis, currency: "ILS", transaction_id: orderRef });
   }, [orderRef, planId, amountNis]);
   return null;
 }

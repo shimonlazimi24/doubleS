@@ -6,11 +6,11 @@ import type { AuthError, EmailOtpType } from "@supabase/supabase-js";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { trackEvent } from "@/lib/prep/analytics";
+import { trackAuthEvent } from "@/lib/prep/analytics";
 import { Container } from "@/components/ui";
 
 function safeNext(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) return AMIRANT_CONTINUE_PATH;
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|[\\\x00-\x1f]/.test(raw)) return AMIRANT_CONTINUE_PATH;
   return raw;
 }
 
@@ -73,6 +73,9 @@ export function PrepAuthCompleteClient() {
           // verify it, so a link for another account is not silently ignored in
           // favour of whoever happened to be signed in.
           if (existing && !tokenHash) {
+            // A `code` in the URL means this load completed a sign-in (the client
+            // exchanged it while initialising); without one it is a revisit.
+            if (code) trackAuthEvent(existing.user);
             if (!cancelled) router.replace(next);
             return;
           }
@@ -133,11 +136,7 @@ export function PrepAuthCompleteClient() {
         if (sessionError) throw sessionError;
         if (!session) throw new Error("no_session_after_exchange");
 
-        // GA4's recommended names: sign_up for an account created in this flow, login otherwise.
-        const createdMs = Date.parse(session.user.created_at ?? "");
-        const isNew = Number.isFinite(createdMs) && Date.now() - createdMs < 5 * 60_000;
-        const method = searchParams.get("token_hash") ? "email" : "google";
-        trackEvent(isNew ? "sign_up" : "login", { method });
+        trackAuthEvent(session.user);
 
         if (!cancelled) router.replace(next);
       } catch (err) {

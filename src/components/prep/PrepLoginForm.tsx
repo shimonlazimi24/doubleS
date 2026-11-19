@@ -5,7 +5,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { getPrepSupabasePublishableEnv } from "@/lib/prep/supabase/env";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
+import { trackAuthEvent } from "@/lib/prep/analytics";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { isInAppBrowser } from "@/lib/prep/in-app-browser";
 import { isGoogleOAuthEnabledInApp, mapSupabaseAuthError } from "@/lib/prep/auth-errors";
 import { PrepGoogleSignInButton } from "@/components/prep/PrepGoogleSignInButton";
 import { Button } from "@/components/ui/button";
@@ -23,7 +25,7 @@ const ERROR_MESSAGES: Record<string, string> = {
 const CONFIG_UNAVAILABLE_MSG = "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות, או פנו לתמיכה.";
 
 function safeReturnPath(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) {
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|[\\\x00-\x1f]/.test(raw)) {
     return AMIRANT_CONTINUE_PATH;
   }
   return raw;
@@ -66,7 +68,15 @@ export function PrepLoginForm() {
     return `${window.location.origin}${PREP_BASE}/auth/complete?next=${next}`;
   }, [returnTo]);
 
-  const showGoogle = isGoogleOAuthEnabledInApp();
+  // Read after mount: the server render cannot know the visitor's browser.
+  const [inApp, setInApp] = useState(false);
+  useEffect(() => {
+    setInApp(isInAppBrowser());
+  }, []);
+
+  // Inside a social app's browser Google refuses OAuth, so the email code is
+  // the only path that works there.
+  const showGoogle = isGoogleOAuthEnabledInApp() && !inApp;
   const supabaseReady = Boolean(getPrepSupabasePublishableEnv());
 
   async function signInWithGoogle() {
@@ -134,7 +144,7 @@ export function PrepLoginForm() {
       return;
     }
     setBusy(true);
-    const { error } = await client.auth.verifyOtp({
+    const { data, error } = await client.auth.verifyOtp({
       email: email.trim(),
       token,
       type: "email",
@@ -144,6 +154,7 @@ export function PrepLoginForm() {
       setMessage(mapSupabaseAuthError(error));
       return;
     }
+    if (data.user) trackAuthEvent(data.user);
     // ניווט מלא (לא router.push) כדי שה-middleware יראה את עוגיית הסשן מיד
     window.location.assign(returnTo);
   }
@@ -156,6 +167,13 @@ export function PrepLoginForm() {
             ? ERROR_MESSAGES.pkce_mismatch
             : (ERROR_MESSAGES[errorKey] ?? "שגיאת התחברות.")}
         </p>
+      ) : null}
+
+      {inApp && !sent ? (
+        <Text as="p" variant="bodySm" className="text-muted">
+          נכנסים עם קוד שנשלח למייל. התחברות עם Google לא עובדת בדפדפן של אינסטגרם ופייסבוק; מי שמעדיף
+          Google יכול לפתוח את הדף ב-Chrome או ב-Safari.
+        </Text>
       ) : null}
 
       {showGoogle && supabaseReady ? (

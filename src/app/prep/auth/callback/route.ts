@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { PREP_BASE } from "@/lib/prep/constants";
 
 function safeNextPath(next: string | null): string {
-  if (!next || !next.startsWith("/") || /^\/[\/\\]|\\/.test(next)) return "/prep/amirant/continue";
+  if (!next || !next.startsWith("/") || /^\/[\/\\]|[\\\x00-\x1f]/.test(next)) return "/prep/amirant/continue";
   return next;
 }
 

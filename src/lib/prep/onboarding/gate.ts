@@ -78,7 +78,7 @@ function isPrepProtectedPathForOnboarding(pathname: string): boolean {
 
 export function prepOnboardingRedirectUrl(reqUrl: string, returnPath: string): URL {
   const url = new URL(`${PREP_BASE}/onboarding`, reqUrl);
-  if (returnPath.startsWith("/") && !/^\/[\/\\]|\\/.test(returnPath)) {
+  if (returnPath.startsWith("/") && !/^\/[\/\\]|[\\\x00-\x1f]/.test(returnPath)) {
     url.searchParams.set("next", returnPath);
   }
   return url;

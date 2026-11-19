@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     userId = user?.id ?? null;
   }
   const rateKey = userId ? `u:${userId}` : `i:${requestIp}`;
-  if (!(await checkAiRouteRateLimit({ key: rateKey, route: "questions", maxRequests: client ? 60 : 30 }))) {
+  if (!(await checkAiRouteRateLimit({ key: rateKey, route: "questions", maxRequests: userId ? 60 : 240 }))) {
     return NextResponse.json({ error: TOO_MANY }, { status: 429 });
   }
 

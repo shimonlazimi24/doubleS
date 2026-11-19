@@ -6,12 +6,13 @@ import { useSearchParams } from "next/navigation";
 import { AMIRANT_CONTINUE_PATH } from "@/lib/prep/amirant-continue";
 import { isGoogleOAuthEnabledInApp } from "@/lib/prep/auth-errors";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { isInAppBrowser } from "@/lib/prep/in-app-browser";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { PrepGoogleSignInButton } from "@/components/prep/PrepGoogleSignInButton";
 import { Text } from "@/components/ui";
 
 function safeNextPath(raw: string | null): string {
-  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|\\/.test(raw)) {
+  if (!raw || !raw.startsWith("/") || /^\/[\/\\]|[\\\x00-\x1f]/.test(raw)) {
     return AMIRANT_CONTINUE_PATH;
   }
   return raw;
@@ -33,7 +34,9 @@ export function PrepGoogleStart() {
   const start = useMemo(
     () => async () => {
       const client = createPrepSupabaseBrowserClient();
-      if (!client || !isGoogleOAuthEnabledInApp()) {
+      // Google blocks OAuth inside the Instagram / Facebook browser; the login
+      // page offers the email code there instead of a Google error page.
+      if (!client || !isGoogleOAuthEnabledInApp() || isInAppBrowser()) {
         window.location.replace(loginFallback);
         return;
       }

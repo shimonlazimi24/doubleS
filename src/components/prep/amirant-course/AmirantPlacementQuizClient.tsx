@@ -346,8 +346,8 @@ export function AmirantPlacementQuizClient({
         <Text as="h1" variant="titlePage">
           מבחן רמה
         </Text>
-        <Card>
-          <CardBody className="space-y-5 p-6 sm:p-8">
+        <Card padding="none">
+          <CardBody className="!mt-0 space-y-5 p-6 sm:p-8">
             <Text as="p" variant="body" className="leading-relaxed">
               מבחן קצר שממפה את רמת האנגלית הנוכחית שלך וקובע נקודת פתיחה מותאמת אישית לקורס.
               בסיום מקבלים טווח רמה משוער על סולם 50–150, משוקלל לפי רמת הקושי של השאלות, ופילוח לפי נושא. זו הערכה ללימוד — לא ציון רשמי.
@@ -397,8 +397,8 @@ export function AmirantPlacementQuizClient({
         <Text as="h1" variant="titlePage">
           מבחן רמה - תוצאות
         </Text>
-        <Card className="border-primary/25">
-          <CardBody className="space-y-6 p-6 sm:p-8">
+        <Card padding="none" className="border-primary/25">
+          <CardBody className="!mt-0 space-y-6 p-6 sm:p-8">
             {/* מסך שטוח: היררכיה טיפוגרפית וקווי הפרדה, בלי כרטיסים מקוננים */}
             <div>
               <Text as="p" variant="labelAccent" className="text-muted">
@@ -543,8 +543,8 @@ export function AmirantPlacementQuizClient({
               </CardBody>
             </Card>
           ) : null}
-          <Card className="order-2 overflow-hidden">
-            <CardBody className="space-y-6 p-6">
+          <Card padding="none" className="order-2 overflow-hidden">
+            <CardBody className="!mt-0 space-y-6 p-6">
               <p className="text-base font-medium leading-relaxed text-ink" dir="ltr" lang="en">
                 {amirantExamQuestionPromptForDisplay(currentQ.prompt)}
               </p>

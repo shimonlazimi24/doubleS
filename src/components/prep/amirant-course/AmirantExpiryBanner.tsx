@@ -6,11 +6,11 @@ import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 /** How far ahead the notice appears. */
-const NOTICE_WINDOW_DAYS = 7;
+const NOTICE_WINDOW_DAYS = 3;
 
 /**
  * One line under the course nav when the learner's paid access ends within
- * the next seven days. Renders nothing otherwise: open-ended access, access
+ * the next three days (a week-long plan must not open with an expiry notice). Renders nothing otherwise: open-ended access, access
  * already over (the page gates handle that) or no paid access at all.
  */
 export function AmirantExpiryBanner() {

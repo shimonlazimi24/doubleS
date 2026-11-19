@@ -10,7 +10,8 @@ const variants = {
 const paddings = {
   none: "p-0",
   sm: "p-ds-4",
-  md: "p-ds-6",
+  // Phones get half the desktop padding; 48px a side leaves too little text width.
+  md: "p-ds-3 sm:p-ds-6",
   lg: "p-ds-8",
 } as const;
 
