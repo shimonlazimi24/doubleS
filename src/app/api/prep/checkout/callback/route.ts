@@ -93,8 +93,11 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
     return { redirect: `/prep/checkout/failure?reason=plan&order=${orderRef}`, ok: false };
   }
 
-  // מעבר אטומי pending→paid; 0 שורות = כבר טופל (קולבק כפול) - הצלחה אידמפוטנטית
-  const { data: transitioned } = await service
+  // Atomic move to paid; 0 rows = already handled (duplicate callback), which is
+  // an idempotent success. "failed" is accepted too: a card declined on the first
+  // try and approved on the second arrives under the same order, and that
+  // customer has been charged.
+  const { data: transitioned, error: transitionError } = await service
     .from("prep_payments")
     .update({
       status: "paid",
@@ -106,8 +109,14 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
       updated_at: new Date().toISOString(),
     })
     .eq("order_ref", orderRef)
-    .eq("status", "pending")
+    .in("status", ["pending", "failed"])
     .select("order_ref");
+
+  if (transitionError) {
+    // eslint-disable-next-line no-console -- surfaced to Sentry via console capture
+    console.error(`[checkout/callback] paid transition failed for ${orderRef}: ${transitionError.message}`);
+    return { redirect: `/prep/checkout/success?order=${orderRef}&grant=retry`, ok: true };
+  }
 
   if (transitioned && transitioned.length > 0) {
     // הענקה אטומית ב-DB (grant_course_days) - שני קולבקים מקבילים מצטברים

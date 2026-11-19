@@ -1,7 +1,6 @@
 import { ButtonLink, Container } from "@/components/ui";
 import { HeroVideoBackground } from "@/components/prep/marketing/HeroVideoBackground";
 import { TrustIndicators, type TrustItem } from "@/components/prep/marketing/TrustIndicators";
-import { Reveal } from "@/components/prep/marketing/motion/Reveal";
 import { MARKETING_HERO } from "@/lib/prep/marketing/content";
 import { COURSE_FACTS } from "@/lib/prep/marketing/course-facts";
 
@@ -28,8 +27,8 @@ type HeroCopy = {
 };
 
 /**
- * Full-bleed footage of the real course under a navy shade; the eyebrow,
- * headline, lead and actions enter in four beats. Below it, the figures.
+ * Full-bleed footage of the real course under a navy shade, with the
+ * headline and actions painted immediately. Below it, the figures.
  */
 export function MarketingHero({ copy }: { copy: HeroCopy }) {
   return (
@@ -38,16 +37,12 @@ export function MarketingHero({ copy }: { copy: HeroCopy }) {
         <HeroVideoBackground src={HERO_VIDEO} poster={HERO_POSTER} />
         <Container className="relative py-20 md:py-28">
           <div className="max-w-[44rem] text-right">
-            <Reveal delay={0}>
-              <p className="mb-4 text-sm font-semibold text-white/80">{copy.eyebrow}</p>
-            </Reveal>
-            <Reveal delay={120}>
-              <h1 className="text-[2.5rem] font-black leading-[1.08] tracking-tight md:text-[3.8rem]">{copy.headline}</h1>
-            </Reveal>
-            <Reveal delay={260}>
-              <p className="mt-6 max-w-[36rem] text-lg leading-relaxed text-white/85 md:text-[1.3rem]">{copy.subheadline}</p>
-            </Reveal>
-            <Reveal delay={400}>
+            {/* No entry animation here: the headline is the first thing an ad visitor
+                must see, and it may not wait for JavaScript to become visible. */}
+            <p className="mb-4 text-sm font-semibold text-white/80">{copy.eyebrow}</p>
+            <h1 className="text-[2.5rem] font-black leading-[1.08] tracking-tight md:text-[3.8rem]">{copy.headline}</h1>
+            <p className="mt-6 max-w-[36rem] text-lg leading-relaxed text-white/85 md:text-[1.3rem]">{copy.subheadline}</p>
+            <div>
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <ButtonLink
                   href={copy.primary.href}
@@ -65,7 +60,7 @@ export function MarketingHero({ copy }: { copy: HeroCopy }) {
                 </ButtonLink>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-white/75">{copy.note}</p>
-            </Reveal>
+            </div>
           </div>
         </Container>
       </section>

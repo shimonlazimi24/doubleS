@@ -14,14 +14,18 @@ type Props = {
  * stays for reduced-motion viewers and when autoplay is refused; the video
  * fades in once it can play. Decorative: no controls, no audio, no alt.
  */
-export function HeroVideoBackground({ src, poster, shade = 0.72 }: Props) {
+export function HeroVideoBackground({ src, poster, shade = 0.86 }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
   const [allowed, setAllowed] = useState(false);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduced) setAllowed(true);
+    // Phones get the poster only: the footage is several MB on a mobile
+    // connection, behind a shade that hides most of it anyway.
+    const wide = window.matchMedia("(min-width: 768px)").matches;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
+    if (!reduced && wide && !saveData) setAllowed(true);
   }, []);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export function HeroVideoBackground({ src, poster, shade = 0.72 }: Props) {
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden bg-primary">
       {/* eslint-disable-next-line @next/next/no-img-element -- full-bleed poster, sized by CSS */}
-      <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={poster} alt="" className="absolute inset-0 h-full w-full scale-105 object-cover blur-[3px]" />
       {allowed ? (
         <video
           ref={ref}
@@ -45,8 +49,8 @@ export function HeroVideoBackground({ src, poster, shade = 0.72 }: Props) {
           muted
           loop
           playsInline
-          preload="auto"
-          className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700"
+          preload="metadata"
+          className="absolute inset-0 h-full w-full scale-105 object-cover blur-[3px] transition-opacity duration-700"
           style={{ opacity: ready ? 1 : 0 }}
         />
       ) : null}

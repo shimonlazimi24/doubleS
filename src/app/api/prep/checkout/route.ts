@@ -15,6 +15,7 @@ import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
 import { PLAN_DAYS, PLAN_PRICES_NIS, PLAN_LABELS } from "@/lib/prep/pricing-plans";
 import { createHypPaymentUrl, isHypConfigured } from "@/lib/prep/hyp";
+import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
 
 const BodySchema = z.object({
@@ -87,6 +88,24 @@ export async function POST(req: Request) {
     // A key without service-role rights cannot write past RLS on prep_payments;
     // every purchase would fail with Postgres 42501 and no trace in the app logs.
     return NextResponse.json({ error: "מערכת התשלום אינה זמינה כרגע." }, { status: 500 });
+  }
+
+  // Extensions are priced for learners who already bought a plan. Without this
+  // check anyone could open the full course for the extension price.
+  if (planId.startsWith("ext_")) {
+    const { data: paidRow, error: paidError } = await service
+      .from("course_entitlements")
+      .select("user_id")
+      .eq("user_id", user.id)
+      .eq("course_slug", AMIRANT_PREPARATION_SLUG)
+      .eq("access_type", "paid")
+      .maybeSingle();
+    if (paidError || !paidRow) {
+      return NextResponse.json(
+        { error: "הארכה זמינה רק למי שכבר רכש תוכנית. בחרו אחת מהתוכניות למעלה." },
+        { status: 403 },
+      );
+    }
   }
 
   const orderRef = crypto.randomUUID();

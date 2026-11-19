@@ -25,7 +25,7 @@ export function CheckoutSuccessContinueLink() {
   return (
     <Link
       href={href}
-      className="inline-flex min-h-12 flex-1 items-center justify-center rounded-xl bg-primary px-6 text-base font-bold text-white shadow-card transition hover:opacity-90"
+      className="inline-flex min-h-12 flex-1 items-center justify-center rounded-control bg-primary px-6 text-base font-bold text-white transition hover:bg-primary-hover"
     >
       כניסה לקורס
     </Link>

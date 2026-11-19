@@ -238,8 +238,9 @@ export function PrepOnboardingWizard({
       if (res.ok) {
         writeLocal({ draft: null, completed: data.configured === false ? payload : null });
         movedRef.current = true;
+        // No router.refresh() here: the page redirects away once onboarding is
+        // complete, which yanked the learner off this confirmation mid-read.
         setDone(true);
-        router.refresh();
         return;
       }
       if (res.status === 401) setSignedOut(true);
@@ -249,7 +250,7 @@ export function PrepOnboardingWizard({
     } finally {
       setSubmitting(false);
     }
-  }, [buildPayload, router]);
+  }, [buildPayload]);
 
   function onNext(e?: React.FormEvent) {
     e?.preventDefault();

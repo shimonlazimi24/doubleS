@@ -68,7 +68,7 @@ export default async function PrepOnboardingPage({ searchParams }: Props) {
   }
 
   return (
-    <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center bg-canvas px-4 py-10 sm:justify-center sm:py-16">
+    <div className="flex min-h-[calc(100vh-4rem)] flex-col items-center bg-canvas px-4 py-10 sm:pt-24">
       <PrepOnboardingWizard nextPath={nextPath} initial={initial} editing={editing} />
     </div>
   );

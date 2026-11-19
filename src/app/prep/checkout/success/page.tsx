@@ -43,7 +43,29 @@ export default async function CheckoutSuccessPage({
     payment = (data as PaymentRow | null) ?? null;
   }
 
-  const stillPending = payment?.status === "pending";
+  // The callback sends grant=retry when the charge went through but opening
+  // access failed; that case must never read as "access is open".
+  const grantFailed = searchParams.grant === "retry";
+  const state: "paid" | "pending" | "support" | "unknown" = grantFailed
+    ? "support"
+    : payment?.status === "paid"
+      ? "paid"
+      : payment?.status === "pending"
+        ? "pending"
+        : "unknown";
+
+  const copy = {
+    paid: { title: "התשלום התקבל", body: "הגישה לקורס נפתחה. אפשר להתחיל ללמוד עכשיו." },
+    pending: { title: "התשלום בעיבוד", body: "הגישה תיפתח תוך רגעים. אם הדף לא מתעדכן, רעננו אותו." },
+    support: {
+      title: "התשלום התקבל, הגישה עוד לא נפתחה",
+      body: "קרתה תקלה בפתיחת הגישה. כתבו לנו ונפתח אותה ידנית בהקדם.",
+    },
+    unknown: {
+      title: "לא מצאנו את פרטי הרכישה",
+      body: "אם שילמתם, הגישה מופיעה בעמוד «המנוי שלי». אם היא לא שם, כתבו לנו ונבדוק.",
+    },
+  }[state];
 
   return (
     <Container max="measure" className="py-12" dir="rtl">
@@ -54,24 +76,17 @@ export default async function CheckoutSuccessPage({
           amountNis={Number(payment.amount_nis)}
         />
       ) : null}
-      <div className="mx-auto max-w-xl space-y-6">
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-2xl text-white">
-            ✓
-          </div>
-          <h1 className="mt-4 text-2xl font-bold text-ink">התשלום התקבל בהצלחה!</h1>
-          <Text as="p" variant="body" className="mt-2 text-muted">
-            {stillPending
-              ? "התשלום בעיבוד - הגישה תיפתח תוך רגעים. אם הדף לא מתעדכן, רעננו."
-              : "הגישה לקורס נפתחה. אפשר להתחיל ללמוד עכשיו."}
+      <div className="mx-auto max-w-xl space-y-8">
+        <div>
+          <h1 className="font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">{copy.title}</h1>
+          <Text as="p" variant="body" className="mt-3 text-muted">
+            {copy.body}
           </Text>
         </div>
 
         {payment ? (
-          <div className="rounded-2xl border border-line/80 bg-paper p-6">
-            <Text as="p" variant="labelAccent" className="text-primary">
-              פרטי הרכישה
-            </Text>
+          <div className="border-t border-line pt-6">
+            <h2 className="text-sm font-semibold text-ink">פרטי הרכישה</h2>
             <dl className="mt-4 space-y-3 text-sm">
               <div className="flex justify-between">
                 <dt className="text-muted">תוכנית</dt>
@@ -101,14 +116,14 @@ export default async function CheckoutSuccessPage({
           <CheckoutSuccessContinueLink />
           <Link
             href={`${PREP_BASE}/settings`}
-            className="inline-flex min-h-12 items-center justify-center rounded-xl border border-line px-6 text-sm font-semibold text-primary"
+            className="inline-flex min-h-12 items-center justify-center rounded-control border border-line px-6 text-sm font-semibold text-primary"
           >
             המנוי שלי
           </Link>
         </div>
 
-        <Text as="p" variant="bodySm" className="text-center text-muted">
-          הגישה לזמן מוגבל לפי התוכנית שנרכשה — אין הבטחת ציון או פטור. קבלה נשלחת למייל. שאלות?{" "}
+        <Text as="p" variant="bodySm" className="text-muted">
+          הגישה לזמן מוגבל לפי התוכנית שנרכשה. אין הבטחת ציון או פטור. קבלה נשלחת למייל. שאלות?{" "}
           <a href="mailto:support@getprepared.academy" className="underline">
             support@getprepared.academy
           </a>

@@ -101,7 +101,13 @@ export function PrepPricingPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ planId, utm: readUtmParams() ?? undefined }),
       });
-      const data = (await res.json()) as { url?: string; error?: string };
+      const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
+      if (res.status === 401) {
+        // Signed-out visitor (the pricing page is public): sign in, then come back here.
+        const back = `${window.location.pathname}${window.location.search}`;
+        window.location.href = `${PREP_BASE}/login?next=${encodeURIComponent(back)}`;
+        return;
+      }
       if (!res.ok || !data.url) {
         trackEvent("checkout_failed", { plan: planId, stage: "create" });
         setError(data.error ?? "לא ניתן לפתוח תשלום. התחברו קודם או פנו לתמיכה.");
