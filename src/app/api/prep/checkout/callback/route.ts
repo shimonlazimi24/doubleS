@@ -11,6 +11,8 @@ import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { PLAN_DAYS } from "@/lib/prep/pricing-plans";
 import { verifyHypCallback } from "@/lib/prep/hyp";
 import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
+import { sendPurchaseConfirmation } from "@/lib/prep/email/purchase-confirmation";
+import { isEmailConfigured } from "@/lib/prep/email/resend";
 
 function siteUrl(req: Request): string {
   return process.env.NEXT_PUBLIC_SITE_URL?.trim() || new URL(req.url).origin;
@@ -159,6 +161,30 @@ async function handleCallback(req: Request, searchParams: URLSearchParams) {
       .from("prep_payments")
       .update({ entitlement_ends_at: endsAt, updated_at: new Date().toISOString() })
       .eq("order_ref", orderRef);
+
+    // Sent once: this branch runs only on the first move to "paid". A mail
+    // failure must never turn a completed payment into an error page.
+    if (isEmailConfigured()) {
+      try {
+        const { data: buyer } = await service.auth.admin.getUserById(payment.user_id as string);
+        const to = buyer?.user?.email;
+        if (to) {
+          const sent = await sendPurchaseConfirmation({
+            to,
+            orderRef,
+            planId: payment.plan_id as string,
+            amountNis: expected,
+            endsAt,
+          });
+          if (!sent.ok) {
+            // eslint-disable-next-line no-console -- surfaced to Sentry via console capture
+            console.error(`[checkout/callback] confirmation email failed for ${orderRef}: ${sent.reason}`);
+          }
+        }
+      } catch {
+        /* the purchase itself is complete */
+      }
+    }
   }
 
   return { redirect: `/prep/checkout/success?order=${orderRef}`, ok: true };

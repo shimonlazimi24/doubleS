@@ -9,6 +9,10 @@ import {
 } from "@/lib/prep/cookie-consent";
 import { PREP_BASE } from "@/lib/prep/constants";
 
+const MEASUREMENT_TOOLS = process.env.NEXT_PUBLIC_META_PIXEL_ID
+  ? "Google Analytics ו-Meta Pixel"
+  : "Google Analytics";
+
 /**
  * באנר תחתון להסכמת עוגיות מדידה/שיווק (GA).
  * Auth/session נשארים תמיד; GA נטען רק אחרי «מאשר/ת».
@@ -39,8 +43,8 @@ export function PrepCookieConsentBanner() {
     >
       <div className="mx-auto flex max-w-4xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <p className="text-sm leading-relaxed text-muted">
-          אנחנו משתמשים בעוגיות חיוניות להתחברות, ובעוגיות מדידה (Google Analytics) לשיפור האתר
-          ושיוך קמפיינים — רק אם תאשרו.{" "}
+          אנחנו משתמשים בעוגיות חיוניות להתחברות, ובעוגיות מדידה ({MEASUREMENT_TOOLS}) לשיפור האתר
+          ושיוך קמפיינים, רק אם תאשרו.{" "}
           <Link href={`${PREP_BASE}/privacy`} className="font-medium text-accent underline-offset-2 hover:underline">
             מדיניות פרטיות
           </Link>

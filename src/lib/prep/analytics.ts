@@ -13,6 +13,7 @@ type EventParams = Record<string, string | number | boolean | null>;
 declare global {
   interface Window {
     gtag?: (command: "event", eventName: string, params?: EventParams) => void;
+    fbq?: (command: "track", eventName: string, params?: EventParams, options?: { eventID: string }) => void;
   }
 }
 
@@ -24,43 +25,83 @@ export function trackEvent(name: string, params: EventParams = {}): void {
   }
   if (!hasPrepMarketingConsent()) return;
   try {
-    sendToGtag(name, params);
+    sendWhenReady(gtagQueue, [name, params]);
+    const metaName = META_EVENT_NAMES[name];
+    if (metaName && process.env.NEXT_PUBLIC_META_PIXEL_ID) sendWhenReady(metaQueue, [metaName, params]);
   } catch {
     /* ignore */
   }
 }
 
-/**
- * GA loads only after consent and after hydration, so an event fired in a mount
- * effect (purchase on the success page, view_pricing on a direct load) used to
- * hit an undefined `gtag` and vanish. Events wait here until the tag is ready.
- */
-const pendingGtagEvents: Array<[string, EventParams]> = [];
-let gtagFlushTimer: number | null = null;
-const GTAG_POLL_MS = 250;
-const GTAG_MAX_POLLS = 60;
+/** Funnel events Meta optimises ads on, by its standard event names. */
+const META_EVENT_NAMES: Record<string, string> = {
+  view_pricing: "ViewContent",
+  sign_up: "CompleteRegistration",
+  placement_complete: "Lead",
+  begin_checkout: "InitiateCheckout",
+  purchase: "Purchase",
+};
 
-function flushGtagEvents(): boolean {
-  if (typeof window.gtag !== "function") return false;
-  while (pendingGtagEvents.length > 0) {
-    const [eventName, eventParams] = pendingGtagEvents.shift()!;
-    window.gtag("event", eventName, eventParams);
+/**
+ * The tags load only after consent and after hydration, so an event fired in a
+ * mount effect (purchase on the success page, view_pricing on a direct load)
+ * used to hit an undefined function and vanish. Events wait here until the tag
+ * is ready, and are dropped if it never arrives.
+ */
+type PendingEvent = [string, EventParams];
+type TagQueue = {
+  pending: PendingEvent[];
+  timer: number | null;
+  /** Sends one event; false when the tag is not on the page yet. */
+  send: (event: PendingEvent) => boolean;
+};
+
+const TAG_POLL_MS = 250;
+const TAG_MAX_POLLS = 60;
+
+const gtagQueue: TagQueue = {
+  pending: [],
+  timer: null,
+  send: ([name, params]) => {
+    if (typeof window.gtag !== "function") return false;
+    window.gtag("event", name, params);
+    return true;
+  },
+};
+
+const metaQueue: TagQueue = {
+  pending: [],
+  timer: null,
+  send: ([name, params]) => {
+    if (typeof window.fbq !== "function") return false;
+    // eventID lets Meta de-duplicate a purchase reported more than once.
+    const eventId = typeof params.transaction_id === "string" ? params.transaction_id : null;
+    if (eventId) window.fbq("track", name, params, { eventID: eventId });
+    else window.fbq("track", name, params);
+    return true;
+  },
+};
+
+function flushQueue(queue: TagQueue): boolean {
+  while (queue.pending.length > 0) {
+    if (!queue.send(queue.pending[0]!)) return false;
+    queue.pending.shift();
   }
   return true;
 }
 
-function sendToGtag(name: string, params: EventParams): void {
-  pendingGtagEvents.push([name, params]);
-  if (flushGtagEvents() || gtagFlushTimer !== null) return;
+function sendWhenReady(queue: TagQueue, event: PendingEvent): void {
+  queue.pending.push(event);
+  if (flushQueue(queue) || queue.timer !== null) return;
   let polls = 0;
-  gtagFlushTimer = window.setInterval(() => {
+  queue.timer = window.setInterval(() => {
     polls += 1;
-    if (flushGtagEvents() || polls >= GTAG_MAX_POLLS) {
-      if (gtagFlushTimer !== null) window.clearInterval(gtagFlushTimer);
-      gtagFlushTimer = null;
-      pendingGtagEvents.length = 0;
+    if (flushQueue(queue) || polls >= TAG_MAX_POLLS) {
+      if (queue.timer !== null) window.clearInterval(queue.timer);
+      queue.timer = null;
+      queue.pending.length = 0;
     }
-  }, GTAG_POLL_MS);
+  }, TAG_POLL_MS);
 }
 
 /** GA4's recommended names: sign_up for an account created in this flow, login otherwise. */

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Heebo, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { PrepAnalyticsGate } from "@/components/prep/PrepAnalyticsGate";
+import { PrepMetaPixelGate } from "@/components/prep/PrepMetaPixelGate";
 import { PrepCookieConsentBanner } from "@/components/prep/PrepCookieConsent";
 import "./globals.css";
 
@@ -34,6 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <PrepAnalyticsGate gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
+        {process.env.NEXT_PUBLIC_META_PIXEL_ID ? (
+          <PrepMetaPixelGate pixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID} />
         ) : null}
         <PrepCookieConsentBanner />
       </body>

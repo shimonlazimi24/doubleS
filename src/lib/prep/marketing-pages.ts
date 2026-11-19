@@ -14,6 +14,11 @@ export const PREP_MARKETING_TITLES: Record<PrepMarketingSlug, string> = {
 
 export const SUPPORT_EMAIL = "support@getprepared.academy";
 
+/** Named in the privacy policy; Meta appears only once its pixel is configured. */
+const MEASUREMENT_TOOLS = process.env.NEXT_PUBLIC_META_PIXEL_ID
+  ? "Google Analytics ו-Meta Pixel"
+  : "Google Analytics";
+
 export type MarketingPageSection = {
   heading?: string;
   body?: string;
@@ -103,7 +108,7 @@ export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPa
           "פרטי חשבון - כתובת דוא\"ל ושם (אם סופק), לצורך התחברות",
           "נתוני למידה - התקדמות בשיעורים, תשובות ותוצאות תרגול, לצורך התאמה אישית של הקורס",
           "נתוני רכישה - תוכנית, סכום ומזהה עסקה, לצורך מתן הגישה שנרכשה",
-          "נתוני שימוש - אנליטיקס ראשוני (Vercel) לשיפור המוצר; Google Analytics רק אחרי הסכמה בבאנר",
+          `נתוני שימוש - אנליטיקס ראשוני (Vercel) לשיפור המוצר; ${MEASUREMENT_TOOLS} רק אחרי הסכמה בבאנר`,
         ],
       },
       {
@@ -111,7 +116,7 @@ export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPa
         bullets: [
           "חיוניות: התחברות (session), אבטחה, והעדפת הסכמת עוגיות",
           "פונקציונליות: שיוך קמפיין (utm) לתשלום - כדי לדעת מאיזה מודעה הגיעה הרכישה",
-          "מדידה/שיווק: Google Analytics - נטען רק אם לחצתם «מאשר/ת» בבאנר. אפשר לבחור «חיוניות בלבד»",
+          `מדידה/שיווק: ${MEASUREMENT_TOOLS} - נטען רק אם לחצתם «מאשר/ת» בבאנר. אפשר לבחור «חיוניות בלבד»`,
         ],
       },
       {
