@@ -1,7 +1,6 @@
 import { isPrepAdminUser } from "@/lib/prep/admin-auth";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { isPrepAmirantCoursePublicPreviewPath } from "@/lib/prep/amirant-public-preview";
 import { isPrepAuthBypassEnabled } from "@/lib/prep/auth-bypass";
 import { isPrepCacheablePath, isPrepPublicPath } from "@/lib/prep/constants";
 import {
@@ -136,11 +135,9 @@ export async function middleware(req: NextRequest) {
       return res;
     }
     if (isPrepSessionRequiredPath(path)) {
-      if (isPrepAmirantCoursePublicPreviewPath(path)) {
-        const res = NextResponse.next();
-        setNoStore(res);
-        return res;
-      }
+      // The whole course needs an account, the free intro module included
+      // (free means no payment, not no login). Signed-out visitors get the login
+      // page and come back here through `next`.
       return handlePrepAuthenticatedRequest(req);
     }
     const res = NextResponse.next();

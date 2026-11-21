@@ -47,8 +47,12 @@ describe("cacheable paths", () => {
   });
 
   it("keeps 'public' and 'cacheable' as separate ideas", () => {
-    // The trap this guards: /prep/amirant/course is public but per-user.
-    expect(isPrepPublicPath("/prep/amirant/course")).toBe(true);
-    expect(isPrepCacheablePath("/prep/amirant/course")).toBe(false);
+    // The trap this guards: /prep/amirant/continue is public but per-user.
+    expect(isPrepPublicPath("/prep/amirant/continue")).toBe(true);
+    expect(isPrepCacheablePath("/prep/amirant/continue")).toBe(false);
+  });
+
+  it("keeps the whole course behind sign-in, the free intro module included", () => {
+    expect(isPrepPublicPath("/prep/amirant/course")).toBe(false);
   });
 });

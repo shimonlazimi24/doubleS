@@ -40,7 +40,6 @@ export const PREP_PUBLIC_PATHS = new Set<string>([
   `${PREP_BASE}/toefl`,
   `${PREP_BASE}/amirant`,
   `${PREP_BASE}/amirant/continue`,
-  `${PREP_BASE}/amirant/course`,
   `${PREP_BASE}/amirant/info`,
   `${PREP_BASE}/amirant/sample-questions`,
   `${PREP_BASE}/courses`,
@@ -77,8 +76,7 @@ export function isPrepPublicPath(pathname: string): boolean {
  * a shared cache.
  *
  * Deliberately NOT derived from `PREP_PUBLIC_PATHS`: that set also contains
- * `/prep/amirant/course` (per-user progress), `/prep/amirant/continue` (resolves
- * a per-user destination) and `/prep/login`. "Public" there means "no session
+ * `/prep/amirant/continue` (resolves a per-user destination) and `/prep/login`. "Public" there means "no session
  * required to open it", which is not the same as "identical for everyone".
  */
 const PREP_CACHEABLE_PATHS = new Set<string>([
