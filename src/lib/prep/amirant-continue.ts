@@ -1,5 +1,4 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { isGoogleOAuthEnabledInApp } from "@/lib/prep/brand";
 import { hasCompletedPrepOnboarding } from "@/lib/prep/onboarding/gate";
 import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { PREP_BASE } from "@/lib/prep/constants";
@@ -7,10 +6,9 @@ import { PREP_BASE } from "@/lib/prep/constants";
 export const AMIRANT_CONTINUE_PATH = `${PREP_BASE}/amirant/continue`;
 export const AMIRANT_COURSE_HOME_PATH = `${PREP_BASE}/amirant/course`;
 
-/** אנונימיים נשלחים ישר ל-Google (בלי מסך ביניים); /prep/login נשאר לשגיאות וקוד-מייל. */
+/** Anonymous visitors go to the login page, which offers Google and the email code. */
 function loginUrl(nextPath: string): string {
-  const target = isGoogleOAuthEnabledInApp() ? "auth/google" : "login";
-  return `${PREP_BASE}/${target}?next=${encodeURIComponent(nextPath)}`;
+  return `${PREP_BASE}/login?next=${encodeURIComponent(nextPath)}`;
 }
 
 function onboardingUrl(nextPath: string): string {

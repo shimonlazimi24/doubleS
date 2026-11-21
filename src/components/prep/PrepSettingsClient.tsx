@@ -2,6 +2,7 @@
 
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 import { PREP_BASE } from "@/lib/prep/constants";
+import { clearLearnerStorage } from "@/lib/prep/clear-learner-storage";
 
 /** «ניהול חשבון» - פעולות שקטות בתחתית העמוד, בלי כפתורים מאיימים. */
 export function PrepSettingsClient() {
@@ -10,6 +11,7 @@ export function PrepSettingsClient() {
     // scope "local": the library default is "global", which revokes the session
     // on every other device and browser as well.
     if (client) await client.auth.signOut({ scope: "local" });
+    clearLearnerStorage();
     // Full navigation, so nothing held in memory from this account survives.
     window.location.assign(`${PREP_BASE}/login`);
   }

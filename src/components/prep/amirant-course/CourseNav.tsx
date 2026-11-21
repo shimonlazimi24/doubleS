@@ -5,6 +5,7 @@ import { PrepAppLink as Link } from "@/components/prep/PrepAppLink";
 import { PREP_BASE } from "@/lib/prep/constants";
 import { AMIRANT_PREPARATION_MANIFEST } from "@/lib/amirant-course";
 import { useAmirantCourseProgressOptional } from "./AmirantCourseProgressProvider";
+import { useAmirantCourseAccess } from "./AmirantCourseAccessProvider";
 import { cn } from "@/lib/design-system/cn";
 import { CourseNavAssistantButton } from "./assistant/CourseNavAssistantButton";
 
@@ -35,8 +36,25 @@ const TABS: { href: string; label: string; short: string; isActive: (path: strin
 export function CourseNav() {
   const pathname = usePathname() ?? "";
   const progress = useAmirantCourseProgressOptional();
+  const access = useAmirantCourseAccess();
+  // The course home is open without an account. A visitor who is not signed in
+  // gets a sign-in link in place of the account tab and no progress figure, so
+  // the page never looks as if someone is still signed in.
+  const signedOut = !access.loading && !access.userId && !access.hasFullAccess;
+  const tabs = signedOut
+    ? [
+        ...TABS.slice(0, 2),
+        {
+          href: `${PREP_BASE}/login?next=${encodeURIComponent(pathname || BASE)}`,
+          label: "התחברות",
+          short: "התחברות",
+          isActive: () => false,
+        },
+      ]
+    : TABS;
   const lessons = AMIRANT_PREPARATION_MANIFEST.modules.flatMap((m) => m.lessons);
-  const done = progress?.ready ? lessons.filter((l) => progress.getLessonStatus(l.id) === "completed").length : null;
+  const done =
+    progress?.ready && !signedOut ? lessons.filter((l) => progress.getLessonStatus(l.id) === "completed").length : null;
 
   return (
     <header className="sticky top-0 z-[100] border-b border-line bg-paper">
@@ -46,7 +64,7 @@ export function CourseNav() {
             PREPARE
           </Link>
           <nav aria-label="ניווט בקורס" className="flex h-full items-stretch gap-4 sm:gap-6">
-            {TABS.map((tab) => {
+            {tabs.map((tab) => {
               const active = tab.isActive(pathname);
               return (
                 <Link
