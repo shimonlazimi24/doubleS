@@ -36,29 +36,17 @@ function NavLink({ href, label, exact }: { href: string; label: string; exact?: 
 }
 
 /**
- * Two groups so the phone header is two tidy rows: logo and the course button
- * on the first, the page links on the second. On desktop both sit in one row.
- * The header is LTR (Latin wordmark); the nav is RTL so the reading order is
- * בית ← אמירנט ← אודות ← אזור אישי ← כניסה לקורס.
+ * The header is mirrored like most Hebrew sites, right to left: logo, page links,
+ * then אזור אישי and the course button at the far left. The DOM follows that
+ * order, so Tab follows the screen on desktop. On phones the CSS order makes two
+ * rows: logo and the course button first, the page links below.
  */
 export function MarketingNav() {
   return (
     <>
-      <div dir="rtl" className="order-2 flex items-center gap-x-4 lg:order-3">
-        <Link
-          href={`${PREP_BASE}/settings`}
-          className="hidden min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:inline-flex"
-        >
-          אזור אישי
-        </Link>
-        <ButtonLink href={`${PREP_BASE}/amirant/course`} variant="primary" className="min-h-10 !rounded px-4 text-sm lg:px-5">
-          כניסה לקורס
-        </ButtonLink>
-      </div>
       <nav
-        dir="rtl"
         aria-label="ניווט ראשי"
-        className="order-3 flex w-full items-center gap-x-4 border-t border-line/60 sm:gap-x-6 lg:order-2 lg:ms-auto lg:w-auto lg:border-0 lg:gap-x-8"
+        className="order-3 flex w-full items-center gap-x-4 border-t border-line/60 sm:gap-x-6 lg:order-none lg:ms-4 lg:w-auto lg:border-0 lg:gap-x-8"
       >
         {LINKS.map((item) => (
           <NavLink key={item.href} href={item.href} label={item.label} exact={"exact" in item ? item.exact : false} />
@@ -70,6 +58,17 @@ export function MarketingNav() {
           אזור אישי
         </Link>
       </nav>
+      <div className="order-2 flex items-center gap-x-4 lg:order-none lg:ms-auto">
+        <Link
+          href={`${PREP_BASE}/settings`}
+          className="hidden min-h-10 items-center px-1 text-sm font-medium text-muted transition-colors hover:text-ink lg:inline-flex"
+        >
+          אזור אישי
+        </Link>
+        <ButtonLink href={`${PREP_BASE}/amirant/course`} variant="primary" className="min-h-10 !rounded px-4 text-sm lg:px-5">
+          כניסה לקורס
+        </ButtonLink>
+      </div>
     </>
   );
 }
