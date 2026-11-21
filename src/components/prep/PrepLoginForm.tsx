@@ -22,6 +22,10 @@ const ERROR_MESSAGES: Record<string, string> = {
     "ההתחברות הסתיימה בדפדפן אחר מזה שבו התחילה (קורה למשל עם קישור מייל ישן). הכי פשוט: התחברו עם Google כאן למטה, או בקשו קוד חדש והקלידו את 6 הספרות - שניהם עובדים מכל מכשיר.",
 };
 
+// Supabase "Email OTP length" can be set anywhere from 6 to 10 digits.
+const OTP_MIN_DIGITS = 6;
+const OTP_MAX_DIGITS = 10;
+
 const CONFIG_UNAVAILABLE_MSG = "ההתחברות לא זמינה כרגע. נסו שוב בעוד כמה דקות, או פנו לתמיכה.";
 
 function safeReturnPath(raw: string | null): string {
@@ -127,8 +131,9 @@ export function PrepLoginForm() {
   }
 
   /**
-   * אימות בקוד 6 ספרות - עובד מכל דפדפן/מכשיר, בניגוד לקישור (PKCE) שחייב
-   * להיפתח באותו דפדפן שביקש אותו. זה המסלול הראשי; הקישור נשאר כנוחות.
+   * Email code sign-in works from any browser or device, unlike the PKCE link that
+   * must open in the browser that requested it. Supabase lets the project set the
+   * code length (6-10 digits), so the form accepts that whole range.
    */
   async function verifyCode(e: React.FormEvent) {
     e.preventDefault();
@@ -139,8 +144,8 @@ export function PrepLoginForm() {
       return;
     }
     const token = code.replace(/\D/g, "");
-    if (token.length !== 6) {
-      setMessage("הקוד הוא 6 ספרות - כפי שמופיע במייל.");
+    if (token.length < OTP_MIN_DIGITS || token.length > OTP_MAX_DIGITS) {
+      setMessage("הקוד לא שלם. העתיקו את כל הספרות כפי שהן מופיעות במייל.");
       return;
     }
     setBusy(true);
@@ -208,7 +213,7 @@ export function PrepLoginForm() {
         <div className="space-y-4">
           <div className="rounded-xl border border-line/80 bg-canvas px-4 py-4">
             <Text as="p" variant="body">
-              שלחנו מייל ל־<strong>{email.trim()}</strong> עם <strong>קוד בן 6 ספרות</strong> וקישור
+              שלחנו מייל ל־<strong>{email.trim()}</strong> עם <strong>קוד כניסה</strong> וקישור
               התחברות. בדקו גם בספאם.
             </Text>
           </div>
@@ -219,10 +224,9 @@ export function PrepLoginForm() {
                 type="text"
                 inputMode="numeric"
                 autoComplete="one-time-code"
-                maxLength={6}
+                maxLength={OTP_MAX_DIGITS + 4}
                 value={code}
                 onChange={(ev) => setCode(ev.target.value)}
-                placeholder="123456"
                 dir="ltr"
                 className="text-center text-xl font-bold tracking-[0.4em] tabular-nums"
                 autoFocus
