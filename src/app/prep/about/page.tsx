@@ -79,8 +79,24 @@ const METHOD_PRINCIPLES = [
  * under public/prep/team at build time, so a missing photo never breaks the page.
  */
 const TEAM = [
-  { name: "שמעון לזימי", role: "מייסד שותף", photo: "/prep/team/shimon.jpg" },
-  { name: "שחר ציגלר", role: "מייסד שותף", photo: "/prep/team/shahar.jpg" },
+  {
+    name: "שמעון לזימי",
+    role: "מייסד שותף ו-CTO",
+    photo: "/prep/team/shimon.jpg",
+    bio: [
+      "מייסד שותף ו-CTO ב-Prepare, ומייסד ו-CTO של FixTok. בניתי עשרות פלטפורמות ללמידה ולניהול בתחומים שונים.",
+      "עם 7 שנות ניסיון בפיתוח בהייטק ובהדרכה, ב-Prepare אני אחראי על הטכנולוגיה: תרגול שמתאים את עצמו לרמה של כל לומד, סימולציות מלאות בתנאי מבחן ועוזר AI שעונה על שאלות בכל שיעור. המטרה: שכל לומד יידע בדיוק מה לתרגל עכשיו, בלי לבזבז זמן על מה שהוא כבר יודע.",
+    ],
+  },
+  {
+    name: "שחר ציגלר",
+    role: "מייסד שותף",
+    photo: "/prep/team/shahar.jpg",
+    bio: [
+      "מייסד שותף ב-Prepare ומייסד ומנכ״ל ״פזצט״א״. בוגר תואר בסטטיסטיקה, מדעי הנתונים ומנהל עסקים מהאוניברסיטה העברית.",
+      "עם ניסיון של מעל 10 שנים בהדרכה, פיתוח תוכן ותיווך נושאים מורכבים בצורה פשוטה ונגישה, ליוויתי והכשרתי מעל 10,000 צעירים להצלחה במבחנים ומיונים. ב-Prepare אני משלב בין ניתוח נתונים וזיהוי דפוסי הבחינה, לבין בניית תהליכי למידה אינטראקטיביים ומדויקים - כדי להפוך את ההכנה לאמירנט לברורה, מרתקת וממוקדת תוצאות.",
+    ],
+  },
 ] as const;
 
 function hasPublicFile(publicPath: string): boolean {
@@ -173,11 +189,16 @@ export default function PrepAboutPage() {
                       width={480}
                       height={600}
                       sizes="(min-width: 640px) 240px, 60vw"
-                      className="h-auto w-40 rounded object-cover sm:w-48"
+                      className="h-auto w-40 rounded object-cover grayscale sm:w-48"
                     />
                   ) : null}
                   <p className="mt-4 text-lg font-semibold text-ink">{person.name}</p>
                   <p className="text-sm text-muted">{person.role}</p>
+                  {person.bio.map((para) => (
+                    <p key={para.slice(0, 24)} className="mt-3 max-w-[46ch] text-[15px] leading-relaxed text-muted">
+                      {para}
+                    </p>
+                  ))}
                 </li>
               );
             })}
