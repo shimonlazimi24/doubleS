@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { z } from "zod";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { getBankQuestion } from "@/lib/amirant-course/question-bank";
@@ -25,12 +26,16 @@ export async function POST(req: Request) {
   const { requestIp } = getAiRequestMeta(req);
   const client = createPrepSupabaseServerClient();
   let userId: string | null = null;
-  // The free placement test fetches its form anonymously; rate-limited like grading.
+  // Signed-in only, the free placement test included: an open endpoint let
+  // anyone (or any scraper) page through the question bank by id.
   if (client) {
     const {
       data: { user },
     } = await client.auth.getUser();
     userId = user?.id ?? null;
+  }
+  if (!userId && !getPrepHasFullAccess()) {
+    return NextResponse.json({ error: "יש להתחבר" }, { status: 401 });
   }
   const rateKey = userId ? `u:${userId}` : `i:${requestIp}`;
   if (!(await checkAiRouteRateLimit({ key: rateKey, route: "questions", maxRequests: userId ? 60 : 240 }))) {

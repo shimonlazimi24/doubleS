@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { z } from "zod";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
@@ -29,6 +30,9 @@ export async function POST(req: Request) {
       data: { user },
     } = await client.auth.getUser();
     userId = user?.id ?? null;
+  }
+  if (!userId && !getPrepHasFullAccess()) {
+    return NextResponse.json({ error: "יש להתחבר" }, { status: 401 });
   }
   const rateKey = userId ? `u:${userId}` : `i:${requestIp}`;
   if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade", maxRequests: client ? 60 : 30 }))) {

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getPrepHasFullAccess } from "@/lib/prep/prep-full-access";
 import { z } from "zod";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { getBankQuestion } from "@/lib/amirant-course/question-bank";
@@ -72,12 +73,15 @@ export async function POST(req: Request) {
   const { requestIp } = getAiRequestMeta(req);
   const client = createPrepSupabaseServerClient();
   let userId: string | null = null;
-  // Grading is allowed for anonymous preview quizzes, but rate-limited hard.
+  // Signed-in only: anonymous grading was an answer oracle for the bank.
   if (client) {
     const {
       data: { user },
     } = await client.auth.getUser();
     userId = user?.id ?? null;
+  }
+  if (!userId && !getPrepHasFullAccess()) {
+    return NextResponse.json({ error: "יש להתחבר" }, { status: 401 });
   }
   const rateKey = userId ? `u:${userId}` : `i:${requestIp}`;
   if (!(await checkAiRouteRateLimit({ key: rateKey, route: "grade", maxRequests: userId ? 60 : 240 }))) {
