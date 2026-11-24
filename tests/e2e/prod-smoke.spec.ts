@@ -7,22 +7,19 @@ test.describe("prod smoke", () => {
     await expect(page.locator("body")).toBeVisible();
   });
 
-  test("grade API rejects bad body", async ({ request }) => {
-    const res = await request.post("/api/prep/amirant-course/grade", { data: {} });
-    expect([400, 429]).toContain(res.status());
-  });
-
-  test("grade API check mode works without leaking keys on 404", async ({ request }) => {
-    const res = await request.post("/api/prep/amirant-course/grade", {
-      data: { mode: "check", questionId: "definitely-missing-q", selectedOptionId: "a" },
-    });
-    expect([404, 429]).toContain(res.status());
-    if (res.status() === 404) {
-      const json = (await res.json()) as Record<string, unknown>;
+  // Question, grade and word-grade answer only signed-in learners: anonymous
+  // grading was an answer oracle for the question bank.
+  for (const route of ["grade", "grade-word", "questions"]) {
+    test(`${route} API is locked without a session and leaks no answer`, async ({ request }) => {
+      const res = await request.post(`/api/prep/amirant-course/${route}`, {
+        data: { mode: "check", questionId: "definitely-missing-q", selectedOptionId: "a", ids: ["x"] },
+      });
+      expect([401, 429]).toContain(res.status());
+      const json = (await res.json().catch(() => ({}))) as Record<string, unknown>;
       expect(json.correctOptionId).toBeUndefined();
       expect(json.explanation).toBeUndefined();
-    }
-  });
+    });
+  }
 
   test("ai-analysis stays locked without session", async ({ request }) => {
     const res = await request.post("/api/prep/amirant-course/ai-analysis", {
