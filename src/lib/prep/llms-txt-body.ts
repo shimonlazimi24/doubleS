@@ -18,7 +18,7 @@ import {
   AMIRANT_PLAN_FACTS,
 } from "@/lib/prep/marketing/amirant-seo-content";
 import { SUPPORT_EMAIL } from "@/lib/prep/marketing-pages";
-import { PLAN_DAYS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
+import { PLAN_DAYS, PLAN_PRICES_NIS, EXTENSION_GRACE_DAYS } from "@/lib/prep/pricing-plans";
 
 export type LlmsTxtPost = { slug: string; title: string; description: string; date: string };
 
@@ -67,7 +67,7 @@ ${AMIRANT_PREPARATION_MANIFEST.modules.map((m) => `- ${m.title}: ${m.lessons.len
   sections.push(`## מחירים (${prep}/pricing)
 גישה מלאה לכל הקורס לזמן קצוב. תשלום חד-פעמי בשקלים, לא מנוי מתחדש:
 ${AMIRANT_PLAN_FACTS.map((p) => `- גישה ל${p.labelHe} (${p.days} ימים): ${p.priceNis} ₪`).join("\n")}
-הארכה מתוך החשבון: שבוע ${PLAN_PRICES_NIS.ext_week} ₪, שבועיים ${PLAN_PRICES_NIS.ext_two_weeks} ₪, חודש ${PLAN_PRICES_NIS.ext_month} ₪ (${PLAN_DAYS.ext_month} ימים).
+הארכה מתוך החשבון: שבוע ${PLAN_PRICES_NIS.ext_week} ₪, שבועיים ${PLAN_PRICES_NIS.ext_two_weeks} ₪, חודש ${PLAN_PRICES_NIS.ext_month} ₪ (${PLAN_DAYS.ext_month} ימים). זמינה בזמן שהגישה פעילה ועד ${EXTENSION_GRACE_DAYS} יום מסיומה.
 הסליקה בדף תשלום מאובטח של חברת הסליקה; פרטי כרטיס אינם עוברים בשרתי האתר.`);
 
   sections.push(`## מבנה מבחן האמירנט

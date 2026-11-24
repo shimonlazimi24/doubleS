@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { PLAN_DAYS, PLAN_LABELS, PLAN_PRICES_NIS } from "./pricing-plans";
+import {
+  EXTENSION_GRACE_DAYS,
+  PLAN_DAYS,
+  PLAN_LABELS,
+  PLAN_PRICES_NIS,
+  extensionDeadline,
+  isExtensionWindowOpen,
+} from "./pricing-plans";
 import { amirantCourseJsonLd } from "./seo/json-ld";
 
 /**
@@ -40,5 +47,23 @@ describe("pricing plans", () => {
       expect(offer, `no offer published for ${planId}`).toBeDefined();
       expect(offer!.price).toBe(String(PLAN_PRICES_NIS[planId]));
     }
+  });
+});
+
+describe("extension window", () => {
+  const ends = "2026-11-26T06:42:31.966Z";
+
+  it("is open while access is active and up to the grace period after it ends", () => {
+    expect(isExtensionWindowOpen(ends, new Date("2026-11-20T00:00:00Z"))).toBe(true);
+    expect(isExtensionWindowOpen(ends, new Date("2026-12-26T06:42:31.966Z"))).toBe(true);
+  });
+
+  it("closes the moment the grace period is over", () => {
+    expect(isExtensionWindowOpen(ends, new Date("2026-12-26T06:42:32.000Z"))).toBe(false);
+  });
+
+  it("puts the deadline exactly EXTENSION_GRACE_DAYS after access ends", () => {
+    const deadline = extensionDeadline(ends);
+    expect(deadline?.getTime()).toBe(Date.parse(ends) + EXTENSION_GRACE_DAYS * 86_400_000);
   });
 });

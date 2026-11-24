@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { readUtmParams, trackEvent } from "@/lib/prep/analytics";
 import { PREP_BASE } from "@/lib/prep/constants";
-import { PLAN_DAYS, PLAN_PRICES_NIS } from "@/lib/prep/pricing-plans";
+import { EXTENSION_GRACE_DAYS, PLAN_DAYS, PLAN_PRICES_NIS, extensionDeadline, isExtensionWindowOpen } from "@/lib/prep/pricing-plans";
 import { createPrepSupabaseBrowserClient } from "@/lib/prep/supabase/browser";
 
 export type PlanId = "week" | "two_weeks" | "month";
@@ -74,8 +74,9 @@ export function PrepPricingPage() {
   // A signed-out visitor who picked a plan comes back from login with it in the URL.
   const planFromUrl = PLANS.find((p) => p.id === searchParams.get("plan"))?.id;
   const [selected, setSelected] = useState<PlanId>(planFromUrl ?? "two_weeks");
-  // Extensions are sold only to learners who already bought a plan.
-  const [hasPaidPlan, setHasPaidPlan] = useState(false);
+  // Extensions are sold only to learners who already bought a plan, until
+  // EXTENSION_GRACE_DAYS after their access ends. null = not offered.
+  const [extensionUntil, setExtensionUntil] = useState<Date | "open" | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -88,11 +89,13 @@ export function PrepPricingPage() {
       if (!user || cancelled) return;
       const { data } = await client
         .from("course_entitlements")
-        .select("user_id")
+        .select("ends_at")
         .eq("user_id", user.id)
         .eq("access_type", "paid")
         .limit(1);
-      if (!cancelled && data && data.length > 0) setHasPaidPlan(true);
+      const endsAt = (data?.[0]?.ends_at as string | null | undefined) ?? null;
+      if (cancelled || !data || data.length === 0 || !isExtensionWindowOpen(endsAt)) return;
+      setExtensionUntil(extensionDeadline(endsAt) ?? "open");
     })();
     return () => {
       cancelled = true;
@@ -246,9 +249,14 @@ export function PrepPricingPage() {
       </div>
 
       {/* Access extension: a flat row, shown only to learners who already bought a plan */}
-      {hasPaidPlan ? (
+      {extensionUntil ? (
         <div className="border-t border-line pt-6">
           <p className="text-sm font-semibold text-ink">הארכת גישה, בלי לאבד התקדמות</p>
+          <p className="mt-1 text-xs text-muted">
+            {extensionUntil === "open"
+              ? `המחיר המוזל זמין עד ${EXTENSION_GRACE_DAYS} יום מסיום הגישה.`
+              : `המחיר המוזל זמין עד ${extensionUntil.toLocaleDateString("he-IL", { day: "numeric", month: "numeric", year: "numeric" })} (${EXTENSION_GRACE_DAYS} יום מסיום הגישה). אחרי זה - תוכנית רגילה.`}
+          </p>
           <div className="mt-3 flex flex-wrap gap-2">
             {EXTENSION_PLANS.map((ext) => (
               <button

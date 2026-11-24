@@ -13,7 +13,13 @@ import { z } from "zod";
 import { createPrepSupabaseServerClient } from "@/lib/prep/supabase/server";
 import { getPrepSupabaseServiceClient } from "@/lib/prep/supabase/service";
 import { assertServiceRoleKeyForWrites } from "@/lib/prep/supabase/service-role-check";
-import { PLAN_DAYS, PLAN_PRICES_NIS, PLAN_LABELS } from "@/lib/prep/pricing-plans";
+import {
+  EXTENSION_GRACE_DAYS,
+  PLAN_DAYS,
+  PLAN_LABELS,
+  PLAN_PRICES_NIS,
+  isExtensionWindowOpen,
+} from "@/lib/prep/pricing-plans";
 import { createHypPaymentUrl, isHypConfigured } from "@/lib/prep/hyp";
 import { AMIRANT_PREPARATION_SLUG } from "@/lib/amirant-course/constants";
 import { checkAiRouteRateLimit } from "@/lib/amirant-course/ai/rate-limit";
@@ -95,7 +101,7 @@ export async function POST(req: Request) {
   if (planId.startsWith("ext_")) {
     const { data: paidRow, error: paidError } = await service
       .from("course_entitlements")
-      .select("user_id")
+      .select("ends_at")
       .eq("user_id", user.id)
       .eq("course_slug", AMIRANT_PREPARATION_SLUG)
       .eq("access_type", "paid")
@@ -103,6 +109,14 @@ export async function POST(req: Request) {
     if (paidError || !paidRow) {
       return NextResponse.json(
         { error: "הארכה זמינה רק למי שכבר רכש תוכנית. בחרו אחת מהתוכניות למעלה." },
+        { status: 403 },
+      );
+    }
+    if (!isExtensionWindowOpen((paidRow.ends_at as string | null) ?? null)) {
+      return NextResponse.json(
+        {
+          error: `הארכה במחיר המוזל זמינה עד ${EXTENSION_GRACE_DAYS} יום מסיום הגישה. בחרו אחת מהתוכניות למעלה.`,
+        },
         { status: 403 },
       );
     }

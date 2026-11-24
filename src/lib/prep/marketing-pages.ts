@@ -1,4 +1,5 @@
 import type { PrepMarketingSlug } from "@/lib/prep/constants";
+import { EXTENSION_GRACE_DAYS } from "@/lib/prep/pricing-plans";
 
 export const PREP_MARKETING_TITLES: Record<PrepMarketingSlug, string> = {
   toefl: "TOEFL",
@@ -58,7 +59,7 @@ export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPa
     eyebrow: "תנאי שימוש",
     lede:
       "התקנון חל על השימוש באתר PREPARE (getprepared.academy) ועל רכישת גישה לקורס ההכנה לאמירנט. השימוש באתר או רכישה מהווים הסכמה לתנאים אלה.",
-    lastUpdated: "אוגוסט 2026",
+    lastUpdated: "נובמבר 2026",
     sections: [
       {
         heading: "מי אנחנו",
@@ -79,7 +80,7 @@ export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPa
       },
       {
         heading: "תשלום וגישה",
-        body: "הסליקה מתבצעת ב-Hyp. הגישה נפתחת לאחר אישור התשלום. המחירים מוצגים בשקלים לפי התוכנית בעמוד המחירים במועד הרכישה.",
+        body: `הסליקה מתבצעת ב-Hyp. הגישה נפתחת לאחר אישור התשלום. המחירים מוצגים בשקלים לפי התוכנית בעמוד המחירים במועד הרכישה. הארכת גישה במחיר מוזל זמינה למי שרכש תוכנית, בזמן שהגישה פעילה ועד ${EXTENSION_GRACE_DAYS} יום מסיומה; אחרי זה נדרשת רכישה של תוכנית רגילה.`,
       },
       {
         heading: "ביטול והחזרים",
