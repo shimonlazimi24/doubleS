@@ -10,9 +10,9 @@ export type PathStep = {
 };
 
 /**
- * The stages of the course as alternating rows: a large screenshot of the
- * real screen on one side, a light numeral and the text on the other. Each
- * row slides in from its own side.
+ * The stages of the course as alternating rows: a screenshot of the real
+ * screen on one side, the step and its text on the other. The step number is
+ * part of the heading, not a faded giant numeral.
  */
 export function CoursePathSteps({ steps }: { steps: readonly PathStep[] }) {
   return (
@@ -22,12 +22,8 @@ export function CoursePathSteps({ steps }: { steps: readonly PathStep[] }) {
         return (
           <li key={step.title} className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
             <Reveal from={imageFirst ? "end" : "start"} className={cn("text-right", imageFirst && "md:order-2")}>
-              <p className="text-[4.5rem] font-black leading-none text-[#c9d2e3] md:text-[5rem]" aria-hidden>
-                {i + 1}
-              </p>
-              <h3 className="mt-3 text-[1.6rem] font-extrabold leading-tight text-ink md:text-[1.9rem]">
-                <span className="sr-only">שלב {i + 1}: </span>
-                {step.title}
+              <h3 className="text-[1.6rem] font-extrabold leading-tight text-ink md:text-[1.9rem]">
+                <span className="tabular-nums text-primary">{i + 1}.</span> {step.title}
               </h3>
               <p className="mt-4 text-lg leading-relaxed text-muted">{step.body}</p>
             </Reveal>
@@ -38,7 +34,7 @@ export function CoursePathSteps({ steps }: { steps: readonly PathStep[] }) {
                 width={step.image.width}
                 height={step.image.height}
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="h-auto w-full rounded-md shadow-[0_24px_60px_-24px_rgba(15,35,71,0.35)]"
+                className="h-auto w-full rounded border border-line"
               />
             </Reveal>
           </li>

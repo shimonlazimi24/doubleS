@@ -14,7 +14,7 @@ export const PREP_LOGO_PATH = "/prep/logo.png";
 export const PREP_LOGO_WIDTH = 1024;
 export const PREP_LOGO_HEIGHT = 576;
 export const PREP_BRAND_TAGLINE_HE =
-  "מבחנים וקורסים ללימוד אנגלית - ממוקד, מדיד, בלי רעש";
+  "קורס הכנה לאמירנט, מבחן האנגלית של מאל״ו.";
 
 /** @deprecated Use PREP_BRAND_NAV_HE or PREP_BRAND_LATIN */
 export const PREP_PRODUCT_NAME = PREP_BRAND_NAV_HE;

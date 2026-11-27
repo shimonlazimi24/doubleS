@@ -15,37 +15,31 @@ const SAMPLE = [
   },
 ] as const;
 
-/** The assistant shown as the conversation it is; the messages arrive one after another. */
+/** The assistant shown as a plain transcript: who said what, no chat bubbles. */
 export function AIValueSection() {
   return (
     <section id="ai-coach" className="scroll-mt-20 bg-paper py-20 md:py-28">
       <Container max="shell">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal from="start" className="text-right">
-            <p className="mb-2 text-sm font-semibold text-primary">בגישה המלאה</p>
+          <Reveal className="text-right">
             <h2 className="text-[2.1rem] font-extrabold leading-[1.12] tracking-tight text-ink md:text-[2.6rem]">עוזר בתוך השיעור</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted md:text-xl">
               רואה את השאלה שעל המסך ועונה מתוך חומר הקורס, בעברית, עם המילים באנגלית. במבחנים מתוזמנים מסביר רק אחרי שעניתם, כדי
-              שהציון ישקף את הידע שלכם.
+              שהציון ישקף את הידע שלכם. כלול בגישה המלאה.
             </p>
           </Reveal>
-          <ol className="flex flex-col gap-3.5" aria-label="דוגמה לשיחה עם העוזר">
-            {SAMPLE.map((m, i) => (
-              <Reveal
-                as="li"
-                key={i}
-                from={m.role === "user" ? "start" : "end"}
-                delay={i * 260}
-                className={
-                  m.role === "user"
-                    ? "max-w-[80%] self-start rounded-md bg-surface-low px-4 py-3 text-[16px] leading-relaxed text-ink"
-                    : "max-w-[88%] self-end rounded-md border border-line bg-paper px-4 py-3 text-[16px] leading-relaxed text-ink"
-                }
-              >
-                {m.text}
-              </Reveal>
-            ))}
-          </ol>
+          <Reveal as="div">
+            <ol className="space-y-5 border-s-2 border-primary ps-6" aria-label="דוגמה לשיחה עם העוזר">
+              {SAMPLE.map((m, i) => (
+                <li key={i} className="text-[17px] leading-relaxed">
+                  <span className={m.role === "user" ? "font-bold text-ink" : "font-bold text-primary"}>
+                    {m.role === "user" ? "שאלה: " : "העוזר: "}
+                  </span>
+                  <span className={m.role === "user" ? "text-ink" : "text-muted"}>{m.text}</span>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
         </div>
       </Container>
     </section>

@@ -21,7 +21,7 @@ const COURSE = `${PREP_BASE}/amirant/course`;
 
 function ProseSection({ s, tone }: { s: typeof AMIRANT_WHO_FOR_SECTION; tone: "paper" | "low" }) {
   return (
-    <MarketingSection id={s.id} eyebrow={s.eyebrowHe} title={s.headingHe} tone={tone}>
+    <MarketingSection id={s.id} title={s.headingHe} tone={tone}>
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
         <Reveal from="start" className="max-w-[38rem]">
           {s.paragraphsHe.map((p) => (
@@ -56,7 +56,6 @@ export function PrepAmirantHub() {
     <div dir="rtl" className="bg-paper">
       <MarketingHero
         copy={{
-          eyebrow: "קורס הכנה לאמירנט",
           headline: "להגיע לפטור, או קרוב אליו, בלי קורסי השלמה מיותרים",
           subheadline:
             "שיעורי שיטה, יחידות תרגול מדורגות לכל חלק במבחן, סימולציות מלאות בזמן אמת, האזנה, כתיבה, ועוזר שמסביר כל שאלה. הציון הרשמי נקבע במבחן של מאל״ו; הקורס מכין אליו.",

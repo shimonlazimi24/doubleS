@@ -11,14 +11,14 @@ export type PlanId = "week" | "two_weeks" | "month";
 
 const SHARED_FEATURES = [
   "כל המודולים + 6 סימולציות מלאות",
-  "תרגול אדפטיבי לפי הרמה שלכם",
+  "תרגול לפי הרמה שלכם",
   "עוזר AI בגישה המלאה",
   "דשבורד התקדמות אישי",
 ];
 
 /**
  * מחירים וימים מגיעים מ-pricing-plans.ts - אותו מקור שה-checkout מחייב לפיו.
- * כאן רק קופי שיווקי (תוויות, badge, פיצ'רים) - כדי שעדכון מחיר לא יציג
+ * כאן רק קופי שיווקי (תוויות, פיצ'רים) - כדי שעדכון מחיר לא יציג
  * מחיר אחד ויחייב אחר.
  */
 export const PLANS: {
@@ -26,7 +26,6 @@ export const PLANS: {
   label: string;
   duration: string;
   price: number;
-  badge?: string;
   features: string[];
 }[] = [
   { id: "week", label: "שבוע", duration: `${PLAN_DAYS.week} ימים`, price: PLAN_PRICES_NIS.week!, features: SHARED_FEATURES },
@@ -35,7 +34,6 @@ export const PLANS: {
     label: "שבועיים",
     duration: `${PLAN_DAYS.two_weeks} ימים`,
     price: PLAN_PRICES_NIS.two_weeks!,
-    badge: "מומלץ",
     features: SHARED_FEATURES,
   },
   { id: "month", label: "חודש", duration: `${PLAN_DAYS.month} ימים`, price: PLAN_PRICES_NIS.month!, features: SHARED_FEATURES },
@@ -191,18 +189,14 @@ export function PrepPricingPage() {
               key={plan.id}
               type="button"
               onClick={() => selectPlan(plan.id)}
-              className={`relative rounded-2xl border-2 p-5 text-right transition-all ${
+              aria-pressed={isSelected}
+              className={`relative rounded border p-5 text-right transition-colors ${
                 isSelected
-                  ? "border-primary bg-primary text-white shadow-lg"
+                  ? "border-primary bg-primary text-white"
                   : "border-line bg-white text-primary hover:border-primary/40"
               }`}
             >
-              {plan.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded bg-score px-3 py-1 text-[10px] font-bold text-primary">
-                  {plan.badge}
-                </span>
-              )}
-              <p className={`text-xs font-semibold uppercase tracking-wide ${isSelected ? "text-white/60" : "text-muted-2"}`}>
+              <p className={`text-sm ${isSelected ? "text-white/75" : "text-muted"}`}>
                 {plan.duration}
               </p>
               <p className="mt-1 text-2xl font-bold">{plan.label}</p>
@@ -216,14 +210,10 @@ export function PrepPricingPage() {
 
       {/* כלול בתוכנית - רשימה שטוחה, בלי קופסה מקוננת */}
       <div className="border-t border-line pt-6">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">כלול ב{currentPlan.label}</p>
-        <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
+        <p className="text-sm font-semibold text-ink">מה כלול ב{currentPlan.label}</p>
+        <ul className="mt-3 grid list-disc gap-2 ps-5 marker:text-muted sm:grid-cols-2">
           {currentPlan.features.map((f) => (
-            <li key={f} className="flex items-center gap-2.5 text-sm text-ink">
-              <svg className="h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="7" fill="currentColor" fillOpacity="0.15" />
-                <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <li key={f} className="text-sm text-ink">
               {f}
             </li>
           ))}
@@ -236,7 +226,7 @@ export function PrepPricingPage() {
           type="button"
           disabled={busy}
           onClick={() => void startCheckout(selected)}
-          className="inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white shadow-cta transition hover:bg-primary-hover disabled:opacity-50"
+          className="inline-flex min-h-12 w-full max-w-sm items-center justify-center rounded-control bg-primary px-8 text-base font-bold text-white transition hover:bg-primary-hover disabled:opacity-50"
         >
           {busy ? "מעביר לתשלום…" : `רכישה - ₪${currentPlan.price} ל${currentPlan.label}`}
         </button>
@@ -255,7 +245,7 @@ export function PrepPricingPage() {
           <p className="mt-1 text-xs text-muted">
             {extensionUntil === "open"
               ? `המחיר המוזל זמין עד ${EXTENSION_GRACE_DAYS} יום מסיום הגישה.`
-              : `המחיר המוזל זמין עד ${extensionUntil.toLocaleDateString("he-IL", { day: "numeric", month: "numeric", year: "numeric" })} (${EXTENSION_GRACE_DAYS} יום מסיום הגישה). אחרי זה - תוכנית רגילה.`}
+              : `המחיר המוזל זמין עד ${extensionUntil.toLocaleDateString("he-IL", { day: "numeric", month: "numeric", year: "numeric" })} (${EXTENSION_GRACE_DAYS} יום מסיום הגישה). אחרי זה רק תוכנית רגילה.`}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             {EXTENSION_PLANS.map((ext) => (

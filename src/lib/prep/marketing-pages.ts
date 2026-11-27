@@ -41,7 +41,7 @@ export type MarketingPageContent = {
 export const PREP_MARKETING_PAGES: Partial<Record<PrepMarketingSlug, MarketingPageContent>> = {
   contact: {
     eyebrow: "אנחנו כאן",
-    lede: "נשמח לעזור בכל שאלה - טכנית, לימודית או בנושא רכישה.",
+    lede: "שאלה טכנית, לימודית או על רכישה? כתבו לנו.",
     sections: [
       {
         heading: "לפני שכותבים",

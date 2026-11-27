@@ -7,7 +7,7 @@ const SHADES = ["bg-[#eef1f7]", "bg-[#e2e7f0]", "bg-[#cfd8e8]", "bg-[#a9b8d3]"];
 /**
  * The official placement levels as one scale from 50 to 150, each band sized
  * by its width and the exemption band in navy; the meaning of each band as
- * plain lines beside it. The scale grows in when it scrolls into view.
+ * plain lines beside it.
  */
 export function ScoreBandsTable() {
   const span = EXAM_SCORE_SCALE.max - EXAM_SCORE_SCALE.min + 1;
@@ -15,15 +15,15 @@ export function ScoreBandsTable() {
   const top = bands[bands.length - 1];
   return (
     <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-      <Reveal from="start">
+      <Reveal>
         <h2 className="text-[2.1rem] font-extrabold leading-[1.12] tracking-tight text-ink md:text-[2.6rem]">כמה כל ציון שווה</h2>
         <p className="mt-4 text-lg leading-relaxed text-muted md:text-xl">
           רמות המיון הרשמיות של האוניברסיטאות. כל מדרגה למעלה היא פחות קורסי אנגלית בתואר, פחות סמסטרים ופחות כסף. מי שמגיע ל-{top.min}{" "}
           פטור לגמרי.
         </p>
       </Reveal>
-      <Reveal from="end" delay={120}>
-        <div className="scale-grow flex h-16 w-full overflow-hidden rounded" dir="ltr">
+      <Reveal>
+        <div className="flex min-h-16 w-full overflow-hidden rounded" dir="ltr">
           {bands.map((b, i) => {
             const pct = ((b.max - b.min + 1) / span) * 100;
             const exempt = b === top;
@@ -31,10 +31,10 @@ export function ScoreBandsTable() {
               <div
                 key={b.min}
                 style={{ width: `${pct}%` }}
-                className={cn("flex min-w-0 flex-col justify-center px-2.5", exempt ? "bg-primary text-white" : SHADES[i] ?? SHADES[0])}
+                className={cn("flex min-w-0 flex-col justify-center px-2 py-2", exempt ? "bg-primary text-white" : SHADES[i] ?? SHADES[0])}
                 dir="rtl"
               >
-                <p className={cn("truncate text-[13px] font-bold", exempt ? "text-white" : "text-ink")}>{b.levelHe}</p>
+                <p className={cn("break-words text-[13px] font-bold leading-tight", exempt ? "text-white" : "text-ink")}>{b.levelHe}</p>
                 <p className={cn("text-xs tabular-nums", exempt ? "text-white/80" : "text-muted")}>
                   {b.min}–{b.max}
                 </p>

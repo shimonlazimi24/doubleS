@@ -35,7 +35,7 @@ export async function PrepMarketingHome() {
         </Container>
       </section>
 
-      <MarketingSection id="how" title="איך הקורס בנוי" subtitle="שלושה שלבים, באותו סדר שבו המבחן בודק. כל תמונה היא המסך האמיתי של הקורס." tone="low">
+      <MarketingSection id="how" title="איך הקורס בנוי" subtitle="שלושה שלבים, באותו סדר שבו המבחן בודק." tone="low">
         <CoursePathSteps steps={COURSE_PATH_STEPS} />
       </MarketingSection>
 

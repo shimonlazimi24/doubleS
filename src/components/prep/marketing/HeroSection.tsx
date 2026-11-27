@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ButtonLink, Container } from "@/components/ui";
 import { HeroVideoBackground } from "@/components/prep/marketing/HeroVideoBackground";
 import { TrustIndicators, type TrustItem } from "@/components/prep/marketing/TrustIndicators";
@@ -18,7 +19,6 @@ export function courseTrustItems(): TrustItem[] {
 }
 
 type HeroCopy = {
-  eyebrow: string;
   headline: string;
   subheadline: string;
   primary: { href: string; label: string };
@@ -39,7 +39,6 @@ export function MarketingHero({ copy }: { copy: HeroCopy }) {
           <div className="max-w-[44rem] text-right">
             {/* No entry animation here: the headline is the first thing an ad visitor
                 must see, and it may not wait for JavaScript to become visible. */}
-            <p className="mb-4 text-sm font-semibold text-white/80">{copy.eyebrow}</p>
             <h1 className="text-[2.5rem] font-black leading-[1.08] tracking-tight md:text-[3.8rem]">{copy.headline}</h1>
             <p className="mt-6 max-w-[36rem] text-lg leading-relaxed text-white/85 md:text-[1.3rem]">{copy.subheadline}</p>
             <div>
@@ -51,13 +50,13 @@ export function MarketingHero({ copy }: { copy: HeroCopy }) {
                 >
                   {copy.primary.label}
                 </ButtonLink>
-                <ButtonLink
+                {/* One main action; the second is a quiet link, not a twin button. */}
+                <Link
                   href={copy.secondary.href}
-                  variant="secondary"
-                  className="min-h-[3.25rem] !rounded !border-white/55 !bg-transparent px-7 text-[16px] !text-white hover:!bg-white/10"
+                  className="inline-flex min-h-11 items-center px-2 text-[16px] font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
                 >
                   {copy.secondary.label}
-                </ButtonLink>
+                </Link>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-white/75">{copy.note}</p>
             </div>
@@ -78,7 +77,6 @@ export function HeroSection() {
   return (
     <MarketingHero
       copy={{
-        eyebrow: "קורס הכנה דיגיטלי לאמירנט",
         headline: hero.headline,
         subheadline: hero.subheadline,
         primary: hero.ctaPrimary,

@@ -13,7 +13,7 @@ export function MarketingHeader() {
   if (isPrepAppChromePath(pathname)) return null;
 
   return (
-    <header className="sticky top-0 z-[100] border-b border-line/60 bg-paper/90 shadow-nav backdrop-blur-lg">
+    <header className="sticky top-0 z-[100] border-b border-line/60 bg-paper">
       <Container dir="rtl" className="flex min-h-[4rem] flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2 lg:py-3">
         {/* Logo on the right, as on almost every Hebrew site; only the Latin
             wordmark itself stays left-to-right. No aria-label: the wordmark +

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
@@ -33,8 +34,8 @@ const COURSE_FEATURES = [
     detail: `${lessonCount} שיעורים מהיסודות ועד אסטרטגיות פתרון מתקדמות, בסדר לימוד מומלץ.`,
   },
   {
-    lead: "תרגול אדפטיבי",
-    detail: `${COURSE_FACTS.questions.toLocaleString("he-IL")} שאלות עם הסבר על התשובה. רמת הקושי מסתגלת לביצועים שלכם.`,
+    lead: "תרגול לפי רמה",
+    detail: `${COURSE_FACTS.questions.toLocaleString("he-IL")} שאלות עם הסבר על התשובה, ביחידות מקל ועד קשה.`,
   },
   {
     lead: "סימולציות מלאות",
@@ -42,11 +43,11 @@ const COURSE_FEATURES = [
   },
   {
     lead: "מבחן רמה חינם",
-    detail: "הערכת רמה משוערת (מיפוי מאחוז) — לא ציון אמירנט רשמי.",
+    detail: "15 שאלות שנותנות הערכת רמה משוערת. זה לא ציון אמירנט רשמי.",
   },
   {
     lead: "עוזר AI בעברית",
-    detail: "רמזים, הסברים והמלצות המשך - בהקשר של השיעור, לא צ'אט כללי.",
+    detail: "רואה את השאלה שעל המסך ומסביר אותה מתוך חומר הקורס.",
   },
   {
     lead: "עדכני לפורמט המבחן",
@@ -59,12 +60,12 @@ const METHOD_PRINCIPLES = [
   {
     step: "1",
     title: "לומדים את סוגי השאלות",
-    body: "לא «אנגלית כללית» - לכל סוג שאלה יש שיטת פתרון ומלכודות קבועות.",
+    body: "לכל סוג שאלה יש שיטת פתרון ומלכודות שחוזרות. לומדים אותן, לא «אנגלית כללית».",
   },
   {
     step: "2",
     title: "מתרגלים עם טיימר",
-    body: "עם שעון, עם לחץ, עם סימולציות מלאות - תרגול בסגנון יום המבחן.",
+    body: "סימולציות מלאות עם שעון לכל פרק, כמו ביום המבחן.",
   },
   {
     step: "3",
@@ -116,12 +117,12 @@ export default function PrepAboutPage() {
       <header className="border-b border-line bg-paper">
         <Container max="readable" className="py-10 md:py-14">
           <Heading level={1} className="max-w-[26ch]">
-            מבחן אנגלית הוא מיומנות - ומיומנות מתאמנים עליה
+            מבחן אנגלית הוא מיומנות, ועל מיומנות מתאמנים
           </Heading>
           <Text as="p" variant="bodyLg" className="mt-4 max-w-[52ch]">
-            PREPARE היא פלטפורמת הכנה דיגיטלית לאמירנט - מבחן האנגלית האקדמי הנדרש לקבלה
-            למוסדות בישראל. במקום ערימת חומרים בנינו קורס אחד מובנה: שיעורים בסדר ברור,
-            תרגול אדפטיבי, סימולציות מלאות ועוזר AI בעברית. ממוקד, מדיד ובלי רעש.
+            PREPARE הוא קורס הכנה לאמירנט, מבחן האנגלית האקדמי שנדרש לקבלה למוסדות בישראל.
+            במקום ערימת חומרים בנינו קורס אחד: שיעורים בסדר ברור, תרגול לפי רמה, סימולציות
+            מלאות ועוזר AI שעונה בעברית.
           </Text>
           <TrustIndicators items={courseTrustItems()} className="mt-10" />
         </Container>
@@ -208,21 +209,21 @@ export default function PrepAboutPage() {
 
       {/* ── סוגר: הזמנה להתחיל + דרך ליצור קשר ── */}
       <section className="border-t border-line py-12 md:py-16">
-        <Container max="readable" className="text-center">
-          <div className="mx-auto max-w-2xl space-y-4">
+        <Container max="readable">
+          <div className="max-w-2xl space-y-4">
             <h2 className="text-2xl font-semibold leading-tight tracking-tight text-primary md:text-3xl">
-              הדרך הטובה ביותר להכיר אותנו - להתחיל ללמוד
+              הדרך הכי טובה להכיר אותנו היא להתחיל ללמוד
             </h2>
             <p className="text-base leading-relaxed text-muted">
               מודול המבוא ומבחן הרמה פתוחים חינם, בלי התחייבות.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-              <ButtonLink href={`${PREP_BASE}/amirant`} variant="primary" className="shadow-cta">
+            <div className="flex flex-wrap items-center gap-5 pt-1">
+              <ButtonLink href={`${PREP_BASE}/amirant`} variant="primary">
                 לקורס ההכנה לאמירנט
               </ButtonLink>
-              <ButtonLink href={`${PREP_BASE}/pricing`} variant="secondary">
+              <Link href={`${PREP_BASE}/pricing`} className="inline-flex min-h-11 items-center font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:decoration-primary">
                 לצפייה במחירים
-              </ButtonLink>
+              </Link>
             </div>
             <p className="pt-2 text-sm text-muted-2">
               יש שאלה לפני שמתחילים?{" "}

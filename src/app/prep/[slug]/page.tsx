@@ -110,7 +110,7 @@ function StructuredMarketingPage({
         <Container max="readable" className="py-10 md:py-14">
           <Link
             href={PREP_BASE}
-            className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
+            className="text-sm text-muted transition hover:text-primary"
           >
             חזרה לדף הבית
           </Link>
@@ -196,7 +196,7 @@ export default function PrepMarketingPage({ params }: Props) {
         <Container max="readable" className="py-10 md:py-14">
           <Link
             href={PREP_BASE}
-            className="text-xs font-semibold tracking-[0.14em] text-accent transition hover:text-primary"
+            className="text-sm text-muted transition hover:text-primary"
           >
             חזרה לדף הבית
           </Link>

@@ -1,6 +1,5 @@
 import { EXAM_STRUCTURE } from "@/lib/prep/marketing/content";
 import { Reveal } from "./motion/Reveal";
-import { CountUp } from "./motion/CountUp";
 
 function metaParts(meta: string): { questions: number; minutes: number } {
   const [q = "", m = ""] = meta.split("·");
@@ -20,13 +19,13 @@ export function ExamStructureTable() {
               <div className="mt-5 flex gap-8">
                 <div>
                   <p className="text-5xl font-black leading-none tabular-nums">
-                    <CountUp value={questions} />
+                    {questions}
                   </p>
                   <p className="mt-1.5 text-sm text-white/70">שאלות בפרק</p>
                 </div>
                 <div>
                   <p className="text-5xl font-black leading-none tabular-nums">
-                    <CountUp value={minutes} />
+                    {minutes}
                   </p>
                   <p className="mt-1.5 text-sm text-white/70">דקות לפרק</p>
                 </div>
